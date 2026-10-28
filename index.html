@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaulingo || Homepage</title>
+    <title>Gaulingo</title>
     <link rel="stylesheet" href="./src/output.css" />
     <link rel="icon" type="image/x-icon" href="" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
@@ -15,8 +15,10 @@
     />
   </head>
   <body class="bg-[#fff8f8] font-figtree">
+    <!-- nav: tersembunyi di atas, muncul setelah scroll (lihat script di bawah) -->
     <header
-      class="fixed top-15 left-1/2 transform -translate-x-1/2 z-10 flex w-150 py-3 items-center justify-between px-5 gap-2 rounded-4xl bg-white"
+      id="nav"
+      class=" z-1000 fixed top-10 left-1/2 -translate-x-1/2 z-10 flex w-150 py-3 items-center justify-between px-5 gap-2 rounded-4xl bg-white/10 border-white/50 backdrop-blur-md shadow-[0_10px_30px_rgba(47,76,138,0.12)] transition-all duration-500 motion-reduce:transition-none opacity-0 -translate-y-10 pointer-events-none data-[shown]:opacity-100 data-[shown]:translate-y-0 data-[shown]:pointer-events-auto"
     >
       <i
         class="ph ph-chat-circle-dots text-white rounded-2xl w-15 h-12.5 p-2.5 bg-nila text-3xl flex justify-center items-center"
@@ -221,277 +223,175 @@
         </div>
       </div>
     </div>
+    <!-- hero: semua ukuran diskalakan dari frame Figma 1360x930 lewat --u -->
     <section
-      class="sticky top-10 w-[calc(100vw-80px)] h-[calc(100vh-40px)] -z-1 isolate mx-10 mt-10 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir flex justify-center items-start"
+      class="sticky top-10 w-[calc(100vw-80px)] h-[calc(100vh-40px)] -z-1 isolate mx-10 mt-10 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir [container-type:size]"
     >
-      <svg
-        viewBox="0 0 1360 930"
-        role="img"
-        class="absolute -bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2 max-2xl:bottom-10"
+      <div
+        class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]"
       >
-        <defs>
-          <clipPath id="mouth">
-            <path
-              d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
-            />
-          </clipPath>
-        </defs>
-        <circle cx="680" cy="740" r="330" class="fill-matahari" />
-        <circle
-          cx="680"
-          cy="730"
-          r="430"
-          fill="none"
-          stroke-width="2"
-          stroke-dasharray="9 15"
-          class="stroke-krem"
-        />
-        <g class="fill-krem/60">
-          <rect x="104" y="340" width="180" height="44" rx="22" />
-          <rect x="164" y="370" width="120" height="44" rx="22" />
-          <rect x="1068" y="300" width="196" height="44" rx="22" />
-          <rect x="1134" y="330" width="130" height="44" rx="22" />
-        </g>
-        <path
-          class="fill-[#e6b084] motion-safe:animate-dune-a"
-          d="M-200 750 C50 670 280 686 510 742 C760 806 940 694 1190 710 C1380 722 1480 758 1560 742 L1560 930 L-200 930Z"
-        />
-        <path
-          class="fill-bukit motion-safe:animate-dune-b"
-          d="M-200 835 C30 775 220 795 400 835 C610 885 830 785 1060 815 C1280 845 1440 805 1560 825 L1560 930 L-200 930Z"
-        />
-        <path
-          class="fill-[#ff6b4a]"
-          d="M528 930C540 882 580 852 622 846L740 846C790 852 818 884 838 930Z"
-        />
-        <path class="fill-krem" d="M640 846L720 846L702 930L658 930Z" />
-        <path
-          class="fill-terakota"
-          d="M618 862L660 880L664 912Z M742 862L700 880L696 912Z"
-        />
-        <rect
-          x="650"
-          y="798"
-          width="60"
-          height="52"
-          rx="10"
-          class="fill-bukit"
-        />
-        <path
-          d="M641 806Q680 828 719 806L719 814Q680 836 641 814Z"
-          class="fill-terakota"
-        />
-        <path
-          d="M600 850Q640 894 680 894Q720 894 760 850"
-          fill="none"
-          stroke-width="14"
-          stroke-linecap="round"
-          class="stroke-nila"
-        />
-        <rect
-          x="584"
-          y="822"
-          width="36"
-          height="54"
-          rx="12"
-          class="fill-nila"
-        />
-        <rect
-          x="742"
-          y="822"
-          width="36"
-          height="54"
-          rx="12"
-          class="fill-nila"
-        />
-        <circle cx="601" cy="849" r="7" class="fill-[#ffd23f]" />
-        <circle cx="760" cy="849" r="7" class="fill-[#ffd23f]" />
-        <path
-          class="fill-[#ff6b4a]"
-          d="M838 772L882 768C886 842 872 902 836 930L792 930C818 890 836 842 838 772Z"
-        />
-        <path
-          d="M846 832L802 916"
-          fill="none"
-          stroke-width="14"
-          stroke-linecap="round"
-          class="stroke-terakota"
-        />
-        <g transform="translate(0, 22)">
-          <ellipse cx="577" cy="690" rx="17" ry="24" class="fill-bukit" />
-          <ellipse cx="785" cy="690" rx="17" ry="24" class="fill-[#b87d54]" />
-          <ellipse cx="681" cy="686" rx="104" ry="112" class="fill-[#b87d54]" />
-          <ellipse cx="672" cy="686" rx="98" ry="112" class="fill-bukit" />
-          <g id="rambut-kribo">
-            <g class="fill-[#1b1b2f]">
-              <circle cx="680" cy="525" r="32" />
-              <circle cx="645" cy="535" r="30" />
-              <circle cx="715" cy="535" r="30" />
-              <circle cx="615" cy="552" r="28" />
-              <circle cx="745" cy="552" r="28" />
-              <circle cx="588" cy="580" r="28" />
-              <circle cx="572" cy="612" r="26" />
-              <circle cx="575" cy="640" r="22" />
-              <circle cx="772" cy="580" r="28" />
-              <circle cx="788" cy="612" r="26" />
-              <circle cx="785" cy="640" r="22" />
-              <circle cx="680" cy="565" r="45" />
-              <circle cx="625" cy="590" r="38" />
-              <circle cx="735" cy="590" r="38" />
-              <circle cx="680" cy="596" r="30" />
-              <path d="M 572 640 Q 570 662 578 668 Q 582 652 584 638 Z" />
-              <path d="M 788 640 Q 790 662 782 668 Q 778 652 776 638 Z" />
-            </g>
-            <g class="fill-[#3a3a5c]">
-              <circle cx="635" cy="545" r="10" />
-              <circle cx="695" cy="535" r="10" />
-              <circle cx="735" cy="555" r="9" />
-              <circle cx="602" cy="578" r="8" />
-            </g>
-          </g>
-          <g
-            fill="none"
-            stroke-width="9"
-            stroke-linecap="round"
-            class="stroke-[#1b1b30]"
-          >
-            <path d="M626 650L662 646" />
-            <path d="M700 645L736 651" />
-          </g>
-          <ellipse cx="642" cy="682" rx="11" ry="15" class="fill-[#1b1b30]" />
-          <ellipse cx="717" cy="682" rx="11" ry="15" class="fill-[#1b1b30]" />
-          <circle cx="646" cy="676" r="3.5" class="fill-krem" />
-          <circle cx="721" cy="676" r="3.5" class="fill-krem" />
-          <path
-            d="M679 690C672 705 676 718 686 722"
-            fill="none"
-            stroke-width="4"
-            stroke-linecap="round"
-            class="stroke-terakota"
-          />
-          <ellipse cx="617" cy="716" rx="17" ry="8" class="fill-[#e0836b]" />
-          <ellipse cx="743" cy="716" rx="17" ry="8" class="fill-[#e0836b]" />
-          <path
-            d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
-            class="fill-[#5b1b1b]"
-          />
-          <g clip-path="url(#mouth)">
-            <ellipse cx="680" cy="770" rx="15" ry="9" class="fill-[#ff6b4a]" />
-            <path
-              d="M641 741Q680 752 719 741L717 750Q680 760 643 750Z"
-              class="fill-krem"
-            />
-          </g>
-        </g>
-        <g class="origin-bottom transform-fill motion-safe:animate-wave">
-          <g class="fill-bukit">
-            <ellipse
-              cx="822"
-              cy="748"
-              rx="14"
-              ry="24"
-              transform="rotate(-50 822 748)"
-            />
-            <rect x="836" y="676" width="14" height="60" rx="7" />
-            <rect x="851" y="667" width="14" height="64" rx="7" />
-            <rect x="866" y="670" width="14" height="62" rx="7" />
-            <rect x="880" y="686" width="14" height="52" rx="7" />
-            <ellipse cx="862" cy="736" rx="33" ry="34" />
-          </g>
-          <path
-            d="M848 752Q860 762 874 752"
-            fill="none"
-            stroke-width="3"
-            stroke-linecap="round"
-            class="stroke-terakota"
-          />
-        </g>
-        <path
-          d="M870 622Q888 632 886 648Q900 658 903 677"
-          fill="none"
-          stroke-width="6"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="stroke-[#ffd23f]"
-        />
-        <g transform="rotate(-8 974 575)">
-          <rect
-            x="887"
-            y="545"
-            width="175"
-            height="60"
-            rx="30"
-            class="fill-krem"
-          />
-          <text
-            x="974"
-            y="576"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            class="fill-nila text-xl font-bold"
-          >
-            Halo, aku Gali!
-          </text>
-        </g>
-        <g transform="rotate(8 385 723)">
-          <rect
-            x="280"
-            y="690"
-            width="210"
-            height="66"
-            rx="33"
-            class="fill-biru-pucat"
-          />
-          <text
-            x="385"
-            y="723"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            class="fill-nila text-xl font-bold"
-          >
-            Berapa harganya?
-          </text>
-        </g>
-        <g transform="rotate(5 995 730)">
-          <rect
-            x="912"
-            y="702"
-            width="166"
-            height="56"
-            rx="28"
-            class="fill-krem"
-          />
-          <text
-            x="995"
-            y="731"
-            text-anchor="middle"
-            dominant-baseline="middle"
-            class="fill-nila text-xl font-bold"
-          >
-            Matur nuwun
-          </text>
-        </g>
-      </svg>
-      <!-- background clear -->
-      <div class="z-1 mt-30 pb-3.5">
-        <h1
-          class="text-[102px] max-2xl:text-7xl text-nila font-unbounded font-black text-center px-30 tracking-[-3.12px] leading-25"
+        <svg
+          viewBox="0 0 1360 930"
+          preserveAspectRatio="xMidYMax meet"
+          aria-hidden="true"
+          class="absolute inset-0 size-full"
         >
-          TALK LIKE<br />
-          THE LOCALS DO
-        </h1>
-        <p class="text-nila text-center font-medium text-[22px]">
-          Real phrases. Real places. Real manners.
-        </p>
-        <div class="flex items-center justify-center gap-5 pt-4.75">
-          <a href="#" class="btn">Start exploring</a
-          ><a href="#" class="btn2">Chat with Gali</a>
+          <circle cx="680" cy="710" r="330" class="fill-matahari" />
+          <image
+            href="./src/assets/hero/lingkar-matahari.png"
+            x="250"
+            y="280"
+            width="860"
+            height="860"
+          />
+          <g class="fill-white/60">
+            <rect x="104" y="232" width="180" height="44" rx="22" />
+            <rect x="194" y="265" width="120" height="44" rx="22" />
+            <rect x="1040" y="309" width="200" height="44" rx="22" />
+            <rect x="1010" y="339" width="130" height="44" rx="22" />
+          </g>
+        </svg>
+        <svg
+          viewBox="0 0 1392 380"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+          class="absolute -left-[3%] w-[106%] bottom-[calc(38*var(--u))] h-[calc(380*var(--u))]"
+        >
+          <path
+            class="fill-[#e7b184] motion-safe:animate-dune-a"
+            d="M0 170C200 70 380 90 560 160C760 240 900 100 1100 120C1250 135 1330 180 1392 160V380H0V170Z"
+          />
+          <path
+            class="fill-bukit motion-safe:animate-dune-b"
+            d="M0 260C180 200 330 220 470 260C640 310 820 210 1000 240C1180 270 1300 230 1392 250V380H0V260Z"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 1360 930"
+          preserveAspectRatio="xMidYMax meet"
+          role="img"
+          aria-label="Gali melambaikan tangan"
+          class="absolute inset-0 size-full"
+        >
+          <g transform="translate(450 346)" fill="none">
+            <path d="M69 552C69 454.25 120.75 404.8 230 400.2C339.25 404.8 391 454.25 391 552H69Z" fill="#FF6B4A"/>
+            <path d="M345 465.75C379.5 419.75 395.6 370.3 388.7 324.3L430.1 319.7C439.3 381.8 416.3 450.8 381.8 500.25L345 465.75Z" fill="#FF6B4A"/>
+            <path d="M345 465.75C365.7 437 379.5 408.25 386.4 379.5L402.5 384.1C395.6 416.3 381.8 448.5 361.1 476.1L345 465.75Z" fill="#E2553A"/>
+            <path d="M181.7 407.1C213.9 403.267 246.1 403.267 278.3 407.1L262.2 552H197.8L181.7 407.1Z" fill="white"/>
+            <path d="M181.7 407.1L216.2 476.1L167.9 441.6L181.7 407.1Z" fill="#E2553A"/>
+            <path d="M278.3 407.1L243.8 476.1L292.1 441.6L278.3 407.1Z" fill="#E2553A"/>
+            <path d="M115 501.4C118.81 501.4 121.9 498.311 121.9 494.5C121.9 490.689 118.81 487.6 115 487.6C111.189 487.6 108.1 490.689 108.1 494.5C108.1 498.311 111.189 501.4 115 501.4Z" fill="white" fill-opacity="0.35"/>
+            <path d="M143.75 466.9C147.56 466.9 150.65 463.811 150.65 460C150.65 456.189 147.56 453.1 143.75 453.1C139.939 453.1 136.85 456.189 136.85 460C136.85 463.811 139.939 466.9 143.75 466.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M126.5 535.9C130.31 535.9 133.4 532.811 133.4 529C133.4 525.189 130.31 522.1 126.5 522.1C122.689 522.1 119.6 525.189 119.6 529C119.6 532.811 122.689 535.9 126.5 535.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M327.75 512.9C331.56 512.9 334.65 509.811 334.65 506C334.65 502.189 331.56 499.1 327.75 499.1C323.939 499.1 320.85 502.189 320.85 506C320.85 509.811 323.939 512.9 327.75 512.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M345 541.65C348.81 541.65 351.9 538.561 351.9 534.75C351.9 530.939 348.81 527.85 345 527.85C341.189 527.85 338.1 530.939 338.1 534.75C338.1 538.561 341.189 541.65 345 541.65Z" fill="white" fill-opacity="0.35"/>
+            <path d="M234.6 335.8H225.4C211.427 335.8 200.1 347.127 200.1 361.1V391C200.1 404.973 211.427 416.3 225.4 416.3H234.6C248.572 416.3 259.9 404.973 259.9 391V361.1C259.9 347.127 248.572 335.8 234.6 335.8Z" fill="#C98B5F"/>
+            <path d="M230 365.7C251.595 365.7 269.1 359.522 269.1 351.9C269.1 344.279 251.595 338.1 230 338.1C208.406 338.1 190.9 344.279 190.9 351.9C190.9 359.522 208.406 365.7 230 365.7Z" fill="#A86E46"/>
+            <path d="M156.4 404.8C205.467 440.067 254.534 440.067 303.6 404.8" stroke="#1F2A5C" stroke-width="16.1" stroke-linecap="round"/>
+            <path d="M151.8 374.9H149.5C140.609 374.9 133.4 382.108 133.4 391V411.7C133.4 420.592 140.609 427.8 149.5 427.8H151.8C160.692 427.8 167.9 420.592 167.9 411.7V391C167.9 382.108 160.692 374.9 151.8 374.9Z" fill="#1F2A5C"/>
+            <path d="M310.5 374.9H308.2C299.308 374.9 292.1 382.108 292.1 391V411.7C292.1 420.592 299.308 427.8 308.2 427.8H310.5C319.391 427.8 326.6 420.592 326.6 411.7V391C326.6 382.108 319.391 374.9 310.5 374.9Z" fill="#1F2A5C"/>
+            <path d="M150.65 408.25C154.461 408.25 157.55 405.161 157.55 401.35C157.55 397.539 154.461 394.45 150.65 394.45C146.839 394.45 143.75 397.539 143.75 401.35C143.75 405.161 146.839 408.25 150.65 408.25Z" fill="#FFD23F"/>
+            <path d="M309.35 408.25C313.161 408.25 316.25 405.161 316.25 401.35C316.25 397.539 313.161 394.45 309.35 394.45C305.539 394.45 302.45 397.539 302.45 401.35C302.45 405.161 305.539 408.25 309.35 408.25Z" fill="#FFD23F"/>
+            <path d="M128.8 277.15C139.597 277.15 148.35 265.308 148.35 250.7C148.35 236.092 139.597 224.25 128.8 224.25C118.003 224.25 109.25 236.092 109.25 250.7C109.25 265.308 118.003 277.15 128.8 277.15Z" fill="#C98B5F"/>
+            <path d="M331.2 277.15C341.998 277.15 350.75 265.308 350.75 250.7C350.75 236.092 341.998 224.25 331.2 224.25C320.403 224.25 311.65 236.092 311.65 250.7C311.65 265.308 320.403 277.15 331.2 277.15Z" fill="#C98B5F"/>
+            <path d="M128.8 264.5C133.881 264.5 138 258.321 138 250.7C138 243.078 133.881 236.9 128.8 236.9C123.719 236.9 119.6 243.078 119.6 250.7C119.6 258.321 123.719 264.5 128.8 264.5Z" fill="#A86E46"/>
+            <path d="M331.2 264.5C336.281 264.5 340.4 258.321 340.4 250.7C340.4 243.078 336.281 236.9 331.2 236.9C326.119 236.9 322 243.078 322 250.7C322 258.321 326.119 264.5 331.2 264.5Z" fill="#A86E46"/>
+            <path d="M230 354.2C285.891 354.2 331.2 302.713 331.2 239.2C331.2 175.687 285.891 124.2 230 124.2C174.109 124.2 128.8 175.687 128.8 239.2C128.8 302.713 174.109 354.2 230 354.2Z" fill="#C98B5F"/>
+            <path d="M230 124.2C287.5 124.2 331.2 172.5 331.2 239.2C331.2 308.2 289.8 351.9 230 354.2C276 333.5 301.3 287.5 301.3 235.75C301.3 184 276 143.75 230 124.2Z" fill="#B97B50" fill-opacity="0.45"/>
+            <path d="M147.2 207C166.254 207 181.7 191.554 181.7 172.5C181.7 153.446 166.254 138 147.2 138C128.146 138 112.7 153.446 112.7 172.5C112.7 191.554 128.146 207 147.2 207Z" fill="#1B1B2F"/>
+            <path d="M184 172.5C205.595 172.5 223.1 154.994 223.1 133.4C223.1 111.806 205.595 94.3 184 94.3C162.406 94.3 144.9 111.806 144.9 133.4C144.9 154.994 162.406 172.5 184 172.5Z" fill="#1B1B2F"/>
+            <path d="M233.45 158.7C256.314 158.7 274.85 140.164 274.85 117.3C274.85 94.4353 256.314 75.8999 233.45 75.8999C210.585 75.8999 192.05 94.4353 192.05 117.3C192.05 140.164 210.585 158.7 233.45 158.7Z" fill="#1B1B2F"/>
+            <path d="M282.9 170.2C304.494 170.2 322 152.694 322 131.1C322 109.506 304.494 92 282.9 92C261.305 92 243.8 109.506 243.8 131.1C243.8 152.694 261.305 170.2 282.9 170.2Z" fill="#1B1B2F"/>
+            <path d="M317.4 204.7C336.454 204.7 351.9 189.254 351.9 170.2C351.9 151.146 336.454 135.7 317.4 135.7C298.347 135.7 282.9 151.146 282.9 170.2C282.9 189.254 298.347 204.7 317.4 204.7Z" fill="#1B1B2F"/>
+            <path d="M129.5 224C125.002 171.513 165.327 138.282 232.805 136C302.531 138.282 337.248 171.513 330.5 224C317.005 196.615 302.531 183.923 277.79 179.359C262.045 197.615 232.805 197.615 217.06 179.359C199.066 195.333 165.328 197.615 145.084 193.051C136.087 204.462 131.749 212.59 129.5 224Z" fill="#1B1B2F"/>
+            <path d="M172.5 128.8C177.581 128.8 181.7 124.681 181.7 119.6C181.7 114.519 177.581 110.4 172.5 110.4C167.419 110.4 163.3 114.519 163.3 119.6C163.3 124.681 167.419 128.8 172.5 128.8Z" fill="#3A3A5C"/>
+            <path d="M246.1 111.55C251.816 111.55 256.45 106.916 256.45 101.2C256.45 95.484 251.816 90.8501 246.1 90.8501C240.384 90.8501 235.75 95.484 235.75 101.2C235.75 106.916 240.384 111.55 246.1 111.55Z" fill="#3A3A5C"/>
+            <path d="M207.193 200.215L175.306 204.697C172.162 205.139 169.971 208.046 170.413 211.191C170.855 214.336 173.762 216.527 176.907 216.085L208.793 211.603C211.938 211.161 214.129 208.254 213.687 205.109C213.245 201.964 210.338 199.773 207.193 200.215Z" fill="#1B1B2F"/>
+            <path d="M284.694 204.697L252.807 200.215C249.663 199.773 246.755 201.964 246.313 205.109C245.871 208.254 248.062 211.161 251.207 211.603L283.093 216.085C286.238 216.527 289.146 214.336 289.588 211.191C290.03 208.046 287.839 205.139 284.694 204.697Z" fill="#1B1B2F"/>
+            <path d="M193.2 258.75C199.551 258.75 204.7 252.057 204.7 243.8C204.7 235.543 199.551 228.85 193.2 228.85C186.849 228.85 181.7 235.543 181.7 243.8C181.7 252.057 186.849 258.75 193.2 258.75Z" fill="#1B1B2F"/>
+            <path d="M266.8 258.75C273.151 258.75 278.3 252.057 278.3 243.8C278.3 235.543 273.151 228.85 266.8 228.85C260.449 228.85 255.3 235.543 255.3 243.8C255.3 252.057 260.449 258.75 266.8 258.75Z" fill="#1B1B2F"/>
+            <path d="M197.225 242.19C199.511 242.19 201.365 240.336 201.365 238.05C201.365 235.763 199.511 233.91 197.225 233.91C194.939 233.91 193.085 235.763 193.085 238.05C193.085 240.336 194.939 242.19 197.225 242.19Z" fill="white"/>
+            <path d="M270.825 242.19C273.111 242.19 274.965 240.336 274.965 238.05C274.965 235.763 273.111 233.91 270.825 233.91C268.538 233.91 266.685 235.763 266.685 238.05C266.685 240.336 268.538 242.19 270.825 242.19Z" fill="white"/>
+            <path d="M228.85 255.3C222.717 273.7 225.017 284.05 235.75 286.35" stroke="#A86E46" stroke-width="5.175" stroke-linecap="round"/>
+            <path d="M166.75 287.5C176.277 287.5 184 283.381 184 278.3C184 273.219 176.277 269.1 166.75 269.1C157.223 269.1 149.5 273.219 149.5 278.3C149.5 283.381 157.223 287.5 166.75 287.5Z" fill="#FF6B4A" fill-opacity="0.35"/>
+            <path d="M293.25 287.5C302.777 287.5 310.5 283.381 310.5 278.3C310.5 273.219 302.777 269.1 293.25 269.1C283.723 269.1 276 273.219 276 278.3C276 283.381 283.723 287.5 293.25 287.5Z" fill="#FF6B4A" fill-opacity="0.35"/>
+            <path d="M188.6 301.3C216.2 333.5 243.8 333.5 271.4 301.3H188.6Z" fill="#5A1E1E"/>
+            <path d="M195.5 303.6C218.5 311.267 241.5 311.267 264.5 303.6L261.05 311.65C240.35 319.317 219.65 319.317 198.95 311.65L195.5 303.6Z" fill="white"/>
+            <path d="M230 338.1C238.892 338.1 246.1 334.496 246.1 330.05C246.1 325.604 238.892 322 230 322C221.109 322 213.9 325.604 213.9 330.05C213.9 334.496 221.109 338.1 230 338.1Z" fill="#FF6B4A"/>
+            <g class="origin-bottom transform-fill motion-safe:animate-wave">
+            <path d="M390.095 318.038C394.96 313.956 392.616 303.152 384.859 293.908C377.102 284.664 366.87 280.48 362.005 284.562C357.139 288.645 359.483 299.448 367.24 308.692C374.997 317.936 385.229 322.121 390.095 318.038Z" fill="#C98B5F"/>
+            <path d="M396.95 235.475C396.95 231.347 393.603 228 389.475 228C385.347 228 382 231.347 382 235.475V271.125C382 275.253 385.347 278.6 389.475 278.6C393.603 278.6 396.95 275.253 396.95 271.125V235.475Z" fill="#C98B5F"/>
+            <path d="M413.15 225.975C413.15 221.847 409.804 218.5 405.675 218.5C401.547 218.5 398.2 221.847 398.2 225.975V268.525C398.2 272.653 401.547 276 405.675 276C409.804 276 413.15 272.653 413.15 268.525V225.975Z" fill="#C98B5F"/>
+            <path d="M429.25 230.575C429.25 226.447 425.903 223.1 421.775 223.1C417.646 223.1 414.3 226.447 414.3 230.575V268.525C414.3 272.653 417.646 276 421.775 276C425.903 276 429.25 272.653 429.25 268.525V230.575Z" fill="#C98B5F"/>
+            <path d="M444.05 243.8C444.05 239.989 440.961 236.9 437.15 236.9C433.339 236.9 430.25 239.989 430.25 243.8V273.7C430.25 277.511 433.339 280.6 437.15 280.6C440.961 280.6 444.05 277.511 444.05 273.7V243.8Z" fill="#C98B5F"/>
+            <path d="M411.7 322C429.484 322 443.9 306.554 443.9 287.5C443.9 268.446 429.484 253 411.7 253C393.916 253 379.5 268.446 379.5 287.5C379.5 306.554 393.916 322 411.7 322Z" fill="#C98B5F"/>
+            <path d="M391 301.3C403.267 308.967 415.533 308.967 427.8 301.3" stroke="#A86E46" stroke-width="3.45" stroke-linecap="round"/>
+            </g>
+            <path d="M439.3 184C450.033 196.267 453.866 210.067 450.8 225.4" stroke="#FFD23F" stroke-width="6.9" stroke-linecap="round"/>
+            <path d="M420.9 172.5C430.1 178.633 435.467 186.3 437 195.5" stroke="#FFD23F" stroke-width="6.9" stroke-linecap="round"/>
+          </g>
+          <g class="text-xl font-bold">
+            <g transform="rotate(-6 974 558)">
+              <rect x="886" y="534" width="176" height="48" rx="24" class="fill-white" />
+              <text x="974" y="559" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Halo, aku Gali!
+              </text>
+            </g>
+            <g transform="rotate(6 385 708)">
+              <rect x="281" y="684" width="209" height="48" rx="24" class="fill-biru-pucat" />
+              <text x="385" y="709" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Berapa harganya?
+              </text>
+            </g>
+            <g transform="rotate(4 995 713)">
+              <rect x="912" y="689" width="166" height="48" rx="24" class="fill-white" />
+              <text x="995" y="714" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Matur nuwun
+              </text>
+            </g>
+          </g>
+        </svg>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-876*var(--u))] flex flex-col items-center text-center text-nila"
+        >
+          <h1
+            class="font-unbounded font-black text-[calc(104*var(--u))] leading-[0.96] tracking-[-0.03em]"
+          >
+            TALK LIKE<br />
+            THE LOCALS DO
+          </h1>
+          <p
+            class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
+          >
+            Real phrases. Real places. Real manners.
+          </p>
+          <div class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap justify-center gap-3">
+            <a
+              href="#"
+              class="flex items-center gap-2.5 rounded-full border-b-6 border-white bg-nila py-4 pl-7 pr-6 text-[17px] font-bold text-white transition-all duration-300 hover:bg-[#24407a]"
+            >
+              Start exploring
+              <img src="./src/assets/hero/ikon-panah.svg" alt="" width="20" height="20" />
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-2.5 rounded-full bg-white py-4 pl-5.5 pr-7 text-[17px] font-bold text-nila transition-all duration-300 hover:bg-krem-tua"
+            >
+              <img src="./src/assets/hero/ikon-chat.svg" alt="" width="20" height="20" />
+              Chat with Gali
+            </a>
+          </div>
         </div>
       </div>
     </section>
-    <main class="p-10 relative -mt-10 z-3 bg-krem rounded-t-[50px]">
+
+<!-- /////////////////MAINNN///////////////////////////// -->
+
+    <main
+      class="relative -mt-24 z-10 bg-krem rounded-t-[0px] px-10 pt-12"
+    >
       <!-- situation  -->
-      <section class="mt-25">
+      <section>
         <hgroup class="flex justify-between items-end">
           <div class="flex flex-col">
             <p
@@ -1019,5 +919,11 @@
         </hgroup>
       </section>
     </main>
+    <script>
+      const nav = document.getElementById("nav");
+      const toggleNav = () => nav.toggleAttribute("data-shown", window.scrollY > 50);
+      window.addEventListener("scroll", toggleNav, { passive: true });
+      toggleNav();
+    </script>
   </body>
 </html>
