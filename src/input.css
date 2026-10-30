@@ -53,10 +53,10 @@
   }
 }
 /* apply */
-.btn {
+.tn {
   @apply px-6 py-3.75 rounded-full gap-2.5 text-white font-semibold text-lg  bg-nila hover:bg-[#24407a] focus:border focus:border-biru-aksen transition-all duration-300;
 }
-.btn2 {
+.tn2 {
   @apply flex gap-2.5 px-6 py-3.75 border-2 items-center bg-white text-nila transition-all duration-300 hover:bg-krem-tua font-semibold text-lg border-nila/35 rounded-full focus:border focus:border-biru-aksen;
 }
   

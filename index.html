@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaulingo</title>
+    <title>Gaulingo || Homepage</title>
     <link rel="stylesheet" href="./src/output.css" />
     <link rel="icon" type="image/x-icon" href="" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
@@ -17,13 +17,19 @@
   <body class="bg-[#fff8f8] font-figtree">
     <header
       id="nav"
-      class="z-50 fixed top-10 left-1/2 -translate-x-1/2 flex w-150 py-3 items-center justify-between px-5 gap-2 rounded-4xl bg-white/10 border-white/50 backdrop-blur-md shadow-[0_10px_30px_rgba(47,76,138,0.12)] transition-all duration-500 motion-reduce:transition-none opacity-0 -translate-y-10 pointer-events-none data-shown:opacity-100 data-shown:translate-y-0 data-shown:pointer-events-auto"
+      class="z-50 fixed top-10 left-1/2 -translate-x-1/2 flex w-150 py-3 items-center justify-between px-5 gap-2 rounded-4xl bg-white/20 border-white/60 backdrop-blur-md shadow-[0_10px_30px_rgba(47,76,138,0.12)] transition-all duration-500 motion-reduce:transition-none opacity-0 -translate-y-10 pointer-events-none data-shown:opacity-100 data-shown:translate-y-0 data-shown:pointer-events-auto max-md:w-[80vw]"
     >
-      <i
-        class="ph ph-chat-circle-dots text-white rounded-2xl w-15 h-12.5 p-2.5 bg-nila text-3xl flex justify-center items-center"
-      ></i>
+      <a
+        href="#"
+        class="text-white rounded-2xl w-15 h-12.5 p-2.5 bg-nila text-3xl flex justify-center items-center max-md:px-4 max-md:py-2"
+      >
+        <i class="ph ph-chat-circle-dots"></i>
+      </a>
       <img src="./src/assets/logo.svg" alt="logo" />
-      <button onclick="openMenu()" class="btn p-0 h-12.5 flex items-center">
+      <button
+        onclick="openMenu()"
+        class="px-6 py-3.75 rounded-full gap-2.5 text-white font-semibold text-lg bg-nila max-md:px-4 max-md:py-2"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -141,23 +147,6 @@
             onclick="closeMenu()"
           >
             <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">05</p>
-              <h3
-                class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
-              >
-                SAVED
-              </h3>
-            </a>
-            <p class="text-white/55 font-medium flex gap-5 items-center">
-              Frasa favoritmu
-              <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
-          </li>
-          <li
-            class="flex justify-between items-center px-4"
-            onclick="closeMenu()"
-          >
-            <a href="#" class="flex gap-10 items-center">
               <p class="text-matahari">06</p>
               <h3
                 class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
@@ -238,7 +227,7 @@
     </div>
     <!-- hero -->
     <section
-      class="sticky top-10 w-[calc(100vw-80px)] h-[calc(100vh-40px)] -z-1 isolate mx-10 mt-10 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size"
+      class="sticky top-10 w-[calc(100vw-80px)] h-[calc(100vh-40px)] max-md:w-[calc(100vw-40px)] max-md:top-5 max-md:h-[calc(100vh-20px)] max-md:mx-5 max-md:mt-5 -z-1 isolate mx-10 mt-5 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size"
     >
       <div
         class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]"
@@ -246,7 +235,7 @@
         <svg
           viewBox="0 0 1360 930"
           role="img"
-          class="absolute -bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2 max-2xl:bottom-10"
+          class="absolute -bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2 max-2xl:bottom-10 max-md:bottom-5"
         >
           <defs>
             <clipPath id="mouth">
@@ -506,12 +495,13 @@
           </g>
         </svg>
         <div
-          class="absolute inset-x-0 top-[calc(100%-876*var(--u))] flex flex-col items-center text-center text-nila"
+          class="absolute inset-x-0 top-10 max-lg:top-20 max-md:top-1/6 flex flex-col items-center text-center text-nila"
         >
           <h1
-            class="font-unbounded font-black text-[calc(104*var(--u))] leading-[0.96] tracking-[-0.03em]"
+            class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
           >
-            TALK LIKE<br />
+            TALK<br class="md:hidden" />
+            LIKE<br class="max-md:hidden" />
             THE LOCALS DO
           </h1>
           <p
@@ -520,18 +510,18 @@
             Real phrases. Real places. Real manners.
           </p>
           <div
-            class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap justify-center gap-3"
+            class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3"
           >
             <a
               href="#"
-              class="flex items-center gap-2.5 rounded-full border-b-6 border-white bg-nila py-4 pl-7 pr-6 text-[17px] font-bold text-white transition-all duration-300 hover:bg-[#24407a]"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-4 font-bold text-white max-md:w-full"
             >
               Start exploring
               <i class="ph-bold ph-arrow-right text-2xl"></i>
             </a>
             <a
               href="#"
-              class="flex items-center gap-2.5 rounded-full bg-white py-4 pl-5.5 pr-7 text-[17px] font-bold text-nila transition-all duration-300 hover:bg-krem-tua"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-4 px-6 font-bold text-nila max-md:w-full"
             >
               <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
               Chat with Gali
@@ -540,17 +530,21 @@
         </div>
       </div>
     </section>
-    <main class="px-25 py-10 relative -mt-10 z-3 bg-krem rounded-t-[50px] mb-0">
-      <!-- situation  -->
+    <main
+      class="px-25 py-10 relative -mt-10 z-3 bg-krem rounded-t-[50px] mb-0 max-lg:p-10 w-full overflow-hidden max-md:px-10 max-sm:px-5"
+    >
+      <!-- situation -->
       <section class="mt-50">
         <hgroup class="flex justify-between items-end">
-          <div class="flex flex-col">
+          <div class="flex flex-col max-md:gap-2">
             <p
               class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
             >
               SITUATIONS
             </p>
-            <h2 class="text-nila text-[52px] font-semibold tracking-[-0.52px]">
+            <h2
+              class="text-nila text-[52px] max-sm:text-4xl font-semibold tracking-[-0.52px]"
+            >
               Find your
               <span class="text-biru-aksen font-unbounded font-black"
                 >SITUATION</span
@@ -562,15 +556,15 @@
           </div>
           <a
             href="#"
-            class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit"
-            >See all 6 situations<i class="ph-bold ph-arrow-right"></i
-          ></a>
+            class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit max-md:hidden"
+          >
+            See all 6 situations
+            <i class="ph-bold ph-arrow-right"></i>
+          </a>
         </hgroup>
-        <div
-          class="my-10 grid w-full gap-6 grid-cols-[2fr_1fr_1fr] grid-rows-[1fr_1fr] max-md:"
-        >
+        <div class="my-10 w-full gap-10 flex max-xl:flex-col">
           <div
-            class="h-fit relative overflow-hidden rounded-4xl bg-terakota p-10 text-white row-span-2"
+            class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white w-1/2 max-xl:w-full max-sm:p-7"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -588,26 +582,28 @@
                 stroke-linejoin="round"
               />
             </svg>
+
             <div class="relative">
-              <div class="flex items-center justify-between gap-4">
-                <span
-                  class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5"
-                  >Most popular</span
+              <div class="flex items-center justify-between gap-4 max-sm:gap-0">
+                <p
+                  class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5 max-sm:text-xs"
                 >
-                <span class="text-sm font-medium"
-                  >8 phrases · ID &amp; Sunda</span
-                >
+                  Most popular
+                </p>
+                <p class="text-sm font-medium text-right max-sm:text-xs">
+                  8 phrases · ID &amp; Sunda
+                </p>
               </div>
 
               <h2
                 class="uppercase font-unbounded font-black mt-6 text-[52px] tracking-[-1.68px]"
               >
-                LOCAL SHOP
+                STALL
               </h2>
 
               <p class="mt-3 max-w-120 text-[17px] leading-6.5">
-                Buying snacks, asking prices, and saying thanks at a small local
-                shop.
+                Buying snacks, asking prices, and saying thanks at a small food
+                stall.
               </p>
 
               <ul class="mt-4.75 space-y-3">
@@ -655,7 +651,7 @@
                       Terima kasih, Bu!
                     </p>
                     <p class="text-[13px] leading-4.5 text-nila/80">
-                      Thank you, ma’am!
+                      Thank you, ma'am!
                     </p>
                   </div>
                   <button
@@ -668,87 +664,97 @@
 
               <a
                 href="#"
-                class="mt-4 inline-flex h-11 items-center gap-2.5 rounded-full border border-white/60 px-5 text-sm font-semibold transition hover:bg-white hover:text-warung focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                class="mt-4 inline-flex h-11 items-center gap-2.5 rounded-full border border-white/60 px-5 text-sm font-semibold transition hover:bg-white hover:text-nila focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Open Warung
+                Open Stall
                 <i class="ph-bold ph-arrow-right"></i>
               </a>
             </div>
           </div>
           <div
-            class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl"
+            class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-4 max-md:flex max-md:overflow-x-scroll"
           >
-            <div class="flex justify-between items-center">
-              <i
-                class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-              ></i>
-              <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+            <div
+              class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full"
+            >
+              <div class="flex justify-between items-center">
+                <i
+                  class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"
+                ></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3
+                  class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                >
+                  SCHOOL
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold">
+                  In class &amp; with teachers · 5 phrases
+                </p>
+              </div>
             </div>
-            <div>
-              <h3
-                class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter"
-              >
-                SCHOOL
-              </h3>
-              <p class="text-nila/80 text-sm font-semibold">
-                In class & with teachers · 8 phrases
-              </p>
+            <div
+              class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full"
+            >
+              <div class="flex justify-between items-center">
+                <i
+                  class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"
+                ></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3
+                  class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                >
+                  MINIBUS
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold">
+                  Getting around town · 6 phrases
+                </p>
+              </div>
             </div>
-          </div>
-          <div class="flex flex-col justify-between p-7 bg-pasir rounded-4xl">
-            <div class="flex justify-between items-center">
-              <i
-                class="ph-bold ph-train p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-              ></i>
-              <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+            <div
+              class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full"
+            >
+              <div class="flex justify-between items-center">
+                <i
+                  class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"
+                ></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3
+                  class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                >
+                  SMALL TALK
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold">
+                  Meeting new people · 10 phrases
+                </p>
+              </div>
             </div>
-            <div>
-              <h3
-                class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter"
-              >
-                PUBLIC TRANSIT
-              </h3>
-              <p class="text-nila/80 text-sm font-semibold">
-                Getting around town · 8 phrases
-              </p>
-            </div>
-          </div>
-          <div
-            class="flex flex-col justify-between p-7 bg-matahari rounded-4xl"
-          >
-            <div class="flex justify-between items-center">
-              <i
-                class="ph-bold ph-hand-palm p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-              ></i>
-              <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
-            </div>
-            <div>
-              <h3
-                class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter"
-              >
-                introduction
-              </h3>
-              <p class="text-nila/80 text-sm font-semibold">
-                Meeting new people · 8 phrases
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col justify-between p-7 bg-nila rounded-4xl">
-            <div class="flex justify-between items-center">
-              <i
-                class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"
-              ></i>
-              <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
-            </div>
-            <div>
-              <h3
-                class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter"
-              >
-                EMERGENCY
-              </h3>
-              <p class="text-white/85 text-sm font-semibold">
-                When you need help · 8 phrases
-              </p>
+
+            <!-- EMERGENCY -->
+            <div
+              class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full"
+            >
+              <div class="flex justify-between items-center">
+                <i
+                  class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"
+                ></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
+              </div>
+              <div>
+                <h3
+                  class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter max-md:text-2xl"
+                >
+                  EMERGENCY
+                </h3>
+                <p class="text-white/85 text-sm font-semibold">
+                  When you need help · 6 phrases
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -771,23 +777,23 @@
             Start from the left. Each step takes just seconds.
           </p>
         </hgroup>
-        <div class="flex gap-10 mt-12">
-          <div class="flex flex-col gap-3 w-1/3">
-            <a
-              href="#"
-              class="flex gap-4 items-center text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl"
+        <div class="flex gap-10 mt-12 max-md:flex-col">
+          <div class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row">
+            <button
+              class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full"
             >
               <p class="font-unbounded font-black text-2xl">1</p>
               <div>
-                <h3 class="font-semibold text-xl">Pick your place</h3>
-                <p class="text-sm">
+                <h3 class="font-semibold text-xl max-sm:text-base">
+                  Pick <span class="max-md:hidden"> your place</span>
+                </h3>
+                <p class="text-md max-md:hidden">
                   Warung, school, angkot — choose the situation you are in.
                 </p>
               </div>
-            </a>
-            <a
-              href="#"
-              class="group flex gap-4 items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl"
+            </button>
+            <button
+              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
             >
               <p
                 class="font-unbounded font-black text-2xl text-terakota group-active:text-white"
@@ -795,15 +801,16 @@
                 2
               </p>
               <div>
-                <h3 class="font-semibold text-xl">Listen & repeat</h3>
-                <p class="text-sm">
+                <h3 class="font-semibold text-xl max-sm:text-base">
+                  Listen <span class="max-md:hidden"> & repeat</span>
+                </h3>
+                <p class="text-md max-md:hidden">
                   Play it, slow it down if you need, then say it out loud.
                 </p>
               </div>
-            </a>
-            <a
-              href="#"
-              class="group flex gap-4 items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl"
+            </button>
+            <button
+              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
             >
               <p
                 class="font-unbounded font-black text-2xl text-hijau group-active:text-white"
@@ -811,39 +818,41 @@
                 3
               </p>
               <div>
-                <h3 class="font-semibold text-xl">Quiz with Gali</h3>
-                <p class="text-sm">
+                <h3 class="font-semibold text-xl max-sm:text-base">
+                  Quiz <span class="max-md:hidden"> with Gali</span>
+                </h3>
+                <p class="text-sm max-md:hidden">
                   Short rounds to make it stick, plus the manners behind it.
                 </p>
               </div>
-            </a>
+            </button>
           </div>
           <!-- 01 -->
-          <div class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl">
+          <div class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5">
             <p class="text-xs text-nila">STEP 1 · PICK YOUR PLACE</p>
             <h3 class="text-3xl font-bold text-nila">Where are you today?</h3>
-            <div class="grid grid-cols-3 gap-3">
-              <div class="bg-terakota text-white p-5 gap-1.5 rounded-3xl">
+            <div class="grid grid-cols-3 gap-3 max-xl:grid-cols-2">
+              <div class="bg-terakota text-white p-5 gap-1.5 rounded-3xl max-sm:">
                 <h4 class="text-2xl font-bold capitalize">Local Shop</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl">
+              <div class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl ma">
                 <h4 class="text-2xl font-bold capitalize">School</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl">
+              <div class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl ma">
                 <h4 class="text-2xl font-bold capitalize">public transit</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl">
+              <div class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl ma">
                 <h4 class="text-2xl font-bold capitalize">Introduction</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-nila text-white p-5 gap-1.5 rounded-3xl">
+              <div class="bg-nila text-white p-5 gap-1.5 rounded-3xl ma">
                 <h4 class="text-2xl font-bold capitalize">Emergency</h4>
                 <p class="text-xs">6 phrases</p>
               </div>
-              <div class="bg-krem text-nila p-5 gap-1.5 rounded-3xl">
+              <div class="bg-krem text-nila p-5 gap-1.5 rounded-3xl ma">
                 <h4 class="text-2xl font-bold capitalize">All situations</h4>
                 <p class="text-xs">8 in total</p>
               </div>
@@ -1607,7 +1616,7 @@
             GAULINGO · 2026
           </p>
           <div
-            class="flex justify-between gap-4 items-center text-7xl font-unbounded font-black tracking-[-2.04] uppercase"
+            class="flex flex-wrap justify-between gap-4 items-center text-[5vw] text-nowrap font-unbounded font-black tracking-[-2.04] uppercase"
           >
             <h2>SAY IT</h2>
             <h2>LIKE A</h2>
@@ -1626,35 +1635,34 @@
               Start exploring <i class="ph-bold ph-arrow-right text-base"></i>
             </a>
 
-            <!-- Ikon Sosial Media Ring -->
             <div class="flex items-center gap-2">
               <a
                 href="#"
-                class="w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10 transition duration-200"
+                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
                 aria-label="Instagram"
               >
-                <i class="ph-bold ph-instagram-logo text-xl"></i>
+                <i class="ph-bold ph-instagram-logo text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10 transition duration-200"
+                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
                 aria-label="TikTok"
               >
-                <i class="ph-bold ph-tiktok-logo text-xl"></i>
+                <i class="ph-bold ph-tiktok-logo text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10 transition duration-200"
+                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
                 aria-label="YouTube"
               >
-                <i class="ph-bold ph-youtube-logo text-xl"></i>
+                <i class="ph-bold ph-youtube-logo text-2xl"></i>
               </a>
               <a
                 href="#"
-                class="w-11 h-11 rounded-full border border-white/30 text-white flex items-center justify-center hover:bg-white/10 transition duration-200"
+                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
                 aria-label="Email"
               >
-                <i class="ph-bold ph-envelope text-xl"></i>
+                <i class="ph-bold ph-envelope text-2xl"></i>
               </a>
             </div>
           </div>
@@ -1662,22 +1670,22 @@
         <div
           class="relative z-10 pt-6 border-t border-white/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs sm:text-sm text-white/70"
         >
-          <p>© 2026 Gaulingo · IDN IT Fest 2026</p>
+          <p>© 2026 Gaulingo · Glomind Team</p>
           <nav class="flex gap-6 flex-wrap font-medium">
             <a href="#" class="hover:text-white transition">Situations</a>
-            <a href="#" class="hover:text-white transition">Practice</a>
             <a href="#" class="hover:text-white transition">Culture</a>
+            <a href="#" class="hover:text-white transition">Practice</a>
             <a href="#" class="hover:text-white transition">About</a>
           </nav>
         </div>
         <div
           class="relative w-full overflow-hidden leading-none select-none pointer-events-none pt-4 -mb-6 sm:-mb-10"
         >
-          <span
-            class="block text-center font-black text-[15vw] tracking-tighter text-white/10 uppercase leading-none"
+          <p
+            class="block text-center font-black text-[12vw] font-unbounded tracking-[2.04] text-white/10 uppercase"
           >
             GAULINGO
-          </span>
+          </p>
         </div>
       </footer>
     </main>
