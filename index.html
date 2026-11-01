@@ -543,7 +543,7 @@
               SITUATIONS
             </p>
             <h2
-              class="text-nila text-[52px] max-sm:text-4xl font-semibold tracking-[-0.52px]"
+              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
             >
               Find your
               <span class="text-biru-aksen font-unbounded font-black"
@@ -672,7 +672,7 @@
             </div>
           </div>
           <div
-            class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-4 max-md:flex max-md:overflow-x-scroll"
+            class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll"
           >
             <div
               class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full"
@@ -761,13 +761,15 @@
       </section>
       <!-- how it works section -->
       <section class="mt-50">
-        <hgroup class="flex flex-col">
+        <hgroup class="flex flex-col max-md:gap-2">
           <p
             class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
           >
             How it works
           </p>
-          <h2 class="text-nila text-[52px] font-semibold tracking-[-0.52px]">
+          <h2
+            class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+          >
             Three steps to your first
             <span class="text-biru-aksen font-unbounded font-black"
               >NGOBROL</span
@@ -778,7 +780,9 @@
           </p>
         </hgroup>
         <div class="flex gap-10 mt-12 max-md:flex-col">
-          <div class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row">
+          <div
+            class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row"
+          >
             <button
               class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full"
             >
@@ -828,45 +832,65 @@
             </button>
           </div>
           <!-- 01 -->
-          <div class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5">
+          <div
+            class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5"
+          >
             <p class="text-xs text-nila">STEP 1 · PICK YOUR PLACE</p>
             <h3 class="text-3xl font-bold text-nila">Where are you today?</h3>
-            <div class="grid grid-cols-3 gap-3 max-xl:grid-cols-2">
-              <div class="bg-terakota text-white p-5 gap-1.5 rounded-3xl max-sm:">
+            <div
+              class="grid grid-cols-3 gap-3 max-xl:grid-cols-2 [@media(max-width:430px)]:grid-cols-1"
+            >
+              <div
+                class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">Local Shop</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl ma">
+              <div
+                class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">School</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl ma">
+              <div
+                class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">public transit</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl ma">
+              <div
+                class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">Introduction</h4>
                 <p class="text-xs">8 phrases</p>
               </div>
-              <div class="bg-nila text-white p-5 gap-1.5 rounded-3xl ma">
+              <div
+                class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">Emergency</h4>
                 <p class="text-xs">6 phrases</p>
               </div>
-              <div class="bg-krem text-nila p-5 gap-1.5 rounded-3xl ma">
+              <div
+                class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+              >
                 <h4 class="text-2xl font-bold capitalize">All situations</h4>
                 <p class="text-xs">8 in total</p>
               </div>
             </div>
           </div>
           <!-- 02 -->
-          <div class="p-10 hidden flex-col gap-6 bg-white w-full rounded-4xl">
+          <div
+            class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
+          >
             <p class="text-xs text-terakota uppercase">
               STEP 2 · LISTEN &amp; REPEAT
             </p>
             <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-            <p class="font-semibold text-nila mb-2">"How much is this?"</p>
+            <p class="font-semibold text-nila mb-2 max-sm:mb-4">
+              "How much is this?"
+            </p>
             <div
-              class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white"
+              class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white max-sm:mb-4"
             >
               <button
                 class="shrink-0 w-11 h-11 rounded-full bg-terakota text-white flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0 shadow-sm"
@@ -891,7 +915,9 @@
             </div>
           </div>
           <!-- 03 -->
-          <div class="p-10 hidden flex-col gap-6 bg-white w-full rounded-4xl">
+          <div
+            class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
+          >
             <p class="text-xs text-terakota uppercase">
               STEP 3 · QUIZ WITH GALI
             </p>
@@ -969,17 +995,19 @@
           </div>
         </div>
       </section>
-      <!-- PHRASE OF THE DAY -->
+      <!-- phrase of the day -->
       <section class="mt-50 p-10 bg-nila rounded-4xl">
-        <hgroup class="flex justify-between items-center mb-8">
+        <hgroup
+          class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-8"
+        >
           <p class="text-matahari uppercase font-bold tracking-wider">
             PHRASE OF THE DAY
           </p>
           <div
-            class="inline-flex items-center p-1 rounded-full border-2 border-white"
+            class="inline-flex max-md:w-full max-md:justify-between items-center p-1 rounded-full border-2 border-white max-w-xs"
           >
             <label
-              class="px-6 py-3 bg-matahari text-nila rounded-full text-sm font-semibold"
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center bg-matahari text-nila rounded-full [@media(max-width:430px)]:text-sm font-semibold"
             >
               <input
                 type="radio"
@@ -991,7 +1019,7 @@
               Indonesia
             </label>
             <label
-              class="px-6 py-3 rounded-full text-sm font-semibold text-white"
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
             >
               <input
                 type="radio"
@@ -1002,7 +1030,7 @@
               Sunda
             </label>
             <label
-              class="px-6 py-3 rounded-full text-sm font-semibold text-white"
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
             >
               <input
                 type="radio"
@@ -1014,16 +1042,20 @@
             </label>
           </div>
         </hgroup>
-        <div class="flex justify-between gap-15">
-          <div class="flex flex-col gap-5 w-3/4">
-            <h3 class="font-unbounded font-black text-6xl text-krem">
+        <div class="flex max-md:flex-col justify-between gap-15 max-md:gap-7.5">
+          <div
+            class="flex flex-col gap-5 w-3/4 max-md:w-full max-md:border-b-2 max-md:border-white/20 max-md:pb-7.5"
+          >
+            <h3
+              class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem"
+            >
               Terima kasih banyak!
             </h3>
-            <div class="flex gap-4 items-center text-white">
+            <div class="flex gap-4 items-start flex-wrap text-white">
               <p class="px-4 py-2 border border-white rounded-full">
                 teh-REE-mah KAH-see BAH-nyak
               </p>
-              <p>"Thank you very much!"</p>
+              <p class="py-2 flex items-center">"Thank you very much!"</p>
             </div>
             <div class="flex gap-4 text-white">
               <button
@@ -1059,18 +1091,21 @@
           >
             WHY GAULINGO
           </p>
-          <h2 class="text-nila text-[52px] font-semibold tracking-[-0.52px]">
+          <h2
+            class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+          >
             Not your usual
-            <span class="text-biru-aksen font-unbounded font-black"
+            <span
+              class="text-biru-aksen font-unbounded font-black [@media(max-width:430px)]:text-3xl"
               >PHRASEBOOK</span
             >
           </h2>
-          <p class="text-lg text-nila/80 font-medium">
+          <p class="text-lg text-nila/80 font-medium max-md:text-base">
             Most phrasebooks teach sentences nobody says. Gaulingo teaches what
             people actually say, and how to say it politely.
           </p>
         </hgroup>
-        <div class="flex gap-6 mt-5">
+        <div class="flex gap-6 mt-5 max-md:flex-col">
           <div
             class="bg-krem-tua rounded-3xl p-8 sm:p-10 flex flex-col gap-6 grow"
           >
@@ -1219,7 +1254,7 @@
       </section>
       <!-- AI buddy -->
       <section
-        class="flex mt-50 p-10 gap-20 bg-pasir rounded-4xl justify-between items-center"
+        class="flex mt-50 p-10 gap-20 bg-pasir rounded-4xl justify-between items-center max-xl:flex-col"
       >
         <div class="flex flex-col gap-5">
           <hgroup class="flex flex-col">
@@ -1228,7 +1263,9 @@
             >
               AI BUDDY
             </p>
-            <h2 class="text-nila text-[52px] font-semibold tracking-[-0.52px]">
+            <h2
+              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+            >
               Stuck? Just ask
               <span class="text-biru-aksen font-unbounded font-black"
                 >GALI.</span
@@ -1240,6 +1277,11 @@
               audio.
             </p>
           </hgroup>
+          <img
+            src="./src/assets/chat-ilustration-mobile.png"
+            alt="gali ilustration"
+            class="hidden shrink-0 w-full h-auto rounded-2xl object-cover max-md:flex max-w-xs"
+          />
           <p>Try asking</p>
           <div class="flex gap-5 flex-wrap">
             <button class="px-4 py-2 bg-white rounded-full text-nila font-bold">
@@ -1265,7 +1307,7 @@
           </p>
         </div>
         <div>
-          <img src="./src/assets/gali-chat.webp" alt="Chat with gali" />
+          <img src="./src/assets/gali-chat.webp" alt="Chat with gali" class="max-md:hidden min-w-lg" />
         </div>
       </section>
       <!-- FAQ -->
