@@ -1254,61 +1254,86 @@
       </section>
       <!-- AI buddy -->
       <section
-        class="flex mt-50 p-10 gap-20 bg-pasir rounded-4xl justify-between items-center max-xl:flex-col"
+        class="flex mt-32 p-10 gap-16 bg-pasir rounded-4xl justify-between items-center max-lg:flex-col max-lg:gap-10 max-md:p-6 max-md:mt-16 max-sm:p-5 max-sm:mt-10 max-sm:rounded-3xl overflow-hidden"
       >
-        <div class="flex flex-col gap-5">
-          <hgroup class="flex flex-col">
+        <div
+          class="flex flex-col gap-5 max-w-2xl max-xl:max-w-xl max-lg:max-w-full"
+        >
+          <hgroup class="flex flex-col gap-3">
             <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
+              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
             >
               AI BUDDY
             </p>
             <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+              class="text-nila text-[52px] font-semibold tracking-[-0.52px] leading-tight max-lg:text-5xl max-sm:text-4xl max-[375px]:text-3xl"
             >
               Stuck? Just ask
               <span class="text-biru-aksen font-unbounded font-black"
                 >GALI.</span
               >
             </h2>
-            <p class="text-lg text-nila/80 font-medium">
+            <p class="text-lg text-nila/80 font-medium max-sm:text-base">
               Ask how to say something, what a word means, or whether it sounds
               polite. Gali answers in simple English and Bahasa Indonesia, with
               audio.
             </p>
           </hgroup>
+
+          <!-- Gambar Ilustrasi Mobile (Muncul hanya di layar < 768px) -->
           <img
             src="./src/assets/chat-ilustration-mobile.png"
             alt="gali ilustration"
-            class="hidden shrink-0 w-full h-auto rounded-2xl object-cover max-md:flex max-w-xs"
+            class="hidden max-md:block shrink-0 w-full max-w-xs h-auto rounded-2xl object-cover self-center my-2"
           />
-          <p>Try asking</p>
-          <div class="flex gap-5 flex-wrap">
-            <button class="px-4 py-2 bg-white rounded-full text-nila font-bold">
+
+          <p class="text-nila font-medium text-base max-sm:text-sm">
+            Try asking
+          </p>
+
+          <!-- Tombol Suggestion -->
+          <div class="flex gap-4 flex-wrap max-sm:gap-2.5">
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+            >
               How do I say "no spicy"?
             </button>
-            <button class="px-4 py-2 bg-white rounded-full text-nila font-bold">
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+            >
               Is "Bang" polite?
             </button>
-            <button class="px-4 py-2 bg-white rounded-full text-nila font-bold">
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+            >
               Teach me to bargain
             </button>
-            <button class="px-4 py-2 bg-white rounded-full text-nila font-bold">
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+            >
               What does "gas" mean?
             </button>
           </div>
+
+          <!-- Tombol CTA -->
           <a
             href="#"
-            class="px-6 py-3 bg-nila text-white rounded-full w-fit text-lg flex items-center gap-2"
-            ><i class="ph-fill ph-chat-circle-dots"></i> Start chatting</a
+            class="px-6 py-3 bg-nila text-white rounded-full w-fit text-lg flex items-center gap-2 hover:opacity-95 transition-opacity max-sm:px-5 max-sm:py-2.5 max-sm:text-base mt-2"
           >
-          <p class="text-sm text-nila">
+            <i class="ph-fill ph-chat-circle-dots"></i> Start chatting
+          </a>
+
+          <p class="text-sm text-nila max-sm:text-xs">
             Gali can make mistakes. Check important info with a local.
           </p>
         </div>
-        <div>
-          <img src="./src/assets/gali-chat.webp" alt="Chat with gali" class="max-md:hidden min-w-lg" />
-        </div>
+
+        <!-- Gambar Ilustrasi Desktop (Sembunyi di layar < 768px) -->
+        <img
+          src="./src/assets/gali-chat.webp"
+          alt="Chat with gali"
+          class="w-full max-w-md shrink-0 object-contain max-lg:max-w-sm max-md:hidden"
+        />
       </section>
       <!-- FAQ -->
       <section class="mt-50">
@@ -1319,7 +1344,7 @@
             FAQ
           </p>
           <h2
-            class="relative w-fit text-nila text-[52px] font-unbounded font-black tracking-[-0.52px]"
+            class="relative w-fit font-unbounded font-black text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl tracking-[-0.52px]"
           >
             STILL GOT
             <span class="text-terakota">QUESTIONS?</span>
@@ -1338,7 +1363,7 @@
             </svg>
           </h2>
           <i
-            class="ph ph-question-mark text-7xl text-nila/20 absolute right-0 bottom-0"
+            class="ph ph-question-mark text-7xl text-nila/20 absolute right-0 bottom-0 max-md:hidden"
           ></i>
         </hgroup>
         <div class="gap-y-4">
@@ -1612,8 +1637,8 @@
         class="bg-nila rounded-3xl relative p-10 text-white flex flex-row items-center justify-between gap-8 mt-50"
       >
         <div class="relative z-1 flex flex-col gap-4 w-full">
-          <h2 class="text-6xl font-black tracking-tight">
-            Ready to <span class="text-matahari font-unbounded">NGOBROL</span>?
+          <h2 class="text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
+            Ready to <span class="text-matahari font-black font-unbounded">NGOBROL</span>?
           </h2>
           <p class="text-lg font-medium leading-relaxed">
             Free, no sign-up, works on any phone. Start with one phrase today.
@@ -1647,7 +1672,7 @@
       </section>
       <!-- footer -->
       <footer
-        class="mt-50 bg-nila rounded-3xl overflow-hidden relative p-10 text-white flex flex-col justify-between gap-12"
+        class="mt-50 bg-nila rounded-3xl overflow-hidden relative p-10 text-white flex flex-col justify-between gap-12 max-md:gap-5"
       >
         <div
           class="absolute -right-20 -bottom-20 w-150 h-150 bg-white/10 rounded-full z-1"
@@ -1658,7 +1683,7 @@
             GAULINGO · 2026
           </p>
           <div
-            class="flex flex-wrap justify-between gap-4 items-center text-[5vw] text-nowrap font-unbounded font-black tracking-[-2.04] uppercase"
+            class="flex flex-wrap max-sm:flex-col justify-between max-sm:items-start max-sm:text-[13vw] gap-4 max-sm:gap-1 items-center text-[5vw] text-nowrap font-unbounded font-black tracking-[-2.04] uppercase"
           >
             <h2>SAY IT</h2>
             <h2>LIKE A</h2>
@@ -1677,7 +1702,7 @@
               Start exploring <i class="ph-bold ph-arrow-right text-base"></i>
             </a>
 
-            <div class="flex items-center gap-2">
+            <div class="flex items-center gap-2 max-sm:flex-wrap">
               <a
                 href="#"
                 class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
@@ -1721,7 +1746,7 @@
           </nav>
         </div>
         <div
-          class="relative w-full overflow-hidden leading-none select-none pointer-events-none pt-4 -mb-6 sm:-mb-10"
+          class="relative w-full overflow-hidden pt-4 -mb-6 sm:-mb-10"
         >
           <p
             class="block text-center font-black text-[12vw] font-unbounded tracking-[2.04] text-white/10 uppercase"
