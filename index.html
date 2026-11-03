@@ -16,31 +16,9 @@
     />
   </head>
   <body class="bg-[#fff8f8] font-figtree">
-    <!-- filter lensa untuk nav liquid glass (dipakai backdrop-filter di Chromium); ukuran & peta diisi JS -->
-    <svg aria-hidden="true" width="0" height="0" style="position: absolute">
-      <filter
-        id="liquid-glass"
-        filterUnits="userSpaceOnUse"
-        primitiveUnits="userSpaceOnUse"
-        x="0"
-        y="0"
-        width="1"
-        height="1"
-        color-interpolation-filters="sRGB"
-      >
-        <feImage id="liquid-glass-map" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="map" />
-        <feDisplacementMap
-          id="liquid-glass-bend"
-          in="SourceGraphic"
-          in2="map"
-          scale="0"
-          xChannelSelector="R"
-          yChannelSelector="G"
-        />
-      </filter>
-    </svg>
     <!-- header: bahasa di kiri, logo di tengah, tombol menu di kanan -->
     <header id="site-header" class="site-header">
+      <span class="site-header__glass" aria-hidden="true"></span>
       <div class="site-header__side">
         <div class="site-lang" role="group" aria-label="Language">
           <button type="button" class="site-lang__item" aria-pressed="true">EN</button>
@@ -1570,77 +1548,6 @@
         });
       });
 
-      // lensa kaca header (hanya didukung backdrop-filter Chromium). Seperti di Figma:
-      // GLASS_SPLAY = lebar pita lengkung dari tepi ke dalam (px), GLASS_DEPTH = seberapa kuat latar dibelokkan (px)
-      const GLASS_SPLAY = 26;
-      const GLASS_DEPTH = 34;
-      if (navigator.userAgentData?.brands?.some((b) => /Chromium/.test(b.brand))) {
-        document.documentElement.classList.add("lg-refract");
-        const glassHeader = document.getElementById("site-header");
-        const glassFilter = document.getElementById("liquid-glass");
-        const glassMap = document.getElementById("liquid-glass-map");
-        const glassBend = document.getElementById("liquid-glass-bend");
-        const canvas = document.createElement("canvas");
-        let glassSize = "";
-
-        // tiap piksel menyimpan arah sampling: R = geser x, G = geser y (128 = diam).
-        // Dekat tepi pill, latar diambil dari arah dalam sehingga tepinya tampak melengkung seperti lensa.
-        const buildGlassMap = () => {
-          const before = getComputedStyle(glassHeader, "::before");
-          const w = Math.round(parseFloat(before.width));
-          const h = Math.round(parseFloat(before.height));
-          if (!w || !h || `${w}x${h}` === glassSize) return;
-          glassSize = `${w}x${h}`;
-
-          canvas.width = w;
-          canvas.height = h;
-          const ctx = canvas.getContext("2d");
-          const img = ctx.createImageData(w, h);
-          const r = h / 2;
-          for (let y = 0; y < h; y++) {
-            for (let x = 0; x < w; x++) {
-              // jarak bertanda ke tepi rounded-rect (negatif = di dalam) + normal tepinya
-              const px = x + 0.5 - w / 2;
-              const py = y + 0.5 - h / 2;
-              const qx = Math.abs(px) - (w / 2 - r);
-              const qy = Math.abs(py) - (h / 2 - r);
-              let nx = 0;
-              let ny = 0;
-              let dist;
-              if (qx > 0 && qy > 0) {
-                const len = Math.hypot(qx, qy);
-                dist = len - r;
-                nx = (qx / len) * Math.sign(px);
-                ny = (qy / len) * Math.sign(py);
-              } else if (qx > qy) {
-                dist = qx - r;
-                nx = Math.sign(px);
-              } else {
-                dist = qy - r;
-                ny = Math.sign(py);
-              }
-              const t = dist >= 0 ? 0 : Math.max(0, 1 - -dist / GLASS_SPLAY);
-              const s = t * t; // lengkung makin tajam mendekati tepi
-              const i = (y * w + x) * 4;
-              img.data[i] = 128 - nx * s * 127;
-              img.data[i + 1] = 128 - ny * s * 127;
-              img.data[i + 2] = 128;
-              img.data[i + 3] = 255;
-            }
-          }
-          ctx.putImageData(img, 0, 0);
-
-          for (const el of [glassFilter, glassMap]) {
-            el.setAttribute("width", w);
-            el.setAttribute("height", h);
-          }
-          glassMap.setAttribute("href", canvas.toDataURL());
-          glassBend.setAttribute("scale", GLASS_DEPTH);
-        };
-        buildGlassMap();
-        window.addEventListener("resize", buildGlassMap);
-      }
-
       // overlay menu
       const header = document.getElementById("site-header");
       const menu = document.getElementById("site-menu");
@@ -1667,6 +1574,28 @@
 
       const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
 
+      // liquid glass header: engine liquidglass.dev (MIT). Chromium membelokkan latar lewat backdrop-filter,
+      // browser lain jatuh ke blur biasa (fallback). Angka optik bisa diatur di sini.
+      import("./src/liquid-glass.js")
+        .then(({ createGlass }) =>
+          createGlass(header.querySelector(".site-header__glass"), {
+            mode: "backdrop",
+            fit: true,
+            radius: 999,
+            refraction: 30, // seberapa kuat latar dibelokkan di tepi (px)
+            bezel: 0.6, // lebar pita lengkung dari tepi ke dalam (0–1)
+            curvature: 4, // makin besar, tepi makin tajam
+            ior: 1.5,
+            chroma: 0.14, // warna pecah di tepi
+            blur: 1.5,
+            specular: 0.7, // kilau di rim
+            specularWidth: 2.5,
+            lightAngle: -120,
+            fallback: "blur(10px) saturate(1.7)",
+          }),
+        )
+        .catch(() => {});
+
       // parallax hero: --hero-p naik 0 → 1 selama satu layar pertama di-scroll
       const hero = document.getElementById("home");
       const updateHero = () => {
@@ -1678,18 +1607,6 @@
       // header baru muncul setelah halaman di-scroll
       const updateHeader = () =>
         header.classList.toggle("is-visible", window.scrollY > 80);
-
-      // kilau kaca header mengikuti kursor
-      window.addEventListener(
-        "pointermove",
-        (e) => {
-          if (!header.classList.contains("is-visible")) return;
-          const r = header.getBoundingClientRect();
-          header.style.setProperty("--gx", `${((e.clientX - r.left) / r.width) * 100}%`);
-          header.style.setProperty("--gy", `${((e.clientY - r.top) / r.height) * 100}%`);
-        },
-        { passive: true },
-      );
 
       // how it works: progres scroll di track menentukan langkah aktif, klik tab meluncur ke langkahnya
       const howTrack = document.getElementById("how-track");
