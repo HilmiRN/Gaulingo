@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./src/output.css" />
     <link rel="icon" type="image/x-icon" href="" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -14,228 +15,152 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#fff8f8] font-figtree relative">
-    <header
-      id="nav"
-      class="z-50 fixed top-10 left-1/2 -translate-x-1/2 flex w-150 py-3 items-center justify-between px-5 gap-2 rounded-4xl bg-white/20 border-white/60 backdrop-blur-md shadow-[0_10px_30px_rgba(47,76,138,0.12)] transition-all duration-500 motion-reduce:transition-none opacity-0 -translate-y-10 pointer-events-none data-shown:opacity-100 data-shown:translate-y-0 data-shown:pointer-events-auto max-md:w-[80vw]"
-    >
-      <a
-        href="#"
-        class="text-white rounded-2xl w-15 h-12.5 p-2.5 bg-nila text-3xl flex justify-center items-center max-md:px-4 max-md:py-2"
+  <body class="bg-[#fff8f8] font-figtree">
+    <!-- filter lensa untuk nav liquid glass (dipakai backdrop-filter di Chromium); ukuran & peta diisi JS -->
+    <svg aria-hidden="true" width="0" height="0" style="position: absolute">
+      <filter
+        id="liquid-glass"
+        filterUnits="userSpaceOnUse"
+        primitiveUnits="userSpaceOnUse"
+        x="0"
+        y="0"
+        width="1"
+        height="1"
+        color-interpolation-filters="sRGB"
       >
-        <i class="ph ph-chat-circle-dots"></i>
-      </a>
-      <img src="./src/assets/logo.svg" alt="logo" />
-      <button
-        onclick="openMenu()"
-        class="px-6 py-3.75 rounded-full gap-2.5 text-white font-semibold text-lg bg-nila max-md:px-4 max-md:py-2"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#fff"
-          stroke-width="2.5"
-          stroke-linecap="round"
-        >
-          <line x1="4" y1="8" x2="20" y2="8" />
-          <line x1="4" y1="16" x2="20" y2="16" />
-        </svg>
-      </button>
-    </header>
-    <div
-      id="menu"
-      class="fixed inset-0 hidden flex-col justify-between text-white overflow-hidden bg-nila z-60 p-10"
-    >
-      <svg
-        class="absolute -right-100 -bottom-100 w-200 h-200 pointer-events-none opacity-50 -z-1"
-        viewBox="0 0 800 800"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <circle cx="400" cy="400" r="400" fill="#3B5C9E" />
-      </svg>
-      <div class="flex justify-between">
-        <div class="flex items-center gap-2">
-          <i
-            class="ph-fill ph-chat-circle-dots text-nila rounded-2xl w-12 h-12 p-2.5 bg-matahari text-3xl flex justify-center items-center"
-          ></i>
-
-          <p class="text-2xl font-semibold text-white">GAULINGO</p>
+        <feImage id="liquid-glass-map" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="map" />
+        <feDisplacementMap
+          id="liquid-glass-bend"
+          in="SourceGraphic"
+          in2="map"
+          scale="0"
+          xChannelSelector="R"
+          yChannelSelector="G"
+        />
+      </filter>
+    </svg>
+    <!-- header: bahasa di kiri, logo di tengah, tombol menu di kanan -->
+    <header id="site-header" class="site-header">
+      <div class="site-header__side">
+        <div class="site-lang" role="group" aria-label="Language">
+          <button type="button" class="site-lang__item" aria-pressed="true">EN</button>
+          <button type="button" class="site-lang__item" aria-pressed="false">ID</button>
         </div>
-        <a
-          href="javascript:void(0)"
-          onclick="closeMenu()"
-          class="flex gap-2.5 px-6 py-3.75 border-2 items-center text-white text-xl border-white/50 rounded-full"
-        >
-          <i class="ph-bold ph-x"></i>
-        </a>
       </div>
-      <nav class="mt-10">
-        <ul class="list-none flex flex-col gap-[-100px]">
-          <li
-            class="flex justify-between items-center px-4"
-            onclick="closeMenu()"
-          >
-            <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">01</p>
-              <h3
-                class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
-              >
-                Home
-              </h3>
-            </a>
-            <p class="text-white/55 font-medium flex gap-5 items-center">
-              Mulai di sini <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
-          </li>
-          <li
-            class="flex justify-between items-center bg-white/25 rounded-2xl px-4"
-          >
-            <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">02</p>
+      <a href="index.html" class="site-header__brand" aria-label="Gaulingo, home">
+        <span>GAULINGO</span>
+      </a>
+      <div class="site-header__side site-header__side--end">
+        <button
+          id="menu-toggle"
+          type="button"
+          class="site-menu-toggle roll-host"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span class="site-menu-toggle__pill" aria-hidden="true">
+            <span class="site-menu-toggle__label site-menu-toggle__label--menu" data-roll>Menu</span>
+            <span class="site-menu-toggle__label site-menu-toggle__label--close" data-roll>Close</span>
+          </span>
+          <span class="site-menu-toggle__disc" aria-hidden="true">
+            <span class="site-menu-toggle__diamond"></span>
+            <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
+          </span>
+        </button>
+      </div>
+    </header>
 
-              <h3
-                class="text-[66px] font-black text-matahari font-unbounded uppercase tracking-[-1.98px]"
-              >
-                SITUATIONS
-              </h3>
-            </a>
-            <p class="text-matahari font-medium flex gap-5 items-center">
-              6 tempat sehari-hari
-
-              <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
+    <!-- overlay menu: turun dari atas, link berundak dari kiri ke kanan -->
+    <div id="site-menu" class="site-menu" aria-hidden="true" inert>
+      <nav class="site-menu__inner" aria-label="Main navigation">
+        <ul class="site-menu__list" style="--last: 5">
+          <li class="site-menu__item is-active" style="--i: 0">
+            <div class="site-menu__row">
+              <a href="index.html" class="site-menu__link roll-host" aria-current="page">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">01</span>
+                  <span data-roll>Home</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
           </li>
-          <li
-            class="flex justify-between items-center px-4"
-            onclick="closeMenu()"
-          >
-            <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">03</p>
-              <h3
-                class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
-              >
-                CULTURE
-              </h3>
-            </a>
-            <p class="text-white/55 font-medium flex gap-5 items-center">
-              Tips sopan santun
-              <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
+          <li class="site-menu__item" style="--i: 1">
+            <div class="site-menu__row">
+              <a href="situations.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">02</span>
+                  <span data-roll>Situations</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
           </li>
-          <li
-            class="flex justify-between items-center px-4"
-            onclick="closeMenu()"
-          >
-            <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">04</p>
-              <h3
-                class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
-              >
-                PRACTICE
-              </h3>
-            </a>
-            <p class="text-white/55 font-medium flex gap-5 items-center">
-              Kuis & streak <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
+          <li class="site-menu__item" style="--i: 2">
+            <div class="site-menu__row">
+              <a href="culture.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">03</span>
+                  <span data-roll>Culture</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
           </li>
-          <li
-            class="flex justify-between items-center px-4"
-            onclick="closeMenu()"
-          >
-            <a href="#" class="flex gap-10 items-center">
-              <p class="text-matahari">06</p>
-              <h3
-                class="text-[66px] font-black text-white font-unbounded uppercase tracking-[-1.98px]"
-              >
-                ABOUT
-              </h3>
-            </a>
-            <p class="text-white/55 font-medium flex gap-5 items-center">
-              Tim & sumber data
-              <i class="ph-bold ph-arrow-up-right text-3xl"></i>
-            </p>
+          <li class="site-menu__item" style="--i: 3">
+            <div class="site-menu__row">
+              <a href="practice.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">04</span>
+                  <span data-roll>Practice</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 4">
+            <div class="site-menu__row">
+              <a href="saved.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">05</span>
+                  <span data-roll>Saved</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item is-last" style="--i: 5">
+            <div class="site-menu__row">
+              <a href="about.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">06</span>
+                  <span data-roll>About</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
           </li>
         </ul>
+        <!-- link sekunder menempel di dasar layar, terpisah dari daftar menu yang di tengah -->
+        <ul class="site-menu__secondary">
+          <li><a href="#" class="roll-host"><i class="ph-fill ph-chat-circle-dots"></i><span data-roll>Chat with Gali</span></a></li>
+          <li><a href="#" class="roll-host"><span data-roll>Instagram</span></a></li>
+          <li><a href="#" class="roll-host"><span data-roll>TikTok</span></a></li>
+          <li><a href="#" class="roll-host"><span data-roll>YouTube</span></a></li>
+        </ul>
       </nav>
-      <div
-        class="relative z-10 border border-white/50 rounded-3xl px-7 py-5 flex flex-row gap-30 items-center justify-between"
-      >
-        <div class="flex items-center gap-4 w-1/3">
-          <img
-            class="w-12 h-12 rounded-full overflow-hidden shrink-0 flex items-center justify-center text-xl"
-            src="./src/assets/Illustration.png"
-            alt="Gali Ilustration"
-          />
-          <div>
-            <h4 class="font-bold text-2xl">Bingung mau ke mana?</h4>
-            <p class="text-sm text-white/70">
-              Bilang aja ke Gali, nanti dia antar.
-            </p>
-          </div>
-        </div>
-        <div class="flex items-center gap-15 justify-between">
-          <button
-            class="bg-matahari text-nila font-bold px-5 py-2.5 rounded-full flex items-center gap-2"
-          >
-            <i class="ph-fill ph-chat-circle-dots text-xl"></i>
-            <p>Chat</p>
-          </button>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs font-bold text-matahari tracking-wide uppercase">
-              Bahasa
-            </p>
-            <div
-              class="bg-white/20 p-1 rounded-full flex items-center font-bold"
-            >
-              <button class="bg-white text-nila px-3 py-1 rounded-full">
-                EN
-              </button>
-              <button class="text-white/70 px-3 py-1 rounded-full">ID</button>
-            </div>
-          </div>
-          <div class="flex flex-col gap-1">
-            <p class="text-xs font-bold text-matahari tracking-wide uppercase">
-              Ikuti Kami
-            </p>
-            <div class="flex items-center gap-2">
-              <a
-                href="#"
-                class="rounded-full border border-white/30 flex items-center justify-center p-2"
-              >
-                <i class="ph ph-instagram-logo text-2xl"></i>
-              </a>
-              <a
-                href="#"
-                class="rounded-full border border-white/30 flex items-center justify-center p-2"
-              >
-                <i class="ph ph-tiktok-logo text-2xl"></i>
-              </a>
-              <a
-                href="#"
-                class="rounded-full border border-white/30 flex items-center justify-center p-2"
-              >
-                <i class="ph ph-youtube-logo text-2xl"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-    <!-- hero -->
-    <div
-      class="relative h-[200vh] top-0 z-0 w-full bg-[#fff8f8] flex justify-center py-5 max-md:py-2"
+
+    <!-- hero: semua ukuran diskalakan dari frame Figma 1360x930 lewat --u -->
+    <section
+      id="home"
+      class="hero-parallax sticky top-10 w-[calc(100vw-80px)] h-[calc(100vh-40px)] -z-1 isolate mx-10 mt-10 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir [container-type:size]"
     >
-      <section
-        class="w-[calc(100vw-80px)] h-[calc(100vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(100vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size relative isolate"
+      <div
+        class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]"
       >
-        <div
-          class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]"
-        >
-          <svg
+        <svg
             viewBox="0 0 1360 930"
             role="img"
             class="absolute -bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2 max-2xl:bottom-10 max-md:bottom-5"
@@ -527,51 +452,45 @@
               </g>
             </g>
           </svg>
-          <div
-            class="absolute inset-x-0 top-10 max-lg:top-20 max-md:top-1/6 flex flex-col items-center text-center text-nila"
+        <div
+          class="hero-parallax__text absolute inset-x-0 top-[calc(100%-876*var(--u))] flex flex-col items-center text-center text-nila"
+        >
+          <h1
+            class="font-unbounded font-black text-[calc(104*var(--u))] leading-[0.96] tracking-[-0.03em]"
           >
-            <h1
-              class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
+            TALK LIKE<br />
+            THE LOCALS DO
+          </h1>
+          <p
+            class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
+          >
+            Real phrases. Real places. Real manners.
+          </p>
+          <div class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap justify-center gap-3">
+            <a
+              href="#situations"
+              class="flex items-center gap-2.5 rounded-full border-b-6 border-white bg-nila py-4 pl-7 pr-6 text-[17px] font-bold text-white transition-all duration-300 hover:bg-[#24407a]"
             >
-              TALK<br class="md:hidden" />
-              LIKE<br class="max-md:hidden" />
-              THE LOCALS DO
-            </h1>
-            <p
-              class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
+              Start exploring
+              <img src="./src/assets/hero/ikon-panah.svg" alt="" width="20" height="20" />
+            </a>
+            <a
+              href="#"
+              class="flex items-center gap-2.5 rounded-full bg-white py-4 pl-5.5 pr-7 text-[17px] font-bold text-nila transition-all duration-300 hover:bg-krem-tua"
             >
-              Real phrases. Real places. Real manners.
-            </p>
-            <div
-              class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3"
-            >
-              <a
-                href="#"
-                class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-4 font-bold text-white max-md:w-full"
-              >
-                Start exploring
-                <i class="ph-bold ph-arrow-right text-2xl"></i>
-              </a>
-              <a
-                href="#"
-                class="flex items-center justify-center gap-2.5 rounded-full bg-white py-4 px-6 font-bold text-nila max-md:w-full"
-              >
-                <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
-                Chat with Gali
-              </a>
-            </div>
+              <img src="./src/assets/hero/ikon-chat.svg" alt="" width="20" height="20" />
+              Chat with Gali
+            </a>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <!-- MAIN CONTAINER -->
     <main
-      id="main-content"
-      class="px-25 py-10 relative -mt-10 z-10 bg-krem rounded-t-[50px] rounded-b-[40px] md:rounded-b-[50px] shadow-2xl mb-0 max-lg:p-10 w-full overflow-hidden max-md:px-10 max-sm:px-5 transition-transform duration-100 ease-out"
+      class="px-25 py-10 relative -mt-10 z-3 bg-krem rounded-t-[50px] mb-0 max-lg:p-10 w-full overflow-x-clip max-md:px-10 max-sm:px-5"
     >
       <!-- situation -->
-      <section class="mt-50">
+      <section class="mt-15">
         <hgroup class="flex justify-between items-end">
           <div class="flex flex-col max-md:gap-2">
             <p
@@ -796,17 +715,14 @@
           </div>
         </div>
       </section>
-      <!-- how it works section -->
-      <section class="mt-50">
-        <hgroup class="flex flex-col max-md:gap-2">
+      <section id="how" aria-labelledby="how-title" class="mt-50">
+        <hgroup class="flex flex-col">
           <p
             class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
           >
             How it works
           </p>
-          <h2
-            class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
-          >
+          <h2 id="how-title" class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
             Three steps to your first
             <span class="text-biru-aksen font-unbounded font-black"
               >NGOBROL</span
@@ -816,220 +732,139 @@
             Start from the left. Each step takes just seconds.
           </p>
         </hgroup>
-        <div class="flex gap-10 mt-12 max-md:flex-col">
-          <div
-            class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row"
-          >
-            <button
-              class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full"
-            >
-              <p class="font-unbounded font-black text-2xl">1</p>
-              <div>
-                <h3 class="font-semibold text-xl max-sm:text-base">
-                  Pick <span class="max-md:hidden"> your place</span>
-                </h3>
-                <p class="text-md max-md:hidden">
-                  Warung, school, angkot — choose the situation you are in.
-                </p>
-              </div>
-            </button>
-            <button
-              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
-            >
-              <p
-                class="font-unbounded font-black text-2xl text-terakota group-active:text-white"
-              >
-                2
-              </p>
-              <div>
-                <h3 class="font-semibold text-xl max-sm:text-base">
-                  Listen <span class="max-md:hidden"> & repeat</span>
-                </h3>
-                <p class="text-md max-md:hidden">
-                  Play it, slow it down if you need, then say it out loud.
-                </p>
-              </div>
-            </button>
-            <button
-              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
-            >
-              <p
-                class="font-unbounded font-black text-2xl text-hijau group-active:text-white"
-              >
-                3
-              </p>
-              <div>
-                <h3 class="font-semibold text-xl max-sm:text-base">
-                  Quiz <span class="max-md:hidden"> with Gali</span>
-                </h3>
-                <p class="text-sm max-md:hidden">
-                  Short rounds to make it stick, plus the manners behind it.
-                </p>
-              </div>
-            </button>
-          </div>
-          <!-- 01 -->
-          <div
-            class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5"
-          >
-            <p class="text-xs text-nila">STEP 1 · PICK YOUR PLACE</p>
-            <h3 class="text-3xl font-bold text-nila">Where are you today?</h3>
-            <div
-              class="grid grid-cols-3 gap-3 max-xl:grid-cols-2 [@media(max-width:430px)]:grid-cols-1"
-            >
-              <div
-                class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">Local Shop</h4>
-                <p class="text-xs">8 phrases</p>
-              </div>
-              <div
-                class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">School</h4>
-                <p class="text-xs">8 phrases</p>
-              </div>
-              <div
-                class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">public transit</h4>
-                <p class="text-xs">8 phrases</p>
-              </div>
-              <div
-                class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">Introduction</h4>
-                <p class="text-xs">8 phrases</p>
-              </div>
-              <div
-                class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">Emergency</h4>
-                <p class="text-xs">6 phrases</p>
-              </div>
-              <div
-                class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-              >
-                <h4 class="text-2xl font-bold capitalize">All situations</h4>
-                <p class="text-xs">8 in total</p>
-              </div>
-            </div>
-          </div>
-          <!-- 02 -->
-          <div
-            class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
-          >
-            <p class="text-xs text-terakota uppercase">
-              STEP 2 · LISTEN &amp; REPEAT
-            </p>
-            <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-            <p class="font-semibold text-nila mb-2 max-sm:mb-4">
-              "How much is this?"
-            </p>
-            <div
-              class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white max-sm:mb-4"
-            >
+        <!-- track tinggi: selama track di-scroll, panel menempel dan langkah 1 → 3 berganti sendiri (diisi JS) -->
+        <div id="how-track" class="how-track mt-12" style="--steps: 3">
+          <div class="how-pin grid gap-10 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]">
+            <div class="flex flex-col justify-center gap-3" role="tablist" aria-label="Steps">
               <button
-                class="shrink-0 w-11 h-11 rounded-full bg-terakota text-white flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0 shadow-sm"
-                aria-label="Play"
+                type="button"
+                role="tab"
+                id="how-tab-1"
+                aria-controls="how-panel-1"
+                aria-selected="true"
+                class="how-step is-active"
+                style="--c: var(--color-nila)"
               >
-                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
-                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                </svg>
-              </button>
-            </div>
-            <div class="flex items-center gap-2.5">
-              <button
-                class="rounded-full w-10 h-10 bg-terakota text-white font-bold flex items-center justify-center"
-              >
-                1x
+                <span class="how-step__num">1</span>
+                <span class="flex flex-col gap-1">
+                  <span class="text-xl font-semibold">Pick your place</span>
+                  <span class="text-sm opacity-85">Stall, school, minibus — choose the situation you are in.</span>
+                </span>
+                <span class="how-step__bar" aria-hidden="true"></span>
               </button>
               <button
-                class="rounded-full border border-nila text-nila py-1.75 px-4 flex items-center justify-center"
+                type="button"
+                role="tab"
+                id="how-tab-2"
+                aria-controls="how-panel-2"
+                aria-selected="false"
+                class="how-step"
+                style="--c: var(--color-terakota)"
               >
-                0.5x slow
+                <span class="how-step__num">2</span>
+                <span class="flex flex-col gap-1">
+                  <span class="text-xl font-semibold">Listen &amp; repeat</span>
+                  <span class="text-sm opacity-85">Play it, slow it down if you need, then say it out loud.</span>
+                </span>
+                <span class="how-step__bar" aria-hidden="true"></span>
               </button>
-            </div>
-          </div>
-          <!-- 03 -->
-          <div
-            class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
-          >
-            <p class="text-xs text-terakota uppercase">
-              STEP 3 · QUIZ WITH GALI
-            </p>
-            <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-            <div class="flex flex-col gap-3 my-2">
-              <label
-                class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
+              <button
+                type="button"
+                role="tab"
+                id="how-tab-3"
+                aria-controls="how-panel-3"
+                aria-selected="false"
+                class="how-step"
+                style="--c: var(--color-hijau)"
               >
-                <input
-                  type="radio"
-                  name="quiz_answer"
-                  value="a"
-                  class="peer hidden"
-                />
-                <span class="font-bold text-nila peer-checked:text-terakota"
-                  >How much is this?</span
-                >
-              </label>
-              <label
-                class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
-              >
-                <input
-                  type="radio"
-                  name="quiz_answer"
-                  value="b"
-                  class="peer hidden"
-                />
-                <span class="font-bold text-nila peer-checked:text-terakota"
-                  >Where is the place?</span
-                >
-              </label>
-              <label
-                class="relative flex items-center p-4 rounded-2xl border-2 border-nila has-checked:border-terakota has-checked:bg-terakota/5"
-              >
-                <input
-                  type="radio"
-                  name="quiz_answer"
-                  value="c"
-                  class="peer hidden"
-                />
-                <span class="font-bold text-nila peer-checked:text-terakota"
-                  >What time does it open?</span
-                >
-              </label>
+                <span class="how-step__num">3</span>
+                <span class="flex flex-col gap-1">
+                  <span class="text-xl font-semibold">Quiz with Gali</span>
+                  <span class="text-sm opacity-85">Short rounds to make it stick, plus the manners behind it.</span>
+                </span>
+                <span class="how-step__bar" aria-hidden="true"></span>
+              </button>
             </div>
 
-            <!-- jawaban salah -->
-            <div class="hidden items-center gap-2 pt-2 flex-wrap">
-              <span
-                class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
-              >
-                Oops!
-              </span>
-              <span class="px-4 py-2 rounded-full bg-pasir text-nila">
-                +0 points
-              </span>
-              <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
-                Streak lost
-              </span>
-            </div>
-            <!-- jawaban benar -->
-            <div class="flex items-center gap-2 pt-2 flex-wrap">
-              <span
-                class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
-              >
-                Nice one!
-              </span>
-              <span class="px-4 py-2 rounded-full bg-pasir text-nila">
-                +10 points
-              </span>
-              <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
-                Streak kept
-              </span>
+            <div class="how-stage" style="--c: var(--color-nila)">
+              <!-- 01 -->
+              <div id="how-panel-1" role="tabpanel" aria-labelledby="how-tab-1" class="how-panel is-active">
+                <p class="how-panel__eyebrow text-nila">Step 1 · Pick your place</p>
+                <h3 class="text-3xl font-bold text-nila">Where are you today?</h3>
+                <div class="grid grid-cols-2 gap-3 lg:grid-cols-3">
+                  <a href="situations.html#stall" class="how-place bg-terakota text-white ring-[1.5px] ring-nila">
+                    <span class="text-2xl font-bold">Stall</span>
+                    <span class="text-xs">8 phrases</span>
+                  </a>
+                  <a href="situations.html#school" class="how-place bg-biru-muda text-nila">
+                    <span class="text-2xl font-bold">School</span>
+                    <span class="text-xs">8 phrases</span>
+                  </a>
+                  <a href="situations.html#minibus" class="how-place bg-pasir text-nila">
+                    <span class="text-2xl font-bold">Minibus</span>
+                    <span class="text-xs">8 phrases</span>
+                  </a>
+                  <a href="situations.html#small-talk" class="how-place bg-matahari text-nila">
+                    <span class="text-2xl font-bold">Small talk</span>
+                    <span class="text-xs">8 phrases</span>
+                  </a>
+                  <a href="situations.html#emergency" class="how-place bg-nila text-white">
+                    <span class="text-2xl font-bold">Emergency</span>
+                    <span class="text-xs">6 phrases</span>
+                  </a>
+                  <a href="situations.html" class="how-place bg-krem text-nila ring-[1.5px] ring-nila">
+                    <span class="flex items-center gap-2 text-2xl font-bold">All situations<i class="ph-bold ph-arrow-right"></i></span>
+                    <span class="text-xs">6 in total</span>
+                  </a>
+                </div>
+              </div>
+              <!-- 02 -->
+              <div id="how-panel-2" role="tabpanel" aria-labelledby="how-tab-2" class="how-panel">
+                <p class="how-panel__eyebrow text-terakota">Step 2 · Listen &amp; repeat</p>
+                <h3 class="font-unbounded text-[40px] font-black leading-tight tracking-tight text-nila">Berapa harganya?</h3>
+                <p class="text-lg font-medium text-nila">"How much is this?"</p>
+                <div class="flex items-center gap-4 rounded-full border-[1.5px] border-terakota p-1.5 pr-6">
+                  <button
+                    type="button"
+                    class="grid size-11 shrink-0 place-items-center rounded-full bg-terakota text-white transition hover:scale-105"
+                    aria-label="Play “Berapa harganya?”"
+                  >
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                  <span class="how-wave" aria-hidden="true">
+                    <i style="--h: 0.45"></i><i style="--h: 0.8"></i><i style="--h: 0.55"></i><i style="--h: 1"></i>
+                    <i style="--h: 0.7"></i><i style="--h: 0.4"></i><i style="--h: 0.9"></i><i style="--h: 0.6"></i>
+                    <i style="--h: 0.35"></i><i style="--h: 0.75"></i><i style="--h: 0.5"></i><i style="--h: 0.95"></i>
+                    <i style="--h: 0.6"></i><i style="--h: 0.4"></i><i style="--h: 0.7"></i><i style="--h: 0.45"></i>
+                  </span>
+                </div>
+                <div class="flex items-center gap-2.5">
+                  <button type="button" class="grid size-10 place-items-center rounded-full bg-terakota text-sm font-bold text-white">1x</button>
+                  <button type="button" class="rounded-full border-[1.5px] border-nila px-4 py-2 text-sm font-medium text-nila">0.5x slow</button>
+                </div>
+              </div>
+              <!-- 03 -->
+              <div id="how-panel-3" role="tabpanel" aria-labelledby="how-tab-3" class="how-panel">
+                <p class="how-panel__eyebrow text-hijau">Step 3 · Quiz with Gali</p>
+                <h3 class="text-3xl font-bold text-nila">Which one asks for the price?</h3>
+                <ul class="flex flex-col gap-3">
+                  <li class="how-answer border-hijau">
+                    Berapa harganya?
+                    <i class="ph-fill ph-check-circle how-answer__check"></i>
+                  </li>
+                  <li class="how-answer border-nila">Di mana toiletnya?</li>
+                  <li class="how-answer border-nila">Boleh kurang, Bu?</li>
+                </ul>
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="rounded-full bg-matahari px-4 py-2 font-bold text-nila">Nice one!</span>
+                  <span class="rounded-full bg-pasir px-4 py-2 text-nila">+10 points</span>
+                  <span class="rounded-full bg-biru-muda px-4 py-2 text-nila">Streak kept</span>
+                </div>
+              </div>
             </div>
           </div>
+          <!-- jarak scroll: tiap langkah dapat ±60svh sebelum ganti -->
+          <div class="h-[calc(var(--steps)*60svh)]" aria-hidden="true"></div>
         </div>
       </section>
       <!-- phrase of the day -->
@@ -1703,11 +1538,69 @@
           <div
             class="absolute right-0 top-1/2 -translate-y-1/2 w-85 h-85 bg-matahari rounded-full z-0 overflow-hidden"
           >
-            <img
-              src="./src/assets/cta-image.png"
-              alt="gali image"
-              class="absolute pt-10"
-            />
+            <svg
+              viewBox="0 0 460 552"
+              fill="none"
+              role="img"
+              aria-label="Gali melambaikan tangan"
+              class="absolute inset-x-0 bottom-0 mx-auto w-[85%] h-auto"
+            >
+            <path d="M69 552C69 454.25 120.75 404.8 230 400.2C339.25 404.8 391 454.25 391 552H69Z" fill="#FF6B4A"/>
+            <path d="M345 465.75C379.5 419.75 395.6 370.3 388.7 324.3L430.1 319.7C439.3 381.8 416.3 450.8 381.8 500.25L345 465.75Z" fill="#FF6B4A"/>
+            <path d="M345 465.75C365.7 437 379.5 408.25 386.4 379.5L402.5 384.1C395.6 416.3 381.8 448.5 361.1 476.1L345 465.75Z" fill="#E2553A"/>
+            <path d="M181.7 407.1C213.9 403.267 246.1 403.267 278.3 407.1L262.2 552H197.8L181.7 407.1Z" fill="white"/>
+            <path d="M181.7 407.1L216.2 476.1L167.9 441.6L181.7 407.1Z" fill="#E2553A"/>
+            <path d="M278.3 407.1L243.8 476.1L292.1 441.6L278.3 407.1Z" fill="#E2553A"/>
+            <path d="M115 501.4C118.81 501.4 121.9 498.311 121.9 494.5C121.9 490.689 118.81 487.6 115 487.6C111.189 487.6 108.1 490.689 108.1 494.5C108.1 498.311 111.189 501.4 115 501.4Z" fill="white" fill-opacity="0.35"/>
+            <path d="M143.75 466.9C147.56 466.9 150.65 463.811 150.65 460C150.65 456.189 147.56 453.1 143.75 453.1C139.939 453.1 136.85 456.189 136.85 460C136.85 463.811 139.939 466.9 143.75 466.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M126.5 535.9C130.31 535.9 133.4 532.811 133.4 529C133.4 525.189 130.31 522.1 126.5 522.1C122.689 522.1 119.6 525.189 119.6 529C119.6 532.811 122.689 535.9 126.5 535.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M327.75 512.9C331.56 512.9 334.65 509.811 334.65 506C334.65 502.189 331.56 499.1 327.75 499.1C323.939 499.1 320.85 502.189 320.85 506C320.85 509.811 323.939 512.9 327.75 512.9Z" fill="white" fill-opacity="0.35"/>
+            <path d="M345 541.65C348.81 541.65 351.9 538.561 351.9 534.75C351.9 530.939 348.81 527.85 345 527.85C341.189 527.85 338.1 530.939 338.1 534.75C338.1 538.561 341.189 541.65 345 541.65Z" fill="white" fill-opacity="0.35"/>
+            <path d="M234.6 335.8H225.4C211.427 335.8 200.1 347.127 200.1 361.1V391C200.1 404.973 211.427 416.3 225.4 416.3H234.6C248.572 416.3 259.9 404.973 259.9 391V361.1C259.9 347.127 248.572 335.8 234.6 335.8Z" fill="#C98B5F"/>
+            <path d="M230 365.7C251.595 365.7 269.1 359.522 269.1 351.9C269.1 344.279 251.595 338.1 230 338.1C208.406 338.1 190.9 344.279 190.9 351.9C190.9 359.522 208.406 365.7 230 365.7Z" fill="#A86E46"/>
+            <path d="M156.4 404.8C205.467 440.067 254.534 440.067 303.6 404.8" stroke="#1F2A5C" stroke-width="16.1" stroke-linecap="round"/>
+            <path d="M151.8 374.9H149.5C140.609 374.9 133.4 382.108 133.4 391V411.7C133.4 420.592 140.609 427.8 149.5 427.8H151.8C160.692 427.8 167.9 420.592 167.9 411.7V391C167.9 382.108 160.692 374.9 151.8 374.9Z" fill="#1F2A5C"/>
+            <path d="M310.5 374.9H308.2C299.308 374.9 292.1 382.108 292.1 391V411.7C292.1 420.592 299.308 427.8 308.2 427.8H310.5C319.391 427.8 326.6 420.592 326.6 411.7V391C326.6 382.108 319.391 374.9 310.5 374.9Z" fill="#1F2A5C"/>
+            <path d="M150.65 408.25C154.461 408.25 157.55 405.161 157.55 401.35C157.55 397.539 154.461 394.45 150.65 394.45C146.839 394.45 143.75 397.539 143.75 401.35C143.75 405.161 146.839 408.25 150.65 408.25Z" fill="#FFD23F"/>
+            <path d="M309.35 408.25C313.161 408.25 316.25 405.161 316.25 401.35C316.25 397.539 313.161 394.45 309.35 394.45C305.539 394.45 302.45 397.539 302.45 401.35C302.45 405.161 305.539 408.25 309.35 408.25Z" fill="#FFD23F"/>
+            <path d="M128.8 277.15C139.597 277.15 148.35 265.308 148.35 250.7C148.35 236.092 139.597 224.25 128.8 224.25C118.003 224.25 109.25 236.092 109.25 250.7C109.25 265.308 118.003 277.15 128.8 277.15Z" fill="#C98B5F"/>
+            <path d="M331.2 277.15C341.998 277.15 350.75 265.308 350.75 250.7C350.75 236.092 341.998 224.25 331.2 224.25C320.403 224.25 311.65 236.092 311.65 250.7C311.65 265.308 320.403 277.15 331.2 277.15Z" fill="#C98B5F"/>
+            <path d="M128.8 264.5C133.881 264.5 138 258.321 138 250.7C138 243.078 133.881 236.9 128.8 236.9C123.719 236.9 119.6 243.078 119.6 250.7C119.6 258.321 123.719 264.5 128.8 264.5Z" fill="#A86E46"/>
+            <path d="M331.2 264.5C336.281 264.5 340.4 258.321 340.4 250.7C340.4 243.078 336.281 236.9 331.2 236.9C326.119 236.9 322 243.078 322 250.7C322 258.321 326.119 264.5 331.2 264.5Z" fill="#A86E46"/>
+            <path d="M230 354.2C285.891 354.2 331.2 302.713 331.2 239.2C331.2 175.687 285.891 124.2 230 124.2C174.109 124.2 128.8 175.687 128.8 239.2C128.8 302.713 174.109 354.2 230 354.2Z" fill="#C98B5F"/>
+            <path d="M230 124.2C287.5 124.2 331.2 172.5 331.2 239.2C331.2 308.2 289.8 351.9 230 354.2C276 333.5 301.3 287.5 301.3 235.75C301.3 184 276 143.75 230 124.2Z" fill="#B97B50" fill-opacity="0.45"/>
+            <path d="M147.2 207C166.254 207 181.7 191.554 181.7 172.5C181.7 153.446 166.254 138 147.2 138C128.146 138 112.7 153.446 112.7 172.5C112.7 191.554 128.146 207 147.2 207Z" fill="#1B1B2F"/>
+            <path d="M184 172.5C205.595 172.5 223.1 154.994 223.1 133.4C223.1 111.806 205.595 94.3 184 94.3C162.406 94.3 144.9 111.806 144.9 133.4C144.9 154.994 162.406 172.5 184 172.5Z" fill="#1B1B2F"/>
+            <path d="M233.45 158.7C256.314 158.7 274.85 140.164 274.85 117.3C274.85 94.4353 256.314 75.8999 233.45 75.8999C210.585 75.8999 192.05 94.4353 192.05 117.3C192.05 140.164 210.585 158.7 233.45 158.7Z" fill="#1B1B2F"/>
+            <path d="M282.9 170.2C304.494 170.2 322 152.694 322 131.1C322 109.506 304.494 92 282.9 92C261.305 92 243.8 109.506 243.8 131.1C243.8 152.694 261.305 170.2 282.9 170.2Z" fill="#1B1B2F"/>
+            <path d="M317.4 204.7C336.454 204.7 351.9 189.254 351.9 170.2C351.9 151.146 336.454 135.7 317.4 135.7C298.347 135.7 282.9 151.146 282.9 170.2C282.9 189.254 298.347 204.7 317.4 204.7Z" fill="#1B1B2F"/>
+            <path d="M129.5 224C125.002 171.513 165.327 138.282 232.805 136C302.531 138.282 337.248 171.513 330.5 224C317.005 196.615 302.531 183.923 277.79 179.359C262.045 197.615 232.805 197.615 217.06 179.359C199.066 195.333 165.328 197.615 145.084 193.051C136.087 204.462 131.749 212.59 129.5 224Z" fill="#1B1B2F"/>
+            <path d="M172.5 128.8C177.581 128.8 181.7 124.681 181.7 119.6C181.7 114.519 177.581 110.4 172.5 110.4C167.419 110.4 163.3 114.519 163.3 119.6C163.3 124.681 167.419 128.8 172.5 128.8Z" fill="#3A3A5C"/>
+            <path d="M246.1 111.55C251.816 111.55 256.45 106.916 256.45 101.2C256.45 95.484 251.816 90.8501 246.1 90.8501C240.384 90.8501 235.75 95.484 235.75 101.2C235.75 106.916 240.384 111.55 246.1 111.55Z" fill="#3A3A5C"/>
+            <path d="M207.193 200.215L175.306 204.697C172.162 205.139 169.971 208.046 170.413 211.191C170.855 214.336 173.762 216.527 176.907 216.085L208.793 211.603C211.938 211.161 214.129 208.254 213.687 205.109C213.245 201.964 210.338 199.773 207.193 200.215Z" fill="#1B1B2F"/>
+            <path d="M284.694 204.697L252.807 200.215C249.663 199.773 246.755 201.964 246.313 205.109C245.871 208.254 248.062 211.161 251.207 211.603L283.093 216.085C286.238 216.527 289.146 214.336 289.588 211.191C290.03 208.046 287.839 205.139 284.694 204.697Z" fill="#1B1B2F"/>
+            <path d="M193.2 258.75C199.551 258.75 204.7 252.057 204.7 243.8C204.7 235.543 199.551 228.85 193.2 228.85C186.849 228.85 181.7 235.543 181.7 243.8C181.7 252.057 186.849 258.75 193.2 258.75Z" fill="#1B1B2F"/>
+            <path d="M266.8 258.75C273.151 258.75 278.3 252.057 278.3 243.8C278.3 235.543 273.151 228.85 266.8 228.85C260.449 228.85 255.3 235.543 255.3 243.8C255.3 252.057 260.449 258.75 266.8 258.75Z" fill="#1B1B2F"/>
+            <path d="M197.225 242.19C199.511 242.19 201.365 240.336 201.365 238.05C201.365 235.763 199.511 233.91 197.225 233.91C194.939 233.91 193.085 235.763 193.085 238.05C193.085 240.336 194.939 242.19 197.225 242.19Z" fill="white"/>
+            <path d="M270.825 242.19C273.111 242.19 274.965 240.336 274.965 238.05C274.965 235.763 273.111 233.91 270.825 233.91C268.538 233.91 266.685 235.763 266.685 238.05C266.685 240.336 268.538 242.19 270.825 242.19Z" fill="white"/>
+            <path d="M228.85 255.3C222.717 273.7 225.017 284.05 235.75 286.35" stroke="#A86E46" stroke-width="5.175" stroke-linecap="round"/>
+            <path d="M166.75 287.5C176.277 287.5 184 283.381 184 278.3C184 273.219 176.277 269.1 166.75 269.1C157.223 269.1 149.5 273.219 149.5 278.3C149.5 283.381 157.223 287.5 166.75 287.5Z" fill="#FF6B4A" fill-opacity="0.35"/>
+            <path d="M293.25 287.5C302.777 287.5 310.5 283.381 310.5 278.3C310.5 273.219 302.777 269.1 293.25 269.1C283.723 269.1 276 273.219 276 278.3C276 283.381 283.723 287.5 293.25 287.5Z" fill="#FF6B4A" fill-opacity="0.35"/>
+            <path transform="translate(188.6 301.3)" d="M0 0C27.6 32.2 55.2 32.2 82.8 0C51.0257 8.6206 32.8429 8.34255 0 0Z" fill="#5A1E1E"/>
+            <path transform="translate(220 318)" d="M10.5 0C1.60822 0 0 1.55411 0 6C7.88682 7.98369 12.4964 7.97286 21 6C21 1.55411 19.5 0 10.5 0Z" fill="#FF6B4A"/>
+            <path transform="translate(188.5 301)" d="M0 0C32.5 6 59.5 6 83 0L78 6C56 14 29.5 13.5 5 6L0 0Z" fill="white"/>
+            <g class="origin-bottom transform-fill motion-safe:animate-wave">
+            <path d="M390.095 318.038C394.96 313.956 392.616 303.152 384.859 293.908C377.102 284.664 366.87 280.48 362.005 284.562C357.139 288.645 359.483 299.448 367.24 308.692C374.997 317.936 385.229 322.121 390.095 318.038Z" fill="#C98B5F"/>
+            <path d="M396.95 235.475C396.95 231.347 393.603 228 389.475 228C385.347 228 382 231.347 382 235.475V271.125C382 275.253 385.347 278.6 389.475 278.6C393.603 278.6 396.95 275.253 396.95 271.125V235.475Z" fill="#C98B5F"/>
+            <path d="M413.15 225.975C413.15 221.847 409.804 218.5 405.675 218.5C401.547 218.5 398.2 221.847 398.2 225.975V268.525C398.2 272.653 401.547 276 405.675 276C409.804 276 413.15 272.653 413.15 268.525V225.975Z" fill="#C98B5F"/>
+            <path d="M429.25 230.575C429.25 226.447 425.903 223.1 421.775 223.1C417.646 223.1 414.3 226.447 414.3 230.575V268.525C414.3 272.653 417.646 276 421.775 276C425.903 276 429.25 272.653 429.25 268.525V230.575Z" fill="#C98B5F"/>
+            <path d="M444.05 243.8C444.05 239.989 440.961 236.9 437.15 236.9C433.339 236.9 430.25 239.989 430.25 243.8V273.7C430.25 277.511 433.339 280.6 437.15 280.6C440.961 280.6 444.05 277.511 444.05 273.7V243.8Z" fill="#C98B5F"/>
+            <path d="M411.7 322C429.484 322 443.9 306.554 443.9 287.5C443.9 268.446 429.484 253 411.7 253C393.916 253 379.5 268.446 379.5 287.5C379.5 306.554 393.916 322 411.7 322Z" fill="#C98B5F"/>
+            <path d="M391 301.3C403.267 308.967 415.533 308.967 427.8 301.3" stroke="#A86E46" stroke-width="3.45" stroke-linecap="round"/>
+            </g>
+            <path d="M439.3 184C450.033 196.267 453.866 210.067 450.8 225.4" stroke="#FFD23F" stroke-width="6.9" stroke-linecap="round"/>
+            <path d="M420.9 172.5C430.1 178.633 435.467 186.3 437 195.5" stroke="#FFD23F" stroke-width="6.9" stroke-linecap="round"/>
+            </svg>
           </div>
         </div>
       </section>
@@ -1812,20 +1705,229 @@
       </p>
     </div>
     <script>
-      const nav = document.getElementById("nav");
-      const toggleNav = () =>
-        nav.toggleAttribute("data-shown", window.scrollY > 50);
-      window.addEventListener("scroll", toggleNav, { passive: true });
-      toggleNav();
+      // teks yang bergulir per huruf saat di-hover (dipakai tombol menu & link overlay)
+      document.querySelectorAll("[data-roll]").forEach((el) => {
+        const text = el.textContent.trim();
+        const chars = [...text]
+          .map((ch, i) => {
+            const c = ch === " " ? "&nbsp;" : ch;
+            return `<span class="roll-char" style="--i: ${i}"><span class="roll-top">${c}</span><span class="roll-bot">${c}</span></span>`;
+          })
+          .join("");
+        el.innerHTML = `<span class="sr-only">${text}</span><span class="roll" aria-hidden="true">${chars}</span>`;
+      });
 
-      // nav
-      const menu = document.getElementById("menu");
-      function openMenu() {
-        menu.classList.replace("hidden", "flex");
+      // smooth scroll: Lenis menghaluskan wheel, scroll tetap native jadi sticky & listener scroll tetap jalan
+      const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const lenis =
+        !reduceMotion && window.Lenis
+          ? new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true })
+          : null;
+      if (lenis) {
+        const raf = (time) => {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
       }
-      function closeMenu() {
-        menu.classList.replace("flex", "hidden");
+      const scrollToY = (y) =>
+        lenis
+          ? lenis.scrollTo(y, { duration: 1.4 })
+          : window.scrollTo({ top: y, behavior: reduceMotion ? "auto" : "smooth" });
+
+      // link anchor (#situations, dst.) ikut meluncur halus
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        const target = a.getAttribute("href").length > 1 && document.querySelector(a.getAttribute("href"));
+        if (!target) return;
+        a.addEventListener("click", (e) => {
+          e.preventDefault();
+          scrollToY(target.getBoundingClientRect().top + window.scrollY);
+        });
+      });
+
+      // lensa kaca header (hanya didukung backdrop-filter Chromium). Seperti di Figma:
+      // GLASS_SPLAY = lebar pita lengkung dari tepi ke dalam (px), GLASS_DEPTH = seberapa kuat latar dibelokkan (px)
+      const GLASS_SPLAY = 26;
+      const GLASS_DEPTH = 34;
+      if (navigator.userAgentData?.brands?.some((b) => /Chromium/.test(b.brand))) {
+        document.documentElement.classList.add("lg-refract");
+        const glassHeader = document.getElementById("site-header");
+        const glassFilter = document.getElementById("liquid-glass");
+        const glassMap = document.getElementById("liquid-glass-map");
+        const glassBend = document.getElementById("liquid-glass-bend");
+        const canvas = document.createElement("canvas");
+        let glassSize = "";
+
+        // tiap piksel menyimpan arah sampling: R = geser x, G = geser y (128 = diam).
+        // Dekat tepi pill, latar diambil dari arah dalam sehingga tepinya tampak melengkung seperti lensa.
+        const buildGlassMap = () => {
+          const before = getComputedStyle(glassHeader, "::before");
+          const w = Math.round(parseFloat(before.width));
+          const h = Math.round(parseFloat(before.height));
+          if (!w || !h || `${w}x${h}` === glassSize) return;
+          glassSize = `${w}x${h}`;
+
+          canvas.width = w;
+          canvas.height = h;
+          const ctx = canvas.getContext("2d");
+          const img = ctx.createImageData(w, h);
+          const r = h / 2;
+          for (let y = 0; y < h; y++) {
+            for (let x = 0; x < w; x++) {
+              // jarak bertanda ke tepi rounded-rect (negatif = di dalam) + normal tepinya
+              const px = x + 0.5 - w / 2;
+              const py = y + 0.5 - h / 2;
+              const qx = Math.abs(px) - (w / 2 - r);
+              const qy = Math.abs(py) - (h / 2 - r);
+              let nx = 0;
+              let ny = 0;
+              let dist;
+              if (qx > 0 && qy > 0) {
+                const len = Math.hypot(qx, qy);
+                dist = len - r;
+                nx = (qx / len) * Math.sign(px);
+                ny = (qy / len) * Math.sign(py);
+              } else if (qx > qy) {
+                dist = qx - r;
+                nx = Math.sign(px);
+              } else {
+                dist = qy - r;
+                ny = Math.sign(py);
+              }
+              const t = dist >= 0 ? 0 : Math.max(0, 1 - -dist / GLASS_SPLAY);
+              const s = t * t; // lengkung makin tajam mendekati tepi
+              const i = (y * w + x) * 4;
+              img.data[i] = 128 - nx * s * 127;
+              img.data[i + 1] = 128 - ny * s * 127;
+              img.data[i + 2] = 128;
+              img.data[i + 3] = 255;
+            }
+          }
+          ctx.putImageData(img, 0, 0);
+
+          for (const el of [glassFilter, glassMap]) {
+            el.setAttribute("width", w);
+            el.setAttribute("height", h);
+          }
+          glassMap.setAttribute("href", canvas.toDataURL());
+          glassBend.setAttribute("scale", GLASS_DEPTH);
+        };
+        buildGlassMap();
+        window.addEventListener("resize", buildGlassMap);
       }
+
+      // overlay menu
+      const header = document.getElementById("site-header");
+      const menu = document.getElementById("site-menu");
+      const menuToggle = document.getElementById("menu-toggle");
+      const setMenu = (open) => {
+        header.classList.toggle("is-nav-open", open);
+        menu.classList.toggle("is-open", open);
+        menu.toggleAttribute("inert", !open);
+        menu.setAttribute("aria-hidden", String(!open));
+        menuToggle.setAttribute("aria-expanded", String(open));
+        menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        document.documentElement.style.overflow = open ? "hidden" : "";
+        if (lenis) open ? lenis.stop() : lenis.start();
+      };
+      menuToggle.addEventListener("click", () =>
+        setMenu(!menu.classList.contains("is-open")),
+      );
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && menu.classList.contains("is-open")) {
+          setMenu(false);
+          menuToggle.focus();
+        }
+      });
+
+      const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
+
+      // parallax hero: --hero-p naik 0 → 1 selama satu layar pertama di-scroll
+      const hero = document.getElementById("home");
+      const updateHero = () => {
+        if (reduceMotion) return;
+        const p = clamp01(window.scrollY / window.innerHeight);
+        hero.style.setProperty("--hero-p", p.toFixed(4));
+      };
+
+      // header baru muncul setelah halaman di-scroll
+      const updateHeader = () =>
+        header.classList.toggle("is-visible", window.scrollY > 80);
+
+      // kilau kaca header mengikuti kursor
+      window.addEventListener(
+        "pointermove",
+        (e) => {
+          if (!header.classList.contains("is-visible")) return;
+          const r = header.getBoundingClientRect();
+          header.style.setProperty("--gx", `${((e.clientX - r.left) / r.width) * 100}%`);
+          header.style.setProperty("--gy", `${((e.clientY - r.top) / r.height) * 100}%`);
+        },
+        { passive: true },
+      );
+
+      // how it works: progres scroll di track menentukan langkah aktif, klik tab meluncur ke langkahnya
+      const howTrack = document.getElementById("how-track");
+      const howPin = howTrack.querySelector(".how-pin");
+      const howStage = howTrack.querySelector(".how-stage");
+      const howTabs = [...howTrack.querySelectorAll(".how-step")];
+      const howPanels = [...howTrack.querySelectorAll(".how-panel")];
+      let howActive = 0;
+      const howRange = () => {
+        const top = parseFloat(getComputedStyle(howPin).top) || 0;
+        return {
+          start: howTrack.getBoundingClientRect().top + window.scrollY - top,
+          length: Math.max(howTrack.offsetHeight - howPin.offsetHeight, 1),
+        };
+      };
+      const setHowStep = (i) => {
+        howActive = i;
+        howTabs.forEach((tab, j) => {
+          tab.classList.toggle("is-active", j === i);
+          tab.setAttribute("aria-selected", String(j === i));
+        });
+        howPanels.forEach((panel, j) => panel.classList.toggle("is-active", j === i));
+        howStage.style.setProperty("--c", howTabs[i].style.getPropertyValue("--c"));
+      };
+      const updateHow = () => {
+        const { start, length } = howRange();
+        const raw = clamp01((window.scrollY - start) / length) * howTabs.length;
+        const i = Math.min(howTabs.length - 1, Math.floor(raw));
+        if (i !== howActive) setHowStep(i);
+        howTabs[i].style.setProperty("--local", Math.min(raw - i, 1).toFixed(3));
+      };
+      howTabs.forEach((tab, i) =>
+        tab.addEventListener("click", () => {
+          const { start, length } = howRange();
+          scrollToY(start + ((i + 0.1) / howTabs.length) * length);
+        }),
+      );
+
+      let scrollTicking = false;
+      const onScroll = () => {
+        scrollTicking = false;
+        updateHero();
+        updateHeader();
+        updateHow();
+      };
+      const requestScroll = () => {
+        if (scrollTicking) return;
+        scrollTicking = true;
+        requestAnimationFrame(onScroll);
+      };
+      window.addEventListener("scroll", requestScroll, { passive: true });
+      window.addEventListener("resize", requestScroll);
+      onScroll();
+
+      // tombol bahasa
+      const langButtons = document.querySelectorAll(".site-lang__item");
+      langButtons.forEach((btn) =>
+        btn.addEventListener("click", () =>
+          langButtons.forEach((b) =>
+            b.setAttribute("aria-pressed", String(b === btn)),
+          ),
+        ),
+      );
     </script>
   </body>
 </html>
