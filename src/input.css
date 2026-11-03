@@ -52,13 +52,6 @@
     }
   }
 }
-/* apply */
-.tn {
-  @apply px-6 py-3.75 rounded-full gap-2.5 text-white font-semibold text-lg  bg-nila hover:bg-[#24407a] focus:border focus:border-biru-aksen transition-all duration-300;
-}
-.tn2 {
-  @apply flex gap-2.5 px-6 py-3.75 border-2 items-center bg-white text-nila transition-all duration-300 hover:bg-krem-tua font-semibold text-lg border-nila/35 rounded-full focus:border focus:border-biru-aksen;
-}
 
 /* parallax hero: mengecil pelan saat di-scroll, teks bergeser naik lebih cepat (--hero-p diisi JS) */
 .hero-parallax {
@@ -135,58 +128,23 @@ html.lenis body {
   pointer-events: auto;
 }
 
-/* lapisan kaca: blur + saturasi, tepi specular, kilau yang mengikuti kursor (--gx/--gy diisi JS) */
-.site-header::before,
-.site-header::after {
-  content: "";
+/* lapisan kaca: tepi, bayangan, dan tint. Lensa/refraksinya dipasang JS (src/liquid-glass.js) */
+.site-header__glass {
   position: absolute;
   inset: 14px 28px;
   z-index: -1;
   border-radius: 999px;
   pointer-events: none;
+  background: rgb(255 255 255 / 0.3);
+  /* box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 0.4),
+    inset 0 1px 1px rgb(255 255 255 / 0.9),
+    inset 0 -8px 14px -10px rgb(47 76 138 / 0.25),
+    0 14px 34px -14px rgb(31 42 92 / 0.45),
+    0 2px 8px rgb(31 42 92 / 0.1); */
   transition: opacity 0.5s var(--ease-premium);
 }
-.site-header::before {
-  background:
-    linear-gradient(
-      180deg,
-      rgb(255 255 255 / 0.42) 0%,
-      rgb(255 255 255 / 0.14) 45%,
-      rgb(255 255 255 / 0.22) 100%
-    );
-  -webkit-backdrop-filter: blur(6px) saturate(190%) brightness(1.06);
-  backdrop-filter: blur(6px) saturate(190%) brightness(1.06);
-  /* box-shadow:
-    inset 0 1px 0.5px rgb(255 255 255 / 0.9),
-    inset 0 -1px 1px rgb(255 255 255 / 0.35),
-    inset 1.5px 0 1px -1px rgb(255 255 255 / 0.6),
-    inset -1.5px 0 1px -1px rgb(255 255 255 / 0.6),
-    inset 0 0 22px rgb(255 255 255 / 0.22),
-    inset 0 -10px 18px -12px rgb(47 76 138 / 0.18),
-    0 12px 32px -12px rgb(31 42 92 / 0.38),
-    0 2px 6px rgb(31 42 92 / 0.08); */
-}
-/* Chromium: pinggir kaca membelokkan latar seperti lensa lewat filter SVG #liquid-glass (peta dibuat JS) */
-.lg-refract .site-header::before {
-  backdrop-filter: url(#liquid-glass) blur(0.6px) saturate(190%) brightness(1.06);
-}
-.site-header::after {
-  background:
-    radial-gradient(
-      220px 90px at var(--gx, 30%) var(--gy, 0%),
-      rgb(255 255 255 / 0.55),
-      transparent 70%
-    ),
-    linear-gradient(
-      100deg,
-      transparent 20%,
-      rgb(255 255 255 / 0.18) 38%,
-      transparent 52%
-    );
-  mix-blend-mode: soft-light;
-}
-.site-header.is-nav-open::before,
-.site-header.is-nav-open::after {
+.site-header.is-nav-open .site-header__glass {
   opacity: 0;
 }
 .site-header__side--end {
@@ -630,11 +588,21 @@ html.lenis body {
 .how-panel:not(.is-active) > * {
   transform: translateY(14px);
 }
-.how-panel.is-active > :nth-child(1) { transition-delay: 0.25s; }
-.how-panel.is-active > :nth-child(2) { transition-delay: 0.32s; }
-.how-panel.is-active > :nth-child(3) { transition-delay: 0.39s; }
-.how-panel.is-active > :nth-child(4) { transition-delay: 0.46s; }
-.how-panel.is-active > :nth-child(5) { transition-delay: 0.53s; }
+.how-panel.is-active > :nth-child(1) {
+  transition-delay: 0.25s;
+}
+.how-panel.is-active > :nth-child(2) {
+  transition-delay: 0.32s;
+}
+.how-panel.is-active > :nth-child(3) {
+  transition-delay: 0.39s;
+}
+.how-panel.is-active > :nth-child(4) {
+  transition-delay: 0.46s;
+}
+.how-panel.is-active > :nth-child(5) {
+  transition-delay: 0.53s;
+}
 .how-panel__eyebrow {
   font-size: 12px;
   font-weight: 700;
@@ -670,8 +638,12 @@ html.lenis body {
 .how-panel.is-active .how-wave i {
   animation: how-wave 1.1s ease-in-out infinite alternate;
 }
-.how-wave i:nth-child(3n) { animation-delay: -0.3s !important; }
-.how-wave i:nth-child(3n + 1) { animation-delay: -0.7s !important; }
+.how-wave i:nth-child(3n) {
+  animation-delay: -0.3s !important;
+}
+.how-wave i:nth-child(3n + 1) {
+  animation-delay: -0.7s !important;
+}
 @keyframes how-wave {
   to {
     transform: scaleY(0.45);
@@ -733,8 +705,7 @@ html.lenis body {
     padding: 16px;
     gap: 8px;
   }
-  .site-header::before,
-  .site-header::after {
+  .site-header__glass {
     inset: 8px;
   }
   .how-stage {
