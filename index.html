@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scrollbar-none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,33 +14,30 @@
       rel="stylesheet"
     />
   </head>
-  <body class="bg-[#fff8f8] font-figtree relative">
-    <header
-      id="site-header"
-      class="site-header group fixed inset-x-0 top-0 z-100 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 px-10 py-6 pointer-events-none opacity-0 translate-y-[-140%] [&.is-visible]:opacity-100 [&.is-visible]:translate-y-0 [&.is-nav-open]:opacity-100 [&.is-nav-open]:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0 [transition:translate_0.9s_var(--ease-premium),opacity_0.6s_var(--ease-premium)] max-sm:gap-2 max-sm:px-4 max-sm:py-4"
-    >
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden">
+    <header id="site-header" class="site-header">
       <span
-        class="site-header__glass absolute inset-[14px_28px] -z-1 rounded-full pointer-events-none bg-white/30 group-[.is-nav-open]/header:opacity-0 [transition:opacity_0.5s_var(--ease-premium)] max-sm:inset-2"
+        class="site-header__glass"
         aria-hidden="true"
       ></span>
       <div
-        class="site-header__side flex pointer-events-none group-[.is-visible]/header:pointer-events-auto group-[.is-nav-open]/header:pointer-events-auto group-focus-within/header:pointer-events-auto"
+        class="site-header__side"
       >
         <div
-          class="site-lang inline-flex gap-0.5"
+          class="site-lang"
           role="group"
           aria-label="Language"
         >
           <button
             type="button"
-            class="site-lang__item grid place-items-center size-12 rounded-full bg-white/45 text-nila text-sm font-bold cursor-pointer border-[1.5px] border-nila hover:border-biru-aksen hover:text-biru-aksen aria-pressed:border-nila aria-pressed:bg-nila aria-pressed:text-krem ring-[1.5px] ring-krem group-[.is-nav-open]/header:border-krem/60 group-[.is-nav-open]/header:bg-transparent group-[.is-nav-open]/header:text-krem group-[.is-nav-open]/header:aria-pressed:border-krem group-[.is-nav-open]/header:aria-pressed:bg-krem group-[.is-nav-open]/header:aria-pressed:text-nila [transition:border-color_0.3s,color_0.3s,background-color_0.3s] max-sm:size-10.5"
+            class="site-lang__item"
             aria-pressed="true"
           >
             EN
           </button>
           <button
             type="button"
-            class="site-lang__item grid place-items-center size-12 rounded-full bg-white/45 text-nila text-sm font-bold cursor-pointer border-[1.5px] border-nila hover:border-biru-aksen hover:text-biru-aksen aria-pressed:border-nila aria-pressed:bg-nila aria-pressed:text-krem ring-[1.5px] ring-krem group-[.is-nav-open]/header:border-krem/60 group-[.is-nav-open]/header:bg-transparent group-[.is-nav-open]/header:text-krem group-[.is-nav-open]/header:aria-pressed:border-krem group-[.is-nav-open]/header:aria-pressed:bg-krem group-[.is-nav-open]/header:aria-pressed:text-nila [transition:border-color_0.3s,color_0.3s,background-color_0.3s] max-sm:size-10.5"
+            class="site-lang__item"
             aria-pressed="false"
           >
             ID
@@ -49,82 +46,76 @@
       </div>
       <a
         href="index.html"
-        class="site-header__brand inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-transparent font-unbounded text-lg font-black tracking-[-0.02em] text-nila pointer-events-auto [transition:background-color_0.3s,color_0.3s] group-[.is-nav-open]/header:bg-transparent group-[.is-nav-open]/header:text-krem max-sm:pr-1 max-sm:[&_span]:hidden"
+        class="site-header__brand"
         aria-label="Gaulingo, home"
       >
         <span>GAULINGO</span>
       </a>
       <div
-        class="site-header__side site-header__side--end flex justify-end pointer-events-none group-[.is-visible]/header:pointer-events-auto group-[.is-nav-open]/header:pointer-events-auto group-focus-within/header:pointer-events-auto"
+        class="site-header__side site-header__side--end"
       >
         <button
           id="menu-toggle"
           type="button"
-          class="site-menu-toggle roll-host inline-flex gap-0.5 border-0 bg-transparent p-0 cursor-pointer group/toggle group/rollhost"
+          class="site-menu-toggle roll-host"
           aria-controls="site-menu"
           aria-expanded="false"
           aria-label="Open menu"
         >
           <span
-            class="site-menu-toggle__pill relative inline-flex min-w-25 h-12 overflow-hidden rounded-full bg-white/45 text-nila text-sm font-bold uppercase border-[1.5px] border-nila tracking-[0.04em] [transition:border-color_0.3s,color_0.3s,background-color_0.3s] group-[.is-nav-open]/header:border-krem/60 group-[.is-nav-open]/header:bg-transparent group-[.is-nav-open]/header:text-krem max-sm:min-w-21 max-sm:h-10.5"
+            class="site-menu-toggle__pill"
             aria-hidden="true"
           >
             <span
-              class="site-menu-toggle__label site-menu-toggle__label--menu absolute inset-0 grid place-items-center [transition:translate_0.9s_var(--ease-premium),opacity_0.9s_var(--ease-premium)] group-[.is-nav-open]/header:opacity-0 group-[.is-nav-open]/header:-translate-y-full"
+              class="site-menu-toggle__label site-menu-toggle__label--menu"
               data-roll
               >Menu</span
             >
             <span
-              class="site-menu-toggle__label site-menu-toggle__label--close absolute inset-0 grid place-items-center opacity-0 translate-y-full [transition:translate_0.9s_var(--ease-premium),opacity_0.9s_var(--ease-premium)] group-[.is-nav-open]/header:opacity-100 group-[.is-nav-open]/header:translate-y-0"
+              class="site-menu-toggle__label site-menu-toggle__label--close"
               data-roll
               >Close</span
             >
           </span>
           <span
-            class="site-menu-toggle__disc relative grid place-items-center size-12 overflow-hidden isolate rounded-full bg-nila ring-[1.5px] ring-krem [transition:background-color_0.3s] before:content-[''] before:absolute before:inset-0 before:-z-1 before:rounded-full before:bg-biru-aksen before:scale-0 before:[transition:scale_0.3s_ease-out] hover:before:scale-100 group-[.is-nav-open]/header:bg-matahari group-[.is-nav-open]/header:before:bg-krem max-sm:size-10.5 max-sm:hidden group-hover/toggle:before:scale-100"
+            class="site-menu-toggle__disc"
             aria-hidden="true"
           >
             <span
-              class="site-menu-toggle__diamond size-2.25 rounded-[1px] bg-matahari rotate-45 [transition:rotate_0.9s_var(--ease-premium),scale_0.9s_var(--ease-premium),opacity_0.9s_var(--ease-premium)] group-hover/header:rotate-45 group-hover/header:scale-125 group-[.is-nav-open]/header:opacity-0 group-[.is-nav-open]/header:-translate-y-full group-hover/toggle:rotate-45 group-hover/toggle:scale-125"
+              class="site-menu-toggle__diamond"
             ></span>
             <i
-              class="ph-bold ph-x site-menu-toggle__close-icon absolute text-nila text-lg opacity-0 translate-y-full [transition:translate_0.9s_var(--ease-premium),opacity_0.9s_var(--ease-premium)] group-[.is-nav-open]/header:opacity-100 group-[.is-nav-open]/header:translate-y-0"
+              class="ph-bold ph-x site-menu-toggle__close-icon"
             ></i>
           </span>
         </button>
       </div>
     </header>
-    <div
-      id="site-menu"
-      class="site-menu group/menu fixed inset-0 z-90 overflow-hidden bg-nila text-krem invisible -translate-y-full [&.is-open]:visible [&.is-open]:translate-y-0 [transition:translate_0.9s_var(--ease-premium),visibility_0s_linear_0.9s] [&.is-open]:[transition:translate_0.9s_var(--ease-premium),visibility_0s] motion-reduce:transition-none!"
-    >
-      <nav
-        class="site-menu__inner flex flex-col justify-center h-svh px-10 py-26 max-sm:px-4 max-sm:py-22"
-        aria-label="Main navigation"
-      >
-        <ul class="site-menu__list flex flex-col" style="--last: 5">
+    <div id="site-menu" class="site-menu">
+      <nav class="site-menu__inner" aria-label="Main navigation">
+        <ul class="site-menu__list" style="--last: 5">
           <li
-            class="site-menu__item is-active relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item is-active"
             style="--i: 0"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="index.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end max-sm:[.is-last_&]:ml-0 max-sm:[.is-last_&]:translate-x-0 [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 group/rollhost"
+                class="site-menu__link roll-host"
                 aria-current="page"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >01</span
                   >
                   <span data-roll>Home</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -132,26 +123,26 @@
             </div>
           </li>
           <li
-            class="site-menu__item relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item"
             style="--i: 1"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="situations.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end group/rollhost"
+                class="site-menu__link roll-host"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >02</span
                   >
                   <span data-roll>Situations</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -159,26 +150,26 @@
             </div>
           </li>
           <li
-            class="site-menu__item relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item"
             style="--i: 2"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="culture.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end group/rollhost"
+                class="site-menu__link roll-host"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >03</span
                   >
                   <span data-roll>Culture</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -186,26 +177,26 @@
             </div>
           </li>
           <li
-            class="site-menu__item relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item"
             style="--i: 3"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="practice.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end group/rollhost"
+                class="site-menu__link roll-host"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >04</span
                   >
                   <span data-roll>Practice</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -213,26 +204,26 @@
             </div>
           </li>
           <li
-            class="site-menu__item relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item"
             style="--i: 4"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="saved.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end group/rollhost"
+                class="site-menu__link roll-host"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >05</span
                   >
                   <span data-roll>Saved</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -240,26 +231,26 @@
             </div>
           </li>
           <li
-            class="site-menu__item is-last relative px-0 py-[clamp(8px,1.6vh,18px)] first:before:hidden before:content-[''] before:absolute before:top-0 before:left-0 before:w-full before:h-px before:origin-left before:scale-x-0 before:bg-krem/30 before:[transition:transform_0.6s_var(--ease-premium)] group-[.is-open]/menu:before:scale-x-100 group-[.is-open]/menu:before:[transition-delay:calc(0.4s+var(--i)*0.08s)] last:pb-0"
+            class="site-menu__item is-last"
             style="--i: 5"
           >
             <div
-              class="site-menu__row flex overflow-hidden [.is-last_&]:grid [.is-last_&]:grid-cols-[minmax(0,1fr)_auto] [.is-last_&]:items-end [.is-last_&]:gap-x-10 [.is-last_&]:gap-y-4 max-sm:[.is-last_&]:grid-cols-1"
+              class="site-menu__row"
             >
               <a
                 href="about.html"
-                class="site-menu__link roll-host flex [--fraction:calc(var(--i)_/_var(--last))] ml-[calc(var(--fraction)*100%)] translate-x-[calc(var(--fraction)*-100%)] text-krem font-unbounded text-[clamp(2.25rem,min(6vw,7.5vh),6.5rem)] font-black leading-none tracking-[-0.03em] uppercase hover:text-matahari [.is-active_&]:text-matahari [transition:color_0.45s_var(--ease-premium)] [.is-last_&]:col-2 [.is-last_&]:row-1 [.is-last_&]:ml-0 [.is-last_&]:translate-x-0 max-sm:[.is-last_&]:col-1 max-sm:[.is-last_&]:justify-self-end group/rollhost"
+                class="site-menu__link roll-host"
               >
                 <span
-                  class="site-menu__rise flex items-start gap-[0.2em] translate-y-[110%] [transition:translate_0.6s_var(--ease-premium)] group-[.is-open]/menu:translate-y-0 group-[.is-open]/menu:[transition:translate_0.9s_var(--ease-premium)_calc(0.3s+var(--i)*0.06s)] motion-reduce:!transition-none"
+                  class="site-menu__rise"
                 >
                   <span
-                    class="site-menu__num font-figtree text-sm font-bold tracking-normal text-matahari"
+                    class="site-menu__num"
                     >06</span
                   >
                   <span data-roll>About</span>
                   <span
-                    class="site-menu__marker self-center size-[0.16em] ml-[0.1em] rounded-[1px] bg-matahari rotate-45 scale-0 [transition:rotate_0.6s_var(--ease-premium),scale_0.6s_var(--ease-premium)] [.is-active_&]:rotate-45 [.is-active_&]:scale-100"
+                    class="site-menu__marker"
                     aria-hidden="true"
                   ></span>
                 </span>
@@ -269,26 +260,26 @@
         </ul>
         <!-- link sekunder menempel di dasar layar, terpisah dari daftar menu yang di tengah -->
         <ul
-          class="site-menu__secondary absolute inset-x-10 bottom-10 flex flex-wrap gap-x-8 gap-y-2 text-lg font-bold opacity-0 [transition:opacity_0.4s] group-[.is-open]/menu:opacity-100 group-[.is-open]/menu:[transition:opacity_0.6s_0.8s] max-sm:inset-x-4 max-sm:bottom-6 max-sm:gap-x-5 max-sm:gap-y-2 max-sm:text-[15px] [&_a]:inline-flex [&_a]:items-center [&_a]:gap-2 [&_a]:text-krem/80 [&_a:hover]:text-matahari [&_a]:[transition:color_0.3s]"
+          class="site-menu__secondary"
         >
           <li>
-            <a href="#" class="roll-host group/rollhost"
+            <a href="#" class="roll-host"
               ><i class="ph-fill ph-chat-circle-dots"></i
               ><span data-roll>Chat with Gali</span></a
             >
           </li>
           <li>
-            <a href="#" class="roll-host group/rollhost"
+            <a href="#" class="roll-host"
               ><span data-roll>Instagram</span></a
             >
           </li>
           <li>
-            <a href="#" class="roll-host group/rollhost"
+            <a href="#" class="roll-host"
               ><span data-roll>TikTok</span></a
             >
           </li>
           <li>
-            <a href="#" class="roll-host group/rollhost"
+            <a href="#" class="roll-host"
               ><span data-roll>YouTube</span></a
             >
           </li>
@@ -1918,7 +1909,7 @@
         const chars = [...text]
           .map((ch, i) => {
             const c = ch === " " ? "&nbsp;" : ch;
-            return `<span class="roll-char relative inline-block h-[1em] overflow-hidden leading-none" style="--i: ${i}"><span class="roll-top block group-hover/rollhost:-translate-y-full motion-reduce:!transition-none [transition:translate_0.35s_cubic-bezier(0.4,0,0.2,1)] [transition-delay:calc(var(--i)*18ms)]">${c}</span><span class="roll-bot block absolute top-0 left-0 translate-y-full group-hover/rollhost:translate-y-0 motion-reduce:!transition-none [transition:translate_0.35s_cubic-bezier(0.4,0,0.2,1)] [transition-delay:calc(var(--i)*18ms)]">${c}</span></span>`;
+            return `<span class="roll-char" style="--i: ${i}"><span class="roll-top">${c}</span><span class="roll-bot">${c}</span></span>`;
           })
           .join("");
         el.innerHTML = `<span class="sr-only">${text}</span><span class="roll inline-flex" aria-hidden="true">${chars}</span>`;
