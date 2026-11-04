@@ -1,11 +1,220 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Situations || Gaulingo</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-figtree relative scrollbar-none">
+    <header id="site-header" class="site-header">
+      <span class="site-header__glass" aria-hidden="true"></span>
+      <div class="site-header__side">
+        <div class="site-lang" role="group" aria-label="Language">
+          <button type="button" class="site-lang__item" aria-pressed="true">
+            EN
+          </button>
+          <button type="button" class="site-lang__item" aria-pressed="false">
+            ID
+          </button>
+        </div>
+      </div>
+      <a
+        href="index.html"
+        class="site-header__brand"
+        aria-label="Gaulingo, home"
+      >
+        <span>GAULINGO</span>
+      </a>
+      <div class="site-header__side site-header__side--end">
+        <button
+          id="menu-toggle"
+          type="button"
+          class="site-menu-toggle roll-host"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <span class="site-menu-toggle__pill" aria-hidden="true">
+            <span
+              class="site-menu-toggle__label site-menu-toggle__label--menu"
+              data-roll
+              >Menu</span
+            >
+            <span
+              class="site-menu-toggle__label site-menu-toggle__label--close"
+              data-roll
+              >Close</span
+            >
+          </span>
+          <span class="site-menu-toggle__disc" aria-hidden="true">
+            <span class="site-menu-toggle__diamond"></span>
+            <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
+          </span>
+        </button>
+      </div>
+    </header>
+    <div id="site-menu" class="site-menu">
+      <nav class="site-menu__inner" aria-label="Main navigation">
+        <ul class="site-menu__list" style="--last: 5">
+          <li class="site-menu__item is-active" style="--i: 0">
+            <div class="site-menu__row">
+              <a
+                href="index.html"
+                class="site-menu__link roll-host"
+                aria-current="page"
+              >
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">01</span>
+                  <span data-roll>Home</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 1">
+            <div class="site-menu__row">
+              <a href="situations.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">02</span>
+                  <span data-roll>Situations</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 2">
+            <div class="site-menu__row">
+              <a href="culture.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">03</span>
+                  <span data-roll>Culture</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 3">
+            <div class="site-menu__row">
+              <a href="practice.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">04</span>
+                  <span data-roll>Practice</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 4">
+            <div class="site-menu__row">
+              <a href="saved.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">05</span>
+                  <span data-roll>Saved</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item is-last" style="--i: 5">
+            <div class="site-menu__row">
+              <a href="about.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">06</span>
+                  <span data-roll>About</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <ul class="site-menu__secondary">
+          <li>
+            <a href="#" class="roll-host"
+              ><i class="ph-fill ph-chat-circle-dots"></i
+              ><span data-roll>Chat with Gali</span></a
+            >
+          </li>
+          <li>
+            <a href="#" class="roll-host"><span data-roll>Instagram</span></a>
+          </li>
+          <li>
+            <a href="#" class="roll-host"><span data-roll>TikTok</span></a>
+          </li>
+          <li>
+            <a href="#" class="roll-host"><span data-roll>YouTube</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main class="p-10 bg-[#fff8f8]">
+      <section
+        class="relative isolate flex min-h-112 items-center overflow-hidden rounded-4xl bg-pasir lg:min-h-128"
+      >
+        <div class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
+          <div class="mb-5 flex items-center gap-5 text-xs">
+            <a href="#" class="rounded-sm underline-offset-4 hover:underline"
+              >Home</a
+            >
+            <i class="ph-bold ph-caret-right"></i>
+            <a class="font-medium">Situations</a>
+          </div>
+          <h1
+            class="font-unbounded text-nila max-sm:text-3xl leading-[1.02] font-black tracking-tight uppercase max-md:text-4xl text-6xl"
+          >
+            Where are you<br />today?
+          </h1>
+          <p class="mt-5 max-w-md text-sm leading-relaxed sm:text-base">
+            Pick the place you are in. Gali brings the phrases, the
+            pronunciation, and the manners that go with it.
+          </p>
+          <form
+            role="search"
+            action="#"
+            class="mt-7 flex w-full max-w-lg items-center gap-3 rounded-full bg-white p-1.5 pl-5 shadow-sm max-sm:text-[10px]"
+          >
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              class="size-4 shrink-0 fill-none stroke-nila stroke-[1.75]"
+              stroke-linecap="round"
+            >
+              <circle cx="9" cy="9" r="6" />
+              <path d="m13.5 13.5 4 4" />
+            </svg>
+
+            <label for="search" class="sr-only"
+              >Search a phrase or a place</label
+            >
+            <input
+              id="search"
+              type="search"
+              name="q"
+              placeholder="Search a phrase or a place..."
+              class="min-w-0 flex-1 bg-transparent text-sm text-nila outline-none placeholder:text-nila/50"
+            />
+
+            <button
+              type="submit"
+              class="shrink-0 cursor-pointer rounded-full bg-nila px-6 py-3 text-xs font-bold text-white transition-colors hover:bg-biru-aksen max-sm:px-2 max-sm:py-2 max-sm:text-[10px]"
+            >
+              Search
+            </button>
+          </form>
+        </div>
+        <div
+          class="absolute -right-25 -bottom-25 -z-1 aspect-square w-1/4 rounded-full bg-matahari max-lg:w-1/2"
+        ></div>
+      </section>
+      <div></div>
+    </main>
+  </body>
 </html>
