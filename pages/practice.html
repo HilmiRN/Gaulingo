@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en" class="scrollbar-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice || Gaulingo</title>
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="icon" type="image/x-icon" href="" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden">
+    <header id="site-header" class="site-header">
+      <span class="site-header__glass" aria-hidden="true"></span>
+      <div class="site-header__side">
+        <div class="site-lang" role="group" aria-label="Language">
+          <button type="button" class="site-lang__item" aria-pressed="true">
+            EN
+          </button>
+          <button type="button" class="site-lang__item" aria-pressed="false">
+            ID
+          </button>
+        </div>
+      </div>
+      <a
+        href="index.html"
+        class="site-header__brand"
+        aria-label="Gaulingo, home"
+      >
+        <img src="./src/assets/logo.svg" alt="Gaulingo Logo" />
+      </a>
+      <div class="site-header__side site-header__side--end">
+        <button
+          id="menu-toggle"
+          type="button"
+          class="site-menu-toggle roll-host"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <div class="site-menu-toggle__pill" aria-hidden="true">
+            <p
+              class="site-menu-toggle__label site-menu-toggle__label--menu"
+              data-roll
+            >
+              Menu
+            </p>
+            <p
+              class="site-menu-toggle__label site-menu-toggle__label--close"
+              data-roll
+            >
+              Close
+            </p>
+          </div>
+          <div class="site-menu-toggle__disc" aria-hidden="true">
+            <div class="site-menu-toggle__diamond"></div>
+            <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
+          </div>
+        </button>
+      </div>
+    </header>
+    <div id="site-menu" class="site-menu">
+      <nav class="site-menu__inner" aria-label="Main navigation">
+        <ul class="site-menu__list" style="--last: 5">
+          <li class="site-menu__item is-active" style="--i: 0">
+            <div class="site-menu__row">
+              <a
+                href="../index.html"
+                class="site-menu__link roll-host"
+                aria-current="page"
+              >
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">01</p>
+                  <h3 data-roll>Home</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 1">
+            <div class="site-menu__row">
+              <a href="./situations.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">02</span>
+                  <span data-roll>Situations</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 2">
+            <div class="site-menu__row">
+              <a href="./culture.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">03</p>
+                  <h3 data-roll>Culture</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 3">
+            <div class="site-menu__row">
+              <a href="./practice.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">04</p>
+                  <h3 data-roll>Practice</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item is-last" style="--i: 4">
+            <div class="site-menu__row">
+              <a href="./about.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">06</p>
+                  <h3 data-roll>About</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <ul class="site-menu__secondary">
+          <li>
+            <a href="#" class="roll-host"
+              ><i class="ph-fill ph-chat-circle-dots"></i>
+              <p data-roll>Chat with Gali</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" class="roll-host"
+              ><p data-roll>Instagram</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/" class="roll-host"
+              ><p data-roll>TikTok</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" class="roll-host"
+              ><p data-roll>YouTube</p></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <script src="../script.js"></script>
+  </body>
+</html>
