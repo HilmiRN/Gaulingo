@@ -1,47 +1,26 @@
-/* Bundled copy of liquidglass.dev (MIT) — https://liquidglass.dev */
-/**
- * liquid-glass.js v1.0.0 — refractive "liquid glass" for the web that renders the same in Chromium,
- * WebKit (Safari, every iOS browser) and Gecko (Firefox).
- *
- * The glass bends the element's OWN rendered pixels with an SVG feDisplacementMap referenced from
- * CSS `filter: url(#…)`. `backdrop-filter: url(#…)` would be simpler but only Chromium renders it,
- * so it is offered only as an opt-in enhancement (mode: 'backdrop').
- *
- * The displacement map is a small PNG generated at runtime from the lens shape: red/green hold the
- * horizontal/vertical bend, blue holds the rim highlight, alpha is the lens coverage. Outside the lens
- * the source passes through untouched, so text stays crisp, selectable and clickable.
- *
- * No dependencies. ES module.
- */
-
 const NS = 'http://www.w3.org/2000/svg';
 const XLINK = 'http://www.w3.org/1999/xlink';
 const NEUTRAL = 128;
 const MAP_CACHE_SIZE = 48;
 
 export const DEFAULTS = Object.freeze({
-  // Lens rectangle in CSS px, relative to the filtered element's border box.
   x: 0,
   y: 0,
   width: 120,
   height: 64,
   radius: 32,
-  // Optics.
-  refraction: 18, // maximum bend at the rim, CSS px
-  bezel: 0.6, // curved rim width as a fraction of the lens half-size (min side); 1 = full dome
-  curvature: 4, // rim profile exponent: 2 = circular, 4 = squircle-like, higher = steeper rim
-  ior: 1.5, // index of refraction; shapes how quickly the bend fades from the rim inward
-  invert: false, // false = convex lens (magnifies), true = concave (content pushed outward)
-  chroma: 0.12, // colour fringe; blue bends (1 + chroma)x as far as red. 0 skips the extra passes
-  blur: 0, // frost, CSS px
-  specular: 0.45, // rim highlight 0..1. 0 skips the pass
-  specularWidth: 2, // rim highlight width, CSS px
-  lightAngle: -120, // degrees; 0 = light from the right, -90 = from the top. The lit rim is brightest, the far rim reflects dimly
-  mapScale: 0, // map pixels per CSS px; 0 = devicePixelRatio capped at 2
+  refraction: 18,
+  bezel: 0.6,
+  curvature: 4, 
+  ior: 1.5, 
+  invert: false, 
+  chroma: 0.12, 
+  blur: 0, 
+  specular: 0.45,
+  specularWidth: 2,
+  lightAngle: -120,
+  mapScale: 0,
 });
-
-// Keys that change the displacement map itself. Everything else (position, strength) is a cheap
-// attribute update on an existing filter.
 const MAP_KEYS = ['width', 'height', 'radius', 'bezel', 'curvature', 'ior', 'invert', 'specular', 'specularWidth', 'lightAngle'];
 
 export const engine = detectEngine();
@@ -56,16 +35,7 @@ function detectEngine() {
   if (/AppleWebKit\//.test(ua) && !/Chrome\/|Chromium\/|Edg\//.test(ua)) return 'webkit';
   return /Chrome\//.test(ua) ? 'blink' : 'unknown';
 }
-
-/* ------------------------------------------------------------------------------------------------ */
-/* Displacement map                                                                                   */
-/* ------------------------------------------------------------------------------------------------ */
-
 const profileCache = new Map();
-
-// Normalised bend m(s) for s = (distance from rim) / bezel in [0, 1], tabulated once per optics.
-// The glass surface height is h(s) = (1 - (1 - s)^k)^(1/k). A vertical ray hitting a surface tilted
-// by theta refracts to asin(sin(theta) / ior); the lateral offset grows with tan(theta - refracted).
 function profileTable(curvature, ior) {
   const key = `${curvature}|${ior}`;
   let table = profileCache.get(key);
@@ -88,12 +58,6 @@ function profileTable(curvature, ior) {
   profileCache.set(key, table);
   return table;
 }
-
-/**
- * Paint the displacement map for a lens into a canvas.
- * Returns { canvas, width, height, scale } — usable by the SVG path (as a data URL) and by WebGL
- * (as a texture), so both renderers share one optical model.
- */
 export function renderLensMap(options = {}, scale = 1) {
   const p = { ...DEFAULTS, ...options };
   const w = Math.max(2, Math.round(p.width * scale));
@@ -105,7 +69,7 @@ export function renderLensMap(options = {}, scale = 1) {
   const image = ctx.createImageData(w, h);
   const px = image.data;
 
-  const sx = p.width / w; // CSS px per map pixel (x); equals 1 / scale up to rounding
+  const sx = p.width / w; 
   const sy = p.height / h;
   const hw = p.width / 2;
   const hh = p.height / 2;
@@ -114,32 +78,25 @@ export function renderLensMap(options = {}, scale = 1) {
   const table = profileTable(p.curvature, p.ior);
   const N = table.length - 1;
   const rimWidth = Math.max(0.5, p.specularWidth);
-  const aa = Math.max(sx, sy); // one map pixel of anti-aliasing at the rim
+  const aa = Math.max(sx, sy);
   const angle = (p.lightAngle * Math.PI) / 180;
   const lx = Math.cos(angle);
   const ly = Math.sin(angle);
   const dir = p.invert ? -1 : 1;
-
-  // The rounded rectangle is symmetric in both axes: compute the top-left quadrant only and mirror
-  // it, flipping the sign of the x bend across the vertical axis and of the y bend across the
-  // horizontal axis. This keeps per-frame regeneration (squish, resize) inside the frame budget.
   const qw = Math.ceil(w / 2);
   const qh = Math.ceil(h / 2);
   for (let j = 0; j < qh; j++) {
-    const y = (j + 0.5) * sy - hh; // <= 0
+    const y = (j + 0.5) * sy - hh;
     for (let i = 0; i < qw; i++) {
-      const x = (i + 0.5) * sx - hw; // <= 0
-      // Signed distance to the rounded rectangle, evaluated on |p|.
+      const x = (i + 0.5) * sx - hw;
       const qx = -x - (hw - r);
       const qy = -y - (hh - r);
       const ox = Math.max(qx, 0);
       const oy = Math.max(qy, 0);
       const corner = Math.hypot(ox, oy);
-      const dist = corner + Math.min(Math.max(qx, qy), 0) - r; // < 0 inside
+      const dist = corner + Math.min(Math.max(qx, qy), 0) - r; 
       const alpha = Math.min(1, Math.max(0, 0.5 - dist / aa));
-      if (alpha <= 0) continue; // transparent: composited over neutral grey in the filter
-
-      // Outward normal on |p| (points away from the centre).
+      if (alpha <= 0) continue;
       let nx;
       let ny;
       if (qx > 0 && qy > 0) {
@@ -156,12 +113,8 @@ export function renderLensMap(options = {}, scale = 1) {
       const inset = Math.max(0, -dist);
       const s = inset / bezel;
       const m = s >= 1 ? 0 : table[Math.min(N, Math.round(s * N))];
-      // Convex glass samples from further inside (towards the centre) near the rim.
       const bx = Math.round(127 * m * nx * dir);
       const by = Math.round(127 * m * ny * dir);
-
-      // Rim highlight: a crisp line plus a softer inner glow, brightest where the rim faces the
-      // light, with a dimmer reflection on the far side.
       const crisp = Math.max(0, 1 - inset / rimWidth);
       const glow = Math.max(0, 1 - inset / (rimWidth * 5));
       const rim = p.specular * (crisp * crisp + 0.3 * glow * glow);
@@ -169,7 +122,6 @@ export function renderLensMap(options = {}, scale = 1) {
 
       const i2 = w - 1 - i;
       const j2 = h - 1 - j;
-      // top-left: outward normal (-nx, -ny); sample towards +x/+y (inward)
       write(px, (j * w + i) * 4, NEUTRAL + bx, NEUTRAL + by, rimLight(rim, -nx * lx - ny * ly), a);
       if (i2 !== i) write(px, (j * w + i2) * 4, NEUTRAL - bx, NEUTRAL + by, rimLight(rim, nx * lx - ny * ly), a);
       if (j2 !== j) write(px, (j2 * w + i) * 4, NEUTRAL + bx, NEUTRAL - by, rimLight(rim, -nx * lx + ny * ly), a);
@@ -179,8 +131,6 @@ export function renderLensMap(options = {}, scale = 1) {
   ctx.putImageData(image, 0, 0);
   return { canvas, width: w, height: h, scale };
 }
-
-// Blue channel for a rim pixel: `facing` is n·L for its outward normal.
 function rimLight(rim, facing) {
   const shade = 0.12 + 0.88 * (facing > 0 ? facing : -0.4 * facing);
   return NEUTRAL + Math.round(127 * Math.min(1, rim * shade));
@@ -198,10 +148,6 @@ const mapCache = new Map();
 function mapKeyOf(p, scale) {
   return MAP_KEYS.map((k) => p[k]).join('|') + '|' + scale;
 }
-
-// Returns { key, url, decoded, ready }. The PNG is decoded through an <img> before the filter uses
-// it: feImage loads data URLs asynchronously, and WebKit caches whatever the filter produced while
-// the image was still missing (an empty result) until the filter id changes.
 function lensMap(p, scale, key) {
   let entry = mapCache.get(key);
   if (entry) {
@@ -222,10 +168,6 @@ function lensMap(p, scale, key) {
   mapCache.set(key, entry);
   return entry;
 }
-
-/* ------------------------------------------------------------------------------------------------ */
-/* SVG filter                                                                                         */
-/* ------------------------------------------------------------------------------------------------ */
 
 let svgRoot = null;
 
@@ -253,13 +195,6 @@ const CHANNELS = [
   '0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0',
   '0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0',
 ];
-
-// Filter graph (all coordinates are fractions of the element box — see bendScale):
-//   map        = lens PNG over neutral grey (128 = no bend), only inside the lens rect
-//   bend       = map with R/G squeezed towards 128 where the engine scales x and y differently
-//   refracted  = feDisplacementMap(source, bend)           (x3 with per-channel scale when chroma > 0)
-//   lit        = refracted + white * (2 * map.b - 1)        (rim highlight from the blue channel)
-//   result     = (lit IN lensShape) OVER (source OUT lensShape)
 function buildGraph(filter, p) {
   filter.replaceChildren();
   const lensRect = [];
@@ -310,15 +245,6 @@ function buildGraph(filter, p) {
   add('feComposite', { in: 'lens', in2: 'outside', operator: 'over' });
   return { image, aspect, blur, displace, lensRect };
 }
-
-// With primitiveUnits="objectBoundingBox" (the only units WebKit renders — userSpaceOnUse turns the
-// whole element blank), feDisplacementMap's `scale` is a fraction of the box, and each engine turns
-// it into pixels differently (measured):
-//   Blink:  x and y both use width
-//   WebKit: x uses width, y uses height
-//   Gecko:  x and y both use sqrt((w^2 + h^2) / 2)
-// Returns the `scale` that bends `px` pixels on both axes, plus per-axis factors (<= 1) that squeeze
-// the map's R/G channels where the engine would otherwise over-bend one axis.
 function bendScale(px, w, h) {
   if (engine === 'webkit') {
     const m = Math.min(w, h);
@@ -335,31 +261,7 @@ function setRect(n, x, y, w, h) {
   n.setAttribute('height', h);
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* Controller                                                                                         */
-/* ------------------------------------------------------------------------------------------------ */
-
 let uid = 0;
-
-/**
- * Put a glass lens on `target`.
- *
- * mode 'content' (default): bends target's own pixels. Works everywhere. Put the thing to refract
- *   INSIDE target (or a decorative copy of it — see references/patterns.md).
- * mode 'backdrop': bends what is behind target via `backdrop-filter: url()`. Chromium only; other
- *   engines get `fallback` (a plain CSS backdrop-filter) instead.
- *
- * Options: everything in DEFAULTS, plus
- *   fit: true       lens follows target's own size (x = y = 0, width/height = border box)
- *   clip: true      clip target to the lens shape (overlay-copy pattern)
- *   fallback: str   backdrop-filter used by mode 'backdrop' outside Chromium
- *   sync: true      apply updates immediately instead of on the next animation frame
- *   hidden: true    no lens at all (filter removed; with clip, the element is clipped away).
- *                   Toggle with update({ hidden }) — e.g. a magnifier when the pointer leaves
- *
- * Lens coordinates are CSS px relative to target's border box; they are converted to fractions of
- * that box internally, and the filter output is clipped to it.
- */
 export function createGlass(target, options = {}) {
   const base = `lg${++uid}`;
   const mode = options.mode ?? 'content';
@@ -381,23 +283,20 @@ export function createGlass(target, options = {}) {
     width: 1,
     height: 1,
     primitiveUnits: 'objectBoundingBox',
-    // sRGB keeps 128 meaning "no bend"; the default linearRGB would shift every pixel.
     'color-interpolation-filters': 'sRGB',
   });
   if (active) defsNode().appendChild(filter);
 
   let graph = null;
   let structure = '';
-  let wanted = ''; // key of the newest map requested
-  let requested = 0; // request counter, so a slow decode never replaces a newer map
-  let shown = { key: '', seq: -1 }; // map currently referenced by feImage
+  let wanted = '';
+  let requested = 0;
+  let shown = { key: '', seq: -1 };
   let version = 0;
   let frame = 0;
   let settleTimers = [];
   let destroyed = false;
   let box = { width: target.offsetWidth, height: target.offsetHeight };
-
-  // Filter coordinates are fractions of the element box, so every resize has to re-flush.
   const observer = active
     ? new ResizeObserver(() => {
         box = { width: target.offsetWidth, height: target.offsetHeight };
@@ -405,9 +304,6 @@ export function createGlass(target, options = {}) {
       })
     : null;
   observer?.observe(target);
-
-  // Re-issue the filter id shortly after a map swap: WebKit loads its own copy of the data URL and
-  // does not repaint the filter when that load lands.
   function settle() {
     settleTimers.forEach(clearTimeout);
     settleTimers = [60, 250].map((ms) => setTimeout(schedule, ms));
@@ -433,7 +329,7 @@ export function createGlass(target, options = {}) {
     }
     const W = box.width;
     const H = box.height;
-    if (W < 1 || H < 1) return; // not laid out yet; the ResizeObserver will call back
+    if (W < 1 || H < 1) return; 
     if (flags.fit) {
       p.x = 0;
       p.y = 0;
@@ -452,7 +348,6 @@ export function createGlass(target, options = {}) {
 
     const dpr = window.devicePixelRatio || 1;
     const scale = p.mapScale > 0 ? p.mapScale : Math.min(dpr, 2);
-    // Snap the lens to device pixels: fractional sub-regions shimmer while the lens moves.
     const snap = (v) => Math.round(v * dpr) / dpr;
     const x = snap(p.x);
     const y = snap(p.y);
@@ -465,15 +360,13 @@ export function createGlass(target, options = {}) {
       const entry = lensMap(p, scale, key);
       const seq = ++requested;
       if (entry.decoded) show(entry, seq);
-      // While a squish animation requests a new map every frame, show the newest map that has
-      // finished decoding (stretched to the current rect) instead of waiting for the latest one.
       else entry.ready.then(() => !destroyed && show(entry, seq) && schedule());
     }
     if (flags.clip) {
       const r = Math.min(p.radius, w / 2, h / 2);
       target.style.clipPath = `inset(${y}px ${W - x - w}px ${H - y - h}px ${x}px round ${r}px)`;
     }
-    if (!shown.key) return; // first map not ready yet: leave the element unfiltered
+    if (!shown.key) return; 
 
     for (const n of graph.lensRect) setRect(n, x / W, y / H, w / W, h / H);
     const { scale: k, kx, ky } = bendScale(p.refraction, W, H);
@@ -487,9 +380,6 @@ export function createGlass(target, options = {}) {
       const pad = Math.ceil(p.refraction * (1 + p.chroma) + 3 * p.blur);
       setRect(graph.blur, (x - pad) / W, (y - pad) / H, (w + 2 * pad) / W, (h + 2 * pad) / H);
     }
-
-    // WebKit caches filter output per filter id and keeps serving it after the graph changes;
-    // a fresh id on every update forces it to re-read.
     filter.id = `${base}-v${++version}`;
     const ref = `url(#${filter.id})`;
     if (useBackdropURL) target.style.backdropFilter = ref;
@@ -504,7 +394,6 @@ export function createGlass(target, options = {}) {
   schedule();
 
   return {
-    /** Merge new lens geometry / optics. Moving the lens never regenerates the map. */
     update(next = {}) {
       const changes = pick(next);
       const hidden = next.hidden === undefined ? flags.hidden : !!next.hidden;
@@ -514,7 +403,6 @@ export function createGlass(target, options = {}) {
       flags.hidden = hidden;
       schedule();
     },
-    /** Apply pending changes now (e.g. before measuring or taking a screenshot). */
     flush() {
       if (frame) cancelAnimationFrame(frame);
       flush();
@@ -545,17 +433,8 @@ function pick(o) {
   return out;
 }
 
-/* ------------------------------------------------------------------------------------------------ */
-/* Motion                                                                                             */
-/* ------------------------------------------------------------------------------------------------ */
-
 export const reducedMotion =
   typeof matchMedia === 'function' ? matchMedia('(prefers-reduced-motion: reduce)') : { matches: false };
-
-/**
- * Critically-damped-ish spring for lens position and squish. `onUpdate(value, velocity)` runs every
- * frame until the spring settles. Honors prefers-reduced-motion by jumping straight to the target.
- */
 export function createSpring(initial, onUpdate, { stiffness = 520, damping = 38, mass = 1 } = {}) {
   let value = initial;
   let velocity = 0;
@@ -564,8 +443,6 @@ export function createSpring(initial, onUpdate, { stiffness = 520, damping = 38,
   let last = 0;
 
   function step(now) {
-    // Fixed 1/120 s sub-steps: the animation keeps its duration when frames are slow or throttled,
-    // and one long frame (a background tab coming back) cannot blow the integration up.
     let remaining = Math.min(0.1, (now - last) / 1000 || 1 / 60);
     last = now;
     while (remaining > 1e-6) {

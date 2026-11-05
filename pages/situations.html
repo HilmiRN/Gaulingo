@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scrollbar-none">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="font-figtree relative scrollbar-none">
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden">
     <header id="site-header" class="site-header">
       <span class="site-header__glass" aria-hidden="true"></span>
       <div class="site-header__side">
@@ -32,7 +32,7 @@
         class="site-header__brand"
         aria-label="Gaulingo, home"
       >
-        <span>GAULINGO</span>
+        <img src="./src/assets/logo.svg" alt="Gaulingo Logo" />
       </a>
       <div class="site-header__side site-header__side--end">
         <button
@@ -43,46 +43,48 @@
           aria-expanded="false"
           aria-label="Open menu"
         >
-          <span class="site-menu-toggle__pill" aria-hidden="true">
-            <span
+          <div class="site-menu-toggle__pill" aria-hidden="true">
+            <p
               class="site-menu-toggle__label site-menu-toggle__label--menu"
               data-roll
-              >Menu</span
             >
-            <span
+              Menu
+            </p>
+            <p
               class="site-menu-toggle__label site-menu-toggle__label--close"
               data-roll
-              >Close</span
             >
-          </span>
-          <span class="site-menu-toggle__disc" aria-hidden="true">
-            <span class="site-menu-toggle__diamond"></span>
+              Close
+            </p>
+          </div>
+          <div class="site-menu-toggle__disc" aria-hidden="true">
+            <div class="site-menu-toggle__diamond"></div>
             <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
-          </span>
+          </div>
         </button>
       </div>
     </header>
     <div id="site-menu" class="site-menu">
       <nav class="site-menu__inner" aria-label="Main navigation">
-        <ul class="site-menu__list" style="--last: 5">
-          <li class="site-menu__item is-active" style="--i: 0">
+        <ul class="site-menu__list" style="--last: 4">
+          <li class="site-menu__item" style="--i: 0">
             <div class="site-menu__row">
               <a
-                href="index.html"
+                href="../index.html"
                 class="site-menu__link roll-host"
                 aria-current="page"
               >
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">01</span>
-                  <span data-roll>Home</span>
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">01</p>
+                  <h3 data-roll>Home</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
+                </div>
               </a>
             </div>
           </li>
-          <li class="site-menu__item" style="--i: 1">
+          <li class="site-menu__item is-active" style="--i: 1">
             <div class="site-menu__row">
-              <a href="situations.html" class="site-menu__link roll-host">
+              <a href="./situations.html" class="site-menu__link roll-host">
                 <span class="site-menu__rise">
                   <span class="site-menu__num">02</span>
                   <span data-roll>Situations</span>
@@ -93,45 +95,34 @@
           </li>
           <li class="site-menu__item" style="--i: 2">
             <div class="site-menu__row">
-              <a href="culture.html" class="site-menu__link roll-host">
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">03</span>
-                  <span data-roll>Culture</span>
+              <a href="./culture.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">03</p>
+                  <h3 data-roll>Culture</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
+                </div>
               </a>
             </div>
           </li>
           <li class="site-menu__item" style="--i: 3">
             <div class="site-menu__row">
-              <a href="practice.html" class="site-menu__link roll-host">
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">04</span>
-                  <span data-roll>Practice</span>
+              <a href="./practice.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">04</p>
+                  <h3 data-roll>Practice</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
+                </div>
               </a>
             </div>
           </li>
           <li class="site-menu__item" style="--i: 4">
             <div class="site-menu__row">
-              <a href="saved.html" class="site-menu__link roll-host">
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">05</span>
-                  <span data-roll>Saved</span>
+              <a href="./about.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">05</p>
+                  <h3 data-roll>About</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
-              </a>
-            </div>
-          </li>
-          <li class="site-menu__item is-last" style="--i: 5">
-            <div class="site-menu__row">
-              <a href="about.html" class="site-menu__link roll-host">
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">06</span>
-                  <span data-roll>About</span>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
+                </div>
               </a>
             </div>
           </li>
@@ -139,25 +130,35 @@
         <ul class="site-menu__secondary">
           <li>
             <a href="#" class="roll-host"
-              ><i class="ph-fill ph-chat-circle-dots"></i
-              ><span data-roll>Chat with Gali</span></a
+              ><i class="ph-fill ph-chat-circle-dots"></i>
+              <p data-roll>Chat with Gali</p></a
             >
           </li>
           <li>
-            <a href="#" class="roll-host"><span data-roll>Instagram</span></a>
+            <a href="https://www.instagram.com/" class="roll-host"
+              ><p data-roll>Instagram</p></a
+            >
           </li>
           <li>
-            <a href="#" class="roll-host"><span data-roll>TikTok</span></a>
+            <a href="https://www.tiktok.com/" class="roll-host"
+              ><p data-roll>TikTok</p></a
+            >
           </li>
           <li>
-            <a href="#" class="roll-host"><span data-roll>YouTube</span></a>
+            <a href="https://www.youtube.com/" class="roll-host"
+              ><p data-roll>YouTube</p></a
+            >
           </li>
         </ul>
       </nav>
     </div>
-    <main class="p-10 bg-[#fff8f8]">
+    <main
+      class="w-screen bg-[#fff8f8] flex flex-col items-center pt-5 max-md:pt-2 pb-0"
+    >
+      <!-- hero -->
       <section
-        class="relative isolate flex min-h-112 items-center overflow-hidden rounded-4xl bg-pasir lg:min-h-128"
+        id="home"
+        class="transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform sticky top-5 max-md:top-2 w-[calc(100vw-80px)] h-[calc(75vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(75vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
         <div class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
           <div class="mb-5 flex items-center gap-5 text-xs">
@@ -214,7 +215,17 @@
           class="absolute -right-25 -bottom-25 -z-1 aspect-square w-1/4 rounded-full bg-matahari max-lg:w-1/2"
         ></div>
       </section>
-      <div></div>
+      <div
+        class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20 z-1 m-0 bg-krem rounded-t-4xl -top-20"
+      >
+        <!--  -->
+        <section class="flex">
+          <div>
+            <button>all</button>
+          </div>
+        </section>
+      </div>
     </main>
+    <script src="../script.js"></script>
   </body>
 </html>
