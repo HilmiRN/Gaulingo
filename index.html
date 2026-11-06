@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaulingo || Homepage</title>
     <link rel="stylesheet" href="./src/output.css" />
-    <link rel="icon" type="image/x-icon" href="" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/icon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1616,153 +1616,194 @@
           </div>
         </section>
         <!-- CTA -->
-        <!-- <section
-          class="reveal mt-50 mx-25 bg-nila rounded-3xl relative p-10 text-white flex flex-row items-center justify-between gap-8 max-md:flex-col"
-        >
-          <div class="relative z-1 flex flex-col gap-4 w-full">
-            <h2
-              class="text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
-            >
-              Ready to
-              <span class="text-matahari font-black font-unbounded"
-                >NGOBROL</span
-              >?
-            </h2>
-            <p class="text-lg font-medium leading-relaxed">
-              Free, no sign-up, works on any phone. Start with one phrase today.
-            </p>
-            <div class="flex items-center gap-3 pt-2 flex-wrap">
-              <a
-                href="#"
-                class="inline-flex items-center gap-2 bg-matahari text-nila font-bold text-base px-6 py-4 rounded-full"
-              >
-                Start exploring <i class="ph-bold ph-arrow-right text-base"></i>
-              </a>
-              <a
-                href="#"
-                class="inline-flex items-center gap-2 border border-white/40 text-white font-semibold text-base px-6 py-3.5 rounded-full hover:bg-white/10 transition duration-200"
-              >
-                <i class="ph-bold ph-chat-circle-dots text-lg"></i> Chat with
-                Gali
-              </a>
-            </div>
-          </div>
-          <div class="relative w-105 h-80 flex justify-end items-center">
-            <div
-              class="absolute right-0 top-1/2 -translate-y-1/2 aspect-square w-full max-md:w-1/2 bg-matahari rounded-full z-0 overflow-hidden"
-            >
-              <img
-                src="./src/assets/cta-image.png"
-                alt="gali image"
-                class="absolute pt-10"
-              />
-            </div>
-          </div>
-        </section> -->
         <section
-          class="full-bleed-section relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-krem gap-4"
+          class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
         >
-          <p>NO SIGN-UP · NO APP · JUST OPEN IT</p>
+          <p class="text-base font-bold">NO SIGN-UP · NO APP · JUST OPEN IT</p>
           <h2
             class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
           >
             Ready to <br /><span class="text-krem">ngobrol?</span>
           </h2>
-          <p class="text-krem">
+          <p class="font-medium text-xl">
             Start with one phrase today. Tomorrow you will use it.
           </p>
-          <div class="w-1/2 flex justify-evenly max-sm:flex-col">
-            <button class="">START EXPLORING</button>
-            <button>CHAT WITH GALI</button>
+          <div class="w-1/2 flex justify-center max-sm:flex-col mt-7 gap-15">
+            <button
+              class="flex items-center gap-2 text-sm font-bold px-6 py-4 bg-matahari text-nila rounded-full hover:border-2 border-matahari hover:text-matahari hover:bg-transparent transition-all duration-300"
+            >
+              START EXPLORING
+              <i class="ph-bold ph-arrow-right text-lg"></i>
+            </button>
+            <button
+              class="flex gap-2 items-center text-sm font-bold border-2 border-matahari px-6 py-4 rounded-full hover:bg-matahari hover:text-nila transition-all duration-300"
+            >
+              <i class="ph-bold ph-chat-circle-dots"></i> CHAT WITH GALI
+            </button>
           </div>
         </section>
       </div>
     </main>
     <!-- footer -->
-    <footer
-      class="sticky bottom-0 -z-10 w-full bg-nila p-6 sm:p-10 text-white flex flex-col justify-between gap-12 max-md:gap-5 overflow-hidden"
-    >
-      <div class="relative w-full h-full">
-        <div
-          class="absolute -right-20 -bottom-20 w-150 h-150 bg-white/10 rounded-full z-1"
-        ></div>
+    <footer class="h-screen sticky bottom-0 -z-1 pt-30 p-10">
+      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 h-full">
+        <div class="flex flex-col justify-between h-full">
+          <div class="flex flex-wrap gap-x-16 gap-y-10 items-start">
+            <div class="flex flex-col gap-3">
+              <a
+                href="#"
+                class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                >Terms and Conditions</a
+              >
+              <a
+                href="#"
+                class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                >Privacy Policy</a
+              >
+            </div>
+            <div class="flex flex-col gap-8">
+              <h3 class="text-nila/80 font-medium text-lg">Contacts</h3>
 
-        <div class="relative z-10 flex flex-col gap-6">
-          <p class="text-matahari uppercase font-bold tracking-widest text-sm">
-            GAULINGO · 2026
-          </p>
-          <div
-            class="flex flex-wrap max-sm:flex-col justify-between max-sm:items-start max-sm:text-[13vw] gap-4 max-sm:gap-1 items-center text-[5vw] text-nowrap font-unbounded font-black tracking-[-2.04] uppercase"
-          >
-            <h2>SAY IT</h2>
-            <h2>LIKE A</h2>
-            <h2>LOCAL.</h2>
+              <div>
+                <p class="text-xs text-nila/70 font-medium mb-1">Email</p>
+                <a
+                  href="mailto:halo@gaulingo.id"
+                  class="text-nila text-2xl font-semibold underline hover:text-biru-aksen transition-all duration-300"
+                  >halo@gaulingo.id</a
+                >
+              </div>
+
+              <div>
+                <p class="text-xs text-nila/70 font-medium mb-1">Based in</p>
+                <p class="text-nila text-2xl font-semibold">Bogor, Indonesia</p>
+              </div>
+
+              <div>
+                <p class="text-xs text-nila/70 font-medium mb-1">Languages</p>
+                <p class="text-nila text-2xl font-semibold">
+                  Indonesian &amp; Sundanese
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-5">
+              <h3 class="text-nila/80 font-medium text-lg">Navigation</h3>
+              <nav>
+                <ul class="flex flex-col gap-3">
+                  <li>
+                    <a
+                      href="./index.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pages/situations.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >Situations</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pages/practice.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >Practice</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pages/culture.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >Culture</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pages/about.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="./pages/about.html"
+                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
+                      >Chat with Gali</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-          <p
-            class="text-base sm:text-lg text-white/85 font-medium max-w-md pt-2"
-          >
-            Everyday Indonesian phrases for real places. Free, no sign-up.
-          </p>
-          <div class="flex items-center gap-4 flex-wrap pt-2">
-            <a
-              href="#"
-              class="inline-flex items-center gap-2 bg-[#fde4b8] text-[#2d539e] font-bold text-base px-6 py-3.5 rounded-full hover:bg-opacity-90 transition duration-200"
-            >
-              Start exploring <i class="ph-bold ph-arrow-right text-base"></i>
-            </a>
-
-            <div class="flex items-center gap-2 max-sm:flex-wrap">
+          <div class="flex flex-col gap-3">
+            <h3 class="text-nila/80 font-medium text-lg">Socials</h3>
+            <div class="flex gap-6">
               <a
-                href="#"
-                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
+                href="https://www.instagram.com/"
                 aria-label="Instagram"
+                class="hover:text-biru-aksen transition-all duration-300"
               >
-                <i class="ph-bold ph-instagram-logo text-2xl"></i>
+                <i class="ph-bold ph-instagram-logo text-2xl text-nila/80"></i>
               </a>
               <a
-                href="#"
-                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
+                href="https://www.tiktok.com/"
                 aria-label="TikTok"
+                class="hover:text-biru-aksen transition-all duration-300"
               >
-                <i class="ph-bold ph-tiktok-logo text-2xl"></i>
+                <i class="ph-bold ph-tiktok-logo text-2xl text-nila/80"></i>
               </a>
               <a
-                href="#"
-                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
+                href="https://www.youtube.com/"
                 aria-label="YouTube"
+                class="hover:text-biru-aksen transition-all duration-300"
               >
-                <i class="ph-bold ph-youtube-logo text-2xl"></i>
+                <i class="ph-bold ph-youtube-logo text-2xl text-nila/80"></i>
               </a>
               <a
-                href="#"
-                class="p-3 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-nila transition duration-300"
+                href="mailto:halo@gaulingo.id"
                 aria-label="Email"
+                class="hover:text-biru-aksen transition-all duration-300"
               >
-                <i class="ph-bold ph-envelope text-2xl"></i>
+                <i class="ph-bold ph-envelope text-2xl text-nila/80"></i>
               </a>
             </div>
           </div>
         </div>
-        <div
-          class="relative z-10 pt-6 border-t border-white/20 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-xs sm:text-sm text-white/70"
-        >
-          <p>© 2026 Gaulingo · Glomind Team</p>
-          <nav class="flex gap-6 flex-wrap font-medium">
-            <a href="#" class="hover:text-white transition">Situations</a>
-            <a href="#" class="hover:text-white transition">Culture</a>
-            <a href="#" class="hover:text-white transition">Practice</a>
-            <a href="#" class="hover:text-white transition">About</a>
-          </nav>
-        </div>
-        <div class="relative w-full overflow-hidden pt-4 -mb-6 sm:-mb-10">
-          <p
-            class="block text-center font-black text-[12vw] font-unbounded tracking-[2.04] text-white/10 uppercase"
-          >
-            GAULINGO
-          </p>
+        <div class="flex flex-col justify-between items-end h-full min-w-70">
+          <div class="flex flex-col items-end gap-3">
+            <img src="./src/assets/icon.svg" alt="G icon" />
+            <p class="text-right text-nila/70 text-sm leading-tight">
+              Copyright © <br />
+              — 2026 Gaulingo
+            </p>
+          </div>
+          <div class="flex flex-col items-end gap-3">
+            <div class="flex items-center gap-6">
+              <a
+                href="#home"
+                type="button"
+                aria-label="Back to top"
+                class="w-14 h-14 rounded-full border-2 border-nila flex items-center justify-center text-nila hover:bg-nila hover:text-cream transition-all duration-300 cursor-pointer shrink-0"
+              >
+                <i class="ph-bold ph-arrow-up text-2xl"></i>
+              </a>
+              <h2
+                class="text-nila font-bold leading-none font-unbounded"
+                style="font-size: clamp(8rem, 22vw, 18rem)"
+              >
+                G<sup class="text-2xl align-top font-normal">®</sup>
+              </h2>
+            </div>
+            <p class="text-right text-nila/70 text-sm max-w-xs leading-snug">
+              Say it like a local.<br />
+              Everyday Indonesian phrases<br />
+              for real places.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
+
     <div
       class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50"
     >
