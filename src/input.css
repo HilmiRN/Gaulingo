@@ -66,6 +66,10 @@
     }
   }
 }
+body {
+  background-color: var(--color-matahari);
+  overflow-x: hidden;
+}
 
 @layer components {
   .roll-char {
