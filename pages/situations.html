@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Situations || Gaulingo</title>
     <link rel="stylesheet" href="../src/output.css" />
-    <link rel="icon" type="image/x-icon" href="" />
+    <link rel="icon" type="image/x-icon" href="./src/assets/icon.ico" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +14,8 @@
       rel="stylesheet"
     />
   </head>
-  <body class="font-figtree relative scrollbar-none overflow-x-hidden">
-    <header id="site-header" class="site-header">
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden -z-2">
+    <header id="site-header" class="site-header flex justify-between">
       <span class="site-header__glass" aria-hidden="true"></span>
       <div class="site-header__side">
         <div class="site-lang" role="group" aria-label="Language">
@@ -27,11 +27,7 @@
           </button>
         </div>
       </div>
-      <a
-        href="index.html"
-        class="site-header__brand"
-        aria-label="Gaulingo, home"
-      >
+      <a href="index.html" class="site-header__brand">
         <img src="./src/assets/logo.svg" alt="Gaulingo Logo" />
       </a>
       <div class="site-header__side site-header__side--end">
@@ -212,20 +208,41 @@
           </form>
         </div>
         <div
-          class="absolute -right-25 -bottom-25 -z-1 aspect-square w-1/4 rounded-full bg-matahari max-lg:w-1/2"
-        ></div>
+          class="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 -z-1 aspect-square w-1/2 rounded-full bg-matahari max-lg:w-3/4"
+        />
       </section>
       <div
         class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20 z-1 m-0 bg-krem rounded-t-4xl -top-20"
       >
-        <!--  -->
-        <section class="flex">
-          <div>
-            <button>all</button>
+        <!-- situation  -->
+        <section class="flex h-screen">
+          <div class="flex gap-2 h-fit overflow-scroll scrollbar-none">
+            <button
+              class="border-2 px-3 py-1 border-nila/20 text-nila font-bold rounded-full active:bg-nila active:text-white"
+            >
+              All
+            </button>
+            <button
+              class="border-2 px-3 py-1 border-nila/20 text-nila font-bold rounded-full active:bg-nila active:text-white"
+            >
+              Everyday
+            </button>
+            <button
+              class="border-2 px-3 py-1 border-nila/20 text-nila font-bold rounded-full active:bg-nila active:text-white"
+            >
+              Travel
+            </button>
+            <button
+              class="border-2 px-3 py-1 border-nila/20 text-nila font-bold rounded-full active:bg-nila active:text-white"
+            >
+              Urgent
+            </button>
           </div>
+          <div class="grid grid-cols-3"></div>
         </section>
       </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
     <script src="../script.js"></script>
   </body>
 </html>
