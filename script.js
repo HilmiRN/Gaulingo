@@ -204,21 +204,13 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 });
 
 const revealEls = document.querySelectorAll(
-  "main section:not(.full-bleed-section), .faq-item, .site-menu__item, .how-step",
+  "main section:not(.full-bleed-section):not(#home), .faq-item, .site-menu__item, .how-step, [data-cta-reveal], [data-footer-reveal]",
 );
 
 revealEls.forEach((el, index) => {
-  el.classList.add(
-    "reveal",
-    "opacity-0",
-    "[transform:translate3d(0,28px,0)_scale(0.985)]",
-    "[transition:opacity_700ms_ease,transform_700ms_cubic-bezier(0.22,1,0.36,1)]",
-    "[transition-delay:var(--reveal-delay,0ms)]",
-    "[will-change:opacity,transform]",
-    "motion-reduce:!transition-none",
-    "motion-reduce:transform-none",
-    "motion-reduce:opacity-100",
-  );
+  el.classList.add("reveal");
+  el.dataset.revealFrom =
+    el.dataset.ctaReveal || el.dataset.footerReveal || "up";
   el.style.setProperty("--reveal-delay", `${Math.min(index * 60, 240)}ms`);
 });
 
@@ -227,11 +219,7 @@ if (!reduceMotion) {
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add(
-            "is-visible",
-            "opacity-100",
-            "[transform:translate3d(0,0,0)_scale(1)]",
-          );
+          entry.target.classList.add("is-visible");
           revealObserver.unobserve(entry.target);
         }
       });
@@ -245,13 +233,7 @@ if (!reduceMotion) {
 } else {
   document
     .querySelectorAll(".reveal")
-    .forEach((el) =>
-      el.classList.add(
-        "is-visible",
-        "opacity-100",
-        "[transform:translate3d(0,0,0)_scale(1)]",
-      ),
-    );
+    .forEach((el) => el.classList.add("is-visible"));
 }
 
 const langButtons = document.querySelectorAll(".site-lang__item");
@@ -265,41 +247,52 @@ langButtons.forEach((btn) =>
 
 // footer animation
 document.addEventListener("DOMContentLoaded", () => {
-  const mainContent = document.getElementById("main-content");
+  const mainContent = document.querySelector("main");
   const footer = document.getElementById("site-footer");
   const scrollTopBtn = document.getElementById("scroll-to-top");
+  let animationFrame = 0;
 
-  // Animasi Scroll Ala R3 Store (Main Mengecil, Membulat, lalu Fading Out)
-  function animateMainOnScroll() {
+  function updateMainAnimation() {
+    animationFrame = 0;
     if (!mainContent || !footer) return;
 
-    const footerRect = footer.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-
-    // Cek jika footer sudah mulai masuk ke area viewport
-    if (footerRect.top < windowHeight) {
-      const visibleHeight = windowHeight - footerRect.top;
-      const progress = Math.min(1, Math.max(0, visibleHeight / windowHeight));
-
-      // 1. Mengecilkan elemen main dari scale 1 ke 0.92
-      const scale = 1 - progress * 0.08;
-      // 2. Membulatkan sudut atas main-content
-      const borderRadius = progress * 44;
-      // 3. Memudarkan opacity elemen main
-      const opacity = 1 - Math.pow(progress, 2) * 0.8;
-
-      mainContent.style.transform = `scale(${scale})`;
-      mainContent.style.borderRadius = `${borderRadius}px ${borderRadius}px 0 0`;
-      mainContent.style.opacity = opacity.toString();
-    } else {
-      // Reset kondisi semula saat belum scroll ke footer
+    if (reduceMotion) {
       mainContent.style.transform = "scale(1)";
-      mainContent.style.borderRadius = "0px";
+      mainContent.style.borderRadius = "0";
+      mainContent.style.clipPath = "none";
       mainContent.style.opacity = "1";
+      return;
+    }
+
+    const windowHeight = window.innerHeight;
+    const mainBottom =
+      mainContent.offsetTop + mainContent.offsetHeight - window.scrollY;
+    const progress = clamp01((windowHeight - mainBottom) / windowHeight);
+    const footerVisibility = clamp01((windowHeight - mainBottom) / windowHeight);
+    const easedProgress = progress * progress * (3 - 2 * progress);
+    const radiusProgress = clamp01(footerVisibility * 2);
+    const easedRadiusProgress =
+      radiusProgress * radiusProgress * (3 - 2 * radiusProgress);
+    const fadeProgress = clamp01((progress - 0.7) / 0.3);
+    const easedFadeProgress =
+      fadeProgress * fadeProgress * (3 - 2 * fadeProgress);
+
+    mainContent.style.transform = `scale(${1 - easedProgress * 0.5})`;
+    mainContent.style.borderRadius = `${easedRadiusProgress * 44}px`;
+    mainContent.style.clipPath = `inset(0 round ${easedRadiusProgress * 44}px)`;
+    mainContent.style.opacity = `${1 - easedFadeProgress}`;
+  }
+
+  function requestMainAnimation() {
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(updateMainAnimation);
     }
   }
 
-  window.addEventListener("scroll", animateMainOnScroll, { passive: true });
+  window.addEventListener("scroll", requestMainAnimation, { passive: true });
+  window.addEventListener("resize", requestMainAnimation);
+  requestMainAnimation();
+
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => scrollToY(0));
   }

@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
   </head>
-  <body class="font-figtree relative scrollbar-none overflow-x-hidden">
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden -z-2">
     <header id="site-header" class="site-header flex justify-between">
       <span class="site-header__glass" aria-hidden="true"></span>
       <div class="site-header__side">
@@ -636,7 +636,7 @@
               </div>
             </div>
             <div
-              class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll"
+              class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none"
             >
               <div
                 class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full"
@@ -1619,16 +1619,22 @@
         <section
           class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
         >
-          <p class="text-base font-bold">NO SIGN-UP · NO APP · JUST OPEN IT</p>
+          <p class="text-base font-bold" data-cta-reveal="left">
+            NO SIGN-UP · NO APP · JUST OPEN IT
+          </p>
           <h2
             class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
+            data-cta-reveal="right"
           >
             Ready to <br /><span class="text-krem">ngobrol?</span>
           </h2>
-          <p class="font-medium text-xl">
+          <p class="font-medium text-xl" data-cta-reveal="left">
             Start with one phrase today. Tomorrow you will use it.
           </p>
-          <div class="w-1/2 flex justify-center max-sm:flex-col mt-7 gap-15">
+          <div
+            class="w-1/2 flex justify-center max-sm:flex-col mt-7 gap-15 max-md:w-full max-md:gap-5"
+            data-cta-reveal="right"
+          >
             <button
               class="flex items-center gap-2 text-sm font-bold px-6 py-4 bg-matahari text-nila rounded-full hover:border-2 border-matahari hover:text-matahari hover:bg-transparent transition-all duration-300"
             >
@@ -1645,165 +1651,136 @@
       </div>
     </main>
     <!-- footer -->
-    <footer class="h-screen sticky bottom-0 -z-1 pt-30 p-10">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 h-full">
-        <div class="flex flex-col justify-between h-full">
-          <div class="flex flex-wrap gap-x-16 gap-y-10 items-start">
-            <div class="flex flex-col gap-3">
+    <footer
+  id="site-footer"
+  class="site-footer"
+>
+  <div class="site-footer__layout grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 max-w-7xl mx-auto w-full h-full my-auto">
+    <div class="site-footer__main flex flex-col justify-between gap-10">
+      <div
+        class="site-footer__details grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 items-start"
+        data-footer-reveal="left"
+      >
+        <div class="site-footer__navigation flex flex-col gap-4">
+          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Navigation</h3>
+          <nav aria-label="Footer navigation">
+            <ul class="site-footer__nav-list flex flex-col gap-2.5 font-semibold text-base text-nila">
+              <li>
+                <a href="./index.html" class="hover:text-biru-aksen transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="./pages/situations.html" class="hover:text-biru-aksen transition-colors">Situations</a>
+              </li>
+              <li>
+                <a href="./pages/practice.html" class="hover:text-biru-aksen transition-colors">Practice</a>
+              </li>
+              <li>
+                <a href="./pages/culture.html" class="hover:text-biru-aksen transition-colors">Culture</a>
+              </li>
+              <li>
+                <a href="./pages/about.html" class="hover:text-biru-aksen transition-colors">About</a>
+              </li>
+              <li>
+                <a href="#home" class="hover:text-biru-aksen transition-colors">Chat with Gali</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="site-footer__contact flex flex-col gap-5">
+          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Contacts</h3>
+          <div class="flex flex-col gap-3 font-semibold text-nila">
+            <div>
+              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Email</p>
               <a
-                href="#"
-                class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                >Terms and Conditions</a
-              >
-              <a
-                href="#"
-                class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                >Privacy Policy</a
+                href="mailto:santrixabudzar@gmail.com"
+                class="text-lg underline hover:text-biru-aksen transition-colors break-all"
+                >santrixabudzar@gmail.com</a
               >
             </div>
-            <div class="flex flex-col gap-8">
-              <h3 class="text-nila/80 font-medium text-lg">Contacts</h3>
-
-              <div>
-                <p class="text-xs text-nila/70 font-medium mb-1">Email</p>
-                <a
-                  href="mailto:halo@gaulingo.id"
-                  class="text-nila text-2xl font-semibold underline hover:text-biru-aksen transition-all duration-300"
-                  >halo@gaulingo.id</a
-                >
-              </div>
-
-              <div>
-                <p class="text-xs text-nila/70 font-medium mb-1">Based in</p>
-                <p class="text-nila text-2xl font-semibold">Bogor, Indonesia</p>
-              </div>
-
-              <div>
-                <p class="text-xs text-nila/70 font-medium mb-1">Languages</p>
-                <p class="text-nila text-2xl font-semibold">
-                  Indonesian &amp; Sundanese
-                </p>
-              </div>
+            <div>
+              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Based in</p>
+              <p class="text-lg">Bogor, Indonesia</p>
             </div>
-            <div class="flex flex-col gap-5">
-              <h3 class="text-nila/80 font-medium text-lg">Navigation</h3>
-              <nav>
-                <ul class="flex flex-col gap-3">
-                  <li>
-                    <a
-                      href="./index.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >Home</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pages/situations.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >Situations</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pages/practice.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >Practice</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pages/culture.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >Culture</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pages/about.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >About</a
-                    >
-                  </li>
-                  <li>
-                    <a
-                      href="./pages/about.html"
-                      class="text-nila font-semibold underline text-lg hover:text-biru-aksen transition-all duration-300"
-                      >Chat with Gali</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="flex flex-col gap-3">
-            <h3 class="text-nila/80 font-medium text-lg">Socials</h3>
-            <div class="flex gap-6">
-              <a
-                href="https://www.instagram.com/"
-                aria-label="Instagram"
-                class="hover:text-biru-aksen transition-all duration-300"
-              >
-                <i class="ph-bold ph-instagram-logo text-2xl text-nila/80"></i>
-              </a>
-              <a
-                href="https://www.tiktok.com/"
-                aria-label="TikTok"
-                class="hover:text-biru-aksen transition-all duration-300"
-              >
-                <i class="ph-bold ph-tiktok-logo text-2xl text-nila/80"></i>
-              </a>
-              <a
-                href="https://www.youtube.com/"
-                aria-label="YouTube"
-                class="hover:text-biru-aksen transition-all duration-300"
-              >
-                <i class="ph-bold ph-youtube-logo text-2xl text-nila/80"></i>
-              </a>
-              <a
-                href="mailto:halo@gaulingo.id"
-                aria-label="Email"
-                class="hover:text-biru-aksen transition-all duration-300"
-              >
-                <i class="ph-bold ph-envelope text-2xl text-nila/80"></i>
-              </a>
+            <div>
+              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Languages</p>
+              <p class="text-lg">Indonesian &amp; Sundanese</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col justify-between items-end h-full min-w-70">
-          <div class="flex flex-col items-end gap-3">
-            <img src="./src/assets/icon.svg" alt="G icon" />
-            <p class="text-right text-nila/70 text-sm leading-tight">
-              Copyright © <br />
-              — 2026 Gaulingo
-            </p>
-          </div>
-          <div class="flex flex-col items-end gap-3">
-            <div class="flex items-center gap-6">
-              <a
-                href="#home"
-                type="button"
-                aria-label="Back to top"
-                class="w-14 h-14 rounded-full border-2 border-nila flex items-center justify-center text-nila hover:bg-nila hover:text-cream transition-all duration-300 cursor-pointer shrink-0"
-              >
-                <i class="ph-bold ph-arrow-up text-2xl"></i>
-              </a>
-              <h2
-                class="text-nila font-bold leading-none font-unbounded"
-                style="font-size: clamp(8rem, 22vw, 18rem)"
-              >
-                G<sup class="text-2xl align-top font-normal">®</sup>
-              </h2>
-            </div>
-            <p class="text-right text-nila/70 text-sm max-w-xs leading-snug">
-              Say it like a local.<br />
-              Everyday Indonesian phrases<br />
-              for real places.
-            </p>
+        <div class="site-footer__legal flex flex-col gap-4">
+          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Legal</h3>
+          <div class="flex flex-col gap-2.5 font-semibold text-base text-nila">
+            <a href="#" class="hover:text-biru-aksen transition-colors">Terms and Conditions</a>
+            <a href="#" class="hover:text-biru-aksen transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
-    </footer>
+      <div class="site-footer__socials flex flex-col gap-3" data-footer-reveal="left">
+        <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Socials</h3>
+        <div class="flex items-center gap-3">
+          <a
+            href="https://www.instagram.com/"
+            aria-label="Instagram"
+            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
+          >
+            <i class="ph-bold ph-instagram-logo text-xl"></i>
+          </a>
+          <a
+            href="https://www.tiktok.com/"
+            aria-label="TikTok"
+            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
+          >
+            <i class="ph-bold ph-tiktok-logo text-xl"></i>
+          </a>
+          <a
+            href="https://www.youtube.com/"
+            aria-label="YouTube"
+            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
+          >
+            <i class="ph-bold ph-youtube-logo text-xl"></i>
+          </a>
+          <a
+            href="mailto:halo@gaulingo.id"
+            aria-label="Email"
+            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
+          >
+            <i class="ph-bold ph-envelope text-xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__brand flex flex-col justify-between items-start lg:items-end gap-8 border-t lg:border-t-0 border-nila/15 pt-8 lg:pt-0">
+      <div class="site-footer__copyright flex items-center lg:items-end gap-3" data-footer-reveal="right">
+        <img src="./src/assets/icon.svg" alt="G icon" class="w-8 h-8" />
+        <p class="text-left lg:text-right text-nila/70 text-xs font-semibold leading-tight">
+          Copyright © 2026 Gaulingo
+        </p>
+      </div>
 
+      <div class="site-footer__signoff flex flex-col items-start lg:items-end gap-4 w-full" data-footer-reveal="right">
+        <div class="flex items-center gap-6 justify-between lg:justify-end w-full">
+          <button
+            id="scroll-to-top"
+            type="button"
+            aria-label="Back to top"
+            class="w-12 h-12 rounded-full border-2 border-nila flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300 cursor-pointer shrink-0"
+          >
+            <i class="ph-bold ph-arrow-up text-xl"></i>
+          </button>
+          <h2
+            class="site-footer__wordmark text-nila font-bold leading-none font-unbounded text-7xl sm:text-8xl lg:text-9xl select-none"
+          >
+            G<sup class="text-xl sm:text-2xl align-top font-normal">®</sup>
+          </h2>
+        </div>
+        <p class="text-left lg:text-right text-nila/70 text-xs sm:text-sm max-w-xs leading-snug">
+          Say it like a local.<br />
+          Everyday Indonesian phrases for real places.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
     <div
       class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50"
     >
@@ -1819,6 +1796,7 @@
       </p>
     </div>
     <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
