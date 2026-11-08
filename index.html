@@ -165,7 +165,7 @@
           <svg
             viewBox="0 0 1360 930"
             role="img"
-            class="absolute -bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2 max-2xl:bottom-10 max-md:bottom-5"
+            class="absolute -bottom-5 max-md:bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2"
           >
             <defs>
               <clipPath id="mouth">
@@ -456,7 +456,7 @@
           </svg>
         </div>
         <div
-          class="absolute inset-x-0 gap-5 max-md:gap-3 top-10 max-lg:top-20 max-md:top-1/6 flex flex-col items-center text-center text-nila"
+          class="absolute inset-x-0 gap-3 top-10 max-md:top-1/10 flex flex-col items-center text-center text-nila"
         >
           <h1
             class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
@@ -471,18 +471,18 @@
             Real phrases. Real places. Real manners.
           </p>
           <div
-            class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3"
+            class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3 max-md:text-sm"
           >
             <a
               href="#"
-              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-4 font-bold text-white max-md:w-full"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full"
             >
               Start exploring
               <i class="ph-bold ph-arrow-right text-2xl"></i>
             </a>
             <a
               href="#"
-              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-4 px-6 font-bold text-nila max-md:w-full"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full"
             >
               <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
               Chat with Gali
@@ -1652,135 +1652,183 @@
     </main>
     <!-- footer -->
     <footer
-  id="site-footer"
-  class="site-footer"
->
-  <div class="site-footer__layout grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 max-w-7xl mx-auto w-full h-full my-auto">
-    <div class="site-footer__main flex flex-col justify-between gap-10">
+      id="site-footer"
+      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16"
+    >
       <div
-        class="site-footer__details grid grid-cols-1 sm:grid-cols-3 gap-8 lg:gap-12 items-start"
-        data-footer-reveal="left"
+        class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12"
       >
-        <div class="site-footer__navigation flex flex-col gap-4">
-          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Navigation</h3>
-          <nav aria-label="Footer navigation">
-            <ul class="site-footer__nav-list flex flex-col gap-2.5 font-semibold text-base text-nila">
-              <li>
-                <a href="./index.html" class="hover:text-biru-aksen transition-colors">Home</a>
-              </li>
-              <li>
-                <a href="./pages/situations.html" class="hover:text-biru-aksen transition-colors">Situations</a>
-              </li>
-              <li>
-                <a href="./pages/practice.html" class="hover:text-biru-aksen transition-colors">Practice</a>
-              </li>
-              <li>
-                <a href="./pages/culture.html" class="hover:text-biru-aksen transition-colors">Culture</a>
-              </li>
-              <li>
-                <a href="./pages/about.html" class="hover:text-biru-aksen transition-colors">About</a>
-              </li>
-              <li>
-                <a href="#home" class="hover:text-biru-aksen transition-colors">Chat with Gali</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="site-footer__contact flex flex-col gap-5">
-          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Contacts</h3>
-          <div class="flex flex-col gap-3 font-semibold text-nila">
-            <div>
-              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Email</p>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start"
+        >
+          <div
+            class="flex flex-col justify-between h-full gap-12 lg:gap-24"
+            data-footer-reveal="fade-up"
+          >
+            <div class="flex flex-col gap-3 font-semibold text-base">
               <a
-                href="mailto:santrixabudzar@gmail.com"
-                class="text-lg underline hover:text-biru-aksen transition-colors break-all"
-                >santrixabudzar@gmail.com</a
+                href="#"
+                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                >Terms and Conditions</a
+              >
+              <a
+                href="#"
+                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                >Privacy Policy</a
               >
             </div>
-            <div>
-              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Based in</p>
-              <p class="text-lg">Bogor, Indonesia</p>
-            </div>
-            <div>
-              <p class="text-xs text-nila/60 font-medium uppercase tracking-wider mb-0.5">Languages</p>
-              <p class="text-lg">Indonesian &amp; Sundanese</p>
+            <div class="flex flex-col gap-3">
+              <h3 class="text-nila/70 font-medium text-sm">Socials</h3>
+              <div class="flex items-center gap-4 text-nila">
+                <a
+                  href="https://www.instagram.com/"
+                  aria-label="Instagram"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-instagram-logo text-2xl"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/"
+                  aria-label="TikTok"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-tiktok-logo text-2xl"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/"
+                  aria-label="YouTube"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-youtube-logo text-2xl"></i>
+                </a>
+                <a
+                  href="mailto:halo@gaulingo.id"
+                  aria-label="Email"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-envelope text-2xl"></i>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="site-footer__legal flex flex-col gap-4">
-          <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Legal</h3>
-          <div class="flex flex-col gap-2.5 font-semibold text-base text-nila">
-            <a href="#" class="hover:text-biru-aksen transition-colors">Terms and Conditions</a>
-            <a href="#" class="hover:text-biru-aksen transition-colors">Privacy Policy</a>
+          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+            <h3 class="text-nila/70 font-medium text-sm">Contacts</h3>
+            <div class="flex flex-col gap-5">
+              <div>
+                <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
+                <a
+                  href="mailto:halo@gaulingo.id"
+                  class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
+                  >halo@gaulingo.id</a
+                >
+              </div>
+              <div>
+                <p class="text-xs text-nila/60 font-medium mb-1">Based in</p>
+                <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
+              </div>
+              <div>
+                <p class="text-xs text-nila/60 font-medium mb-1">Languages</p>
+                <p class="text-xl md:text-2xl font-bold">
+                  Indonesian &amp; Sundanese
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="site-footer__socials flex flex-col gap-3" data-footer-reveal="left">
-        <h3 class="text-nila/60 uppercase font-bold text-xs tracking-wider">Socials</h3>
-        <div class="flex items-center gap-3">
-          <a
-            href="https://www.instagram.com/"
-            aria-label="Instagram"
-            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
+          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+            <h3 class="text-nila/70 font-medium text-sm">Navigation</h3>
+            <nav aria-label="Footer navigation">
+              <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
+                <li>
+                  <a
+                    href="./index.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pages/situations.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >Situations</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pages/practice.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >Practice</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pages/culture.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >Culture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./pages/about.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    >Chat with Gali</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div
+            class="flex flex-col justify-between items-start lg:items-end h-full gap-8"
+            data-footer-reveal="fade-up"
           >
-            <i class="ph-bold ph-instagram-logo text-xl"></i>
-          </a>
-          <a
-            href="https://www.tiktok.com/"
-            aria-label="TikTok"
-            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
-          >
-            <i class="ph-bold ph-tiktok-logo text-xl"></i>
-          </a>
-          <a
-            href="https://www.youtube.com/"
-            aria-label="YouTube"
-            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
-          >
-            <i class="ph-bold ph-youtube-logo text-xl"></i>
-          </a>
-          <a
-            href="mailto:halo@gaulingo.id"
-            aria-label="Email"
-            class="w-10 h-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300"
-          >
-            <i class="ph-bold ph-envelope text-xl"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="site-footer__brand flex flex-col justify-between items-start lg:items-end gap-8 border-t lg:border-t-0 border-nila/15 pt-8 lg:pt-0">
-      <div class="site-footer__copyright flex items-center lg:items-end gap-3" data-footer-reveal="right">
-        <img src="./src/assets/icon.svg" alt="G icon" class="w-8 h-8" />
-        <p class="text-left lg:text-right text-nila/70 text-xs font-semibold leading-tight">
-          Copyright © 2026 Gaulingo
-        </p>
-      </div>
+            <div
+              class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70"
+            >
+              <span>Copyright © — 2026 Gaulingo</span>
+              <div
+                class="w-6 h-6 rounded-full bg-nila text-matahari flex items-center justify-center font-bold font-unbounded text-[10px]"
+              >
+                G
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-6 lg:gap-8 my-auto self-start lg:self-end"
+            >
+              <button
+                id="scroll-to-top"
+                type="button"
+                aria-label="Back to top"
+                class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
+              >
+                <i class="ph-bold ph-arrow-up text-xl md:text-2xl"></i>
+              </button>
 
-      <div class="site-footer__signoff flex flex-col items-start lg:items-end gap-4 w-full" data-footer-reveal="right">
-        <div class="flex items-center gap-6 justify-between lg:justify-end w-full">
-          <button
-            id="scroll-to-top"
-            type="button"
-            aria-label="Back to top"
-            class="w-12 h-12 rounded-full border-2 border-nila flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300 cursor-pointer shrink-0"
-          >
-            <i class="ph-bold ph-arrow-up text-xl"></i>
-          </button>
-          <h2
-            class="site-footer__wordmark text-nila font-bold leading-none font-unbounded text-7xl sm:text-8xl lg:text-9xl select-none"
-          >
-            G<sup class="text-xl sm:text-2xl align-top font-normal">®</sup>
-          </h2>
+              <h2
+                class="font-unbounded font-black text-nila text-8xl md:text-9xl lg:text-[11rem] leading-none select-none tracking-tighter relative"
+              >
+                G<sup
+                  class="text-xl md:text-2xl font-normal absolute top-4 -right-5 md:-right-6"
+                  >®</sup
+                >
+              </h2>
+            </div>
+            <p
+              class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
+            >
+              Say it like a local.<br />
+              Everyday Indonesian phrases<br />
+              for real places.
+            </p>
+          </div>
         </div>
-        <p class="text-left lg:text-right text-nila/70 text-xs sm:text-sm max-w-xs leading-snug">
-          Say it like a local.<br />
-          Everyday Indonesian phrases for real places.
-        </p>
       </div>
-    </div>
-  </div>
-</footer>
+    </footer>
     <div
       class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50"
     >

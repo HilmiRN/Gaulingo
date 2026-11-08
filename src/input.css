@@ -71,10 +71,7 @@
 body {
   @apply bg-matahari overflow-x-hidden;
 }
-
-/* 2. CUSTOM COMPONENTS */
 @layer components {
-  /* Roll Animation Effect */
   .roll-char {
     @apply relative inline-block h-[1em] overflow-hidden leading-none;
   }
@@ -96,10 +93,8 @@ body {
   .roll-host:hover .roll-bot {
     @apply translate-y-0;
   }
-
-  /* Header Section */
   .site-header {
-    @apply fixed inset-x-0 top-0 z-100 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 px-10 py-6 pointer-events-none opacity-0 -translate-y-[140%] transition-all duration-300;
+    @apply fixed inset-x-0 top-0 z-100 grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-4 px-10 py-6 pointer-events-none opacity-0 translate-y-[-140%] transition-all duration-300;
   }
 
   .site-header.is-visible,
@@ -235,8 +230,6 @@ body {
   .site-header.is-nav-open .site-menu-toggle__close-icon {
     @apply translate-y-0 opacity-100;
   }
-
-  /* Fullscreen Menu Navigation */
   .site-menu {
     @apply fixed inset-0 z-90 overflow-hidden bg-nila text-krem invisible -translate-y-full transition-all duration-900;
   }
@@ -323,8 +316,6 @@ body {
   .site-menu__secondary a {
     @apply inline-flex items-center gap-2 text-krem/80 transition-colors duration-300 hover:text-matahari;
   }
-
-  /* Reveal Animations */
   .reveal {
     @apply opacity-0 translate-y-7 scale-[0.985] transition-all duration-700 ease-out will-change-[opacity,transform];
     transition-delay: var(--reveal-delay, 0ms);
@@ -342,27 +333,45 @@ body {
     @apply opacity-100 translate-x-0 translate-y-0 scale-100;
   }
   .site-footer {
-    @apply sticky bottom-0 -z-1 min-h-screen w-full bg-matahari pt-20 pb-10 px-8 flex flex-col justify-between max-md:relative max-md:min-h-0 max-md:h-screen max-md:py-10 max-md:px-6 max-md:z-0;
+    @apply sticky bottom-0 -z-1 w-full bg-matahari text-nila max-md:relative max-md:z-0;
   }
 
-  .site-footer__social-btn {
-    @apply size-10 rounded-full border border-nila/20 bg-white/30 flex items-center justify-center text-nila transition-all duration-300 hover:bg-nila hover:text-matahari hover:-translate-y-1;
+  [data-footer-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+      transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  .site-footer__scroll-top {
-    @apply size-12 rounded-full border-2 border-nila flex items-center justify-center text-nila hover:bg-nila hover:text-matahari transition-all duration-300 cursor-pointer shrink-0;
+  [data-footer-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  .site-footer__wordmark {
-    @apply text-nila font-bold leading-none font-unbounded select-none text-7xl sm:text-8xl lg:text-9xl;
-  }
-
-  .site-footer__link {
-    @apply text-nila font-semibold hover:text-biru-aksen transition-colors;
+  #scroll-to-top:hover i {
+    animation: bounceUp 0.6s ease infinite alternate;
   }
 }
 
-/* 3. MEDIA QUERIES & RESPONSIVE FIXES */
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-footer-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  #scroll-to-top:hover i {
+    animation: none !important;
+  }
+}
 @media (width < 48rem) {
   .site-menu__list {
     @apply items-stretch w-full;
