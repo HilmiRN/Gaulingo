@@ -244,10 +244,9 @@ langButtons.forEach((btn) =>
     ),
   ),
 );
-
-// footer animation
-document.addEventListener("DOMContentLoaded", () => {
-  const mainContent = document.querySelector("main");
+{
+  const homeMain = document.querySelector("#home.sticky")?.closest("main");
+  const mainContent = homeMain || document.querySelector("main");
   const footer = document.getElementById("site-footer");
   const scrollTopBtn = document.getElementById("scroll-to-top");
   let animationFrame = 0;
@@ -261,26 +260,30 @@ document.addEventListener("DOMContentLoaded", () => {
       mainContent.style.borderRadius = "0";
       mainContent.style.clipPath = "none";
       mainContent.style.opacity = "1";
+      mainContent.style.backgroundColor = "";
+      document.documentElement.style.backgroundColor = "";
       return;
     }
 
     const windowHeight = window.innerHeight;
     const mainBottom =
       mainContent.offsetTop + mainContent.offsetHeight - window.scrollY;
-    const progress = clamp01((windowHeight - mainBottom) / windowHeight);
-    const footerVisibility = clamp01((windowHeight - mainBottom) / windowHeight);
+    const progress = clamp01(
+      (windowHeight * 1.25 - mainBottom) / windowHeight,
+    );
     const easedProgress = progress * progress * (3 - 2 * progress);
-    const radiusProgress = clamp01(footerVisibility * 2);
+    const radiusProgress = clamp01(progress * 2);
     const easedRadiusProgress =
       radiusProgress * radiusProgress * (3 - 2 * radiusProgress);
-    const fadeProgress = clamp01((progress - 0.7) / 0.3);
-    const easedFadeProgress =
-      fadeProgress * fadeProgress * (3 - 2 * fadeProgress);
-
-    mainContent.style.transform = `scale(${1 - easedProgress * 0.5})`;
-    mainContent.style.borderRadius = `${easedRadiusProgress * 44}px`;
-    mainContent.style.clipPath = `inset(0 round ${easedRadiusProgress * 44}px)`;
-    mainContent.style.opacity = `${1 - easedFadeProgress}`;
+    mainContent.style.backgroundColor = "";
+    document.documentElement.style.backgroundColor = "";
+    const radius = easedRadiusProgress * 44;
+    mainContent.style.transform = homeMain
+      ? `translateY(${easedProgress * 24}px) scale(${1 - easedProgress * 0.08})`
+      : `scale(${1 - easedProgress * 0.2})`;
+    mainContent.style.borderRadius = `${radius}px ${radius}px 0 0`;
+    mainContent.style.clipPath = `inset(0 round ${radius}px ${radius}px 0 0)`;
+    mainContent.style.opacity = "1";
   }
 
   function requestMainAnimation() {
@@ -295,5 +298,96 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (scrollTopBtn) {
     scrollTopBtn.addEventListener("click", () => scrollToY(0));
+  }
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const cardsGrid = document.getElementById("cards-grid");
+  const countEl = document.getElementById("situation-count");
+  if (!cardsGrid) return;
+
+  const cards = [...cardsGrid.querySelectorAll(".situation-card")];
+  const sortContainer = document.getElementById("sort-dropdown-container");
+  const sortButton = document.getElementById("sort-menu-button");
+  const sortMenu = document.getElementById("sort-menu");
+  const sortCaret = document.getElementById("sort-caret");
+  const sortLabel = document.getElementById("sort-current-label");
+  const sortOptions = document.querySelectorAll(".sort-option");
+
+  const sortCards = (type) => {
+    const compare = {
+      "most-used": (a, b) =>
+        Number(a.dataset.order || 0) - Number(b.dataset.order || 0),
+      alphabetical: (a, b) =>
+        (a.dataset.title || "").localeCompare(b.dataset.title || "", undefined, {
+          sensitivity: "base",
+        }),
+      newest: (a, b) =>
+        Number(b.dataset.newest || 0) - Number(a.dataset.newest || 0),
+    }[type];
+
+    if (!compare) return;
+    cards.sort(compare).forEach((card) => cardsGrid.appendChild(card));
+  };
+
+  const setSortMenuOpen = (open) => {
+    if (!sortButton || !sortMenu) return;
+    sortMenu.classList.toggle("hidden", !open);
+    sortMenu.classList.toggle("flex", open);
+    sortCaret?.classList.toggle("rotate-180", open);
+    sortButton.setAttribute("aria-expanded", String(open));
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      let visibleCount = 0;
+
+      filterButtons.forEach((item) => {
+        const selected = item === button;
+        item.classList.toggle("bg-nila", selected);
+        item.classList.toggle("text-white", selected);
+        item.classList.toggle("border", !selected);
+        item.classList.toggle("border-nila/25", !selected);
+        item.classList.toggle("text-nila", !selected);
+      });
+
+      cards.forEach((card) => {
+        const visible =
+          filter === "all" ||
+          (card.dataset.category || "").split(" ").includes(filter);
+        card.style.display = visible ? "flex" : "none";
+        if (visible) visibleCount++;
+      });
+
+      if (countEl) countEl.textContent = `${visibleCount} situations`;
+    });
+  });
+
+  if (sortButton && sortMenu) {
+    sortButton.addEventListener("click", () => {
+      setSortMenuOpen(sortMenu.classList.contains("hidden"));
+    });
+
+    sortOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const type = option.dataset.sort;
+        if (!type) return;
+        sortCards(type);
+        if (sortLabel) sortLabel.textContent = option.textContent.trim();
+        sortOptions.forEach((item) =>
+          item.classList.toggle("bg-nila/10", item === option),
+        );
+        setSortMenuOpen(false);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!sortContainer?.contains(event.target)) setSortMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setSortMenuOpen(false);
+    });
   }
 });

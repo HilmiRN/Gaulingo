@@ -31,7 +31,6 @@ function detectEngine() {
   if (brands?.some((b) => /Chromium/.test(b.brand))) return 'blink';
   const ua = navigator.userAgent;
   if (/Firefox\//.test(ua)) return 'gecko';
-  // Every iOS browser is WebKit; their UAs carry CriOS/FxiOS rather than Chrome/Firefox.
   if (/AppleWebKit\//.test(ua) && !/Chrome\/|Chromium\/|Edg\//.test(ua)) return 'webkit';
   return /Chrome\//.test(ua) ? 'blink' : 'unknown';
 }
@@ -151,7 +150,7 @@ function mapKeyOf(p, scale) {
 function lensMap(p, scale, key) {
   let entry = mapCache.get(key);
   if (entry) {
-    mapCache.delete(key); // refresh LRU position
+    mapCache.delete(key);
   } else {
     const url = renderLensMap(p, scale).canvas.toDataURL('image/png');
     entry = { key, url, decoded: false, ready: null };
@@ -177,7 +176,6 @@ function defsNode() {
   svgRoot.setAttribute('aria-hidden', 'true');
   svgRoot.setAttribute('width', '0');
   svgRoot.setAttribute('height', '0');
-  // Not display:none — filters inside a display:none <svg> stop resolving in some engines.
   svgRoot.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none';
   svgRoot.appendChild(document.createElementNS(NS, 'defs'));
   document.body.appendChild(svgRoot);
@@ -224,7 +222,6 @@ function buildGraph(filter, p) {
       displace.push(add('feDisplacementMap', { in: source, in2: bendMap, xChannelSelector: 'R', yChannelSelector: 'G' }, true));
       add('feColorMatrix', { type: 'matrix', values, result: `ch${i}` }, true);
     });
-    // Premultiplied sum: exact for opaque content, which is why the glass surface needs a background.
     add('feComposite', { in: 'ch0', in2: 'ch1', operator: 'arithmetic', k1: 0, k2: 1, k3: 1, k4: 0, result: 'rg' }, true);
     add('feComposite', { in: 'rg', in2: 'ch2', operator: 'arithmetic', k1: 0, k2: 1, k3: 1, k4: 0, result: 'refracted' }, true);
   } else {
@@ -397,7 +394,6 @@ export function createGlass(target, options = {}) {
     update(next = {}) {
       const changes = pick(next);
       const hidden = next.hidden === undefined ? flags.hidden : !!next.hidden;
-      // Skip no-op updates: every flush re-issues the filter id, which repaints the glass.
       if (hidden === flags.hidden && Object.keys(changes).every((k) => changes[k] === p[k])) return;
       Object.assign(p, changes);
       flags.hidden = hidden;
