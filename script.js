@@ -1,3 +1,267 @@
+const translations = {
+  en: {
+    hero_title: " TALK<br class='md:hidden' /> LIKE<br class='max-md:hidden' /> THE LOCALS DO",
+    hero_subtitle: "Real phrases. Real places. Real manners.",
+    hero_explorer_button: "Start exploring",
+    hero_chat_button: "Chat with Gali",
+    nav_menu: "MENU",
+    btn_ask: "Ask Gali",
+
+    // SITUATION
+    sit_label: "Situations",
+    sit_title: "Find your",
+    sit_title: "SITUATION",
+    sit_subtitle: "Pick where you are. Gali brings the phrases you need there.",
+    sit_see_all: "See all 6 situations",
+    stall_badge: "Most popular",
+    stall_info: "8 phrases · ID & Sunda",
+    stall_title: "STALL",
+    stall_desc: "Buying snacks, asking prices, and saying thanks at a small food stall.",
+    phrase_how_much: "How much is this?",
+    phrase_cheaper: "Can it be cheaper?",
+    phrase_thanks: "Thank you, ma'am!",
+    btn_open_stall: "Open Stall",
+
+    // 4 cards
+    card_school_title: "SCHOOL",
+    card_school_desc: "In class & with teachers · 5 phrases",
+    card_minibus_title: "MINIBUS",
+    card_minibus_desc: "Getting around town · 6 phrases",
+    card_smalltalk_title: "SMALL TALK",
+    card_smalltalk_desc: "Meeting new people · 10 phrases",
+    card_emergency_title: "EMERGENCY",
+    card_emergency_desc: "When you need help · 6 phrases",
+
+    // HOW IT WORKS
+    how_label: "HOW IT WORKS",
+    how_title_1: "Three steps to your first ",
+    how_title_2: "NGOBROL",
+    how_desc: "Start from the left. Each step takes just seconds.",
+    how_step1_title: "Pick your place",
+    how_step1_desc: "Warung, school, angkot — choose the situation you are in.",
+    how_step2_title: "Listen & repeat",
+    how_step2_desc: "Play it, slow it down if you need, then say it out loud.",
+    how_step3_title: "Quiz with Gali",
+    how_step3_desc: "Short rounds to make it stick, plus the manners behind it.",
+    how_panel_step1: "STEP 1 · PICK YOUR PLACE",
+    how_panel_title: "Where are you today?",
+    cat_shop: "Local Shop",
+    cat_school: "School",
+    cat_transit: "Public Transit",
+    cat_intro: "Introduction",
+    cat_emergency: "Emergency",
+    cat_all: "All Situations",
+    phrases_8: "8 phrases",
+    phrases_6: "6 phrases",
+    total_8: "8 in total",
+
+    // PHRASE OF THE DAY
+    potd_label: "PHRASE OF THE DAY",
+    potd_meaning: '"Thank you very much!"',
+    potd_btn_listen: "Listen",
+    potd_btn_slow: "Slow",
+    potd_culture_title: "CULTURE TIP",
+    potd_culture_desc: "Give and take things with your right hand. In Indonesia it is a sign of respect.",
+    potd_more_tips: "More culture tips",
+
+    // --- WHY GAULINGO ---
+    why_label: "WHY GAULINGO",
+    why_title_1: "Not your usual ",
+    why_title_2: "PHRASEBOOK",
+    why_desc: "Most phrasebooks teach sentences nobody says. Gaulingo teaches what people actually say, and how to say it politely.",
+    why_usual_title: "Usual phrasebook",
+    why_usual_item1: "Textbook sentences nobody says",
+    why_usual_item2: "Read only, no audio",
+    why_usual_item3: "No context or manners",
+    why_usual_item4: "One language only",
+    why_gali_item1: "Everyday phrases locals actually use",
+    why_gali_item2: "Audio for every phrase, with slow mode",
+    why_gali_item3: "A culture tip in every situation",
+    why_gali_item4: "Bahasa Indonesia, Sunda & Jawa",
+
+    // --- AI BUDDY ---
+    ai_label: "AI BUDDY",
+    ai_title_1: "Stuck? Just ask ",
+    ai_title_2: "GALI.",
+    ai_desc: "Ask how to say something, what a word means, or whether it sounds polite. Gali answers in simple English and Bahasa Indonesia, with audio.",
+    ai_try: "Try asking",
+    ai_q1: 'How do I say "no spicy"?',
+    ai_q2: 'Is "Bang" polite?',
+    ai_q3: "Teach me to bargain",
+    ai_q4: 'What does "gas" mean?',
+    ai_btn_chat: "Start chatting",
+    ai_disclaimer: "Gali can make mistakes. Check important info with a local.",
+
+    // --- FAQ ---
+    faq_label: "FAQ",
+    faq_title_1: "STILL GOT ",
+    faq_title_2: "QUESTIONS?",
+    faq_ans_label: "Gali's Answer",
+    faq_q1: "What is Gaulingo?",
+    faq_a1: "A free website with everyday Indonesian phrases for real situations — warung, school, angkot, even emergencies. Every phrase comes with audio, a culture tip, and a short quiz. Gali is one tap away if you get stuck.",
+    faq_q2: "Do I need an account?",
+    faq_a2: "No account needed! You can start learning and practicing all phrases right away.",
+    faq_q3: "Which languages are included?",
+    faq_a3: "Currently we feature everyday Bahasa Indonesia, Sunda, and Jawa.",
+    faq_q4: "Does it work on my phone?",
+    faq_a4: "Yes! Gaulingo is fully responsive and optimized for mobile screens.",
+    faq_q5: "Who checks the translations?",
+    faq_a5: "All phrases and audio are curated and verified directly by native speakers.",
+    faq_q6: "Is Gaulingo free?",
+    faq_a6: "Yes, 100% free to use.",
+    faq_footer_title: "Question not listed here?",
+    faq_footer_desc: "Ask Gali directly — he answers in English and Bahasa Indonesia.",
+    faq_footer_btn: "Ask Gali"
+  },
+  id: {
+    hero_title: "BICARA<br class='md:hidden' /> SEPERTI<br class='max-md:hidden' /> ORANG LOKAL",
+    hero_subtitle: "Frasa nyata. Tempat nyata. Sopan santun nyata.",
+    hero_explorer_button: "Mulai menjelajah",
+    hero_chat_button: "Chat dengan Gali",
+    nav_menu: "MENU",
+    btn_ask: "Tanya Gali",
+
+    // SITUATION
+  sit_label: "SITUASI",
+    sit_title_1: "Temukan",
+    sit_title_2: "SITUASIMU",
+    sit_subtitle: "Pilih lokasimu. Gali memberikan frasa yang kamu butuhkan di sana.",
+    sit_see_all: "Lihat semua 6 situasi",
+    stall_badge: "Paling populer",
+    stall_info: "8 frasa · ID & Sunda",
+    stall_title: "WARUNG",
+    stall_desc: "Membeli camilan, menanyakan harga, dan mengucapkan terima kasih di warung makan kecil.",
+    phrase_how_much: "Berapa harganya?",
+    phrase_cheaper: "Bisa lebih murah?",
+    phrase_thanks: "Terima kasih, Bu!",
+    btn_open_stall: "Buka Warung",
+
+    // 4 cards
+    card_school_title: "SEKOLAH",
+    card_school_desc: "Di kelas & bersama guru · 5 frasa",
+    card_minibus_title: "ANGKOT",
+    card_minibus_desc: "Keliling kota · 6 frasa",
+    card_smalltalk_title: "NGOBROL SANTAI",
+    card_smalltalk_desc: "Kenalan dengan orang baru · 10 frasa",
+    card_emergency_title: "DARURAT",
+    card_emergency_desc: "Saat kamu butuh bantuan · 6 frasa",
+
+    // HOW IT WORKS
+    how_label: "CARA KERJA",
+    how_title_1: "Tiga langkah untuk mulai ",
+    how_title_2: "NGOBROL",
+    how_desc: "Mulai dari kiri. Setiap langkah hanya butuh beberapa detik.",
+    how_step1_title: "Pilih tempatmu",
+    how_step1_desc: "Warung, sekolah, angkot — pilih situasi di mana kamu berada.",
+    how_step2_title: "Dengarkan & ulangi",
+    how_step2_desc: "Putar, perlambat jika perlu, lalu ucapkan dengan lantang.",
+    how_step3_title: "Kuis bersama Gali",
+    how_step3_desc: "Ronde singkat agar lebih ingat, plus tata krama di baliknya.",
+    how_panel_step1: "LANGKAH 1 · PILIH TEMPATMU",
+    how_panel_title: "Kamu lagi di mana hari ini?",
+    cat_shop: "Warung",
+    cat_school: "Sekolah",
+    cat_transit: "Transportasi Umum",
+    cat_intro: "Perkenalan",
+    cat_emergency: "Darurat",
+    cat_all: "Semua Situasi",
+    phrases_8: "8 frasa",
+    phrases_6: "6 frasa",
+    total_8: "Total 8",
+
+    // PHRASE OF THE DAY
+    potd_label: "FRASA HARI INI",
+    potd_meaning: '"Terima kasih banyak!"',
+    potd_btn_listen: "Dengarkan",
+    potd_btn_slow: "Lambat",
+    potd_culture_title: "TIPS BUDAYA",
+    potd_culture_desc: "Gunakan tangan kanan saat memberi atau menerima sesuatu. Di Indonesia ini adalah bentuk rasa hormat.",
+    potd_more_tips: "Tips budaya lainnya",
+
+    // --- WHY GAULINGO ---
+    why_label: "MENGAPA GAULINGO",
+    why_title_1: "Bukan buku frasa ",
+    why_title_2: "BIASA",
+    why_desc: "Kebanyakan buku frasa mengajarkan kalimat yang tidak pernah diucapkan orang. Gaulingo mengajarkan apa yang benar-benar dikatakan warga lokal, dan cara mengucapkannya dengan sopan.",
+    why_usual_title: "Buku frasa biasa",
+    why_usual_item1: "Kalimat di buku teks yang tak pernah dipakai",
+    why_usual_item2: "Hanya dibaca, tidak ada audio",
+    why_usual_item3: "Tanpa konteks atau tata krama",
+    why_usual_item4: "Hanya satu bahasa",
+    why_gali_item1: "Frasa sehari-hari yang benar-benar dipakai warga lokal",
+    why_gali_item2: "Audio untuk setiap frasa, lengkap dengan mode lambat",
+    why_gali_item3: "Tips budaya di setiap situasi",
+    why_gali_item4: "Bahasa Indonesia, Sunda & Jawa",
+
+    // --- AI BUDDY ---
+    ai_label: "TEMAN AI",
+    ai_title_1: "Bingung? Tanya aja ",
+    ai_title_2: "GALI.",
+    ai_desc: "Tanyakan cara mengucapkan sesuatu, arti sebuah kata, atau apakah kalimatmu terdengar sopan. Gali menjawab dalam bahasa Inggris sederhana dan Bahasa Indonesia, lengkap dengan audio.",
+    ai_try: "Coba tanyakan",
+    ai_q1: 'Gimana cara bilang "nggak pedas"?',
+    ai_q2: 'Apakah panggilan "Bang" sopan?',
+    ai_q3: "Ajarin cara menawar harga",
+    ai_q4: 'Apa arti kata "gas"?',
+    ai_btn_chat: "Mulai ngobrol",
+    ai_disclaimer: "Gali bisa saja salah. Pastikan informasi penting dengan warga lokal.",
+
+    // --- FAQ ---
+    faq_label: "FAQ",
+    faq_title_1: "MASIH PUNYA ",
+    faq_title_2: "PERTANYAAN?",
+    faq_ans_label: "Jawaban Gali",
+    faq_q1: "Apa itu Gaulingo?",
+    faq_a1: "Website gratis berisi frasa Bahasa Indonesia sehari-hari untuk situasi nyata — warung, sekolah, angkot, hingga kondisi darurat. Setiap frasa dilengkapi audio, tips budaya, dan kuis singkat. Gali siap membantu jika kamu bingung.",
+    faq_q2: "Apakah saya perlu buat akun?",
+    faq_a2: "Tidak perlu akun! Kamu bisa langsung belajar dan latihan semua frasa secara gratis.",
+    faq_q3: "Bahasa apa saja yang tersedia?",
+    faq_a3: "Saat ini tersedia Bahasa Indonesia sehari-hari, Sunda, dan Jawa.",
+    faq_q4: "Apakah bisa dibuka di HP?",
+    faq_a4: "Bisa banget! Gaulingo dirancang responsif dan nyaman dibuka di layar HP.",
+    faq_q5: "Siapa yang mengecek terjemahannya?",
+    faq_a5: "Semua frasa dan audio disusun serta diverifikasi langsung oleh penutur asli (native speaker).",
+    faq_q6: "Apakah Gaulingo gratis?",
+    faq_a6: "Ya, 100% gratis digunakan.",
+    faq_footer_title: "Pertanyaan belum ada di sini?",
+    faq_footer_desc: "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
+    faq_footer_btn: "Tanya Gali"
+  }
+};
+
+const langButtons = document.querySelectorAll(".site-lang__item");
+const currentLang = localStorage.getItem("gaulingo_lang") || "en";
+
+const setLanguage = (lang) => {
+  langButtons.forEach((btn) => {
+    const isSelected = btn.textContent.trim().toLowerCase() === lang;
+    btn.setAttribute("aria-pressed", String(isSelected));
+  });
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key]; 
+    }
+  });
+
+  localStorage.setItem("gaulingo_lang", lang);
+};
+
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const selectedLang = e.target.textContent.trim().toLowerCase();
+    setLanguage(selectedLang);
+    
+    // Refresh halaman agar animasi teks data-roll tidak berantakan setelah bahasa berubah
+    setTimeout(() => {
+        window.location.reload();
+    }, 100);
+  });
+});
+
+setLanguage(currentLang);
+
 document.querySelectorAll("[data-roll]").forEach((el) => {
   const text = el.textContent.trim();
   const chars = [...text]
@@ -236,14 +500,6 @@ if (!reduceMotion) {
     .forEach((el) => el.classList.add("is-visible"));
 }
 
-const langButtons = document.querySelectorAll(".site-lang__item");
-langButtons.forEach((btn) =>
-  btn.addEventListener("click", () =>
-    langButtons.forEach((b) =>
-      b.setAttribute("aria-pressed", String(b === btn)),
-    ),
-  ),
-);
 {
   const homeMain = document.querySelector("#home.sticky")?.closest("main");
   const mainContent = homeMain || document.querySelector("main");
