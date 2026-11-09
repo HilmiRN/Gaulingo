@@ -457,9 +457,10 @@
         </div>
         <div
           class="absolute inset-x-0 gap-3 top-10 max-md:top-1/10 flex flex-col items-center text-center text-nila"
-        >
+          >
           <h1
             class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
+            data-i18n="hero_title"
           >
             TALK<br class="md:hidden" />
             LIKE<br class="max-md:hidden" />
@@ -467,25 +468,26 @@
           </h1>
           <p
             class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
-          >
+            data-i18n="hero_subtitle"
+            >
             Real phrases. Real places. Real manners.
           </p>
           <div
-            class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3 max-md:text-sm"
-          >
+              class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3 max-md:text-sm"
+              >
             <a
               href="#"
               class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full"
-            >
-              Start exploring
-              <i class="ph-bold ph-arrow-right text-2xl"></i>
+              >
+            <span data-i18n="hero_explorer_button">Start exploring</span>
+            <i class="ph-bold ph-arrow-right text-2xl"></i>
             </a>
             <a
               href="#"
               class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full"
-            >
-              <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
-              Chat with Gali
+              >
+            <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
+            <span data-i18n="hero_chat_button">Chat with Gali</span>
             </a>
           </div>
         </div>
