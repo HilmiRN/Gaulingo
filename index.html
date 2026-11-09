@@ -1,1852 +1,1192 @@
 <!doctype html>
 <html lang="en" class="scrollbar-none">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gaulingo || Homepage</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <link rel="icon" type="image/x-icon" href="./src/assets/icon.ico" />
-    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body class="font-figtree relative scrollbar-none overflow-x-hidden -z-2">
-    <header id="site-header" class="site-header flex justify-between">
-      <span class="site-header__glass" aria-hidden="true"></span>
-      <div class="site-header__side">
-        <div class="site-lang" role="group" aria-label="Language">
-          <button type="button" class="site-lang__item" aria-pressed="true">
-            EN
-          </button>
-          <button type="button" class="site-lang__item" aria-pressed="false">
-            ID
-          </button>
-        </div>
-      </div>
-      <a href="index.html" class="site-header__brand">
-        <img src="./src/assets/logo.svg" alt="Gaulingo Logo" />
-      </a>
-      <div class="site-header__side site-header__side--end">
-        <button
-          id="menu-toggle"
-          type="button"
-          class="site-menu-toggle roll-host"
-          aria-controls="site-menu"
-          aria-expanded="false"
-          aria-label="Open menu"
-        >
-          <div class="site-menu-toggle__pill" aria-hidden="true">
-            <p
-              class="site-menu-toggle__label site-menu-toggle__label--menu"
-              data-roll
-            >
-              Menu
-            </p>
-            <p
-              class="site-menu-toggle__label site-menu-toggle__label--close"
-              data-roll
-            >
-              Close
-            </p>
-          </div>
-          <div class="site-menu-toggle__disc" aria-hidden="true">
-            <div class="site-menu-toggle__diamond"></div>
-            <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaulingo || Homepage</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="icon" type="image/x-icon" href="./src/assets/icon.ico" />
+  <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body class="font-figtree relative scrollbar-none overflow-x-hidden -z-2">
+  <header id="site-header" class="site-header flex justify-between">
+    <span class="site-header__glass" aria-hidden="true"></span>
+    <div class="site-header__side">
+      <div class="site-lang" role="group" aria-label="Language">
+        <button type="button" class="site-lang__item" aria-pressed="true">
+          EN
+        </button>
+        <button type="button" class="site-lang__item" aria-pressed="false">
+          ID
         </button>
       </div>
-    </header>
-    <div id="site-menu" class="site-menu">
-      <nav class="site-menu__inner" aria-label="Main navigation">
-        <ul class="site-menu__list" style="--last: 4">
-          <li class="site-menu__item is-active" style="--i: 0">
-            <div class="site-menu__row">
-              <a
-                href="./index.html"
-                class="site-menu__link roll-host"
-                aria-current="page"
-              >
-                <div class="site-menu__rise">
-                  <p class="site-menu__num">01</p>
-                  <h3 data-roll>Home</h3>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="site-menu__item" style="--i: 1">
-            <div class="site-menu__row">
-              <a
-                href="./pages/situations.html"
-                class="site-menu__link roll-host"
-              >
-                <span class="site-menu__rise">
-                  <span class="site-menu__num">02</span>
-                  <span data-roll>Situations</span>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </span>
-              </a>
-            </div>
-          </li>
-          <li class="site-menu__item" style="--i: 2">
-            <div class="site-menu__row">
-              <a href="./pages/culture.html" class="site-menu__link roll-host">
-                <div class="site-menu__rise">
-                  <p class="site-menu__num">03</p>
-                  <h3 data-roll>Culture</h3>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="site-menu__item" style="--i: 3">
-            <div class="site-menu__row">
-              <a href="./pages/practice.html" class="site-menu__link roll-host">
-                <div class="site-menu__rise">
-                  <p class="site-menu__num">04</p>
-                  <h3 data-roll>Practice</h3>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="site-menu__item" style="--i: 4">
-            <div class="site-menu__row">
-              <a href="./pages/about.html" class="site-menu__link roll-host">
-                <div class="site-menu__rise">
-                  <p class="site-menu__num">05</p>
-                  <h3 data-roll>About</h3>
-                  <span class="site-menu__marker" aria-hidden="true"></span>
-                </div>
-              </a>
-            </div>
-          </li>
-        </ul>
-        <ul class="site-menu__secondary">
-          <li>
-            <a href="#" class="roll-host"
-              ><i class="ph-fill ph-chat-circle-dots"></i>
-              <p data-roll>Chat with Gali</p></a
-            >
-          </li>
-          <li>
-            <a href="https://www.instagram.com/" class="roll-host"
-              ><p data-roll>Instagram</p></a
-            >
-          </li>
-          <li>
-            <a href="https://www.tiktok.com/" class="roll-host"
-              ><p data-roll>TikTok</p></a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/" class="roll-host"
-              ><p data-roll>YouTube</p></a
-            >
-          </li>
-        </ul>
-      </nav>
     </div>
-    <main
-      class="w-full bg-[#fff8f8] flex flex-col items-center pt-5 max-md:pt-2 pb-0 px-0 overflow-x-clip"
-    >
-      <!-- hero -->
-      <section
-        id="home"
-        class="transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform sticky top-5 max-md:top-2 w-[calc(100vw-80px)] h-[calc(100vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(100vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
-      >
-        <div
-          class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]"
-        >
-          <svg
-            viewBox="0 0 1360 930"
-            role="img"
-            class="absolute -bottom-5 max-md:bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2"
-          >
-            <defs>
-              <clipPath id="mouth">
-                <path
-                  d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
-                />
-              </clipPath>
-            </defs>
-            <circle cx="680" cy="740" r="330" class="fill-matahari" />
-            <circle
-              cx="680"
-              cy="730"
-              r="430"
-              fill="none"
-              stroke-width="2"
-              stroke-dasharray="9 15"
-              class="stroke-krem"
-            />
-            <g class="fill-krem/60">
-              <rect x="104" y="340" width="180" height="44" rx="22" />
-              <rect x="164" y="370" width="120" height="44" rx="22" />
-              <rect x="1068" y="300" width="196" height="44" rx="22" />
-              <rect x="1134" y="330" width="130" height="44" rx="22" />
-            </g>
-            <path
-              class="fill-[#e6b084] motion-safe:animate-dune-a"
-              d="M-200 750 C50 670 280 686 510 742 C760 806 940 694 1190 710 C1380 722 1480 758 1560 742 L1560 930 L-200 930Z"
-            />
-            <path
-              class="fill-bukit motion-safe:animate-dune-b"
-              d="M-200 835 C30 775 220 795 400 835 C610 885 830 785 1060 815 C1280 845 1440 805 1560 825 L1560 930 L-200 930Z"
-            />
-            <path
-              class="fill-[#ff6b4a]"
-              d="M528 930C540 882 580 852 622 846L740 846C790 852 818 884 838 930Z"
-            />
-            <path class="fill-krem" d="M640 846L720 846L702 930L658 930Z" />
-            <path
-              class="fill-terakota"
-              d="M618 862L660 880L664 912Z M742 862L700 880L696 912Z"
-            />
-            <rect
-              x="650"
-              y="798"
-              width="60"
-              height="52"
-              rx="10"
-              class="fill-bukit"
-            />
-            <path
-              d="M641 806Q680 828 719 806L719 814Q680 836 641 814Z"
-              class="fill-terakota"
-            />
-            <path
-              d="M600 850Q640 894 680 894Q720 894 760 850"
-              fill="none"
-              stroke-width="14"
-              stroke-linecap="round"
-              class="stroke-nila"
-            />
-            <rect
-              x="584"
-              y="822"
-              width="36"
-              height="54"
-              rx="12"
-              class="fill-nila"
-            />
-            <rect
-              x="742"
-              y="822"
-              width="36"
-              height="54"
-              rx="12"
-              class="fill-nila"
-            />
-            <circle cx="601" cy="849" r="7" class="fill-[#ffd23f]" />
-            <circle cx="760" cy="849" r="7" class="fill-[#ffd23f]" />
-            <path
-              class="fill-[#ff6b4a]"
-              d="M838 772L882 768C886 842 872 902 836 930L792 930C818 890 836 842 838 772Z"
-            />
-            <path
-              d="M846 832L802 916"
-              fill="none"
-              stroke-width="14"
-              stroke-linecap="round"
-              class="stroke-terakota"
-            />
-            <g transform="translate(0, 22)">
-              <ellipse cx="577" cy="690" rx="17" ry="24" class="fill-bukit" />
-              <ellipse
-                cx="785"
-                cy="690"
-                rx="17"
-                ry="24"
-                class="fill-[#b87d54]"
-              />
-              <ellipse
-                cx="681"
-                cy="686"
-                rx="104"
-                ry="112"
-                class="fill-[#b87d54]"
-              />
-              <ellipse cx="672" cy="686" rx="98" ry="112" class="fill-bukit" />
-              <g id="rambut-kribo">
-                <g class="fill-[#1b1b2f]">
-                  <circle cx="680" cy="525" r="32" />
-                  <circle cx="645" cy="535" r="30" />
-                  <circle cx="715" cy="535" r="30" />
-                  <circle cx="615" cy="552" r="28" />
-                  <circle cx="745" cy="552" r="28" />
-                  <circle cx="588" cy="580" r="28" />
-                  <circle cx="572" cy="612" r="26" />
-                  <circle cx="575" cy="640" r="22" />
-                  <circle cx="772" cy="580" r="28" />
-                  <circle cx="788" cy="612" r="26" />
-                  <circle cx="785" cy="640" r="22" />
-                  <circle cx="680" cy="565" r="45" />
-                  <circle cx="625" cy="590" r="38" />
-                  <circle cx="735" cy="590" r="38" />
-                  <circle cx="680" cy="596" r="30" />
-                  <path d="M 572 640 Q 570 662 578 668 Q 582 652 584 638 Z" />
-                  <path d="M 788 640 Q 790 662 782 668 Q 778 652 776 638 Z" />
-                </g>
-                <g class="fill-[#3a3a5c]">
-                  <circle cx="635" cy="545" r="10" />
-                  <circle cx="695" cy="535" r="10" />
-                  <circle cx="735" cy="555" r="9" />
-                  <circle cx="602" cy="578" r="8" />
-                </g>
-              </g>
-              <g
-                fill="none"
-                stroke-width="9"
-                stroke-linecap="round"
-                class="stroke-[#1b1b30]"
-              >
-                <path d="M626 650L662 646" />
-                <path d="M700 645L736 651" />
-              </g>
-              <ellipse
-                cx="642"
-                cy="682"
-                rx="11"
-                ry="15"
-                class="fill-[#1b1b30]"
-              />
-              <ellipse
-                cx="717"
-                cy="682"
-                rx="11"
-                ry="15"
-                class="fill-[#1b1b30]"
-              />
-              <circle cx="646" cy="676" r="3.5" class="fill-krem" />
-              <circle cx="721" cy="676" r="3.5" class="fill-krem" />
-              <path
-                d="M679 690C672 705 676 718 686 722"
-                fill="none"
-                stroke-width="4"
-                stroke-linecap="round"
-                class="stroke-terakota"
-              />
-              <ellipse
-                cx="617"
-                cy="716"
-                rx="17"
-                ry="8"
-                class="fill-[#e0836b]"
-              />
-              <ellipse
-                cx="743"
-                cy="716"
-                rx="17"
-                ry="8"
-                class="fill-[#e0836b]"
-              />
-              <path
-                d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
-                class="fill-[#5b1b1b]"
-              />
-              <g clip-path="url(#mouth)">
-                <ellipse
-                  cx="680"
-                  cy="770"
-                  rx="15"
-                  ry="9"
-                  class="fill-[#ff6b4a]"
-                />
-                <path
-                  d="M641 741Q680 752 719 741L717 750Q680 760 643 750Z"
-                  class="fill-krem"
-                />
-              </g>
-            </g>
-            <g class="origin-bottom transform-fill motion-safe:animate-wave">
-              <g class="fill-bukit">
-                <ellipse
-                  cx="822"
-                  cy="748"
-                  rx="14"
-                  ry="24"
-                  transform="rotate(-50 822 748)"
-                />
-                <rect x="836" y="676" width="14" height="60" rx="7" />
-                <rect x="851" y="667" width="14" height="64" rx="7" />
-                <rect x="866" y="670" width="14" height="62" rx="7" />
-                <rect x="880" y="686" width="14" height="52" rx="7" />
-                <ellipse cx="862" cy="736" rx="33" ry="34" />
-              </g>
-              <path
-                d="M848 752Q860 762 874 752"
-                fill="none"
-                stroke-width="3"
-                stroke-linecap="round"
-                class="stroke-terakota"
-              />
-            </g>
-            <path
-              d="M870 622Q888 632 886 648Q900 658 903 677"
-              fill="none"
-              stroke-width="6"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="stroke-[#ffd23f]"
-            />
-            <g class="text-xl font-bold">
-              <g transform="rotate(-6 974 558)">
-                <rect
-                  x="886"
-                  y="534"
-                  width="176"
-                  height="48"
-                  rx="24"
-                  class="fill-white"
-                />
-                <text
-                  x="974"
-                  y="559"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  class="fill-nila"
-                >
-                  Halo, aku Gali!
-                </text>
-              </g>
-              <g transform="rotate(6 385 708)">
-                <rect
-                  x="281"
-                  y="684"
-                  width="209"
-                  height="48"
-                  rx="24"
-                  class="fill-biru-pucat"
-                />
-                <text
-                  x="385"
-                  y="709"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  class="fill-nila"
-                >
-                  Berapa harganya?
-                </text>
-              </g>
-              <g transform="rotate(4 995 713)">
-                <rect
-                  x="912"
-                  y="689"
-                  width="166"
-                  height="48"
-                  rx="24"
-                  class="fill-white"
-                />
-                <text
-                  x="995"
-                  y="714"
-                  text-anchor="middle"
-                  dominant-baseline="middle"
-                  class="fill-nila"
-                >
-                  Matur nuwun
-                </text>
-              </g>
-            </g>
-          </svg>
-        </div>
-        <div
-          class="absolute inset-x-0 gap-3 top-10 max-md:top-1/10 flex flex-col items-center text-center text-nila"
-          >
-          <h1
-            class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
-            data-i18n="hero_title"
-          >
-            TALK<br class="md:hidden" />
-            LIKE<br class="max-md:hidden" />
-            THE LOCALS DO
-          </h1>
-          <p
-            class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
-            data-i18n="hero_subtitle"
-            >
-            Real phrases. Real places. Real manners.
+    <a href="index.html" class="site-header__brand">
+      <img src="./src/assets/logo.svg" alt="Gaulingo Logo" />
+    </a>
+    <div class="site-header__side site-header__side--end">
+      <button id="menu-toggle" type="button" class="site-menu-toggle roll-host" aria-controls="site-menu"
+        aria-expanded="false" aria-label="Open menu">
+        <div class="site-menu-toggle__pill" aria-hidden="true">
+          <p class="site-menu-toggle__label site-menu-toggle__label--menu" data-roll>
+            Menu
           </p>
-          <div
-              class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3 max-md:text-sm"
-              >
-            <a
-              href="#"
-              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full"
-              >
+          <p class="site-menu-toggle__label site-menu-toggle__label--close" data-roll>
+            Close
+          </p>
+        </div>
+        <div class="site-menu-toggle__disc" aria-hidden="true">
+          <div class="site-menu-toggle__diamond"></div>
+          <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
+        </div>
+      </button>
+    </div>
+  </header>
+  <div id="site-menu" class="site-menu">
+    <nav class="site-menu__inner" aria-label="Main navigation">
+      <ul class="site-menu__list" style="--last: 4">
+        <li class="site-menu__item is-active" style="--i: 0">
+          <div class="site-menu__row">
+            <a href="./index.html" class="site-menu__link roll-host" aria-current="page">
+              <div class="site-menu__rise">
+                <p class="site-menu__num">01</p>
+                <h3 data-roll>Home</h3>
+                <span class="site-menu__marker" aria-hidden="true"></span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="site-menu__item" style="--i: 1">
+          <div class="site-menu__row">
+            <a href="./pages/situations.html" class="site-menu__link roll-host">
+              <span class="site-menu__rise">
+                <span class="site-menu__num">02</span>
+                <span data-roll>Situations</span>
+                <span class="site-menu__marker" aria-hidden="true"></span>
+              </span>
+            </a>
+          </div>
+        </li>
+        <li class="site-menu__item" style="--i: 2">
+          <div class="site-menu__row">
+            <a href="./pages/culture.html" class="site-menu__link roll-host">
+              <div class="site-menu__rise">
+                <p class="site-menu__num">03</p>
+                <h3 data-roll>Culture</h3>
+                <span class="site-menu__marker" aria-hidden="true"></span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="site-menu__item" style="--i: 3">
+          <div class="site-menu__row">
+            <a href="./pages/practice.html" class="site-menu__link roll-host">
+              <div class="site-menu__rise">
+                <p class="site-menu__num">04</p>
+                <h3 data-roll>Practice</h3>
+                <span class="site-menu__marker" aria-hidden="true"></span>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="site-menu__item" style="--i: 4">
+          <div class="site-menu__row">
+            <a href="./pages/about.html" class="site-menu__link roll-host">
+              <div class="site-menu__rise">
+                <p class="site-menu__num">05</p>
+                <h3 data-roll>About</h3>
+                <span class="site-menu__marker" aria-hidden="true"></span>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ul>
+      <ul class="site-menu__secondary">
+        <li>
+          <a href="#" class="roll-host"><i class="ph-fill ph-chat-circle-dots"></i>
+            <p data-roll>Chat with Gali</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" class="roll-host">
+            <p data-roll>Instagram</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tiktok.com/" class="roll-host">
+            <p data-roll>TikTok</p>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" class="roll-host">
+            <p data-roll>YouTube</p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <main class="w-full bg-[#fff8f8] flex flex-col items-center pt-5 max-md:pt-2 pb-0 px-0 overflow-x-clip">
+    <!-- hero -->
+    <section id="home"
+      class="transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform sticky top-5 max-md:top-2 w-[calc(100vw-80px)] h-[calc(100vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(100vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]">
+      <div class="absolute inset-0 [--u:min(calc(100cqw/1360),calc(100cqh/930))]">
+        <svg viewBox="0 0 1360 930" role="img"
+          class="absolute -bottom-5 max-md:bottom-10 left-1/2 h-auto w-[max(100%,900px)] -translate-x-1/2">
+          <defs>
+            <clipPath id="mouth">
+              <path d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z" />
+            </clipPath>
+          </defs>
+          <circle cx="680" cy="740" r="330" class="fill-matahari" />
+          <circle cx="680" cy="730" r="430" fill="none" stroke-width="2" stroke-dasharray="9 15" class="stroke-krem" />
+          <g class="fill-krem/60">
+            <rect x="104" y="340" width="180" height="44" rx="22" />
+            <rect x="164" y="370" width="120" height="44" rx="22" />
+            <rect x="1068" y="300" width="196" height="44" rx="22" />
+            <rect x="1134" y="330" width="130" height="44" rx="22" />
+          </g>
+          <path class="fill-[#e6b084] motion-safe:animate-dune-a"
+            d="M-200 750 C50 670 280 686 510 742 C760 806 940 694 1190 710 C1380 722 1480 758 1560 742 L1560 930 L-200 930Z" />
+          <path class="fill-bukit motion-safe:animate-dune-b"
+            d="M-200 835 C30 775 220 795 400 835 C610 885 830 785 1060 815 C1280 845 1440 805 1560 825 L1560 930 L-200 930Z" />
+          <path class="fill-[#ff6b4a]" d="M528 930C540 882 580 852 622 846L740 846C790 852 818 884 838 930Z" />
+          <path class="fill-krem" d="M640 846L720 846L702 930L658 930Z" />
+          <path class="fill-terakota" d="M618 862L660 880L664 912Z M742 862L700 880L696 912Z" />
+          <rect x="650" y="798" width="60" height="52" rx="10" class="fill-bukit" />
+          <path d="M641 806Q680 828 719 806L719 814Q680 836 641 814Z" class="fill-terakota" />
+          <path d="M600 850Q640 894 680 894Q720 894 760 850" fill="none" stroke-width="14" stroke-linecap="round"
+            class="stroke-nila" />
+          <rect x="584" y="822" width="36" height="54" rx="12" class="fill-nila" />
+          <rect x="742" y="822" width="36" height="54" rx="12" class="fill-nila" />
+          <circle cx="601" cy="849" r="7" class="fill-[#ffd23f]" />
+          <circle cx="760" cy="849" r="7" class="fill-[#ffd23f]" />
+          <path class="fill-[#ff6b4a]" d="M838 772L882 768C886 842 872 902 836 930L792 930C818 890 836 842 838 772Z" />
+          <path d="M846 832L802 916" fill="none" stroke-width="14" stroke-linecap="round" class="stroke-terakota" />
+          <g transform="translate(0, 22)">
+            <ellipse cx="577" cy="690" rx="17" ry="24" class="fill-bukit" />
+            <ellipse cx="785" cy="690" rx="17" ry="24" class="fill-[#b87d54]" />
+            <ellipse cx="681" cy="686" rx="104" ry="112" class="fill-[#b87d54]" />
+            <ellipse cx="672" cy="686" rx="98" ry="112" class="fill-bukit" />
+            <g id="rambut-kribo">
+              <g class="fill-[#1b1b2f]">
+                <circle cx="680" cy="525" r="32" />
+                <circle cx="645" cy="535" r="30" />
+                <circle cx="715" cy="535" r="30" />
+                <circle cx="615" cy="552" r="28" />
+                <circle cx="745" cy="552" r="28" />
+                <circle cx="588" cy="580" r="28" />
+                <circle cx="572" cy="612" r="26" />
+                <circle cx="575" cy="640" r="22" />
+                <circle cx="772" cy="580" r="28" />
+                <circle cx="788" cy="612" r="26" />
+                <circle cx="785" cy="640" r="22" />
+                <circle cx="680" cy="565" r="45" />
+                <circle cx="625" cy="590" r="38" />
+                <circle cx="735" cy="590" r="38" />
+                <circle cx="680" cy="596" r="30" />
+                <path d="M 572 640 Q 570 662 578 668 Q 582 652 584 638 Z" />
+                <path d="M 788 640 Q 790 662 782 668 Q 778 652 776 638 Z" />
+              </g>
+              <g class="fill-[#3a3a5c]">
+                <circle cx="635" cy="545" r="10" />
+                <circle cx="695" cy="535" r="10" />
+                <circle cx="735" cy="555" r="9" />
+                <circle cx="602" cy="578" r="8" />
+              </g>
+            </g>
+            <g fill="none" stroke-width="9" stroke-linecap="round" class="stroke-[#1b1b30]">
+              <path d="M626 650L662 646" />
+              <path d="M700 645L736 651" />
+            </g>
+            <ellipse cx="642" cy="682" rx="11" ry="15" class="fill-[#1b1b30]" />
+            <ellipse cx="717" cy="682" rx="11" ry="15" class="fill-[#1b1b30]" />
+            <circle cx="646" cy="676" r="3.5" class="fill-krem" />
+            <circle cx="721" cy="676" r="3.5" class="fill-krem" />
+            <path d="M679 690C672 705 676 718 686 722" fill="none" stroke-width="4" stroke-linecap="round"
+              class="stroke-terakota" />
+            <ellipse cx="617" cy="716" rx="17" ry="8" class="fill-[#e0836b]" />
+            <ellipse cx="743" cy="716" rx="17" ry="8" class="fill-[#e0836b]" />
+            <path d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z" class="fill-[#5b1b1b]" />
+            <g clip-path="url(#mouth)">
+              <ellipse cx="680" cy="770" rx="15" ry="9" class="fill-[#ff6b4a]" />
+              <path d="M641 741Q680 752 719 741L717 750Q680 760 643 750Z" class="fill-krem" />
+            </g>
+          </g>
+          <g class="origin-bottom transform-fill motion-safe:animate-wave">
+            <g class="fill-bukit">
+              <ellipse cx="822" cy="748" rx="14" ry="24" transform="rotate(-50 822 748)" />
+              <rect x="836" y="676" width="14" height="60" rx="7" />
+              <rect x="851" y="667" width="14" height="64" rx="7" />
+              <rect x="866" y="670" width="14" height="62" rx="7" />
+              <rect x="880" y="686" width="14" height="52" rx="7" />
+              <ellipse cx="862" cy="736" rx="33" ry="34" />
+            </g>
+            <path d="M848 752Q860 762 874 752" fill="none" stroke-width="3" stroke-linecap="round"
+              class="stroke-terakota" />
+          </g>
+          <path d="M870 622Q888 632 886 648Q900 658 903 677" fill="none" stroke-width="6" stroke-linecap="round"
+            stroke-linejoin="round" class="stroke-[#ffd23f]" />
+          <g class="text-xl font-bold">
+            <g transform="rotate(-6 974 558)">
+              <rect x="886" y="534" width="176" height="48" rx="24" class="fill-white" />
+              <text x="974" y="559" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Halo, aku Gali!
+              </text>
+            </g>
+            <g transform="rotate(6 385 708)">
+              <rect x="281" y="684" width="209" height="48" rx="24" class="fill-biru-pucat" />
+              <text x="385" y="709" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Berapa harganya?
+              </text>
+            </g>
+            <g transform="rotate(4 995 713)">
+              <rect x="912" y="689" width="166" height="48" rx="24" class="fill-white" />
+              <text x="995" y="714" text-anchor="middle" dominant-baseline="middle" class="fill-nila">
+                Matur nuwun
+              </text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="absolute inset-x-0 gap-3 top-10 max-md:top-1/10 flex flex-col items-center text-center text-nila">
+        <h1 class="font-unbounded font-black text-[8vw] leading-[0.96] tracking-[-0.03em] max-md:text-[10vw]"
+          data-i18n="hero_title">
+          TALK<br class="md:hidden" />
+          LIKE<br class="max-md:hidden" />
+          THE LOCALS DO
+        </h1>
+        <p class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]" data-i18n="hero_subtitle">
+          Real phrases. Real places. Real manners.
+        </p>
+        <div
+          class="mt-[max(16px,calc(24*var(--u)))] flex flex-wrap max-md:flex-col max-md:w-full px-10 justify-center gap-3 max-md:text-sm">
+          <a href="#"
+            class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full">
             <span data-i18n="hero_explorer_button">Start exploring</span>
             <i class="ph-bold ph-arrow-right text-2xl"></i>
-            </a>
-            <a
-              href="#"
-              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full"
-              >
+          </a>
+          <a href="#"
+            class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full">
             <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
             <span data-i18n="hero_chat_button">Chat with Gali</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- main -->
+    <div id="main-content" class="relative -mt-10 z-10 bg-krem rounded-t-5xl w-full px-0">
+      <!-- situation -->
+      <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <hgroup class="flex justify-between items-end">
+          <div class="flex flex-col max-md:gap-2">
+            <p class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
+              data-i18n="sit_label">
+              SITUATIONS
+            </p>
+            <h2
+              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
+              <span data-i18n="sit_title_1">Find your</span>
+              <span class="text-biru-aksen font-unbounded font-black" data-i18n="sit_title_2">SITUATION</span>
+            </h2>
+            <p class="text-lg text-nila/80 font-medium" data-i18n="sit_subtitle">
+              Pick where you are. Gali brings the phrases you need there.
+            </p>
+          </div>
+          <a href="#"
+            class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit max-md:hidden">
+            <span data-i18n="sit_see_all">See all 6 situations</span>
+            <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </hgroup>
+        <div class="my-10 w-full gap-10 flex max-xl:flex-col">
+          <div
+            class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white w-1/2 max-xl:w-full max-sm:p-7">
+            <svg xmlns="http://www.w3.org/2000/svg" width="292" height="271" viewBox="0 0 292 271" fill="none"
+              stroke="currentColor" class="absolute bottom-0 right-0 text-white/14 z-0">
+              <path
+                d="M40.3747 164.325C33.7579 161.986 27.6777 158.186 22.6204 153.129C13.7125 144.221 8.70801 132.139 8.70801 119.542V87.8749L40.3747 8.70825H262.041L293.708 87.8749V119.542C293.708 132.139 288.704 144.221 279.796 153.129C274.738 158.186 268.658 161.986 262.041 164.325M8.70801 87.8749H293.708M262.041 164.325C257.003 166.106 251.654 167.042 246.208 167.042C233.61 167.042 221.528 162.037 212.62 153.129C203.712 144.221 198.708 132.139 198.708 119.542C198.708 132.139 193.704 144.221 184.796 153.129C175.888 162.037 163.806 167.042 151.208 167.042C138.61 167.042 126.528 162.037 117.62 153.129C108.712 144.221 103.708 132.139 103.708 119.542C103.708 132.139 98.7036 144.221 89.7956 153.129C80.8876 162.037 68.8058 167.042 56.208 167.042C50.7622 167.042 45.4129 166.106 40.3747 164.325M262.041 164.325V262.042H40.3747V164.325M262.041 164.325V151.208M40.3747 164.325V151.208"
+                stroke-width="17.4167" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+            <div class="relative">
+              <div class="flex items-center justify-between gap-4 max-sm:gap-0">
+                <p class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5 max-sm:text-xs"
+                  data-i18n="stall_badge">
+                  Most popular
+                </p>
+                <p class="text-sm font-medium text-right max-sm:text-xs" data-i18n="stall_info">
+                  8 phrases · ID &amp; Sunda
+                </p>
+              </div>
+
+              <h2 class="uppercase font-unbounded font-black mt-6 text-[52px] tracking-[-1.68px]"
+                data-i18n="stall_title">
+                STALL
+              </h2>
+
+              <p class="mt-3 max-w-120 text-[17px] leading-6.5" data-i18n="stall_desc">
+                Buying snacks, asking prices, and saying thanks at a small food stall.
+              </p>
+
+              <ul class="mt-4.75 space-y-3">
+                <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">
+                      Berapa harganya?
+                    </p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_how_much">
+                      How much is this?
+                    </p>
+                  </div>
+                  <button
+                    class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+
+                <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">
+                      Boleh kurang?
+                    </p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_cheaper">
+                      Can it be cheaper?
+                    </p>
+                  </div>
+                  <button
+                    class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+
+                <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">
+                      Terima kasih, Bu!
+                    </p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_thanks">
+                      Thank you, ma'am!
+                    </p>
+                  </div>
+                  <button
+                    class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+              </ul>
+
+              <a href="#"
+                class="mt-4 inline-flex h-11 items-center gap-2.5 rounded-full border border-white/60 px-5 text-sm font-semibold transition hover:bg-white hover:text-nila focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+                <span data-i18n="btn_open_stall">Open Stall</span>
+                <i class="ph-bold ph-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none">
+          
+          <!-- SCHOOL -->
+          <div class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full">
+            <div class="flex justify-between items-center">
+                <i class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3 class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl" data-i18n="card_school_title">
+                  SCHOOL
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold" data-i18n="card_school_desc">
+                  In class &amp; with teachers · 5 phrases
+                </p>
+              </div>
+            </div>
+
+            <!-- MINIBUS / ANGKOT -->
+            <div class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full">
+              <div class="flex justify-between items-center">
+                <i class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3 class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl" data-i18n="card_minibus_title">
+                  MINIBUS
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold" data-i18n="card_minibus_desc">
+                  Getting around town · 6 phrases
+                </p>
+              </div>
+            </div>
+
+            <!-- SMALL TALK -->
+            <div class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full">
+              <div class="flex justify-between items-center">
+                <i class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+              </div>
+              <div>
+                <h3 class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl" data-i18n="card_smalltalk_title">
+                  SMALL TALK
+                </h3>
+                <p class="text-nila/80 text-sm font-semibold" data-i18n="card_smalltalk_desc">
+                  Meeting new people · 10 phrases
+                </p>
+              </div>
+            </div>
+            <!-- EMERGENCY -->
+            <div class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full">
+              <div class="flex justify-between items-center">
+                <i class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"></i>
+                <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
+              </div>
+              <div>
+                <h3 class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter max-md:text-2xl" data-i18n="card_emergency_title">
+                  EMERGENCY
+                </h3>
+                <p class="text-white/85 text-sm font-semibold" data-i18n="card_emergency_desc">
+                  When you need help · 6 phrases
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+      </section>
+      <!-- how it works section -->
+      <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <hgroup class="flex flex-col max-md:gap-2">
+          <p
+            class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
+            data-i18n="how_label">
+            How it works
+          </p>
+          <h2
+            class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
+            <span data-i18n="how_title_1">Three steps to your first </span>
+            <span class="text-biru-aksen font-unbounded font-black" data-i18n="how_title_2">NGOBROL</span>
+          </h2>
+          <p class="text-lg text-nila/80 font-medium" data-i18n="how_desc">
+            Start from the left. Each step takes just seconds.
+          </p>
+        </hgroup>
+        <div class="flex gap-10 mt-12 max-md:flex-col">
+          <div class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row">
+            <button
+              class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full">
+              <p class="font-unbounded font-black text-2xl">1</p>
+              <div>
+                <h3 class="font-semibold text-xl max-sm:text-base" data-i18n="how_step1_title">
+                  Pick your place
+                </h3>
+                <p class="text-md max-md:hidden" data-i18n="how_step1_desc">
+                  Warung, school, angkot — choose the situation you are in.
+                </p>
+              </div>
+            </button>
+            <button
+              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full">
+              <p class="font-unbounded font-black text-2xl text-terakota group-active:text-white">
+                2
+              </p>
+              <div>
+                <h3 class="font-semibold text-xl max-sm:text-base" data-i18n="how_step2_title">
+                  Listen & repeat
+                </h3>
+                <p class="text-md max-md:hidden" data-i18n="how_step2_desc">
+                  Play it, slow it down if you need, then say it out loud.
+                </p>
+              </div>
+            </button>
+            <button
+              class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full">
+              <p class="font-unbounded font-black text-2xl text-hijau group-active:text-white">
+                3
+              </p>
+              <div>
+                <h3 class="font-semibold text-xl max-sm:text-base" data-i18n="how_step3_title">
+                  Quiz with Gali
+                </h3>
+                <p class="text-sm max-md:hidden" data-i18n="how_step3_desc">
+                  Short rounds to make it stick, plus the manners behind it.
+                </p>
+              </div>
+            </button>
+          </div>
+          <!-- 01 -->
+          <div class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5">
+            <p class="text-xs text-nila" data-i18n="how_panel_step1">STEP 1 · PICK YOUR PLACE</p>
+            <h3 class="text-3xl font-bold text-nila" data-i18n="how_panel_title">Where are you today?</h3>
+            <div class="grid grid-cols-3 gap-3 max-xl:grid-cols-2 [@media(max-width:430px)]:grid-cols-1">
+              <div class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_shop">Local Shop</h4>
+                <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
+              </div>
+              <div class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_school">School</h4>
+                <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
+              </div>
+              <div class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_transit">Public Transit</h4>
+                <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
+              </div>
+              <div class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_intro">Introduction</h4>
+                <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
+              </div>
+              <div class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_emergency">Emergency</h4>
+                <p class="text-xs" data-i18n="phrases_6">6 phrases</p>
+              </div>
+              <div class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between">
+                <h4 class="text-2xl font-bold capitalize" data-i18n="cat_all">All situations</h4>
+                <p class="text-xs" data-i18n="total_8">8 in total</p>
+              </div>
+            </div>
+          </div>
+          <!-- 02 (Dibiarkan tanpa data-i18n karena belum ada di kamus JS Anda) -->
+          <div class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7">
+            <p class="text-xs text-terakota uppercase">
+              STEP 2 · LISTEN &amp; REPEAT
+            </p>
+            <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
+            <p class="font-semibold text-nila mb-2 max-sm:mb-4">
+              "How much is this?"
+            </p>
+            <div class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white max-sm:mb-4">
+              <button
+                class="shrink-0 w-11 h-11 rounded-full bg-terakota text-white flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0 shadow-sm"
+                aria-label="Play">
+                <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
+                  <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                </svg>
+              </button>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <button class="rounded-full w-10 h-10 bg-terakota text-white font-bold flex items-center justify-center">
+                1x
+              </button>
+              <button class="rounded-full border border-nila text-nila py-1.75 px-4 flex items-center justify-center">
+                0.5x slow
+              </button>
+            </div>
+          </div>
+          <!-- 03 (Dibiarkan tanpa data-i18n karena belum ada di kamus JS Anda) -->
+          <div class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7">
+            <p class="text-xs text-terakota uppercase">
+              STEP 3 · QUIZ WITH GALI
+            </p>
+            <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
+            <div class="flex flex-col gap-3 my-2">
+              <label
+                class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5">
+                <input type="radio" name="quiz_answer" value="a" class="peer hidden" />
+                <span class="font-bold text-nila peer-checked:text-terakota">How much is this?</span>
+              </label>
+              <label
+                class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5">
+                <input type="radio" name="quiz_answer" value="b" class="peer hidden" />
+                <span class="font-bold text-nila peer-checked:text-terakota">Where is the place?</span>
+              </label>
+              <label
+                class="relative flex items-center p-4 rounded-2xl border-2 border-nila has-checked:border-terakota has-checked:bg-terakota/5">
+                <input type="radio" name="quiz_answer" value="c" class="peer hidden" />
+                <span class="font-bold text-nila peer-checked:text-terakota">What time does it open?</span>
+              </label>
+            </div>
+
+            <!-- jawaban salah -->
+            <div class="hidden items-center gap-2 pt-2 flex-wrap">
+              <span class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold">
+                Oops!
+              </span>
+              <span class="px-4 py-2 rounded-full bg-pasir text-nila">
+                +0 points
+              </span>
+              <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
+                Streak lost
+              </span>
+            </div>
+            <!-- jawaban benar -->
+            <div class="flex items-center gap-2 pt-2 flex-wrap">
+              <span class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold">
+                Nice one!
+              </span>
+              <span class="px-4 py-2 rounded-full bg-pasir text-nila">
+                +10 points
+              </span>
+              <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
+                Streak kept
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- phrase of the day -->
+      <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5 p-10 bg-nila rounded-4xl">
+        <hgroup class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-8">
+          <p class="text-matahari uppercase font-bold tracking-wider" data-i18n="potd_label">
+            PHRASE OF THE DAY
+          </p>
+          <div
+            class="inline-flex max-md:w-full max-md:justify-between items-center p-1 rounded-full border-2 border-white max-w-xs">
+            <label
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center bg-matahari text-nila rounded-full [@media(max-width:430px)]:text-sm font-semibold">
+              <input type="radio" name="language_select" value="id" class="hidden" checked />
+              Indonesia
+            </label>
+            <label
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white">
+              <input type="radio" name="language_select" value="su" class="hidden" />
+              Sunda
+            </label>
+            <label
+              class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white">
+              <input type="radio" name="language_select" value="jv" class="hidden" />
+              Jawa
+            </label>
+          </div>
+        </hgroup>
+        <div class="flex max-md:flex-col justify-between gap-15 max-md:gap-7.5">
+          <div class="flex flex-col gap-5 w-3/4 max-md:w-full max-md:border-b-2 max-md:border-white/20 max-md:pb-7.5">
+            <h3 class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem">
+              Terima kasih banyak!
+            </h3>
+            <div class="flex gap-4 items-start flex-wrap text-white">
+              <p class="px-4 py-2 border border-white rounded-full">
+                teh-REE-mah KAH-see BAH-nyak
+              </p>
+              <p class="py-2 flex items-center" data-i18n="potd_meaning">"Thank you very much!"</p>
+            </div>
+            <div class="flex gap-4 text-white">
+              <button class="flex gap-2 items-center text-nila bg-matahari py-4 px-5 rounded-full font-bold">
+                <i class="ph-bold ph-speaker-high text-xl"></i>
+                <span data-i18n="potd_btn_listen">Listen</span>
+              </button>
+              <button class="px-4 py-2 border border-white rounded-full" data-i18n="potd_btn_slow">
+                Slow
+              </button>
+            </div>
+          </div>
+          <div class="flex flex-col h-fit pl-5 gap-3 border-l-2 border-pasir">
+            <p class="flex items-center gap-4 font-bold text-pasir">
+              <i class="ph-bold ph-lightbulb"></i> <span data-i18n="potd_culture_title">CULTURE TIP</span>
+            </p>
+            <p class="font-bold text-krem text-2xl" data-i18n="potd_culture_desc">
+              Give and take things with your right hand. In Indonesia it is a
+              sign of respect.
+            </p>
+            <a href="#" class="flex items-center gap-4 text-pasir font-bold">
+              <span data-i18n="potd_more_tips">More culture tips</span>
+              <i class="ph-bold ph-arrow-right"></i>
             </a>
           </div>
         </div>
       </section>
-      <!-- main -->
-      <div
-        id="main-content"
-        class="relative -mt-10 z-10 bg-krem rounded-t-5xl w-full px-0"
-      >
-        <!-- situation -->
-        <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="flex justify-between items-end">
-            <div class="flex flex-col max-md:gap-2">
-              <p
-                class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
-              >
-                SITUATIONS
-              </p>
-              <h2
-                class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
-              >
-                Find your
-                <span class="text-biru-aksen font-unbounded font-black"
-                  >SITUATION</span
-                >
-              </h2>
-              <p class="text-lg text-nila/80 font-medium">
-                Pick where you are. Gali brings the phrases you need there.
-              </p>
-            </div>
-            <a
-              href="#"
-              class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit max-md:hidden"
-            >
-              See all 6 situations
-              <i class="ph-bold ph-arrow-right"></i>
-            </a>
-          </hgroup>
-          <div class="my-10 w-full gap-10 flex max-xl:flex-col">
-            <div
-              class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white w-1/2 max-xl:w-full max-sm:p-7"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="292"
-                height="271"
-                viewBox="0 0 292 271"
-                fill="none"
-                stroke="currentColor"
-                class="absolute bottom-0 right-0 text-white/14 z-0"
-              >
-                <path
-                  d="M40.3747 164.325C33.7579 161.986 27.6777 158.186 22.6204 153.129C13.7125 144.221 8.70801 132.139 8.70801 119.542V87.8749L40.3747 8.70825H262.041L293.708 87.8749V119.542C293.708 132.139 288.704 144.221 279.796 153.129C274.738 158.186 268.658 161.986 262.041 164.325M8.70801 87.8749H293.708M262.041 164.325C257.003 166.106 251.654 167.042 246.208 167.042C233.61 167.042 221.528 162.037 212.62 153.129C203.712 144.221 198.708 132.139 198.708 119.542C198.708 132.139 193.704 144.221 184.796 153.129C175.888 162.037 163.806 167.042 151.208 167.042C138.61 167.042 126.528 162.037 117.62 153.129C108.712 144.221 103.708 132.139 103.708 119.542C103.708 132.139 98.7036 144.221 89.7956 153.129C80.8876 162.037 68.8058 167.042 56.208 167.042C50.7622 167.042 45.4129 166.106 40.3747 164.325M262.041 164.325V262.042H40.3747V164.325M262.041 164.325V151.208M40.3747 164.325V151.208"
-                  stroke-width="17.4167"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
 
-              <div class="relative">
-                <div
-                  class="flex items-center justify-between gap-4 max-sm:gap-0"
-                >
-                  <p
-                    class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5 max-sm:text-xs"
-                  >
-                    Most popular
-                  </p>
-                  <p class="text-sm font-medium text-right max-sm:text-xs">
-                    8 phrases · ID &amp; Sunda
-                  </p>
-                </div>
-
-                <h2
-                  class="uppercase font-unbounded font-black mt-6 text-[52px] tracking-[-1.68px]"
-                >
-                  STALL
-                </h2>
-
-                <p class="mt-3 max-w-120 text-[17px] leading-6.5">
-                  Buying snacks, asking prices, and saying thanks at a small
-                  food stall.
-                </p>
-
-                <ul class="mt-4.75 space-y-3">
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Berapa harganya?
-                      </p>
-                      <p class="text-[13px] leading-4.5 text-nila/80">
-                        How much is this?
-                      </p>
-                    </div>
-                    <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
-                    >
-                      <i class="ph-fill ph-play"></i>
-                    </button>
-                  </li>
-
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Boleh kurang?
-                      </p>
-                      <p class="text-[13px] leading-4.5 text-nila/80">
-                        Can it be cheaper?
-                      </p>
-                    </div>
-                    <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
-                    >
-                      <i class="ph-fill ph-play"></i>
-                    </button>
-                  </li>
-
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Terima kasih, Bu!
-                      </p>
-                      <p class="text-[13px] leading-4.5 text-nila/80">
-                        Thank you, ma'am!
-                      </p>
-                    </div>
-                    <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
-                    >
-                      <i class="ph-fill ph-play"></i>
-                    </button>
-                  </li>
-                </ul>
-
-                <a
-                  href="#"
-                  class="mt-4 inline-flex h-11 items-center gap-2.5 rounded-full border border-white/60 px-5 text-sm font-semibold transition hover:bg-white hover:text-nila focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                >
-                  Open Stall
-                  <i class="ph-bold ph-arrow-right"></i>
-                </a>
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none"
-            >
-              <div
-                class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full"
-              >
-                <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
-                </div>
-                <div>
-                  <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
-                  >
-                    SCHOOL
-                  </h3>
-                  <p class="text-nila/80 text-sm font-semibold">
-                    In class &amp; with teachers · 5 phrases
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full"
-              >
-                <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
-                </div>
-                <div>
-                  <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
-                  >
-                    MINIBUS
-                  </h3>
-                  <p class="text-nila/80 text-sm font-semibold">
-                    Getting around town · 6 phrases
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full"
-              >
-                <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
-                </div>
-                <div>
-                  <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
-                  >
-                    SMALL TALK
-                  </h3>
-                  <p class="text-nila/80 text-sm font-semibold">
-                    Meeting new people · 10 phrases
-                  </p>
-                </div>
-              </div>
-
-              <!-- EMERGENCY -->
-              <div
-                class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full"
-              >
-                <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"
-                  ></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
-                </div>
-                <div>
-                  <h3
-                    class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter max-md:text-2xl"
-                  >
-                    EMERGENCY
-                  </h3>
-                  <p class="text-white/85 text-sm font-semibold">
-                    When you need help · 6 phrases
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- how it works section -->
-        <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="flex flex-col max-md:gap-2">
-            <p
-              class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
-            >
-              How it works
-            </p>
-            <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
-            >
-              Three steps to your first
-              <span class="text-biru-aksen font-unbounded font-black"
-                >NGOBROL</span
-              >
-            </h2>
-            <p class="text-lg text-nila/80 font-medium">
-              Start from the left. Each step takes just seconds.
-            </p>
-          </hgroup>
-          <div class="flex gap-10 mt-12 max-md:flex-col">
-            <div
-              class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row"
-            >
-              <button
-                class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full"
-              >
-                <p class="font-unbounded font-black text-2xl">1</p>
-                <div>
-                  <h3 class="font-semibold text-xl max-sm:text-base">
-                    Pick <span class="max-md:hidden"> your place</span>
-                  </h3>
-                  <p class="text-md max-md:hidden">
-                    Warung, school, angkot — choose the situation you are in.
-                  </p>
-                </div>
-              </button>
-              <button
-                class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
-              >
-                <p
-                  class="font-unbounded font-black text-2xl text-terakota group-active:text-white"
-                >
-                  2
-                </p>
-                <div>
-                  <h3 class="font-semibold text-xl max-sm:text-base">
-                    Listen <span class="max-md:hidden"> & repeat</span>
-                  </h3>
-                  <p class="text-md max-md:hidden">
-                    Play it, slow it down if you need, then say it out loud.
-                  </p>
-                </div>
-              </button>
-              <button
-                class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
-              >
-                <p
-                  class="font-unbounded font-black text-2xl text-hijau group-active:text-white"
-                >
-                  3
-                </p>
-                <div>
-                  <h3 class="font-semibold text-xl max-sm:text-base">
-                    Quiz <span class="max-md:hidden"> with Gali</span>
-                  </h3>
-                  <p class="text-sm max-md:hidden">
-                    Short rounds to make it stick, plus the manners behind it.
-                  </p>
-                </div>
-              </button>
-            </div>
-            <!-- 01 -->
-            <div
-              class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5"
-            >
-              <p class="text-xs text-nila">STEP 1 · PICK YOUR PLACE</p>
-              <h3 class="text-3xl font-bold text-nila">Where are you today?</h3>
-              <div
-                class="grid grid-cols-3 gap-3 max-xl:grid-cols-2 [@media(max-width:430px)]:grid-cols-1"
-              >
-                <div
-                  class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">Local Shop</h4>
-                  <p class="text-xs">8 phrases</p>
-                </div>
-                <div
-                  class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">School</h4>
-                  <p class="text-xs">8 phrases</p>
-                </div>
-                <div
-                  class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">public transit</h4>
-                  <p class="text-xs">8 phrases</p>
-                </div>
-                <div
-                  class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">Introduction</h4>
-                  <p class="text-xs">8 phrases</p>
-                </div>
-                <div
-                  class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">Emergency</h4>
-                  <p class="text-xs">6 phrases</p>
-                </div>
-                <div
-                  class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
-                >
-                  <h4 class="text-2xl font-bold capitalize">All situations</h4>
-                  <p class="text-xs">8 in total</p>
-                </div>
-              </div>
-            </div>
-            <!-- 02 -->
-            <div
-              class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
-            >
-              <p class="text-xs text-terakota uppercase">
-                STEP 2 · LISTEN &amp; REPEAT
-              </p>
-              <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-              <p class="font-semibold text-nila mb-2 max-sm:mb-4">
-                "How much is this?"
-              </p>
-              <div
-                class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white max-sm:mb-4"
-              >
-                <button
-                  class="shrink-0 w-11 h-11 rounded-full bg-terakota text-white flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0 shadow-sm"
-                  aria-label="Play"
-                >
-                  <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
-                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                  </svg>
-                </button>
-              </div>
-              <div class="flex items-center gap-2.5">
-                <button
-                  class="rounded-full w-10 h-10 bg-terakota text-white font-bold flex items-center justify-center"
-                >
-                  1x
-                </button>
-                <button
-                  class="rounded-full border border-nila text-nila py-1.75 px-4 flex items-center justify-center"
-                >
-                  0.5x slow
-                </button>
-              </div>
-            </div>
-            <!-- 03 -->
-            <div
-              class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
-            >
-              <p class="text-xs text-terakota uppercase">
-                STEP 3 · QUIZ WITH GALI
-              </p>
-              <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-              <div class="flex flex-col gap-3 my-2">
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
-                >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="a"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >How much is this?</span
-                  >
-                </label>
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
-                >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="b"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >Where is the place?</span
-                  >
-                </label>
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila has-checked:border-terakota has-checked:bg-terakota/5"
-                >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="c"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >What time does it open?</span
-                  >
-                </label>
-              </div>
-
-              <!-- jawaban salah -->
-              <div class="hidden items-center gap-2 pt-2 flex-wrap">
-                <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
-                >
-                  Oops!
-                </span>
-                <span class="px-4 py-2 rounded-full bg-pasir text-nila">
-                  +0 points
-                </span>
-                <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
-                  Streak lost
-                </span>
-              </div>
-              <!-- jawaban benar -->
-              <div class="flex items-center gap-2 pt-2 flex-wrap">
-                <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
-                >
-                  Nice one!
-                </span>
-                <span class="px-4 py-2 rounded-full bg-pasir text-nila">
-                  +10 points
-                </span>
-                <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
-                  Streak kept
-                </span>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- phrase of the day -->
-        <section
-          class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5 p-10 bg-nila rounded-4xl"
-        >
-          <hgroup
-            class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-8"
-          >
-            <p class="text-matahari uppercase font-bold tracking-wider">
-              PHRASE OF THE DAY
-            </p>
-            <div
-              class="inline-flex max-md:w-full max-md:justify-between items-center p-1 rounded-full border-2 border-white max-w-xs"
-            >
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center bg-matahari text-nila rounded-full [@media(max-width:430px)]:text-sm font-semibold"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="id"
-                  class="hidden"
-                  checked
-                />
-                Indonesia
-              </label>
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="su"
-                  class="hidden"
-                />
-                Sunda
-              </label>
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="jv"
-                  class="hidden"
-                />
-                Jawa
-              </label>
-            </div>
-          </hgroup>
-          <div
-            class="flex max-md:flex-col justify-between gap-15 max-md:gap-7.5"
-          >
-            <div
-              class="flex flex-col gap-5 w-3/4 max-md:w-full max-md:border-b-2 max-md:border-white/20 max-md:pb-7.5"
-            >
-              <h3
-                class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem"
-              >
-                Terima kasih banyak!
-              </h3>
-              <div class="flex gap-4 items-start flex-wrap text-white">
-                <p class="px-4 py-2 border border-white rounded-full">
-                  teh-REE-mah KAH-see BAH-nyak
-                </p>
-                <p class="py-2 flex items-center">"Thank you very much!"</p>
-              </div>
-              <div class="flex gap-4 text-white">
-                <button
-                  class="flex gap-2 items-center text-nila bg-matahari py-4 px-5 rounded-full font-bold"
-                >
-                  <i class="ph-bold ph-speaker-high text-xl"></i>
-                  <p>Listen</p>
-                </button>
-                <button class="px-4 py-2 border border-white rounded-full">
-                  Slow
-                </button>
-              </div>
-            </div>
-            <div class="flex flex-col h-fit pl-5 gap-3 border-l-2 border-pasir">
-              <p class="flex items-center gap-4 font-bold text-pasir">
-                <i class="ph-bold ph-lightbulb"></i> CULTURE TIP
-              </p>
-              <p class="font-bold text-krem text-2xl">
-                Give and take things with your right hand. In Indonesia it is a
-                sign of respect.
-              </p>
-              <a href="#" class="flex items-center gap-4 text-pasir font-bold"
-                >More culture tips<i class="ph-bold ph-arrow-right"></i
-              ></a>
-            </div>
-          </div>
-        </section>
-        <!-- why gaulingo -->
-        <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="flex flex-col xl:w-1/2">
-            <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
-            >
-              WHY GAULINGO
-            </p>
-            <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
-            >
-              Not your usual
-              <span
-                class="text-biru-aksen font-unbounded font-black [@media(max-width:430px)]:text-3xl"
-                >PHRASEBOOK</span
-              >
-            </h2>
-            <p class="text-lg text-nila/80 font-medium max-md:text-base">
-              Most phrasebooks teach sentences nobody says. Gaulingo teaches
-              what people actually say, and how to say it politely.
-            </p>
-          </hgroup>
-          <div class="flex gap-6 mt-5 max-md:flex-col">
-            <div
-              class="bg-krem-tua rounded-3xl p-8 sm:p-10 flex flex-col gap-6 grow"
-            >
-              <h3 class="text-xl sm:text-3xl font-bold text-nila/80">
-                Usual phrasebook
-              </h3>
-
-              <ul class="flex flex-col gap-4">
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
-                >
-                  <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
-                  >
-                    <i class="ph-bold ph-x"></i>
-                  </span>
-                  <p>Textbook sentences nobody says</p>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
-                >
-                  <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
-                  >
-                    <i class="ph-bold ph-x"></i>
-                  </span>
-                  <p>Read only, no audio</p>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
-                >
-                  <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
-                  >
-                    <i class="ph-bold ph-x"></i>
-                  </span>
-                  <p>No context or manners</p>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
-                >
-                  <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
-                  >
-                    <i class="ph-bold ph-x"></i>
-                  </span>
-                  <p>One language only</p>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="bg-nila rounded-3xl p-8 sm:p-10 flex flex-col grow gap-6 text-white"
-            >
-              <h3
-                class="text-xl sm:text-3xl font-black font-unbounded tracking-wider"
-              >
-                GAULINGO
-              </h3>
-
-              <ul class="flex flex-col gap-4">
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
-                >
-                  <span
-                    class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
-                  >
-                    <svg
-                      class="w-3 h-3 stroke-current"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <span>Everyday phrases locals actually use</span>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
-                >
-                  <span
-                    class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
-                  >
-                    <svg
-                      class="w-3 h-3 stroke-current"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <span>Audio for every phrase, with slow mode</span>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
-                >
-                  <span
-                    class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
-                  >
-                    <svg
-                      class="w-3 h-3 stroke-current"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <span>A culture tip in every situation</span>
-                </li>
-
-                <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
-                >
-                  <span
-                    class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
-                  >
-                    <svg
-                      class="w-3 h-3 stroke-current"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke-width="3"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                  </span>
-                  <span>Bahasa Indonesia, Sunda &amp; Jawa</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-        <!-- AI buddy -->
-        <section
-          class="ai-buddy-section mt-50 mx-25 max-md:mx-10 max-sm:mx-5 max-md:mt-16 flex p-10 gap-16 bg-pasir rounded-4xl justify-between items-center max-lg:flex-col max-lg:gap-10 max-md:p-6 max-sm:p-5 max-sm:rounded-3xl overflow-hidden"
-        >
-          <div
-            class="flex flex-col gap-5 max-w-2xl max-xl:max-w-xl max-lg:max-w-full"
-          >
-            <hgroup class="flex flex-col gap-3">
-              <p
-                class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
-              >
-                AI BUDDY
-              </p>
-              <h2
-                class="text-nila text-[52px] font-semibold tracking-[-0.52px] leading-tight max-lg:text-5xl max-sm:text-4xl max-[375px]:text-3xl"
-              >
-                Stuck? Just ask
-                <span class="text-biru-aksen font-unbounded font-black"
-                  >GALI.</span
-                >
-              </h2>
-              <p class="text-lg text-nila/80 font-medium max-sm:text-base">
-                Ask how to say something, what a word means, or whether it
-                sounds polite. Gali answers in simple English and Bahasa
-                Indonesia, with audio.
-              </p>
-            </hgroup>
-            <img
-              src="./src/assets/chat-ilustration-mobile.png"
-              alt="gali ilustration"
-              class="hidden max-md:block shrink-0 w-full max-w-xs h-auto rounded-2xl object-cover self-center my-2"
-            />
-
-            <p class="text-nila font-medium text-base max-sm:text-sm">
-              Try asking
-            </p>
-            <div class="flex gap-4 flex-wrap max-sm:gap-2.5">
-              <button
-                class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
-              >
-                How do I say "no spicy"?
-              </button>
-              <button
-                class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
-              >
-                Is "Bang" polite?
-              </button>
-              <button
-                class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
-              >
-                Teach me to bargain
-              </button>
-              <button
-                class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
-              >
-                What does "gas" mean?
-              </button>
-            </div>
-            <a
-              href="#"
-              class="px-6 py-3 bg-nila text-white rounded-full w-fit text-lg flex items-center gap-2 hover:opacity-95 transition-opacity max-sm:px-5 max-sm:py-2.5 max-sm:text-base mt-2"
-            >
-              <i class="ph-fill ph-chat-circle-dots"></i> Start chatting
-            </a>
-
-            <p class="text-sm text-nila max-sm:text-xs">
-              Gali can make mistakes. Check important info with a local.
-            </p>
-          </div>
-          <img
-            src="./src/assets/gali-chat.webp"
-            alt="Chat with gali"
-            class="w-full max-w-md shrink-0 object-contain max-lg:max-w-sm max-md:hidden"
-          />
-        </section>
-        <!-- FAQ -->
-        <section class="reveal mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="relative w-full mb-10 flex flex-col">
-            <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
-            >
-              FAQ
-            </p>
-            <h2
-              class="relative w-fit font-unbounded font-black text-nila text-[52px] max-sm:text-5xl [@media(max-width:400px)]:text-3xl tracking-[-0.52px]"
-            >
-              STILL GOT
-              <span class="text-terakota">QUESTIONS?</span>
-              <svg
-                class="absolute -bottom-2 left-0 w-full"
-                viewBox="0 0 200 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 6C50 2 150 2 198 6"
-                  stroke="#fbe3b5"
-                  stroke-width="4"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </h2>
-            <i
-              class="ph ph-question-mark text-7xl text-nila/20 absolute right-0 bottom-0 max-md:hidden"
-            ></i>
-          </hgroup>
-          <div class="gap-y-4">
-            <div class="faq-item border-y border-nila/30 py-7 is-open">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">01</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    What is Gaulingo?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full bg-nila text-white flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >?</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl flex items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item border-b border-nila/30 py-7">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">02</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    Do I need an account?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >+</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item border-b border-nila/30 py-7">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">03</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    Which languages are included?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >+</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item border-b border-nila/30 py-7">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">04</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    Does it work on my phone?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >+</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item border-b border-nila/30 py-7">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">05</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    Who checks the translations?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >+</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="faq-item border-b border-nila/30 py-7">
-              <button
-                type="button"
-                class="w-full flex items-center justify-between text-left py-2 group"
-                aria-expanded="false"
-              >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">06</p>
-                  <h3 class="text-3xl font-bold text-nila">
-                    Is Gaulingo free?
-                  </h3>
-                </div>
-                <span
-                  class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg"
-                  data-faq-icon
-                  aria-hidden="true"
-                  >+</span
-                >
-              </button>
-              <div
-                data-faq-panel
-                class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden"
-                />
-                <div>
-                  <p
-                    class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1"
-                  >
-                    Gali's Answer
-                  </p>
-                  <p class="text-sm text-nila font-medium">
-                    A free website with everyday Indonesian phrases for real
-                    situations — warung, school, angkot, even emergencies. Every
-                    phrase comes with audio, a culture tip, and a short quiz.
-                    Gali is one tap away if you get stuck.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md"
-          >
-            <div class="flex items-center gap-4">
-              <div
-                class="w-12 h-12 rounded-full bg-amber-700 overflow-hidden shrink-0"
-              >
-                <img
-                  src="./src/assets/Illustration.png"
-                  alt="Gali Avatar"
-                  class="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <h4 class="font-bold text-base">Question not listed here?</h4>
-                <p class="text-xs text-blue-200">
-                  Ask Gali directly — he answers in English and Bahasa
-                  Indonesia.
-                </p>
-              </div>
-            </div>
-            <button
-              class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-amber-200 transition"
-            >
-              <i class="ph-fill ph-chat-circle-dots"></i>
-              Ask Gali
-            </button>
-          </div>
-        </section>
-        <!-- CTA -->
-        <section
-          class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
-        >
-          <p class="text-base font-bold" data-cta-reveal="left">
-            NO SIGN-UP · NO APP · JUST OPEN IT
+            <!-- why gaulingo -->
+      <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <hgroup class="flex flex-col xl:w-1/2">
+          <p class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm" data-i18n="why_label">
+            WHY GAULINGO
           </p>
           <h2
-            class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
-            data-cta-reveal="right"
-          >
-            Ready to <br /><span class="text-krem">ngobrol?</span>
+            class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
+            <span data-i18n="why_title_1">Not your usual</span>
+            <span class="text-biru-aksen font-unbounded font-black [@media(max-width:430px)]:text-3xl" data-i18n="why_title_2">PHRASEBOOK</span>
           </h2>
-          <p class="font-medium text-xl" data-cta-reveal="left">
-            Start with one phrase today. Tomorrow you will use it.
+          <p class="text-lg text-nila/80 font-medium max-md:text-base" data-i18n="why_desc">
+            Most phrasebooks teach sentences nobody says. Gaulingo teaches
+            what people actually say, and how to say it politely.
           </p>
-          <div
-            class="w-1/2 flex justify-center max-sm:flex-col mt-7 gap-15 max-md:w-full max-md:gap-5"
-            data-cta-reveal="right"
-          >
+        </hgroup>
+        <div class="flex gap-6 mt-5 max-md:flex-col">
+          <div class="bg-krem-tua rounded-3xl p-8 sm:p-10 flex flex-col gap-6 grow">
+            <h3 class="text-xl sm:text-3xl font-bold text-nila/80" data-i18n="why_usual_title">
+              Usual phrasebook
+            </h3>
+
+            <ul class="flex flex-col gap-4">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila">
+                <span class="p-1 rounded-full bg-matahari flex items-center justify-center">
+                  <i class="ph-bold ph-x"></i>
+                </span>
+                <span data-i18n="why_usual_item1">Textbook sentences nobody says</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila">
+                <span class="p-1 rounded-full bg-matahari flex items-center justify-center">
+                  <i class="ph-bold ph-x"></i>
+                </span>
+                <span data-i18n="why_usual_item2">Read only, no audio</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila">
+                <span class="p-1 rounded-full bg-matahari flex items-center justify-center">
+                  <i class="ph-bold ph-x"></i>
+                </span>
+                <span data-i18n="why_usual_item3">No context or manners</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila">
+                <span class="p-1 rounded-full bg-matahari flex items-center justify-center">
+                  <i class="ph-bold ph-x"></i>
+                </span>
+                <span data-i18n="why_usual_item4">One language only</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-nila rounded-3xl p-8 sm:p-10 flex flex-col grow gap-6 text-white">
+            <h3 class="text-xl sm:text-3xl font-black font-unbounded tracking-wider">
+              GAULINGO
+            </h3>
+
+            <ul class="flex flex-col gap-4">
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold">
+                <span class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span data-i18n="why_gali_item1">Everyday phrases locals actually use</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold">
+                <span class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span data-i18n="why_gali_item2">Audio for every phrase, with slow mode</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold">
+                <span class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span data-i18n="why_gali_item3">A culture tip in every situation</span>
+              </li>
+
+              <li class="flex items-center gap-3 text-sm sm:text-base font-semibold">
+                <span class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0">
+                  <svg class="w-3 h-3 stroke-current" viewBox="0 0 24 24" fill="none" stroke-width="3"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </span>
+                <span data-i18n="why_gali_item4">Bahasa Indonesia, Sunda &amp; Jawa</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI buddy -->
+      <section
+        class="ai-buddy-section mt-50 mx-25 max-md:mx-10 max-sm:mx-5 max-md:mt-16 flex p-10 gap-16 bg-pasir rounded-4xl justify-between items-center max-lg:flex-col max-lg:gap-10 max-md:p-6 max-sm:p-5 max-sm:rounded-3xl overflow-hidden">
+        <div class="flex flex-col gap-5 max-w-2xl max-xl:max-w-xl max-lg:max-w-full">
+          <hgroup class="flex flex-col gap-3">
+            <p
+              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs">
+              AI BUDDY
+            </p>
+            <h2
+              class="text-nila text-[52px] font-semibold tracking-[-0.52px] leading-tight max-lg:text-5xl max-sm:text-4xl max-[375px]:text-3xl">
+              Stuck? Just ask
+              <span class="text-biru-aksen font-unbounded font-black">GALI.</span>
+            </h2>
+            <p class="text-lg text-nila/80 font-medium max-sm:text-base">
+              Ask how to say something, what a word means, or whether it
+              sounds polite. Gali answers in simple English and Bahasa
+              Indonesia, with audio.
+            </p>
+          </hgroup>
+          <img src="./src/assets/chat-ilustration-mobile.png" alt="gali ilustration"
+            class="hidden max-md:block shrink-0 w-full max-w-xs h-auto rounded-2xl object-cover self-center my-2" />
+
+          <p class="text-nila font-medium text-base max-sm:text-sm">
+            Try asking
+          </p>
+          <div class="flex gap-4 flex-wrap max-sm:gap-2.5">
             <button
-              class="flex items-center gap-2 text-sm font-bold px-6 py-4 bg-matahari text-nila rounded-full hover:border-2 border-matahari hover:text-matahari hover:bg-transparent transition-all duration-300"
-            >
-              START EXPLORING
-              <i class="ph-bold ph-arrow-right text-lg"></i>
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              How do I say "no spicy"?
             </button>
             <button
-              class="flex gap-2 items-center text-sm font-bold border-2 border-matahari px-6 py-4 rounded-full hover:bg-matahari hover:text-nila transition-all duration-300"
-            >
-              <i class="ph-bold ph-chat-circle-dots"></i> CHAT WITH GALI
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              Is "Bang" polite?
+            </button>
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              Teach me to bargain
+            </button>
+            <button
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              What does "gas" mean?
             </button>
           </div>
-        </section>
-      </div>
-    </main>
-    <!-- footer -->
-    <footer
-      id="site-footer"
-      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16"
-    >
-      <div
-        class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12"
-      >
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start"
-        >
-          <div
-            class="flex flex-col justify-between h-full gap-12 lg:gap-24"
-            data-footer-reveal="fade-up"
-          >
-            <div class="flex flex-col gap-3 font-semibold text-base">
-              <a
-                href="#"
-                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                >Terms and Conditions</a
-              >
-              <a
-                href="#"
-                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                >Privacy Policy</a
-              >
-            </div>
-            <div class="flex flex-col gap-3">
-              <h3 class="text-nila/70 font-medium text-sm">Socials</h3>
-              <div class="flex items-center gap-4 text-nila">
-                <a
-                  href="https://www.instagram.com/"
-                  aria-label="Instagram"
-                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
-                >
-                  <i class="ph-bold ph-instagram-logo text-2xl"></i>
-                </a>
-                <a
-                  href="https://www.tiktok.com/"
-                  aria-label="TikTok"
-                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
-                >
-                  <i class="ph-bold ph-tiktok-logo text-2xl"></i>
-                </a>
-                <a
-                  href="https://www.youtube.com/"
-                  aria-label="YouTube"
-                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
-                >
-                  <i class="ph-bold ph-youtube-logo text-2xl"></i>
-                </a>
-                <a
-                  href="mailto:halo@gaulingo.id"
-                  aria-label="Email"
-                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
-                >
-                  <i class="ph-bold ph-envelope text-2xl"></i>
-                </a>
+          <a href="#"
+            class="px-6 py-3 bg-nila text-white rounded-full w-fit text-lg flex items-center gap-2 hover:opacity-95 transition-opacity max-sm:px-5 max-sm:py-2.5 max-sm:text-base mt-2">
+            <i class="ph-fill ph-chat-circle-dots"></i> Start chatting
+          </a>
+
+          <p class="text-sm text-nila max-sm:text-xs">
+            Gali can make mistakes. Check important info with a local.
+          </p>
+        </div>
+        <img src="./src/assets/gali-chat.webp" alt="Chat with gali"
+          class="w-full max-w-md shrink-0 object-contain max-lg:max-w-sm max-md:hidden" />
+      </section>
+            <!-- FAQ -->
+      <section class="reveal mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <hgroup class="relative w-full mb-10 flex flex-col">
+          <p class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm" data-i18n="faq_label">
+            FAQ
+          </p>
+          <h2
+            class="relative w-fit font-unbounded font-black text-nila text-[52px] max-sm:text-5xl [@media(max-width:400px)]:text-3xl tracking-[-0.52px]">
+            <span data-i18n="faq_title_1">STILL GOT</span>
+            <span class="text-terakota" data-i18n="faq_title_2">QUESTIONS?</span>
+            <svg class="absolute -bottom-2 left-0 w-full" viewBox="0 0 200 8" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 6C50 2 150 2 198 6" stroke="#fbe3b5" stroke-width="4" stroke-linecap="round" />
+            </svg>
+          </h2>
+          <i class="ph ph-question-mark text-7xl text-nila/20 absolute right-0 bottom-0 max-md:hidden"></i>
+        </hgroup>
+        <div class="gap-y-4">
+          <!-- Item 01 -->
+          <div class="faq-item border-y border-nila/30 py-7 is-open">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="true">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">01</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q1">
+                  What is Gaulingo?
+                </h3>
               </div>
-            </div>
-          </div>
-          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-            <h3 class="text-nila/70 font-medium text-sm">Contacts</h3>
-            <div class="flex flex-col gap-5">
+              <span class="w-8 h-8 rounded-full bg-nila text-white flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">−</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl flex items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
               <div>
-                <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
-                <a
-                  href="mailto:halo@gaulingo.id"
-                  class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
-                  >halo@gaulingo.id</a
-                >
-              </div>
-              <div>
-                <p class="text-xs text-nila/60 font-medium mb-1">Based in</p>
-                <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
-              </div>
-              <div>
-                <p class="text-xs text-nila/60 font-medium mb-1">Languages</p>
-                <p class="text-xl md:text-2xl font-bold">
-                  Indonesian &amp; Sundanese
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a1">
+                  A free website with everyday Indonesian phrases for real
+                  situations — warung, school, angkot, even emergencies. Every
+                  phrase comes with audio, a culture tip, and a short quiz.
+                  Gali is one tap away if you get stuck.
                 </p>
               </div>
             </div>
           </div>
-          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-            <h3 class="text-nila/70 font-medium text-sm">Navigation</h3>
-            <nav aria-label="Footer navigation">
-              <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
-                <li>
-                  <a
-                    href="./index.html"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >Home</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="./pages/situations.html"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >Situations</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="./pages/practice.html"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >Practice</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="./pages/culture.html"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >Culture</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="./pages/about.html"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >About</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#home"
-                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
-                    >Chat with Gali</a
-                  >
-                </li>
-              </ul>
-            </nav>
-          </div>
-          <div
-            class="flex flex-col justify-between items-start lg:items-end h-full gap-8"
-            data-footer-reveal="fade-up"
-          >
-            <div
-              class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70"
-            >
-              <span>Copyright © — 2026 Gaulingo</span>
-              <div
-                class="w-6 h-6 rounded-full bg-nila text-matahari flex items-center justify-center font-bold font-unbounded text-[10px]"
-              >
-                G
+
+          <!-- Item 02 -->
+          <div class="faq-item border-b border-nila/30 py-7">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="false">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">02</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q2">
+                  Do I need an account?
+                </h3>
+              </div>
+              <span
+                class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">+</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
+              <div>
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a2">
+                  No account needed! You can start learning and practicing all phrases right away.
+                </p>
               </div>
             </div>
-            <div
-              class="flex items-center gap-6 lg:gap-8 my-auto self-start lg:self-end"
-            >
-              <button
-                id="scroll-to-top"
-                type="button"
-                aria-label="Back to top"
-                class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
-              >
-                <i class="ph-bold ph-arrow-up text-xl md:text-2xl"></i>
-              </button>
+          </div>
 
-              <h2
-                class="font-unbounded font-black text-nila text-8xl md:text-9xl lg:text-[11rem] leading-none select-none tracking-tighter relative"
-              >
-                G<sup
-                  class="text-xl md:text-2xl font-normal absolute top-4 -right-5 md:-right-6"
-                  >®</sup
-                >
-              </h2>
+          <!-- Item 03 -->
+          <div class="faq-item border-b border-nila/30 py-7">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="false">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">03</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q3">
+                  Which languages are included?
+                </h3>
+              </div>
+              <span
+                class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">+</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
+              <div>
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a3">
+                  Currently we feature everyday Bahasa Indonesia, Sunda, and Jawa.
+                </p>
+              </div>
             </div>
-            <p
-              class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
-            >
-              Say it like a local.<br />
-              Everyday Indonesian phrases<br />
-              for real places.
-            </p>
+          </div>
+
+          <!-- Item 04 -->
+          <div class="faq-item border-b border-nila/30 py-7">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="false">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">04</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q4">
+                  Does it work on my phone?
+                </h3>
+              </div>
+              <span
+                class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">+</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
+              <div>
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a4">
+                  Yes! Gaulingo is fully responsive and optimized for mobile screens.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 05 -->
+          <div class="faq-item border-b border-nila/30 py-7">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="false">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">05</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q5">
+                  Who checks the translations?
+                </h3>
+              </div>
+              <span
+                class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">+</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
+              <div>
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a5">
+                  All phrases and audio are curated and verified directly by native speakers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 06 -->
+          <div class="faq-item border-b border-nila/30 py-7">
+            <button type="button" class="w-full flex items-center justify-between text-left py-2 group"
+              aria-expanded="false">
+              <div class="flex items-center gap-6">
+                <p class="font-bold text-nila/80">06</p>
+                <h3 class="text-3xl font-bold text-nila" data-i18n="faq_q6">
+                  Is Gaulingo free?
+                </h3>
+              </div>
+              <span
+                class="w-8 h-8 rounded-full border border-nila/20 flex items-center justify-center font-bold text-lg shrink-0"
+                data-faq-icon aria-hidden="true">+</span>
+            </button>
+            <div data-faq-panel class="mt-3 bg-pasir p-5 rounded-2xl hidden items-center gap-4">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar"
+                class="w-10 h-10 rounded-full bg-amber-800 shrink-0 overflow-hidden" />
+              <div>
+                <p class="text-xs font-bold tracking-wider uppercase text-nila/80 mb-1" data-i18n="faq_ans_label">
+                  Gali's Answer
+                </p>
+                <p class="text-sm text-nila font-medium" data-i18n="faq_a6">
+                  Yes, 100% free to use.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
-    <div
-      class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50"
-    >
-      <img
-        src="./src/assets/Illustration.png"
-        alt="gali ilustration"
-        class="w-15 border-4 border-nila rounded-full shadow-xl"
-      />
-      <p
-        class="px-4 py-2 bg-white rounded-full font-bold text-nila shadow-xl text-sm"
-      >
-        Ask Gali
-      </p>
+
+        <!-- Banner Bawah FAQ -->
+        <div
+          class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-amber-700 overflow-hidden shrink-0">
+              <img src="./src/assets/Illustration.png" alt="Gali Avatar" class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h4 class="font-bold text-base" data-i18n="faq_footer_title">Question not listed here?</h4>
+              <p class="text-xs text-blue-200" data-i18n="faq_footer_desc">
+                Ask Gali directly — he answers in English and Bahasa
+                Indonesia.
+              </p>
+            </div>
+          </div>
+          <button
+            class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-amber-200 transition shrink-0 cursor-pointer">
+            <i class="ph-fill ph-chat-circle-dots"></i>
+            <span data-i18n="faq_footer_btn">Ask Gali</span>
+          </button>
+        </div>
+      </section>
+
     </div>
-    <!-- js -->
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
-    <script src="./script.js"></script>
-  </body>
+  </main>
+  <!-- footer -->
+  <footer id="site-footer"
+    class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16">
+    <div class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start">
+        <div class="flex flex-col justify-between h-full gap-12 lg:gap-24" data-footer-reveal="fade-up">
+          <div class="flex flex-col gap-3 font-semibold text-base">
+            <a href="#"
+              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Terms
+              and Conditions</a>
+            <a href="#"
+              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Privacy
+              Policy</a>
+          </div>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-nila/70 font-medium text-sm">Socials</h3>
+            <div class="flex items-center gap-4 text-nila">
+              <a href="https://www.instagram.com/" aria-label="Instagram"
+                class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300">
+                <i class="ph-bold ph-instagram-logo text-2xl"></i>
+              </a>
+              <a href="https://www.tiktok.com/" aria-label="TikTok"
+                class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300">
+                <i class="ph-bold ph-tiktok-logo text-2xl"></i>
+              </a>
+              <a href="https://www.youtube.com/" aria-label="YouTube"
+                class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300">
+                <i class="ph-bold ph-youtube-logo text-2xl"></i>
+              </a>
+              <a href="mailto:halo@gaulingo.id" aria-label="Email"
+                class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300">
+                <i class="ph-bold ph-envelope text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+          <h3 class="text-nila/70 font-medium text-sm">Contacts</h3>
+          <div class="flex flex-col gap-5">
+            <div>
+              <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
+              <a href="mailto:halo@gaulingo.id"
+                class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all">halo@gaulingo.id</a>
+            </div>
+            <div>
+              <p class="text-xs text-nila/60 font-medium mb-1">Based in</p>
+              <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
+            </div>
+            <div>
+              <p class="text-xs text-nila/60 font-medium mb-1">Languages</p>
+              <p class="text-xl md:text-2xl font-bold">
+                Indonesian &amp; Sundanese
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+          <h3 class="text-nila/70 font-medium text-sm">Navigation</h3>
+          <nav aria-label="Footer navigation">
+            <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
+              <li>
+                <a href="./index.html"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Home</a>
+              </li>
+              <li>
+                <a href="./pages/situations.html"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Situations</a>
+              </li>
+              <li>
+                <a href="./pages/practice.html"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Practice</a>
+              </li>
+              <li>
+                <a href="./pages/culture.html"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Culture</a>
+              </li>
+              <li>
+                <a href="./pages/about.html"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">About</a>
+              </li>
+              <li>
+                <a href="#home"
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Chat
+                  with Gali</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="flex flex-col justify-between items-start lg:items-end h-full gap-8" data-footer-reveal="fade-up">
+          <div class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70">
+            <span>Copyright © — 2026 Gaulingo</span>
+            <div
+              class="w-6 h-6 rounded-full bg-nila text-matahari flex items-center justify-center font-bold font-unbounded text-[10px]">
+              G
+            </div>
+          </div>
+          <div class="flex items-center gap-6 lg:gap-8 my-auto self-start lg:self-end">
+            <button id="scroll-to-top" type="button" aria-label="Back to top"
+              class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0">
+              <i class="ph-bold ph-arrow-up text-xl md:text-2xl"></i>
+            </button>
+
+            <h2
+              class="font-unbounded font-black text-nila text-8xl md:text-9xl lg:text-[11rem] leading-none select-none tracking-tighter relative">
+              G<sup class="text-xl md:text-2xl font-normal absolute top-4 -right-5 md:-right-6">®</sup>
+            </h2>
+          </div>
+          <p
+            class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end">
+            Say it like a local.<br />
+            Everyday Indonesian phrases<br />
+            for real places.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50">
+    <img src="./src/assets/Illustration.png" alt="gali ilustration"
+      class="w-15 border-4 border-nila rounded-full shadow-xl" />
+    <p class="px-4 py-2 bg-white rounded-full font-bold text-nila shadow-xl text-sm">
+      Ask Gali
+    </p>
+  </div>
+  <!-- js -->
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+  <script src="./script.js"></script>
+</body>
 </html>
