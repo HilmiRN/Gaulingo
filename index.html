@@ -290,8 +290,7 @@
               data-i18n="sit_label">
               SITUATIONS
             </p>
-            <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
+            <h2 class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
               <span data-i18n="sit_title_1">Find your</span>
               <span class="text-biru-aksen font-unbounded font-black" data-i18n="sit_title_2">SITUATION</span>
             </h2>
@@ -468,7 +467,7 @@
           <h2
             class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]">
             <span data-i18n="how_title_1">Three steps to your first </span>
-            <span class="text-biru-aksen font-unbounded font-black" data-i18n="how_title_2">NGOBROL</span>
+          <span class="text-biru-aksen font-unbounded font-black" data-i18n="how_title_2">CONVERSATION</span>
           </h2>
           <p class="text-lg text-nila/80 font-medium" data-i18n="how_desc">
             Start from the left. Each step takes just seconds.
@@ -791,21 +790,22 @@
         </div>
       </section>
 
-      <!-- AI buddy -->
+            <!-- AI buddy -->
       <section
         class="ai-buddy-section mt-50 mx-25 max-md:mx-10 max-sm:mx-5 max-md:mt-16 flex p-10 gap-16 bg-pasir rounded-4xl justify-between items-center max-lg:flex-col max-lg:gap-10 max-md:p-6 max-sm:p-5 max-sm:rounded-3xl overflow-hidden">
         <div class="flex flex-col gap-5 max-w-2xl max-xl:max-w-xl max-lg:max-w-full">
           <hgroup class="flex flex-col gap-3">
             <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs">
+              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
+              data-i18n="ai_label">
               AI BUDDY
             </p>
             <h2
               class="text-nila text-[52px] font-semibold tracking-[-0.52px] leading-tight max-lg:text-5xl max-sm:text-4xl max-[375px]:text-3xl">
-              Stuck? Just ask
-              <span class="text-biru-aksen font-unbounded font-black">GALI.</span>
+              <span data-i18n="ai_title_1">Stuck? Just ask</span>
+              <span class="text-biru-aksen font-unbounded font-black" data-i18n="ai_title_2">GALI.</span>
             </h2>
-            <p class="text-lg text-nila/80 font-medium max-sm:text-base">
+            <p class="text-lg text-nila/80 font-medium max-sm:text-base" data-i18n="ai_desc">
               Ask how to say something, what a word means, or whether it
               sounds polite. Gali answers in simple English and Bahasa
               Indonesia, with audio.
@@ -814,39 +814,45 @@
           <img src="./src/assets/chat-ilustration-mobile.png" alt="gali ilustration"
             class="hidden max-md:block shrink-0 w-full max-w-xs h-auto rounded-2xl object-cover self-center my-2" />
 
-          <p class="text-nila font-medium text-base max-sm:text-sm">
+          <p class="text-nila font-medium text-base max-sm:text-sm" data-i18n="ai_try">
             Try asking
           </p>
           <div class="flex gap-4 flex-wrap max-sm:gap-2.5">
             <button
-              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+              data-i18n="ai_q1">
               How do I say "no spicy"?
             </button>
             <button
-              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+              data-i18n="ai_q2">
               Is "Bang" polite?
             </button>
             <button
-              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+              data-i18n="ai_q3">
               Teach me to bargain
             </button>
             <button
-              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer">
+              class="px-4 py-2 bg-white rounded-full text-nila font-bold text-base max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm hover:bg-white/90 transition-colors cursor-pointer"
+              data-i18n="ai_q4">
               What does "gas" mean?
             </button>
           </div>
           <a href="#"
             class="px-6 py-3 bg-nila text-white rounded-full w-fit text-lg flex items-center gap-2 hover:opacity-95 transition-opacity max-sm:px-5 max-sm:py-2.5 max-sm:text-base mt-2">
-            <i class="ph-fill ph-chat-circle-dots"></i> Start chatting
+            <i class="ph-fill ph-chat-circle-dots"></i>
+            <span data-i18n="ai_btn_chat">Start chatting</span>
           </a>
 
-          <p class="text-sm text-nila max-sm:text-xs">
+          <p class="text-sm text-nila max-sm:text-xs" data-i18n="ai_disclaimer">
             Gali can make mistakes. Check important info with a local.
           </p>
         </div>
         <img src="./src/assets/gali-chat.webp" alt="Chat with gali"
           class="w-full max-w-md shrink-0 object-contain max-lg:max-w-sm max-md:hidden" />
       </section>
+
             <!-- FAQ -->
       <section class="reveal mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
         <hgroup class="relative w-full mb-10 flex flex-col">
@@ -1061,22 +1067,23 @@
 
     </div>
   </main>
-  <!-- footer -->
+    <!-- footer -->
   <footer id="site-footer"
     class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16">
     <div class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start">
+        <!-- Col 1 -->
         <div class="flex flex-col justify-between h-full gap-12 lg:gap-24" data-footer-reveal="fade-up">
           <div class="flex flex-col gap-3 font-semibold text-base">
             <a href="#"
-              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Terms
-              and Conditions</a>
+              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+              data-i18n="footer_terms">Terms and Conditions</a>
             <a href="#"
-              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Privacy
-              Policy</a>
+              class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+              data-i18n="footer_privacy">Privacy Policy</a>
           </div>
           <div class="flex flex-col gap-3">
-            <h3 class="text-nila/70 font-medium text-sm">Socials</h3>
+            <h3 class="text-nila/70 font-medium text-sm" data-i18n="footer_socials">Socials</h3>
             <div class="flex items-center gap-4 text-nila">
               <a href="https://www.instagram.com/" aria-label="Instagram"
                 class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300">
@@ -1097,8 +1104,9 @@
             </div>
           </div>
         </div>
+        <!-- Col 2 -->
         <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-          <h3 class="text-nila/70 font-medium text-sm">Contacts</h3>
+          <h3 class="text-nila/70 font-medium text-sm" data-i18n="footer_contacts">Contacts</h3>
           <div class="flex flex-col gap-5">
             <div>
               <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
@@ -1106,49 +1114,56 @@
                 class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all">halo@gaulingo.id</a>
             </div>
             <div>
-              <p class="text-xs text-nila/60 font-medium mb-1">Based in</p>
+              <p class="text-xs text-nila/60 font-medium mb-1" data-i18n="footer_based">Based in</p>
               <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
             </div>
             <div>
-              <p class="text-xs text-nila/60 font-medium mb-1">Languages</p>
-              <p class="text-xl md:text-2xl font-bold">
+              <p class="text-xs text-nila/60 font-medium mb-1" data-i18n="footer_languages">Languages</p>
+              <p class="text-xl md:text-2xl font-bold" data-i18n="footer_languages_val">
                 Indonesian &amp; Sundanese
               </p>
             </div>
           </div>
         </div>
+        <!-- Col 3 -->
         <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-          <h3 class="text-nila/70 font-medium text-sm">Navigation</h3>
+          <h3 class="text-nila/70 font-medium text-sm" data-i18n="footer_nav">Navigation</h3>
           <nav aria-label="Footer navigation">
             <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
               <li>
                 <a href="./index.html"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Home</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_home">Home</a>
               </li>
               <li>
                 <a href="./pages/situations.html"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Situations</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_sit">Situations</a>
               </li>
               <li>
                 <a href="./pages/practice.html"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Practice</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_practice">Practice</a>
               </li>
               <li>
                 <a href="./pages/culture.html"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Culture</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_culture">Culture</a>
               </li>
               <li>
                 <a href="./pages/about.html"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">About</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_about">About</a>
               </li>
               <li>
                 <a href="#home"
-                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all">Chat
-                  with Gali</a>
+                  class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                  data-i18n="footer_nav_chat">Chat with Gali</a>
               </li>
             </ul>
           </nav>
         </div>
+        <!-- Col 4 -->
         <div class="flex flex-col justify-between items-start lg:items-end h-full gap-8" data-footer-reveal="fade-up">
           <div class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70">
             <span>Copyright © — 2026 Gaulingo</span>
@@ -1169,7 +1184,8 @@
             </h2>
           </div>
           <p
-            class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end">
+            class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
+            data-i18n="footer_tagline">
             Say it like a local.<br />
             Everyday Indonesian phrases<br />
             for real places.
@@ -1178,6 +1194,7 @@
       </div>
     </div>
   </footer>
+
   <div class="float-bubble flex flex-row-reverse items-center gap-2 fixed bottom-15 right-7 z-50">
     <img src="./src/assets/Illustration.png" alt="gali ilustration"
       class="w-15 border-4 border-nila rounded-full shadow-xl" />
