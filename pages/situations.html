@@ -43,6 +43,7 @@
             <p
               class="site-menu-toggle__label site-menu-toggle__label--menu"
               data-roll
+              data-i18n="nav_menu"
             >
               Menu
             </p>
@@ -72,7 +73,7 @@
               >
                 <div class="site-menu__rise">
                   <p class="site-menu__num">01</p>
-                  <h3 data-roll>Home</h3>
+                  <h3 data-roll data-i18n="nav_home">Home</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -83,7 +84,7 @@
               <a href="./situations.html" class="site-menu__link roll-host">
                 <span class="site-menu__rise">
                   <span class="site-menu__num">02</span>
-                  <span data-roll>Situations</span>
+                  <span data-roll data-i18n="nav_situations">Situations</span>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </span>
               </a>
@@ -94,7 +95,7 @@
               <a href="./culture.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">03</p>
-                  <h3 data-roll>Culture</h3>
+                  <h3 data-roll data-i18n="nav_culture">Culture</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -105,7 +106,7 @@
               <a href="./practice.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">04</p>
-                  <h3 data-roll>Practice</h3>
+                  <h3 data-roll data-i18n="nav_practice">Practice</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -116,7 +117,7 @@
               <a href="./about.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">05</p>
-                  <h3 data-roll>About</h3>
+                  <h3 data-roll data-i18n="nav_about">About</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -127,7 +128,7 @@
           <li>
             <a href="#" class="roll-host"
               ><i class="ph-fill ph-chat-circle-dots"></i>
-              <p data-roll>Chat with Gali</p></a
+              <p data-roll data-i18n="nav_chat">Chat with Gali</p></a
             >
           </li>
           <li>
@@ -158,19 +159,29 @@
         <div class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
           <div class="mb-5 flex items-center gap-5 text-xs">
             <a
+             
               href="../index.html"
+             
               class="rounded-sm underline-offset-4 hover:underline"
+              data-i18n="sit_page_home"
               >Home</a
             >
             <i class="ph-bold ph-caret-right"></i>
-            <a class="font-medium">Situations</a>
+            <a class="font-medium" data-i18n="sit_page_situations"
+              >Situations</a
+            >
           </div>
           <h1
             class="font-unbounded text-nila max-sm:text-3xl leading-[1.02] font-black tracking-tight uppercase max-md:text-4xl text-6xl"
+            data-i18n="sit_page_title"
           >
-            Where are you<br />today?
+            WHERE ARE YOU TODAY?
           </h1>
-          <p class="mt-5 max-w-md text-sm leading-relaxed sm:text-base">
+
+          <p
+            class="mt-5 max-w-md text-sm leading-relaxed sm:text-base"
+            data-i18n="sit_page_subtitle"
+          >
             Pick the place you are in. Gali brings the phrases, the
             pronunciation, and the manners that go with it.
           </p>
@@ -197,12 +208,14 @@
               type="search"
               name="q"
               placeholder="Search a phrase or a place..."
+              data-i18n-placeholder="sit_page_search_ph"
               class="min-w-0 flex-1 bg-transparent text-sm text-nila outline-none placeholder:text-nila/50"
             />
 
             <button
               type="submit"
               class="shrink-0 cursor-pointer rounded-full bg-nila px-6 py-3 text-xs font-bold text-white transition-colors hover:bg-biru-aksen max-sm:px-2 max-sm:py-2 max-sm:text-[10px]"
+              data-i18n="sit_page_search_btn"
             >
               Search
             </button>
@@ -226,6 +239,7 @@
                 type="button"
                 data-filter="all"
                 class="filter-btn px-5 py-2 rounded-full bg-nila text-white font-bold text-sm transition-colors cursor-pointer"
+                data-i18n="filter_all"
               >
                 All
               </button>
@@ -233,6 +247,7 @@
                 type="button"
                 data-filter="everyday"
                 class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
+                data-i18n="filter_everyday"
               >
                 Everyday
               </button>
@@ -240,6 +255,7 @@
                 type="button"
                 data-filter="travel"
                 class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
+                data-i18n="filter_travel"
               >
                 Travel
               </button>
@@ -247,6 +263,7 @@
                 type="button"
                 data-filter="urgent"
                 class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
+                data-i18n="filter_urgent"
               >
                 Urgent
               </button>
@@ -269,7 +286,9 @@
                   aria-haspopup="true"
                   class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-nila/25 text-nila font-bold hover:border-nila transition-colors cursor-pointer select-none"
                 >
-                  <span id="sort-current-label">Most used</span>
+                  <span id="sort-current-label" data-i18n="sort_most_used"
+                    >Most used</span
+                  >
                   <i
                     id="sort-caret"
                     class="ph-bold ph-caret-down text-xs transition-transform duration-200"
@@ -285,6 +304,7 @@
                     data-sort="most-used"
                     class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer text-nila bg-nila/10"
                     role="menuitem"
+                    data-i18n="sort_most_used"
                   >
                     Most used
                   </button>
@@ -293,6 +313,7 @@
                     data-sort="alphabetical"
                     class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer"
                     role="menuitem"
+                    data-i18n="sort_alphabetical"
                   >
                     Alphabetical (A-Z)
                   </button>
@@ -301,6 +322,7 @@
                     data-sort="newest"
                     class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer"
                     role="menuitem"
+                    data-i18n="sort_newest"
                   >
                     Newest
                   </button>
@@ -333,10 +355,14 @@
                 </div>
                 <h2
                   class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
+                  data-i18n="stall_title"
                 >
                   STALL
                 </h2>
-                <p class="text-white/85 text-sm mb-6 leading-relaxed">
+                <p
+                  class="text-white/85 text-sm mb-6 leading-relaxed"
+                  data-i18n="stall_desc"
+                >
                   Buying snacks, asking prices, saying thanks.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -354,7 +380,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-white/70 font-medium">
+              <p
+                class="text-xs text-white/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -379,10 +408,14 @@
                 </div>
                 <h2
                   class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
+                  data-i18n="card_school_title"
                 >
                   SCHOOL
                 </h2>
-                <p class="text-nila/80 text-sm mb-6 leading-relaxed">
+                <p
+                  class="text-nila/80 text-sm mb-6 leading-relaxed"
+                  data-i18n="card_school_desc"
+                >
                   In class, with teachers and classmates.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -400,7 +433,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-nila/70 font-medium">
+              <p
+                class="text-xs text-nila/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -425,10 +461,14 @@
                 </div>
                 <h2
                   class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
+                  data-i18n="card_minibus_title"
                 >
                   MINIBUS
                 </h2>
-                <p class="text-nila/80 text-sm mb-6 leading-relaxed">
+                <p
+                  class="text-nila/80 text-sm mb-6 leading-relaxed"
+                  data-i18n="card_minibus_desc"
+                >
                   Getting around town by minibus and ojek.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -446,7 +486,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-nila/70 font-medium">
+              <p
+                class="text-xs text-nila/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -471,10 +514,14 @@
                 </div>
                 <h2
                   class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
+                  data-i18n="card_smalltalk_title"
                 >
                   SMALL TALK
                 </h2>
-                <p class="text-nila/80 text-sm mb-6 leading-relaxed">
+                <p
+                  class="text-nila/80 text-sm mb-6 leading-relaxed"
+                  data-i18n="card_smalltalk_desc"
+                >
                   Meeting new people and small talk.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -492,7 +539,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-nila/70 font-medium">
+              <p
+                class="text-xs text-nila/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -538,7 +588,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-nila/70 font-medium">
+              <p
+                class="text-xs text-nila/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -563,10 +616,14 @@
                 </div>
                 <h2
                   class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
+                  data-i18n="card_emergency_title"
                 >
                   EMERGENCY
                 </h2>
-                <p class="text-white/85 text-sm mb-6 leading-relaxed">
+                <p
+                  class="text-white/85 text-sm mb-6 leading-relaxed"
+                  data-i18n="card_emergency_desc"
+                >
                   When you need help, fast.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -584,7 +641,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-white/70 font-medium">
+              <p
+                class="text-xs text-white/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -604,8 +664,10 @@
               />
             </div>
             <div>
-              <h4 class="font-bold text-base">Question not listed here?</h4>
-              <p class="text-xs text-blue-200">
+              <h4 class="font-bold text-base" data-i18n="faq_footer_title">
+                Question not listed here?
+              </h4>
+              <p class="text-xs text-blue-200" data-i18n="faq_footer_desc">
                 Ask Gali directly — he answers in English and Bahasa Indonesia.
               </p>
             </div>
@@ -614,7 +676,7 @@
             class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-amber-200 transition"
           >
             <i class="ph-fill ph-chat-circle-dots"></i>
-            Ask Gali
+            <span data-i18n="faq_footer_btn">Ask Gali</span>
           </button>
         </div>
       </div>
@@ -637,16 +699,23 @@
               <a
                 href="#"
                 class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                data-i18n="footer_terms"
                 >Terms and Conditions</a
               >
               <a
                 href="#"
                 class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                data-i18n="footer_privacy"
                 >Privacy Policy</a
               >
             </div>
             <div class="flex flex-col gap-3">
-              <h3 class="text-nila/70 font-medium text-sm">Socials</h3>
+              <h3
+                class="text-nila/70 font-medium text-sm"
+                data-i18n="footer_socials"
+              >
+                Socials
+              </h3>
               <div class="flex items-center gap-4 text-nila">
                 <a
                   href="https://www.instagram.com/"
@@ -680,7 +749,12 @@
             </div>
           </div>
           <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-            <h3 class="text-nila/70 font-medium text-sm">Contacts</h3>
+            <h3
+              class="text-nila/70 font-medium text-sm"
+              data-i18n="footer_contacts"
+            >
+              Contacts
+            </h3>
             <div class="flex flex-col gap-5">
               <div>
                 <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
@@ -691,25 +765,41 @@
                 >
               </div>
               <div>
-                <p class="text-xs text-nila/60 font-medium mb-1">Based in</p>
+                <p
+                  class="text-xs text-nila/60 font-medium mb-1"
+                  data-i18n="footer_based"
+                >
+                  Based in
+                </p>
                 <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
               </div>
               <div>
-                <p class="text-xs text-nila/60 font-medium mb-1">Languages</p>
-                <p class="text-xl md:text-2xl font-bold">
+                <p
+                  class="text-xs text-nila/60 font-medium mb-1"
+                  data-i18n="footer_languages"
+                >
+                  Languages
+                </p>
+                <p
+                  class="text-xl md:text-2xl font-bold"
+                  data-i18n="footer_languages_val"
+                >
                   Indonesian &amp; Sundanese
                 </p>
               </div>
             </div>
           </div>
           <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
-            <h3 class="text-nila/70 font-medium text-sm">Navigation</h3>
+            <h3 class="text-nila/70 font-medium text-sm" data-i18n="footer_nav">
+              Navigation
+            </h3>
             <nav aria-label="Footer navigation">
               <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
                 <li>
                   <a
                     href="../index.html"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_home"
                     >Home</a
                   >
                 </li>
@@ -717,6 +807,7 @@
                   <a
                     href="./situations.html"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_sit"
                     >Situations</a
                   >
                 </li>
@@ -724,6 +815,7 @@
                   <a
                     href="./practice.html"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_practice"
                     >Practice</a
                   >
                 </li>
@@ -731,6 +823,7 @@
                   <a
                     href="./culture.html"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_culture"
                     >Culture</a
                   >
                 </li>
@@ -738,6 +831,7 @@
                   <a
                     href="./about.html"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_about"
                     >About</a
                   >
                 </li>
@@ -745,6 +839,7 @@
                   <a
                     href="#home"
                     class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_chat"
                     >Chat with Gali</a
                   >
                 </li>
@@ -788,6 +883,7 @@
             </div>
             <p
               class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
+              data-i18n="footer_tagline"
             >
               Say it like a local.<br />
               Everyday Indonesian phrases<br />
