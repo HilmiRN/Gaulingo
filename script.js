@@ -37,7 +37,7 @@ const translations = {
     // HOW IT WORKS
     how_label: "HOW IT WORKS",
     how_title_1: "Three steps to your first ",
-    how_title_2: "NGOBROL",
+    how_title_2: "CONVERSATION",
     how_desc: "Start from the left. Each step takes just seconds.",
     how_step1_title: "Pick your place",
     how_step1_desc: "Warung, school, angkot — choose the situation you are in.",
@@ -120,9 +120,33 @@ const translations = {
     faq_q6: "Is Gaulingo free?",
     faq_a6: "Yes, 100% free to use.",
     faq_footer_title: "Question not listed here?",
-    faq_footer_desc:
-      "Ask Gali directly — he answers in English and Bahasa Indonesia.",
+    faq_footer_desc: "Ask Gali directly — he answers in English and Bahasa Indonesia.",
     faq_footer_btn: "Ask Gali",
+
+    //  FOOTER
+    ooter_terms: "Terms and Conditions",
+    footer_privacy: "Privacy Policy",
+    footer_socials: "Socials",
+    footer_contacts: "Contacts",
+    footer_based: "Based in",
+    footer_languages: "Languages",
+    footer_languages_val: "Indonesian & Sundanese",
+    footer_nav: "Navigation",
+    footer_nav_home: "Home",
+    footer_nav_sit: "Situations",
+    footer_nav_practice: "Practice",
+    footer_nav_culture: "Culture",
+    footer_nav_about: "About",
+    footer_nav_chat: "Chat with Gali",
+    footer_tagline: "Say it like a local.<br />Everyday Indonesian phrases<br />for real places.",
+
+    // SITUATION (NAV MENU)
+    sit_page_home: "Home",
+    sit_page_situations: "Situations",
+    sit_page_title: "WHERE ARE YOU TODAY?",
+    sit_page_subtitle: "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
+    sit_page_search_ph: "Search a phrase or a place...",
+    sit_page_search_btn: "Search",
   },
   id: {
     hero_title:
@@ -242,10 +266,34 @@ const translations = {
     faq_q6: "Apakah Gaulingo gratis?",
     faq_a6: "Ya, 100% gratis digunakan.",
     faq_footer_title: "Pertanyaan belum ada di sini?",
-    faq_footer_desc:
-      "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
+    faq_footer_desc: "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
     faq_footer_btn: "Tanya Gali",
-  },
+
+    //  FOOTER
+    footer_terms: "Syarat dan Ketentuan",
+    footer_privacy: "Kebijakan Privasi",
+    footer_socials: "Media Sosial",
+    footer_contacts: "Kontak",
+    footer_based: "Berbasis di",
+    footer_languages: "Bahasa",
+    footer_languages_val: "Indonesia & Sunda",
+    footer_nav: "Navigasi",
+    footer_nav_home: "Beranda",
+    footer_nav_sit: "Situasi",
+    footer_nav_practice: "Latihan",
+    footer_nav_culture: "Budaya",
+    footer_nav_about: "Tentang",
+    footer_nav_chat: "Chat sama Gali",
+    footer_tagline: "Bicara seperti warga lokal.<br />Frasa bahasa Indonesia sehari-hari<br />untuk tempat nyata.",
+
+    // SITUATION (NAV MENU)
+    sit_page_home: "Beranda",
+    sit_page_situations: "Situasi",
+    sit_page_title: "KAMU LAGI DI MANA HARI INI?",
+    sit_page_subtitle: "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
+    sit_page_search_ph: "Cari frasa atau tempat...",
+    sit_page_search_btn: "Cari",
+  }
 };
 
 const langButtons = document.querySelectorAll(".site-lang__item");
