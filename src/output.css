@@ -1227,6 +1227,9 @@
   .py-6 {
     padding-block: calc(var(--spacing) * 6);
   }
+  .py-7 {
+    padding-block: calc(var(--spacing) * 7);
+  }
   .py-12 {
     padding-block: calc(var(--spacing) * 12);
   }
@@ -1327,6 +1330,9 @@
   }
   .text-\[6vw\] {
     font-size: 6vw;
+  }
+  .text-\[8vw\] {
+    font-size: 8vw;
   }
   .text-\[10px\] {
     font-size: 10px;
