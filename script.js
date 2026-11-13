@@ -7,6 +7,9 @@ const translations = {
     nav_menu: "MENU",
     btn_ask: "Ask Gali",
 
+    // NAV (MENU)
+    nav_close: "Close",
+
     // SITUATION
     sit_label: "Situations",
     sit_title: "Find your",
@@ -137,6 +140,10 @@ const translations = {
     sit_page_subtitle: "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
     sit_page_search_ph: "Search a phrase or a place...",
     sit_page_search_btn: "Search",
+
+    // FOOD
+    rd_food_title: "FOOD",
+    rd_food_desc: "Ordering food and asking what is in it.",
   },
   id: {
     hero_title: "BICARA<br class='md:hidden' /> SEPERTI<br class='max-md:hidden' /> ORANG LOKAL",
@@ -145,6 +152,9 @@ const translations = {
     hero_chat_button: "Chat dengan Gali",
     nav_menu: "MENU",
     btn_ask: "Tanya Gali",
+
+    // NAV (MENU)
+    nav_close: "Tutup",
 
     // SITUATION
   sit_label: "SITUASI",
@@ -276,6 +286,10 @@ const translations = {
     sit_page_subtitle: "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
+
+    // FOOD
+    rd_food_title: "MAKANAN",
+    rd_food_desc: "Memesan makanan dan menanyakan isinya.",
   }
 };
 
