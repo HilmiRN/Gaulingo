@@ -261,13 +261,9 @@ const translations = {
     why_gali_item1: "Frasa sehari-hari yang benar-benar dipakai warga lokal",
     why_gali_item2: "Audio untuk setiap frasa, lengkap dengan mode lambat",
     why_gali_item3: "Tips budaya di setiap situasi",
-<<<<<<< HEAD
     why_gali_item4: "Berbagai bahasa daerah di Indonesia",
 
     // --- AI BUDDY ---
-=======
-    why_gali_item4: "Bahasa Indonesia, Sunda & Jawa",
->>>>>>> 3d9ef0b4dedea92c661b3b09fe0f05389ccecf93
     ai_label: "TEMAN AI",
     ai_title_1: "Bingung? Tanya aja ",
     ai_title_2: "GALI.",
