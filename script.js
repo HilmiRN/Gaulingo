@@ -161,6 +161,14 @@ const translations = {
     sit_page_search_ph: "Search a phrase or a place...",
     sit_page_search_btn: "Search",
 
+    // CTA
+    cta_tagline: "NO SIGN-UP · NO APP · JUST OPEN IT",
+    cta_title_1: "Ready to",
+    cta_title_2: "ngobrol?",
+    cta_subtitle: "Start with one phrase today. Tomorrow you will use it.",
+    cta_btn_explore: "START EXPLORING",
+    cta_btn_chat: "CHAT WITH GALI",
+
     // FOOD
     rd_food_title: "FOOD",
     rd_food_desc: "Ordering food and asking what is in it.",
@@ -326,6 +334,13 @@ const translations = {
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
 
+    // CTA
+    cta_tagline: "TANPA DAFTAR · TANPA APLIKASI · LANGSUNG BUKA",
+    cta_title_1: "Siap mulai",
+    cta_title_2: "ngobrol?",
+    cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
+    cta_btn_explore: "MULAI EKSPLORASI",
+    cta_btn_chat: "NGOBROL SAMA GALI", 
     // FOOD
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
