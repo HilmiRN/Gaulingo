@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Situations || Gaulingo</title>
+    <title>Practice || Gaulingo</title>
     <link rel="stylesheet" href="../src/output.css" />
     <link rel="icon" type="image/svg+xml" href="../src/assets/icon.svg" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
@@ -79,7 +79,7 @@
               </a>
             </div>
           </li>
-          <li class="site-menu__item is-active" style="--i: 1">
+          <li class="site-menu__item" style="--i: 1">
             <div class="site-menu__row">
               <a href="./situations.html" class="site-menu__link roll-host">
                 <span class="site-menu__rise">
@@ -101,7 +101,7 @@
               </a>
             </div>
           </li>
-          <li class="site-menu__item" style="--i: 3">
+          <li class="site-menu__item is-active" style="--i: 3">
             <div class="site-menu__row">
               <a href="./practice.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
@@ -154,531 +154,149 @@
     >
       <section
         id="home"
-        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform w-[calc(100vw-80px)] h-[calc(75vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(75vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
+        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform w-[calc(100vw-80px)] h-[calc(75vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(75vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-nila @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
-        <div class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
-          <div class="mb-5 flex items-center gap-5 text-xs">
+        <div
+          class="w-full flex flex-col justify-center relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20"
+        >
+          <div class="mb-5 flex items-center gap-5 text-xs text-white">
             <a
-             
               href="../index.html"
-             
               class="rounded-sm underline-offset-4 hover:underline"
               data-i18n="sit_page_home"
               >Home</a
             >
             <i class="ph-bold ph-caret-right"></i>
-            <a class="font-medium" data-i18n="sit_page_situations"
-              >Situations</a
-            >
+            <a class="font-medium">Practice </a>
           </div>
           <h1
-            class="font-unbounded text-nila max-sm:text-3xl leading-[1.02] font-black tracking-tight uppercase max-md:text-4xl text-6xl"
-            data-i18n="sit_page_title"
+            class="font-unbounded text-white max-sm:text-3xl leading-[1.02] font-black tracking-tight uppercase max-md:text-4xl text-6xl"
           >
-            WHERE ARE YOU TODAY?
+            PRACTICE
           </h1>
 
           <p
-            class="mt-5 max-w-md text-sm leading-relaxed sm:text-base"
-            data-i18n="sit_page_subtitle"
+            class="mt-5 max-w-xl text-sm leading-relaxed sm:text-base text-white"
           >
-            Pick the place you are in. Gali brings the phrases, the
-            pronunciation, and the manners that go with it.
+            Short rounds, six questions each. Enough to make a phrase stick
+            before you need it.
           </p>
-          <form
-            role="search"
-            action="#"
-            class="mt-7 flex w-full max-w-lg items-center gap-3 rounded-full bg-white p-1.5 pl-5 shadow-sm max-sm:text-[10px]"
-          >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 20 20"
-              class="size-4 shrink-0 fill-none stroke-nila stroke-[1.75]"
-              stroke-linecap="round"
-            >
-              <circle cx="9" cy="9" r="6" />
-              <path d="m13.5 13.5 4 4" />
-            </svg>
-
-            <label for="search" class="sr-only"
-              >Search a phrase or a place</label
-            >
-            <input
-              id="search"
-              type="search"
-              name="q"
-              placeholder="Search a phrase or a place..."
-              data-i18n-placeholder="sit_page_search_ph"
-              class="min-w-0 flex-1 bg-transparent text-sm text-nila outline-none placeholder:text-nila/50"
-            />
-
-            <button
-              type="submit"
-              class="shrink-0 cursor-pointer rounded-full bg-nila px-6 py-3 text-xs font-bold text-white transition-colors hover:bg-biru-aksen max-sm:px-2 max-sm:py-2 max-sm:text-[10px]"
-              data-i18n="sit_page_search_btn"
-            >
-              Search
-            </button>
-          </form>
-        </div>
-        <div
-          class="absolute right-0 bottom-0 translate-x-1/3 translate-y-1/3 -z-1 aspect-square w-1/2 rounded-full bg-matahari max-lg:w-3/4"
-        ></div>
-      </section>
-      <div
-        class="w-full min-h-screen relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
-      >
-        <section class="w-full max-w-7xl mx-auto py-6">
-          <div
-            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"
-          >
-            <div
-              class="flex items-center gap-2.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0"
-            >
-              <button
-                type="button"
-                data-filter="all"
-                class="filter-btn px-5 py-2 rounded-full bg-nila text-white font-bold text-sm transition-colors cursor-pointer"
-                data-i18n="filter_all"
-              >
-                All
-              </button>
-              <button
-                type="button"
-                data-filter="everyday"
-                class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
-                data-i18n="filter_everyday"
-              >
-                Everyday
-              </button>
-              <button
-                type="button"
-                data-filter="travel"
-                class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
-                data-i18n="filter_travel"
-              >
-                Travel
-              </button>
-              <button
-                type="button"
-                data-filter="urgent"
-                class="filter-btn px-5 py-2 rounded-full border border-nila/25 text-nila font-bold text-sm hover:border-nila hover:bg-nila/5 transition-colors cursor-pointer"
-                data-i18n="filter_urgent"
-              >
-                Urgent
-              </button>
-            </div>
-
-            <div
-              class="flex items-center justify-between sm:justify-end gap-5 text-sm"
-            >
-              <p id="situation-count" class="text-nila/60 font-medium">
-                6 situations
-              </p>
-              <div
-                class="relative inline-block text-left"
-                id="sort-dropdown-container"
-              >
-                <button
-                  id="sort-menu-button"
-                  type="button"
-                  aria-expanded="false"
-                  aria-haspopup="true"
-                  class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-nila/25 text-nila font-bold hover:border-nila transition-colors cursor-pointer select-none"
-                >
-                  <span id="sort-current-label" data-i18n="sort_most_used"
-                    >Most used</span
-                  >
-                  <i
-                    id="sort-caret"
-                    class="ph-bold ph-caret-down text-xs transition-transform duration-200"
-                  ></i>
-                </button>
-                <div
-                  id="sort-menu"
-                  class="hidden absolute right-0 mt-2 w-48 rounded-2xl bg-white p-2 shadow-xl border border-nila/10 z-30 flex-col gap-1 text-sm font-semibold text-nila"
-                  role="menu"
-                >
-                  <button
-                    type="button"
-                    data-sort="most-used"
-                    class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer text-nila bg-nila/10"
-                    role="menuitem"
-                    data-i18n="sort_most_used"
-                  >
-                    Most used
-                  </button>
-                  <button
-                    type="button"
-                    data-sort="alphabetical"
-                    class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer"
-                    role="menuitem"
-                    data-i18n="sort_alphabetical"
-                  >
-                    Alphabetical (A-Z)
-                  </button>
-                  <button
-                    type="button"
-                    data-sort="newest"
-                    class="sort-option w-full text-left px-3.5 py-2 rounded-xl hover:bg-nila/5 transition-colors cursor-pointer"
-                    role="menuitem"
-                    data-i18n="sort_newest"
-                  >
-                    Newest
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="cards-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-          >
-            <a
-              href="javascript:void(0)"
-              data-category="everyday"
-              data-title="Stall"
-              data-order="1"
-              data-newest="3"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-terakota text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-storefront"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                  data-i18n="stall_title"
-                >
-                  STALL
-                </h2>
-                <p
-                  class="text-white/85 text-sm mb-6 leading-relaxed"
-                  data-i18n="stall_desc"
-                >
-                  Buying snacks, asking prices, saying thanks.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/15 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Berapa harganya?</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/15 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Boleh kurang?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-white/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-            <a
-              href="javascript:void(0)"
-              data-category="everyday"
-              data-title="School"
-              data-order="2"
-              data-newest="5"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-biru-muda text-nila transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/60 flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-student"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                  data-i18n="card_school_title"
-                >
-                  SCHOOL
-                </h2>
-                <p
-                  class="text-nila/80 text-sm mb-6 leading-relaxed"
-                  data-i18n="card_school_desc"
-                >
-                  In class, with teachers and classmates.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Permisi, Pak.</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Boleh pinjam pulpen?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-nila/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-            <a
-              href="javascript:void(0)"
-              data-category="travel"
-              data-title="Minibus"
-              data-order="3"
-              data-newest="2"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-pasir text-nila transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/60 flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-bus"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                  data-i18n="card_minibus_title"
-                >
-                  MINIBUS
-                </h2>
-                <p
-                  class="text-nila/80 text-sm mb-6 leading-relaxed"
-                  data-i18n="card_minibus_desc"
-                >
-                  Getting around town by minibus and ojek.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Kiri, Bang!</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Lokasi Pasar Baru?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-nila/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-            <a
-              href="javascript:void(0)"
-              data-category="everyday"
-              data-title="Small Talk"
-              data-order="4"
-              data-newest="6"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-matahari text-nila transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/60 flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-chat-teardrop-text"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                  data-i18n="card_smalltalk_title"
-                >
-                  SMALL TALK
-                </h2>
-                <p
-                  class="text-nila/80 text-sm mb-6 leading-relaxed"
-                  data-i18n="card_smalltalk_desc"
-                >
-                  Meeting new people and small talk.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Kenalin, aku Dan.</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Asalnya dari mana?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-nila/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-            <a
-              href="javascript:void(0)"
-              data-category="everyday travel"
-              data-title="Food"
-              data-order="5"
-              data-newest="4"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-[#d9f2e6] text-nila transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/60 flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-fork-knife"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                >
-                  FOOD
-                </h2>
-                <p class="text-nila/80 text-sm mb-6 leading-relaxed">
-                  Ordering food and asking what is in it.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Nggak pedas, ya.</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/60 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Ada yang tanpa daging?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-nila/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-            <a
-              href="javascript:void(0)"
-              data-category="urgent"
-              data-title="Emergency"
-              data-order="6"
-              data-newest="1"
-              class="situation-card group flex flex-col justify-between p-7 rounded-4xl bg-nila text-white transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer"
-            >
-              <div>
-                <div class="flex items-center justify-between mb-6">
-                  <div
-                    class="size-12 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-xl"
-                  >
-                    <i class="ph-bold ph-warning"></i>
-                  </div>
-                  <i
-                    class="ph-bold ph-arrow-up-right text-xl transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  ></i>
-                </div>
-                <h2
-                  class="font-unbounded text-3xl font-black tracking-tight mb-2 uppercase"
-                  data-i18n="card_emergency_title"
-                >
-                  EMERGENCY
-                </h2>
-                <p
-                  class="text-white/85 text-sm mb-6 leading-relaxed"
-                  data-i18n="card_emergency_desc"
-                >
-                  When you need help, fast.
-                </p>
-                <div class="space-y-2.5 mb-8">
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/15 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Tolong!</span>
-                  </div>
-                  <div
-                    class="flex items-center gap-3 px-4 py-3 rounded-2xl bg-white/15 text-sm font-semibold"
-                  >
-                    <i class="ph-fill ph-caret-right text-xs"></i>
-                    <span>Rumah sakit di mana?</span>
-                  </div>
-                </div>
-              </div>
-              <p
-                class="text-xs text-white/70 font-medium"
-                data-i18n="stall_info"
-              >
-                8 phrases · Indonesian & Sundanese
-              </p>
-            </a>
-          </div>
-        </section>
-        <div
-          class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md"
-        >
-          <div class="flex items-center gap-4">
-            <div
-              class="w-12 h-12 rounded-full bg-amber-700 overflow-hidden shrink-0"
-            >
-              <img
-                src="../src/assets/Illustration.png"
-                alt="Gali Avatar"
-                class="w-full h-full object-cover"
-              />
+          <div class="mt-10 flex gap-15">
+            <div>
+              <h3 class="text-matahari font-unbounded font-black text-5xl">
+                5
+              </h3>
+              <p class="text-white leading-6">day streak</p>
             </div>
             <div>
-              <h4 class="font-bold text-base" data-i18n="faq_footer_title">
-                Question not listed here?
-              </h4>
-              <p class="text-xs text-blue-200" data-i18n="faq_footer_desc">
-                Ask Gali directly — he answers in English and Bahasa Indonesia.
-              </p>
+              <h3 class="text-matahari font-unbounded font-black text-5xl">
+                128
+              </h3>
+              <p class="text-white leading-6">phrases practiced</p>
+            </div>
+            <div>
+              <h3 class="text-matahari font-unbounded font-black text-5xl">
+                86%
+              </h3>
+              <p class="text-white leading-6">answered right</p>
             </div>
           </div>
-          <button
-            class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-amber-200 transition"
-          >
-            <i class="ph-fill ph-chat-circle-dots"></i>
-            <span data-i18n="faq_footer_btn">Ask Gali</span>
-          </button>
         </div>
+        <div
+          class="absolute right-0 bottom-0 -translate-x-4/5 translate-y-1/3 -z-1 aspect-square w-1/2 rounded-full bg-white/20 max-lg:w-3/4"
+        />
+      </section>
+      <div
+        class="w-full min-h-screen relative max-sm:px-6 max-sm:py-14 max-lg:px-12 px-16 py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
+      >
+        <section class="flex">
+          <div>
+            <hgroup>
+              <p class="text-nila text-xs font-bold leading-4 tracking-wide">
+                TODAY'S ROUND
+              </p>
+              <h2 class="text-nila text-3xl font-bold leading-8">
+                Six questions on Stall
+              </h2>
+            </hgroup>
+            <!-- soalnya -->
+            <!doctype html>
+            <html lang="id">
+              <head>
+                <meta charset="UTF-8" />
+                <meta
+                  name="viewport"
+                  content="width=device-width, initial-scale=1.0"
+                />
+                <title>Kuis Pilihan Ganda Anti-Reset - Tailwind v4</title>
+                <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+              </head>
+              <body class="bg-slate-50 p-6 text-slate-800">
+                <div
+                  class="self-stretch h-80 inline-flex flex-col justify-between items-start"
+                >
+                  <fieldset id="soal1" data-answer="b" class="group/soal space-y-5">
+                    <legend class="text-blue-900 text-3xl font-bold leading-10">
+                      You want to know the price. What do you say?
+                    </legend>
+
+                    <!-- Opsi A -->
+                    <label
+                      data-option="a"
+                      class="group/opsi cursor-pointer self-stretch px-5 py-4 border-y-2 border-nila/20 w-full inline-flex justify-between items-center overflow-hidden data-[status=correct]:bg-nila/20 data-[status=correct]:rounded-2xl data-[status=wrong]:border-2 data-[status=wrong]:rounded-2xl data-[status=wrong]:border-rose-500 data-[status=wrong]:bg-rose-50 data-[status=wrong]:ring-1 data-[status=wrong]:ring-rose-500"
+                    >
+                      <div class="flex items-center gap-3">
+                        <input
+                          type="radio"
+                          name="soal_1"
+                          value="a"
+                          class="sr-only"
+                        />
+                        <span class="text-sm font-medium text-slate-700">
+                          @tailwind base; @tailwind components; @tailwind
+                          utilities;
+                        </span>
+                      </div>
+                      <i
+                        class="ph-bold ph-check hidden shrink-0 text-xs font-semibold text-emerald-700 group-data-[status=correct]/opsi:inline"
+                      ></i>
+                      <i
+                        class="ph-bold ph-X hidden shrink-0 text-xs font-semibold text-emerald-700 group-data-[status=wrong]/opsi:inline"
+                      ></i>
+                    </label>
+                    <label
+                      data-option="b"
+                      class="group/opsi cursor-pointer self-stretch px-5 py-4 border-b-2 border-nila/20 w-full inline-flex justify-between items-center overflow-hidden data-[status=correct]:bg-nila/20 data-[status=correct]:rounded-2xl data-[status=wrong]:border-rose-500 data-[status=wrong]:bg-rose-50 data-[status=wrong]:ring-1 data-[status=wrong]:ring-rose-500"
+                    >
+                      <div class="flex items-center gap-3">
+                        <input
+                          type="radio"
+                          name="soal_1"
+                          value="a"
+                          class="sr-only"
+                        />
+                        <span class="text-sm font-medium text-slate-700">
+                          @tailwind base; @tailwind components; @tailwind
+                          utilities;
+                        </span>
+                      </div>
+                      <i
+                        class="ph-bold ph-check hidden shrink-0 text-xs font-semibold text-emerald-700 group-data-[status=correct]/opsi:inline"
+                      ></i>
+                      <i
+                        class="ph-bold ph-X hidden shrink-0 text-xs font-semibold text-emerald-700 group-data-[status=wrong]/opsi:inline"
+                      ></i>
+                    </label>
+                  </fieldset>
+                  <div
+                    id="feedback"
+                    class="mt-4 hidden rounded-xl p-3 text-sm font-medium"
+                  ></div>
+                </div>
+              </body>
+            </html>
+          </div>
+        </section>
       </div>
     </main>
     <footer

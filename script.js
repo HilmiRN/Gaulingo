@@ -78,8 +78,8 @@ const translations = {
 
     // PHRASE CARDS
     local_phrases_title: "Local Phrases of Nusantara",
-    local_phrases_desc: "Learn everyday survival phrases from various regions across Indonesia.",
-
+    local_phrases_desc:
+      "Learn everyday survival phrases from various regions across Indonesia.",
 
     // --- WHY GAULINGO ---
     why_label: "WHY GAULINGO",
@@ -123,7 +123,8 @@ const translations = {
     faq_a2:
       "No account needed! You can start learning and practicing all phrases right away.",
     faq_q3: "Which languages are included?",
-    faq_a3: "We feature everyday local languages across Indonesia, explained in English and Indonesian.",
+    faq_a3:
+      "We feature everyday local languages across Indonesia, explained in English and Indonesian.",
     faq_q4: "Does it work on my phone?",
     faq_a4:
       "Yes! Gaulingo is fully responsive and optimized for mobile screens.",
@@ -133,7 +134,8 @@ const translations = {
     faq_q6: "Is Gaulingo free?",
     faq_a6: "Yes, 100% free to use.",
     faq_footer_title: "Question not listed here?",
-    faq_footer_desc: "Ask Gali directly — he answers in English and Bahasa Indonesia.",
+    faq_footer_desc:
+      "Ask Gali directly — he answers in English and Bahasa Indonesia.",
     faq_footer_btn: "Ask Gali",
 
     //  FOOTER
@@ -151,13 +153,15 @@ const translations = {
     footer_nav_culture: "Culture",
     footer_nav_about: "About",
     footer_nav_chat: "Chat with Gali",
-    footer_tagline: "Say it like a local.<br />Everyday Indonesian phrases<br />for real places.",
+    footer_tagline:
+      "Say it like a local.<br />Everyday Indonesian phrases<br />for real places.",
 
     // SITUATION (NAV MENU)
     sit_page_home: "Home",
     sit_page_situations: "Situations",
     sit_page_title: "WHERE ARE YOU TODAY?",
-    sit_page_subtitle: "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
+    sit_page_subtitle:
+      "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
     sit_page_search_ph: "Search a phrase or a place...",
     sit_page_search_btn: "Search",
 
@@ -212,15 +216,15 @@ const translations = {
     card_emergency_title: "DARURAT",
     card_emergency_desc: "Saat kamu butuh bantuan · 6 frasa",
 
-        // PHRASE OF THE DAY
+    // PHRASE OF THE DAY
     potd_label: "FRASA HARI INI",
     potd_title: "Terima kasih banyak!",
     potd_btn_listen: "Dengarkan",
 
     // PHRASE CARDS
     local_phrases_title: "Frasa Daerah Nusantara",
-    local_phrases_desc: "Pelajari bahasa lokal untuk bertahan hidup di berbagai daerah.",
-
+    local_phrases_desc:
+      "Pelajari bahasa lokal untuk bertahan hidup di berbagai daerah.",
 
     // HOW IT WORKS
     how_label: "CARA KERJA",
@@ -296,7 +300,8 @@ const translations = {
     faq_a2:
       "Tidak perlu akun! Kamu bisa langsung belajar dan latihan semua frasa secara gratis.",
     faq_q3: "Bahasa apa saja yang tersedia?",
-    faq_a3: "Tersedia berbagai bahasa daerah di Indonesia dengan penjelasan bahasa Indonesia dan Inggris.",
+    faq_a3:
+      "Tersedia berbagai bahasa daerah di Indonesia dengan penjelasan bahasa Indonesia dan Inggris.",
     faq_q4: "Apakah bisa dibuka di HP?",
     faq_a4:
       "Bisa banget! Gaulingo dirancang responsif dan nyaman dibuka di layar HP.",
@@ -306,7 +311,8 @@ const translations = {
     faq_q6: "Apakah Gaulingo gratis?",
     faq_a6: "Ya, 100% gratis digunakan.",
     faq_footer_title: "Pertanyaan belum ada di sini?",
-    faq_footer_desc: "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
+    faq_footer_desc:
+      "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
     faq_footer_btn: "Tanya Gali",
 
     //  FOOTER
@@ -324,13 +330,15 @@ const translations = {
     footer_nav_culture: "Budaya",
     footer_nav_about: "Tentang",
     footer_nav_chat: "Chat sama Gali",
-    footer_tagline: "Bicara seperti warga lokal.<br />Frasa bahasa Indonesia sehari-hari<br />untuk tempat nyata.",
+    footer_tagline:
+      "Bicara seperti warga lokal.<br />Frasa bahasa Indonesia sehari-hari<br />untuk tempat nyata.",
 
     // SITUATION (NAV MENU)
     sit_page_home: "Beranda",
     sit_page_situations: "Situasi",
     sit_page_title: "KAMU LAGI DI MANA HARI INI?",
-    sit_page_subtitle: "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
+    sit_page_subtitle:
+      "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
 
@@ -340,11 +348,11 @@ const translations = {
     cta_title_2: "ngobrol?",
     cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
     cta_btn_explore: "MULAI EKSPLORASI",
-    cta_btn_chat: "NGOBROL SAMA GALI", 
+    cta_btn_chat: "NGOBROL SAMA GALI",
     // FOOD
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
-  }
+  },
 };
 
 const langButtons = document.querySelectorAll(".site-lang__item");
@@ -451,46 +459,45 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-
 //  PHRASE IN CARDS
 const dataFrasaLokal = [
-  { 
-    daerah: "Minang", 
-    asli: "Ba'a kaba?", 
-    baca: "ba-AH KAH-bah", 
-    arti_id: "Apa kabar?", 
-    arti_en: "How are you?" 
+  {
+    daerah: "Minang",
+    asli: "Ba'a kaba?",
+    baca: "ba-AH KAH-bah",
+    arti_id: "Apa kabar?",
+    arti_en: "How are you?",
   },
-  { 
-    daerah: "Bali", 
-    asli: "Matur suksma", 
-    baca: "mah-TOOR SUKS-mah", 
-    arti_id: "Terima kasih", 
-    arti_en: "Thank you" 
+  {
+    daerah: "Bali",
+    asli: "Matur suksma",
+    baca: "mah-TOOR SUKS-mah",
+    arti_id: "Terima kasih",
+    arti_en: "Thank you",
   },
-  { 
-    daerah: "Sunda", 
-    asli: "Sabaraha ieu?", 
-    baca: "sah-bah-RAH-hah EE-yuh", 
-    arti_id: "Berapa harganya?", 
-    arti_en: "How much is this?" 
+  {
+    daerah: "Sunda",
+    asli: "Sabaraha ieu?",
+    baca: "sah-bah-RAH-hah EE-yuh",
+    arti_id: "Berapa harganya?",
+    arti_en: "How much is this?",
   },
-  { 
-    daerah: "Bugis", 
-    asli: "Aga kareba?", 
-    baca: "AH-gah kah-RAY-bah", 
-    arti_id: "Apa kabar?", 
-    arti_en: "How are you?" 
-  }
+  {
+    daerah: "Bugis",
+    asli: "Aga kareba?",
+    baca: "AH-gah kah-RAY-bah",
+    arti_id: "Apa kabar?",
+    arti_en: "How are you?",
+  },
 ];
 
 function tampilkanFrasaLokal() {
   const wadah = document.getElementById("wadah-frasa-lokal");
-  if (!wadah) return; 
+  if (!wadah) return;
 
   let isiHTML = "";
-  dataFrasaLokal.forEach(frasa => {
-        isiHTML += `
+  dataFrasaLokal.forEach((frasa) => {
+    isiHTML += `
       <div class="p-6 rounded-3xl bg-nila flex flex-col gap-3">
         <div class="flex justify-between items-start">
           <p class="text-matahari uppercase font-bold tracking-wider text-sm">${frasa.daerah}</p>
@@ -510,7 +517,7 @@ function tampilkanFrasaLokal() {
           <p class="text-sm font-medium text-white/70 flex items-center gap-2">🇬🇧 ${frasa.arti_en}</p>
         </div>
       </div>
-    `
+    `;
   });
 
   wadah.innerHTML = isiHTML;
@@ -518,7 +525,6 @@ function tampilkanFrasaLokal() {
 
 // Jalankan saat web selesai dimuat
 document.addEventListener("DOMContentLoaded", tampilkanFrasaLokal);
-
 
 const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
 if (header) {
@@ -869,4 +875,50 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "Escape") setSortMenuOpen(false);
     });
   }
+});
+// kuis di halaman praktik
+const fieldset = document.getElementById("soal1");
+const feedback = document.getElementById("feedback");
+const resetBtn = document.getElementById("resetBtn");
+const STORAGE_KEY = "jawaban_soal_1";
+function terapkanJawaban(jawabanUser) {
+  const kunciJawaban = fieldset.dataset.answer;
+  const isBenar = jawabanUser === kunciJawaban;
+  const radioTerpilih = fieldset.querySelector(`input[value="${jawabanUser}"]`);
+  if (radioTerpilih) radioTerpilih.checked = true;
+
+  fieldset.dataset.answered = "true";
+  fieldset
+    .querySelectorAll("input")
+    .forEach((input) => (input.disabled = true));
+
+  const labelDipilih = fieldset.querySelector(`[data-option="${jawabanUser}"]`);
+  const labelBenar = fieldset.querySelector(`[data-option="${kunciJawaban}"]`);
+
+  if (isBenar) {
+    labelDipilih.dataset.status = "correct";
+    feedback.textContent =
+      "Tepat sekali! Jawaban Anda benar dan sudah tersimpan.";
+    feedback.className =
+      "mt-4 rounded-xl bg-emerald-50 p-3 text-sm font-medium text-emerald-800";
+  } else {
+    labelDipilih.dataset.status = "wrong";
+    labelBenar.dataset.status = "correct";
+    feedback.textContent = `Kurang tepat. Jawaban yang benar adalah opsi ${kunciJawaban.toUpperCase()}.`;
+    feedback.className =
+      "mt-4 rounded-xl bg-rose-50 p-3 text-sm font-medium text-rose-800";
+  }
+
+  resetBtn.classList.remove("hidden");
+}
+const jawabanTersimpan = localStorage.getItem(STORAGE_KEY);
+if (jawabanTersimpan) {
+  terapkanJawaban(jawabanTersimpan);
+}
+fieldset.addEventListener("change", (e) => {
+  if (fieldset.dataset.answered === "true") return;
+
+  const jawabanUser = e.target.value;
+  localStorage.setItem(STORAGE_KEY, jawabanUser);
+  terapkanJawaban(jawabanUser);
 });
