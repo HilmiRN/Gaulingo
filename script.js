@@ -8,6 +8,9 @@ const translations = {
     nav_menu: "MENU",
     btn_ask: "Ask Gali",
 
+    // NAV (MENU)
+    nav_close: "Close",
+
     // SITUATION
     sit_label: "Situations",
     sit_title: "Find your",
@@ -15,7 +18,7 @@ const translations = {
     sit_subtitle: "Pick where you are. Gali brings the phrases you need there.",
     sit_see_all: "See all 6 situations",
     stall_badge: "Most popular",
-    stall_info: "8 phrases · ID & Sunda",
+    stall_info: "8 phrases · Local Phrases",
     stall_title: "STALL",
     stall_desc:
       "Buying snacks, asking prices, and saying thanks at a small food stall.",
@@ -33,6 +36,11 @@ const translations = {
     card_smalltalk_desc: "Meeting new people · 10 phrases",
     card_emergency_title: "EMERGENCY",
     card_emergency_desc: "When you need help · 6 phrases",
+
+    // PHRASE OF THE DAY
+    potd_label: "PHRASE OF THE DAY",
+    potd_title: "Thank you very much!",
+    potd_btn_listen: "Listen",
 
     // HOW IT WORKS
     how_label: "HOW IT WORKS",
@@ -68,6 +76,11 @@ const translations = {
       "Give and take things with your right hand. In Indonesia it is a sign of respect.",
     potd_more_tips: "More culture tips",
 
+    // PHRASE CARDS
+    local_phrases_title: "Local Phrases of Nusantara",
+    local_phrases_desc: "Learn everyday survival phrases from various regions across Indonesia.",
+
+
     // --- WHY GAULINGO ---
     why_label: "WHY GAULINGO",
     why_title_1: "Not your usual ",
@@ -82,7 +95,7 @@ const translations = {
     why_gali_item1: "Everyday phrases locals actually use",
     why_gali_item2: "Audio for every phrase, with slow mode",
     why_gali_item3: "A culture tip in every situation",
-    why_gali_item4: "Bahasa Indonesia, Sunda & Jawa",
+    why_gali_item4: "Local languages across Indonesia",
 
     // --- AI BUDDY ---
     ai_label: "AI BUDDY",
@@ -110,7 +123,7 @@ const translations = {
     faq_a2:
       "No account needed! You can start learning and practicing all phrases right away.",
     faq_q3: "Which languages are included?",
-    faq_a3: "Currently we feature everyday Bahasa Indonesia, Sunda, and Jawa.",
+    faq_a3: "We feature everyday local languages across Indonesia, explained in English and Indonesian.",
     faq_q4: "Does it work on my phone?",
     faq_a4:
       "Yes! Gaulingo is fully responsive and optimized for mobile screens.",
@@ -124,13 +137,13 @@ const translations = {
     faq_footer_btn: "Ask Gali",
 
     //  FOOTER
-    ooter_terms: "Terms and Conditions",
+    footer_terms: "Terms and Conditions",
     footer_privacy: "Privacy Policy",
     footer_socials: "Socials",
     footer_contacts: "Contacts",
     footer_based: "Based in",
     footer_languages: "Languages",
-    footer_languages_val: "Indonesian & Sundanese",
+    footer_languages_val: "Indonesian & English",
     footer_nav: "Navigation",
     footer_nav_home: "Home",
     footer_nav_sit: "Situations",
@@ -147,6 +160,18 @@ const translations = {
     sit_page_subtitle: "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
     sit_page_search_ph: "Search a phrase or a place...",
     sit_page_search_btn: "Search",
+
+    // CTA
+    cta_tagline: "NO SIGN-UP · NO APP · JUST OPEN IT",
+    cta_title_1: "Ready to",
+    cta_title_2: "ngobrol?",
+    cta_subtitle: "Start with one phrase today. Tomorrow you will use it.",
+    cta_btn_explore: "START EXPLORING",
+    cta_btn_chat: "CHAT WITH GALI",
+
+    // FOOD
+    rd_food_title: "FOOD",
+    rd_food_desc: "Ordering food and asking what is in it.",
   },
   id: {
     hero_title:
@@ -157,6 +182,9 @@ const translations = {
     nav_menu: "MENU",
     btn_ask: "Tanya Gali",
 
+    // NAV (MENU)
+    nav_close: "Tutup",
+
     // SITUATION
     sit_label: "SITUASI",
     sit_title_1: "Temukan",
@@ -165,7 +193,7 @@ const translations = {
       "Pilih lokasimu. Gali memberikan frasa yang kamu butuhkan di sana.",
     sit_see_all: "Lihat semua 6 situasi",
     stall_badge: "Paling populer",
-    stall_info: "8 frasa · ID & Sunda",
+    stall_info: "8 frasa · Bahasa Daerah",
     stall_title: "WARUNG",
     stall_desc:
       "Membeli camilan, menanyakan harga, dan mengucapkan terima kasih di warung makan kecil.",
@@ -183,6 +211,16 @@ const translations = {
     card_smalltalk_desc: "Kenalan dengan orang baru · 10 frasa",
     card_emergency_title: "DARURAT",
     card_emergency_desc: "Saat kamu butuh bantuan · 6 frasa",
+
+        // PHRASE OF THE DAY
+    potd_label: "FRASA HARI INI",
+    potd_title: "Terima kasih banyak!",
+    potd_btn_listen: "Dengarkan",
+
+    // PHRASE CARDS
+    local_phrases_title: "Frasa Daerah Nusantara",
+    local_phrases_desc: "Pelajari bahasa lokal untuk bertahan hidup di berbagai daerah.",
+
 
     // HOW IT WORKS
     how_label: "CARA KERJA",
@@ -231,7 +269,9 @@ const translations = {
     why_gali_item1: "Frasa sehari-hari yang benar-benar dipakai warga lokal",
     why_gali_item2: "Audio untuk setiap frasa, lengkap dengan mode lambat",
     why_gali_item3: "Tips budaya di setiap situasi",
-    why_gali_item4: "Bahasa Indonesia, Sunda & Jawa",
+    why_gali_item4: "Berbagai bahasa daerah di Indonesia",
+
+    // --- AI BUDDY ---
     ai_label: "TEMAN AI",
     ai_title_1: "Bingung? Tanya aja ",
     ai_title_2: "GALI.",
@@ -256,7 +296,7 @@ const translations = {
     faq_a2:
       "Tidak perlu akun! Kamu bisa langsung belajar dan latihan semua frasa secara gratis.",
     faq_q3: "Bahasa apa saja yang tersedia?",
-    faq_a3: "Saat ini tersedia Bahasa Indonesia sehari-hari, Sunda, dan Jawa.",
+    faq_a3: "Tersedia berbagai bahasa daerah di Indonesia dengan penjelasan bahasa Indonesia dan Inggris.",
     faq_q4: "Apakah bisa dibuka di HP?",
     faq_a4:
       "Bisa banget! Gaulingo dirancang responsif dan nyaman dibuka di layar HP.",
@@ -276,7 +316,7 @@ const translations = {
     footer_contacts: "Kontak",
     footer_based: "Berbasis di",
     footer_languages: "Bahasa",
-    footer_languages_val: "Indonesia & Sunda",
+    footer_languages_val: "Indonesia & Inggris",
     footer_nav: "Navigasi",
     footer_nav_home: "Beranda",
     footer_nav_sit: "Situasi",
@@ -293,6 +333,17 @@ const translations = {
     sit_page_subtitle: "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
+
+    // CTA
+    cta_tagline: "TANPA DAFTAR · TANPA APLIKASI · LANGSUNG BUKA",
+    cta_title_1: "Siap mulai",
+    cta_title_2: "ngobrol?",
+    cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
+    cta_btn_explore: "MULAI EKSPLORASI",
+    cta_btn_chat: "NGOBROL SAMA GALI", 
+    // FOOD
+    rd_food_title: "MAKANAN",
+    rd_food_desc: "Memesan makanan dan menanyakan isinya.",
   }
 };
 
@@ -399,6 +450,75 @@ document.addEventListener("keydown", (e) => {
     menuToggle.focus();
   }
 });
+
+
+//  PHRASE IN CARDS
+const dataFrasaLokal = [
+  { 
+    daerah: "Minang", 
+    asli: "Ba'a kaba?", 
+    baca: "ba-AH KAH-bah", 
+    arti_id: "Apa kabar?", 
+    arti_en: "How are you?" 
+  },
+  { 
+    daerah: "Bali", 
+    asli: "Matur suksma", 
+    baca: "mah-TOOR SUKS-mah", 
+    arti_id: "Terima kasih", 
+    arti_en: "Thank you" 
+  },
+  { 
+    daerah: "Sunda", 
+    asli: "Sabaraha ieu?", 
+    baca: "sah-bah-RAH-hah EE-yuh", 
+    arti_id: "Berapa harganya?", 
+    arti_en: "How much is this?" 
+  },
+  { 
+    daerah: "Bugis", 
+    asli: "Aga kareba?", 
+    baca: "AH-gah kah-RAY-bah", 
+    arti_id: "Apa kabar?", 
+    arti_en: "How are you?" 
+  }
+];
+
+function tampilkanFrasaLokal() {
+  const wadah = document.getElementById("wadah-frasa-lokal");
+  if (!wadah) return; 
+
+  let isiHTML = "";
+  dataFrasaLokal.forEach(frasa => {
+        isiHTML += `
+      <div class="p-6 rounded-3xl bg-nila flex flex-col gap-3">
+        <div class="flex justify-between items-start">
+          <p class="text-matahari uppercase font-bold tracking-wider text-sm">${frasa.daerah}</p>
+          <button class="text-nila bg-matahari w-8 h-8 rounded-full flex items-center justify-center hover:scale-105 transition-transform" title="Dengarkan">
+            <i class="ph-bold ph-speaker-high text-lg"></i>
+          </button>
+        </div>
+        
+        <h4 class="text-3xl font-unbounded font-black text-krem">${frasa.asli}</h4>
+        
+        <div class="w-fit border border-white/50 rounded-full px-4 py-1.5 mt-1">
+          <p class="text-sm text-white font-medium">${frasa.baca}</p>
+        </div>
+
+        <div class="mt-auto flex flex-col gap-1 border-t border-white/20 pt-4 mt-2">
+          <p class="text-sm font-bold text-white flex items-center gap-2">🇮🇩 ${frasa.arti_id}</p>
+          <p class="text-sm font-medium text-white/70 flex items-center gap-2">🇬🇧 ${frasa.arti_en}</p>
+        </div>
+      </div>
+    `
+  });
+
+  wadah.innerHTML = isiHTML;
+}
+
+// Jalankan saat web selesai dimuat
+document.addEventListener("DOMContentLoaded", tampilkanFrasaLokal);
+
 
 const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
 if (header) {
