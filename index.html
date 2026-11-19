@@ -594,7 +594,6 @@
                   Buying snacks, asking prices, and saying thanks at a small
                   food stall.
                 </p>
-
                 <ul class="mt-4.75 space-y-3">
                   <li
                     class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
@@ -1056,9 +1055,90 @@
           </div>
         </section>
 
+        <!-- Kotak Search & Filter Daerah -->
+        <section
+          class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5 mb-4 flex flex-col gap-5"
+        >
+          <!-- Search Bar -->
+          <div
+            class="flex items-center gap-3 w-full max-w-2xl px-5 py-3 rounded-full bg-white border border-nila/20 shadow-sm"
+          >
+            <i class="ph-bold ph-magnifying-glass text-nila text-lg"></i>
+            <input
+              type="text"
+              id="input-cari-frasa"
+              placeholder="Cari frasa (misal: apa kabar, terima kasih, permisi)..."
+              class="w-full bg-transparent outline-none text-nila text-sm font-medium"
+            />
+          </div>
+
+          <!-- Tags Daerah -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span
+              class="text-xs font-bold text-nila/50 tracking-wider mr-2 uppercase"
+              >Daerah:</span
+            >
+            <button
+              class="bg-nila text-white px-5 py-1.5 rounded-full text-sm font-semibold shadow-sm"
+            >
+              Semua
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Minang
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Bali
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Sunda
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Bugis
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Jawa
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Batak
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Betawi
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Banjar
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Papua
+            </button>
+            <button
+              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+            >
+              Makassar
+            </button>
+          </div>
+        </section>
+
         <!-- phrase of the day -->
         <section
-          class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5 p-10 bg-nila rounded-4xl"
+          class="mt-10 mx-25 max-md:mx-10 max-sm:mx-5 p-10 bg-nila rounded-4xl"
         >
           <hgroup
             class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-8"
@@ -1069,44 +1149,6 @@
             >
               PHRASE OF THE DAY
             </p>
-            <div
-              class="inline-flex max-md:w-full max-md:justify-between items-center p-1 rounded-full border-2 border-white max-w-xs"
-            >
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center bg-matahari text-nila rounded-full [@media(max-width:430px)]:text-sm font-semibold"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="id"
-                  class="hidden"
-                  checked
-                />
-                Indonesia
-              </label>
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="su"
-                  class="hidden"
-                />
-                Sunda
-              </label>
-              <label
-                class="px-6 py-3 [@media(max-width:430px)]:px-2 [@media(max-width:430px)]:py-2 max-md:w-full text-center rounded-full [@media(max-width:430px)]:text-sm font-semibold text-white"
-              >
-                <input
-                  type="radio"
-                  name="language_select"
-                  value="jv"
-                  class="hidden"
-                />
-                Jawa
-              </label>
-            </div>
           </hgroup>
           <div
             class="flex max-md:flex-col justify-between gap-15 max-md:gap-7.5"
@@ -1116,6 +1158,7 @@
             >
               <h3
                 class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem"
+                data-i18n="potd_title"
               >
                 Terima kasih banyak!
               </h3>
@@ -1123,9 +1166,7 @@
                 <p class="px-4 py-2 border border-white rounded-full">
                   teh-REE-mah KAH-see BAH-nyak
                 </p>
-                <p class="py-2 flex items-center" data-i18n="potd_meaning">
-                  "Thank you very much!"
-                </p>
+                <p class="py-2 flex items-center">"Terima kasih banyak!"</p>
               </div>
               <div class="flex gap-4 text-white">
                 <button
@@ -1141,23 +1182,6 @@
                   Slow
                 </button>
               </div>
-            </div>
-            <div class="flex flex-col h-fit pl-5 gap-3 border-l-2 border-pasir">
-              <p class="flex items-center gap-4 font-bold text-pasir">
-                <i class="ph-bold ph-lightbulb"></i>
-                <span data-i18n="potd_culture_title">CULTURE TIP</span>
-              </p>
-              <p
-                class="font-bold text-krem text-2xl"
-                data-i18n="potd_culture_desc"
-              >
-                Give and take things with your right hand. In Indonesia it is a
-                sign of respect.
-              </p>
-              <a href="#" class="flex items-center gap-4 text-pasir font-bold">
-                <span data-i18n="potd_more_tips">More culture tips</span>
-                <i class="ph-bold ph-arrow-right"></i>
-              </a>
             </div>
           </div>
         </section>
@@ -1188,6 +1212,17 @@
               Most phrasebooks teach sentences nobody says. Gaulingo teaches
               what people actually say, and how to say it politely.
             </p>
+            <a
+              href="#"
+              onclick="
+                document.getElementById('modal-budaya').showModal();
+                return false;
+              "
+              class="flex items-center gap-4 text-pasir font-bold hover:opacity-80 cursor-pointer"
+            >
+              <span data-i18n="potd_more_tips">More culture tips</span>
+              <i class="ph-bold ph-arrow-right"></i>
+            </a>
           </hgroup>
           <div class="flex gap-6 mt-5 max-md:flex-col">
             <div
@@ -1780,17 +1815,28 @@
         <section
           class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
         >
-          <p class="text-base font-bold" data-cta-reveal="left">
+          <p
+            class="text-base font-bold"
+            data-cta-reveal="left"
+            data-i18n="cta_tagline"
+          >
             NO SIGN-UP · NO APP · JUST OPEN IT
           </p>
           <h2
             class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
             data-cta-reveal="right"
           >
-            Ready to <br /><span class="text-krem">ngobrol?</span>
+            <span data-i18n="cta_title_1">Ready to</span> <br /><span
+              class="text-krem"
+              data-i18n="cta_title_2"
+              >ngobrol?</span
+            >
           </h2>
-          <p class="font-medium text-xl"></p>
-          <p class="font-medium text-xl" data-cta-reveal="left">
+          <p
+            class="font-medium text-xl"
+            data-cta-reveal="left"
+            data-i18n="cta_subtitle"
+          >
             Start with one phrase today. Tomorrow you will use it.
           </p>
           <div class="w-1/2 flex justify-center max-sm:flex-col mt-7 gap-15">
@@ -1801,13 +1847,14 @@
               <button
                 class="flex items-center gap-2 text-sm font-bold px-6 py-4 bg-matahari text-nila rounded-full hover:border-2 border-matahari hover:text-matahari hover:bg-transparent transition-all duration-300"
               >
-                START EXPLORING
+                <span data-i18n="cta_btn_explore">START EXPLORING</span>
                 <i class="ph-bold ph-arrow-right text-lg"></i>
               </button>
               <button
                 class="flex gap-2 items-center text-sm font-bold border-2 border-matahari px-6 py-4 rounded-full hover:bg-matahari hover:text-nila transition-all duration-300"
               >
-                <i class="ph-bold ph-chat-circle-dots"></i> CHAT WITH GALI
+                <i class="ph-bold ph-chat-circle-dots"></i>
+                <span data-i18n="cta_btn_chat">CHAT WITH GALI</span>
               </button>
             </div>
           </div>
@@ -2046,6 +2093,97 @@
         Ask Gali
       </p>
     </div>
+    <style>
+      dialog#modal-budaya[open] {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        margin: 0;
+        padding: 1.25rem; /* Jarak aman kiri-kanan yang sama persis di HP */
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+      }
+
+      .kotak-animasi {
+        width: 100%;
+        max-width: 28rem;
+        animation: munculTurun 0.4s ease-out forwards;
+      }
+
+      @keyframes munculTurun {
+        from {
+          opacity: 0;
+          transform: translateY(-40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <!-- Pop-up (Modal) Tips Budaya -->
+    <dialog
+      id="modal-budaya"
+      class="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
+    >
+      <div
+        class="kotak-animasi w-[90%] max-w-md p-8 rounded-3xl bg-nila text-white shadow-2xl border border-matahari/50"
+      >
+        <div class="flex flex-col gap-4">
+          <h3
+            class="text-2xl font-black font-unbounded text-matahari mb-2 flex items-center gap-3"
+          >
+            <i class="ph-bold ph-lightbulb"></i>
+            <span data-i18n="modal_culture_title">Tips Budaya</span>
+          </h3>
+          <ul class="text-sm font-medium flex flex-col gap-4">
+            <li class="flex gap-3 items-start">
+              <i
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+              ></i>
+              <span data-i18n="modal_culture_tip1"
+                >Selalu gunakan tangan kanan untuk memberi atau menerima
+                sesuatu.</span
+              >
+            </li>
+            <li class="flex gap-3 items-start">
+              <i
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+              ></i>
+              <span data-i18n="modal_culture_tip2"
+                >Lepas alas kaki (sepatu/sandal) sebelum masuk ke dalam rumah
+                orang Indonesia.</span
+              >
+            </li>
+            <li class="flex gap-3 items-start">
+              <i
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+              ></i>
+              <span data-i18n="modal_culture_tip3"
+                >Jangan menyentuh kepala seseorang, terutama anak-anak, karena
+                dianggap tidak sopan.</span
+              >
+            </li>
+          </ul>
+
+          <form method="dialog" class="mt-6">
+            <button
+              class="w-full bg-matahari text-nila font-bold py-3 px-6 rounded-full hover:scale-105 transition-transform"
+              data-i18n="modal_close_btn"
+            >
+              Tutup
+            </button>
+          </form>
+        </div>
+      </div>
+    </dialog>
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
     <script src="./script.js"></script>
