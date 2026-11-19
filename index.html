@@ -774,13 +774,13 @@
           </div>
         </section>
         <!-- how it works section -->
-        <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <section id="how-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
           <hgroup class="flex flex-col max-md:gap-2">
             <p
               class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
               data-i18n="how_label"
             >
-              How it works
+              HOW IT WORKS
             </p>
             <h2
               class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
@@ -796,72 +796,118 @@
               Start from the left. Each step takes just seconds.
             </p>
           </hgroup>
-          <div class="flex gap-10 mt-12 max-md:flex-col">
+
+          <div class="flex gap-10 mt-12 max-md:flex-col items-stretch">
+            <!-- Tombol Step Kiri (1, 2, 3) -->
             <div
               class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row"
             >
               <button
-                class="flex gap-4 items-center border-2 border-nila text-nila bg-white active:bg-nila active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-4 max-md:justify-center w-full"
+                type="button"
+                data-step-btn="1"
+                style="
+                  background-color: var(--color-nila, #243b7a);
+                  color: #ffffff;
+                "
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
               >
-                <p class="font-unbounded font-black text-2xl">1</p>
+                <p
+                  class="step-num font-unbounded font-black text-2xl"
+                  style="color: #ffffff"
+                >
+                  1
+                </p>
                 <div>
                   <h3
-                    class="font-semibold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-sm:text-base"
                     data-i18n="how_step1_title"
                   >
                     Pick your place
                   </h3>
-                  <p class="text-md max-md:hidden" data-i18n="how_step1_desc">
+                  <p
+                    class="step-desc text-sm max-md:hidden mt-0.5"
+                    style="color: rgba(255, 255, 255, 0.85)"
+                    data-i18n="how_step1_desc"
+                  >
                     Warung, school, angkot — choose the situation you are in.
                   </p>
                 </div>
               </button>
+
               <button
-                class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-terakota active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
+                type="button"
+                data-step-btn="2"
+                style="
+                  background-color: #ffffff;
+                  color: var(--color-nila, #243b7a);
+                "
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
               >
                 <p
-                  class="font-unbounded font-black text-2xl text-terakota group-active:text-white"
+                  class="step-num font-unbounded font-black text-2xl text-terakota"
+                  style="color: var(--color-terakota, #b54927)"
                 >
                   2
                 </p>
                 <div>
                   <h3
-                    class="font-semibold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-sm:text-base"
                     data-i18n="how_step2_title"
                   >
-                    Listen & repeat
+                    Listen &amp; repeat
                   </h3>
-                  <p class="text-md max-md:hidden" data-i18n="how_step2_desc">
+                  <p
+                    class="step-desc text-sm max-md:hidden mt-0.5"
+                    style="color: rgba(36, 59, 122, 0.75)"
+                    data-i18n="how_step2_desc"
+                  >
                     Play it, slow it down if you need, then say it out loud.
                   </p>
                 </div>
               </button>
+
               <button
-                class="group flex gap-4 border-2 border-nila items-center text-nila bg-white active:bg-hijau active:text-white px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-2.5 max-md:px-3 max-md:justify-center w-full"
+                type="button"
+                data-step-btn="3"
+                style="
+                  background-color: #ffffff;
+                  color: var(--color-nila, #243b7a);
+                "
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
               >
                 <p
-                  class="font-unbounded font-black text-2xl text-hijau group-active:text-white"
+                  class="step-num font-unbounded font-black text-2xl text-hijau"
+                  style="color: var(--color-hijau, #1f6f54)"
                 >
                   3
                 </p>
                 <div>
                   <h3
-                    class="font-semibold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-sm:text-base"
                     data-i18n="how_step3_title"
                   >
                     Quiz with Gali
                   </h3>
-                  <p class="text-sm max-md:hidden" data-i18n="how_step3_desc">
+                  <p
+                    class="step-desc text-sm max-md:hidden mt-0.5"
+                    style="color: rgba(36, 59, 122, 0.75)"
+                    data-i18n="how_step3_desc"
+                  >
                     Short rounds to make it stick, plus the manners behind it.
                   </p>
                 </div>
               </button>
             </div>
-            <!-- 01 -->
+
+            <!-- Panel 1: Pick your place -->
             <div
-              class="p-10 flex flex-col gap-6 bg-white w-full rounded-4xl max-md:p-5"
+              data-step-panel="1"
+              class="how-step-panel p-10 flex flex-col justify-center gap-6 bg-white w-full rounded-4xl max-md:p-6"
             >
-              <p class="text-xs text-nila" data-i18n="how_panel_step1">
+              <p
+                class="text-xs font-bold tracking-wider text-nila uppercase"
+                data-i18n="how_panel_step1"
+              >
                 STEP 1 · PICK YOUR PLACE
               </p>
               <h3
@@ -932,123 +978,267 @@
                   class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
                 >
                   <h4 class="text-2xl font-bold capitalize" data-i18n="cat_all">
-                    All situations
+                    All Situations
                   </h4>
                   <p class="text-xs" data-i18n="total_8">8 in total</p>
                 </div>
               </div>
             </div>
+
+            <!-- Panel 2: Listen & repeat -->
             <div
-              class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
+              data-step-panel="2"
+              style="display: none"
+              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-md:p-6"
             >
-              <p class="text-xs text-terakota uppercase">
+              <p
+                class="text-xs font-bold tracking-wider text-terakota uppercase"
+                style="color: var(--color-terakota, #b54927)"
+              >
                 STEP 2 · LISTEN &amp; REPEAT
               </p>
-              <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-              <p class="font-semibold text-nila mb-2 max-sm:mb-4">
-                "How much is this?"
-              </p>
+              <h3
+                class="font-unbounded font-black text-4xl max-sm:text-3xl text-nila tracking-tight"
+              >
+                Berapa harganya?
+              </h3>
+              <p class="font-semibold text-nila text-lg">"How much is this?"</p>
+
+              <!-- Audio Bar + Waveform -->
               <div
-                class="w-full rounded-full border border-terakota/50 p-1.5 flex items-center bg-white max-sm:mb-4"
+                style="border: 1px solid var(--color-terakota, #b54927)"
+                class="w-full rounded-full p-1.5 flex items-center gap-4 bg-white my-1"
               >
                 <button
-                  class="shrink-0 w-11 h-11 rounded-full bg-terakota text-white flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0 shadow-sm"
+                  id="how-audio-play"
+                  type="button"
+                  style="
+                    background-color: var(--color-terakota, #b54927);
+                    color: #ffffff;
+                  "
+                  class="shrink-0 w-11 h-11 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0"
                   aria-label="Play"
                 >
-                  <svg class="w-5 h-5 fill-current ml-0.5" viewBox="0 0 24 24">
-                    <polygon points="6 4 20 12 6 20 6 4"></polygon>
-                  </svg>
+                  <i id="how-audio-icon" class="ph-fill ph-play text-lg"></i>
                 </button>
+
+                <div
+                  id="how-waveform"
+                  class="flex items-center gap-1.5 overflow-hidden pr-4"
+                  aria-hidden="true"
+                >
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 14px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 24px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 18px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 30px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 20px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 28px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 14px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 24px"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 16px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 26px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 18px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 28px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 14px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 22px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 16px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 24px; opacity: 0.3"
+                  ></span>
+                  <span
+                    class="wave-bar rounded-full bg-terakota"
+                    style="width: 4px; height: 12px; opacity: 0.3"
+                  ></span>
+                </div>
               </div>
-              <div class="flex items-center gap-2.5">
+
+              <!-- Speed Toggle (1x / 0.5x slow) -->
+              <div class="flex items-center gap-2.5 mt-1">
                 <button
-                  class="rounded-full w-10 h-10 bg-terakota text-white font-bold flex items-center justify-center"
+                  type="button"
+                  data-speed="1"
+                  style="
+                    background-color: var(--color-terakota, #b54927);
+                    color: #ffffff;
+                    border: none;
+                  "
+                  class="how-speed-btn rounded-full w-11 h-11 font-bold text-sm flex items-center justify-center cursor-pointer transition-colors"
                 >
                   1x
                 </button>
                 <button
-                  class="rounded-full border border-nila text-nila py-1.75 px-4 flex items-center justify-center"
+                  type="button"
+                  data-speed="0.5"
+                  style="
+                    background-color: transparent;
+                    color: var(--color-nila, #243b7a);
+                    border: 1px solid rgba(36, 59, 122, 0.5);
+                  "
+                  class="how-speed-btn rounded-full font-semibold text-sm h-11 px-4 flex items-center justify-center cursor-pointer transition-colors"
                 >
                   0.5x slow
                 </button>
               </div>
             </div>
-            <!-- 03 (Dibiarkan tanpa data-i18n karena belum ada di kamus JS Anda) -->
+
+            <!-- Panel 3: Quiz with Gali -->
             <div
-              class="p-10 hidden flex-col justify-center gap-6 max-md:gap-1 bg-white w-full rounded-4xl max-sm:p-7"
+              data-step-panel="3"
+              style="display: none"
+              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-md:p-6"
             >
-              <p class="text-xs text-terakota uppercase">
+              <p
+                class="text-xs font-bold tracking-wider text-hijau uppercase"
+                style="color: var(--color-hijau, #1f6f54)"
+              >
                 STEP 3 · QUIZ WITH GALI
               </p>
-              <h3 class="text-3xl font-bold text-nila">Berapa harganya?</h3>
-              <div class="flex flex-col gap-3 my-2">
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
+              <h3 class="text-2xl sm:text-3xl font-bold text-nila">
+                Which one asks for the price?
+              </h3>
+
+              <div class="flex flex-col gap-3 my-1">
+                <button
+                  type="button"
+                  data-quiz-option
+                  data-correct="true"
+                  style="
+                    border: 1px solid rgba(36, 59, 122, 0.5);
+                    color: var(--color-nila, #243b7a);
+                  "
+                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="a"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >How much is this?</span
-                  >
-                </label>
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila transition-all has-checked:border-terakota has-checked:bg-terakota/5"
+                  <span>Berapa harganya?</span>
+                  <i
+                    style="display: none"
+                    class="quiz-check ph-fill ph-check-circle text-2xl"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  data-quiz-option
+                  data-correct="false"
+                  style="
+                    border: 1px solid rgba(36, 59, 122, 0.5);
+                    color: var(--color-nila, #243b7a);
+                  "
+                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="b"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >Where is the place?</span
-                  >
-                </label>
-                <label
-                  class="relative flex items-center p-4 rounded-2xl border-2 border-nila has-checked:border-terakota has-checked:bg-terakota/5"
+                  <span>Di mana toiletnya?</span>
+                  <i
+                    style="display: none"
+                    class="quiz-check ph-fill ph-x-circle text-2xl"
+                  ></i>
+                </button>
+
+                <button
+                  type="button"
+                  data-quiz-option
+                  data-correct="false"
+                  style="
+                    border: 1px solid rgba(36, 59, 122, 0.5);
+                    color: var(--color-nila, #243b7a);
+                  "
+                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
-                  <input
-                    type="radio"
-                    name="quiz_answer"
-                    value="c"
-                    class="peer hidden"
-                  />
-                  <span class="font-bold text-nila peer-checked:text-terakota"
-                    >What time does it open?</span
-                  >
-                </label>
+                  <span>Boleh kurang, Bu?</span>
+                  <i
+                    style="display: none"
+                    class="quiz-check ph-fill ph-x-circle text-2xl"
+                  ></i>
+                </button>
               </div>
 
-              <!-- jawaban salah -->
-              <div class="hidden items-center gap-2 pt-2 flex-wrap">
+              <!-- Feedback Badges (Benar) -->
+              <div
+                id="quiz-feedback-correct"
+                style="display: none"
+                class="items-center gap-2 pt-1 flex-wrap"
+              >
                 <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
-                >
-                  Oops!
-                </span>
-                <span class="px-4 py-2 rounded-full bg-pasir text-nila">
-                  +0 points
-                </span>
-                <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
-                  Streak lost
-                </span>
-              </div>
-              <!-- jawaban benar -->
-              <div class="flex items-center gap-2 pt-2 flex-wrap">
-                <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-semibold"
+                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm"
                 >
                   Nice one!
                 </span>
-                <span class="px-4 py-2 rounded-full bg-pasir text-nila">
+                <span
+                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm"
+                >
                   +10 points
                 </span>
-                <span class="px-4 py-2 rounded-full bg-biru-muda text-nila">
+                <span
+                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm"
+                >
                   Streak kept
+                </span>
+              </div>
+
+              <!-- Feedback Badges (Salah) -->
+              <div
+                id="quiz-feedback-wrong"
+                style="display: none"
+                class="items-center gap-2 pt-1 flex-wrap"
+              >
+                <span
+                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm"
+                >
+                  Oops!
+                </span>
+                <span
+                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm"
+                >
+                  +0 points
+                </span>
+                <span
+                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm"
+                >
+                  Streak lost
                 </span>
               </div>
             </div>
@@ -1067,7 +1257,7 @@
             <input
               type="text"
               id="input-cari-frasa"
-              placeholder="Cari frasa (misal: apa kabar, terima kasih, permisi)..."
+              placeholder="Cari kata kerja (misal: makan, minum, pergi, tidur, beli)..."
               class="w-full bg-transparent outline-none text-nila text-sm font-medium"
             />
           </div>
@@ -1079,57 +1269,72 @@
               >Daerah:</span
             >
             <button
-              class="bg-nila text-white px-5 py-1.5 rounded-full text-sm font-semibold shadow-sm"
-            >
-              Semua
-            </button>
-            <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Minang"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover: shadow-sm cursor-pointer transition-colors"
             >
               Minang
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Bali"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Bali
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Sunda"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Sunda
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Bugis"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Bugis
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Jawa"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Jawa
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Batak"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Batak
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Betawi"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Betawi
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Banjar"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Banjar
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Papua"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Papua
             </button>
             <button
-              class="bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm"
+              type="button"
+              data-daerah="Makassar"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Makassar
             </button>
@@ -1138,54 +1343,41 @@
 
         <!-- phrase of the day -->
         <section
-          class="mt-10 mx-25 max-md:mx-10 max-sm:mx-5 p-10 bg-nila rounded-4xl"
+          class="mt-10 mx-25 max-md:mx-10 max-sm:mx-5 px-10 py-14 min-h-[360px] md:min-h-[430px] bg-nila rounded-4xl flex flex-col justify-center"
         >
           <hgroup
-            class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-8"
+            class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-5"
           >
             <p
+              id="potd-label"
               class="text-matahari uppercase font-bold tracking-wider"
               data-i18n="potd_label"
             >
               PHRASE OF THE DAY
             </p>
           </hgroup>
-          <div
-            class="flex max-md:flex-col justify-between gap-15 max-md:gap-7.5"
-          >
-            <div
-              class="flex flex-col gap-5 w-3/4 max-md:w-full max-md:border-b-2 max-md:border-white/20 max-md:pb-7.5"
-            >
+          <div class="flex max-md:flex-col justify-between">
+            <div class="flex flex-col gap-5 w-full max-w-4xl">
               <h3
+                id="potd-phrase"
                 class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem"
-                data-i18n="potd_title"
               >
                 Terima kasih banyak!
               </h3>
-              <div class="flex gap-4 items-start flex-wrap text-white">
-                <p class="px-4 py-2 border border-white rounded-full">
+              <div class="flex gap-4 items-center flex-wrap text-white">
+                <p
+                  id="potd-pronunciation"
+                  class="px-4 py-2 border border-white rounded-full"
+                >
                   teh-REE-mah KAH-see BAH-nyak
                 </p>
-                <p class="py-2 flex items-center">"Terima kasih banyak!"</p>
-              </div>
-              <div class="flex gap-4 text-white">
-                <button
-                  class="flex gap-2 items-center text-nila bg-matahari py-4 px-5 rounded-full font-bold"
-                >
-                  <i class="ph-bold ph-speaker-high text-xl"></i>
-                  <span data-i18n="potd_btn_listen">Listen</span>
-                </button>
-                <button
-                  class="px-4 py-2 border border-white rounded-full"
-                  data-i18n="potd_btn_slow"
-                >
-                  Slow
-                </button>
+                <p id="potd-meaning" class="py-2 flex items-center">
+                  "Terima kasih banyak!"
+                </p>
               </div>
             </div>
           </div>
         </section>
-
         <!-- why gaulingo -->
         <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
           <hgroup class="flex flex-col xl:w-1/2">
@@ -2093,10 +2285,6 @@
         Ask Gali
       </p>
     </div>
-    <style>
-      
-    </style>
-    <!-- Pop-up (Modal) Tips Budaya -->
     <dialog
       id="modal-budaya"
       class="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
@@ -2152,6 +2340,83 @@
         </div>
       </div>
     </dialog>
+    <div
+      id="gali-drawer-backdrop"
+      style="
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(20, 30, 60, 0.35);
+        z-index: 50;
+      "
+    ></div>
+
+    <aside
+      id="gali-drawer"
+      aria-hidden="true"
+      style="display: none; position: fixed; z-index: 55"
+      class="bottom-6 right-6 w-100 h-160 max-h-[86vh] max-md:inset-0 max-md:w-full max-md:h-full max-md:max-h-full max-md:rounded-none bg-white rounded-3xl shadow-2xl border border-nila/10 flex-col overflow-hidden"
+    >
+      <div
+        class="px-5 py-4 border-b border-nila/10 flex items-center justify-between bg-white shrink-0"
+      >
+        <div class="flex items-center gap-3">
+          <div class="gali-avatar-slot w-10 h-10 shrink-0"></div>
+          <div>
+            <p class="font-bold text-nila text-sm leading-tight">Gali</p>
+            <p class="text-xs text-nila/65 flex items-center gap-1.5 mt-0.5">
+              <span
+                style="background-color: var(--color-hijau, #1f6f54)"
+                class="w-2 h-2 rounded-full inline-block"
+              ></span>
+              Online · replies in EN &amp; ID
+            </p>
+          </div>
+        </div>
+        <button
+          type="button"
+          id="gali-drawer-close"
+          style="background-color: var(--color-krem, #f8f1e5)"
+          class="w-8 h-8 rounded-full text-nila flex items-center justify-center hover:opacity-80 cursor-pointer text-sm font-bold"
+          aria-label="Close chat"
+        >
+          ✕
+        </button>
+      </div>
+      <div
+        id="gali-drawer-body"
+        class="flex-1 overflow-y-auto p-5 flex flex-col gap-3.5 bg-white"
+      ></div>
+      <form
+        id="gali-drawer-form"
+        class="p-3.5 border-t border-nila/10 flex items-center gap-2 bg-white shrink-0"
+      >
+        <input
+          id="gali-drawer-input"
+          type="text"
+          placeholder="Ask Gali anything..."
+          style="background-color: var(--color-krem, #f8f1e5)"
+          class="w-full px-4 py-2.5 rounded-full text-sm text-nila placeholder:text-nila/45 outline-none"
+        />
+        <button
+          type="button"
+          data-gali-mic="drawer"
+          style="background-color: var(--color-krem, #f8f1e5)"
+          class="w-10 h-10 shrink-0 rounded-full text-nila flex items-center justify-center hover:opacity-80 cursor-pointer"
+          aria-label="Voice input"
+        >
+          <i class="ph ph-microphone text-base"></i>
+        </button>
+        <button
+          type="submit"
+          style="background-color: var(--color-nila, #243b7a); color: #ffffff"
+          class="w-10 h-10 shrink-0 rounded-full flex items-center justify-center hover:opacity-90 cursor-pointer"
+          aria-label="Send message"
+        >
+          <i class="ph ph-arrow-right text-base"></i>
+        </button>
+      </form>
+    </aside>
     <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
     <script src="./script.js"></script>

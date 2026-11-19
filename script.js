@@ -13,8 +13,9 @@ const translations = {
 
     // SITUATION
     sit_label: "Situations",
-    sit_title: "Find your",
     sit_title: "SITUATION",
+    sit_title_1: "Find your",
+    sit_title_2: "SITUATION",
     sit_subtitle: "Pick where you are. Gali brings the phrases you need there.",
     sit_see_all: "See all 6 situations",
     stall_badge: "Most popular",
@@ -40,7 +41,13 @@ const translations = {
     // PHRASE OF THE DAY
     potd_label: "PHRASE OF THE DAY",
     potd_title: "Thank you very much!",
+    potd_meaning: '"Thank you very much!"',
     potd_btn_listen: "Listen",
+    potd_btn_slow: "Slow",
+    potd_culture_title: "CULTURE TIP",
+    potd_culture_desc:
+      "Give and take things with your right hand. In Indonesia it is a sign of respect.",
+    potd_more_tips: "More culture tips",
 
     // HOW IT WORKS
     how_label: "HOW IT WORKS",
@@ -65,16 +72,6 @@ const translations = {
     phrases_8: "8 phrases",
     phrases_6: "6 phrases",
     total_8: "8 in total",
-
-    // PHRASE OF THE DAY
-    potd_label: "PHRASE OF THE DAY",
-    potd_meaning: '"Thank you very much!"',
-    potd_btn_listen: "Listen",
-    potd_btn_slow: "Slow",
-    potd_culture_title: "CULTURE TIP",
-    potd_culture_desc:
-      "Give and take things with your right hand. In Indonesia it is a sign of respect.",
-    potd_more_tips: "More culture tips",
 
     // PHRASE CARDS
     local_phrases_title: "Local Phrases of Nusantara",
@@ -138,7 +135,7 @@ const translations = {
       "Ask Gali directly — he answers in English and Bahasa Indonesia.",
     faq_footer_btn: "Ask Gali",
 
-    //  FOOTER
+    // FOOTER
     footer_terms: "Terms and Conditions",
     footer_privacy: "Privacy Policy",
     footer_socials: "Socials",
@@ -168,7 +165,7 @@ const translations = {
     // CTA
     cta_tagline: "NO SIGN-UP · NO APP · JUST OPEN IT",
     cta_title_1: "Ready to",
-    cta_title_2: "ngobrol?",
+    cta_title_2: "CONVERSATION?",
     cta_subtitle: "Start with one phrase today. Tomorrow you will use it.",
     cta_btn_explore: "START EXPLORING",
     cta_btn_chat: "CHAT WITH GALI",
@@ -191,6 +188,7 @@ const translations = {
 
     // SITUATION
     sit_label: "SITUASI",
+    sit_title: "SITUASIMU",
     sit_title_1: "Temukan",
     sit_title_2: "SITUASIMU",
     sit_subtitle:
@@ -219,7 +217,13 @@ const translations = {
     // PHRASE OF THE DAY
     potd_label: "FRASA HARI INI",
     potd_title: "Terima kasih banyak!",
+    potd_meaning: '"Terima kasih banyak!"',
     potd_btn_listen: "Dengarkan",
+    potd_btn_slow: "Lambat",
+    potd_culture_title: "TIPS BUDAYA",
+    potd_culture_desc:
+      "Gunakan tangan kanan saat memberi atau menerima sesuatu. Di Indonesia ini adalah bentuk rasa hormat.",
+    potd_more_tips: "Tips budaya lainnya",
 
     // PHRASE CARDS
     local_phrases_title: "Frasa Daerah Nusantara",
@@ -251,15 +255,7 @@ const translations = {
     phrases_6: "6 frasa",
     total_8: "Total 8",
 
-    // PHRASE OF THE DAY
-    potd_label: "FRASA HARI INI",
-    potd_meaning: '"Terima kasih banyak!"',
-    potd_btn_listen: "Dengarkan",
-    potd_btn_slow: "Lambat",
-    potd_culture_title: "TIPS BUDAYA",
-    potd_culture_desc:
-      "Gunakan tangan kanan saat memberi atau menerima sesuatu. Di Indonesia ini adalah bentuk rasa hormat.",
-    potd_more_tips: "Tips budaya lainnya",
+    // WHY GAULINGO
     why_label: "MENGAPA GAULINGO",
     why_title_1: "Bukan buku frasa ",
     why_title_2: "BIASA",
@@ -289,6 +285,8 @@ const translations = {
     ai_btn_chat: "Mulai ngobrol",
     ai_disclaimer:
       "Gali bisa saja salah. Pastikan informasi penting dengan warga lokal.",
+
+    // FAQ
     faq_label: "FAQ",
     faq_title_1: "MASIH PUNYA ",
     faq_title_2: "PERTANYAAN?",
@@ -315,7 +313,7 @@ const translations = {
       "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
     faq_footer_btn: "Tanya Gali",
 
-    //  FOOTER
+    // FOOTER
     footer_terms: "Syarat dan Ketentuan",
     footer_privacy: "Kebijakan Privasi",
     footer_socials: "Media Sosial",
@@ -348,7 +346,7 @@ const translations = {
     cta_title_2: "ngobrol?",
     cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
     cta_btn_explore: "MULAI EKSPLORASI",
-    cta_btn_chat: "NGOBROL SAMA GALI",
+    cta_btn_chat: "NGOBROL SAMA GALI", 
     // FOOD
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
@@ -379,7 +377,6 @@ langButtons.forEach((btn) => {
     const selectedLang = e.target.textContent.trim().toLowerCase();
     setLanguage(selectedLang);
 
-    // Refresh halaman agar animasi teks data-roll tidak berantakan setelah bahasa berubah
     setTimeout(() => {
       window.location.reload();
     }, 100);
@@ -398,6 +395,7 @@ document.querySelectorAll("[data-roll]").forEach((el) => {
     .join("");
   el.innerHTML = `<span class="sr-only">${text}</span><span class="roll inline-flex" aria-hidden="true">${chars}</span>`;
 });
+
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 const lenis =
   !reduceMotion && window.Lenis
@@ -459,45 +457,46 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+
 //  PHRASE IN CARDS
 const dataFrasaLokal = [
-  {
-    daerah: "Minang",
-    asli: "Ba'a kaba?",
-    baca: "ba-AH KAH-bah",
-    arti_id: "Apa kabar?",
-    arti_en: "How are you?",
+  { 
+    daerah: "Minang", 
+    asli: "Ba'a kaba?", 
+    baca: "ba-AH KAH-bah", 
+    arti_id: "Apa kabar?", 
+    arti_en: "How are you?" 
   },
-  {
-    daerah: "Bali",
-    asli: "Matur suksma",
-    baca: "mah-TOOR SUKS-mah",
-    arti_id: "Terima kasih",
-    arti_en: "Thank you",
+  { 
+    daerah: "Bali", 
+    asli: "Matur suksma", 
+    baca: "mah-TOOR SUKS-mah", 
+    arti_id: "Terima kasih", 
+    arti_en: "Thank you" 
   },
-  {
-    daerah: "Sunda",
-    asli: "Sabaraha ieu?",
-    baca: "sah-bah-RAH-hah EE-yuh",
-    arti_id: "Berapa harganya?",
-    arti_en: "How much is this?",
+  { 
+    daerah: "Sunda", 
+    asli: "Sabaraha ieu?", 
+    baca: "sah-bah-RAH-hah EE-yuh", 
+    arti_id: "Berapa harganya?", 
+    arti_en: "How much is this?" 
   },
-  {
-    daerah: "Bugis",
-    asli: "Aga kareba?",
-    baca: "AH-gah kah-RAY-bah",
-    arti_id: "Apa kabar?",
-    arti_en: "How are you?",
-  },
+  { 
+    daerah: "Bugis", 
+    asli: "Aga kareba?", 
+    baca: "AH-gah kah-RAY-bah", 
+    arti_id: "Apa kabar?", 
+    arti_en: "How are you?" 
+  }
 ];
 
 function tampilkanFrasaLokal() {
   const wadah = document.getElementById("wadah-frasa-lokal");
-  if (!wadah) return;
+  if (!wadah) return; 
 
   let isiHTML = "";
-  dataFrasaLokal.forEach((frasa) => {
-    isiHTML += `
+  dataFrasaLokal.forEach(frasa => {
+        isiHTML += `
       <div class="p-6 rounded-3xl bg-nila flex flex-col gap-3">
         <div class="flex justify-between items-start">
           <p class="text-matahari uppercase font-bold tracking-wider text-sm">${frasa.daerah}</p>
@@ -517,7 +516,7 @@ function tampilkanFrasaLokal() {
           <p class="text-sm font-medium text-white/70 flex items-center gap-2">🇬🇧 ${frasa.arti_en}</p>
         </div>
       </div>
-    `;
+    `
   });
 
   wadah.innerHTML = isiHTML;
@@ -525,6 +524,7 @@ function tampilkanFrasaLokal() {
 
 // Jalankan saat web selesai dimuat
 document.addEventListener("DOMContentLoaded", tampilkanFrasaLokal);
+
 
 const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
 if (header) {
@@ -568,6 +568,7 @@ if (header) {
 
   window.addEventListener("scroll", updateHeader, { passive: true });
 }
+
 const howTrack = document.getElementById("how-track");
 if (howTrack) {
   const howPin = howTrack.querySelector(".how-pin");
@@ -621,6 +622,7 @@ if (howTrack) {
     updateHow();
   }
 }
+
 document.querySelectorAll(".faq-item").forEach((item) => {
   const panel = item.querySelector("[data-faq-panel]");
   if (!panel) return;
@@ -725,7 +727,6 @@ if (!reduceMotion) {
     .querySelectorAll(".reveal")
     .forEach((el) => el.classList.add("is-visible"));
 }
-
 {
   const homeMain = document.querySelector("#home.sticky")?.closest("main");
   const mainContent = homeMain || document.querySelector("main");
@@ -780,6 +781,7 @@ if (!reduceMotion) {
     scrollTopBtn.addEventListener("click", () => scrollToY(0));
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   const filterButtons = document.querySelectorAll(".filter-btn");
   const cardsGrid = document.getElementById("cards-grid");
@@ -875,50 +877,4 @@ document.addEventListener("DOMContentLoaded", () => {
       if (event.key === "Escape") setSortMenuOpen(false);
     });
   }
-});
-// kuis di halaman praktik
-const fieldset = document.getElementById("soal1");
-const feedback = document.getElementById("feedback");
-const resetBtn = document.getElementById("resetBtn");
-const STORAGE_KEY = "jawaban_soal_1";
-function terapkanJawaban(jawabanUser) {
-  const kunciJawaban = fieldset.dataset.answer;
-  const isBenar = jawabanUser === kunciJawaban;
-  const radioTerpilih = fieldset.querySelector(`input[value="${jawabanUser}"]`);
-  if (radioTerpilih) radioTerpilih.checked = true;
-
-  fieldset.dataset.answered = "true";
-  fieldset
-    .querySelectorAll("input")
-    .forEach((input) => (input.disabled = true));
-
-  const labelDipilih = fieldset.querySelector(`[data-option="${jawabanUser}"]`);
-  const labelBenar = fieldset.querySelector(`[data-option="${kunciJawaban}"]`);
-
-  if (isBenar) {
-    labelDipilih.dataset.status = "correct";
-    feedback.textContent =
-      "Tepat sekali! Jawaban Anda benar dan sudah tersimpan.";
-    feedback.className =
-      "mt-4 rounded-xl bg-emerald-50 p-3 text-sm font-medium text-emerald-800";
-  } else {
-    labelDipilih.dataset.status = "wrong";
-    labelBenar.dataset.status = "correct";
-    feedback.textContent = `Kurang tepat. Jawaban yang benar adalah opsi ${kunciJawaban.toUpperCase()}.`;
-    feedback.className =
-      "mt-4 rounded-xl bg-rose-50 p-3 text-sm font-medium text-rose-800";
-  }
-
-  resetBtn.classList.remove("hidden");
-}
-const jawabanTersimpan = localStorage.getItem(STORAGE_KEY);
-if (jawabanTersimpan) {
-  terapkanJawaban(jawabanTersimpan);
-}
-fieldset.addEventListener("change", (e) => {
-  if (fieldset.dataset.answered === "true") return;
-
-  const jawabanUser = e.target.value;
-  localStorage.setItem(STORAGE_KEY, jawabanUser);
-  terapkanJawaban(jawabanUser);
 });
