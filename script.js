@@ -510,7 +510,7 @@ function tampilkanFrasaLokal() {
           <p class="text-sm text-white font-medium">${frasa.baca}</p>
         </div>
 
-        <div class="mt-auto flex flex-col gap-1 border-t border-white/20 pt-4 mt-2">
+        <div class="mt-auto flex flex-col gap-1 border-t border-white/20 pt-4 min-mt-2">
           <p class="text-sm font-bold text-white flex items-center gap-2">🇮🇩 ${frasa.arti_id}</p>
           <p class="text-sm font-medium text-white/70 flex items-center gap-2">🇬🇧 ${frasa.arti_en}</p>
         </div>
