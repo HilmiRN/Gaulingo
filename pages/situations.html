@@ -156,7 +156,7 @@
         id="home"
         class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform w-[calc(100vw-80px)] h-[calc(75vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(75vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
-        <div class="w-full relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20">
+        <div class="w-full relative px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6">
           <div class="mb-5 flex items-center gap-5 text-xs">
             <a
              
@@ -179,7 +179,7 @@
           </h1>
 
           <p
-            class="mt-5 max-w-md text-sm leading-relaxed sm:text-base"
+            class="mt-5 max-w-md text-base max-sm:text-sm leading-relaxed"
             data-i18n="sit_page_subtitle"
           >
             Pick the place you are in. Gali brings the phrases, the
@@ -226,14 +226,13 @@
         ></div>
       </section>
       <div
-        class="w-full min-h-screen relative px-6 py-14 sm:px-12 lg:px-16 lg:py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
-      >
+        class="w-full min-h-screen relative max-sm:px-6 max-sm:py-14 max-lg:px-12 px-16 py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20">
         <section class="w-full max-w-7xl mx-auto py-6">
           <div
-            class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8"
+            class="flex flex-row max-sm:flex-col items-center justify-between gap-4 mb-8"
           >
             <div
-              class="flex items-center gap-2.5 overflow-x-auto scrollbar-none pb-1 sm:pb-0"
+              class="flex items-center gap-2.5 overflow-x-auto scrollbar-none pb-0 max-sm:pb-1"
             >
               <button
                 type="button"
@@ -270,7 +269,7 @@
             </div>
 
             <div
-              class="flex items-center justify-between sm:justify-end gap-5 text-sm"
+              class="flex items-center justify-end max-sm:justify-between gap-5 text-sm"
             >
               <p id="situation-count" class="text-nila/60 font-medium">
                 6 situations
@@ -332,7 +331,7 @@
           </div>
           <div
             id="cards-grid"
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+            class="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-6"
           >
             <a
               href="javascript:void(0)"
@@ -650,7 +649,7 @@
           </div>
         </section>
         <div
-          class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md"
+          class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-row max-sm:flex-col items-center justify-between gap-4 shadow-md"
         >
           <div class="flex items-center gap-4">
             <div
@@ -682,16 +681,16 @@
     </main>
     <footer
       id="site-footer"
-      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16"
+      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-16 py-16 max-lg:px-12 max-lg:py-12 max-md:px-6"
     >
       <div
-        class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12"
+        class="max-w-7xl mx-auto flex flex-col justify-between min-h-0 max-lg:min-h-[70vh] gap-12"
       >
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start"
+          class="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 gap-12 max-lg:gap-10 items-start"
         >
           <div
-            class="flex flex-col justify-between h-full gap-12 lg:gap-24"
+            class="flex flex-col justify-between h-full gap-24 max-lg:gap-12"
             data-footer-reveal="fade-up"
           >
             <div class="flex flex-col gap-3 font-semibold text-base">
@@ -759,7 +758,7 @@
                 <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
                 <a
                   href="mailto:halo@gaulingo.id"
-                  class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
+                  class="text-2xl max-md:text-xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
                   >halo@gaulingo.id</a
                 >
               </div>
@@ -770,7 +769,7 @@
                 >
                   Based in
                 </p>
-                <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
+                <p class="text-2xl max-md:text-xl font-bold">Bogor, Indonesia</p>
               </div>
               <div>
                 <p
@@ -780,7 +779,7 @@
                   Languages
                 </p>
                 <p
-                  class="text-xl md:text-2xl font-bold"
+                  class="text-2xl max-md:text-xl font-bold"
                   data-i18n="footer_languages_val"
                 >
                   Indonesian &amp; Sundanese
@@ -793,7 +792,7 @@
               Navigation
             </h3>
             <nav aria-label="Footer navigation">
-              <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
+              <ul class="flex flex-col gap-3 font-semibold text-xl max-md:text-lg">
                 <li>
                   <a
                     href="../index.html"
@@ -846,11 +845,11 @@
             </nav>
           </div>
           <div
-            class="flex flex-col justify-between items-start lg:items-end h-full gap-8"
+            class="flex flex-col justify-between items-end max-lg:items-start h-full gap-8"
             data-footer-reveal="fade-up"
           >
             <div
-              class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70"
+              class="flex items-center gap-2 self-end max-lg:self-start text-xs font-medium text-nila/70"
             >
               <span>Copyright © — 2026 Gaulingo</span>
               <div
@@ -860,28 +859,28 @@
               </div>
             </div>
             <div
-              class="flex items-center gap-6 lg:gap-8 my-auto self-start lg:self-end"
+              class="flex items-center gap-8 max-lg:gap-6 my-auto self-end max-lg:self-start"
             >
               <button
                 id="scroll-to-top"
                 type="button"
                 aria-label="Back to top"
-                class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
+                class="w-16 h-16 max-md:w-14 max-md:h-14 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
               >
-                <i class="ph-bold ph-arrow-up text-xl md:text-2xl"></i>
+                <i class="ph-bold ph-arrow-up text-2xl max-md:text-xl"></i>
               </button>
 
               <h2
-                class="font-unbounded font-black text-nila text-8xl md:text-9xl lg:text-[11rem] leading-none select-none tracking-tighter relative"
+                class="font-unbounded font-black text-nila text-[11rem] max-lg:text-9xl max-md:text-8xl leading-none select-none tracking-tighter relative"
               >
                 G<sup
-                  class="text-xl md:text-2xl font-normal absolute top-4 -right-5 md:-right-6"
+                  class="text-2xl max-md:text-xl font-normal absolute top-4 -right-6 max-md:-right-5"
                   >®</sup
                 >
               </h2>
             </div>
             <p
-              class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
+              class="text-right max-lg:text-left text-nila/70 text-sm max-md:text-xs font-medium leading-relaxed max-w-xs self-end max-lg:self-start"
               data-i18n="footer_tagline"
             >
               Say it like a local.<br />
