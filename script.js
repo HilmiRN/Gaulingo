@@ -1,7 +1,7 @@
 const translations = {
   en: {
     hero_title:
-      " TALK<br class='md:hidden' /> LIKE<br class='max-md:hidden' /> THE LOCALS DO",
+      " TALK<br class='hidden max-md:block' /> LIKE<br class='max-md:hidden' /> THE LOCALS DO",
     hero_subtitle: "Real phrases. Real places. Real manners.",
     hero_explorer_button: "Start exploring",
     hero_chat_button: "Chat with Gali",
@@ -176,7 +176,7 @@ const translations = {
   },
   id: {
     hero_title:
-      "BICARA<br class='md:hidden' /> SEPERTI<br class='max-md:hidden' /> ORANG LOKAL",
+      "BICARA<br class='hidden max-md:block' /> SEPERTI<br class='max-md:hidden' /> ORANG LOKAL",
     hero_subtitle: "Frasa nyata. Tempat nyata. Sopan santun nyata.",
     hero_explorer_button: "Mulai menjelajah",
     hero_chat_button: "Chat dengan Gali",
@@ -346,7 +346,7 @@ const translations = {
     cta_title_2: "ngobrol?",
     cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
     cta_btn_explore: "MULAI EKSPLORASI",
-    cta_btn_chat: "NGOBROL SAMA GALI", 
+    cta_btn_chat: "NGOBROL SAMA GALI",
     // FOOD
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
@@ -457,46 +457,45 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-
 //  PHRASE IN CARDS
 const dataFrasaLokal = [
-  { 
-    daerah: "Minang", 
-    asli: "Ba'a kaba?", 
-    baca: "ba-AH KAH-bah", 
-    arti_id: "Apa kabar?", 
-    arti_en: "How are you?" 
+  {
+    daerah: "Minang",
+    asli: "Ba'a kaba?",
+    baca: "ba-AH KAH-bah",
+    arti_id: "Apa kabar?",
+    arti_en: "How are you?",
   },
-  { 
-    daerah: "Bali", 
-    asli: "Matur suksma", 
-    baca: "mah-TOOR SUKS-mah", 
-    arti_id: "Terima kasih", 
-    arti_en: "Thank you" 
+  {
+    daerah: "Bali",
+    asli: "Matur suksma",
+    baca: "mah-TOOR SUKS-mah",
+    arti_id: "Terima kasih",
+    arti_en: "Thank you",
   },
-  { 
-    daerah: "Sunda", 
-    asli: "Sabaraha ieu?", 
-    baca: "sah-bah-RAH-hah EE-yuh", 
-    arti_id: "Berapa harganya?", 
-    arti_en: "How much is this?" 
+  {
+    daerah: "Sunda",
+    asli: "Sabaraha ieu?",
+    baca: "sah-bah-RAH-hah EE-yuh",
+    arti_id: "Berapa harganya?",
+    arti_en: "How much is this?",
   },
-  { 
-    daerah: "Bugis", 
-    asli: "Aga kareba?", 
-    baca: "AH-gah kah-RAY-bah", 
-    arti_id: "Apa kabar?", 
-    arti_en: "How are you?" 
-  }
+  {
+    daerah: "Bugis",
+    asli: "Aga kareba?",
+    baca: "AH-gah kah-RAY-bah",
+    arti_id: "Apa kabar?",
+    arti_en: "How are you?",
+  },
 ];
 
 function tampilkanFrasaLokal() {
   const wadah = document.getElementById("wadah-frasa-lokal");
-  if (!wadah) return; 
+  if (!wadah) return;
 
   let isiHTML = "";
-  dataFrasaLokal.forEach(frasa => {
-        isiHTML += `
+  dataFrasaLokal.forEach((frasa) => {
+    isiHTML += `
       <div class="p-6 rounded-3xl bg-nila flex flex-col gap-3">
         <div class="flex justify-between items-start">
           <p class="text-matahari uppercase font-bold tracking-wider text-sm">${frasa.daerah}</p>
@@ -516,7 +515,7 @@ function tampilkanFrasaLokal() {
           <p class="text-sm font-medium text-white/70 flex items-center gap-2">🇬🇧 ${frasa.arti_en}</p>
         </div>
       </div>
-    `
+    `;
   });
 
   wadah.innerHTML = isiHTML;
@@ -524,7 +523,6 @@ function tampilkanFrasaLokal() {
 
 // Jalankan saat web selesai dimuat
 document.addEventListener("DOMContentLoaded", tampilkanFrasaLokal);
-
 
 const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
 if (header) {

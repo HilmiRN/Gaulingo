@@ -26,6 +26,7 @@
   --animate-dune-a: dune-a 7s ease-in-out infinite;
   --animate-dune-b: dune-b 9s ease-in-out infinite;
   --animate-float-bubble: float-bubble 4s ease-in-out infinite;
+  --animate-muncul-turun: munculTurun 0.4s ease-out forwards;
 
   @keyframes dune-a {
     0%,
@@ -72,6 +73,17 @@
     }
     100% {
       transform: translateY(-4px);
+    }
+  }
+
+  @keyframes munculTurun {
+    from {
+      opacity: 0;
+      transform: translateY(-2.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 }
@@ -489,14 +501,5 @@ ialog#modal-budaya[open] {
 }
 
 .kotak-animasi {
-  @apply w-full max-w-md animate-[munculTurun_0.4s_ease-out_forwards];
-}
-
-@keyframes munculTurun {
-  from {
-    @apply opacity-0 -translate-y-10;
-  }
-  to {
-    @apply opacity-100 translate-y-0;
-  }
+  @apply w-full max-w-md animate-muncul-turun;
 }
