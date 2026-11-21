@@ -3491,9 +3491,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 (() => {
-  const GEMINI_API_KEY = "";
-  const GEMINI_MODEL = "gemini-2.5-flash";
-
   const scriptUrl =
     document.currentScript?.src || new URL("../script.js", location.href).href;
   const galiAvatarUrl = new URL("./src/assets/Illustration.png", scriptUrl)
@@ -3575,86 +3572,55 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const lang = localStorage.getItem("gaulingo_lang") || "en";
-    const systemPrompt = `You are Gali, a friendly, warm, and culturally savvy Indonesian language buddy on the Gaulingo website.
-Help users speak natural everyday Indonesian AND Indonesian regional languages (Minang, Bali, Sunda, Bugis, Jawa, Batak, Betawi, Banjar, Papua, Makassar).
-Current UI language is "${lang === "id" ? "Bahasa Indonesia" : "English"}". Write the "intro" and "tip" in ${lang === "id" ? "Bahasa Indonesia" : "simple English"}.
-Always return valid JSON matching the schema:
-- "intro": short friendly 1-sentence lead-in (e.g., "Easy! Say this to the seller:" or "In Sundanese, locals say:").
-- "phrase": the exact natural Indonesian or regional phrase to speak out loud (keep it concise and speakable for text-to-speech).
-- "meaning": the translation enclosed in double quotes (e.g., "\\"Not spicy, please.\\"").
-- "tip": 1 short practical cultural etiquette tip, politeness note, or pronunciation hint.
-- "chips": array of 3 short follow-up button labels. Always make the first item "Say it slower", the second a regional translation option (like "Sunda version", "Jawa version", "Bali version", or "Minang version"), and the third "Save phrase".`;
 
     historyArray.push({
       role: "user",
       parts: [{ text: userMessage }],
     });
-    const recentHistory = historyArray.slice(-10);
 
     try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            systemInstruction: {
-              parts: [{ text: systemPrompt }],
-            },
-            contents: recentHistory,
-            generationConfig: {
-              temperature: 0.7,
-              responseMimeType: "application/json",
-              responseSchema: {
-                type: "OBJECT",
-                properties: {
-                  intro: { type: "STRING" },
-                  phrase: { type: "STRING" },
-                  meaning: { type: "STRING" },
-                  tip: { type: "STRING" },
-                  chips: {
-                    type: "ARRAY",
-                    items: { type: "STRING" },
-                  },
-                },
-                required: ["intro", "phrase", "meaning", "tip", "chips"],
-              },
-            },
-          }),
-        },
-      );
-
-      if (!response.ok) {
-        const errData = await response.json().catch(() => ({}));
-        throw new Error(errData?.error?.message || `HTTP ${response.status}`);
-      }
-
-      const data = await response.json();
-      const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (!rawText) throw new Error("Empty response from Gemini");
-
-      const parsed = JSON.parse(rawText);
-      historyArray.push({
-        role: "model",
-        parts: [{ text: rawText }],
+      const response = await fetch("/api/gali", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          lang,
+          history: historyArray.slice(-10),
+        }),
       });
 
-      return {
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(data?.error || `HTTP ${response.status}`);
+      }
+
+      const parsed = data?.reply;
+      if (!parsed || typeof parsed !== "object") {
+        throw new Error("Invalid response from Gali API");
+      }
+
+      const normalizedReply = {
         intro: parsed.intro || "Try saying this:",
         phrase: parsed.phrase || "Permisi, mau tanya...",
-        meaning: parsed.meaning || '"Excuse me, I\'d like to ask..."',
+        meaning: parsed.meaning || '\"Excuse me, I\'d like to ask...\"',
         tip: parsed.tip || "Tip: say it with a warm smile!",
         chips:
           Array.isArray(parsed.chips) && parsed.chips.length
             ? parsed.chips.slice(0, 3)
             : ["Say it slower", "Sunda version", "Save phrase"],
       };
+
+      historyArray.push({
+        role: "model",
+        parts: [{ text: JSON.stringify(normalizedReply) }],
+      });
+
+      return normalizedReply;
     } catch (err) {
       console.error("Gemini Gali Error:", err);
       return {
         intro: "Oops, Gali had a quick connection hiccup:",
         phrase: "Coba sebentar lagi, ya!",
-        meaning: '"Please try again in a moment!"',
+        meaning: '\"Please try again in a moment!\"',
         tip: `Detail: ${err.message}`,
         chips: ["Say it slower", "Save phrase"],
       };
