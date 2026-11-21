@@ -3491,7 +3491,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 (() => {
-  const GEMINI_API_KEY = "PASTE_API_KEY_GEMINI_KAMU_DI_SINI";
+  const GEMINI_API_KEY = "";
   const GEMINI_MODEL = "gemini-2.5-flash";
 
   const scriptUrl =
@@ -3570,7 +3570,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.getItem("gaulingo_gemini_key") || GEMINI_API_KEY
     ).trim();
 
-    if (!apiKey || apiKey === "PASTE_API_KEY_GEMINI_KAMU_DI_SINI") {
+    if (!apiKey || apiKey === "") {
       return jawabanFallback(userMessage);
     }
 
