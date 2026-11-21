@@ -25,7 +25,6 @@
   --animate-wave: wave 2s ease-in-out infinite;
   --animate-dune-a: dune-a 7s ease-in-out infinite;
   --animate-dune-b: dune-b 9s ease-in-out infinite;
-  --animate-float-bubble: float-bubble 4s ease-in-out infinite;
   --animate-muncul-turun: munculTurun 0.4s ease-out forwards;
 
   @keyframes dune-a {
@@ -57,35 +56,42 @@
       transform: rotate(12deg);
     }
   }
-
-  @keyframes float-bubble {
-    0%,
-    100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
-  @keyframes bounceUp {
-    0% {
-      transform: translateY(0);
-    }
-    100% {
-      transform: translateY(-4px);
-    }
-  }
-
   @keyframes munculTurun {
     from {
       opacity: 0;
-      transform: translateY(-2.5rem);
+      transform: translateY(-40px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
+}
+/* apply */
+.btn {
+  @apply px-6 py-3.75 rounded-full gap-2.5 text-white font-semibold text-lg  bg-nila hover:bg-[#24407a] focus:border focus:border-biru-aksen transition-all duration-300;
+}
+.btn2 {
+  @apply flex gap-2.5 px-6 py-3.75 border-2 items-center bg-white text-nila transition-all duration-300 hover:bg-krem-tua font-semibold text-lg border-nila/35 rounded-full focus:border focus:border-biru-aksen;
+}
+
+/* parallax hero: mengecil pelan saat di-scroll, teks bergeser naik lebih cepat (--hero-p diisi JS) */
+.hero-parallax {
+  transform: scale(calc(1 - var(--hero-p, 0) * 0.14));
+  transform-origin: 50% 0;
+  will-change: transform;
+}
+.hero-parallax__text {
+  transform: translateY(calc(var(--hero-p, 0) * -18%));
+  opacity: calc(1 - var(--hero-p, 0) * 0.6);
+}
+
+/* header: bahasa | logo | menu (pola agrumeafarm.it) */
+:root {
+  --ease-premium: cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -352,6 +358,27 @@ body {
   .reveal.is-visible {
     @apply opacity-100 translate-x-0 translate-y-0 scale-100;
   }
+
+  .faq-panel {
+    @apply grid grid-rows-[0fr] overflow-hidden opacity-0 transition-[grid-template-rows,opacity,margin] duration-500 ease-premium;
+  }
+
+  .faq-panel.is-open {
+    @apply mt-3 grid-rows-[1fr] opacity-100;
+  }
+
+  .faq-panel__content {
+    @apply min-h-0 overflow-hidden rounded-2xl border border-white/60 bg-pasir/70 p-5 shadow-sm flex items-center gap-4 transition-transform duration-500 ease-premium max-md:items-start max-md:gap-3 max-md:p-4;
+  }
+
+  .faq-panel:not(.is-open) .faq-panel__content {
+    @apply -translate-y-2;
+  }
+
+  .faq-panel.is-open .faq-panel__content {
+    @apply translate-y-0;
+  }
+
   .site-footer {
     @apply sticky bottom-0 -z-1 w-full bg-matahari text-nila max-md:relative max-md:z-0;
   }
@@ -369,6 +396,10 @@ body {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .faq-panel,
+  .faq-panel__content {
+    transition: none !important;
+  }
   [data-footer-reveal] {
     opacity: 1 !important;
     transform: none !important;
@@ -436,68 +467,17 @@ body {
   .site-menu__rise,
   .roll-top,
   .roll-bot,
-  .reveal,
-  .site-footer__social-btn {
-    @apply transform-none! transition-none!;
+  .site-header,
+  .how-panel > *,
+  .how-answer__check {
+    transition: none !important;
+  }
+  .how-wave i {
+    animation: none !important;
   }
 }
-
-.faq-panel {
-  @apply grid grid-rows-[0fr] overflow-hidden mt-0 opacity-0 -translate-y-2 [transition:grid-template-rows_460ms_cubic-bezier(0.2,0.75,0.25,1),margin-top_460ms_cubic-bezier(0.2,0.75,0.25,1),opacity_300ms_ease,transform_460ms_cubic-bezier(0.2,0.75,0.25,1)];
-}
-
-.faq-panel.is-open {
-  @apply grid-rows-[1fr] mt-3 opacity-100 translate-y-0;
-}
-
-.faq-panel__content {
-  @apply min-h-0 overflow-hidden bg-pasir p-5 rounded-2xl flex items-center gap-4 [transition:opacity_300ms_ease,transform_420ms_cubic-bezier(0.2,0.75,0.25,1)];
-}
-
-.faq-panel__content > * {
-  @apply opacity-0 translate-y-2 [transition:opacity_240ms_ease,transform_420ms_cubic-bezier(0.2,0.75,0.25,1)];
-}
-
-.faq-panel.is-open .faq-panel__content > * {
-  @apply opacity-100 translate-y-0;
-}
-
-.faq-panel.is-open .faq-panel__content > :first-child {
-  @apply delay-[60ms];
-}
-
-.faq-panel.is-open .faq-panel__content > :last-child {
-  @apply delay-[110ms];
-}
-
-.faq-item {
-  @apply py-3 [transition:padding-block_420ms_cubic-bezier(0.2,0.75,0.25,1)];
-}
-
-.faq-item.is-open {
-  @apply py-6;
-}
-
-.faq-item h3,
-.faq-item [data-faq-icon] {
-  @apply [transition:color_280ms_ease,background-color_280ms_ease,border-color_280ms_ease,transform_320ms_cubic-bezier(0.2,0.75,0.25,1)];
-}
-.faq-item.is-open [data-faq-icon] {
-  @apply transform-[scale(1.06)];
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .faq-panel,
-  .faq-panel__content,
-  .faq-panel__content > *,
-  .faq-item,
-  .faq-item h3,
-  .faq-item [data-faq-icon] {
-    @apply transition-none;
-  }
-}
-ialog#modal-budaya[open] {
-  @apply fixed inset-0 w-full h-full max-w-full max-h-full m-0 p-5 box-border flex items-center justify-center bg-transparent border-none;
+dialog#modal-budaya[open] {
+  @apply fixed inset-0 size-full max-w-full max-h-full m-0 p-5 box-border flex items-center justify-center bg-transparent border-none;
 }
 
 .kotak-animasi {
