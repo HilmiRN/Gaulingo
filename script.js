@@ -324,14 +324,14 @@ const translations = {
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
 
-    // call to acrion
+    // call to action
     cta_tagline: "TANPA DAFTAR · TANPA APLIKASI · LANGSUNG BUKA",
     cta_title_1: "Siap mulai",
     cta_title_2: "ngobrol?",
     cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
     cta_btn_explore: "MULAI EKSPLORASI",
     cta_btn_chat: "NGOBROL SAMA GALI",
-    // foood
+    // food
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
   },
@@ -1660,7 +1660,7 @@ const dataFrasaLokal = [
     arti_en: "Very pleased to get to know you!",
   },
 
-  // bahasa batak
+  // --- BATAK ---
   {
     daerah: "Batak",
     topik: "terima kasih",
@@ -2628,7 +2628,7 @@ const dataFrasaLokal = [
     arti_en: "I'm so glad to get to know you!",
   },
 
-  // bahasa makasar
+  // --- MAKASSAR ---
   {
     daerah: "Makassar",
     topik: "terima kasih",
@@ -3771,7 +3771,7 @@ Always return valid JSON matching the schema:
             aria-modal="true"
             aria-label="Chat with Gali"
             aria-hidden="true"
-            class="fixed right-6 bottom-6 z-[60] hidden h-160 w-100 max-h-[86vh] flex-col overflow-hidden rounded-3xl border border-nila/10 bg-white shadow-2xl max-md:inset-0 max-md:h-full max-md:max-h-full max-md:w-full max-md:rounded-none"
+            class="fixed right-6 bottom-6 z-60 hidden h-160 w-100 max-h-[86vh] flex-col overflow-hidden rounded-3xl border border-nila/10 bg-white shadow-2xl max-md:inset-0 max-md:h-full max-md:max-h-full max-md:w-full max-md:rounded-none"
           >
             <div class="flex shrink-0 items-center justify-between border-b border-nila/10 bg-white px-5 py-4">
               <div class="flex items-center gap-3">
