@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaulingo || Homepage</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
     <link rel="stylesheet" href="./src/output.css" />
     <link rel="icon" type="image/x-icon" href="" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
@@ -15,9 +18,18 @@
       rel="stylesheet"
     />
   </head>
+<<<<<<< Updated upstream
   <body class="bg-[#fff8f8] font-figtree">
     <!-- header: bahasa di kiri, logo di tengah, tombol menu di kanan -->
     <header id="site-header" class="site-header">
+=======
+
+  <body
+    class="font-figtree relative scrollbar-none overflow-x-hidden"
+    data-page="home"
+  >
+    <header id="site-header" class="site-header flex justify-between">
+>>>>>>> Stashed changes
       <span class="site-header__glass" aria-hidden="true"></span>
       <div class="site-header__side">
         <div class="site-lang" role="group" aria-label="Language">
@@ -122,6 +134,7 @@
         </ul>
         <!-- link sekunder menempel di dasar layar, terpisah dari daftar menu yang di tengah -->
         <ul class="site-menu__secondary">
+<<<<<<< Updated upstream
           <li><a href="#" class="roll-host"><i class="ph-fill ph-chat-circle-dots"></i><span data-roll>Chat with Gali</span></a></li>
           <li><a href="#" class="roll-host"><span data-roll>Instagram</span></a></li>
           <li><a href="#" class="roll-host"><span data-roll>TikTok</span></a></li>
@@ -264,10 +277,45 @@
         >
           <h1
             class="font-unbounded font-black text-[calc(104*var(--u))] leading-[0.96] tracking-[-0.03em]"
+=======
+          <li>
+            <a href="#" class="roll-host" data-open-gali
+              ><i class="ph-fill ph-chat-circle-dots"></i>
+              <p data-roll>Chat with Gali</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/" class="roll-host">
+              <p data-roll>Instagram</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/" class="roll-host">
+              <p data-roll>TikTok</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/" class="roll-host">
+              <p data-roll>YouTube</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main id="main-content" class="relative w-full overflow-x-clip">
+      <!-- hero -->
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <h1
+            id="hero-title"
+            class="hero__title font-unbounded font-black"
+            data-i18n="hero_title"
+>>>>>>> Stashed changes
           >
             TALK LIKE<br />
             THE LOCALS DO
           </h1>
+<<<<<<< Updated upstream
           <p
             class="mt-[calc(32*var(--u))] font-medium text-[max(16px,calc(22*var(--u)))]"
           >
@@ -751,6 +799,895 @@
           <div class="flex flex-col h-fit pl-5 gap-3 border-l-2 border-pasir">
             <p class="flex items-center gap-4 font-bold text-pasir">
               <i class="ph-bold ph-lightbulb"></i> CULTURE TIP
+=======
+          <p class="hero__sub font-medium" data-i18n="hero_subtitle">
+            Real phrases. Real places. Real manners.
+          </p>
+          <div class="hero__cta">
+            <a href="#situations" class="btn btn--nila">
+              <span data-i18n="hero_explorer_button">Start exploring</span>
+              <i class="ph-bold ph-arrow-right btn__icon"></i>
+            </a>
+            <button type="button" class="btn btn--white" data-open-gali>
+              <i class="ph-bold ph-chat-circle-dots btn__icon"></i>
+              <span data-i18n="hero_chat_button">Chat with Gali</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero__stage" aria-hidden="true">
+          <svg
+            viewBox="0 0 1360 930"
+            role="img"
+            class="absolute bottom-0 left-1/2 -translate-x-1/2 w-auto max-w-none"
+          >
+            <defs>
+              <clipPath id="mouth">
+                <path
+                  d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
+                />
+              </clipPath>
+            </defs>
+            <g class="hero-px hero-sun"><circle cx="680" cy="740" r="330" class="fill-matahari" />
+            <circle
+              cx="680"
+              cy="730"
+              r="430"
+              fill="none"
+              stroke-width="2"
+              stroke-dasharray="9 15"
+              class="stroke-krem"
+            /></g>
+            <g class="fill-krem/60">
+              <g class="hero-cloud hero-cloud--a">
+                <rect x="104" y="340" width="180" height="44" rx="22" />
+                <rect x="164" y="370" width="120" height="44" rx="22" />
+              </g>
+              <g class="hero-cloud hero-cloud--b">
+                <rect x="1068" y="300" width="196" height="44" rx="22" />
+                <rect x="1134" y="330" width="130" height="44" rx="22" />
+              </g>
+            </g>
+            <g class="hero-px hero-dune-far"><path
+              class="fill-[#e6b084] motion-safe:animate-dune-a"
+              d="M-900 742 C-650 700 -420 790 -200 750 C50 670 280 686 510 742 C760 806 940 694 1190 710 C1380 722 1480 758 1560 742 C1780 700 2020 770 2260 735 L2260 930 L-900 930Z"
+            /></g>
+            <g class="hero-px hero-dune-near"><path
+              class="fill-bukit motion-safe:animate-dune-b"
+              d="M-900 825 C-660 790 -430 865 -200 835 C30 775 220 795 400 835 C610 885 830 785 1060 815 C1280 845 1440 805 1560 825 C1790 855 2030 795 2260 820 L2260 930 L-900 930Z"
+            /></g>
+            <g class="hero-gali">
+            <path
+              class="fill-[#ff6b4a]"
+              d="M528 930C540 882 580 852 622 846L740 846C790 852 818 884 838 930Z"
+            />
+            <path class="fill-krem" d="M640 846L720 846L702 930L658 930Z" />
+            <path
+              class="fill-terakota"
+              d="M618 862L660 880L664 912Z M742 862L700 880L696 912Z"
+            />
+            <rect
+              x="650"
+              y="798"
+              width="60"
+              height="52"
+              rx="10"
+              class="fill-bukit"
+            />
+            <path
+              d="M641 806Q680 828 719 806L719 814Q680 836 641 814Z"
+              class="fill-terakota"
+            />
+            <path
+              d="M600 850Q640 894 680 894Q720 894 760 850"
+              fill="none"
+              stroke-width="14"
+              stroke-linecap="round"
+              class="stroke-nila"
+            />
+            <rect
+              x="584"
+              y="822"
+              width="36"
+              height="54"
+              rx="12"
+              class="fill-nila"
+            />
+            <rect
+              x="742"
+              y="822"
+              width="36"
+              height="54"
+              rx="12"
+              class="fill-nila"
+            />
+            <circle cx="601" cy="849" r="7" class="fill-[#ffd23f]" />
+            <circle cx="760" cy="849" r="7" class="fill-[#ffd23f]" />
+            <path
+              class="fill-[#ff6b4a]"
+              d="M838 772L882 768C886 842 872 902 836 930L792 930C818 890 836 842 838 772Z"
+            />
+            <path
+              d="M846 832L802 916"
+              fill="none"
+              stroke-width="14"
+              stroke-linecap="round"
+              class="stroke-terakota"
+            />
+            <g transform="translate(0, 22)">
+              <ellipse cx="577" cy="690" rx="17" ry="24" class="fill-bukit" />
+              <ellipse
+                cx="785"
+                cy="690"
+                rx="17"
+                ry="24"
+                class="fill-[#b87d54]"
+              />
+              <ellipse
+                cx="681"
+                cy="686"
+                rx="104"
+                ry="112"
+                class="fill-[#b87d54]"
+              />
+              <ellipse cx="672" cy="686" rx="98" ry="112" class="fill-bukit" />
+              <g id="rambut-kribo">
+                <g class="fill-[#1b1b2f]">
+                  <circle cx="680" cy="525" r="32" />
+                  <circle cx="645" cy="535" r="30" />
+                  <circle cx="715" cy="535" r="30" />
+                  <circle cx="615" cy="552" r="28" />
+                  <circle cx="745" cy="552" r="28" />
+                  <circle cx="588" cy="580" r="28" />
+                  <circle cx="572" cy="612" r="26" />
+                  <circle cx="575" cy="640" r="22" />
+                  <circle cx="772" cy="580" r="28" />
+                  <circle cx="788" cy="612" r="26" />
+                  <circle cx="785" cy="640" r="22" />
+                  <circle cx="680" cy="565" r="45" />
+                  <circle cx="625" cy="590" r="38" />
+                  <circle cx="735" cy="590" r="38" />
+                  <circle cx="680" cy="596" r="30" />
+                  <path d="M 572 640 Q 570 662 578 668 Q 582 652 584 638 Z" />
+                  <path d="M 788 640 Q 790 662 782 668 Q 778 652 776 638 Z" />
+                </g>
+                <g class="fill-[#3a3a5c]">
+                  <circle cx="635" cy="545" r="10" />
+                  <circle cx="695" cy="535" r="10" />
+                  <circle cx="735" cy="555" r="9" />
+                  <circle cx="602" cy="578" r="8" />
+                </g>
+              </g>
+              <g
+                fill="none"
+                stroke-width="9"
+                stroke-linecap="round"
+                class="stroke-[#1b1b30]"
+              >
+                <path d="M626 650L662 646" />
+                <path d="M700 645L736 651" />
+              </g>
+              <ellipse
+                cx="642"
+                cy="682"
+                rx="11"
+                ry="15"
+                class="fill-[#1b1b30]"
+              />
+              <ellipse
+                cx="717"
+                cy="682"
+                rx="11"
+                ry="15"
+                class="fill-[#1b1b30]"
+              />
+              <circle cx="646" cy="676" r="3.5" class="fill-krem" />
+              <circle cx="721" cy="676" r="3.5" class="fill-krem" />
+              <path
+                d="M679 690C672 705 676 718 686 722"
+                fill="none"
+                stroke-width="4"
+                stroke-linecap="round"
+                class="stroke-terakota"
+              />
+              <ellipse
+                cx="617"
+                cy="716"
+                rx="17"
+                ry="8"
+                class="fill-[#e0836b]"
+              />
+              <ellipse
+                cx="743"
+                cy="716"
+                rx="17"
+                ry="8"
+                class="fill-[#e0836b]"
+              />
+              <path
+                d="M641 741Q680 752 719 741Q716 772 680 773Q644 772 641 741Z"
+                class="fill-[#5b1b1b]"
+              />
+              <g clip-path="url(#mouth)">
+                <ellipse
+                  cx="680"
+                  cy="770"
+                  rx="15"
+                  ry="9"
+                  class="fill-[#ff6b4a]"
+                />
+                <path
+                  d="M641 741Q680 752 719 741L717 750Q680 760 643 750Z"
+                  class="fill-krem"
+                />
+              </g>
+            </g>
+            </g>
+            <g class="text-base font-semibold">
+              <g class="hero-bubble" style="--n:1"><g transform="rotate(-6 985 558)">
+                <rect
+                  x="911"
+                  y="536"
+                  width="148"
+                  height="44"
+                  rx="22"
+                  class="fill-white"
+                />
+                <text
+                  x="985"
+                  y="559"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  class="fill-nila"
+                >
+                  Halo, aku Gali!
+                </text>
+              </g></g>
+              <g class="hero-bubble" style="--n:2"><g transform="rotate(4 972 714)">
+                <rect
+                  x="902"
+                  y="692"
+                  width="140"
+                  height="44"
+                  rx="22"
+                  class="fill-white"
+                />
+                <text
+                  x="972"
+                  y="715"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  class="fill-nila"
+                >
+                  Hatur nuhun
+                </text>
+              </g></g>
+              <g class="hero-bubble" style="--n:3"><g transform="rotate(6 385 708)">
+                <rect
+                  x="297"
+                  y="686"
+                  width="176"
+                  height="44"
+                  rx="22"
+                  class="fill-biru-pucat"
+                />
+                <text
+                  x="385"
+                  y="709"
+                  text-anchor="middle"
+                  dominant-baseline="middle"
+                  class="fill-nila"
+                >
+                  Berapa harganya?
+                </text>
+              </g></g>
+            </g>
+            <g class="hero-gali hero-gali--hand"><g class="origin-bottom transform-fill motion-safe:animate-wave">
+              <g class="fill-bukit">
+                <ellipse
+                  cx="822"
+                  cy="748"
+                  rx="14"
+                  ry="24"
+                  transform="rotate(-50 822 748)"
+                />
+                <rect x="836" y="676" width="14" height="60" rx="7" />
+                <rect x="851" y="667" width="14" height="64" rx="7" />
+                <rect x="866" y="670" width="14" height="62" rx="7" />
+                <rect x="880" y="686" width="14" height="52" rx="7" />
+                <ellipse cx="862" cy="736" rx="33" ry="34" />
+              </g>
+              <path
+                d="M848 752Q860 762 874 752"
+                fill="none"
+                stroke-width="3"
+                stroke-linecap="round"
+                class="stroke-terakota"
+              />
+            </g>
+            <path
+              d="M870 622Q888 632 886 648Q900 658 903 677"
+              fill="none"
+              stroke-width="6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="stroke-[#ffd23f]"
+            /></g>
+          </svg>
+        </div>
+      </section>
+
+      <!-- sheet: everything after the hero; slides up over the sticky hero -->
+      <div class="sheet">
+      <!-- ticker: under hero -->
+      <div class="ticker ticker--rust" role="marquee" aria-label="Berapa harganya? Permisi, numpang tanya. Terima kasih. Boleh kurang?">
+        <div class="ticker__track">
+          <ul class="ticker__group">
+            <li>Berapa harganya?</li><li class="ticker__sep">✱</li>
+            <li>Permisi, numpang tanya</li><li class="ticker__sep">✱</li>
+            <li>Terima kasih</li><li class="ticker__sep">✱</li>
+            <li>Boleh kurang?</li><li class="ticker__sep">✱</li>
+            <li>Kiri, Bang!</li><li class="ticker__sep">✱</li>
+          </ul>
+          <ul class="ticker__group" aria-hidden="true">
+            <li>Berapa harganya?</li><li class="ticker__sep">✱</li>
+            <li>Permisi, numpang tanya</li><li class="ticker__sep">✱</li>
+            <li>Terima kasih</li><li class="ticker__sep">✱</li>
+            <li>Boleh kurang?</li><li class="ticker__sep">✱</li>
+            <li>Kiri, Bang!</li><li class="ticker__sep">✱</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- situations -->
+      <section id="situations" class="section" aria-labelledby="sit-title">
+        <hgroup class="flex items-end justify-between gap-6 max-md:flex-col max-md:items-start">
+          <div class="flex flex-col gap-3" data-stagger>
+            <p class="chip" data-reveal data-i18n="sit_label">SITUATIONS</p>
+            <h2 id="sit-title" class="h-section" data-reveal="mask">
+              <span data-i18n="sit_title_1">Find your</span>
+              <span class="h-accent" data-i18n="sit_title_2">SITUATION</span>
+            </h2>
+            <p class="lede" data-reveal data-i18n="sit_subtitle">
+              Pick where you are. Gali brings the phrases you need there.
+            </p>
+          </div>
+          <a href="./pages/situations.html" class="btn btn--outline max-md:hidden" data-reveal="right">
+            <span data-i18n="sit_see_all">See all 6 situations</span>
+            <i class="ph-bold ph-arrow-right btn__icon"></i>
+          </a>
+        </hgroup>
+
+        <div class="sit-grid" data-stagger="110">
+          <!-- featured: STALL -->
+          <article class="sit-card sit-card--stall" data-reveal="card">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="292"
+              height="271"
+              viewBox="0 0 292 271"
+              fill="none"
+              stroke="currentColor"
+              class="sit-card__art"
+              aria-hidden="true"
+            >
+              <path
+                d="M40.3747 164.325C33.7579 161.986 27.6777 158.186 22.6204 153.129C13.7125 144.221 8.70801 132.139 8.70801 119.542V87.8749L40.3747 8.70825H262.041L293.708 87.8749V119.542C293.708 132.139 288.704 144.221 279.796 153.129C274.738 158.186 268.658 161.986 262.041 164.325M8.70801 87.8749H293.708M262.041 164.325C257.003 166.106 251.654 167.042 246.208 167.042C233.61 167.042 221.528 162.037 212.62 153.129C203.712 144.221 198.708 132.139 198.708 119.542C198.708 132.139 193.704 144.221 184.796 153.129C175.888 162.037 163.806 167.042 151.208 167.042C138.61 167.042 126.528 162.037 117.62 153.129C108.712 144.221 103.708 132.139 103.708 119.542C103.708 132.139 98.7036 144.221 89.7956 153.129C80.8876 162.037 68.8058 167.042 56.208 167.042C50.7622 167.042 45.4129 166.106 40.3747 164.325M262.041 164.325V262.042H40.3747V164.325M262.041 164.325V151.208M40.3747 164.325V151.208"
+                stroke-width="17.4167"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <div class="relative flex h-full flex-col">
+              <div class="flex items-center justify-between gap-4">
+                <p class="rounded-full bg-white px-3 py-1.5 text-[13px] font-bold leading-4.5 text-terakota" data-i18n="stall_badge">Most popular</p>
+                <p class="text-right text-sm font-medium max-sm:text-xs" data-i18n="stall_info">8 phrases · Local Phrases</p>
+              </div>
+              <h3 class="mt-6 font-unbounded text-[clamp(2.4rem,4.4vw,3.5rem)] font-black uppercase leading-none tracking-[-0.03em]" data-i18n="stall_title">STALL</h3>
+              <p class="mt-4 max-w-120 text-[17px] leading-6.5" data-i18n="stall_desc">
+                Buying snacks, asking prices, and saying thanks at a small food stall.
+              </p>
+              <ul class="mt-5 space-y-2.5">
+                <li class="stall-phrase">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">Berapa harganya?</p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_how_much">How much is this?</p>
+                  </div>
+                  <button type="button" class="play-btn" data-say="Berapa harganya?" data-audio="./src/assets/audio/berapa-harganya.mp3" aria-label="Play: Berapa harganya?">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+                <li class="stall-phrase">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">Boleh kurang?</p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_cheaper">Can it be cheaper?</p>
+                  </div>
+                  <button type="button" class="play-btn" data-say="Boleh kurang?" data-audio="./src/assets/audio/boleh-kurang.mp3" aria-label="Play: Boleh kurang?">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+                <li class="stall-phrase">
+                  <div>
+                    <p class="text-lg font-semibold leading-6 text-nila">Terima kasih, Bu!</p>
+                    <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_thanks">Thank you, ma'am!</p>
+                  </div>
+                  <button type="button" class="play-btn" data-say="Terima kasih, Bu!" data-audio="./src/assets/audio/terimakasih-bu.mp3" aria-label="Play: Terima kasih, Bu!">
+                    <i class="ph-fill ph-play"></i>
+                  </button>
+                </li>
+              </ul>
+              <a href="./pages/situations.html" class="sit-card__open btn btn--ghost-light mt-5 w-fit">
+                <span data-i18n="btn_open_stall">Open Stall</span>
+                <i class="ph-bold ph-arrow-right btn__icon"></i>
+              </a>
+            </div>
+          </article>
+
+          <a href="./pages/situations.html" class="sit-card sit-card--sm bg-biru-muda text-nila" data-reveal="card">
+            <span class="sit-card__top">
+              <i class="ph-bold ph-graduation-cap sit-card__icon bg-white/60"></i>
+              <i class="ph-bold ph-arrow-up-right sit-card__arrow"></i>
+            </span>
+            <span class="sit-card__body">
+              <span class="sit-card__title" data-i18n="card_school_title">SCHOOL</span>
+              <span class="sit-card__desc" data-i18n="card_school_desc">In class &amp; with teachers · 5 phrases</span>
+            </span>
+          </a>
+          <a href="./pages/situations.html" class="sit-card sit-card--sm bg-pasir text-nila" data-reveal="card">
+            <span class="sit-card__top">
+              <i class="ph-bold ph-van sit-card__icon bg-white/60"></i>
+              <i class="ph-bold ph-arrow-up-right sit-card__arrow"></i>
+            </span>
+            <span class="sit-card__body">
+              <span class="sit-card__title" data-i18n="card_minibus_title">MINIBUS</span>
+              <span class="sit-card__desc" data-i18n="card_minibus_desc">Getting around town · 6 phrases</span>
+            </span>
+          </a>
+          <a href="./pages/situations.html" class="sit-card sit-card--sm bg-matahari text-nila" data-reveal="card">
+            <span class="sit-card__top">
+              <i class="ph-bold ph-hand-waving sit-card__icon bg-white/60"></i>
+              <i class="ph-bold ph-arrow-up-right sit-card__arrow"></i>
+            </span>
+            <span class="sit-card__body">
+              <span class="sit-card__title" data-i18n="card_smalltalk_title">SMALL TALK</span>
+              <span class="sit-card__desc" data-i18n="card_smalltalk_desc">Meeting new people · 10 phrases</span>
+            </span>
+          </a>
+          <a href="./pages/situations.html" class="sit-card sit-card--sm bg-nila text-white" data-reveal="card">
+            <span class="sit-card__top">
+              <i class="ph-bold ph-warning sit-card__icon bg-white/20"></i>
+              <i class="ph-bold ph-arrow-up-right sit-card__arrow"></i>
+            </span>
+            <span class="sit-card__body">
+              <span class="sit-card__title" data-i18n="card_emergency_title">EMERGENCY</span>
+              <span class="sit-card__desc text-white/85" data-i18n="card_emergency_desc">When you need help · 6 phrases</span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <!-- how it works -->
+      <section id="how-section" class="section" aria-labelledby="how-title">
+        <hgroup class="flex flex-col gap-3" data-stagger>
+          <p class="chip chip--sun w-fit" data-reveal data-i18n="how_label">HOW IT WORKS</p>
+          <h2 id="how-title" class="h-section" data-reveal="mask">
+            <span data-i18n="how_title_1">Three steps to your first </span>
+            <span class="h-accent" data-i18n="how_title_2">CONVERSATION</span>
+          </h2>
+          <p class="lede" data-reveal data-i18n="how_desc">
+            Start from the left. Each step takes just seconds.
+          </p>
+        </hgroup>
+
+        <div class="how" id="how" data-stagger="90">
+          <div class="how__tabs" role="tablist" aria-orientation="vertical" aria-label="Steps">
+            <button type="button" role="tab" id="how-tab-1" aria-controls="how-panel-1" aria-selected="true" class="how-step is-active" style="--c: var(--color-nila)" data-step="1" data-reveal="left">
+              <span class="how-step__num">1</span>
+              <span class="how-step__text">
+                <span class="how-step__title" data-i18n="how_step1_title">Pick your place</span>
+                <span class="how-step__desc" data-i18n="how_step1_desc">Warung, school, angkot — choose the situation you are in.</span>
+              </span>
+            </button>
+            <button type="button" role="tab" id="how-tab-2" aria-controls="how-panel-2" aria-selected="false" tabindex="-1" class="how-step" style="--c: var(--color-terakota)" data-step="2" data-reveal="left">
+              <span class="how-step__num">2</span>
+              <span class="how-step__text">
+                <span class="how-step__title" data-i18n="how_step2_title">Listen &amp; repeat</span>
+                <span class="how-step__desc" data-i18n="how_step2_desc">Play it, slow it down if you need, then say it out loud.</span>
+              </span>
+            </button>
+            <button type="button" role="tab" id="how-tab-3" aria-controls="how-panel-3" aria-selected="false" tabindex="-1" class="how-step" style="--c: var(--color-hijau)" data-step="3" data-reveal="left">
+              <span class="how-step__num">3</span>
+              <span class="how-step__text">
+                <span class="how-step__title" data-i18n="how_step3_title">Quiz with Gali</span>
+                <span class="how-step__desc" data-i18n="how_step3_desc">Short rounds to make it stick, plus the manners behind it.</span>
+              </span>
+            </button>
+          </div>
+
+          <div class="how__stage" data-reveal="wipe">
+            <!-- Panel 1 -->
+            <div role="tabpanel" id="how-panel-1" aria-labelledby="how-tab-1" class="how-panel is-active" data-panel="1">
+              <p class="how-panel__label" data-i18n="how_panel_step1">STEP 1 · PICK YOUR PLACE</p>
+              <h3 class="how-panel__title" data-i18n="how_panel_title">Where are you today?</h3>
+              <div class="how-sit" role="group" aria-label="Situations">
+                <button type="button" class="how-sit__btn bg-terakota text-white" data-sit="stall" aria-pressed="true">
+                  <span class="how-sit__name" data-i18n="cat_shop">Local Shop</span>
+                  <span class="how-sit__meta" data-i18n="phrases_8">8 phrases</span>
+                </button>
+                <button type="button" class="how-sit__btn bg-biru-muda text-nila" data-sit="school" aria-pressed="false">
+                  <span class="how-sit__name" data-i18n="cat_school">School</span>
+                  <span class="how-sit__meta" data-i18n="phrases_8">8 phrases</span>
+                </button>
+                <button type="button" class="how-sit__btn bg-pasir text-nila" data-sit="transit" aria-pressed="false">
+                  <span class="how-sit__name" data-i18n="cat_transit">Public Transit</span>
+                  <span class="how-sit__meta" data-i18n="phrases_8">8 phrases</span>
+                </button>
+                <button type="button" class="how-sit__btn bg-matahari text-nila" data-sit="intro" aria-pressed="false">
+                  <span class="how-sit__name" data-i18n="cat_intro">Introduction</span>
+                  <span class="how-sit__meta" data-i18n="phrases_8">8 phrases</span>
+                </button>
+                <button type="button" class="how-sit__btn bg-nila text-white" data-sit="emergency" aria-pressed="false">
+                  <span class="how-sit__name" data-i18n="cat_emergency">Emergency</span>
+                  <span class="how-sit__meta" data-i18n="phrases_6">6 phrases</span>
+                </button>
+                <a href="./pages/situations.html" class="how-sit__btn bg-krem text-nila">
+                  <span class="how-sit__name flex items-center gap-2"><span data-i18n="cat_all">All Situations</span><i class="ph-bold ph-arrow-right text-lg"></i></span>
+                  <span class="how-sit__meta" data-i18n="total_8">8 in total</span>
+                </a>
+              </div>
+              <div class="how-preview" aria-live="polite">
+                <ul id="how-preview-list" class="flex flex-wrap gap-2"></ul>
+                <button type="button" class="btn btn--nila btn--sm" data-go-step="2">
+                  <span data-i18n="how_next_listen">Listen to these</span>
+                  <i class="ph-bold ph-arrow-right btn__icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel 2 -->
+            <div role="tabpanel" id="how-panel-2" aria-labelledby="how-tab-2" class="how-panel" data-panel="2" hidden>
+              <p class="how-panel__label text-terakota" data-i18n="how_panel_step2">STEP 2 · LISTEN &amp; REPEAT</p>
+              <h3 id="how-phrase" class="how-panel__phrase">Berapa harganya?</h3>
+              <p id="how-phrase-meaning" class="text-lg font-semibold text-nila">"How much is this?"</p>
+              <div class="audio-bar" id="how-audio">
+                <button id="how-audio-play" type="button" class="audio-bar__play" aria-label="Play">
+                  <i class="ph-fill ph-play text-lg"></i>
+                </button>
+                <div class="wave" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="flex flex-wrap items-center gap-2.5">
+                <div role="group" aria-label="Speed" class="flex gap-2">
+                  <button type="button" class="pill pill--terakota is-active" data-speed="1" aria-pressed="true">1x</button>
+                  <button type="button" class="pill pill--terakota" data-speed="0.6" aria-pressed="false" data-i18n="how_slow">0.6x slow</button>
+                </div>
+                <span class="mx-1 hidden h-6 w-px bg-nila/20 sm:block"></span>
+                <button type="button" class="pill" id="how-prev" aria-label="Previous phrase"><i class="ph-bold ph-arrow-left"></i></button>
+                <span id="how-count" class="text-sm font-bold text-nila/70" aria-live="polite">1 / 3</span>
+                <button type="button" class="pill" id="how-next" aria-label="Next phrase"><i class="ph-bold ph-arrow-right"></i></button>
+                <button type="button" class="btn btn--nila btn--sm ml-auto max-sm:ml-0" data-go-step="3">
+                  <span data-i18n="how_next_quiz">Take the quiz</span>
+                  <i class="ph-bold ph-arrow-right btn__icon"></i>
+                </button>
+              </div>
+              <p id="how-audio-note" class="text-xs font-semibold text-nila/60" role="status"></p>
+            </div>
+
+            <!-- Panel 3 -->
+            <div role="tabpanel" id="how-panel-3" aria-labelledby="how-tab-3" class="how-panel" data-panel="3" hidden>
+              <p class="how-panel__label text-hijau" data-i18n="how_panel_step3">STEP 3 · QUIZ WITH GALI</p>
+              <h3 id="quiz-q" class="how-panel__title">Which one asks for the price?</h3>
+              <div id="quiz-options" class="flex flex-col gap-3"></div>
+              <div id="quiz-feedback" class="flex min-h-10 flex-wrap items-center gap-2" role="status" aria-live="polite"></div>
+              <div class="flex flex-wrap items-center gap-3">
+                <button type="button" id="quiz-next" class="btn btn--nila btn--sm" hidden>
+                  <span data-i18n="how_next_q">Next question</span>
+                  <i class="ph-bold ph-arrow-right btn__icon"></i>
+                </button>
+                <button type="button" class="btn btn--outline btn--sm" data-go-step="1">
+                  <span data-i18n="how_change">Change place</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- phrase of the day -->
+      <section id="potd" class="section" aria-labelledby="potd-label">
+        <div class="potd" data-reveal="potd">
+          <div class="potd__top">
+            <p id="potd-label" class="text-sm font-bold uppercase tracking-wider text-matahari" data-i18n="potd_label">PHRASE OF THE DAY</p>
+            <div class="potd__toggle" role="group" aria-label="Language">
+              <button type="button" class="is-active" data-potd-lang="id" aria-pressed="true">Indonesia</button>
+              <button type="button" data-potd-lang="su" aria-pressed="false">Sunda</button>
+            </div>
+          </div>
+          <div class="potd__grid">
+            <div class="potd__main">
+              <h3 id="potd-phrase" class="potd__phrase" aria-live="polite">Terima kasih banyak!</h3>
+              <div class="flex flex-wrap items-center gap-x-5 gap-y-3 text-krem">
+                <p id="potd-pronunciation" class="rounded-full border border-krem/40 px-5 py-2.5 text-sm font-medium">teh-REE-mah KAH-see BAH-nyak</p>
+                <p id="potd-meaning" class="text-lg">"Thank you very much!"</p>
+              </div>
+              <div class="flex flex-wrap items-center gap-3">
+                <button type="button" id="potd-listen" class="btn btn--sun">
+                  <i class="ph-fill ph-speaker-high btn__icon"></i>
+                  <span data-i18n="potd_btn_listen">Listen</span>
+                </button>
+                <button type="button" id="potd-slow" class="btn btn--ghost-sun">
+                  <span data-i18n="potd_btn_slow">Slow</span>
+                </button>
+                <div class="wave wave--sun" id="potd-wave" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+              <p id="potd-note" class="min-h-4 text-xs font-semibold text-krem/70" role="status"></p>
+            </div>
+            <aside class="potd__tip">
+              <p class="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.14em] text-matahari">
+                <i class="ph-bold ph-lightbulb text-lg"></i>
+                <span data-i18n="potd_culture_title">CULTURE TIP</span>
+              </p>
+              <p class="text-xl font-semibold leading-snug text-krem max-sm:text-lg" data-i18n="potd_culture_desc">
+                Give and take things with your right hand. In Indonesia it is a sign of respect.
+              </p>
+              <button type="button" class="link-arrow" data-open-tips>
+                <span data-i18n="potd_more_tips">More culture tips</span>
+                <i class="ph-bold ph-arrow-right"></i>
+              </button>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- why gaulingo -->
+      <section id="why" class="section" aria-labelledby="why-title">
+        <hgroup class="mx-auto flex max-w-5xl flex-col items-center gap-3 text-center" data-stagger>
+          <p class="chip" data-reveal data-i18n="why_label">WHY GAULINGO</p>
+          <h2 id="why-title" class="h-section" data-reveal="mask">
+            <span data-i18n="why_title_1">Not your usual </span>
+            <span class="h-accent" data-i18n="why_title_2">PHRASEBOOK</span>
+          </h2>
+          <p class="lede max-w-2xl" data-reveal data-i18n="why_desc">
+            Most phrasebooks teach sentences nobody says. Gaulingo teaches what people actually say, and how to say it politely.
+          </p>
+        </hgroup>
+        <div class="why-grid" data-stagger="140">
+          <div class="why-card why-card--usual" data-reveal="left">
+            <h3 class="why-card__title" data-i18n="why_usual_title">Usual phrasebook</h3>
+            <ul class="why-card__list">
+              <li><i class="ph-fill ph-x-circle"></i><span data-i18n="why_usual_item1">Textbook sentences nobody says</span></li>
+              <li><i class="ph-fill ph-x-circle"></i><span data-i18n="why_usual_item2">Read only, no audio</span></li>
+              <li><i class="ph-fill ph-x-circle"></i><span data-i18n="why_usual_item3">No context or manners</span></li>
+              <li><i class="ph-fill ph-x-circle"></i><span data-i18n="why_usual_item4">One language only</span></li>
+            </ul>
+          </div>
+          <div class="why-card why-card--gali" data-reveal="right">
+            <h3 class="why-card__title font-unbounded font-black uppercase tracking-wide">GAULINGO</h3>
+            <ul class="why-card__list">
+              <li><i class="ph-fill ph-check-circle"></i><span data-i18n="why_gali_item1">Everyday phrases locals actually use</span></li>
+              <li><i class="ph-fill ph-check-circle"></i><span data-i18n="why_gali_item2">Audio for every phrase, with slow mode</span></li>
+              <li><i class="ph-fill ph-check-circle"></i><span data-i18n="why_gali_item3">A culture tip in every situation</span></li>
+              <li><i class="ph-fill ph-check-circle"></i><span data-i18n="why_gali_item4">Local languages across Indonesia</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI buddy -->
+      <section id="ai-buddy" class="section" aria-labelledby="ai-title" data-bg="warm">
+        <hgroup class="flex max-w-2xl flex-col gap-3" data-stagger>
+          <p class="chip" data-reveal data-i18n="ai_label">AI BUDDY</p>
+          <h2 id="ai-title" class="h-section" data-reveal="mask">
+            <span data-i18n="ai_title_1">Stuck? Just ask </span>
+            <span class="h-accent h-accent--rust" data-i18n="ai_title_2">GALI.</span>
+          </h2>
+          <p class="lede" data-reveal data-i18n="ai_desc">
+            Ask how to say something, what a word means, or whether it sounds polite. Gali answers in simple English and Bahasa Indonesia, with audio.
+          </p>
+        </hgroup>
+
+        <div class="gchat" id="gchat" aria-live="polite" aria-label="Conversation with Gali">
+          <!-- filled by home.js; static first exchange below is the no-JS fallback -->
+          <div class="gchat__row gchat__row--user"><p class="gchat__user">How do I ask for food that's not spicy?</p></div>
+          <div class="gchat__row gchat__row--gali">
+            <img src="./src/assets/Illustration.png" alt="" class="gchat__avatar" width="60" height="60" />
+            <div>
+              <h3 class="gchat__phrase">Nggak pedas, ya.</h3>
+              <p class="gchat__meaning">“Not spicy, please.” Adding <i>ya</i> softens it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gchat__foot">
+          <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <p class="text-xs font-bold uppercase tracking-[0.14em] text-nila" data-i18n="ai_try">Try asking</p>
+            <div class="flex flex-wrap gap-2.5" id="gchat-prompts">
+              <button type="button" class="prompt" data-prompt="spicy" data-i18n="ai_q1">How do I say "no spicy"?</button>
+              <button type="button" class="prompt" data-prompt="bang" data-i18n="ai_q2">Is "Bang" polite?</button>
+              <button type="button" class="prompt" data-prompt="bargain" data-i18n="ai_q3">Teach me to bargain</button>
+              <button type="button" class="prompt" data-prompt="gas" data-i18n="ai_q4">What does "gas" mean?</button>
+            </div>
+            <form id="gchat-form" class="gchat__form" autocomplete="off">
+              <label for="gchat-input" class="sr-only">Ask Gali</label>
+              <input id="gchat-input" type="text" maxlength="120" placeholder="Ask Gali anything…" />
+              <button type="submit" aria-label="Send"><i class="ph-bold ph-arrow-up"></i></button>
+            </form>
+          </div>
+          <div class="flex flex-col items-end gap-3 text-right max-md:items-start max-md:text-left">
+            <button type="button" class="btn btn--nila" data-open-gali>
+              <i class="ph-fill ph-chat-circle-dots btn__icon"></i>
+              <span data-i18n="ai_btn_chat">Start chatting</span>
+            </button>
+            <p class="max-w-64 text-xs font-medium text-nila/80" data-i18n="ai_disclaimer">
+              Gali can make mistakes. Check important info with a local.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="section" aria-labelledby="faq-title">
+        <hgroup class="faq-head" data-stagger>
+          <div class="flex flex-col gap-3">
+            <p class="chip" data-reveal data-i18n="faq_label">FAQ</p>
+            <h2 id="faq-title" class="faq-title" data-reveal="mask">
+              <span class="block" data-i18n="faq_title_1">STILL GOT </span>
+              <span class="faq-title__accent" data-i18n="faq_title_2">QUESTIONS?</span>
+            </h2>
+          </div>
+          <i class="ph ph-question faq-head__mark" aria-hidden="true"></i>
+        </hgroup>
+
+        <div class="faq" id="faq-list" data-stagger="70">
+          <div class="faq-item is-open" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-1" aria-expanded="true" aria-controls="faq-a-1"><span class="faq-q__num">01</span><span class="faq-q__text" data-i18n="faq_q1">What is Gaulingo?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a is-open" id="faq-a-1" role="region" aria-labelledby="faq-q-1"><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a1">A free website with everyday Indonesian phrases for real situations — warung, school, angkot, even emergencies. Every phrase comes with audio, a culture tip, and a short quiz. Gali is one tap away if you get stuck.</p></div></div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2"><span class="faq-q__num">02</span><span class="faq-q__text" data-i18n="faq_q2">Do I need an account?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2" inert><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a2">No account needed! You can start learning and practicing all phrases right away.</p></div></div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3"><span class="faq-q__num">03</span><span class="faq-q__text" data-i18n="faq_q3">Which languages are included?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3" inert><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a3">We feature everyday local languages across Indonesia, explained in English and Indonesian.</p></div></div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4"><span class="faq-q__num">04</span><span class="faq-q__text" data-i18n="faq_q4">Does it work on my phone?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4" inert><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a4">Yes! Gaulingo is fully responsive and optimized for mobile screens.</p></div></div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5"><span class="faq-q__num">05</span><span class="faq-q__text" data-i18n="faq_q5">Who checks the translations?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5" inert><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a5">All phrases and audio are curated and verified directly by native speakers.</p></div></div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <h3><button type="button" class="faq-q" id="faq-q-6" aria-expanded="false" aria-controls="faq-a-6"><span class="faq-q__num">06</span><span class="faq-q__text" data-i18n="faq_q6">Is Gaulingo free?</span><span class="faq-q__icon" aria-hidden="true"></span></button></h3>
+            <div class="faq-a" id="faq-a-6" role="region" aria-labelledby="faq-q-6" inert><div class="faq-a__inner"><div class="faq-a__body"><img src="./src/assets/Illustration.png" alt="" class="faq-a__avatar" width="48" height="48" /><div><p class="faq-a__label" data-i18n="faq_ans_label">Gali's Answer</p><p class="faq-a__text" data-i18n="faq_a6">Yes, 100% free to use.</p></div></div></div></div>
+          </div>
+        </div>
+
+        <div class="faq-ask" data-reveal>
+          <div class="flex items-center gap-4">
+            <img src="./src/assets/Illustration.png" alt="" class="size-14 shrink-0 rounded-full object-cover" width="56" height="56" />
+            <div>
+              <h3 class="text-lg font-bold text-nila" data-i18n="faq_footer_title">Question not listed here?</h3>
+              <p class="text-sm font-medium text-nila/80" data-i18n="faq_footer_desc">Ask Gali directly — he answers in English and Bahasa Indonesia.</p>
+            </div>
+          </div>
+          <button type="button" class="btn btn--sun shrink-0" data-open-gali>
+            <i class="ph-fill ph-chat-circle-dots btn__icon"></i>
+            <span data-i18n="faq_footer_btn">Ask Gali</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ticker: before CTA -->
+      <div class="ticker ticker--sun ticker--reverse section-gap" role="marquee" aria-label="Six places, real words. No sign-up. Ayo ngobrol.">
+        <div class="ticker__track">
+          <ul class="ticker__group">
+            <li>Six places, real words</li><li class="ticker__sep">✱</li>
+            <li>No sign-up</li><li class="ticker__sep">✱</li>
+            <li>Ayo ngobrol</li><li class="ticker__sep">✱</li>
+            <li>Learn through context</li><li class="ticker__sep">✱</li>
+          </ul>
+          <ul class="ticker__group" aria-hidden="true">
+            <li>Six places, real words</li><li class="ticker__sep">✱</li>
+            <li>No sign-up</li><li class="ticker__sep">✱</li>
+            <li>Ayo ngobrol</li><li class="ticker__sep">✱</li>
+            <li>Learn through context</li><li class="ticker__sep">✱</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CTA (footer stage 1) -->
+      <section id="cta" class="cta" aria-labelledby="cta-title">
+        <p class="cta__eyebrow" data-reveal data-i18n="cta_tagline">NO SIGN-UP · NO APP · JUST OPEN IT</p>
+        <h2 id="cta-title" class="cta__title" data-lines>
+          <span class="line"><span class="line__in text-matahari" data-i18n="cta_title_1">Ready to</span></span>
+          <span class="line"><span class="line__in text-krem" data-i18n="cta_title_2">CONVERSATION?</span></span>
+        </h2>
+        <p class="cta__sub" data-reveal data-i18n="cta_subtitle">Start with one phrase today. Tomorrow you will use it.</p>
+        <div class="cta__actions" data-reveal>
+          <a href="#situations" class="btn btn--sun btn--lg">
+            <span data-i18n="cta_btn_explore">START EXPLORING</span>
+            <i class="ph-bold ph-arrow-right btn__icon"></i>
+          </a>
+          <button type="button" class="btn btn--ghost-sun btn--lg" data-open-gali>
+            <i class="ph-bold ph-chat-circle-dots btn__icon"></i>
+            <span data-i18n="cta_btn_chat">CHAT WITH GALI</span>
+          </button>
+        </div>
+        <p class="cta__fine" data-reveal data-i18n="ai_disclaimer">Gali can make mistakes. Check important info with a local.</p>
+      </section>
+      </div>
+    </main>
+
+    <!-- footer (stage 2) -->
+    <footer id="site-footer" class="gf">
+      <div class="gf__inner">
+        <div class="gf__cols">
+          <div class="gf__col gf__col--legal" data-f>
+            <div class="flex flex-col gap-3">
+              <a href="#" class="gf__link" data-i18n="footer_terms">Terms and Conditions</a>
+              <a href="#" class="gf__link" data-i18n="footer_privacy">Privacy Policy</a>
+            </div>
+            <div class="gf__social-wrap">
+              <h3 class="gf__h" data-i18n="footer_socials">Socials</h3>
+              <div class="gf__social">
+                <a href="https://www.instagram.com/" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+                <a href="https://www.tiktok.com/" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+                <a href="https://www.youtube.com/" aria-label="YouTube"><i class="ph ph-youtube-logo"></i></a>
+                <a href="mailto:halo@gaulingo.id" aria-label="Email"><i class="ph ph-envelope-simple"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="gf__col" data-f>
+            <h3 class="gf__h" data-i18n="footer_contacts">Contacts</h3>
+            <div>
+              <p class="gf__k">Email</p>
+              <a href="mailto:halo@gaulingo.id" class="gf__big gf__big--link">halo@gaulingo.id</a>
+            </div>
+            <div>
+              <p class="gf__k">Phone</p>
+              <a href="tel:+6281234567890" class="gf__big">+62 812 3456 7890</a>
+            </div>
+            <div>
+              <p class="gf__k" data-i18n="footer_based">Based in</p>
+              <p class="gf__big">Bogor, Indonesia</p>
+            </div>
+          </div>
+          <nav class="gf__col" aria-label="Footer navigation" data-f>
+            <h3 class="gf__h" data-i18n="footer_nav">Navigation</h3>
+            <ul class="gf__nav">
+              <li><a href="./index.html" class="gf__navlink roll-host"><span data-i18n="footer_nav_home" data-roll>Home</span></a></li>
+              <li><a href="./pages/situations.html" class="gf__navlink roll-host"><span data-i18n="footer_nav_sit" data-roll>Situations</span></a></li>
+              <li><a href="./pages/practice.html" class="gf__navlink roll-host"><span data-i18n="footer_nav_practice" data-roll>Practice</span></a></li>
+              <li><a href="./pages/culture.html" class="gf__navlink roll-host"><span data-i18n="footer_nav_culture" data-roll>Culture</span></a></li>
+              <li><a href="./pages/about.html" class="gf__navlink roll-host"><span data-i18n="footer_nav_about" data-roll>About</span></a></li>
+              <li><button type="button" class="gf__navlink roll-host" data-open-gali><span data-i18n="footer_nav_chat" data-roll>Chat with Gali</span></button></li>
+            </ul>
+          </nav>
+          <div class="gf__col gf__col--mark">
+            <p class="gf__copy" data-f>Copyright © — 2026 Gaulingo</p>
+            <div class="gf__mark" id="gf-mark">
+              <button type="button" id="scroll-to-top" class="gf__top" aria-label="Back to top">
+                <svg viewBox="0 0 80 80" class="gf__ring" aria-hidden="true">
+                  <circle cx="40" cy="40" r="38" class="gf__ring-bg" />
+                  <circle cx="40" cy="40" r="38" class="gf__ring-fg" id="gf-ring" />
+                </svg>
+                <span class="gf__arrows" aria-hidden="true">
+                  <i class="ph-bold ph-arrow-up"></i>
+                  <i class="ph-bold ph-arrow-up"></i>
+                </span>
+              </button>
+              <div class="gf__g-clip" aria-hidden="true">
+                <span class="gf__g" id="gf-g">G<sup>®</sup></span>
+              </div>
+            </div>
+            <p class="gf__tagline" data-f data-i18n="footer_tagline">
+              Everyday Indonesian<br />phrases for real places.
+>>>>>>> Stashed changes
             </p>
             <p class="font-bold text-krem text-2xl">
               Give and take things with your right hand. In Indonesia it is a
@@ -792,6 +1729,7 @@
               Usual phrasebook
             </h3>
 
+<<<<<<< Updated upstream
             <ul class="flex flex-col gap-4">
               <li
                 class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
@@ -1671,5 +2609,60 @@
         ),
       );
     </script>
+=======
+    <button type="button" class="gali-fab" data-open-gali aria-label="Ask Gali">
+      <span class="gali-fab__label" data-i18n="btn_ask">Ask Gali</span>
+      <img src="./src/assets/Illustration.png" alt="" width="60" height="60" />
+    </button>
+
+    <dialog id="modal-budaya" aria-labelledby="modal-budaya-title">
+      <div class="kotak-animasi w-[90%] max-w-md rounded-3xl border border-matahari/50 bg-nila p-8 text-white shadow-2xl">
+        <div class="flex flex-col gap-4">
+          <h3 id="modal-budaya-title" class="mb-2 flex items-center gap-3 font-unbounded text-2xl font-black text-matahari">
+            <i class="ph-bold ph-lightbulb"></i>
+            <span data-i18n="modal_culture_title">Culture tips</span>
+          </h3>
+          <ul class="flex flex-col gap-4 text-sm font-medium">
+            <li class="flex items-start gap-3"><i class="ph-bold ph-check-circle mt-0.5 text-lg text-matahari"></i><span data-i18n="modal_culture_tip1">Always use your right hand to give or receive things.</span></li>
+            <li class="flex items-start gap-3"><i class="ph-bold ph-check-circle mt-0.5 text-lg text-matahari"></i><span data-i18n="modal_culture_tip2">Take off your shoes before entering an Indonesian home.</span></li>
+            <li class="flex items-start gap-3"><i class="ph-bold ph-check-circle mt-0.5 text-lg text-matahari"></i><span data-i18n="modal_culture_tip3">Do not touch someone's head, especially a child's. It is considered rude.</span></li>
+          </ul>
+          <form method="dialog" class="mt-6">
+            <button class="btn btn--sun w-full justify-center" data-i18n="modal_close_btn">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
+    <div id="gali-drawer-backdrop" class="gali-backdrop"></div>
+    <aside id="gali-drawer" class="gali-drawer" aria-hidden="true" aria-label="Chat with Gali" inert>
+      <div class="flex shrink-0 items-center justify-between border-b border-nila/10 bg-white px-5 py-4">
+        <div class="flex items-center gap-3">
+          <img src="./src/assets/Illustration.png" alt="" class="size-10 shrink-0 rounded-full bg-biru-muda object-cover" width="40" height="40" />
+          <div>
+            <p class="text-sm font-bold leading-tight text-nila">Gali</p>
+            <p class="mt-0.5 flex items-center gap-1.5 text-xs text-nila/65">
+              <span class="inline-block size-2 rounded-full bg-hijau"></span>
+              <span data-i18n="drawer_status">Demo · replies in EN &amp; ID</span>
+            </p>
+          </div>
+        </div>
+        <button type="button" id="gali-drawer-close" class="grid size-8 place-items-center rounded-full bg-krem text-sm font-bold text-nila transition hover:bg-krem-tua" aria-label="Close chat">✕</button>
+      </div>
+      <div id="gali-drawer-body" class="flex flex-1 flex-col gap-3.5 overflow-y-auto bg-white p-5" aria-live="polite"></div>
+      <form id="gali-drawer-form" class="flex shrink-0 items-center gap-2 border-t border-nila/10 bg-white p-3.5" autocomplete="off">
+        <label for="gali-drawer-input" class="sr-only">Ask Gali</label>
+        <input id="gali-drawer-input" type="text" maxlength="120" placeholder="Ask Gali anything..." class="w-full rounded-full bg-krem px-4 py-2.5 text-sm text-nila outline-none placeholder:text-nila/45 focus-visible:ring-2 focus-visible:ring-nila/40" />
+        <button type="submit" class="grid size-10 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:bg-biru-aksen" aria-label="Send message">
+          <i class="ph ph-arrow-right text-base"></i>
+        </button>
+      </form>
+    </aside>
+
+    <!-- js -->
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="./src/home.js"></script>
+>>>>>>> Stashed changes
   </body>
 </html>

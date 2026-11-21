@@ -1,0 +1,698 @@
+const translations = {
+  en: {
+    hero_title:
+      " TALK<br class='md:hidden' /> LIKE<br class='max-md:hidden' /> THE LOCALS DO",
+    hero_subtitle: "Real phrases. Real places. Real manners.",
+    hero_explorer_button: "Start exploring",
+    hero_chat_button: "Chat with Gali",
+    nav_menu: "MENU",
+    btn_ask: "Ask Gali",
+
+    // NAV (MENU)
+    nav_close: "Close",
+
+    // SITUATION
+    sit_label: "Situations",
+    sit_title: "SITUATION",
+    sit_title_1: "Find your",
+    sit_title_2: "SITUATION",
+    sit_subtitle: "Pick where you are. Gali brings the phrases you need there.",
+    sit_see_all: "See all 6 situations",
+    stall_badge: "Most popular",
+    stall_info: "8 phrases · Local Phrases",
+    stall_title: "STALL",
+    stall_desc:
+      "Buying snacks, asking prices, and saying thanks at a small food stall.",
+    phrase_how_much: "How much is this?",
+    phrase_cheaper: "Can it be cheaper?",
+    phrase_thanks: "Thank you, ma'am!",
+    btn_open_stall: "Open Stall",
+
+    // 4 cards
+    card_school_title: "SCHOOL",
+    card_school_desc: "In class & with teachers · 5 phrases",
+    card_minibus_title: "MINIBUS",
+    card_minibus_desc: "Getting around town · 6 phrases",
+    card_smalltalk_title: "SMALL TALK",
+    card_smalltalk_desc: "Meeting new people · 10 phrases",
+    card_emergency_title: "EMERGENCY",
+    card_emergency_desc: "When you need help · 6 phrases",
+
+    // PHRASE OF THE DAY
+    potd_label: "PHRASE OF THE DAY",
+    potd_title: "Thank you very much!",
+    potd_meaning: '"Thank you very much!"',
+    potd_btn_listen: "Listen",
+    potd_btn_slow: "Slow",
+    potd_culture_title: "CULTURE TIP",
+    potd_culture_desc:
+      "Give and take things with your right hand. In Indonesia it is a sign of respect.",
+    potd_more_tips: "More culture tips",
+
+    // HOW IT WORKS
+    how_label: "HOW IT WORKS",
+    how_title_1: "Three steps to your first ",
+    how_title_2: "CONVERSATION",
+    how_desc: "Start from the left. Each step takes just seconds.",
+    how_step1_title: "Pick your place",
+    how_step1_desc: "Warung, school, angkot — choose the situation you are in.",
+    how_step2_title: "Listen & repeat",
+    how_step2_desc: "Play it, slow it down if you need, then say it out loud.",
+    how_step3_title: "Quiz with Gali",
+    how_step3_desc:
+      "Short rounds to make it stick, plus the manners behind it.",
+    how_panel_step1: "STEP 1 · PICK YOUR PLACE",
+    how_panel_title: "Where are you today?",
+    cat_shop: "Local Shop",
+    cat_school: "School",
+    cat_transit: "Public Transit",
+    cat_intro: "Introduction",
+    cat_emergency: "Emergency",
+    cat_all: "All Situations",
+    phrases_8: "8 phrases",
+    phrases_6: "6 phrases",
+    total_8: "8 in total",
+
+    // PHRASE CARDS
+    local_phrases_title: "Local Phrases of Nusantara",
+    local_phrases_desc:
+      "Learn everyday survival phrases from various regions across Indonesia.",
+
+    // --- WHY GAULINGO ---
+    why_label: "WHY GAULINGO",
+    why_title_1: "Not your usual ",
+    why_title_2: "PHRASEBOOK",
+    why_desc:
+      "Most phrasebooks teach sentences nobody says. Gaulingo teaches what people actually say, and how to say it politely.",
+    why_usual_title: "Usual phrasebook",
+    why_usual_item1: "Textbook sentences nobody says",
+    why_usual_item2: "Read only, no audio",
+    why_usual_item3: "No context or manners",
+    why_usual_item4: "One language only",
+    why_gali_item1: "Everyday phrases locals actually use",
+    why_gali_item2: "Audio for every phrase, with slow mode",
+    why_gali_item3: "A culture tip in every situation",
+    why_gali_item4: "Local languages across Indonesia",
+
+    // --- AI BUDDY ---
+    ai_label: "AI BUDDY",
+    ai_title_1: "Stuck? Just ask ",
+    ai_title_2: "GALI.",
+    ai_desc:
+      "Ask how to say something, what a word means, or whether it sounds polite. Gali answers in simple English and Bahasa Indonesia, with audio.",
+    ai_try: "Try asking",
+    ai_q1: 'How do I say "no spicy"?',
+    ai_q2: 'Is "Bang" polite?',
+    ai_q3: "Teach me to bargain",
+    ai_q4: 'What does "gas" mean?',
+    ai_btn_chat: "Start chatting",
+    ai_disclaimer: "Gali can make mistakes. Check important info with a local.",
+
+    // --- FAQ ---
+    faq_label: "FAQ",
+    faq_title_1: "STILL GOT ",
+    faq_title_2: "QUESTIONS?",
+    faq_ans_label: "Gali's Answer",
+    faq_q1: "What is Gaulingo?",
+    faq_a1:
+      "A free website with everyday Indonesian phrases for real situations — warung, school, angkot, even emergencies. Every phrase comes with audio, a culture tip, and a short quiz. Gali is one tap away if you get stuck.",
+    faq_q2: "Do I need an account?",
+    faq_a2:
+      "No account needed! You can start learning and practicing all phrases right away.",
+    faq_q3: "Which languages are included?",
+    faq_a3:
+      "We feature everyday local languages across Indonesia, explained in English and Indonesian.",
+    faq_q4: "Does it work on my phone?",
+    faq_a4:
+      "Yes! Gaulingo is fully responsive and optimized for mobile screens.",
+    faq_q5: "Who checks the translations?",
+    faq_a5:
+      "All phrases and audio are curated and verified directly by native speakers.",
+    faq_q6: "Is Gaulingo free?",
+    faq_a6: "Yes, 100% free to use.",
+    faq_footer_title: "Question not listed here?",
+    faq_footer_desc:
+      "Ask Gali directly — he answers in English and Bahasa Indonesia.",
+    faq_footer_btn: "Ask Gali",
+
+    // FOOTER
+    footer_terms: "Terms and Conditions",
+    footer_privacy: "Privacy Policy",
+    footer_socials: "Socials",
+    footer_contacts: "Contacts",
+    footer_based: "Based in",
+    footer_languages: "Languages",
+    footer_languages_val: "Indonesian & English",
+    footer_nav: "Navigation",
+    footer_nav_home: "Home",
+    footer_nav_sit: "Situations",
+    footer_nav_practice: "Practice",
+    footer_nav_culture: "Culture",
+    footer_nav_about: "About",
+    footer_nav_chat: "Chat with Gali",
+    footer_tagline:
+      "Everyday Indonesian<br />phrases for real places.",
+
+    // SITUATION (NAV MENU)
+    sit_page_home: "Home",
+    sit_page_situations: "Situations",
+    sit_page_title: "WHERE ARE YOU TODAY?",
+    sit_page_subtitle:
+      "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
+    sit_page_search_ph: "Search a phrase or a place...",
+    sit_page_search_btn: "Search",
+
+    // CTA
+    cta_tagline: "NO SIGN-UP · NO APP · JUST OPEN IT",
+    cta_title_1: "Ready to",
+    cta_title_2: "CONVERSATION?",
+    cta_subtitle: "Start with one phrase today. Tomorrow you will use it.",
+    cta_btn_explore: "START EXPLORING",
+    cta_btn_chat: "CHAT WITH GALI",
+
+    // FOOD
+    rd_food_title: "FOOD",
+    rd_food_desc: "Ordering food and asking what is in it.",
+    // HOME — steps / chat / modal
+    how_panel_step2: "STEP 2 · LISTEN & REPEAT",
+    how_panel_step3: "STEP 3 · QUIZ WITH GALI",
+    how_next_listen: "Listen to these",
+    how_next_quiz: "Take the quiz",
+    how_next_q: "Next question",
+    how_change: "Change place",
+    how_slow: "0.6x slow",
+    drawer_status: "Demo · replies in EN & ID",
+    modal_culture_title: "Culture tips",
+    modal_culture_tip1: "Always use your right hand to give or receive things.",
+    modal_culture_tip2: "Take off your shoes before entering an Indonesian home.",
+    modal_culture_tip3:
+      "Do not touch someone's head, especially a child's. It is considered rude.",
+    modal_close_btn: "Close",
+  },
+  id: {
+    hero_title:
+      "BICARA<br class='md:hidden' /> SEPERTI<br class='max-md:hidden' /> ORANG LOKAL",
+    hero_subtitle: "Frasa nyata. Tempat nyata. Sopan santun nyata.",
+    hero_explorer_button: "Mulai menjelajah",
+    hero_chat_button: "Chat dengan Gali",
+    nav_menu: "MENU",
+    btn_ask: "Tanya Gali",
+
+    // NAV (MENU)
+    nav_close: "Tutup",
+
+    // SITUATION
+    sit_label: "SITUASI",
+    sit_title: "SITUASIMU",
+    sit_title_1: "Temukan",
+    sit_title_2: "SITUASIMU",
+    sit_subtitle:
+      "Pilih lokasimu. Gali memberikan frasa yang kamu butuhkan di sana.",
+    sit_see_all: "Lihat semua 6 situasi",
+    stall_badge: "Paling populer",
+    stall_info: "8 frasa · Bahasa Daerah",
+    stall_title: "WARUNG",
+    stall_desc:
+      "Membeli camilan, menanyakan harga, dan mengucapkan terima kasih di warung makan kecil.",
+    phrase_how_much: "Berapa harganya?",
+    phrase_cheaper: "Bisa lebih murah?",
+    phrase_thanks: "Terima kasih, Bu!",
+    btn_open_stall: "Buka Warung",
+
+    // 4 cards
+    card_school_title: "SEKOLAH",
+    card_school_desc: "Di kelas & bersama guru · 5 frasa",
+    card_minibus_title: "ANGKOT",
+    card_minibus_desc: "Keliling kota · 6 frasa",
+    card_smalltalk_title: "NGOBROL SANTAI",
+    card_smalltalk_desc: "Kenalan dengan orang baru · 10 frasa",
+    card_emergency_title: "DARURAT",
+    card_emergency_desc: "Saat kamu butuh bantuan · 6 frasa",
+
+    // PHRASE OF THE DAY
+    potd_label: "FRASA HARI INI",
+    potd_title: "Terima kasih banyak!",
+    potd_meaning: '"Terima kasih banyak!"',
+    potd_btn_listen: "Dengarkan",
+    potd_btn_slow: "Lambat",
+    potd_culture_title: "TIPS BUDAYA",
+    potd_culture_desc:
+      "Gunakan tangan kanan saat memberi atau menerima sesuatu. Di Indonesia ini adalah bentuk rasa hormat.",
+    potd_more_tips: "Tips budaya lainnya",
+
+    // PHRASE CARDS
+    local_phrases_title: "Frasa Daerah Nusantara",
+    local_phrases_desc:
+      "Pelajari bahasa lokal untuk bertahan hidup di berbagai daerah.",
+
+    // HOW IT WORKS
+    how_label: "CARA KERJA",
+    how_title_1: "Tiga langkah untuk mulai ",
+    how_title_2: "NGOBROL",
+    how_desc: "Mulai dari kiri. Setiap langkah hanya butuh beberapa detik.",
+    how_step1_title: "Pilih tempatmu",
+    how_step1_desc:
+      "Warung, sekolah, angkot — pilih situasi di mana kamu berada.",
+    how_step2_title: "Dengarkan & ulangi",
+    how_step2_desc: "Putar, perlambat jika perlu, lalu ucapkan dengan lantang.",
+    how_step3_title: "Kuis bersama Gali",
+    how_step3_desc:
+      "Ronde singkat agar lebih ingat, plus tata krama di baliknya.",
+    how_panel_step1: "LANGKAH 1 · PILIH TEMPATMU",
+    how_panel_title: "Kamu lagi di mana hari ini?",
+    cat_shop: "Warung",
+    cat_school: "Sekolah",
+    cat_transit: "Transportasi Umum",
+    cat_intro: "Perkenalan",
+    cat_emergency: "Darurat",
+    cat_all: "Semua Situasi",
+    phrases_8: "8 frasa",
+    phrases_6: "6 frasa",
+    total_8: "Total 8",
+
+    // WHY GAULINGO
+    why_label: "MENGAPA GAULINGO",
+    why_title_1: "Bukan buku frasa ",
+    why_title_2: "BIASA",
+    why_desc:
+      "Kebanyakan buku frasa mengajarkan kalimat yang tidak pernah diucapkan orang. Gaulingo mengajarkan apa yang benar-benar dikatakan warga lokal, dan cara mengucapkannya dengan sopan.",
+    why_usual_title: "Buku frasa biasa",
+    why_usual_item1: "Kalimat di buku teks yang tak pernah dipakai",
+    why_usual_item2: "Hanya dibaca, tidak ada audio",
+    why_usual_item3: "Tanpa konteks atau tata krama",
+    why_usual_item4: "Hanya satu bahasa",
+    why_gali_item1: "Frasa sehari-hari yang benar-benar dipakai warga lokal",
+    why_gali_item2: "Audio untuk setiap frasa, lengkap dengan mode lambat",
+    why_gali_item3: "Tips budaya di setiap situasi",
+    why_gali_item4: "Berbagai bahasa daerah di Indonesia",
+
+    // --- AI BUDDY ---
+    ai_label: "TEMAN AI",
+    ai_title_1: "Bingung? Tanya aja ",
+    ai_title_2: "GALI.",
+    ai_desc:
+      "Tanyakan cara mengucapkan sesuatu, arti sebuah kata, atau apakah kalimatmu terdengar sopan. Gali menjawab dalam bahasa Inggris sederhana dan Bahasa Indonesia, lengkap dengan audio.",
+    ai_try: "Coba tanyakan",
+    ai_q1: 'Gimana cara bilang "nggak pedas"?',
+    ai_q2: 'Apakah panggilan "Bang" sopan?',
+    ai_q3: "Ajarin cara menawar harga",
+    ai_q4: 'Apa arti kata "gas"?',
+    ai_btn_chat: "Mulai ngobrol",
+    ai_disclaimer:
+      "Gali bisa saja salah. Pastikan informasi penting dengan warga lokal.",
+
+    // FAQ
+    faq_label: "FAQ",
+    faq_title_1: "MASIH PUNYA ",
+    faq_title_2: "PERTANYAAN?",
+    faq_ans_label: "Jawaban Gali",
+    faq_q1: "Apa itu Gaulingo?",
+    faq_a1:
+      "Website gratis berisi frasa Bahasa Indonesia sehari-hari untuk situasi nyata — warung, sekolah, angkot, hingga kondisi darurat. Setiap frasa dilengkapi audio, tips budaya, dan kuis singkat. Gali siap membantu jika kamu bingung.",
+    faq_q2: "Apakah saya perlu buat akun?",
+    faq_a2:
+      "Tidak perlu akun! Kamu bisa langsung belajar dan latihan semua frasa secara gratis.",
+    faq_q3: "Bahasa apa saja yang tersedia?",
+    faq_a3:
+      "Tersedia berbagai bahasa daerah di Indonesia dengan penjelasan bahasa Indonesia dan Inggris.",
+    faq_q4: "Apakah bisa dibuka di HP?",
+    faq_a4:
+      "Bisa banget! Gaulingo dirancang responsif dan nyaman dibuka di layar HP.",
+    faq_q5: "Siapa yang mengecek terjemahannya?",
+    faq_a5:
+      "Semua frasa dan audio disusun serta diverifikasi langsung oleh penutur asli (native speaker).",
+    faq_q6: "Apakah Gaulingo gratis?",
+    faq_a6: "Ya, 100% gratis digunakan.",
+    faq_footer_title: "Pertanyaan belum ada di sini?",
+    faq_footer_desc:
+      "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
+    faq_footer_btn: "Tanya Gali",
+
+    // FOOTER
+    footer_terms: "Syarat dan Ketentuan",
+    footer_privacy: "Kebijakan Privasi",
+    footer_socials: "Media Sosial",
+    footer_contacts: "Kontak",
+    footer_based: "Berbasis di",
+    footer_languages: "Bahasa",
+    footer_languages_val: "Indonesia & Inggris",
+    footer_nav: "Navigasi",
+    footer_nav_home: "Beranda",
+    footer_nav_sit: "Situasi",
+    footer_nav_practice: "Latihan",
+    footer_nav_culture: "Budaya",
+    footer_nav_about: "Tentang",
+    footer_nav_chat: "Chat sama Gali",
+    footer_tagline:
+      "Frasa bahasa Indonesia<br />sehari-hari untuk tempat nyata.",
+
+    // SITUATION (NAV MENU)
+    sit_page_home: "Beranda",
+    sit_page_situations: "Situasi",
+    sit_page_title: "KAMU LAGI DI MANA HARI INI?",
+    sit_page_subtitle:
+      "Pilih lokasi kamu. Gali memberikan frasa, pengucapan, dan tata krama yang sesuai.",
+    sit_page_search_ph: "Cari frasa atau tempat...",
+    sit_page_search_btn: "Cari",
+
+    // CTA
+    cta_tagline: "TANPA DAFTAR · TANPA APLIKASI · LANGSUNG BUKA",
+    cta_title_1: "Siap mulai",
+    cta_title_2: "ngobrol?",
+    cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
+    cta_btn_explore: "MULAI EKSPLORASI",
+    cta_btn_chat: "NGOBROL SAMA GALI", 
+    // FOOD
+    rd_food_title: "MAKANAN",
+    rd_food_desc: "Memesan makanan dan menanyakan isinya.",
+    // HOME — steps / chat / modal
+    how_panel_step2: "LANGKAH 2 · DENGARKAN & ULANGI",
+    how_panel_step3: "LANGKAH 3 · KUIS BERSAMA GALI",
+    how_next_listen: "Dengarkan frasanya",
+    how_next_quiz: "Ikut kuis",
+    how_next_q: "Pertanyaan berikutnya",
+    how_change: "Ganti tempat",
+    how_slow: "0.6x lambat",
+    drawer_status: "Demo · menjawab dalam EN & ID",
+    modal_culture_title: "Tips Budaya",
+    modal_culture_tip1:
+      "Selalu gunakan tangan kanan untuk memberi atau menerima sesuatu.",
+    modal_culture_tip2:
+      "Lepas alas kaki (sepatu/sandal) sebelum masuk ke dalam rumah orang Indonesia.",
+    modal_culture_tip3:
+      "Jangan menyentuh kepala seseorang, terutama anak-anak, karena dianggap tidak sopan.",
+    modal_close_btn: "Tutup",
+  },
+};
+
+const langButtons = document.querySelectorAll(".site-lang__item");
+const currentLang = localStorage.getItem("gaulingo_lang") || "en";
+
+const setLanguage = (lang) => {
+  langButtons.forEach((btn) => {
+    const isSelected = btn.textContent.trim().toLowerCase() === lang;
+    btn.setAttribute("aria-pressed", String(isSelected));
+  });
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.innerHTML = translations[lang][key];
+    }
+  });
+
+  localStorage.setItem("gaulingo_lang", lang);
+};
+
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const selectedLang = e.target.textContent.trim().toLowerCase();
+    setLanguage(selectedLang);
+
+    setTimeout(() => {
+      window.location.reload();
+    }, 100);
+  });
+});
+
+setLanguage(currentLang);
+
+document.querySelectorAll("[data-roll]").forEach((el) => {
+  const text = el.textContent.trim();
+  const chars = [...text]
+    .map((ch, i) => {
+      const c = ch === " " ? "&nbsp;" : ch;
+      return `<span class="roll-char" style="--i: ${i}"><span class="roll-top">${c}</span><span class="roll-bot">${c}</span></span>`;
+    })
+    .join("");
+  el.innerHTML = `<span class="sr-only">${text}</span><span class="roll inline-flex" aria-hidden="true">${chars}</span>`;
+});
+
+const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const lenis =
+  !reduceMotion && window.Lenis
+    ? new Lenis({ lerp: 0.075, wheelMultiplier: 0.9, smoothWheel: true })
+    : null;
+if (lenis) {
+  const raf = (time) => {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  };
+  requestAnimationFrame(raf);
+}
+const scrollToY = (y) =>
+  lenis
+    ? lenis.scrollTo(y, { duration: 1.4 })
+    : window.scrollTo({
+        top: y,
+        behavior: reduceMotion ? "auto" : "smooth",
+      });
+
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  const target =
+    a.getAttribute("href").length > 1 &&
+    document.querySelector(a.getAttribute("href"));
+  if (!target) return;
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    scrollToY(target.getBoundingClientRect().top + window.scrollY);
+  });
+});
+
+const header = document.getElementById("site-header");
+const menu = document.getElementById("site-menu");
+const menuToggle = document.getElementById("menu-toggle");
+
+const setMenu = (open) => {
+  if (!header || !menu || !menuToggle) return;
+  header.classList.toggle("is-nav-open", open);
+  menu.classList.toggle("is-open", open);
+  menu.toggleAttribute("inert", !open);
+  menu.setAttribute("aria-hidden", String(!open));
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  document.documentElement.style.overflow = open ? "hidden" : "";
+  if (lenis) open ? lenis.stop() : lenis.start();
+};
+
+if (menuToggle && menu) {
+  menuToggle.addEventListener("click", () =>
+    setMenu(!menu.classList.contains("is-open")),
+  );
+}
+
+document.addEventListener("keydown", (e) => {
+  if (!menu || !menuToggle) return;
+  if (e.key === "Escape" && menu.classList.contains("is-open")) {
+    setMenu(false);
+    menuToggle.focus();
+  }
+});
+
+const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
+const isHome = document.body.dataset.page === "home";
+const hero = document.getElementById("home");
+if (hero && !isHome) {
+  const updateHero = () => {
+    if (reduceMotion) return;
+    const p = clamp01(window.scrollY / window.innerHeight);
+    hero.style.setProperty("--hero-p", p.toFixed(4));
+  };
+  updateHero();
+  window.addEventListener("scroll", updateHero, { passive: true });
+}
+
+if (header) {
+  const updateHeader = () =>
+    header.classList.toggle("is-visible", window.scrollY > 80);
+
+  window.addEventListener("scroll", updateHeader, { passive: true });
+}
+
+// Legacy page chrome (reveal + shrinking main). The homepage has its own motion system in src/home.js.
+if (!isHome) {
+const revealEls = document.querySelectorAll(
+  "main section:not(.full-bleed-section):not(#home), .faq-item, .site-menu__item, .how-step, [data-cta-reveal], [data-footer-reveal]",
+);
+
+revealEls.forEach((el, index) => {
+  el.classList.add("reveal");
+  el.dataset.revealFrom =
+    el.dataset.ctaReveal || el.dataset.footerReveal || "up";
+  el.style.setProperty("--reveal-delay", `${Math.min(index * 60, 240)}ms`);
+});
+
+if (!reduceMotion) {
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.18 },
+  );
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach((el) => revealObserver.observe(el));
+} else {
+  document
+    .querySelectorAll(".reveal")
+    .forEach((el) => el.classList.add("is-visible"));
+}
+{
+  const homeMain = document.querySelector("#home.sticky")?.closest("main");
+  const mainContent = homeMain || document.querySelector("main");
+  const footer = document.getElementById("site-footer");
+  const scrollTopBtn = document.getElementById("scroll-to-top");
+  let animationFrame = 0;
+
+  function updateMainAnimation() {
+    animationFrame = 0;
+    if (!mainContent || !footer) return;
+
+    if (reduceMotion) {
+      mainContent.style.transform = "scale(1)";
+      mainContent.style.borderRadius = "0";
+      mainContent.style.clipPath = "none";
+      mainContent.style.opacity = "1";
+      mainContent.style.backgroundColor = "";
+      document.documentElement.style.backgroundColor = "";
+      return;
+    }
+
+    const windowHeight = window.innerHeight;
+    const mainBottom =
+      mainContent.offsetTop + mainContent.offsetHeight - window.scrollY;
+    const progress = clamp01((windowHeight * 1.25 - mainBottom) / windowHeight);
+    const easedProgress = progress * progress * (3 - 2 * progress);
+    const radiusProgress = clamp01(progress * 2);
+    const easedRadiusProgress =
+      radiusProgress * radiusProgress * (3 - 2 * radiusProgress);
+    mainContent.style.backgroundColor = "";
+    document.documentElement.style.backgroundColor = "";
+    const radius = easedRadiusProgress * 44;
+    mainContent.style.transform = homeMain
+      ? `translateY(${easedProgress * 24}px) scale(${1 - easedProgress * 0.08})`
+      : `scale(${1 - easedProgress * 0.2})`;
+    mainContent.style.borderRadius = `${radius}px ${radius}px 0 0`;
+    mainContent.style.clipPath = `inset(0 round ${radius}px ${radius}px 0 0)`;
+    mainContent.style.opacity = "1";
+  }
+
+  function requestMainAnimation() {
+    if (!animationFrame) {
+      animationFrame = requestAnimationFrame(updateMainAnimation);
+    }
+  }
+
+  window.addEventListener("scroll", requestMainAnimation, { passive: true });
+  window.addEventListener("resize", requestMainAnimation);
+  requestMainAnimation();
+
+  if (scrollTopBtn) {
+    scrollTopBtn.addEventListener("click", () => scrollToY(0));
+  }
+}
+
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const cardsGrid = document.getElementById("cards-grid");
+  const countEl = document.getElementById("situation-count");
+  if (!cardsGrid) return;
+
+  const cards = [...cardsGrid.querySelectorAll(".situation-card")];
+  const countLabel = countEl?.dataset.countLabel || "situations";
+  const sortContainer = document.getElementById("sort-dropdown-container");
+  const sortButton = document.getElementById("sort-menu-button");
+  const sortMenu = document.getElementById("sort-menu");
+  const sortCaret = document.getElementById("sort-caret");
+  const sortLabel = document.getElementById("sort-current-label");
+  const sortOptions = document.querySelectorAll(".sort-option");
+
+  const sortCards = (type) => {
+    const compare = {
+      "most-used": (a, b) =>
+        Number(a.dataset.order || 0) - Number(b.dataset.order || 0),
+      alphabetical: (a, b) =>
+        (a.dataset.title || "").localeCompare(
+          b.dataset.title || "",
+          undefined,
+          {
+            sensitivity: "base",
+          },
+        ),
+      newest: (a, b) =>
+        Number(b.dataset.newest || 0) - Number(a.dataset.newest || 0),
+    }[type];
+
+    if (!compare) return;
+    cards.sort(compare).forEach((card) => cardsGrid.appendChild(card));
+  };
+
+  const setSortMenuOpen = (open) => {
+    if (!sortButton || !sortMenu) return;
+    sortMenu.classList.toggle("hidden", !open);
+    sortMenu.classList.toggle("flex", open);
+    sortCaret?.classList.toggle("rotate-180", open);
+    sortButton.setAttribute("aria-expanded", String(open));
+  };
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.dataset.filter;
+      let visibleCount = 0;
+
+      filterButtons.forEach((item) => {
+        const selected = item === button;
+        item.classList.toggle("bg-nila", selected);
+        item.classList.toggle("text-white", selected);
+        item.classList.toggle("border", !selected);
+        item.classList.toggle("border-nila/25", !selected);
+        item.classList.toggle("text-nila", !selected);
+      });
+
+      cards.forEach((card) => {
+        const visible =
+          filter === "all" ||
+          (card.dataset.category || "").split(" ").includes(filter);
+        card.style.display = visible ? "flex" : "none";
+        if (visible) visibleCount++;
+      });
+
+      if (countEl) countEl.textContent = `${visibleCount} ${countLabel}`;
+    });
+  });
+
+  if (sortButton && sortMenu) {
+    sortButton.addEventListener("click", () => {
+      setSortMenuOpen(sortMenu.classList.contains("hidden"));
+    });
+
+    sortOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const type = option.dataset.sort;
+        if (!type) return;
+        sortCards(type);
+        if (sortLabel) sortLabel.textContent = option.textContent.trim();
+        sortOptions.forEach((item) =>
+          item.classList.toggle("bg-nila/10", item === option),
+        );
+        setSortMenuOpen(false);
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!sortContainer?.contains(event.target)) setSortMenuOpen(false);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") setSortMenuOpen(false);
+    });
+  }
+});

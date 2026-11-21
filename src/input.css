@@ -1,4 +1,9 @@
 @import "tailwindcss";
+<<<<<<< Updated upstream
+=======
+@import "lenis/dist/lenis.css";
+@import "./home.css";
+>>>>>>> Stashed changes
 
 /* 1. CONFIG DESAIN TOKENS (@theme)*/
 @theme {
@@ -757,6 +762,7 @@ html.lenis body {
   }
 }
 
+<<<<<<< Updated upstream
 @media (max-width: 767px) {
   .how-stage {
     min-height: 0;
@@ -767,5 +773,23 @@ html.lenis body {
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+=======
+dialog#modal-budaya[open] {
+  @apply fixed inset-0 w-full h-full max-w-full max-h-full m-0 p-5 box-border flex items-center justify-center bg-transparent border-none;
+}
+
+.kotak-animasi {
+  animation: munculTurun 0.4s ease-out forwards;
+}
+
+@keyframes munculTurun {
+  from {
+    opacity: 0;
+    transform: translateY(-2.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+>>>>>>> Stashed changes
   }
 }
