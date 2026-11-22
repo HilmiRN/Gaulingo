@@ -3535,16 +3535,56 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  function playGaliAudio(text, rate = 1) {
+  let galiAudioUrl = null;
+  let galiAudioPlayer = null;
+
+  async function playGaliAudio(text, rate = 1, button = null) {
+    if (!text) return;
+    if (galiAudioPlayer) {
+      galiAudioPlayer.pause();
+      galiAudioPlayer = null;
+    }
+    if (galiAudioUrl) URL.revokeObjectURL(galiAudioUrl);
+
+    const original = button?.innerHTML;
+    if (button) {
+      button.disabled = true;
+      button.innerHTML = '<i class="ph ph-spinner animate-spin text-sm"></i>';
+    }
+
     try {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(text);
-        utter.lang = "id-ID";
-        utter.rate = rate;
-        window.speechSynthesis.speak(utter);
+      const response = await fetch("/api/speech", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, rate }),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `Audio gagal (${response.status})`);
       }
-    } catch (_) {}
+      galiAudioUrl = URL.createObjectURL(await response.blob());
+      galiAudioPlayer = new Audio(galiAudioUrl);
+      galiAudioPlayer.onended = () => {
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = original;
+        }
+      };
+      galiAudioPlayer.onerror = () => {
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = original;
+        }
+      };
+      await galiAudioPlayer.play();
+    } catch (error) {
+      console.error("Gali audio error:", error);
+      if (button) {
+        button.disabled = false;
+        button.innerHTML = original;
+        button.title = "Audio tidak tersedia. Coba lagi.";
+      }
+    }
   }
 
   function jawabanFallback(question) {
@@ -3600,10 +3640,8 @@ document.addEventListener("DOMContentLoaded", () => {
         phrase: parsed.phrase || "Permisi, mau tanya...",
         meaning: parsed.meaning || '"Excuse me, I would like to ask..."',
         tip: parsed.tip || "Say it with a warm smile!",
-        chips:
-          Array.isArray(parsed.chips) && parsed.chips.length
-            ? parsed.chips.slice(0, 3)
-            : ["Say it slower", "Sunda version", "Save phrase"],
+        chips: Array.isArray(parsed.chips) ? parsed.chips.slice(0, 3) : [],
+        audioRequired: parsed.audioRequired === true,
       };
 
       historyArray.push({
@@ -3620,7 +3658,8 @@ document.addEventListener("DOMContentLoaded", () => {
         phrase: "Coba sebentar lagi, ya!",
         meaning: '"Please try again in a moment!"',
         tip: `Detail: ${err.message}`,
-        chips: ["Say it slower", "Save phrase"],
+        chips: [],
+        audioRequired: false,
       };
     }
   }
@@ -3651,15 +3690,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p class="font-bold text-nila text-sm">${reply.phrase}</p>
                 <p class="text-xs text-nila/65 mt-0.5">${reply.meaning}</p>
               </div>
-              <button
-                type="button"
-                data-gali-speak="${reply.phrase.replace(/"/g, "&quot;")}"
-                style="background-color: var(--color-nila, #243b7a); color: #ffffff"
-                class="w-9 h-9 rounded-full shrink-0 flex items-center justify-center hover:opacity-90 cursor-pointer"
-                aria-label="Play audio"
-              >
-                <i class="ph-fill ph-play text-xs"></i>
-              </button>
+              ${
+                reply.audioRequired
+                  ? `
+                <button
+                  type="button"
+                  data-gali-speak="${reply.phrase.replace(/"/g, "&quot;")}"
+                  style="background-color: var(--color-nila, #243b7a); color: #ffffff"
+                  class="w-9 h-9 rounded-full shrink-0 flex items-center justify-center hover:opacity-90 cursor-pointer"
+                  aria-label="Dengarkan pengucapan"
+                  title="Dengarkan pengucapan"
+                >
+                  <i class="ph-fill ph-play text-xs"></i>
+                </button>`
+                  : ""
+              }
             </div>
             <p class="text-[11px] text-nila/70 leading-relaxed">${reply.tip}</p>
           </div>
@@ -3980,7 +4025,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const speakBtn = e.target.closest("[data-gali-speak]");
       if (speakBtn) {
-        playGaliAudio(speakBtn.dataset.galiSpeak, 1);
+        playGaliAudio(speakBtn.dataset.galiSpeak, 1, speakBtn);
         return;
       }
 
@@ -3994,9 +4039,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const isDrawer = Boolean(chipBtn.closest("#gali-drawer"));
 
         if (chip === "Say it slower") {
-          playGaliAudio(phrase, 0.55);
-          chipBtn.textContent = "Playing 0.5x...";
-          setTimeout(() => (chipBtn.textContent = "Say it slower"), 1500);
+          playGaliAudio(phrase, 0.55, chipBtn);
         } else if (chip === "Save phrase") {
           const saved = JSON.parse(
             localStorage.getItem("gaulingo_saved") || "[]",
