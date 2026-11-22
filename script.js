@@ -7,9 +7,11 @@ const translations = {
     hero_chat_button: "Chat with Gali",
     nav_menu: "MENU",
     btn_ask: "Ask Gali",
-    // navigasi
+
+    // NAV (MENU)
     nav_close: "Close",
-    // situasi
+
+    // SITUATION
     sit_label: "Situations",
     sit_title: "SITUATION",
     sit_title_1: "Find your",
@@ -25,7 +27,8 @@ const translations = {
     phrase_cheaper: "Can it be cheaper?",
     phrase_thanks: "Thank you, ma'am!",
     btn_open_stall: "Open Stall",
-    // kartu di section situasi
+
+    // 4 cards
     card_school_title: "SCHOOL",
     card_school_desc: "In class & with teachers · 5 phrases",
     card_minibus_title: "MINIBUS",
@@ -34,7 +37,8 @@ const translations = {
     card_smalltalk_desc: "Meeting new people · 10 phrases",
     card_emergency_title: "EMERGENCY",
     card_emergency_desc: "When you need help · 6 phrases",
-    // pharse of the day section
+
+    // PHRASE OF THE DAY
     potd_label: "PHRASE OF THE DAY",
     potd_title: "Thank you very much!",
     potd_meaning: '"Thank you very much!"',
@@ -44,7 +48,8 @@ const translations = {
     potd_culture_desc:
       "Give and take things with your right hand. In Indonesia it is a sign of respect.",
     potd_more_tips: "More culture tips",
-    // how it works section
+
+    // HOW IT WORKS
     how_label: "HOW IT WORKS",
     how_title_1: "Three steps to your first ",
     how_title_2: "CONVERSATION",
@@ -67,12 +72,13 @@ const translations = {
     phrases_8: "8 phrases",
     phrases_6: "6 phrases",
     total_8: "8 in total",
-    // pherse card
+
+    // PHRASE CARDS
     local_phrases_title: "Local Phrases of Nusantara",
     local_phrases_desc:
       "Learn everyday survival phrases from various regions across Indonesia.",
 
-    // why gaulingo section
+    // --- WHY GAULINGO ---
     why_label: "WHY GAULINGO",
     why_title_1: "Not your usual ",
     why_title_2: "PHRASEBOOK",
@@ -88,7 +94,7 @@ const translations = {
     why_gali_item3: "A culture tip in every situation",
     why_gali_item4: "Local languages across Indonesia",
 
-    // AI buddy section
+    // --- AI BUDDY ---
     ai_label: "AI BUDDY",
     ai_title_1: "Stuck? Just ask ",
     ai_title_2: "GALI.",
@@ -102,7 +108,7 @@ const translations = {
     ai_btn_chat: "Start chatting",
     ai_disclaimer: "Gali can make mistakes. Check important info with a local.",
 
-    // faq section
+    // --- FAQ ---
     faq_label: "FAQ",
     faq_title_1: "STILL GOT ",
     faq_title_2: "QUESTIONS?",
@@ -128,7 +134,8 @@ const translations = {
     faq_footer_desc:
       "Ask Gali directly — he answers in English and Bahasa Indonesia.",
     faq_footer_btn: "Ask Gali",
-    // footer section
+
+    // FOOTER
     footer_terms: "Terms and Conditions",
     footer_privacy: "Privacy Policy",
     footer_socials: "Socials",
@@ -145,7 +152,8 @@ const translations = {
     footer_nav_chat: "Chat with Gali",
     footer_tagline:
       "Say it like a local.<br />Everyday Indonesian phrases<br />for real places.",
-    // Situation menu
+
+    // SITUATION (NAV MENU)
     sit_page_home: "Home",
     sit_page_situations: "Situations",
     sit_page_title: "WHERE ARE YOU TODAY?",
@@ -153,14 +161,16 @@ const translations = {
       "Pick the place you are in. Gali brings the phrases, the pronunciation, and the manners that go with it.",
     sit_page_search_ph: "Search a phrase or a place...",
     sit_page_search_btn: "Search",
-    // call to action section
+
+    // CTA
     cta_tagline: "NO SIGN-UP · NO APP · JUST OPEN IT",
     cta_title_1: "Ready to",
-    cta_title_2: "CONVERSATION?",
+    cta_title_2: "conversation?",
     cta_subtitle: "Start with one phrase today. Tomorrow you will use it.",
     cta_btn_explore: "START EXPLORING",
     cta_btn_chat: "CHAT WITH GALI",
-    // food
+
+    // FOOD
     rd_food_title: "FOOD",
     rd_food_desc: "Ordering food and asking what is in it.",
   },
@@ -172,9 +182,11 @@ const translations = {
     hero_chat_button: "Chat dengan Gali",
     nav_menu: "MENU",
     btn_ask: "Tanya Gali",
-    // navigasi
+
+    // NAV (MENU)
     nav_close: "Tutup",
-    // situation page
+
+    // SITUATION
     sit_label: "SITUASI",
     sit_title: "SITUASIMU",
     sit_title_1: "Temukan",
@@ -191,6 +203,7 @@ const translations = {
     phrase_cheaper: "Bisa lebih murah?",
     phrase_thanks: "Terima kasih, Bu!",
     btn_open_stall: "Buka Warung",
+
     // 4 cards
     card_school_title: "SEKOLAH",
     card_school_desc: "Di kelas & bersama guru · 5 frasa",
@@ -200,7 +213,8 @@ const translations = {
     card_smalltalk_desc: "Kenalan dengan orang baru · 10 frasa",
     card_emergency_title: "DARURAT",
     card_emergency_desc: "Saat kamu butuh bantuan · 6 frasa",
-    // pharse of the day section
+
+    // PHRASE OF THE DAY
     potd_label: "FRASA HARI INI",
     potd_title: "Terima kasih banyak!",
     potd_meaning: '"Terima kasih banyak!"',
@@ -210,11 +224,13 @@ const translations = {
     potd_culture_desc:
       "Gunakan tangan kanan saat memberi atau menerima sesuatu. Di Indonesia ini adalah bentuk rasa hormat.",
     potd_more_tips: "Tips budaya lainnya",
-    // pharse card
+
+    // PHRASE CARDS
     local_phrases_title: "Frasa Daerah Nusantara",
     local_phrases_desc:
       "Pelajari bahasa lokal untuk bertahan hidup di berbagai daerah.",
-    // how it works srction
+
+    // HOW IT WORKS
     how_label: "CARA KERJA",
     how_title_1: "Tiga langkah untuk mulai ",
     how_title_2: "NGOBROL",
@@ -239,7 +255,7 @@ const translations = {
     phrases_6: "6 frasa",
     total_8: "Total 8",
 
-    // why gaulingo section
+    // WHY GAULINGO
     why_label: "MENGAPA GAULINGO",
     why_title_1: "Bukan buku frasa ",
     why_title_2: "BIASA",
@@ -255,7 +271,7 @@ const translations = {
     why_gali_item3: "Tips budaya di setiap situasi",
     why_gali_item4: "Berbagai bahasa daerah di Indonesia",
 
-    // ai buddy section
+    // --- AI BUDDY ---
     ai_label: "TEMAN AI",
     ai_title_1: "Bingung? Tanya aja ",
     ai_title_2: "GALI.",
@@ -270,7 +286,7 @@ const translations = {
     ai_disclaimer:
       "Gali bisa saja salah. Pastikan informasi penting dengan warga lokal.",
 
-    // faq section
+    // FAQ
     faq_label: "FAQ",
     faq_title_1: "MASIH PUNYA ",
     faq_title_2: "PERTANYAAN?",
@@ -297,7 +313,7 @@ const translations = {
       "Tanya Gali langsung — dia bisa menjawab dalam bahasa Inggris dan Bahasa Indonesia.",
     faq_footer_btn: "Tanya Gali",
 
-    // footer
+    // FOOTER
     footer_terms: "Syarat dan Ketentuan",
     footer_privacy: "Kebijakan Privasi",
     footer_socials: "Media Sosial",
@@ -315,7 +331,7 @@ const translations = {
     footer_tagline:
       "Bicara seperti warga lokal.<br />Frasa bahasa Indonesia sehari-hari<br />untuk tempat nyata.",
 
-    // Situation page
+    // SITUATION (NAV MENU)
     sit_page_home: "Beranda",
     sit_page_situations: "Situasi",
     sit_page_title: "KAMU LAGI DI MANA HARI INI?",
@@ -324,14 +340,15 @@ const translations = {
     sit_page_search_ph: "Cari frasa atau tempat...",
     sit_page_search_btn: "Cari",
 
-    // call to action
+    // CTA
     cta_tagline: "TANPA DAFTAR · TANPA APLIKASI · LANGSUNG BUKA",
     cta_title_1: "Siap mulai",
     cta_title_2: "ngobrol?",
     cta_subtitle: "Mulai dari satu frasa hari ini. Besok langsung kepakai.",
     cta_btn_explore: "MULAI EKSPLORASI",
     cta_btn_chat: "NGOBROL SAMA GALI",
-    // food
+
+    // FOOD
     rd_food_title: "MAKANAN",
     rd_food_desc: "Memesan makanan dan menanyakan isinya.",
   },
@@ -440,6 +457,10 @@ document.addEventListener("keydown", (e) => {
     menuToggle.focus();
   }
 });
+
+// ==========================================
+// PHRASE IN CARDS (300 KALIMAT LOKAL NUSANTARA)
+// ==========================================
 const frasaDefault = {
   daerah: "",
   topik: "terima kasih",
@@ -450,2425 +471,325 @@ const frasaDefault = {
 };
 
 const dataFrasaLokal = [
-  // bahasa minang
-  {
-    daerah: "Minang",
-    topik: "terima kasih",
-    asli: "Tarimo kasih banyak yo, Sanak!",
-    baca: "tah-REE-mo KAH-seeh BAH-nyak yo SAH-nahk",
-    arti_id: "Terima kasih banyak ya, Saudara!",
-    arti_en: "Thank you very much, friend!",
-  },
-  {
-    daerah: "Minang",
-    topik: "apa kabar",
-    asli: "Ba'a kaba kini?",
-    baca: "ba-AH KAH-bah KEE-nee",
-    arti_id: "Apa kabar sekarang?",
-    arti_en: "How are you doing?",
-  },
-  {
-    daerah: "Minang",
-    topik: "permisi numpang lewat",
-    asli: "Permisi, numpang lalu ciek.",
-    baca: "per-MEE-see NOOM-pahng LAH-loo CHEE-ek",
-    arti_id: "Permisi, numpang lewat sebentar.",
-    arti_en: "Excuse me, coming through.",
-  },
-  {
-    daerah: "Minang",
-    topik: "berapa harganya",
-    asli: "Bara harago iko ciek?",
-    baca: "bah-RAH hah-RAH-go EE-ko CHEE-ek",
-    arti_id: "Berapa harga yang ini satu?",
-    arti_en: "How much is one of these?",
-  },
-  {
-    daerah: "Minang",
-    topik: "sudah makan belum",
-    asli: "Lah makan atau alun?",
-    baca: "lah MAH-kan AH-tow AH-loon",
-    arti_id: "Sudah makan atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Minang",
-    topik: "mau pergi ke mana",
-    asli: "Ka pai kama tuh?",
-    baca: "kah PAH-ee KAH-mah tooh",
-    arti_id: "Mau pergi ke mana tuh?",
-    arti_en: "Where are you heading?",
-  },
-  {
-    daerah: "Minang",
-    topik: "enak sekali sedap",
-    asli: "Lamak bana raso samba ko!",
-    baca: "LAH-mahk BAH-nah RAH-so SAHM-bah ko",
-    arti_id: "Enak sekali rasa lauk ini!",
-    arti_en: "This dish tastes delicious!",
-  },
-  {
-    daerah: "Minang",
-    topik: "hati-hati di jalan",
-    asli: "Elok-elok di jalan yo!",
-    baca: "EH-lok EH-lok dee JAH-lan yo",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Take care on the road!",
-  },
-  {
-    daerah: "Minang",
-    topik: "tolong bantu",
-    asli: "Bisa tolong bantu ambo sabanta?",
-    baca: "BEE-sah TO-long BAHN-too AHM-bo sah-BAHN-tah",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Could you help me for a moment?",
-  },
-  {
-    daerah: "Minang",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Basuo wak baliak yo!",
-    baca: "bah-SOO-oh wahk BAH-lee-ak yo",
-    arti_id: "Sampai ketemu lagi ya!",
-    arti_en: "See you again soon!",
-  },
-  {
-    daerah: "Minang",
-    topik: "jangan pedas tidak pedas",
-    asli: "Jan padeh-padeh bana yo!",
-    baca: "jahn PAH-deh PAH-deh BAH-nah yo",
-    arti_id: "Jangan pedas-pedas sekali ya!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Minang",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Bisa kurang saketek haragonyo?",
-    baca: "BEE-sah KOO-rahng sah-KEH-tek hah-rah-GO-nyo",
-    arti_id: "Bisa kurang sedikit harganya?",
-    arti_en: "Can you lower the price a bit?",
-  },
-  {
-    daerah: "Minang",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Dima kamar mandi disiko?",
-    baca: "dee-MAH KAH-mar MAHN-dee dee-SEE-ko",
-    arti_id: "Di mana kamar mandi di sini?",
-    arti_en: "Where is the restroom here?",
-  },
-  {
-    daerah: "Minang",
-    topik: "tidak mengerti kurang paham",
-    asli: "Maaf, ambo indak mangarati.",
-    baca: "MAH-ahf AHM-bo EEN-dahk mah-ngah-RAH-tee",
-    arti_id: "Maaf, saya tidak mengerti.",
-    arti_en: "Sorry, I don't understand.",
-  },
-  {
-    daerah: "Minang",
-    topik: "siapa namamu kenalan",
-    asli: "Sia namo sanak?",
-    baca: "SEE-ah NAH-mo SAH-nahk",
-    arti_id: "Siapa nama kamu?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Minang",
-    topik: "dari mana asalmu",
-    asli: "Dari ma asa sanak?",
-    baca: "DAH-ree mah AH-sah SAH-nahk",
-    arti_id: "Dari mana asal kamu?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Minang",
-    topik: "tidak apa-apa santai saja",
-    asli: "Indak baa doh, santai se.",
-    baca: "EEN-dahk BAH-ah doh SAHN-tai seh",
-    arti_id: "Tidak apa-apa kok, santai saja.",
-    arti_en: "No worries, just take it easy.",
-  },
-  {
-    daerah: "Minang",
-    topik: "lapar sekali haus",
-    asli: "Lapar bana paruik ambo!",
-    baca: "LAH-par BAH-nah pah-ROO-eek AHM-bo",
-    arti_id: "Lapar sekali perut saya!",
-    arti_en: "My stomach is starving!",
-  },
-  {
-    daerah: "Minang",
-    topik: "belok kiri arah jalan",
-    asli: "Belok kida di muko tu yo!",
-    baca: "BEH-lok KEE-dah dee MOO-ko too yo",
-    arti_id: "Belok kiri di depan situ ya!",
-    arti_en: "Turn left right up ahead!",
-  },
-  {
-    daerah: "Minang",
-    topik: "selamat pagi",
-    asli: "Salamaik pagi, sanak!",
-    baca: "sah-LAH-maik PAH-gee SAH-nahk",
-    arti_id: "Selamat pagi, kawan!",
-    arti_en: "Good morning, friend!",
-  },
-  {
-    daerah: "Minang",
-    topik: "pesan ini mau beli order",
-    asli: "Ambo nio pasan nan iko ciek.",
-    baca: "AHM-bo NEE-o PAH-sahn nahn EE-ko CHEE-ek",
-    arti_id: "Saya mau pesan yang ini satu.",
-    arti_en: "I would like to order one of these.",
-  },
-  {
-    daerah: "Minang",
-    topik: "bayar di mana kasir",
-    asli: "Dima tampek mambayianyo?",
-    baca: "dee-MAH TAHM-pek mahm-bah-YEE-ah-nyo",
-    arti_id: "Di mana tempat bayarnya?",
-    arti_en: "Where do I pay for this?",
-  },
-  {
-    daerah: "Minang",
-    topik: "minta air putih minum",
-    asli: "Bisa mintak aia putiah angek?",
-    baca: "BEE-sah MEEN-tahk AH-ee-ah POO-tee-ah AH-ngek",
-    arti_id: "Bisa minta air putih hangat?",
-    arti_en: "Could I get some warm water?",
-  },
-  {
-    daerah: "Minang",
-    topik: "tunggu sebentar sabar",
-    asli: "Tunggu sabanta yo, jan kama-kama.",
-    baca: "TOONG-goo sah-BAHN-tah yo jahn KAH-mah KAH-mah",
-    arti_id: "Tunggu sebentar ya, jangan ke mana-mana.",
-    arti_en: "Wait a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Minang",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Mari wak mangopi dulu!",
-    baca: "MAH-ree wahk mah-NGO-pee DOO-loo",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Let's grab some coffee first!",
-  },
-  {
-    daerah: "Minang",
-    topik: "panas sekali cuaca terik",
-    asli: "Paneh bana ari kini ko!",
-    baca: "PAH-neh BAH-nah AH-ree KEE-nee ko",
-    arti_id: "Panas sekali hari ini!",
-    arti_en: "It is super hot today!",
-  },
-  {
-    daerah: "Minang",
-    topik: "bagus keren cantik indah",
-    asli: "Rancak bana iko mah!",
-    baca: "RAHN-chahk BAH-nah EE-ko mah",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This looks amazing!",
-  },
-  {
-    daerah: "Minang",
-    topik: "pamit pulang sudah malam",
-    asli: "Lah malam, ambo pamit pulang dulu yo.",
-    baca: "lah MAH-lahm AHM-bo PAH-meet POO-lahng DOO-loo yo",
-    arti_id: "Sudah malam, saya pamit pulang dulu ya.",
-    arti_en: "It's getting late, I'll head home now.",
-  },
-  {
-    daerah: "Minang",
-    topik: "kabari kalau sudah sampai",
-    asli: "Jan lupo kabari kalau lah tibo yo!",
-    baca: "jahn LOO-po kah-BAH-ree KAH-low lah TEE-bo yo",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to text when you arrive!",
-  },
-  {
-    daerah: "Minang",
-    topik: "senang kenalan bertemu",
-    asli: "Sanang bana dapek bakawan jo sanak!",
-    baca: "SAH-nahng BAH-nah DAH-pek bah-KAH-wahn jo SAH-nahk",
-    arti_id: "Senang sekali bisa berteman denganmu!",
-    arti_en: "So happy to meet and be friends with you!",
-  },
+  // --- MINANG ---
+  { daerah: "Minang", topik: "terima kasih", asli: "Tarimo kasih banyak yo, Sanak!", baca: "tah-REE-mo KAH-seeh BAH-nyak yo SAH-nahk", arti_id: "Terima kasih banyak ya, Saudara!", arti_en: "Thank you very much, friend!" },
+  { daerah: "Minang", topik: "apa kabar", asli: "Ba'a kaba kini?", baca: "ba-AH KAH-bah KEE-nee", arti_id: "Apa kabar sekarang?", arti_en: "How are you doing?" },
+  { daerah: "Minang", topik: "permisi numpang lewat", asli: "Permisi, numpang lalu ciek.", baca: "per-MEE-see NOOM-pahng LAH-loo CHEE-ek", arti_id: "Permisi, numpang lewat sebentar.", arti_en: "Excuse me, coming through." },
+  { daerah: "Minang", topik: "berapa harganya", asli: "Bara harago iko ciek?", baca: "bah-RAH hah-RAH-go EE-ko CHEE-ek", arti_id: "Berapa harga yang ini satu?", arti_en: "How much is one of these?" },
+  { daerah: "Minang", topik: "sudah makan belum", asli: "Lah makan atau alun?", baca: "lah MAH-kan AH-tow AH-loon", arti_id: "Sudah makan atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Minang", topik: "mau pergi ke mana", asli: "Ka pai kama tuh?", baca: "kah PAH-ee KAH-mah tooh", arti_id: "Mau pergi ke mana tuh?", arti_en: "Where are you heading?" },
+  { daerah: "Minang", topik: "enak sekali sedap", asli: "Lamak bana raso samba ko!", baca: "LAH-mahk BAH-nah RAH-so SAHM-bah ko", arti_id: "Enak sekali rasa lauk ini!", arti_en: "This dish tastes delicious!" },
+  { daerah: "Minang", topik: "hati-hati di jalan", asli: "Elok-elok di jalan yo!", baca: "EH-lok EH-lok dee JAH-lan yo", arti_id: "Hati-hati di jalan ya!", arti_en: "Take care on the road!" },
+  { daerah: "Minang", topik: "tolong bantu", asli: "Bisa tolong bantu ambo sabanta?", baca: "BEE-sah TO-long BAHN-too AHM-bo sah-BAHN-tah", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Could you help me for a moment?" },
+  { daerah: "Minang", topik: "sampai jumpa lagi ketemu", asli: "Basuo wak baliak yo!", baca: "bah-SOO-oh wahk BAH-lee-ak yo", arti_id: "Sampai ketemu lagi ya!", arti_en: "See you again soon!" },
+  { daerah: "Minang", topik: "jangan pedas tidak pedas", asli: "Jan padeh-padeh bana yo!", baca: "jahn PAH-deh PAH-deh BAH-nah yo", arti_id: "Jangan pedas-pedas sekali ya!", arti_en: "Not too spicy, please!" },
+  { daerah: "Minang", topik: "boleh kurang tawar harga murah", asli: "Bisa kurang saketek haragonyo?", baca: "BEE-sah KOO-rahng sah-KEH-tek hah-rah-GO-nyo", arti_id: "Bisa kurang sedikit harganya?", arti_en: "Can you lower the price a bit?" },
+  { daerah: "Minang", topik: "di mana toilet kamar mandi wc", asli: "Dima kamar mandi disiko?", baca: "dee-MAH KAH-mar MAHN-dee dee-SEE-ko", arti_id: "Di mana kamar mandi di sini?", arti_en: "Where is the restroom here?" },
+  { daerah: "Minang", topik: "tidak mengerti kurang paham", asli: "Maaf, ambo indak mangarati.", baca: "MAH-ahf AHM-bo EEN-dahk mah-ngah-RAH-tee", arti_id: "Maaf, saya tidak mengerti.", arti_en: "Sorry, I don't understand." },
+  { daerah: "Minang", topik: "siapa namamu kenalan", asli: "Sia namo sanak?", baca: "SEE-ah NAH-mo SAH-nahk", arti_id: "Siapa nama kamu?", arti_en: "What is your name?" },
+  { daerah: "Minang", topik: "dari mana asalmu", asli: "Dari ma asa sanak?", baca: "DAH-ree mah AH-sah SAH-nahk", arti_id: "Dari mana asal kamu?", arti_en: "Where are you from?" },
+  { daerah: "Minang", topik: "tidak apa-apa santai saja", asli: "Indak baa doh, santai se.", baca: "EEN-dahk BAH-ah doh SAHN-tai seh", arti_id: "Tidak apa-apa kok, santai saja.", arti_en: "No worries, just take it easy." },
+  { daerah: "Minang", topik: "lapar sekali haus", asli: "Lapar bana paruik ambo!", baca: "LAH-par BAH-nah pah-ROO-eek AHM-bo", arti_id: "Lapar sekali perut saya!", arti_en: "My stomach is starving!" },
+  { daerah: "Minang", topik: "belok kiri arah jalan", asli: "Belok kida di muko tu yo!", baca: "BEH-lok KEE-dah dee MOO-ko too yo", arti_id: "Belok kiri di depan situ ya!", arti_en: "Turn left right up ahead!" },
+  { daerah: "Minang", topik: "selamat pagi", asli: "Salamaik pagi, sanak!", baca: "sah-LAH-maik PAH-gee SAH-nahk", arti_id: "Selamat pagi, kawan!", arti_en: "Good morning, friend!" },
+  { daerah: "Minang", topik: "pesan ini mau beli order", asli: "Ambo nio pasan nan iko ciek.", baca: "AHM-bo NEE-o PAH-sahn nahn EE-ko CHEE-ek", arti_id: "Saya mau pesan yang ini satu.", arti_en: "I would like to order one of these." },
+  { daerah: "Minang", topik: "bayar di mana kasir", asli: "Dima tampek mambayianyo?", baca: "dee-MAH TAHM-pek mahm-bah-YEE-ah-nyo", arti_id: "Di mana tempat bayarnya?", arti_en: "Where do I pay for this?" },
+  { daerah: "Minang", topik: "minta air putih minum", asli: "Bisa mintak aia putiah angek?", baca: "BEE-sah MEEN-tahk AH-ee-ah POO-tee-ah AH-ngek", arti_id: "Bisa minta air putih hangat?", arti_en: "Could I get some warm water?" },
+  { daerah: "Minang", topik: "tunggu sebentar sabar", asli: "Tunggu sabanta yo, jan kama-kama.", baca: "TOONG-goo sah-BAHN-tah yo jahn KAH-mah KAH-mah", arti_id: "Tunggu sebentar ya, jangan ke mana-mana.", arti_en: "Wait a moment, don't go anywhere." },
+  { daerah: "Minang", topik: "ngopi nongkrong yuk ajak", asli: "Mari wak mangopi dulu!", baca: "MAH-ree wahk mah-NGO-pee DOO-loo", arti_id: "Ayo kita ngopi dulu!", arti_en: "Let's grab some coffee first!" },
+  { daerah: "Minang", topik: "panas sekali cuaca terik", asli: "Paneh bana ari kini ko!", baca: "PAH-neh BAH-nah AH-ree KEE-nee ko", arti_id: "Panas sekali hari ini!", arti_en: "It is super hot today!" },
+  { daerah: "Minang", topik: "bagus keren cantik indah", asli: "Rancak bana iko mah!", baca: "RAHN-chahk BAH-nah EE-ko mah", arti_id: "Bagus sekali ini!", arti_en: "This looks amazing!" },
+  { daerah: "Minang", topik: "pamit pulang sudah malam", asli: "Lah malam, ambo pamit pulang dulu yo.", baca: "lah MAH-lahm AHM-bo PAH-meet POO-lahng DOO-loo yo", arti_id: "Sudah malam, saya pamit pulang dulu ya.", arti_en: "It's getting late, I'll head home now." },
+  { daerah: "Minang", topik: "kabari kalau sudah sampai", asli: "Jan lupo kabari kalau lah tibo yo!", baca: "jahn LOO-po kah-BAH-ree KAH-low lah TEE-bo yo", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to text when you arrive!" },
+  { daerah: "Minang", topik: "senang kenalan bertemu", asli: "Sanang bana dapek bakawan jo sanak!", baca: "SAH-nahng BAH-nah DAH-pek bah-KAH-wahn jo SAH-nahk", arti_id: "Senang sekali bisa berteman denganmu!", arti_en: "So happy to meet and be friends with you!" },
 
-  // bahasa bali
-  {
-    daerah: "Bali",
-    topik: "terima kasih",
-    asli: "Matur suksma pisan!",
-    baca: "mah-TOOR SUKS-mah PEE-sahn",
-    arti_id: "Terima kasih banyak sekali!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Bali",
-    topik: "apa kabar",
-    asli: "Kenken kabare?",
-    baca: "KEN-ken kah-BAH-ray",
-    arti_id: "Bagaimana kabarnya?",
-    arti_en: "How is it going?",
-  },
-  {
-    daerah: "Bali",
-    topik: "permisi numpang lewat",
-    asli: "Ampura, tiang ngelintang dumun.",
-    baca: "ahm-POO-rah TEE-ahng ngeh-LEEN-tahng DOO-moon",
-    arti_id: "Maaf, saya permisi lewat dulu.",
-    arti_en: "Excuse me, let me pass through.",
-  },
-  {
-    daerah: "Bali",
-    topik: "berapa harganya",
-    asli: "Kuda aji niki?",
-    baca: "KOO-dah AH-jee NEE-kee",
-    arti_id: "Berapa harga barang ini?",
-    arti_en: "How much does this cost?",
-  },
-  {
-    daerah: "Bali",
-    topik: "sudah makan belum",
-    asli: "Suba madaar apa konden?",
-    baca: "SOO-bah mah-DAH-ar AH-pah KON-den",
-    arti_id: "Sudah makan atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Bali",
-    topik: "mau pergi ke mana",
-    asli: "Lakar kija ne?",
-    baca: "LAH-kar KEE-jah neh",
-    arti_id: "Mau pergi ke mana ini?",
-    arti_en: "Where are you going?",
-  },
-  {
-    daerah: "Bali",
-    topik: "enak sekali sedap",
-    asli: "Jaen pesan ajengane niki!",
-    baca: "JAH-en PEH-sahn ah-jeng-AH-neh NEE-kee",
-    arti_id: "Enak sekali makanan ini!",
-    arti_en: "This food is super tasty!",
-  },
-  {
-    daerah: "Bali",
-    topik: "hati-hati di jalan",
-    asli: "Adeng-adeng di jalan nah!",
-    baca: "AH-deng AH-deng dee JAH-lan nah",
-    arti_id: "Pelan-pelan dan hati-hati di jalan ya!",
-    arti_en: "Be careful on the way!",
-  },
-  {
-    daerah: "Bali",
-    topik: "tolong bantu",
-    asli: "Dados tulungin tiang ajebos?",
-    baca: "DAH-dos too-LOO-ngeen TEE-ahng ah-JEH-bos",
-    arti_id: "Boleh tolong bantu saya sebentar?",
-    arti_en: "Can you give me a quick hand?",
-  },
-  {
-    daerah: "Bali",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Ketemu buin manian nah!",
-    baca: "keh-TEH-moo BOO-een mah-NEE-ahn nah",
-    arti_id: "Ketemu lagi nanti ya!",
-    arti_en: "See you again later!",
-  },
-  {
-    daerah: "Bali",
-    topik: "jangan pedas tidak pedas",
-    asli: "Sampunang lalah-lalah nah!",
-    baca: "sahm-POO-nahng LAH-lah LAH-lah nah",
-    arti_id: "Jangan pedas-pedas ya!",
-    arti_en: "Please don't make it too spicy!",
-  },
-  {
-    daerah: "Bali",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Dados kirangin malih akidik?",
-    baca: "DAH-dos kee-RAH-ngeen MAH-leeh ah-KEE-deek",
-    arti_id: "Boleh dikurangi lagi sedikit harganya?",
-    arti_en: "Could you lower the price a little?",
-  },
-  {
-    daerah: "Bali",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Ring dija wenten kamar mandi?",
-    baca: "reeng DEE-jah WEN-ten KAH-mar MAHN-dee",
-    arti_id: "Di sebelah mana ada kamar mandi?",
-    arti_en: "Where can I find the restroom?",
-  },
-  {
-    daerah: "Bali",
-    topik: "tidak mengerti kurang paham",
-    asli: "Ampura, tiang ten ngerti.",
-    baca: "ahm-POO-rah TEE-ahng ten NGER-tee",
-    arti_id: "Maaf, saya tidak mengerti.",
-    arti_en: "Sorry, I don't understand.",
-  },
-  {
-    daerah: "Bali",
-    topik: "siapa namamu kenalan",
-    asli: "Sira pesengan ragane?",
-    baca: "SEE-rah peh-SENG-ahn rah-GAH-neh",
-    arti_id: "Siapa nama Anda?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Bali",
-    topik: "dari mana asalmu",
-    asli: "Saking dija ragane?",
-    baca: "SAH-keeng DEE-jah rah-GAH-neh",
-    arti_id: "Dari mana asal Anda?",
-    arti_en: "Where do you come from?",
-  },
-  {
-    daerah: "Bali",
-    topik: "tidak apa-apa santai saja",
-    asli: "Ten kenapi, santai manten.",
-    baca: "ten keh-NAH-pee SAHN-tai MAHN-ten",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "It's okay, no problem at all.",
-  },
-  {
-    daerah: "Bali",
-    topik: "lapar sekali haus",
-    asli: "Seduk pesan basang tiange!",
-    baca: "SEH-dook PEH-sahn BAH-sahng tee-AH-ngeh",
-    arti_id: "Lapar sekali perut saya!",
-    arti_en: "I'm really hungry!",
-  },
-  {
-    daerah: "Bali",
-    topik: "belok kiri arah jalan",
-    asli: "Belok kebot ring ajeng nah!",
-    baca: "BEH-lok KEH-bot reeng AH-jeng nah",
-    arti_id: "Belok kiri di depan ya!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Bali",
-    topik: "selamat pagi",
-    asli: "Rahajeng semeng!",
-    baca: "rah-HAH-jeng SEH-meng",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Bali",
-    topik: "pesan ini mau beli order",
-    asli: "Tiang mesen sane niki siki.",
-    baca: "TEE-ahng MEH-sen SAH-neh NEE-kee SEE-kee",
-    arti_id: "Saya pesan yang ini satu.",
-    arti_en: "I'd like to order one of these.",
-  },
-  {
-    daerah: "Bali",
-    topik: "bayar di mana kasir",
-    asli: "Ring dija tiang mayah niki?",
-    baca: "reeng DEE-jah TEE-ahng MAH-yah NEE-kee",
-    arti_id: "Di sebelah mana saya bayar ini?",
-    arti_en: "Where should I pay for this?",
-  },
-  {
-    daerah: "Bali",
-    topik: "minta air putih minum",
-    asli: "Dados tiang nunas yeh putih?",
-    baca: "DAH-dos TEE-ahng NOO-nahs yeh POO-teeh",
-    arti_id: "Boleh saya minta air putih?",
-    arti_en: "May I have some plain water?",
-  },
-  {
-    daerah: "Bali",
-    topik: "tunggu sebentar sabar",
-    asli: "Antosang ajebos nah, sampunang kija-kija.",
-    baca: "ahn-TO-sahng ah-JEH-bos nah sahm-POO-nahng KEE-jah KEE-jah",
-    arti_id: "Tunggu sebentar ya, jangan ke mana-mana.",
-    arti_en: "Please wait a bit, stay right here.",
-  },
-  {
-    daerah: "Bali",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Mai iraga ngopi dumun!",
-    baca: "MAI ee-RAH-gah NGO-pee DOO-moon",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Come on, let's get coffee first!",
-  },
-  {
-    daerah: "Bali",
-    topik: "panas sekali cuaca terik",
-    asli: "Panes pesan gumi ne jani!",
-    baca: "PAH-nes PEH-sahn GOO-mee neh JAH-nee",
-    arti_id: "Panas sekali cuacanya hari ini!",
-    arti_en: "The weather is scorching today!",
-  },
-  {
-    daerah: "Bali",
-    topik: "bagus keren cantik indah",
-    asli: "Becik pesan niki!",
-    baca: "BEH-cheek PEH-sahn NEE-kee",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is really nice!",
-  },
-  {
-    daerah: "Bali",
-    topik: "pamit pulang sudah malam",
-    asli: "Suba peteng, tiang pamit budal dumun nah.",
-    baca: "SOO-bah PEH-teng TEE-ahng PAH-meet BOO-dahl DOO-moon nah",
-    arti_id: "Sudah malam, saya pamit pulang dulu ya.",
-    arti_en: "It's night already, I'll head home first.",
-  },
-  {
-    daerah: "Bali",
-    topik: "kabari kalau sudah sampai",
-    asli: "Sampunang lali ngabarin yen suba teked nah!",
-    baca: "sahm-POO-nahng LAH-lee ngah-BAH-reen yen SOO-bah TEH-ked nah",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to let me know once you arrive!",
-  },
-  {
-    daerah: "Bali",
-    topik: "senang kenalan bertemu",
-    asli: "Liang pesan keneh tiange kenal sareng ragane!",
-    baca: "LEE-ahng PEH-sahn KEH-neh tee-AH-ngeh KEH-nahl SAH-reng rah-GAH-neh",
-    arti_id: "Senang sekali hati saya bisa kenal dengan Anda!",
-    arti_en: "I'm really glad to meet you!",
-  },
+  // --- BALI ---
+  { daerah: "Bali", topik: "terima kasih", asli: "Matur suksma pisan!", baca: "mah-TOOR SUKS-mah PEE-sahn", arti_id: "Terima kasih banyak sekali!", arti_en: "Thank you very much!" },
+  { daerah: "Bali", topik: "apa kabar", asli: "Kenken kabare?", baca: "KEN-ken kah-BAH-ray", arti_id: "Bagaimana kabarnya?", arti_en: "How is it going?" },
+  { daerah: "Bali", topik: "permisi numpang lewat", asli: "Ampura, tiang ngelintang dumun.", baca: "ahm-POO-rah TEE-ahng ngeh-LEEN-tahng DOO-moon", arti_id: "Maaf, saya permisi lewat dulu.", arti_en: "Excuse me, let me pass through." },
+  { daerah: "Bali", topik: "berapa harganya", asli: "Kuda aji niki?", baca: "KOO-dah AH-jee NEE-kee", arti_id: "Berapa harga barang ini?", arti_en: "How much does this cost?" },
+  { daerah: "Bali", topik: "sudah makan belum", asli: "Suba madaar apa konden?", baca: "SOO-bah mah-DAH-ar AH-pah KON-den", arti_id: "Sudah makan atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Bali", topik: "mau pergi ke mana", asli: "Lakar kija ne?", baca: "LAH-kar KEE-jah neh", arti_id: "Mau pergi ke mana ini?", arti_en: "Where are you going?" },
+  { daerah: "Bali", topik: "enak sekali sedap", asli: "Jaen pesan ajengane niki!", baca: "JAH-en PEH-sahn ah-jeng-AH-neh NEE-kee", arti_id: "Enak sekali makanan ini!", arti_en: "This food is super tasty!" },
+  { daerah: "Bali", topik: "hati-hati di jalan", asli: "Adeng-adeng di jalan nah!", baca: "AH-deng AH-deng dee JAH-lan nah", arti_id: "Pelan-pelan dan hati-hati di jalan ya!", arti_en: "Be careful on the way!" },
+  { daerah: "Bali", topik: "tolong bantu", asli: "Dados tulungin tiang ajebos?", baca: "DAH-dos too-LOO-ngeen TEE-ahng ah-JEH-bos", arti_id: "Boleh tolong bantu saya sebentar?", arti_en: "Can you give me a quick hand?" },
+  { daerah: "Bali", topik: "sampai jumpa lagi ketemu", asli: "Ketemu buin manian nah!", baca: "keh-TEH-moo BOO-een mah-NEE-ahn nah", arti_id: "Ketemu lagi nanti ya!", arti_en: "See you again later!" },
+  { daerah: "Bali", topik: "jangan pedas tidak pedas", asli: "Sampunang lalah-lalah nah!", baca: "sahm-POO-nahng LAH-lah LAH-lah nah", arti_id: "Jangan pedas-pedas ya!", arti_en: "Please don't make it too spicy!" },
+  { daerah: "Bali", topik: "boleh kurang tawar harga murah", asli: "Dados kirangin malih akidik?", baca: "DAH-dos kee-RAH-ngeen MAH-leeh ah-KEE-deek", arti_id: "Boleh dikurangi lagi sedikit harganya?", arti_en: "Could you lower the price a little?" },
+  { daerah: "Bali", topik: "di mana toilet kamar mandi wc", asli: "Ring dija wenten kamar mandi?", baca: "reeng DEE-jah WEN-ten KAH-mar MAHN-dee", arti_id: "Di sebelah mana ada kamar mandi?", arti_en: "Where can I find the restroom?" },
+  { daerah: "Bali", topik: "tidak mengerti kurang paham", asli: "Ampura, tiang ten ngerti.", baca: "ahm-POO-rah TEE-ahng ten NGER-tee", arti_id: "Maaf, saya tidak mengerti.", arti_en: "Sorry, I don't understand." },
+  { daerah: "Bali", topik: "siapa namamu kenalan", asli: "Sira pesengan ragane?", baca: "SEE-rah peh-SENG-ahn rah-GAH-neh", arti_id: "Siapa nama Anda?", arti_en: "What is your name?" },
+  { daerah: "Bali", topik: "dari mana asalmu", asli: "Saking dija ragane?", baca: "SAH-keeng DEE-jah rah-GAH-neh", arti_id: "Dari mana asal Anda?", arti_en: "Where do you come from?" },
+  { daerah: "Bali", topik: "tidak apa-apa santai saja", asli: "Ten kenapi, santai manten.", baca: "ten keh-NAH-pee SAHN-tai MAHN-ten", arti_id: "Tidak apa-apa, santai saja.", arti_en: "It's okay, no problem at all." },
+  { daerah: "Bali", topik: "lapar sekali haus", asli: "Seduk pesan basang tiange!", baca: "SEH-dook PEH-sahn BAH-sahng tee-AH-ngeh", arti_id: "Lapar sekali perut saya!", arti_en: "I'm really hungry!" },
+  { daerah: "Bali", topik: "belok kiri arah jalan", asli: "Belok kebot ring ajeng nah!", baca: "BEH-lok KEH-bot reeng AH-jeng nah", arti_id: "Belok kiri di depan ya!", arti_en: "Turn left up ahead!" },
+  { daerah: "Bali", topik: "selamat pagi", asli: "Rahajeng semeng!", baca: "rah-HAH-jeng SEH-meng", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Bali", topik: "pesan ini mau beli order", asli: "Tiang mesen sane niki siki.", baca: "TEE-ahng MEH-sen SAH-neh NEE-kee SEE-kee", arti_id: "Saya pesan yang ini satu.", arti_en: "I'd like to order one of these." },
+  { daerah: "Bali", topik: "bayar di mana kasir", asli: "Ring dija tiang mayah niki?", baca: "reeng DEE-jah TEE-ahng MAH-yah NEE-kee", arti_id: "Di sebelah mana saya bayar ini?", arti_en: "Where should I pay for this?" },
+  { daerah: "Bali", topik: "minta air putih minum", asli: "Dados tiang nunas yeh putih?", baca: "DAH-dos TEE-ahng NOO-nahs yeh POO-teeh", arti_id: "Boleh saya minta air putih?", arti_en: "May I have some plain water?" },
+  { daerah: "Bali", topik: "tunggu sebentar sabar", asli: "Antosang ajebos nah, sampunang kija-kija.", baca: "ahn-TO-sahng ah-JEH-bos nah sahm-POO-nahng KEE-jah KEE-jah", arti_id: "Tunggu sebentar ya, jangan ke mana-mana.", arti_en: "Please wait a bit, stay right here." },
+  { daerah: "Bali", topik: "ngopi nongkrong yuk ajak", asli: "Mai iraga ngopi dumun!", baca: "MAI ee-RAH-gah NGO-pee DOO-moon", arti_id: "Ayo kita ngopi dulu!", arti_en: "Come on, let's get coffee first!" },
+  { daerah: "Bali", topik: "panas sekali cuaca terik", asli: "Panes pesan gumi ne jani!", baca: "PAH-nes PEH-sahn GOO-mee neh JAH-nee", arti_id: "Panas sekali cuacanya hari ini!", arti_en: "The weather is scorching today!" },
+  { daerah: "Bali", topik: "bagus keren cantik indah", asli: "Becik pesan niki!", baca: "BEH-cheek PEH-sahn NEE-kee", arti_id: "Bagus sekali ini!", arti_en: "This is really nice!" },
+  { daerah: "Bali", topik: "pamit pulang sudah malam", asli: "Suba peteng, tiang pamit budal dumun nah.", baca: "SOO-bah PEH-teng TEE-ahng PAH-meet BOO-dahl DOO-moon nah", arti_id: "Sudah malam, saya pamit pulang dulu ya.", arti_en: "It's night already, I'll head home first." },
+  { daerah: "Bali", topik: "kabari kalau sudah sampai", asli: "Sampunang lali ngabarin yen suba teked nah!", baca: "sahm-POO-nahng LAH-lee ngah-BAH-reen yen SOO-bah TEH-ked nah", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to let me know once you arrive!" },
+  { daerah: "Bali", topik: "senang kenalan bertemu", asli: "Liang pesan keneh tiange kenal sareng ragane!", baca: "LEE-ahng PEH-sahn KEH-neh tee-AH-ngeh KEH-nahl SAH-reng rah-GAH-neh", arti_id: "Senang sekali hati saya bisa kenal dengan Anda!", arti_en: "I'm really glad to meet you!" },
 
-  // bahasa sunda
-  {
-    daerah: "Sunda",
-    topik: "terima kasih",
-    asli: "Hatur nuhun pisan!",
-    baca: "HAH-toor NOO-hoon PEE-sahn",
-    arti_id: "Terima kasih banyak sekali!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "apa kabar",
-    asli: "Kumaha damang?",
-    baca: "koo-MAH-hah DAH-mahng",
-    arti_id: "Bagaimana kabarnya, sehat?",
-    arti_en: "How are you doing?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "permisi numpang lewat",
-    asli: "Punten, ngiring ngalangkung.",
-    baca: "POON-ten NGEE-reeng ngah-LAHNG-koong",
-    arti_id: "Permisi, numpang lewat.",
-    arti_en: "Excuse me, passing through.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "berapa harganya",
-    asli: "Sabaraha hargana ieu téh?",
-    baca: "sah-bah-RAH-hah har-GAH-nah EE-yuh teh",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "sudah makan belum",
-    asli: "Tos tuang teu acan?",
-    baca: "tos TOO-ahng tuh AH-chahn",
-    arti_id: "Sudah makan belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "mau pergi ke mana",
-    asli: "Badé angkat ka mana?",
-    baca: "BAH-day AHNG-kaht kah MAH-nah",
-    arti_id: "Mau pergi ke mana?",
-    arti_en: "Where are you off to?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "enak sekali sedap",
-    asli: "Raoseun pisan tuangeunana!",
-    baca: "rah-O-suhn PEE-sahn too-ahng-UH-nah-nah",
-    arti_id: "Enak sekali makanannya!",
-    arti_en: "The food is really delicious!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "hati-hati di jalan",
-    asli: "Ati-ati di jalanna nya!",
-    baca: "AH-tee AH-tee dee jah-LAHN-nah nyah",
-    arti_id: "Hati-hati di jalannya ya!",
-    arti_en: "Safe travels on the road!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "tolong bantu",
-    asli: "Tiasa pangbantosan abdi sakedap?",
-    baca: "tee-AH-sah pahng-bahn-TO-sahn AHB-dee sah-KEH-dahp",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Could you help me out for a second?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Pendak deui engké nya!",
-    baca: "PEN-dahk DUH-ee ENG-kay nyah",
-    arti_id: "Ketemu lagi nanti ya!",
-    arti_en: "See you again soon!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "jangan pedas tidak pedas",
-    asli: "Ulah lada-lada teuing nya!",
-    baca: "OO-lah LAH-dah LAH-dah TUH-eeng nyah",
-    arti_id: "Jangan terlalu pedas ya!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Tiasa kirang sakedik hargana?",
-    baca: "tee-AH-sah KEE-rahng sah-KEH-deek har-GAH-nah",
-    arti_id: "Bisa kurang sedikit harganya?",
-    arti_en: "Can it be a little cheaper?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Di mana jamban atanapi toilet?",
-    baca: "dee MAH-nah JAHM-bahn ah-tah-NAH-pee TOY-let",
-    arti_id: "Di mana kamar mandi atau toilet?",
-    arti_en: "Where is the bathroom?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "tidak mengerti kurang paham",
-    asli: "Punten, abdi kirang ngartos.",
-    baca: "POON-ten AHB-dee KEE-rahng NGAR-tos",
-    arti_id: "Maaf, saya kurang mengerti.",
-    arti_en: "Excuse me, I don't quite understand.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "siapa namamu kenalan",
-    asli: "Saha jenengan anjeun?",
-    baca: "SAH-hah jeh-NENG-ahn AHN-juhn",
-    arti_id: "Siapa nama kamu?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "dari mana asalmu",
-    asli: "Ti mana kawit anjeun?",
-    baca: "tee MAH-nah KAH-weet AHN-juhn",
-    arti_id: "Dari mana asal kamu?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "tidak apa-apa santai saja",
-    asli: "Teu sawios, santai wé.",
-    baca: "tuh sah-WEE-os SAHN-tai way",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No problem, take it easy.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "lapar sekali haus",
-    asli: "Lapar pisan beuteung abdi!",
-    baca: "LAH-par PEE-sahn BUH-tuhng AHB-dee",
-    arti_id: "Lapar sekali perut saya!",
-    arti_en: "I'm super hungry!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "belok kiri arah jalan",
-    asli: "Péngkol kénca di payun nya!",
-    baca: "PENG-kol KEN-chah dee PAH-yoon nyah",
-    arti_id: "Belok kiri di depan ya!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "selamat pagi",
-    asli: "Wilujeng énjing!",
-    baca: "wee-LOO-jeng EN-jeeng",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "pesan ini mau beli order",
-    asli: "Abdi mesen nu ieu hiji.",
-    baca: "AHB-dee MEH-sen noo EE-yuh HEE-jee",
-    arti_id: "Saya pesan yang ini satu.",
-    arti_en: "I want to order one of these.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "bayar di mana kasir",
-    asli: "Di mana mayarna nya?",
-    baca: "dee MAH-nah mah-YAR-nah nyah",
-    arti_id: "Di mana bayarnya ya?",
-    arti_en: "Where do I pay?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "minta air putih minum",
-    asli: "Tiasa nyuhunkeun cai hérang haneut?",
-    baca: "tee-AH-sah nyoo-HOON-kuhn CHAH-ee HAY-rahng HAH-nuht",
-    arti_id: "Bisa minta air putih hangat?",
-    arti_en: "Can I get some warm water?",
-  },
-  {
-    daerah: "Sunda",
-    topik: "tunggu sebentar sabar",
-    asli: "Antosan sakedap nya, ulah ka mana-mana.",
-    baca: "ahn-TO-sahn sah-KEH-dahp nyah OO-lah kah MAH-nah MAH-nah",
-    arti_id: "Tunggu sebentar ya, jangan ke mana-mana.",
-    arti_en: "Wait a second, don't go anywhere.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Hayu urang ngopi heula!",
-    baca: "HAH-yoo OO-rahng NGO-pee HUH-lah",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Let's grab a coffee first!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "panas sekali cuaca terik",
-    asli: "Panas pisan dinten ieu téh!",
-    baca: "PAH-nahs PEE-sahn DEEN-ten EE-yuh teh",
-    arti_id: "Panas sekali hari ini!",
-    arti_en: "It's so hot today!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "bagus keren cantik indah",
-    asli: "Saé pisan ieu mah!",
-    baca: "SAH-ay PEE-sahn EE-yuh mah",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is very good!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "pamit pulang sudah malam",
-    asli: "Tos wengi, abdi permios wangsul heula nya.",
-    baca: "tos WUH-ngee AHB-dee per-MEE-os WAHNG-sool HUH-lah nyah",
-    arti_id: "Sudah malam, saya permisi pulang dulu ya.",
-    arti_en: "It's late, I'll excuse myself to go home.",
-  },
-  {
-    daerah: "Sunda",
-    topik: "kabari kalau sudah sampai",
-    asli: "Ulah hilap ngabaran upami tos dugi nya!",
-    baca: "OO-lah HEE-lahp ngah-BAH-rahn oo-PAH-mee tos DOO-gee nyah",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to message when you get there!",
-  },
-  {
-    daerah: "Sunda",
-    topik: "senang kenalan bertemu",
-    asli: "Bingah pisan tiasa wanoh sareng anjeun!",
-    baca: "BEE-ngah PEE-sahn tee-AH-sah WAH-noh SAH-reng AHN-juhn",
-    arti_id: "Senang sekali bisa kenalan dengan kamu!",
-    arti_en: "So happy to get to know you!",
-  },
+  // --- SUNDA ---
+  { daerah: "Sunda", topik: "terima kasih", asli: "Hatur nuhun pisan!", baca: "HAH-toor NOO-hoon PEE-sahn", arti_id: "Terima kasih banyak sekali!", arti_en: "Thank you very much!" },
+  { daerah: "Sunda", topik: "apa kabar", asli: "Kumaha damang?", baca: "koo-MAH-hah DAH-mahng", arti_id: "Bagaimana kabarnya, sehat?", arti_en: "How are you doing?" },
+  { daerah: "Sunda", topik: "permisi numpang lewat", asli: "Punten, ngiring ngalangkung.", baca: "POON-ten NGEE-reeng ngah-LAHNG-koong", arti_id: "Permisi, numpang lewat.", arti_en: "Excuse me, passing through." },
+  { daerah: "Sunda", topik: "berapa harganya", asli: "Sabaraha hargana ieu téh?", baca: "sah-bah-RAH-hah har-GAH-nah EE-yuh teh", arti_id: "Berapa harganya ini?", arti_en: "How much is this?" },
+  { daerah: "Sunda", topik: "sudah makan belum", asli: "Tos tuang teu acan?", baca: "tos TOO-ahng tuh AH-chahn", arti_id: "Sudah makan belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Sunda", topik: "mau pergi ke mana", asli: "Badé angkat ka mana?", baca: "BAH-day AHNG-kaht kah MAH-nah", arti_id: "Mau pergi ke mana?", arti_en: "Where are you off to?" },
+  { daerah: "Sunda", topik: "enak sekali sedap", asli: "Raoseun pisan tuangeunana!", baca: "rah-O-suhn PEE-sahn too-ahng-UH-nah-nah", arti_id: "Enak sekali makanannya!", arti_en: "The food is really delicious!" },
+  { daerah: "Sunda", topik: "hati-hati di jalan", asli: "Ati-ati di jalanna nya!", baca: "AH-tee AH-tee dee jah-LAHN-nah nyah", arti_id: "Hati-hati di jalannya ya!", arti_en: "Safe travels on the road!" },
+  { daerah: "Sunda", topik: "tolong bantu", asli: "Tiasa pangbantosan abdi sakedap?", baca: "tee-AH-sah pahng-bahn-TO-sahn AHB-dee sah-KEH-dahp", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Could you help me out for a second?" },
+  { daerah: "Sunda", topik: "sampai jumpa lagi ketemu", asli: "Pendak deui engké nya!", baca: "PEN-dahk DUH-ee ENG-kay nyah", arti_id: "Ketemu lagi nanti ya!", arti_en: "See you again soon!" },
+  { daerah: "Sunda", topik: "jangan pedas tidak pedas", asli: "Ulah lada-lada teuing nya!", baca: "OO-lah LAH-dah LAH-dah TUH-eeng nyah", arti_id: "Jangan terlalu pedas ya!", arti_en: "Not too spicy, please!" },
+  { daerah: "Sunda", topik: "boleh kurang tawar harga murah", asli: "Tiasa kirang sakedik hargana?", baca: "tee-AH-sah KEE-rahng sah-KEH-deek har-GAH-nah", arti_id: "Bisa kurang sedikit harganya?", arti_en: "Can it be a little cheaper?" },
+  { daerah: "Sunda", topik: "di mana toilet kamar mandi wc", asli: "Di mana jamban atanapi toilet?", baca: "dee MAH-nah JAHM-bahn ah-tah-NAH-pee TOY-let", arti_id: "Di mana kamar mandi atau toilet?", arti_en: "Where is the bathroom?" },
+  { daerah: "Sunda", topik: "tidak mengerti kurang paham", asli: "Punten, abdi kirang ngartos.", baca: "POON-ten AHB-dee KEE-rahng NGAR-tos", arti_id: "Maaf, saya kurang mengerti.", arti_en: "Excuse me, I don't quite understand." },
+  { daerah: "Sunda", topik: "siapa namamu kenalan", asli: "Saha jenengan anjeun?", baca: "SAH-hah jeh-NENG-ahn AHN-juhn", arti_id: "Siapa nama kamu?", arti_en: "What is your name?" },
+  { daerah: "Sunda", topik: "dari mana asalmu", asli: "Ti mana kawit anjeun?", baca: "tee MAH-nah KAH-weet AHN-juhn", arti_id: "Dari mana asal kamu?", arti_en: "Where are you from?" },
+  { daerah: "Sunda", topik: "tidak apa-apa santai saja", asli: "Teu sawios, santai wé.", baca: "tuh sah-WEE-os SAHN-tai way", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No problem, take it easy." },
+  { daerah: "Sunda", topik: "lapar sekali haus", asli: "Lapar pisan beuteung abdi!", baca: "LAH-par PEE-sahn BUH-tuhng AHB-dee", arti_id: "Lapar sekali perut saya!", arti_en: "I'm super hungry!" },
+  { daerah: "Sunda", topik: "belok kiri arah jalan", asli: "Péngkol kénca di payun nya!", baca: "PENG-kol KEN-chah dee PAH-yoon nyah", arti_id: "Belok kiri di depan ya!", arti_en: "Turn left up ahead!" },
+  { daerah: "Sunda", topik: "selamat pagi", asli: "Wilujeng énjing!", baca: "wee-LOO-jeng EN-jeeng", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Sunda", topik: "pesan ini mau beli order", asli: "Abdi mesen nu ieu hiji.", baca: "AHB-dee MEH-sen noo EE-yuh HEE-jee", arti_id: "Saya pesan yang ini satu.", arti_en: "I want to order one of these." },
+  { daerah: "Sunda", topik: "bayar di mana kasir", asli: "Di mana mayarna nya?", baca: "dee MAH-nah mah-YAR-nah nyah", arti_id: "Di mana bayarnya ya?", arti_en: "Where do I pay?" },
+  { daerah: "Sunda", topik: "minta air putih minum", asli: "Tiasa nyuhunkeun cai hérang haneut?", baca: "tee-AH-sah nyoo-HOON-kuhn CHAH-ee HAY-rahng HAH-nuht", arti_id: "Bisa minta air putih hangat?", arti_en: "Can I get some warm water?" },
+  { daerah: "Sunda", topik: "tunggu sebentar sabar", asli: "Antosan sakedap nya, ulah ka mana-mana.", baca: "ahn-TO-sahn sah-KEH-dahp nyah OO-lah kah MAH-nah MAH-nah", arti_id: "Tunggu sebentar ya, jangan ke mana-mana.", arti_en: "Wait a second, don't go anywhere." },
+  { daerah: "Sunda", topik: "ngopi nongkrong yuk ajak", asli: "Hayu urang ngopi heula!", baca: "HAH-yoo OO-rahng NGO-pee HUH-lah", arti_id: "Ayo kita ngopi dulu!", arti_en: "Let's grab a coffee first!" },
+  { daerah: "Sunda", topik: "panas sekali cuaca terik", asli: "Panas pisan dinten ieu téh!", baca: "PAH-nahs PEE-sahn DEEN-ten EE-yuh teh", arti_id: "Panas sekali hari ini!", arti_en: "It's so hot today!" },
+  { daerah: "Sunda", topik: "bagus keren cantik indah", asli: "Saé pisan ieu mah!", baca: "SAH-ay PEE-sahn EE-yuh mah", arti_id: "Bagus sekali ini!", arti_en: "This is very good!" },
+  { daerah: "Sunda", topik: "pamit pulang sudah malam", asli: "Tos wengi, abdi permios wangsul heula nya.", baca: "tos WUH-ngee AHB-dee per-MEE-os WAHNG-sool HUH-lah nyah", arti_id: "Sudah malam, saya permisi pulang dulu ya.", arti_en: "It's late, I'll excuse myself to go home." },
+  { daerah: "Sunda", topik: "kabari kalau sudah sampai", asli: "Ulah hilap ngabaran upami tos dugi nya!", baca: "OO-lah HEE-lahp ngah-BAH-rahn oo-PAH-mee tos DOO-gee nyah", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to message when you get there!" },
+  { daerah: "Sunda", topik: "senang kenalan bertemu", asli: "Bingah pisan tiasa wanoh sareng anjeun!", baca: "BEE-ngah PEE-sahn tee-AH-sah WAH-noh SAH-reng AHN-juhn", arti_id: "Senang sekali bisa kenalan dengan kamu!", arti_en: "So happy to get to know you!" },
 
-  // bahasa bugis
-  {
-    daerah: "Bugis",
-    topik: "terima kasih",
-    asli: "Tarima kasi maega!",
-    baca: "tah-REE-mah KAH-see mah-EH-gah",
-    arti_id: "Terima kasih banyak!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "apa kabar",
-    asli: "Aga kareba?",
-    baca: "AH-gah kah-RAY-bah",
-    arti_id: "Apa kabar?",
-    arti_en: "What's the news / How are you?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "permisi numpang lewat",
-    asli: "Tabe', lao riolo.",
-    baca: "TAH-beh LAH-oh ree-O-lo",
-    arti_id: "Permisi, numpang lewat duluan.",
-    arti_en: "Excuse me, coming through.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "berapa harganya",
-    asli: "Siaga ellinna iye?",
-    baca: "see-AH-gah el-LEEN-nah EE-yeh",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "sudah makan belum",
-    asli: "Purani manre iyaré'ga dé'pa?",
-    baca: "poo-RAH-nee MAHN-reh ee-yah-RAY-gah DEH-pah",
-    arti_id: "Sudah makan atau belum?",
-    arti_en: "Have you eaten or not yet?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "mau pergi ke mana",
-    asli: "Maélo lao kega?",
-    baca: "mah-EH-lo LAH-oh KEH-gah",
-    arti_id: "Mau pergi ke mana?",
-    arti_en: "Where do you want to go?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "enak sekali sedap",
-    asli: "Macenning ladde' iye anré!",
-    baca: "mah-CHEN-neeng LAHD-deh EE-yeh AHN-ray",
-    arti_id: "Enak sekali makanan ini!",
-    arti_en: "This food is super delicious!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "hati-hati di jalan",
-    asli: "Maka-makai ri laleng!",
-    baca: "MAH-kah MAH-kah-ee ree LAH-leng",
-    arti_id: "Hati-hati di jalan!",
-    arti_en: "Be careful on the way!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "tolong bantu",
-    asli: "Weddikka muwéwanga cinampe?",
-    baca: "wed-DEEK-kah moo-WEH-wahng-ah chee-NAHM-peh",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Can you help me briefly?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Siruntu' paimeng!",
-    baca: "see-ROON-too pah-EE-meng",
-    arti_id: "Sampai ketemu lagi!",
-    arti_en: "See you again!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "jangan pedas tidak pedas",
-    asli: "Aja' mapedde' ladde'!",
-    baca: "AH-jah mah-PED-deh LAHD-deh",
-    arti_id: "Jangan terlalu pedas!",
-    arti_en: "Don't make it too spicy!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Weddikka dikurangi cedde' ellinna?",
-    baca: "wed-DEEK-kah dee-koo-RAH-ngee CHED-deh el-LEEN-nah",
-    arti_id: "Boleh dikurangi sedikit harganya?",
-    arti_en: "Can you reduce the price a bit?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Kega monro kamar mandie?",
-    baca: "KEH-gah MON-ro KAH-mar mahn-DEE-eh",
-    arti_id: "Di mana letak kamar mandinya?",
-    arti_en: "Where is the bathroom located?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "tidak mengerti kurang paham",
-    asli: "Addampengengnga, dé' upahang.",
-    baca: "ahd-dahm-PENG-eng-ngah DEH oo-PAH-hahng",
-    arti_id: "Maafkan saya, saya tidak paham.",
-    arti_en: "Excuse me, I don't understand.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "siapa namamu kenalan",
-    asli: "Niga asemmu?",
-    baca: "NEE-gah ah-SEM-moo",
-    arti_id: "Siapa namamu?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "dari mana asalmu",
-    asli: "Polé kega asengmu?",
-    baca: "po-LAY KEH-gah ah-SENG-moo",
-    arti_id: "Dari mana asalmu?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "tidak apa-apa santai saja",
-    asli: "Dé' magaga, santai bawang.",
-    baca: "DEH mah-GAH-gah SAHN-tai BAH-wahng",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No worries, just relax.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "lapar sekali haus",
-    asli: "Malupu ladde'na!",
-    baca: "mah-LOO-poo LAHD-deh-nah",
-    arti_id: "Saya lapar sekali!",
-    arti_en: "I am really hungry!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "belok kiri arah jalan",
-    asli: "Belo' kairi ri olo!",
-    baca: "BEH-lo kah-EE-ree ree O-lo",
-    arti_id: "Belok kiri di depan!",
-    arti_en: "Turn left ahead!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "selamat pagi",
-    asli: "Salama' élé!",
-    baca: "sah-LAH-mah EH-lay",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "pesan ini mau beli order",
-    asli: "Maéloka' mappeseng iyaé séddi.",
-    baca: "mah-EH-lo-kah mahp-PEH-seng ee-YAH-eh SED-dee",
-    arti_id: "Saya mau pesan yang ini satu.",
-    arti_en: "I'd like to order one of these.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "bayar di mana kasir",
-    asli: "Kega monro tawajja'na?",
-    baca: "KEH-gah MON-ro tah-WAHJ-jah-nah",
-    arti_id: "Di mana tempat bayarnya?",
-    arti_en: "Where is the payment counter?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "minta air putih minum",
-    asli: "Weddikka méllau uwai mapella?",
-    baca: "wed-DEEK-kah MEL-low oo-WAI mah-PEL-lah",
-    arti_id: "Boleh minta air putih hangat?",
-    arti_en: "May I ask for some warm water?",
-  },
-  {
-    daerah: "Bugis",
-    topik: "tunggu sebentar sabar",
-    asli: "Tajengnga' cinampe' deh, aja' mulao kega-kega.",
-    baca: "tah-JENG-ngah chee-NAHM-peh deh AH-jah moo-LAH-oh KEH-gah KEH-gah",
-    arti_id: "Tunggu saya sebentar ya, jangan ke mana-mana.",
-    arti_en: "Wait for me a bit, don't go anywhere.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Laoni mai mangopi riolo!",
-    baca: "LAH-o-nee MAI mah-NGO-pee ree-O-lo",
-    arti_id: "Ayo mari kita ngopi dulu!",
-    arti_en: "Come on, let's have coffee first!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "panas sekali cuaca terik",
-    asli: "Mapella ladde' essoewe!",
-    baca: "mah-PEL-lah LAHD-deh es-SO-eh-weh",
-    arti_id: "Panas sekali hari ini!",
-    arti_en: "Today is really hot!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "bagus keren cantik indah",
-    asli: "Makessing ladde' iyaé!",
-    baca: "mah-KES-seeng LAHD-deh ee-YAH-eh",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is super nice!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "pamit pulang sudah malam",
-    asli: "Wennini, pammopporangnga' lisu riolo deh.",
-    baca: "wen-NEE-nee pahm-mop-po-RAHNG-ngah LEE-soo ree-O-lo deh",
-    arti_id: "Sudah malam, permisi saya pulang dulu ya.",
-    arti_en: "It's night already, excuse me while I head home.",
-  },
-  {
-    daerah: "Bugis",
-    topik: "kabari kalau sudah sampai",
-    asli: "Aja' muallupai mabbéré karéba rékko lettu'no!",
-    baca: "AH-jah moo-ahl-LOO-pai mahb-BEH-ray kah-RAY-bah REK-ko LET-too-no",
-    arti_id: "Jangan lupa kasih kabar kalau sudah sampai!",
-    arti_en: "Don't forget to send word once you arrive!",
-  },
-  {
-    daerah: "Bugis",
-    topik: "senang kenalan bertemu",
-    asli: "Masennang ladde' atikku sita sibawa iko!",
-    baca: "mah-SEN-nahng LAHD-deh ah-TEEK-koo SEE-tah see-BAH-wah EE-ko",
-    arti_id: "Senang sekali hatiku bertemu denganmu!",
-    arti_en: "My heart is very glad to meet you!",
-  },
+  // --- BUGIS ---
+  { daerah: "Bugis", topik: "terima kasih", asli: "Tarima kasi maega!", baca: "tah-REE-mah KAH-see mah-EH-gah", arti_id: "Terima kasih banyak!", arti_en: "Thank you very much!" },
+  { daerah: "Bugis", topik: "apa kabar", asli: "Aga kareba?", baca: "AH-gah kah-RAY-bah", arti_id: "Apa kabar?", arti_en: "What's the news / How are you?" },
+  { daerah: "Bugis", topik: "permisi numpang lewat", asli: "Tabe', lao riolo.", baca: "TAH-beh LAH-oh ree-O-lo", arti_id: "Permisi, numpang lewat duluan.", arti_en: "Excuse me, coming through." },
+  { daerah: "Bugis", topik: "berapa harganya", asli: "Siaga ellinna iye?", baca: "see-AH-gah el-LEEN-nah EE-yeh", arti_id: "Berapa harganya ini?", arti_en: "How much is this?" },
+  { daerah: "Bugis", topik: "sudah makan belum", asli: "Purani manre iyaré'ga dé'pa?", baca: "poo-RAH-nee MAHN-reh ee-yah-RAY-gah DEH-pah", arti_id: "Sudah makan atau belum?", arti_en: "Have you eaten or not yet?" },
+  { daerah: "Bugis", topik: "mau pergi ke mana", asli: "Maélo lao kega?", baca: "mah-EH-lo LAH-oh KEH-gah", arti_id: "Mau pergi ke mana?", arti_en: "Where do you want to go?" },
+  { daerah: "Bugis", topik: "enak sekali sedap", asli: "Macenning ladde' iye anré!", baca: "mah-CHEN-neeng LAHD-deh EE-yeh AHN-ray", arti_id: "Enak sekali makanan ini!", arti_en: "This food is super delicious!" },
+  { daerah: "Bugis", topik: "hati-hati di jalan", asli: "Maka-makai ri laleng!", baca: "MAH-kah MAH-kah-ee ree LAH-leng", arti_id: "Hati-hati di jalan!", arti_en: "Be careful on the way!" },
+  { daerah: "Bugis", topik: "tolong bantu", asli: "Weddikka muwéwanga cinampe?", baca: "wed-DEEK-kah moo-WEH-wahng-ah chee-NAHM-peh", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Can you help me briefly?" },
+  { daerah: "Bugis", topik: "sampai jumpa lagi ketemu", asli: "Siruntu' paimeng!", baca: "see-ROON-too pah-EE-meng", arti_id: "Sampai ketemu lagi!", arti_en: "See you again!" },
+  { daerah: "Bugis", topik: "jangan pedas tidak pedas", asli: "Aja' mapedde' ladde'!", baca: "AH-jah mah-PED-deh LAHD-deh", arti_id: "Jangan terlalu pedas!", arti_en: "Don't make it too spicy!" },
+  { daerah: "Bugis", topik: "boleh kurang tawar harga murah", asli: "Weddikka dikurangi cedde' ellinna?", baca: "wed-DEEK-kah dee-koo-RAH-ngee CHED-deh el-LEEN-nah", arti_id: "Boleh dikurangi sedikit harganya?", arti_en: "Can you reduce the price a bit?" },
+  { daerah: "Bugis", topik: "di mana toilet kamar mandi wc", asli: "Kega monro kamar mandie?", baca: "KEH-gah MON-ro KAH-mar mahn-DEE-eh", arti_id: "Di mana letak kamar mandinya?", arti_en: "Where is the bathroom located?" },
+  { daerah: "Bugis", topik: "tidak mengerti kurang paham", asli: "Addampengengnga, dé' upahang.", baca: "ahd-dahm-PENG-eng-ngah DEH oo-PAH-hahng", arti_id: "Maafkan saya, saya tidak paham.", arti_en: "Excuse me, I don't understand." },
+  { daerah: "Bugis", topik: "siapa namamu kenalan", asli: "Niga asemmu?", baca: "NEE-gah ah-SEM-moo", arti_id: "Siapa namamu?", arti_en: "What is your name?" },
+  { daerah: "Bugis", topik: "dari mana asalmu", asli: "Polé kega asengmu?", baca: "po-LAY KEH-gah ah-SENG-moo", arti_id: "Dari mana asalmu?", arti_en: "Where are you from?" },
+  { daerah: "Bugis", topik: "tidak apa-apa santai saja", asli: "Dé' magaga, santai bawang.", baca: "DEH mah-GAH-gah SAHN-tai BAH-wahng", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No worries, just relax." },
+  { daerah: "Bugis", topik: "lapar sekali haus", asli: "Malupu ladde'na!", baca: "mah-LOO-poo LAHD-deh-nah", arti_id: "Saya lapar sekali!", arti_en: "I am really hungry!" },
+  { daerah: "Bugis", topik: "belok kiri arah jalan", asli: "Belo' kairi ri olo!", baca: "BEH-lo kah-EE-ree ree O-lo", arti_id: "Belok kiri di depan!", arti_en: "Turn left ahead!" },
+  { daerah: "Bugis", topik: "selamat pagi", asli: "Salama' élé!", baca: "sah-LAH-mah EH-lay", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Bugis", topik: "pesan ini mau beli order", asli: "Maéloka' mappeseng iyaé séddi.", baca: "mah-EH-lo-kah mahp-PEH-seng ee-YAH-eh SED-dee", arti_id: "Saya mau pesan yang ini satu.", arti_en: "I'd like to order one of these." },
+  { daerah: "Bugis", topik: "bayar di mana kasir", asli: "Kega monro tawajja'na?", baca: "KEH-gah MON-ro tah-WAHJ-jah-nah", arti_id: "Di mana tempat bayarnya?", arti_en: "Where is the payment counter?" },
+  { daerah: "Bugis", topik: "minta air putih minum", asli: "Weddikka méllau uwai mapella?", baca: "wed-DEEK-kah MEL-low oo-WAI mah-PEL-lah", arti_id: "Boleh minta air putih hangat?", arti_en: "May I ask for some warm water?" },
+  { daerah: "Bugis", topik: "tunggu sebentar sabar", asli: "Tajengnga' cinampe' deh, aja' mulao kega-kega.", baca: "tah-JENG-ngah chee-NAHM-peh deh AH-jah moo-LAH-oh KEH-gah KEH-gah", arti_id: "Tunggu saya sebentar ya, jangan ke mana-mana.", arti_en: "Wait for me a bit, don't go anywhere." },
+  { daerah: "Bugis", topik: "ngopi nongkrong yuk ajak", asli: "Laoni mai mangopi riolo!", baca: "LAH-o-nee MAI mah-NGO-pee ree-O-lo", arti_id: "Ayo mari kita ngopi dulu!", arti_en: "Come on, let's have coffee first!" },
+  { daerah: "Bugis", topik: "panas sekali cuaca terik", asli: "Mapella ladde' essoewe!", baca: "mah-PEL-lah LAHD-deh es-SO-eh-weh", arti_id: "Panas sekali hari ini!", arti_en: "Today is really hot!" },
+  { daerah: "Bugis", topik: "bagus keren cantik indah", asli: "Makessing ladde' iyaé!", baca: "mah-KES-seeng LAHD-deh ee-YAH-eh", arti_id: "Bagus sekali ini!", arti_en: "This is super nice!" },
+  { daerah: "Bugis", topik: "pamit pulang sudah malam", asli: "Wennini, pammopporangnga' lisu riolo deh.", baca: "wen-NEE-nee pahm-mop-po-RAHNG-ngah LEE-soo ree-O-lo deh", arti_id: "Sudah malam, permisi saya pulang dulu ya.", arti_en: "It's night already, excuse me while I head home." },
+  { daerah: "Bugis", topik: "kabari kalau sudah sampai", asli: "Aja' muallupai mabbéré karéba rékko lettu'no!", baca: "AH-jah moo-ahl-LOO-pai mahb-BEH-ray kah-RAY-bah REK-ko LET-too-no", arti_id: "Jangan lupa kasih kabar kalau sudah sampai!", arti_en: "Don't forget to send word once you arrive!" },
+  { daerah: "Bugis", topik: "senang kenalan bertemu", asli: "Masennang ladde' atikku sita sibawa iko!", baca: "mah-SEN-nahng LAHD-deh ah-TEEK-koo SEE-tah see-BAH-wah EE-ko", arti_id: "Senang sekali hatiku bertemu denganmu!", arti_en: "My heart is very glad to meet you!" },
 
-  // bahasa jawa
-  {
-    daerah: "Jawa",
-    topik: "terima kasih",
-    asli: "Matur nuwun sanget!",
-    baca: "mah-TOOR NOO-woon SAH-nget",
-    arti_id: "Terima kasih banyak sekali!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "apa kabar",
-    asli: "Piye kabare, rek?",
-    baca: "pee-YEH kah-BAH-ray rek",
-    arti_id: "Gimana kabarnya, kawan?",
-    arti_en: "How are you doing, friend?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "permisi numpang lewat",
-    asli: "Nuwun sewu, ndherek langkung.",
-    baca: "NOO-woon SEH-woo NDEH-rek LAHNG-koong",
-    arti_id: "Permisi, numpang lewat.",
-    arti_en: "Excuse me, pardon me passing by.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "berapa harganya",
-    asli: "Pinten regine niki?",
-    baca: "PEEN-ten reh-GEE-neh NEE-kee",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "sudah makan belum",
-    asli: "Sampun dhahar napa dereng?",
-    baca: "SAHM-poon DAH-har NAH-poh DEH-reng",
-    arti_id: "Sudah makan apa belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "mau pergi ke mana",
-    asli: "Ajeng tindak pundi?",
-    baca: "AH-jeng TEEN-dahk POON-dee",
-    arti_id: "Mau pergi ke mana?",
-    arti_en: "Where are you going?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "enak sekali sedap",
-    asli: "Eco sanget dhaharanipun!",
-    baca: "EH-choh SAH-nget dah-hah-rah-nee-POON",
-    arti_id: "Enak sekali makanannya!",
-    arti_en: "This meal is really delicious!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "hati-hati di jalan",
-    asli: "Ngatos-atos wonten margi nggih!",
-    baca: "ngah-TOS AH-tos WON-ten MAR-gee nggeeh",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Be careful on the road!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "tolong bantu",
-    asli: "Saged nyuwun tulung sekedhap?",
-    baca: "SAH-ged NYOO-woon TOO-loong seh-KEH-dahp",
-    arti_id: "Bisa minta tolong sebentar?",
-    arti_en: "May I ask for your help a moment?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Kepanggih malih nggih!",
-    baca: "keh-PAHNG-geeh MAH-leeh nggeeh",
-    arti_id: "Sampai ketemu lagi ya!",
-    arti_en: "See you again!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "jangan pedas tidak pedas",
-    asli: "Ampun pedhes-pedhes nggih!",
-    baca: "AHM-poon PEH-des PEH-des nggeeh",
-    arti_id: "Jangan pedas-pedas ya!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Saged kirang sekedhik regine?",
-    baca: "SAH-ged KEE-rahng seh-KEH-deek reh-GEE-neh",
-    arti_id: "Bisa kurang sedikit harganya?",
-    arti_en: "Can the price be lowered a bit?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Wonten pundi kamar mandinipun?",
-    baca: "WON-ten POON-dee KAH-mar mahn-dee-nee-POON",
-    arti_id: "Di sebelah mana kamar mandinya?",
-    arti_en: "Where is the bathroom?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "tidak mengerti kurang paham",
-    asli: "Nyuwun pangapunten, kula mboten ngertos.",
-    baca: "NYOO-woon pah-ngah-POON-ten KOO-lo MBO-ten NGER-tos",
-    arti_id: "Mohon maaf, saya tidak mengerti.",
-    arti_en: "I'm sorry, I don't understand.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "siapa namamu kenalan",
-    asli: "Sinten asmanipun panjenengan?",
-    baca: "SEEN-ten ahs-mah-nee-POON pahn-jeh-NENG-ahn",
-    arti_id: "Siapa nama Anda?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "dari mana asalmu",
-    asli: "Saking pundi asalipun?",
-    baca: "SAH-keeng POON-dee ah-sah-lee-POON",
-    arti_id: "Dari mana asalnya?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "tidak apa-apa santai saja",
-    asli: "Mboten menapa-menapa, santai mawon.",
-    baca: "MBO-ten meh-NAH-poh meh-NAH-poh SAHN-tai MAH-won",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No problem at all, just relax.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "lapar sekali haus",
-    asli: "Kula luwe sanget!",
-    baca: "KOO-lo LOO-way SAH-nget",
-    arti_id: "Saya lapar sekali!",
-    arti_en: "I'm very hungry!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "belok kiri arah jalan",
-    asli: "Belok ngiwa wonten ngajeng nggih!",
-    baca: "BEH-lok NGEE-woh WON-ten NGAH-jeng nggeeh",
-    arti_id: "Belok kiri di depan ya!",
-    arti_en: "Turn left ahead!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "selamat pagi",
-    asli: "Sugeng enjang!",
-    baca: "SOO-geng EN-jahng",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "pesan ini mau beli order",
-    asli: "Kula pesen ingkang niki setunggal.",
-    baca: "KOO-lo PEH-sen EENG-kahng NEE-kee seh-TOONG-gahl",
-    arti_id: "Saya pesan yang ini satu.",
-    arti_en: "I'd like to order one of these.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "bayar di mana kasir",
-    asli: "Mbayaripun wonten pundi nggih?",
-    baca: "mbah-yah-ree-POON WON-ten POON-dee nggeeh",
-    arti_id: "Bayarnya di sebelah mana ya?",
-    arti_en: "Where do I pay for this?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "minta air putih minum",
-    asli: "Saged nyuwun toya pethak anget?",
-    baca: "SAH-ged NYOO-woon TO-yo PEH-tahk AH-nget",
-    arti_id: "Bisa minta air putih hangat?",
-    arti_en: "Could I have some warm plain water?",
-  },
-  {
-    daerah: "Jawa",
-    topik: "tunggu sebentar sabar",
-    asli: "Entosi sekedhap nggih, ampun tindak pundi-pundi.",
-    baca: "en-TO-see seh-KEH-dahp nggeeh AHM-poon TEEN-dahk POON-dee POON-dee",
-    arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.",
-    arti_en: "Please wait a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Mangga ngopi rumiyin!",
-    baca: "MAHNG-go NGO-pee roo-MEE-yeen",
-    arti_id: "Mari ngopi dulu!",
-    arti_en: "Let's grab some coffee first!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "panas sekali cuaca terik",
-    asli: "Dinten niki benter sanget!",
-    baca: "DEEN-ten NEE-kee BEN-ter SAH-nget",
-    arti_id: "Hari ini panas sekali!",
-    arti_en: "It's super hot today!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "bagus keren cantik indah",
-    asli: "Sae sanget niki!",
-    baca: "SAH-eh SAH-nget NEE-kee",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is really great!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "pamit pulang sudah malam",
-    asli: "Sampun dalu, kula nyuwun pamit wangsul rumiyin.",
-    baca: "SAHM-poon DAH-loo KOO-lo NYOO-woon PAH-meet WAHNG-sool roo-MEE-yeen",
-    arti_id: "Sudah malam, saya mohon pamit pulang dulu.",
-    arti_en: "It's late, I'll ask permission to head home now.",
-  },
-  {
-    daerah: "Jawa",
-    topik: "kabari kalau sudah sampai",
-    asli: "Ampun kesupen ngabari menawi sampun dugi nggih!",
-    baca: "AHM-poon keh-SOO-pen ngah-BAH-ree meh-NAH-wee SAHM-poon DOO-gee nggeeh",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to let me know when you arrive!",
-  },
-  {
-    daerah: "Jawa",
-    topik: "senang kenalan bertemu",
-    asli: "Remen sanget saged tepang kalih panjenengan!",
-    baca: "REH-men SAH-nget SAH-ged TEH-pahng KAH-leeh pahn-jeh-NENG-ahn",
-    arti_id: "Senang sekali bisa berkenalan dengan Anda!",
-    arti_en: "Very pleased to get to know you!",
-  },
+  // --- JAWA ---
+  { daerah: "Jawa", topik: "terima kasih", asli: "Matur nuwun sanget!", baca: "mah-TOOR NOO-woon SAH-nget", arti_id: "Terima kasih banyak sekali!", arti_en: "Thank you very much!" },
+  { daerah: "Jawa", topik: "apa kabar", asli: "Piye kabare, rek?", baca: "pee-YEH kah-BAH-ray rek", arti_id: "Gimana kabarnya, kawan?", arti_en: "How are you doing, friend?" },
+  { daerah: "Jawa", topik: "permisi numpang lewat", asli: "Nuwun sewu, ndherek langkung.", baca: "NOO-woon SEH-woo NDEH-rek LAHNG-koong", arti_id: "Permisi, numpang lewat.", arti_en: "Excuse me, pardon me passing by." },
+  { daerah: "Jawa", topik: "berapa harganya", asli: "Pinten regine niki?", baca: "PEEN-ten reh-GEE-neh NEE-kee", arti_id: "Berapa harganya ini?", arti_en: "How much is this?" },
+  { daerah: "Jawa", topik: "sudah makan belum", asli: "Sampun dhahar napa dereng?", baca: "SAHM-poon DAH-har NAH-poh DEH-reng", arti_id: "Sudah makan apa belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Jawa", topik: "mau pergi ke mana", asli: "Ajeng tindak pundi?", baca: "AH-jeng TEEN-dahk POON-dee", arti_id: "Mau pergi ke mana?", arti_en: "Where are you going?" },
+  { daerah: "Jawa", topik: "enak sekali sedap", asli: "Eco sanget dhaharanipun!", baca: "EH-choh SAH-nget dah-hah-rah-nee-POON", arti_id: "Enak sekali makanannya!", arti_en: "This meal is really delicious!" },
+  { daerah: "Jawa", topik: "hati-hati di jalan", asli: "Ngatos-atos wonten margi nggih!", baca: "ngah-TOS AH-tos WON-ten MAR-gee nggeeh", arti_id: "Hati-hati di jalan ya!", arti_en: "Be careful on the road!" },
+  { daerah: "Jawa", topik: "tolong bantu", asli: "Saged nyuwun tulung sekedhap?", baca: "SAH-ged NYOO-woon TOO-loong seh-KEH-dahp", arti_id: "Bisa minta tolong sebentar?", arti_en: "May I ask for your help a moment?" },
+  { daerah: "Jawa", topik: "sampai jumpa lagi ketemu", asli: "Kepanggih malih nggih!", baca: "keh-PAHNG-geeh MAH-leeh nggeeh", arti_id: "Sampai ketemu lagi ya!", arti_en: "See you again!" },
+  { daerah: "Jawa", topik: "jangan pedas tidak pedas", asli: "Ampun pedhes-pedhes nggih!", baca: "AHM-poon PEH-des PEH-des nggeeh", arti_id: "Jangan pedas-pedas ya!", arti_en: "Not too spicy, please!" },
+  { daerah: "Jawa", topik: "boleh kurang tawar harga murah", asli: "Saged kirang sekedhik regine?", baca: "SAH-ged KEE-rahng seh-KEH-deek reh-GEE-neh", arti_id: "Bisa kurang sedikit harganya?", arti_en: "Can the price be lowered a bit?" },
+  { daerah: "Jawa", topik: "di mana toilet kamar mandi wc", asli: "Wonten pundi kamar mandinipun?", baca: "WON-ten POON-dee KAH-mar mahn-dee-nee-POON", arti_id: "Di sebelah mana kamar mandinya?", arti_en: "Where is the bathroom?" },
+  { daerah: "Jawa", topik: "tidak mengerti kurang paham", asli: "Nyuwun pangapunten, kula mboten ngertos.", baca: "NYOO-woon pah-ngah-POON-ten KOO-lo MBO-ten NGER-tos", arti_id: "Mohon maaf, saya tidak mengerti.", arti_en: "I'm sorry, I don't understand." },
+  { daerah: "Jawa", topik: "siapa namamu kenalan", asli: "Sinten asmanipun panjenengan?", baca: "SEEN-ten ahs-mah-nee-POON pahn-jeh-NENG-ahn", arti_id: "Siapa nama Anda?", arti_en: "What is your name?" },
+  { daerah: "Jawa", topik: "dari mana asalmu", asli: "Saking pundi asalipun?", baca: "SAH-keeng POON-dee ah-sah-lee-POON", arti_id: "Dari mana asalnya?", arti_en: "Where are you from?" },
+  { daerah: "Jawa", topik: "tidak apa-apa santai saja", asli: "Mboten menapa-menapa, santai mawon.", baca: "MBO-ten meh-NAH-poh meh-NAH-poh SAHN-tai MAH-won", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No problem at all, just relax." },
+  { daerah: "Jawa", topik: "lapar sekali haus", asli: "Kula luwe sanget!", baca: "KOO-lo LOO-way SAH-nget", arti_id: "Saya lapar sekali!", arti_en: "I'm very hungry!" },
+  { daerah: "Jawa", topik: "belok kiri arah jalan", asli: "Belok ngiwa wonten ngajeng nggih!", baca: "BEH-lok NGEE-woh WON-ten NGAH-jeng nggeeh", arti_id: "Belok kiri di depan ya!", arti_en: "Turn left ahead!" },
+  { daerah: "Jawa", topik: "selamat pagi", asli: "Sugeng enjang!", baca: "SOO-geng EN-jahng", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Jawa", topik: "pesan ini mau beli order", asli: "Kula pesen ingkang niki setunggal.", baca: "KOO-lo PEH-sen EENG-kahng NEE-kee seh-TOONG-gahl", arti_id: "Saya pesan yang ini satu.", arti_en: "I'd like to order one of these." },
+  { daerah: "Jawa", topik: "bayar di mana kasir", asli: "Mbayaripun wonten pundi nggih?", baca: "mbah-yah-ree-POON WON-ten POON-dee nggeeh", arti_id: "Bayarnya di sebelah mana ya?", arti_en: "Where do I pay for this?" },
+  { daerah: "Jawa", topik: "minta air putih minum", asli: "Saged nyuwun toya pethak anget?", baca: "SAH-ged NYOO-woon TO-yo PEH-tahk AH-nget", arti_id: "Bisa minta air putih hangat?", arti_en: "Could I have some warm plain water?" },
+  { daerah: "Jawa", topik: "tunggu sebentar sabar", asli: "Entosi sekedhap nggih, ampun tindak pundi-pundi.", baca: "en-TO-see seh-KEH-dahp nggeeh AHM-poon TEEN-dahk POON-dee POON-dee", arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.", arti_en: "Please wait a moment, don't go anywhere." },
+  { daerah: "Jawa", topik: "ngopi nongkrong yuk ajak", asli: "Mangga ngopi rumiyin!", baca: "MAHNG-go NGO-pee roo-MEE-yeen", arti_id: "Mari ngopi dulu!", arti_en: "Let's grab some coffee first!" },
+  { daerah: "Jawa", topik: "panas sekali cuaca terik", asli: "Dinten niki benter sanget!", baca: "DEEN-ten NEE-kee BEN-ter SAH-nget", arti_id: "Hari ini panas sekali!", arti_en: "It's super hot today!" },
+  { daerah: "Jawa", topik: "bagus keren cantik indah", asli: "Sae sanget niki!", baca: "SAH-eh SAH-nget NEE-kee", arti_id: "Bagus sekali ini!", arti_en: "This is really great!" },
+  { daerah: "Jawa", topik: "pamit pulang sudah malam", asli: "Sampun dalu, kula nyuwun pamit wangsul rumiyin.", baca: "SAHM-poon DAH-loo KOO-lo NYOO-woon PAH-meet WAHNG-sool roo-MEE-yeen", arti_id: "Sudah malam, saya mohon pamit pulang dulu.", arti_en: "It's late, I'll ask permission to head home now." },
+  { daerah: "Jawa", topik: "kabari kalau sudah sampai", asli: "Ampun kesupen ngabari menawi sampun dugi nggih!", baca: "AHM-poon keh-SOO-pen ngah-BAH-ree meh-NAH-wee SAHM-poon DOO-gee nggeeh", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to let me know when you arrive!" },
+  { daerah: "Jawa", topik: "senang kenalan bertemu", asli: "Remen sanget saged tepang kalih panjenengan!", baca: "REH-men SAH-nget SAH-ged TEH-pahng KAH-leeh pahn-jeh-NENG-ahn", arti_id: "Senang sekali bisa berkenalan dengan Anda!", arti_en: "Very pleased to get to know you!" },
 
   // --- BATAK ---
-  {
-    daerah: "Batak",
-    topik: "terima kasih",
-    asli: "Mauliate godang ma di hamu!",
-    baca: "mow-lee-AH-teh GO-dahng mah dee HAH-moo",
-    arti_id: "Terima kasih banyak untukmu!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Batak",
-    topik: "apa kabar",
-    asli: "Beha do baritam?",
-    baca: "BEH-hah do bah-REE-tahm",
-    arti_id: "Bagaimana kabarmu?",
-    arti_en: "How are you doing?",
-  },
-  {
-    daerah: "Batak",
-    topik: "permisi numpang lewat",
-    asli: "Santabi, mamolus jolo au.",
-    baca: "sahn-TAH-bee mah-MO-loos JO-lo ow",
-    arti_id: "Permisi, saya numpang lewat dulu.",
-    arti_en: "Excuse me, let me pass through.",
-  },
-  {
-    daerah: "Batak",
-    topik: "berapa harganya",
-    asli: "Sadia argana on?",
-    baca: "sah-DEE-ah ar-GAH-nah on",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much does this cost?",
-  },
-  {
-    daerah: "Batak",
-    topik: "sudah makan belum",
-    asli: "Nunga mangan ho manang daong?",
-    baca: "NOO-ngah MAH-ngahn ho MAH-nahng DAH-ong",
-    arti_id: "Sudah makan kamu atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Batak",
-    topik: "mau pergi ke mana",
-    asli: "Naeng lao tudia ho?",
-    baca: "NAH-eng LAH-oh too-DEE-ah ho",
-    arti_id: "Mau pergi ke mana kamu?",
-    arti_en: "Where are you going?",
-  },
-  {
-    daerah: "Batak",
-    topik: "enak sekali sedap",
-    asli: "Tabo hian do sipanganon on!",
-    baca: "TAH-bo HEE-ahn do see-pah-NGAH-non on",
-    arti_id: "Enak sekali makanan ini!",
-    arti_en: "This food is super tasty!",
-  },
-  {
-    daerah: "Batak",
-    topik: "hati-hati di jalan",
-    asli: "Manat-manat di dalan da!",
-    baca: "MAH-naht MAH-naht dee DAH-lahn dah",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Take care on the road!",
-  },
-  {
-    daerah: "Batak",
-    topik: "tolong bantu",
-    asli: "Boi do urupanmu au satongkin?",
-    baca: "BO-ee do oo-ROO-pahn-moo ow sah-TONG-keen",
-    arti_id: "Bisa bantu saya sebentar?",
-    arti_en: "Can you help me for a bit?",
-  },
-  {
-    daerah: "Batak",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Pajumpang muse hita da!",
-    baca: "pah-JOOM-pahng MOO-seh HEE-tah dah",
-    arti_id: "Sampai ketemu lagi kita ya!",
-    arti_en: "See you again!",
-  },
-  {
-    daerah: "Batak",
-    topik: "jangan pedas tidak pedas",
-    asli: "Unang pagodanghu pedasna da!",
-    baca: "OO-nahng pah-go-DAHNG-hoo peh-DAHS-nah dah",
-    arti_id: "Jangan terlalu banyak pedasnya ya!",
-    arti_en: "Don't make it too spicy!",
-  },
-  {
-    daerah: "Batak",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Boi do moru otik argana?",
-    baca: "BO-ee do MO-roo O-teek ar-GAH-nah",
-    arti_id: "Bisa berkurang sedikit harganya?",
-    arti_en: "Can the price go down a little?",
-  },
-  {
-    daerah: "Batak",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Didia do kamar mandi dison?",
-    baca: "dee-DEE-ah do KAH-mar MAHN-dee dee-SON",
-    arti_id: "Di mana kamar mandi di sini?",
-    arti_en: "Where is the bathroom here?",
-  },
-  {
-    daerah: "Batak",
-    topik: "tidak mengerti kurang paham",
-    asli: "Santabi, ndang huantusi.",
-    baca: "sahn-TAH-bee ndahng hoo-ahn-TOO-see",
-    arti_id: "Permisi/maaf, saya tidak mengerti.",
-    arti_en: "Sorry, I don't understand.",
-  },
-  {
-    daerah: "Batak",
-    topik: "siapa namamu kenalan",
-    asli: "Ise do goarmu?",
-    baca: "EE-seh do go-AR-moo",
-    arti_id: "Siapa namamu?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Batak",
-    topik: "dari mana asalmu",
-    asli: "Sian dia do haroroanmu?",
-    baca: "SEE-ahn DEE-ah do hah-ro-RO-ahn-moo",
-    arti_id: "Dari mana asalmu?",
-    arti_en: "Where do you come from?",
-  },
-  {
-    daerah: "Batak",
-    topik: "tidak apa-apa santai saja",
-    asli: "Ndang pola, santai ma.",
-    baca: "ndahng PO-lah SAHN-tai mah",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No problem, take it easy.",
-  },
-  {
-    daerah: "Batak",
-    topik: "lapar sekali haus",
-    asli: "Male hian do butuhangku!",
-    baca: "MAH-leh HEE-ahn do boo-too-HAHNG-koo",
-    arti_id: "Lapar sekali perutku!",
-    arti_en: "My stomach is super hungry!",
-  },
-  {
-    daerah: "Batak",
-    topik: "belok kiri arah jalan",
-    asli: "Belok hambirang di jolo an!",
-    baca: "BEH-lok hahm-BEE-rahng dee JO-lo ahn",
-    arti_id: "Belok kiri di depan sana!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Batak",
-    topik: "selamat pagi",
-    asli: "Horas manogot!",
-    baca: "HO-rahs mah-NO-got",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Batak",
-    topik: "pesan ini mau beli order",
-    asli: "Huorder ma na on sada.",
-    baca: "hoo-OR-der mah nah on SAH-dah",
-    arti_id: "Saya pesan yang ini satu.",
-    arti_en: "I'll order one of these.",
-  },
-  {
-    daerah: "Batak",
-    topik: "bayar di mana kasir",
-    asli: "Didia do inganan mambayar?",
-    baca: "dee-DEE-ah do ee-NGAH-nahn mahm-BAH-yar",
-    arti_id: "Di mana tempat membayarnya?",
-    arti_en: "Where is the place to pay?",
-  },
-  {
-    daerah: "Batak",
-    topik: "minta air putih minum",
-    asli: "Boi do pangido aek las satongkin?",
-    baca: "BO-ee do pah-NGEE-do AH-ek lahs sah-TONG-keen",
-    arti_id: "Bisa minta air hangat sebentar?",
-    arti_en: "Could I get some warm water?",
-  },
-  {
-    daerah: "Batak",
-    topik: "tunggu sebentar sabar",
-    asli: "Paima satongkin da, unang lao tudia-dia.",
-    baca: "pah-EE-mah sah-TONG-keen dah OO-nahng LAH-oh too-DEE-ah DEE-ah",
-    arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.",
-    arti_en: "Wait a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Batak",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Beta hita mangopi jolo!",
-    baca: "BEH-tah HEE-tah mah-NGO-pee JO-lo",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Come on, let's grab coffee first!",
-  },
-  {
-    daerah: "Batak",
-    topik: "panas sekali cuaca terik",
-    asli: "Mohop hian ari sadari on!",
-    baca: "MO-hop HEE-ahn AH-ree sah-DAH-ree on",
-    arti_id: "Panas sekali hari ini!",
-    arti_en: "It's boiling hot today!",
-  },
-  {
-    daerah: "Batak",
-    topik: "bagus keren cantik indah",
-    asli: "Uli hian on!",
-    baca: "OO-lee HEE-ahn on",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is very lovely!",
-  },
-  {
-    daerah: "Batak",
-    topik: "pamit pulang sudah malam",
-    asli: "Nunga borngin, pamit mulak jolo au da.",
-    baca: "NOO-ngah BOR-ngeen PAH-meet MOO-lahk JO-lo ow dah",
-    arti_id: "Sudah malam, saya pamit pulang dulu ya.",
-    arti_en: "It's night already, I'll head home now.",
-  },
-  {
-    daerah: "Batak",
-    topik: "kabari kalau sudah sampai",
-    asli: "Unang lupa paboa molo nunga sahat ho da!",
-    baca: "OO-nahng LOO-pah pah-BO-ah MO-lo NOO-ngah SAH-haht ho dah",
-    arti_id: "Jangan lupa kabari kalau kamu sudah sampai ya!",
-    arti_en: "Don't forget to tell me once you've arrived!",
-  },
-  {
-    daerah: "Batak",
-    topik: "senang kenalan bertemu",
-    asli: "Las hian rohangku boi mananda ho!",
-    baca: "lahs HEE-ahn ro-HAHNG-koo BO-ee mah-NAHN-dah ho",
-    arti_id: "Senang sekali hatiku bisa mengenalmu!",
-    arti_en: "My heart is so glad to know you!",
-  },
+  { daerah: "Batak", topik: "terima kasih", asli: "Mauliate godang ma di hamu!", baca: "mow-lee-AH-teh GO-dahng mah dee HAH-moo", arti_id: "Terima kasih banyak untukmu!", arti_en: "Thank you very much!" },
+  { daerah: "Batak", topik: "apa kabar", asli: "Beha do baritam?", baca: "BEH-hah do bah-REE-tahm", arti_id: "Bagaimana kabarmu?", arti_en: "How are you doing?" },
+  { daerah: "Batak", topik: "permisi numpang lewat", asli: "Santabi, mamolus jolo au.", baca: "sahn-TAH-bee mah-MO-loos JO-lo ow", arti_id: "Permisi, saya numpang lewat dulu.", arti_en: "Excuse me, let me pass through." },
+  { daerah: "Batak", topik: "berapa harganya", asli: "Sadia argana on?", baca: "sah-DEE-ah ar-GAH-nah on", arti_id: "Berapa harganya ini?", arti_en: "How much does this cost?" },
+  { daerah: "Batak", topik: "sudah makan belum", asli: "Nunga mangan ho manang daong?", baca: "NOO-ngah MAH-ngahn ho MAH-nahng DAH-ong", arti_id: "Sudah makan kamu atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Batak", topik: "mau pergi ke mana", asli: "Naeng lao tudia ho?", baca: "NAH-eng LAH-oh too-DEE-ah ho", arti_id: "Mau pergi ke mana kamu?", arti_en: "Where are you going?" },
+  { daerah: "Batak", topik: "enak sekali sedap", asli: "Tabo hian do sipanganon on!", baca: "TAH-bo HEE-ahn do see-pah-NGAH-non on", arti_id: "Enak sekali makanan ini!", arti_en: "This food is super tasty!" },
+  { daerah: "Batak", topik: "hati-hati di jalan", asli: "Manat-manat di dalan da!", baca: "MAH-naht MAH-naht dee DAH-lahn dah", arti_id: "Hati-hati di jalan ya!", arti_en: "Take care on the road!" },
+  { daerah: "Batak", topik: "tolong bantu", asli: "Boi do urupanmu au satongkin?", baca: "BO-ee do oo-ROO-pahn-moo ow sah-TONG-keen", arti_id: "Bisa bantu saya sebentar?", arti_en: "Can you help me for a bit?" },
+  { daerah: "Batak", topik: "sampai jumpa lagi ketemu", asli: "Pajumpang muse hita da!", baca: "pah-JOOM-pahng MOO-seh HEE-tah dah", arti_id: "Sampai ketemu lagi kita ya!", arti_en: "See you again!" },
+  { daerah: "Batak", topik: "jangan pedas tidak pedas", asli: "Unang pagodanghu pedasna da!", baca: "OO-nahng pah-go-DAHNG-hoo peh-DAHS-nah dah", arti_id: "Jangan terlalu banyak pedasnya ya!", arti_en: "Don't make it too spicy!" },
+  { daerah: "Batak", topik: "boleh kurang tawar harga murah", asli: "Boi do moru otik argana?", baca: "BO-ee do MO-roo O-teek ar-GAH-nah", arti_id: "Bisa berkurang sedikit harganya?", arti_en: "Can the price go down a little?" },
+  { daerah: "Batak", topik: "di mana toilet kamar mandi wc", asli: "Didia do kamar mandi dison?", baca: "dee-DEE-ah do KAH-mar MAHN-dee dee-SON", arti_id: "Di mana kamar mandi di sini?", arti_en: "Where is the bathroom here?" },
+  { daerah: "Batak", topik: "tidak mengerti kurang paham", asli: "Santabi, ndang huantusi.", baca: "sahn-TAH-bee ndahng hoo-ahn-TOO-see", arti_id: "Permisi/maaf, saya tidak mengerti.", arti_en: "Sorry, I don't understand." },
+  { daerah: "Batak", topik: "siapa namamu kenalan", asli: "Ise do goarmu?", baca: "EE-seh do go-AR-moo", arti_id: "Siapa namamu?", arti_en: "What is your name?" },
+  { daerah: "Batak", topik: "dari mana asalmu", asli: "Sian dia do haroroanmu?", baca: "SEE-ahn DEE-ah do hah-ro-RO-ahn-moo", arti_id: "Dari mana asalmu?", arti_en: "Where do you come from?" },
+  { daerah: "Batak", topik: "tidak apa-apa santai saja", asli: "Ndang pola, santai ma.", baca: "ndahng PO-lah SAHN-tai mah", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No problem, take it easy." },
+  { daerah: "Batak", topik: "lapar sekali haus", asli: "Male hian do butuhangku!", baca: "MAH-leh HEE-ahn do boo-too-HAHNG-koo", arti_id: "Lapar sekali perutku!", arti_en: "My stomach is super hungry!" },
+  { daerah: "Batak", topik: "belok kiri arah jalan", asli: "Belok hambirang di jolo an!", baca: "BEH-lok hahm-BEE-rahng dee JO-lo ahn", arti_id: "Belok kiri di depan sana!", arti_en: "Turn left up ahead!" },
+  { daerah: "Batak", topik: "selamat pagi", asli: "Horas manogot!", baca: "HO-rahs mah-NO-got", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Batak", topik: "pesan ini mau beli order", asli: "Huorder ma na on sada.", baca: "hoo-OR-der mah nah on SAH-dah", arti_id: "Saya pesan yang ini satu.", arti_en: "I'll order one of these." },
+  { daerah: "Batak", topik: "bayar di mana kasir", asli: "Didia do inganan mambayar?", baca: "dee-DEE-ah do ee-NGAH-nahn mahm-BAH-yar", arti_id: "Di mana tempat membayarnya?", arti_en: "Where is the place to pay?" },
+  { daerah: "Batak", topik: "minta air putih minum", asli: "Boi do pangido aek las satongkin?", baca: "BO-ee do pah-NGEE-do AH-ek lahs sah-TONG-keen", arti_id: "Bisa minta air hangat sebentar?", arti_en: "Could I get some warm water?" },
+  { daerah: "Batak", topik: "tunggu sebentar sabar", asli: "Paima satongkin da, unang lao tudia-dia.", baca: "pah-EE-mah sah-TONG-keen dah OO-nahng LAH-oh too-DEE-ah DEE-ah", arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.", arti_en: "Wait a moment, don't go anywhere." },
+  { daerah: "Batak", topik: "ngopi nongkrong yuk ajak", asli: "Beta hita mangopi jolo!", baca: "BEH-tah HEE-tah mah-NGO-pee JO-lo", arti_id: "Ayo kita ngopi dulu!", arti_en: "Come on, let's grab coffee first!" },
+  { daerah: "Batak", topik: "panas sekali cuaca terik", asli: "Mohop hian ari sadari on!", baca: "MO-hop HEE-ahn AH-ree sah-DAH-ree on", arti_id: "Panas sekali hari ini!", arti_en: "It's boiling hot today!" },
+  { daerah: "Batak", topik: "bagus keren cantik indah", asli: "Uli hian on!", baca: "OO-lee HEE-ahn on", arti_id: "Bagus sekali ini!", arti_en: "This is very lovely!" },
+  { daerah: "Batak", topik: "pamit pulang sudah malam", asli: "Nunga borngin, pamit mulak jolo au da.", baca: "NOO-ngah BOR-ngeen PAH-meet MOO-lahk JO-lo ow dah", arti_id: "Sudah malam, saya pamit pulang dulu ya.", arti_en: "It's night already, I'll head home now." },
+  { daerah: "Batak", topik: "kabari kalau sudah sampai", asli: "Unang lupa paboa molo nunga sahat ho da!", baca: "OO-nahng LOO-pah pah-BO-ah MO-lo NOO-ngah SAH-haht ho dah", arti_id: "Jangan lupa kabari kalau kamu sudah sampai ya!", arti_en: "Don't forget to tell me once you've arrived!" },
+  { daerah: "Batak", topik: "senang kenalan bertemu", asli: "Las hian rohangku boi mananda ho!", baca: "lahs HEE-ahn ro-HAHNG-koo BO-ee mah-NAHN-dah ho", arti_id: "Senang sekali hatiku bisa mengenalmu!", arti_en: "My heart is so glad to know you!" },
 
-  // bahasa betawi
-  {
-    daerah: "Betawi",
-    topik: "terima kasih",
-    asli: "Makasih banyak ye, Bang!",
-    baca: "mah-KAH-seeh BAH-nyak yeh bahng",
-    arti_id: "Terima kasih banyak ya, Bang!",
-    arti_en: "Thanks a whole lot, bro!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "apa kabar",
-    asli: "Gimana kabar lu sekarang?",
-    baca: "gee-MAH-nah KAH-bar loo seh-KAH-rahng",
-    arti_id: "Bagaimana kabarmu sekarang?",
-    arti_en: "How are you doing now?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "permisi numpang lewat",
-    asli: "Permisi ye, numpang lewat.",
-    baca: "per-MEE-see yeh NOOM-pahng LEH-waht",
-    arti_id: "Permisi ya, numpang lewat.",
-    arti_en: "Excuse me, coming through.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "berapa harganya",
-    asli: "Berapaan nih harganya?",
-    baca: "beh-RAH-pah-ahn neeh har-GAH-nyah",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "sudah makan belum",
-    asli: "Lu udah madang belom?",
-    baca: "loo OO-dah MAH-dahng beh-LOM",
-    arti_id: "Kamu sudah makan belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "mau pergi ke mana",
-    asli: "Mau cabut ke mane lu?",
-    baca: "mow CHAH-boot keh MAH-neh loo",
-    arti_id: "Mau pergi ke mana kamu?",
-    arti_en: "Where are you heading off to?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "enak sekali sedap",
-    asli: "Sedep bener dah ni makanan!",
-    baca: "SEH-dep BEH-ner dah nee mah-KAH-nahn",
-    arti_id: "Enak banget makanan ini!",
-    arti_en: "This food is seriously good!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "hati-hati di jalan",
-    asli: "Ati-ati di jalan ye!",
-    baca: "AH-tee AH-tee dee JAH-lan yeh",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Be careful on the road!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "tolong bantu",
-    asli: "Bisa tolongin gue bentar gak?",
-    baca: "BEE-sah TO-lo-ngeen goo-WEH BEN-tar gahk",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Can you help me out for a sec?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Ketemu lagi ye kapan-kapan!",
-    baca: "keh-TEH-moo LAH-gee yeh KAH-pahn KAH-pahn",
-    arti_id: "Sampai ketemu lagi kapan-kapan ya!",
-    arti_en: "Catch you again sometime!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "jangan pedas tidak pedas",
-    asli: "Jangan pedes-pedes ye, Bang!",
-    baca: "JAH-ngahn PEH-des PEH-des yeh bahng",
-    arti_id: "Jangan pedas-pedas ya, Bang!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Boleh kurang dikit gak harganya?",
-    baca: "BO-leh KOO-rahng DEE-keet gahk har-GAH-nyah",
-    arti_id: "Boleh kurang sedikit tidak harganya?",
-    arti_en: "Can you knock a bit off the price?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Di mane ye kamar mandinya?",
-    baca: "dee MAH-neh yeh KAH-mar mahn-DEE-nyah",
-    arti_id: "Di mana ya kamar mandinya?",
-    arti_en: "Where is the bathroom?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "tidak mengerti kurang paham",
-    asli: "Maap ye, gue kagak ngarti.",
-    baca: "MAH-ahp yeh goo-WEH KAH-gahk NGAR-tee",
-    arti_id: "Maaf ya, saya tidak mengerti.",
-    arti_en: "Sorry, I don't get it.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "siapa namamu kenalan",
-    asli: "Siape name lu?",
-    baca: "see-AH-peh NAH-meh loo",
-    arti_id: "Siapa nama kamu?",
-    arti_en: "What's your name?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "dari mana asalmu",
-    asli: "Lu asal dari mane?",
-    baca: "loo AH-sahl DAH-ree MAH-neh",
-    arti_id: "Kamu asal dari mana?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "tidak apa-apa santai saja",
-    asli: "Kagak ngapa-ngapa, santai aje.",
-    baca: "KAH-gahk NGAH-pah NGAH-pah SAHN-tai AH-jeh",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No worries, just chill.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "lapar sekali haus",
-    asli: "Laper bener dah perut gue!",
-    baca: "LAH-per BEH-ner dah peh-ROOT goo-WEH",
-    arti_id: "Lapar banget perut saya!",
-    arti_en: "My stomach is super hungry!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "belok kiri arah jalan",
-    asli: "Belok kiri di depan ye!",
-    baca: "BEH-lok KEE-ree dee deh-PAHN yeh",
-    arti_id: "Belok kiri di depan ya!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "selamat pagi",
-    asli: "Met pagi ye, semangat!",
-    baca: "met PAH-gee yeh seh-MAH-ngaht",
-    arti_id: "Selamat pagi ya, semangat!",
-    arti_en: "Good morning, have a great day!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "pesan ini mau beli order",
-    asli: "Bang, gue pesen yang ini satu ye.",
-    baca: "bahng goo-WEH PEH-sen yahng EE-nee SAH-too yeh",
-    arti_id: "Bang, saya pesan yang ini satu ya.",
-    arti_en: "Bro, I'll order one of these.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "bayar di mana kasir",
-    asli: "Bayarnya di sebelah mane nih?",
-    baca: "bah-YAR-nyah dee seh-BEH-lah MAH-neh neeh",
-    arti_id: "Bayarnya di sebelah mana nih?",
-    arti_en: "Where do I pay around here?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "minta air putih minum",
-    asli: "Boleh minta aer putih anget gak?",
-    baca: "BO-leh MEEN-tah AH-er POO-teeh AH-nget gahk",
-    arti_id: "Boleh minta air putih hangat tidak?",
-    arti_en: "Can I get some warm plain water?",
-  },
-  {
-    daerah: "Betawi",
-    topik: "tunggu sebentar sabar",
-    asli: "Tunggu bentar ye, jangan ke mane-mane.",
-    baca: "TOONG-goo BEN-tar yeh JAH-ngahn keh MAH-neh MAH-neh",
-    arti_id: "Tunggu sebentar ya, jangan ke mana-mana.",
-    arti_en: "Hold on a second, don't go anywhere.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Yok ah kite ngopi dulu!",
-    baca: "yok ah KEE-teh NGO-pee DOO-loo",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Come on, let's get coffee first!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "panas sekali cuaca terik",
-    asli: "Panas bener dah hari ini!",
-    baca: "PAH-nahs BEH-ner dah HAH-ree EE-nee",
-    arti_id: "Panas banget hari ini!",
-    arti_en: "It's seriously hot today!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "bagus keren cantik indah",
-    asli: "Cakep bener dah ini!",
-    baca: "CHAH-kep BEH-ner dah EE-nee",
-    arti_id: "Bagus banget ini!",
-    arti_en: "This looks super cool!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "pamit pulang sudah malam",
-    asli: "Udah malem nih, gue pamit balik dulu ye.",
-    baca: "OO-dah MAH-lem neeh goo-WEH PAH-meet BAH-leek DOO-loo yeh",
-    arti_id: "Sudah malam nih, saya pamit pulang dulu ya.",
-    arti_en: "It's late already, I'm heading home now.",
-  },
-  {
-    daerah: "Betawi",
-    topik: "kabari kalau sudah sampai",
-    asli: "Jangan lupa kabarin kalo udah nyampe ye!",
-    baca: "JAH-ngahn LOO-pah kah-BAH-reen KAH-lo OO-dah NYAHM-peh yeh",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to text when you get there!",
-  },
-  {
-    daerah: "Betawi",
-    topik: "senang kenalan bertemu",
-    asli: "Seneng banget dah bisa kenalan ame lu!",
-    baca: "SEH-neng BAH-nget dah BEE-sah keh-NAH-lahn AH-meh loo",
-    arti_id: "Senang sekali bisa kenalan sama kamu!",
-    arti_en: "Super stoked to get to know you!",
-  },
+  // --- BETAWI ---
+  { daerah: "Betawi", topik: "terima kasih", asli: "Makasih banyak ye, Bang!", baca: "mah-KAH-seeh BAH-nyak yeh bahng", arti_id: "Terima kasih banyak ya, Bang!", arti_en: "Thanks a whole lot, bro!" },
+  { daerah: "Betawi", topik: "apa kabar", asli: "Gimana kabar lu sekarang?", baca: "gee-MAH-nah KAH-bar loo seh-KAH-rahng", arti_id: "Bagaimana kabarmu sekarang?", arti_en: "How are you doing now?" },
+  { daerah: "Betawi", topik: "permisi numpang lewat", asli: "Permisi ye, numpang lewat.", baca: "per-MEE-see yeh NOOM-pahng LEH-waht", arti_id: "Permisi ya, numpang lewat.", arti_en: "Excuse me, coming through." },
+  { daerah: "Betawi", topik: "berapa harganya", asli: "Berapaan nih harganya?", baca: "beh-RAH-pah-ahn neeh har-GAH-nyah", arti_id: "Berapa harganya ini?", arti_en: "How much is this?" },
+  { daerah: "Betawi", topik: "sudah makan belum", asli: "Lu udah madang belom?", baca: "loo OO-dah MAH-dahng beh-LOM", arti_id: "Kamu sudah makan belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Betawi", topik: "mau pergi ke mana", asli: "Mau cabut ke mane lu?", baca: "mow CHAH-boot keh MAH-neh loo", arti_id: "Mau pergi ke mana kamu?", arti_en: "Where are you heading off to?" },
+  { daerah: "Betawi", topik: "enak sekali sedap", asli: "Sedep bener dah ni makanan!", baca: "SEH-dep BEH-ner dah nee mah-KAH-nahn", arti_id: "Enak banget makanan ini!", arti_en: "This food is seriously good!" },
+  { daerah: "Betawi", topik: "hati-hati di jalan", asli: "Ati-ati di jalan ye!", baca: "AH-tee AH-tee dee JAH-lan yeh", arti_id: "Hati-hati di jalan ya!", arti_en: "Be careful on the road!" },
+  { daerah: "Betawi", topik: "tolong bantu", asli: "Bisa tolongin gue bentar gak?", baca: "BEE-sah TO-lo-ngeen goo-WEH BEN-tar gahk", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Can you help me out for a sec?" },
+  { daerah: "Betawi", topik: "sampai jumpa lagi ketemu", asli: "Ketemu lagi ye kapan-kapan!", baca: "keh-TEH-moo LAH-gee yeh KAH-pahn KAH-pahn", arti_id: "Sampai ketemu lagi kapan-kapan ya!", arti_en: "Catch you again sometime!" },
+  { daerah: "Betawi", topik: "jangan pedas tidak pedas", asli: "Jangan pedes-pedes ye, Bang!", baca: "JAH-ngahn PEH-des PEH-des yeh bahng", arti_id: "Jangan pedas-pedas ya, Bang!", arti_en: "Not too spicy, please!" },
+  { daerah: "Betawi", topik: "boleh kurang tawar harga murah", asli: "Boleh kurang dikit gak harganya?", baca: "BO-leh KOO-rahng DEE-keet gahk har-GAH-nyah", arti_id: "Boleh kurang sedikit tidak harganya?", arti_en: "Can you knock a bit off the price?" },
+  { daerah: "Betawi", topik: "di mana toilet kamar mandi wc", asli: "Di mane ye kamar mandinya?", baca: "dee MAH-neh yeh KAH-mar mahn-DEE-nyah", arti_id: "Di mana ya kamar mandinya?", arti_en: "Where is the bathroom?" },
+  { daerah: "Betawi", topik: "tidak mengerti kurang paham", asli: "Maap ye, gue kagak ngarti.", baca: "MAH-ahp yeh goo-WEH KAH-gahk NGAR-tee", arti_id: "Maaf ya, saya tidak mengerti.", arti_en: "Sorry, I don't get it." },
+  { daerah: "Betawi", topik: "siapa namamu kenalan", asli: "Siape name lu?", baca: "see-AH-peh NAH-meh loo", arti_id: "Siapa nama kamu?", arti_en: "What's your name?" },
+  { daerah: "Betawi", topik: "dari mana asalmu", asli: "Lu asal dari mane?", baca: "loo AH-sahl DAH-ree MAH-neh", arti_id: "Kamu asal dari mana?", arti_en: "Where are you from?" },
+  { daerah: "Betawi", topik: "tidak apa-apa santai saja", asli: "Kagak ngapa-ngapa, santai aje.", baca: "KAH-gahk NGAH-pah NGAH-pah SAHN-tai AH-jeh", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No worries, just chill." },
+  { daerah: "Betawi", topik: "lapar sekali haus", asli: "Laper bener dah perut gue!", baca: "LAH-per BEH-ner dah peh-ROOT goo-WEH", arti_id: "Lapar banget perut saya!", arti_en: "My stomach is super hungry!" },
+  { daerah: "Betawi", topik: "belok kiri arah jalan", asli: "Belok kiri di depan ye!", baca: "BEH-lok KEE-ree dee deh-PAHN yeh", arti_id: "Belok kiri di depan ya!", arti_en: "Turn left up ahead!" },
+  { daerah: "Betawi", topik: "selamat pagi", asli: "Met pagi ye, semangat!", baca: "met PAH-gee yeh seh-MAH-ngaht", arti_id: "Selamat pagi ya, semangat!", arti_en: "Good morning, have a great day!" },
+  { daerah: "Betawi", topik: "pesan ini mau beli order", asli: "Bang, gue pesen yang ini satu ye.", baca: "bahng goo-WEH PEH-sen yahng EE-nee SAH-too yeh", arti_id: "Bang, saya pesan yang ini satu ya.", arti_en: "Bro, I'll order one of these." },
+  { daerah: "Betawi", topik: "bayar di mana kasir", asli: "Bayarnya di sebelah mane nih?", baca: "bah-YAR-nyah dee seh-BEH-lah MAH-neh neeh", arti_id: "Bayarnya di sebelah mana nih?", arti_en: "Where do I pay around here?" },
+  { daerah: "Betawi", topik: "minta air putih minum", asli: "Boleh minta aer putih anget gak?", baca: "BO-leh MEEN-tah AH-er POO-teeh AH-nget gahk", arti_id: "Boleh minta air putih hangat tidak?", arti_en: "Can I get some warm plain water?" },
+  { daerah: "Betawi", topik: "tunggu sebentar sabar", asli: "Tunggu bentar ye, jangan ke mane-mane.", baca: "TOONG-goo BEN-tar yeh JAH-ngahn keh MAH-neh MAH-neh", arti_id: "Tunggu sebentar ya, jangan ke mana-mana.", arti_en: "Hold on a second, don't go anywhere." },
+  { daerah: "Betawi", topik: "ngopi nongkrong yuk ajak", asli: "Yok ah kite ngopi dulu!", baca: "yok ah KEE-teh NGO-pee DOO-loo", arti_id: "Ayo kita ngopi dulu!", arti_en: "Come on, let's get coffee first!" },
+  { daerah: "Betawi", topik: "panas sekali cuaca terik", asli: "Panas bener dah hari ini!", baca: "PAH-nahs BEH-ner dah HAH-ree EE-nee", arti_id: "Panas banget hari ini!", arti_en: "It's seriously hot today!" },
+  { daerah: "Betawi", topik: "bagus keren cantik indah", asli: "Cakep bener dah ini!", baca: "CHAH-kep BEH-ner dah EE-nee", arti_id: "Bagus banget ini!", arti_en: "This looks super cool!" },
+  { daerah: "Betawi", topik: "pamit pulang sudah malam", asli: "Udah malem nih, gue pamit balik dulu ye.", baca: "OO-dah MAH-lem neeh goo-WEH PAH-meet BAH-leek DOO-loo yeh", arti_id: "Sudah malam nih, saya pamit pulang dulu ya.", arti_en: "It's late already, I'm heading home now." },
+  { daerah: "Betawi", topik: "kabari kalau sudah sampai", asli: "Jangan lupa kabarin kalo udah nyampe ye!", baca: "JAH-ngahn LOO-pah kah-BAH-reen KAH-lo OO-dah NYAHM-peh yeh", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to text when you get there!" },
+  { daerah: "Betawi", topik: "senang kenalan bertemu", asli: "Seneng banget dah bisa kenalan ame lu!", baca: "SEH-neng BAH-nget dah BEE-sah keh-NAH-lahn AH-meh loo", arti_id: "Senang sekali bisa kenalan sama kamu!", arti_en: "Super stoked to get to know you!" },
 
-  // bahasa banjar
-  {
-    daerah: "Banjar",
-    topik: "terima kasih",
-    asli: "Tarima kasih banyak lah!",
-    baca: "tah-REE-mah KAH-seeh BAH-nyak lah",
-    arti_id: "Terima kasih banyak ya!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "apa kabar",
-    asli: "Kayapa habar pian?",
-    baca: "kah-YAH-pah HAH-bar PEE-ahn",
-    arti_id: "Bagaimana kabar Anda?",
-    arti_en: "How are you doing?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "permisi numpang lewat",
-    asli: "Permisi, umpat lalu lah.",
-    baca: "per-MEE-see OOM-paht LAH-loo lah",
-    arti_id: "Permisi, numpang lewat ya.",
-    arti_en: "Excuse me, let me pass through.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "berapa harganya",
-    asli: "Barapa harganya ngini?",
-    baca: "bah-RAH-pah har-GAH-nyah NGEE-nee",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much does this cost?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "sudah makan belum",
-    asli: "Sudah makan kah baluman?",
-    baca: "SOO-dah MAH-kan kah bah-LOO-mahn",
-    arti_id: "Sudah makan atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "mau pergi ke mana",
-    asli: "Handak tulak ka mana pian?",
-    baca: "HAHN-dahk TOO-lahk kah MAH-nah PEE-ahn",
-    arti_id: "Mau pergi ke mana Anda?",
-    arti_en: "Where are you going?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "enak sekali sedap",
-    asli: "Nyaman banar makanan ngini!",
-    baca: "NYAH-mahn BAH-nar mah-KAH-nahn NGEE-nee",
-    arti_id: "Enak sekali makanan ini!",
-    arti_en: "This food is super tasty!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "hati-hati di jalan",
-    asli: "Baingat-ingat di jalan lah!",
-    baca: "bah-EE-ngaht EE-ngaht dee JAH-lan lah",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Be careful on the way!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "tolong bantu",
-    asli: "Kawa lah manulungi ulun satumat?",
-    baca: "KAH-wah lah mah-noo-LOO-ngee OO-loon sah-TOO-maht",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Can you help me for a moment?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Batamuan pulang kaina lah!",
-    baca: "bah-tah-MOO-ahn POO-lahng kah-EE-nah lah",
-    arti_id: "Ketemu lagi nanti ya!",
-    arti_en: "See you again later!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "jangan pedas tidak pedas",
-    asli: "Jangan padas-padas lah!",
-    baca: "JAH-ngahn PAH-dahs PAH-dahs lah",
-    arti_id: "Jangan pedas-pedas ya!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Kawa lah dikurangi sadikit harganya?",
-    baca: "KAH-wah lah dee-koo-RAH-ngee sah-DEE-keet har-GAH-nyah",
-    arti_id: "Bisa tidak dikurangi sedikit harganya?",
-    arti_en: "Can the price be reduced a bit?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Di mana kamar mandi di sini?",
-    baca: "dee MAH-nah KAH-mar MAHN-dee dee SEE-nee",
-    arti_id: "Di mana kamar mandi di sini?",
-    arti_en: "Where is the bathroom here?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "tidak mengerti kurang paham",
-    asli: "Maaf lah, ulun kada mangarti.",
-    baca: "MAH-ahf lah OO-loon KAH-dah mah-NGAR-tee",
-    arti_id: "Maaf ya, saya tidak mengerti.",
-    arti_en: "Sorry, I don't understand.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "siapa namamu kenalan",
-    asli: "Siapa ngaran pian?",
-    baca: "see-AH-pah NGAH-rahn PEE-ahn",
-    arti_id: "Siapa nama Anda?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "dari mana asalmu",
-    asli: "Dari mana asal pian?",
-    baca: "DAH-ree MAH-nah AH-sahl PEE-ahn",
-    arti_id: "Dari mana asal Anda?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "tidak apa-apa santai saja",
-    asli: "Kada papa, santai haja.",
-    baca: "KAH-dah PAH-pah SAHN-tai HAH-jah",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No worries, just relax.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "lapar sekali haus",
-    asli: "Lapar banar parut ulun!",
-    baca: "LAH-par BAH-nar pah-ROOT OO-loon",
-    arti_id: "Lapar sekali perut saya!",
-    arti_en: "My stomach is starving!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "belok kiri arah jalan",
-    asli: "Biluk kiwa di hadapan lah!",
-    baca: "BEE-look KEE-wah dee hah-DAH-pahn lah",
-    arti_id: "Belok kiri di depan ya!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "selamat pagi",
-    asli: "Salamat baisukan!",
-    baca: "sah-LAH-maht bah-ee-SOO-kahn",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "pesan ini mau beli order",
-    asli: "Ulun handak mamasan nang ngini sabuting.",
-    baca: "OO-loon HAHN-dahk mah-MAH-sahn nahng NGEE-nee sah-BOO-teeng",
-    arti_id: "Saya mau pesan yang ini satu.",
-    arti_en: "I'd like to order one of these.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "bayar di mana kasir",
-    asli: "Di mana wadah mambayarnya lah?",
-    baca: "dee MAH-nah WAH-dah mahm-bah-YAR-nyah lah",
-    arti_id: "Di mana tempat bayarnya ya?",
-    arti_en: "Where is the place to pay?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "minta air putih minum",
-    asli: "Kawa lah minta banyu putih hangat?",
-    baca: "KAH-wah lah MEEN-tah BAH-nyoo POO-teeh HAH-ngaht",
-    arti_id: "Bisa tidak minta air putih hangat?",
-    arti_en: "Could I get some warm water?",
-  },
-  {
-    daerah: "Banjar",
-    topik: "tunggu sebentar sabar",
-    asli: "Hadangi satumat lah, jangan ke mana-mana.",
-    baca: "hah-DAH-ngee sah-TOO-maht lah JAH-ngahn keh MAH-nah MAH-nah",
-    arti_id: "Tunggu sebentar ya, jangan ke mana-mana.",
-    arti_en: "Wait a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Ayuha kita mangopi dahulu!",
-    baca: "ah-YOO-hah KEE-tah mah-NGO-pee dah-HOO-loo",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Come on, let's grab coffee first!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "panas sekali cuaca terik",
-    asli: "Panas banar hari ngini lah!",
-    baca: "PAH-nahs BAH-nar HAH-ree NGEE-nee lah",
-    arti_id: "Panas sekali hari ini ya!",
-    arti_en: "It's super hot today!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "bagus keren cantik indah",
-    asli: "Bungas banar ngini!",
-    baca: "BOO-ngahs BAH-nar NGEE-nee",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This looks very lovely!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "pamit pulang sudah malam",
-    asli: "Sudah malam, ulun pamit bulik dahulu lah.",
-    baca: "SOO-dah MAH-lahm OO-loon PAH-meet BOO-leek dah-HOO-loo lah",
-    arti_id: "Sudah malam, saya pamit pulang dulu ya.",
-    arti_en: "It's late already, I'll head home now.",
-  },
-  {
-    daerah: "Banjar",
-    topik: "kabari kalau sudah sampai",
-    asli: "Jangan kada ingat mangabari mun sudah sampai lah!",
-    baca: "JAH-ngahn KAH-dah EE-ngaht mah-ngah-BAH-ree moon SOO-dah SAHM-pai lah",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to let me know when you arrive!",
-  },
-  {
-    daerah: "Banjar",
-    topik: "senang kenalan bertemu",
-    asli: "Himung banar ulun kawa bakenalan lawan pian!",
-    baca: "HEE-moong BAH-nar OO-loon KAH-wah bah-keh-NAH-lahn LAH-wahn PEE-ahn",
-    arti_id: "Senang sekali saya bisa berkenalan dengan Anda!",
-    arti_en: "I'm really happy to get to know you!",
-  },
+  // --- BANJAR ---
+  { daerah: "Banjar", topik: "terima kasih", asli: "Tarima kasih banyak lah!", baca: "tah-REE-mah KAH-seeh BAH-nyak lah", arti_id: "Terima kasih banyak ya!", arti_en: "Thank you very much!" },
+  { daerah: "Banjar", topik: "apa kabar", asli: "Kayapa habar pian?", baca: "kah-YAH-pah HAH-bar PEE-ahn", arti_id: "Bagaimana kabar Anda?", arti_en: "How are you doing?" },
+  { daerah: "Banjar", topik: "permisi numpang lewat", asli: "Permisi, umpat lalu lah.", baca: "per-MEE-see OOM-paht LAH-loo lah", arti_id: "Permisi, numpang lewat ya.", arti_en: "Excuse me, let me pass through." },
+  { daerah: "Banjar", topik: "berapa harganya", asli: "Barapa harganya ngini?", baca: "bah-RAH-pah har-GAH-nyah NGEE-nee", arti_id: "Berapa harganya ini?", arti_en: "How much does this cost?" },
+  { daerah: "Banjar", topik: "sudah makan belum", asli: "Sudah makan kah baluman?", baca: "SOO-dah MAH-kan kah bah-LOO-mahn", arti_id: "Sudah makan atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Banjar", topik: "mau pergi ke mana", asli: "Handak tulak ka mana pian?", baca: "HAHN-dahk TOO-lahk kah MAH-nah PEE-ahn", arti_id: "Mau pergi ke mana Anda?", arti_en: "Where are you going?" },
+  { daerah: "Banjar", topik: "enak sekali sedap", asli: "Nyaman banar makanan ngini!", baca: "NYAH-mahn BAH-nar mah-KAH-nahn NGEE-nee", arti_id: "Enak sekali makanan ini!", arti_en: "This food is super tasty!" },
+  { daerah: "Banjar", topik: "hati-hati di jalan", asli: "Baingat-ingat di jalan lah!", baca: "bah-EE-ngaht EE-ngaht dee JAH-lan lah", arti_id: "Hati-hati di jalan ya!", arti_en: "Be careful on the way!" },
+  { daerah: "Banjar", topik: "tolong bantu", asli: "Kawa lah manulungi ulun satumat?", baca: "KAH-wah lah mah-noo-LOO-ngee OO-loon sah-TOO-maht", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Can you help me for a moment?" },
+  { daerah: "Banjar", topik: "sampai jumpa lagi ketemu", asli: "Batamuan pulang kaina lah!", baca: "bah-tah-MOO-ahn POO-lahng kah-EE-nah lah", arti_id: "Ketemu lagi nanti ya!", arti_en: "See you again later!" },
+  { daerah: "Banjar", topik: "jangan pedas tidak pedas", asli: "Jangan padas-padas lah!", baca: "JAH-ngahn PAH-dahs PAH-dahs lah", arti_id: "Jangan pedas-pedas ya!", arti_en: "Not too spicy, please!" },
+  { daerah: "Banjar", topik: "boleh kurang tawar harga murah", asli: "Kawa lah dikurangi sadikit harganya?", baca: "KAH-wah lah dee-koo-RAH-ngee sah-DEE-keet har-GAH-nyah", arti_id: "Bisa tidak dikurangi sedikit harganya?", arti_en: "Can the price be reduced a bit?" },
+  { daerah: "Banjar", topik: "di mana toilet kamar mandi wc", asli: "Di mana kamar mandi di sini?", baca: "dee MAH-nah KAH-mar MAHN-dee dee SEE-nee", arti_id: "Di mana kamar mandi di sini?", arti_en: "Where is the bathroom here?" },
+  { daerah: "Banjar", topik: "tidak mengerti kurang paham", asli: "Maaf lah, ulun kada mangarti.", baca: "MAH-ahf lah OO-loon KAH-dah mah-NGAR-tee", arti_id: "Maaf ya, saya tidak mengerti.", arti_en: "Sorry, I don't understand." },
+  { daerah: "Banjar", topik: "siapa namamu kenalan", asli: "Siapa ngaran pian?", baca: "see-AH-pah NGAH-rahn PEE-ahn", arti_id: "Siapa nama Anda?", arti_en: "What is your name?" },
+  { daerah: "Banjar", topik: "dari mana asalmu", asli: "Dari mana asal pian?", baca: "DAH-ree MAH-nah AH-sahl PEE-ahn", arti_id: "Dari mana asal Anda?", arti_en: "Where are you from?" },
+  { daerah: "Banjar", topik: "tidak apa-apa santai saja", asli: "Kada papa, santai haja.", baca: "KAH-dah PAH-pah SAHN-tai HAH-jah", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No worries, just relax." },
+  { daerah: "Banjar", topik: "lapar sekali haus", asli: "Lapar banar parut ulun!", baca: "LAH-par BAH-nar pah-ROOT OO-loon", arti_id: "Lapar sekali perut saya!", arti_en: "My stomach is starving!" },
+  { daerah: "Banjar", topik: "belok kiri arah jalan", asli: "Biluk kiwa di hadapan lah!", baca: "BEE-look KEE-wah dee hah-DAH-pahn lah", arti_id: "Belok kiri di depan ya!", arti_en: "Turn left up ahead!" },
+  { daerah: "Banjar", topik: "selamat pagi", asli: "Salamat baisukan!", baca: "sah-LAH-maht bah-ee-SOO-kahn", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Banjar", topik: "pesan ini mau beli order", asli: "Ulun handak mamasan nang ngini sabuting.", baca: "OO-loon HAHN-dahk mah-MAH-sahn nahng NGEE-nee sah-BOO-teeng", arti_id: "Saya mau pesan yang ini satu.", arti_en: "I'd like to order one of these." },
+  { daerah: "Banjar", topik: "bayar di mana kasir", asli: "Di mana wadah mambayarnya lah?", baca: "dee MAH-nah WAH-dah mahm-bah-YAR-nyah lah", arti_id: "Di mana tempat bayarnya ya?", arti_en: "Where is the place to pay?" },
+  { daerah: "Banjar", topik: "minta air putih minum", asli: "Kawa lah minta banyu putih hangat?", baca: "KAH-wah lah MEEN-tah BAH-nyoo POO-teeh HAH-ngaht", arti_id: "Bisa tidak minta air putih hangat?", arti_en: "Could I get some warm water?" },
+  { daerah: "Banjar", topik: "tunggu sebentar sabar", asli: "Hadangi satumat lah, jangan ke mana-mana.", baca: "hah-DAH-ngee sah-TOO-maht lah JAH-ngahn keh MAH-nah MAH-nah", arti_id: "Tunggu sebentar ya, jangan ke mana-mana.", arti_en: "Wait a moment, don't go anywhere." },
+  { daerah: "Banjar", topik: "ngopi nongkrong yuk ajak", asli: "Ayuha kita mangopi dahulu!", baca: "ah-YOO-hah KEE-tah mah-NGO-pee dah-HOO-loo", arti_id: "Ayo kita ngopi dulu!", arti_en: "Come on, let's grab coffee first!" },
+  { daerah: "Banjar", topik: "panas sekali cuaca terik", asli: "Panas banar hari ngini lah!", baca: "PAH-nahs BAH-nar HAH-ree NGEE-nee lah", arti_id: "Panas sekali hari ini ya!", arti_en: "It's super hot today!" },
+  { daerah: "Banjar", topik: "bagus keren cantik indah", asli: "Bungas banar ngini!", baca: "BOO-ngahs BAH-nar NGEE-nee", arti_id: "Bagus sekali ini!", arti_en: "This looks very lovely!" },
+  { daerah: "Banjar", topik: "pamit pulang sudah malam", asli: "Sudah malam, ulun pamit bulik dahulu lah.", baca: "SOO-dah MAH-lahm OO-loon PAH-meet BOO-leek dah-HOO-loo lah", arti_id: "Sudah malam, saya pamit pulang dulu ya.", arti_en: "It's late already, I'll head home now." },
+  { daerah: "Banjar", topik: "kabari kalau sudah sampai", asli: "Jangan kada ingat mangabari mun sudah sampai lah!", baca: "JAH-ngahn KAH-dah EE-ngaht mah-ngah-BAH-ree moon SOO-dah SAHM-pai lah", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to let me know when you arrive!" },
+  { daerah: "Banjar", topik: "senang kenalan bertemu", asli: "Himung banar ulun kawa bakenalan lawan pian!", baca: "HEE-moong BAH-nar OO-loon KAH-wah bah-keh-NAH-lahn LAH-wahn PEE-ahn", arti_id: "Senang sekali saya bisa berkenalan dengan Anda!", arti_en: "I'm really happy to get to know you!" },
 
-  // bahasa papua
-  {
-    daerah: "Papua",
-    topik: "terima kasih",
-    asli: "Terima kasih banyak e, Kaka!",
-    baca: "teh-REE-mah KAH-seeh BAH-nyak eh KAH-kah",
-    arti_id: "Terima kasih banyak ya, Kak!",
-    arti_en: "Thank you very much, friend!",
-  },
-  {
-    daerah: "Papua",
-    topik: "apa kabar",
-    asli: "Apa kabar ko, Pace?",
-    baca: "AH-pah KAH-bar ko PAH-cheh",
-    arti_id: "Apa kabarmu, Kawan?",
-    arti_en: "How are you doing, buddy?",
-  },
-  {
-    daerah: "Papua",
-    topik: "permisi numpang lewat",
-    asli: "Permisi e, sa numpang lewat dulu.",
-    baca: "per-MEE-see eh sah NOOM-pahng LEH-waht DOO-loo",
-    arti_id: "Permisi ya, saya numpang lewat dulu.",
-    arti_en: "Excuse me, coming through.",
-  },
-  {
-    daerah: "Papua",
-    topik: "berapa harganya",
-    asli: "Ini de pu harga berapa?",
-    baca: "EE-nee deh poo HAR-gah beh-RAH-pah",
-    arti_id: "Ini harganya berapa?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Papua",
-    topik: "sudah makan belum",
-    asli: "Ko su makan ka belum?",
-    baca: "ko soo MAH-kan kah beh-LOOM",
-    arti_id: "Kamu sudah makan atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Papua",
-    topik: "mau pergi ke mana",
-    asli: "Ko mau pi ke mana?",
-    baca: "ko mow pee keh MAH-nah",
-    arti_id: "Kamu mau pergi ke mana?",
-    arti_en: "Where are you going?",
-  },
-  {
-    daerah: "Papua",
-    topik: "enak sekali sedap",
-    asli: "Makanan ini de enak skali!",
-    baca: "mah-KAH-nahn EE-nee deh EH-nahk SKAH-lee",
-    arti_id: "Makanan ini enak sekali!",
-    arti_en: "This food is really delicious!",
-  },
-  {
-    daerah: "Papua",
-    topik: "hati-hati di jalan",
-    asli: "Hati-hati di jalan e!",
-    baca: "HAH-tee HAH-tee dee JAH-lan eh",
-    arti_id: "Hati-hati di jalan ya!",
-    arti_en: "Take care on the road!",
-  },
-  {
-    daerah: "Papua",
-    topik: "tolong bantu",
-    asli: "Bisa bantu sa sebentar ka?",
-    baca: "BEE-sah BAHN-too sah seh-BEN-tar kah",
-    arti_id: "Bisa bantu saya sebentar?",
-    arti_en: "Can you help me out for a bit?",
-  },
-  {
-    daerah: "Papua",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Nanti tong ketemu lagi e!",
-    baca: "NAHN-tee tong keh-TEH-moo LAH-gee eh",
-    arti_id: "Nanti kita ketemu lagi ya!",
-    arti_en: "We'll see each other again!",
-  },
-  {
-    daerah: "Papua",
-    topik: "jangan pedas tidak pedas",
-    asli: "Jangan bikin pedis skali e!",
-    baca: "JAH-ngahn BEE-keen PEH-dees SKAH-lee eh",
-    arti_id: "Jangan bikin pedas sekali ya!",
-    arti_en: "Don't make it too spicy!",
-  },
-  {
-    daerah: "Papua",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Bisa kurang sedikit ka, Kaka?",
-    baca: "BEE-sah KOO-rahng seh-DEE-keet kah KAH-kah",
-    arti_id: "Bisa kurang sedikit harganya, Kak?",
-    arti_en: "Can you lower the price a little?",
-  },
-  {
-    daerah: "Papua",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Kamar mandi ada di sebelah mana?",
-    baca: "KAH-mar MAHN-dee AH-dah dee seh-BEH-lah MAH-nah",
-    arti_id: "Kamar mandi ada di sebelah mana?",
-    arti_en: "Which way is the bathroom?",
-  },
-  {
-    daerah: "Papua",
-    topik: "tidak mengerti kurang paham",
-    asli: "Maaf e, sa tra mengerti.",
-    baca: "MAH-ahf eh sah trah meh-NGER-tee",
-    arti_id: "Maaf ya, saya tidak mengerti.",
-    arti_en: "Sorry, I don't understand.",
-  },
-  {
-    daerah: "Papua",
-    topik: "siapa namamu kenalan",
-    asli: "Ko pu nama siapa?",
-    baca: "ko poo NAH-mah see-AH-pah",
-    arti_id: "Nama kamu siapa?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Papua",
-    topik: "dari mana asalmu",
-    asli: "Ko asal dari mana?",
-    baca: "ko AH-sahl DAH-ree MAH-nah",
-    arti_id: "Kamu asal dari mana?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Papua",
-    topik: "tidak apa-apa santai saja",
-    asli: "Tra apa-apa, santai saja.",
-    baca: "trah AH-pah AH-pah SAHN-tai SAH-jah",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No worries, just relax.",
-  },
-  {
-    daerah: "Papua",
-    topik: "lapar sekali haus",
-    asli: "Sa lapar skali ini!",
-    baca: "sah LAH-par SKAH-lee EE-nee",
-    arti_id: "Saya lapar sekali ini!",
-    arti_en: "I'm super hungry right now!",
-  },
-  {
-    daerah: "Papua",
-    topik: "belok kiri arah jalan",
-    asli: "Belok kiri di depan situ e!",
-    baca: "BEH-lok KEE-ree dee deh-PAHN SEE-too eh",
-    arti_id: "Belok kiri di depan situ ya!",
-    arti_en: "Turn left right up ahead!",
-  },
-  {
-    daerah: "Papua",
-    topik: "selamat pagi",
-    asli: "Selamat pagi e, Kaka!",
-    baca: "seh-LAH-maht PAH-gee eh KAH-kah",
-    arti_id: "Selamat pagi ya, Kak!",
-    arti_en: "Good morning, friend!",
-  },
-  {
-    daerah: "Papua",
-    topik: "pesan ini mau beli order",
-    asli: "Sa mau pesan yang ini satu e.",
-    baca: "sah mow PEH-sahn yahng EE-nee SAH-too eh",
-    arti_id: "Saya mau pesan yang ini satu ya.",
-    arti_en: "I want to order one of these.",
-  },
-  {
-    daerah: "Papua",
-    topik: "bayar di mana kasir",
-    asli: "Bayarnya di sebelah mana e?",
-    baca: "bah-YAR-nyah dee seh-BEH-lah MAH-nah eh",
-    arti_id: "Bayarnya di sebelah mana ya?",
-    arti_en: "Which way do I go to pay?",
-  },
-  {
-    daerah: "Papua",
-    topik: "minta air putih minum",
-    asli: "Bisa minta air putih hangat ka?",
-    baca: "BEE-sah MEEN-tah AH-eer POO-teeh HAH-ngaht kah",
-    arti_id: "Bisa minta air putih hangat?",
-    arti_en: "Could I get some warm water?",
-  },
-  {
-    daerah: "Papua",
-    topik: "tunggu sebentar sabar",
-    asli: "Tunggu sebentar e, jangan pi mana-mana.",
-    baca: "TOONG-goo seh-BEN-tar eh JAH-ngahn pee MAH-nah MAH-nah",
-    arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.",
-    arti_en: "Wait a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Papua",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Mari tong pi ngopi dulu!",
-    baca: "MAH-ree tong pee NGO-pee DOO-loo",
-    arti_id: "Mari kita pergi ngopi dulu!",
-    arti_en: "Come on, let's go get coffee first!",
-  },
-  {
-    daerah: "Papua",
-    topik: "panas sekali cuaca terik",
-    asli: "Hari ini de panas skali e!",
-    baca: "HAH-ree EE-nee deh PAH-nahs SKAH-lee eh",
-    arti_id: "Hari ini panas sekali ya!",
-    arti_en: "Today is scorching hot!",
-  },
-  {
-    daerah: "Papua",
-    topik: "bagus keren cantik indah",
-    asli: "Ini de bagus skali!",
-    baca: "EE-nee deh BAH-goos SKAH-lee",
-    arti_id: "Ini bagus sekali!",
-    arti_en: "This is super nice!",
-  },
-  {
-    daerah: "Papua",
-    topik: "pamit pulang sudah malam",
-    asli: "Su malam ini, sa pamit pulang dulu e.",
-    baca: "soo MAH-lahm EE-nee sah PAH-meet POO-lahng DOO-loo eh",
-    arti_id: "Sudah malam ini, saya pamit pulang dulu ya.",
-    arti_en: "It's night already, I'll head home now.",
-  },
-  {
-    daerah: "Papua",
-    topik: "kabari kalau sudah sampai",
-    asli: "Jangan lupa kas kabar kalau su sampai e!",
-    baca: "JAH-ngahn LOO-pah kahs KAH-bar KAH-low soo SAHM-pai eh",
-    arti_id: "Jangan lupa kasih kabar kalau sudah sampai ya!",
-    arti_en: "Don't forget to send word once you get there!",
-  },
-  {
-    daerah: "Papua",
-    topik: "senang kenalan bertemu",
-    asli: "Sa senang skali bisa kenal deng ko!",
-    baca: "sah SEH-nahng SKAH-lee BEE-sah KEH-nahl deng ko",
-    arti_id: "Saya senang sekali bisa kenal denganmu!",
-    arti_en: "I'm so glad to get to know you!",
-  },
+  // --- PAPUA ---
+  { daerah: "Papua", topik: "terima kasih", asli: "Terima kasih banyak e, Kaka!", baca: "teh-REE-mah KAH-seeh BAH-nyak eh KAH-kah", arti_id: "Terima kasih banyak ya, Kak!", arti_en: "Thank you very much, friend!" },
+  { daerah: "Papua", topik: "apa kabar", asli: "Apa kabar ko, Pace?", baca: "AH-pah KAH-bar ko PAH-cheh", arti_id: "Apa kabarmu, Kawan?", arti_en: "How are you doing, buddy?" },
+  { daerah: "Papua", topik: "permisi numpang lewat", asli: "Permisi e, sa numpang lewat dulu.", baca: "per-MEE-see eh sah NOOM-pahng LEH-waht DOO-loo", arti_id: "Permisi ya, saya numpang lewat dulu.", arti_en: "Excuse me, coming through." },
+  { daerah: "Papua", topik: "berapa harganya", asli: "Ini de pu harga berapa?", baca: "EE-nee deh poo HAR-gah beh-RAH-pah", arti_id: "Ini harganya berapa?", arti_en: "How much is this?" },
+  { daerah: "Papua", topik: "sudah makan belum", asli: "Ko su makan ka belum?", baca: "ko soo MAH-kan kah beh-LOOM", arti_id: "Kamu sudah makan atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Papua", topik: "mau pergi ke mana", asli: "Ko mau pi ke mana?", baca: "ko mow pee keh MAH-nah", arti_id: "Kamu mau pergi ke mana?", arti_en: "Where are you going?" },
+  { daerah: "Papua", topik: "enak sekali sedap", asli: "Makanan ini de enak skali!", baca: "mah-KAH-nahn EE-nee deh EH-nahk SKAH-lee", arti_id: "Makanan ini enak sekali!", arti_en: "This food is really delicious!" },
+  { daerah: "Papua", topik: "hati-hati di jalan", asli: "Hati-hati di jalan e!", baca: "HAH-tee HAH-tee dee JAH-lan eh", arti_id: "Hati-hati di jalan ya!", arti_en: "Take care on the road!" },
+  { daerah: "Papua", topik: "tolong bantu", asli: "Bisa bantu sa sebentar ka?", baca: "BEE-sah BAHN-too sah seh-BEN-tar kah", arti_id: "Bisa bantu saya sebentar?", arti_en: "Can you help me out for a bit?" },
+  { daerah: "Papua", topik: "sampai jumpa lagi ketemu", asli: "Nanti tong ketemu lagi e!", baca: "NAHN-tee tong keh-TEH-moo LAH-gee eh", arti_id: "Nanti kita ketemu lagi ya!", arti_en: "We'll see each other again!" },
+  { daerah: "Papua", topik: "jangan pedas tidak pedas", asli: "Jangan bikin pedis skali e!", baca: "JAH-ngahn BEE-keen PEH-dees SKAH-lee eh", arti_id: "Jangan bikin pedas sekali ya!", arti_en: "Don't make it too spicy!" },
+  { daerah: "Papua", topik: "boleh kurang tawar harga murah", asli: "Bisa kurang sedikit ka, Kaka?", baca: "BEE-sah KOO-rahng seh-DEE-keet kah KAH-kah", arti_id: "Bisa kurang sedikit harganya, Kak?", arti_en: "Can you lower the price a little?" },
+  { daerah: "Papua", topik: "di mana toilet kamar mandi wc", asli: "Kamar mandi ada di sebelah mana?", baca: "KAH-mar MAHN-dee AH-dah dee seh-BEH-lah MAH-nah", arti_id: "Kamar mandi ada di sebelah mana?", arti_en: "Which way is the bathroom?" },
+  { daerah: "Papua", topik: "tidak mengerti kurang paham", asli: "Maaf e, sa tra mengerti.", baca: "MAH-ahf eh sah trah meh-NGER-tee", arti_id: "Maaf ya, saya tidak mengerti.", arti_en: "Sorry, I don't understand." },
+  { daerah: "Papua", topik: "siapa namamu kenalan", asli: "Ko pu nama siapa?", baca: "ko poo NAH-mah see-AH-pah", arti_id: "Nama kamu siapa?", arti_en: "What is your name?" },
+  { daerah: "Papua", topik: "dari mana asalmu", asli: "Ko asal dari mana?", baca: "ko AH-sahl DAH-ree MAH-nah", arti_id: "Kamu asal dari mana?", arti_en: "Where are you from?" },
+  { daerah: "Papua", topik: "tidak apa-apa santai saja", asli: "Tra apa-apa, santai saja.", baca: "trah AH-pah AH-pah SAHN-tai SAH-jah", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No worries, just relax." },
+  { daerah: "Papua", topik: "lapar sekali haus", asli: "Sa lapar skali ini!", baca: "sah LAH-par SKAH-lee EE-nee", arti_id: "Saya lapar sekali ini!", arti_en: "I'm super hungry right now!" },
+  { daerah: "Papua", topik: "belok kiri arah jalan", asli: "Belok kiri di depan situ e!", baca: "BEH-lok KEE-ree dee deh-PAHN SEE-too eh", arti_id: "Belok kiri di depan situ ya!", arti_en: "Turn left right up ahead!" },
+  { daerah: "Papua", topik: "selamat pagi", asli: "Selamat pagi e, Kaka!", baca: "seh-LAH-maht PAH-gee eh KAH-kah", arti_id: "Selamat pagi ya, Kak!", arti_en: "Good morning, friend!" },
+  { daerah: "Papua", topik: "pesan ini mau beli order", asli: "Sa mau pesan yang ini satu e.", baca: "sah mow PEH-sahn yahng EE-nee SAH-too eh", arti_id: "Saya mau pesan yang ini satu ya.", arti_en: "I want to order one of these." },
+  { daerah: "Papua", topik: "bayar di mana kasir", asli: "Bayarnya di sebelah mana e?", baca: "bah-YAR-nyah dee seh-BEH-lah MAH-nah eh", arti_id: "Bayarnya di sebelah mana ya?", arti_en: "Which way do I go to pay?" },
+  { daerah: "Papua", topik: "minta air putih minum", asli: "Bisa minta air putih hangat ka?", baca: "BEE-sah MEEN-tah AH-eer POO-teeh HAH-ngaht kah", arti_id: "Bisa minta air putih hangat?", arti_en: "Could I get some warm water?" },
+  { daerah: "Papua", topik: "tunggu sebentar sabar", asli: "Tunggu sebentar e, jangan pi mana-mana.", baca: "TOONG-goo seh-BEN-tar eh JAH-ngahn pee MAH-nah MAH-nah", arti_id: "Tunggu sebentar ya, jangan pergi ke mana-mana.", arti_en: "Wait a moment, don't go anywhere." },
+  { daerah: "Papua", topik: "ngopi nongkrong yuk ajak", asli: "Mari tong pi ngopi dulu!", baca: "MAH-ree tong pee NGO-pee DOO-loo", arti_id: "Mari kita pergi ngopi dulu!", arti_en: "Come on, let's go get coffee first!" },
+  { daerah: "Papua", topik: "panas sekali cuaca terik", asli: "Hari ini de panas skali e!", baca: "HAH-ree EE-nee deh PAH-nahs SKAH-lee eh", arti_id: "Hari ini panas sekali ya!", arti_en: "Today is scorching hot!" },
+  { daerah: "Papua", topik: "bagus keren cantik indah", asli: "Ini de bagus skali!", baca: "EE-nee deh BAH-goos SKAH-lee", arti_id: "Ini bagus sekali!", arti_en: "This is super nice!" },
+  { daerah: "Papua", topik: "pamit pulang sudah malam", asli: "Su malam ini, sa pamit pulang dulu e.", baca: "soo MAH-lahm EE-nee sah PAH-meet POO-lahng DOO-loo eh", arti_id: "Sudah malam ini, saya pamit pulang dulu ya.", arti_en: "It's night already, I'll head home now." },
+  { daerah: "Papua", topik: "kabari kalau sudah sampai", asli: "Jangan lupa kas kabar kalau su sampai e!", baca: "JAH-ngahn LOO-pah kahs KAH-bar KAH-low soo SAHM-pai eh", arti_id: "Jangan lupa kasih kabar kalau sudah sampai ya!", arti_en: "Don't forget to send word once you get there!" },
+  { daerah: "Papua", topik: "senang kenalan bertemu", asli: "Sa senang skali bisa kenal deng ko!", baca: "sah SEH-nahng SKAH-lee BEE-sah KEH-nahl deng ko", arti_id: "Saya senang sekali bisa kenal denganmu!", arti_en: "I'm so glad to get to know you!" },
 
   // --- MAKASSAR ---
-  {
-    daerah: "Makassar",
-    topik: "terima kasih",
-    asli: "Tarima kasi jai dudu!",
-    baca: "tah-REE-mah KAH-see JAH-ee DOO-doo",
-    arti_id: "Terima kasih banyak sekali!",
-    arti_en: "Thank you very much!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "apa kabar",
-    asli: "Antekamma karebanta?",
-    baca: "ahn-teh-KAHM-mah kah-reh-BAHN-tah",
-    arti_id: "Bagaimana kabar Anda?",
-    arti_en: "How are you doing?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "permisi numpang lewat",
-    asli: "Tabe', lalo riolo.",
-    baca: "TAH-beh LAH-lo ree-O-lo",
-    arti_id: "Permisi, numpang lewat duluan.",
-    arti_en: "Excuse me, let me pass through.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "berapa harganya",
-    asli: "Siapa ballinna anne?",
-    baca: "see-AH-pah bahl-LEEN-nah AHN-neh",
-    arti_id: "Berapa harganya ini?",
-    arti_en: "How much is this?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "sudah makan belum",
-    asli: "Le'ba'maki' angnganre iareka tenapa?",
-    baca: "leh-bah-MAH-kee ahng-NGAHN-reh ee-ah-REH-kah teh-NAH-pah",
-    arti_id: "Sudah makan atau belum?",
-    arti_en: "Have you eaten yet?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "mau pergi ke mana",
-    asli: "La'lampa kemaeki'?",
-    baca: "lah-LAHM-pah keh-MAH-eh-kee",
-    arti_id: "Mau pergi ke mana?",
-    arti_en: "Where are you heading?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "enak sekali sedap",
-    asli: "Nyaman dudu anne kanrea!",
-    baca: "NYAH-mahn DOO-doo AHN-neh kahn-REH-ah",
-    arti_id: "Enak sekali makanan ini!",
-    arti_en: "This food is super delicious!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "hati-hati di jalan",
-    asli: "Baji'-baji' ri aganga!",
-    baca: "BAH-jee BAH-jee ree ah-GAHNG-ah",
-    arti_id: "Hati-hati di jalan!",
-    arti_en: "Be careful on the road!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "tolong bantu",
-    asli: "Kulleja' nibantu sinampe'?",
-    baca: "kool-LEH-jah nee-BAHN-too see-NAHM-peh",
-    arti_id: "Bisa tolong bantu saya sebentar?",
-    arti_en: "Could you help me for a moment?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "sampai jumpa lagi ketemu",
-    asli: "Siruntu' poleki' sallang!",
-    baca: "see-ROON-too po-LEH-kee SAHL-lahng",
-    arti_id: "Sampai ketemu lagi nanti!",
-    arti_en: "See you again later!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "jangan pedas tidak pedas",
-    asli: "Tea'mi lada dudu!",
-    baca: "teh-AH-mee LAH-dah DOO-doo",
-    arti_id: "Jangan terlalu pedas!",
-    arti_en: "Not too spicy, please!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "boleh kurang tawar harga murah",
-    asli: "Kulleja' nikurangi sike'de' ballinna?",
-    baca: "kool-LEH-jah nee-koo-RAH-ngee see-KEH-deh bahl-LEEN-nah",
-    arti_id: "Bisa dikurangi sedikit harganya?",
-    arti_en: "Can the price be lowered a bit?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "di mana toilet kamar mandi wc",
-    asli: "Kemae kamara' je'neka?",
-    baca: "keh-MAH-eh KAH-mah-rah jeh-NEH-kah",
-    arti_id: "Di mana kamar mandinya?",
-    arti_en: "Where is the bathroom?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "tidak mengerti kurang paham",
-    asli: "Pammopporangnga', tena kupahangi.",
-    baca: "pahm-mop-po-RAHNG-ngah TEH-nah koo-pah-HAH-ngee",
-    arti_id: "Maafkan saya, saya tidak mengerti.",
-    arti_en: "I'm sorry, I don't understand.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "siapa namamu kenalan",
-    asli: "Inai arentu?",
-    baca: "ee-NAH-ee ah-REN-too",
-    arti_id: "Siapa namamu?",
-    arti_en: "What is your name?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "dari mana asalmu",
-    asli: "Battukemaeki'?",
-    baca: "baht-too-keh-MAH-eh-kee",
-    arti_id: "Dari mana asal Anda?",
-    arti_en: "Where are you from?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "tidak apa-apa santai saja",
-    asli: "Tena najai, santai maki'.",
-    baca: "TEH-nah nah-JAH-ee SAHN-tai MAH-kee",
-    arti_id: "Tidak apa-apa, santai saja.",
-    arti_en: "No problem, just relax.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "lapar sekali haus",
-    asli: "Cipuruk duduma' anne!",
-    baca: "chee-POO-rook doo-DOO-mah AHN-neh",
-    arti_id: "Saya lapar sekali ini!",
-    arti_en: "I'm super hungry right now!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "belok kiri arah jalan",
-    asli: "Belo' kairi ri dallekang!",
-    baca: "BEH-lo kah-EE-ree ree dahl-LEH-kahng",
-    arti_id: "Belok kiri di depan!",
-    arti_en: "Turn left up ahead!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "selamat pagi",
-    asli: "Salama' bari'basa'!",
-    baca: "sah-LAH-mah bah-ree-BAH-sah",
-    arti_id: "Selamat pagi!",
-    arti_en: "Good morning!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "pesan ini mau beli order",
-    asli: "Ero'ja' appesang anne se're.",
-    baca: "EH-ro-jah ahp-PEH-sahng AHN-neh SEH-reh",
-    arti_id: "Saya mau pesan yang ini satu.",
-    arti_en: "I would like to order one of these.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "bayar di mana kasir",
-    asli: "Kemaeki' ammayara' anne?",
-    baca: "keh-MAH-eh-kee ahm-mah-YAH-rah AHN-neh",
-    arti_id: "Di mana tempat bayarnya?",
-    arti_en: "Where do we pay for this?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "minta air putih minum",
-    asli: "Kulleja' appala' je'ne' bambang?",
-    baca: "kool-LEH-jah ahp-PAH-lah JEH-neh BAHM-bahng",
-    arti_id: "Bisa minta air hangat?",
-    arti_en: "May I ask for some warm water?",
-  },
-  {
-    daerah: "Makassar",
-    topik: "tunggu sebentar sabar",
-    asli: "Tayangnga' sinampe' deh, tea'ki' lalo kemae-kemae.",
-    baca: "tah-YAHNG-ngah see-NAHM-peh deh teh-AH-kee LAH-lo keh-MAH-eh keh-MAH-eh",
-    arti_id: "Tunggu saya sebentar ya, jangan ke mana-mana.",
-    arti_en: "Wait for me a moment, don't go anywhere.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "ngopi nongkrong yuk ajak",
-    asli: "Umba'ki' ngopi riolo!",
-    baca: "OOM-bah-kee NGO-pee ree-O-lo",
-    arti_id: "Ayo kita ngopi dulu!",
-    arti_en: "Come on, let's grab coffee first!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "panas sekali cuaca terik",
-    asli: "Bambang dudu alloa anne!",
-    baca: "BAHM-bahng DOO-doo ahl-LO-ah AHN-neh",
-    arti_id: "Panas sekali hari ini!",
-    arti_en: "It's really hot today!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "bagus keren cantik indah",
-    asli: "Baji' dudu anne!",
-    baca: "BAH-jee DOO-doo AHN-neh",
-    arti_id: "Bagus sekali ini!",
-    arti_en: "This is very good!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "pamit pulang sudah malam",
-    asli: "Bangngimi, appala' kana ammotere'ja' riolo.",
-    baca: "BAHNG-ngee-mee ahp-PAH-lah KAH-nah ahm-MO-teh-reh-jah ree-O-lo",
-    arti_id: "Sudah malam, saya pamit pulang dulu.",
-    arti_en: "It's night already, I'll excuse myself to go home.",
-  },
-  {
-    daerah: "Makassar",
-    topik: "kabari kalau sudah sampai",
-    asli: "Tea'ki' takkaluppa akkabara' punna battumaki'!",
-    baca: "teh-AH-kee tahk-kah-LOOP-pah ahk-kah-BAH-rah POON-nah baht-too-MAH-kee",
-    arti_id: "Jangan lupa kabari kalau sudah sampai ya!",
-    arti_en: "Don't forget to send news once you arrive!",
-  },
-  {
-    daerah: "Makassar",
-    topik: "senang kenalan bertemu",
-    asli: "Rannu dudu nyawaku assibuntulu' siagang ikatte!",
-    baca: "RAHN-noo DOO-doo nyah-WAH-koo ahs-see-boon-TOO-loo see-AH-gahng ee-KAHT-teh",
-    arti_id: "Senang sekali hatiku bertemu dengan Anda!",
-    arti_en: "My heart is very glad to meet you!",
-  },
+  { daerah: "Makassar", topik: "terima kasih", asli: "Tarima kasi jai dudu!", baca: "tah-REE-mah KAH-see JAH-ee DOO-doo", arti_id: "Terima kasih banyak sekali!", arti_en: "Thank you very much!" },
+  { daerah: "Makassar", topik: "apa kabar", asli: "Antekamma karebanta?", baca: "ahn-teh-KAHM-mah kah-reh-BAHN-tah", arti_id: "Bagaimana kabar Anda?", arti_en: "How are you doing?" },
+  { daerah: "Makassar", topik: "permisi numpang lewat", asli: "Tabe', lalo riolo.", baca: "TAH-beh LAH-lo ree-O-lo", arti_id: "Permisi, numpang lewat duluan.", arti_en: "Excuse me, let me pass through." },
+  { daerah: "Makassar", topik: "berapa harganya", asli: "Siapa ballinna anne?", baca: "see-AH-pah bahl-LEEN-nah AHN-neh", arti_id: "Berapa harganya ini?", arti_en: "How much is this?" },
+  { daerah: "Makassar", topik: "sudah makan belum", asli: "Le'ba'maki' angnganre iareka tenapa?", baca: "leh-bah-MAH-kee ahng-NGAHN-reh ee-ah-REH-kah teh-NAH-pah", arti_id: "Sudah makan atau belum?", arti_en: "Have you eaten yet?" },
+  { daerah: "Makassar", topik: "mau pergi ke mana", asli: "La'lampa kemaeki'?", baca: "lah-LAHM-pah keh-MAH-eh-kee", arti_id: "Mau pergi ke mana?", arti_en: "Where are you heading?" },
+  { daerah: "Makassar", topik: "enak sekali sedap", asli: "Nyaman dudu anne kanrea!", baca: "NYAH-mahn DOO-doo AHN-neh kahn-REH-ah", arti_id: "Enak sekali makanan ini!", arti_en: "This food is super delicious!" },
+  { daerah: "Makassar", topik: "hati-hati di jalan", asli: "Baji'-baji' ri aganga!", baca: "BAH-jee BAH-jee ree ah-GAHNG-ah", arti_id: "Hati-hati di jalan!", arti_en: "Be careful on the road!" },
+  { daerah: "Makassar", topik: "tolong bantu", asli: "Kulleja' nibantu sinampe'?", baca: "kool-LEH-jah nee-BAHN-too see-NAHM-peh", arti_id: "Bisa tolong bantu saya sebentar?", arti_en: "Could you help me for a moment?" },
+  { daerah: "Makassar", topik: "sampai jumpa lagi ketemu", asli: "Siruntu' poleki' sallang!", baca: "see-ROON-too po-LEH-kee SAHL-lahng", arti_id: "Sampai ketemu lagi nanti!", arti_en: "See you again later!" },
+  { daerah: "Makassar", topik: "jangan pedas tidak pedas", asli: "Tea'mi lada dudu!", baca: "teh-AH-mee LAH-dah DOO-doo", arti_id: "Jangan terlalu pedas!", arti_en: "Not too spicy, please!" },
+  { daerah: "Makassar", topik: "boleh kurang tawar harga murah", asli: "Kulleja' nikurangi sike'de' ballinna?", baca: "kool-LEH-jah nee-koo-RAH-ngee see-KEH-deh bahl-LEEN-nah", arti_id: "Bisa dikurangi sedikit harganya?", arti_en: "Can the price be lowered a bit?" },
+  { daerah: "Makassar", topik: "di mana toilet kamar mandi wc", asli: "Kemae kamara' je'neka?", baca: "keh-MAH-eh KAH-mah-rah jeh-NEH-kah", arti_id: "Di mana kamar mandinya?", arti_en: "Where is the bathroom?" },
+  { daerah: "Makassar", topik: "tidak mengerti kurang paham", asli: "Pammopporangnga', tena kupahangi.", baca: "pahm-mop-po-RAHNG-ngah TEH-nah koo-pah-HAH-ngee", arti_id: "Maafkan saya, saya tidak mengerti.", arti_en: "I'm sorry, I don't understand." },
+  { daerah: "Makassar", topik: "siapa namamu kenalan", asli: "Inai arentu?", baca: "ee-NAH-ee ah-REN-too", arti_id: "Siapa namamu?", arti_en: "What is your name?" },
+  { daerah: "Makassar", topik: "dari mana asalmu", asli: "Battukemaeki'?", baca: "baht-too-keh-MAH-eh-kee", arti_id: "Dari mana asal Anda?", arti_en: "Where are you from?" },
+  { daerah: "Makassar", topik: "tidak apa-apa santai saja", asli: "Tena najai, santai maki'.", baca: "TEH-nah nah-JAH-ee SAHN-tai MAH-kee", arti_id: "Tidak apa-apa, santai saja.", arti_en: "No problem, just relax." },
+  { daerah: "Makassar", topik: "lapar sekali haus", asli: "Cipuruk duduma' anne!", baca: "chee-POO-rook doo-DOO-mah AHN-neh", arti_id: "Saya lapar sekali ini!", arti_en: "I'm super hungry right now!" },
+  { daerah: "Makassar", topik: "belok kiri arah jalan", asli: "Belo' kairi ri dallekang!", baca: "BEH-lo kah-EE-ree ree dahl-LEH-kahng", arti_id: "Belok kiri di depan!", arti_en: "Turn left up ahead!" },
+  { daerah: "Makassar", topik: "selamat pagi", asli: "Salama' bari'basa'!", baca: "sah-LAH-mah bah-ree-BAH-sah", arti_id: "Selamat pagi!", arti_en: "Good morning!" },
+  { daerah: "Makassar", topik: "pesan ini mau beli order", asli: "Ero'ja' appesang anne se're.", baca: "EH-ro-jah ahp-PEH-sahng AHN-neh SEH-reh", arti_id: "Saya mau pesan yang ini satu.", arti_en: "I would like to order one of these." },
+  { daerah: "Makassar", topik: "bayar di mana kasir", asli: "Kemaeki' ammayara' anne?", baca: "keh-MAH-eh-kee ahm-mah-YAH-rah AHN-neh", arti_id: "Di mana tempat bayarnya?", arti_en: "Where do we pay for this?" },
+  { daerah: "Makassar", topik: "minta air putih minum", asli: "Kulleja' appala' je'ne' bambang?", baca: "kool-LEH-jah ahp-PAH-lah JEH-neh BAHM-bahng", arti_id: "Bisa minta air hangat?", arti_en: "May I ask for some warm water?" },
+  { daerah: "Makassar", topik: "tunggu sebentar sabar", asli: "Tayangnga' sinampe' deh, tea'ki' lalo kemae-kemae.", baca: "tah-YAHNG-ngah see-NAHM-peh deh teh-AH-kee LAH-lo keh-MAH-eh keh-MAH-eh", arti_id: "Tunggu saya sebentar ya, jangan ke mana-mana.", arti_en: "Wait for me a moment, don't go anywhere." },
+  { daerah: "Makassar", topik: "ngopi nongkrong yuk ajak", asli: "Umba'ki' ngopi riolo!", baca: "OOM-bah-kee NGO-pee ree-O-lo", arti_id: "Ayo kita ngopi dulu!", arti_en: "Come on, let's grab coffee first!" },
+  { daerah: "Makassar", topik: "panas sekali cuaca terik", asli: "Bambang dudu alloa anne!", baca: "BAHM-bahng DOO-doo ahl-LO-ah AHN-neh", arti_id: "Panas sekali hari ini!", arti_en: "It's really hot today!" },
+  { daerah: "Makassar", topik: "bagus keren cantik indah", asli: "Baji' dudu anne!", baca: "BAH-jee DOO-doo AHN-neh", arti_id: "Bagus sekali ini!", arti_en: "This is very good!" },
+  { daerah: "Makassar", topik: "pamit pulang sudah malam", asli: "Bangngimi, appala' kana ammotere'ja' riolo.", baca: "BAHNG-ngee-mee ahp-PAH-lah KAH-nah ahm-MO-teh-reh-jah ree-O-lo", arti_id: "Sudah malam, saya pamit pulang dulu.", arti_en: "It's night already, I'll excuse myself to go home." },
+  { daerah: "Makassar", topik: "kabari kalau sudah sampai", asli: "Tea'ki' takkaluppa akkabara' punna battumaki'!", baca: "teh-AH-kee tahk-kah-LOOP-pah ahk-kah-BAH-rah POON-nah baht-too-MAH-kee", arti_id: "Jangan lupa kabari kalau sudah sampai ya!", arti_en: "Don't forget to send news once you arrive!" },
+  { daerah: "Makassar", topik: "senang kenalan bertemu", asli: "Rannu dudu nyawaku assibuntulu' siagang ikatte!", baca: "RAHN-noo DOO-doo nyah-WAH-koo ahs-see-boon-TOO-loo see-AH-gahng ee-KAHT-teh", arti_id: "Senang sekali hatiku bertemu dengan Anda!", arti_en: "My heart is very glad to meet you!" },
 ];
 
 let daerahTerpilih = null;
@@ -3028,6 +949,29 @@ if (document.readyState === "loading") {
 }
 
 const clamp01 = (n) => Math.min(Math.max(n, 0), 1);
+if (header) {
+  import("./src/liquid-glass.js")
+    .then(({ createGlass }) => {
+      const glass = header.querySelector(".site-header__glass");
+      if (!glass) return;
+      createGlass(glass, {
+        mode: "backdrop",
+        fit: true,
+        radius: 999,
+        refraction: 30,
+        bezel: 0.6,
+        curvature: 4,
+        ior: 1.5,
+        chroma: 0.14,
+        blur: 1.5,
+        specular: 0.7,
+        specularWidth: 2.5,
+        lightAngle: -120,
+        fallback: "blur(10px) saturate(1.7)",
+      });
+    })
+    .catch(() => {});
+}
 
 const hero = document.getElementById("home");
 if (hero) {
@@ -3205,6 +1149,7 @@ if (!reduceMotion) {
     .querySelectorAll(".reveal")
     .forEach((el) => el.classList.add("is-visible"));
 }
+
 {
   const homeMain = document.querySelector("#home.sticky")?.closest("main");
   const mainContent = homeMain || document.querySelector("main");
@@ -3380,6 +1325,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   document.addEventListener("click", (e) => {
+    // 1. Klik Tombol Step 1, 2, 3
     const stepBtn = e.target.closest("[data-step-btn]");
     if (stepBtn) {
       const activeStep = stepBtn.dataset.stepBtn;
@@ -3412,6 +1358,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       return;
     }
+
+    // 2. Klik Speed Toggle (1x / 0.5x slow) di Step 2
     const speedBtn = e.target.closest(".how-speed-btn");
     if (speedBtn) {
       currentSpeed = Number(speedBtn.dataset.speed) || 1;
@@ -3421,10 +1369,14 @@ document.addEventListener("DOMContentLoaded", () => {
           ? "var(--color-terakota, #b54927)"
           : "transparent";
         b.style.color = active ? "#ffffff" : "var(--color-nila, #243b7a)";
-        b.style.border = active ? "none" : "1px solid rgba(36, 59, 122, 0.5)";
+        b.style.border = active
+          ? "none"
+          : "1px solid rgba(36, 59, 122, 0.5)";
       });
       return;
     }
+
+    // 3. Klik Tombol Play Waveform di Step 2
     const playBtn = e.target.closest("#how-audio-play");
     if (playBtn) {
       const playIcon = document.getElementById("how-audio-icon");
@@ -3460,6 +1412,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, intervalMs);
       return;
     }
+
+    // 4. Klik Jawaban Kuis di Step 3
     const quizOpt = e.target.closest("[data-quiz-option]");
     if (quizOpt) {
       const isCorrect = quizOpt.dataset.correct === "true";
@@ -3964,21 +1918,24 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
     };
 
-    inlineForm?.addEventListener("submit", (e) => {
-      e.preventDefault();
+    const sendInline = () => {
+      if (!inlineInput || isSendingInline) return;
       const val = inlineInput.value.trim();
-      if (!val) return;
+      if (!val) {
+        inlineInput.focus();
+        return;
+      }
       inlineInput.value = "";
       kirimPesanKe(inlineContainer, val, false);
-    });
+    };
 
-    drawerForm?.addEventListener("submit", (e) => {
-      e.preventDefault();
+    const sendDrawer = () => {
+      if (!drawerInput || isSendingDrawer) return;
       const val = drawerInput.value.trim();
       if (!val) return;
       drawerInput.value = "";
       kirimPesanKe(drawerBody, val, true);
-    });
+    };
 
     inlineReset?.addEventListener("click", renderInlineDefault);
     drawerClose?.addEventListener("click", closeDrawer);
@@ -4025,66 +1982,298 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const speakBtn = e.target.closest("[data-gali-speak]");
       if (speakBtn) {
-        playGaliAudio(speakBtn.dataset.galiSpeak, 1, speakBtn);
+        playGaliAudio(
+          speakBtn.dataset.galiSpeak,
+          1,
+          speakBtn.dataset.galiVoice || "gali",
+        );
         return;
       }
 
-      const chipBtn = e.target.closest("[data-gali-chip]");
-      if (chipBtn) {
-        const chip = chipBtn.dataset.galiChip;
-        const phrase = chipBtn.dataset.phrase || "";
-        const targetContainer = chipBtn.closest("#gali-drawer")
-          ? drawerBody
-          : inlineContainer;
-        const isDrawer = Boolean(chipBtn.closest("#gali-drawer"));
-
-        if (chip === "Say it slower") {
-          playGaliAudio(phrase, 0.55, chipBtn);
-        } else if (chip === "Save phrase") {
-          const saved = JSON.parse(
-            localStorage.getItem("gaulingo_saved") || "[]",
-          );
-          if (!saved.includes(phrase)) saved.push(phrase);
-          localStorage.setItem("gaulingo_saved", JSON.stringify(saved));
-          chipBtn.textContent = "Saved ✓";
-          chipBtn.style.backgroundColor = "var(--color-hijau, #1f6f54)";
-          chipBtn.style.color = "#ffffff";
-        } else {
-          kirimPesanKe(
-            targetContainer,
-            `Translate "${phrase}" into ${chip} and give a cultural tip`,
-            isDrawer,
-          );
+      const stallLi = e.target.closest("li");
+      if (stallLi && e.target.closest("button .ph-play")) {
+        const phraseText = stallLi.querySelector("p")?.textContent.trim();
+        if (phraseText) {
+          playGaliAudio(phraseText, 1, "gali");
+          return;
         }
-        return;
       }
 
-      const micBtn = e.target.closest("[data-gali-mic]");
-      if (micBtn) {
-        const SpeechRec =
-          window.SpeechRecognition || window.webkitSpeechRecognition;
-        const targetInput =
-          micBtn.dataset.galiMic === "drawer" ? drawerInput : inlineInput;
-        if (!SpeechRec) {
-          if (targetInput) {
-            targetInput.placeholder = "Type your question here...";
-            targetInput.focus();
+      const clickedFormBtn = e.target.closest(
+        "#inline-gali-form button, #gali-drawer-form button",
+      );
+      if (clickedFormBtn) {
+        const isMicBtn =
+          clickedFormBtn.hasAttribute("data-gali-mic") ||
+          Boolean(clickedFormBtn.querySelector(".ph-microphone, .ph-mic"));
+
+        if (!isMicBtn) {
+          e.preventDefault();
+          if (clickedFormBtn.closest("#gali-drawer-form")) {
+            sendDrawer();
+          } else {
+            sendInline();
           }
           return;
         }
-        const rec = new SpeechRec();
-        rec.lang = "en-US";
-        micBtn.style.backgroundColor = "var(--color-terakota, #b54927)";
-        micBtn.style.color = "#ffffff";
-        rec.onresult = (ev) => {
-          const transcript = ev.results?.[0]?.[0]?.transcript || "";
-          if (targetInput && transcript) targetInput.value = transcript;
+      }
+
+      const micBtn =
+        e.target.closest("[data-gali-mic]") ||
+        (clickedFormBtn?.querySelector(".ph-microphone, .ph-mic")
+          ? clickedFormBtn
+          : null);
+
+      if (micBtn) {
+        e.preventDefault();
+        const isDrawer =
+          micBtn.dataset.galiMic === "drawer" ||
+          Boolean(micBtn.closest("#gali-drawer-form"));
+        const targetInput = isDrawer ? drawerInput : inlineInput;
+        const currentUiLang = localStorage.getItem("gaulingo_lang") || "en";
+        const oldPlaceholder =
+          targetInput?.placeholder ||
+          (currentUiLang === "id"
+            ? "Tanya apa aja ke Gali..."
+            : "Ask Gali anything...");
+
+        if (window._galiActiveRecorder) {
+          window._galiActiveRecorder.stop();
+          return;
+        }
+
+        if (window._galiActiveRec) {
+          window._galiActiveRec.stop();
+          return;
+        }
+
+        if (window.location.protocol === "file:") {
+          if (targetInput) {
+            targetInput.placeholder =
+              "Buka lewat Live Server dulu, bukan file langsung";
+          }
+          return;
+        }
+
+        const startGeminiVoiceRecorder = async () => {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+              audio: true,
+            });
+            const chunks = [];
+            const recorder = new MediaRecorder(stream);
+            window._galiActiveRecorder = recorder;
+
+            micBtn.style.backgroundColor = "#b54927";
+            micBtn.style.color = "#ffffff";
+            if (targetInput) {
+              targetInput.value = "";
+              targetInput.placeholder =
+                currentUiLang === "id"
+                  ? "Lagi ngerekam... klik mic lagi kalau udah selesai"
+                  : "Recording... click mic again when done";
+            }
+
+            recorder.ondataavailable = (ev) => {
+              if (ev.data && ev.data.size > 0) chunks.push(ev.data);
+            };
+
+            recorder.onstop = async () => {
+              window._galiActiveRecorder = null;
+              stream.getTracks().forEach((t) => t.stop());
+              micBtn.style.backgroundColor = "#f8f1e5";
+              micBtn.style.color = "#243b7a";
+
+              const rawMime = recorder.mimeType || "audio/webm";
+              const cleanMime = rawMime.split(";")[0];
+              const audioBlob = new Blob(chunks, { type: cleanMime });
+
+              if (audioBlob.size < 500) {
+                if (targetInput) targetInput.placeholder = oldPlaceholder;
+                return;
+              }
+
+              if (targetInput) {
+                targetInput.placeholder =
+                  currentUiLang === "id"
+                    ? "Lagi ngubah suara jadi teks..."
+                    : "Transcribing your voice...";
+              }
+
+              try {
+                const base64Audio = await new Promise((resolve, reject) => {
+                  const reader = new FileReader();
+                  reader.onloadend = () =>
+                    resolve(String(reader.result).split(",")[1]);
+                  reader.onerror = reject;
+                  reader.readAsDataURL(audioBlob);
+                });
+
+                const geminiKey = (
+                  (typeof GEMINI_API_KEY !== "undefined"
+                    ? GEMINI_API_KEY
+                    : "") ||
+                  localStorage.getItem("gaulingo_gemini_key") ||
+                  ""
+                ).trim();
+
+                const res = await fetchWithTimeout(
+                  getGeminiEndpoint("gemini-3.8-flash"),
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      "x-goog-api-key": geminiKey,
+                    },
+                    body: JSON.stringify({
+                      contents: [
+                        {
+                          parts: [
+                            {
+                              text: "Transcribe this audio accurately into text (Indonesian or English as spoken). Return ONLY the spoken words without quotes or extra explanation.",
+                            },
+                            {
+                              inlineData: {
+                                mimeType: cleanMime,
+                                data: base64Audio,
+                              },
+                            },
+                          ],
+                        },
+                      ],
+                    }),
+                  },
+                  8000,
+                );
+
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                const data = await res.json();
+                const transcript =
+                  data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
+                  "";
+
+                if (targetInput) {
+                  targetInput.placeholder = oldPlaceholder;
+                  if (transcript) {
+                    targetInput.value = transcript;
+                    targetInput.focus();
+                  }
+                }
+              } catch (_) {
+                if (targetInput) {
+                  targetInput.placeholder =
+                    "Suara belum ketangkep, coba ulang atau ketik ya";
+                }
+              }
+            };
+
+            recorder.start();
+          } catch (permErr) {
+            if (targetInput) {
+              targetInput.placeholder =
+                permErr.name === "NotFoundError"
+                  ? "Mikrofon nggak kedeteksi di perangkat ini"
+                  : "Izin mic ditolak — aktifin browser di System Settings Mac";
+            }
+          }
         };
-        rec.onend = () => {
-          micBtn.style.backgroundColor = "var(--color-krem, #f8f1e5)";
-          micBtn.style.color = "var(--color-nila, #243b7a)";
-        };
-        rec.start();
+
+        const SpeechRec =
+          window.SpeechRecognition || window.webkitSpeechRecognition;
+
+        if (!SpeechRec || window._galiForceAudioFallback) {
+          startGeminiVoiceRecorder();
+          return;
+        }
+
+        (async () => {
+          try {
+            const stream = await navigator.mediaDevices.getUserMedia({
+              audio: true,
+            });
+            stream.getTracks().forEach((track) => track.stop());
+          } catch (permErr) {
+            if (targetInput) {
+              targetInput.placeholder =
+                permErr.name === "NotFoundError"
+                  ? "Mikrofon nggak kedeteksi di perangkat ini"
+                  : "Izin mic ditolak — aktifin browser di System Settings Mac";
+            }
+            return;
+          }
+
+          const rec = new SpeechRec();
+          window._galiActiveRec = rec;
+          rec.lang = currentUiLang === "id" ? "id-ID" : "en-US";
+          rec.interimResults = true;
+          rec.maxAlternatives = 1;
+
+          let hadError = false;
+          micBtn.style.backgroundColor = "#b54927";
+          micBtn.style.color = "#ffffff";
+          if (targetInput) {
+            targetInput.value = "";
+            targetInput.placeholder =
+              currentUiLang === "id"
+                ? "Lagi dengerin... ngomong aja sekarang"
+                : "Listening... speak now";
+          }
+
+          rec.onresult = (ev) => {
+            let transcript = "";
+            for (let i = 0; i < ev.results.length; i++) {
+              transcript += ev.results[i][0].transcript;
+            }
+            if (targetInput && transcript) {
+              targetInput.value = transcript;
+            }
+          };
+
+          rec.onerror = (ev) => {
+            hadError = true;
+            window._galiActiveRec = null;
+            micBtn.style.backgroundColor = "#f8f1e5";
+            micBtn.style.color = "#243b7a";
+
+            if (ev.error === "network") {
+              window._galiForceAudioFallback = true;
+              startGeminiVoiceRecorder();
+              return;
+            }
+
+            if (!targetInput) return;
+            if (
+              ev.error === "not-allowed" ||
+              ev.error === "service-not-allowed"
+            ) {
+              targetInput.placeholder =
+                "Izin mic diblokir — cek ikon gembok di address bar";
+            } else if (ev.error === "audio-capture") {
+              targetInput.placeholder =
+                "Mic gagal diakses — cek Sound > Input di Mac";
+            } else {
+              targetInput.placeholder =
+                "Suara belum kedengeran — klik mic lalu langsung ngomong ya";
+            }
+          };
+
+          rec.onend = () => {
+            window._galiActiveRec = null;
+            micBtn.style.backgroundColor = "#f8f1e5";
+            micBtn.style.color = "#243b7a";
+            if (targetInput && !targetInput.value && !hadError) {
+              targetInput.placeholder = oldPlaceholder;
+            }
+          };
+
+          try {
+            rec.start();
+          } catch (_) {
+            window._galiActiveRec = null;
+            window._galiForceAudioFallback = true;
+            startGeminiVoiceRecorder();
+          }
+        })();
       }
     });
 
@@ -4101,81 +2290,3 @@ document.addEventListener("DOMContentLoaded", () => {
     initChatbotGali();
   }
 })();
-const initCrewHover = () => {
-  document.querySelectorAll(".crew-row").forEach((row) => {
-    if (row.dataset.hoverBound) return;
-    row.dataset.hoverBound = "true";
-
-    const photo = row.querySelector(".crew-photo");
-    if (!photo) return;
-
-    const baseRotate = parseFloat(photo.dataset.baseRotate || "4");
-    let targetX = 0;
-    let targetY = 0;
-    let currentX = 0;
-    let currentY = 0;
-    let currentScale = 0.85;
-    let targetScale = 0.85;
-    let isHovered = false;
-    let rafId = null;
-
-    const getPos = (e) => {
-      const isFixed = getComputedStyle(photo).position === "fixed";
-      if (isFixed) {
-        return { x: e.clientX, y: e.clientY };
-      }
-      const rect = row.getBoundingClientRect();
-      return {
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
-      };
-    };
-
-    const animate = () => {
-      currentX += (targetX - currentX) * 0.14;
-      currentY += (targetY - currentY) * 0.14;
-      currentScale += (targetScale - currentScale) * 0.14;
-
-      const velocityX = targetX - currentX;
-      const dynamicRotate =
-        baseRotate + Math.max(-12, Math.min(12, velocityX * 0.12));
-
-      photo.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) scale(${currentScale}) rotate(${dynamicRotate}deg)`;
-
-      if (isHovered || Math.abs(targetScale - currentScale) > 0.01) {
-        rafId = requestAnimationFrame(animate);
-      } else {
-        rafId = null;
-      }
-    };
-
-    row.addEventListener("mouseenter", (e) => {
-      isHovered = true;
-      const pos = getPos(e);
-      targetX = currentX = pos.x;
-      targetY = currentY = pos.y;
-      targetScale = 1;
-
-      photo.style.opacity = "1";
-      if (!rafId) animate();
-    });
-
-    row.addEventListener("mousemove", (e) => {
-      const pos = getPos(e);
-      targetX = pos.x;
-      targetY = pos.y;
-    });
-
-    row.addEventListener("mouseleave", () => {
-      isHovered = false;
-      targetScale = 0.85;
-      photo.style.opacity = "0";
-    });
-  });
-};
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initCrewHover);
-} else {
-  initCrewHover();
-}
