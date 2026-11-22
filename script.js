@@ -1444,562 +1444,225 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 })();
+(() => {
+  const scriptUrl =
+    document.currentScript?.src || new URL("../script.js", location.href).href;
+  const galiAvatarUrl = new URL("./src/assets/Illustration.png", scriptUrl)
+    .href;
+  const galiAvatarHTML = `<img src="${galiAvatarUrl}" alt="Gali" class="h-full w-full rounded-full object-cover" />`;
 
-  (() => {
-  const ELEVENLABS_API_KEY =
-    (window.GAULINGO_CONFIG?.ELEVENLABS_API_KEY || "");
-
-  const GEMINI_API_KEY =
-    (window.GAULINGO_CONFIG?.GEMINI_API_KEY || "");
-
-  function getGeminiEndpoint(model) {
-    return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`;
+  if (!document.getElementById("gali-chat-style")) {
+    const style = document.createElement("style");
+    style.id = "gali-chat-style";
+    style.textContent = `
+      @keyframes galiBounce {
+        0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+        40% { transform: translateY(-4px); opacity: 1; }
+      }
+      .gali-dot {
+        width: 6px; height: 6px; border-radius: 999px;
+        background-color: var(--color-nila, #243b7a);
+        display: inline-block;
+        animation: galiBounce 1.2s infinite ease-in-out;
+      }
+      .gali-dot:nth-child(2) { animation-delay: 0.2s; }
+      .gali-dot:nth-child(3) { animation-delay: 0.4s; }
+    `;
+    document.head.appendChild(style);
   }
+  const galiFallbackList = [
+    {
+      keys: ["no spicy", "not spicy", "pedas", "pedes"],
+      intro: "Easy! Say this to the seller:",
+      phrase: "Nggak pedas, ya.",
+      meaning: '"Not spicy, please."',
+      tip: 'Tip: adding "ya" at the end makes it sound softer and friendlier.',
+      chips: ["Say it slower", "Sunda version", "Save phrase"],
+    },
+    {
+      keys: ["bargain", "tawar", "kurang", "cheaper", "murah"],
+      intro: "Start soft, with a smile:",
+      phrase: "Boleh kurang sedikit?",
+      meaning: '"Could it be a little less?"',
+      tip: "Tip: sedikit (a little) turns it into a request, not a demand.",
+      chips: ["Say it slower", "Sunda version", "Save phrase"],
+    },
+  ];
 
-  const GALI_VOICES = {
-    gali: "CwhRBWXzGAHq8TQ4Fs17",
-  };
+  let galiAudioUrl = null;
+  let galiAudioPlayer = null;
 
-  const GALI_SYSTEM_PROMPT = `
-You are Gali, a friendly, street-smart local Indonesian & Nusantara language AI buddy on Gaulingo.
-
-CRITICAL LANGUAGE RULE:
-- Match the user's language! If the user writes in English (e.g., "What does 'gas' mean?", "How do I say no spicy?"), you MUST write "intro", "meaning", and "tip" in clear, natural English.
-- Only write "intro", "meaning", and "tip" in Indonesian if the user writes their question in Indonesian.
-- Always keep "phrase" in authentic Indonesian or the requested regional language (Sunda, Jawa, Bali, Minang, Betawi, Batak, Bugis, Makassar, Banjar, Papua) so the ElevenLabs audio pronounces the local phrase naturally.
-
-Your role:
-1. Help users translate phrases, understand Indonesian slang/gaul, polite forms of address (Mas, Mbak, Bang, Kak, Pak, Bu, Bli, Uda, Daeng, Akang, Teteh), and regional Nusantara languages.
-2. If the user simply greets you (e.g., "hi", "hello", "how are you"), greet them warmly in their language and share a natural local greeting example.
-3. If the user asks something completely unrelated to Indonesian/regional languages, culture, or traveling in Indonesia (e.g., Python coding, math, politics), decline playfully in the user's language and steer back to Indonesian phrases.
-
-Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
-{
-  "intro": "Short, natural opening answering the user in their language",
-  "phrase": "The main Indonesian or regional phrase to say (read aloud by ElevenLabs audio)",
-  "meaning": "English or Indonesian translation in quotes, plus regional equivalent if relevant",
-  "tip": "Brief pronunciation, politeness, or cultural tip in the user's language"
-}
-`.trim();
-
-  const galiAvatarSVG = `
-    <svg viewBox="0 0 80 80" width="100%" height="100%" style="width:100%;height:100%;display:block;border-radius:9999px;" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="40" cy="40" r="40" fill="#243b7a"/>
-      <circle cx="40" cy="46" r="24" fill="#c9825b"/>
-      <circle cx="26" cy="51" r="4.5" fill="#e07a5f" opacity="0.75"/>
-      <circle cx="54" cy="51" r="4.5" fill="#e07a5f" opacity="0.75"/>
-      <path d="M16 36 C16 18, 64 18, 64 36 C60 30, 52 33, 47 29 C42 34, 35 33, 30 29 C24 33, 19 31, 16 36 Z" fill="#181a2c"/>
-      <circle cx="24" cy="23" r="8" fill="#181a2c"/>
-      <circle cx="35" cy="20" r="9" fill="#181a2c"/>
-      <circle cx="47" cy="20" r="9" fill="#181a2c"/>
-      <circle cx="57" cy="24" r="8" fill="#181a2c"/>
-      <rect x="25" y="37" width="9" height="2.8" rx="1.4" fill="#181a2c"/>
-      <rect x="46" y="37" width="9" height="2.8" rx="1.4" fill="#181a2c"/>
-      <circle cx="30" cy="44" r="3.2" fill="#181a2c"/>
-      <circle cx="50" cy="44" r="3.2" fill="#181a2c"/>
-      <circle cx="29" cy="43" r="1" fill="#ffffff"/>
-      <circle cx="49" cy="43" r="1" fill="#ffffff"/>
-      <path d="M39 46 Q41 51 38 53" stroke="#9e5d3b" stroke-width="2" fill="none" stroke-linecap="round"/>
-    </svg>
-  `;
-
-  const oldStyle = document.getElementById("gali-chat-style");
-  if (oldStyle) oldStyle.remove();
-
-  const style = document.createElement("style");
-  style.id = "gali-chat-style";
-  style.textContent = `
-    @keyframes galiBounce {
-      0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
-      40% { transform: translateY(-4px); opacity: 1; }
+  async function playGaliAudio(text, rate = 1, button = null) {
+    if (!text) return;
+    if (galiAudioPlayer) {
+      galiAudioPlayer.pause();
+      galiAudioPlayer = null;
     }
-    .gali-dot {
-      width: 6px; height: 6px; border-radius: 999px;
-      background-color: var(--color-nila, #243b7a);
-      display: inline-block;
-      animation: galiBounce 1.2s infinite ease-in-out;
-    }
-    .gali-dot:nth-child(2) { animation-delay: 0.2s; }
-    .gali-dot:nth-child(3) { animation-delay: 0.4s; }
+    if (galiAudioUrl) URL.revokeObjectURL(galiAudioUrl);
 
-    #ai-buddy-section {
-      padding: 48px !important;
-      margin-top: 96px !important;
-      border-radius: 32px !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      gap: 48px !important;
+    const original = button?.innerHTML;
+    if (button) {
+      button.disabled = true;
+      button.innerHTML = '<i class="ph ph-spinner animate-spin text-sm"></i>';
     }
-    #ai-buddy-section > div:first-child {
-      width: 48% !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 18px !important;
-    }
-    #ai-buddy-section h2 {
-      font-size: clamp(36px, 4vw, 52px) !important;
-      font-weight: 700 !important;
-      line-height: 1.12 !important;
-    }
-    #ai-buddy-section > div:last-child {
-      width: 50% !important;
-      background: #ffffff !important;
-      border-radius: 24px !important;
-      box-shadow: 0 12px 32px rgba(36, 59, 122, 0.08) !important;
-      border: 1px solid rgba(36, 59, 122, 0.1) !important;
-      overflow: hidden !important;
-    }
-    @media (max-width: 1024px) {
-      #ai-buddy-section {
-        flex-direction: column !important;
-        padding: 28px !important;
-        gap: 32px !important;
-      }
-      #ai-buddy-section > div:first-child,
-      #ai-buddy-section > div:last-child {
-        width: 100% !important;
-      }
-    }
-
-    #ai-buddy-section .gali-avatar-slot,
-    #gali-drawer .gali-avatar-slot {
-      width: 40px !important;
-      height: 40px !important;
-      min-width: 40px !important;
-      flex-shrink: 0 !important;
-    }
-    #gali-floating-trigger .gali-avatar-slot {
-      width: 52px !important;
-      height: 52px !important;
-      min-width: 52px !important;
-      flex-shrink: 0 !important;
-    }
-    .gali-msg-avatar {
-      width: 28px !important;
-      height: 28px !important;
-      min-width: 28px !important;
-      flex-shrink: 0 !important;
-    }
-
-    #inline-gali-messages {
-      padding: 20px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 14px !important;
-      height: 380px !important;
-      max-height: 380px !important;
-      overflow-y: auto !important;
-      overscroll-behavior: contain !important;
-      touch-action: pan-y !important;
-      background: #ffffff !important;
-    }
-    #gali-drawer-body {
-      flex: 1 1 0% !important;
-      min-height: 0 !important;
-      padding: 20px !important;
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 14px !important;
-      overflow-y: auto !important;
-      overscroll-behavior: contain !important;
-      touch-action: pan-y !important;
-      background: #ffffff !important;
-    }
-
-    #inline-gali-form,
-    #gali-drawer-form {
-      padding: 14px !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 8px !important;
-      background: #ffffff !important;
-    }
-    #inline-gali-form button,
-    #gali-drawer-form button {
-      width: 40px !important;
-      height: 40px !important;
-      min-width: 40px !important;
-      border-radius: 9999px !important;
-      flex-shrink: 0 !important;
-    }
-
-    #ai-buddy-section [data-open-gali] {
-      padding: 14px 28px !important;
-      border-radius: 9999px !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-      font-size: 14px !important;
-      font-weight: 700 !important;
-      line-height: 1 !important;
-      width: fit-content !important;
-    }
-    #inline-gali-reset {
-      display: none !important;
-    }
-
-    @media (max-width: 768px) {
-      #gali-drawer {
-        inset: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-height: 100% !important;
-        border-radius: 0 !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
-
-  const GEMINI_TTS_VOICE = "Puck";
-  const galiAudioCache = new Map();
-  let currentGaliAudio = null;
-
-  function playBrowserFallbackAudio(text, rate = 1) {
-    try {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance(text);
-        utter.lang = "id-ID";
-        utter.rate = rate;
-        window.speechSynthesis.speak(utter);
-      }
-    } catch (_) {}
-  }
-
-  function pcmBase64ToWavUrl(base64Pcm, sampleRate = 24000) {
-    const binary = atob(base64Pcm);
-    const pcmLength = binary.length;
-    const buffer = new ArrayBuffer(44 + pcmLength);
-    const view = new DataView(buffer);
-
-    const writeStr = (offset, str) => {
-      for (let i = 0; i < str.length; i++) {
-        view.setUint8(offset + i, str.charCodeAt(i));
-      }
-    };
-
-    writeStr(0, "RIFF");
-    view.setUint32(4, 36 + pcmLength, true);
-    writeStr(8, "WAVE");
-    writeStr(12, "fmt ");
-    view.setUint32(16, 16, true);
-    view.setUint16(20, 1, true);
-    view.setUint16(22, 1, true);
-    view.setUint32(24, sampleRate, true);
-    view.setUint32(28, sampleRate * 2, true);
-    view.setUint16(32, 2, true);
-    view.setUint16(34, 16, true);
-    writeStr(36, "data");
-    view.setUint32(40, pcmLength, true);
-
-    const bytes = new Uint8Array(buffer, 44);
-    for (let i = 0; i < pcmLength; i++) {
-      bytes[i] = binary.charCodeAt(i);
-    }
-
-    return URL.createObjectURL(new Blob([buffer], { type: "audio/wav" }));
-  }
-
-  async function playGeminiTTSAudio(text, rate = 1) {
-    const geminiKey = (
-      (typeof GEMINI_API_KEY !== "undefined" ? GEMINI_API_KEY : "") ||
-      localStorage.getItem("gaulingo_gemini_key") ||
-      ""
-    ).trim();
-
-    if (!geminiKey || geminiKey.startsWith("TEMPEL_")) {
-      playBrowserFallbackAudio(text, rate);
-      return;
-    }
-
-    const cacheKey = `gemini:${GEMINI_TTS_VOICE}:${text}`;
 
     try {
-      let wavUrl = galiAudioCache.get(cacheKey);
-
-      if (!wavUrl) {
-        const res = await fetch(
-          getGeminiEndpoint("gemini-2.5-flash-preview-tts"),
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "x-goog-api-key": geminiKey,
-            },
-            body: JSON.stringify({
-              contents: [
-                {
-                  parts: [
-                    {
-                      text: `Ucapkan frasa bahasa Indonesia atau daerah ini secara natural dan jelas: ${text}`,
-                    },
-                  ],
-                },
-              ],
-              generationConfig: {
-                responseModalities: ["AUDIO"],
-                speechConfig: {
-                  voiceConfig: {
-                    prebuiltVoiceConfig: {
-                      voiceName: GEMINI_TTS_VOICE,
-                    },
-                  },
-                },
-              },
-            }),
-          },
-        );
-
-        if (!res.ok) {
-          throw new Error(`Gemini TTS HTTP ${res.status}`);
+      const response = await fetch("/api/speech", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text, rate }),
+      });
+      if (!response.ok) {
+        const data = await response.json().catch(() => ({}));
+        throw new Error(data.error || `Audio gagal (${response.status})`);
+      }
+      galiAudioUrl = URL.createObjectURL(await response.blob());
+      galiAudioPlayer = new Audio(galiAudioUrl);
+      galiAudioPlayer.onended = () => {
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = original;
         }
-
-        const data = await res.json();
-        const inlineData =
-          data?.candidates?.[0]?.content?.parts?.[0]?.inlineData;
-        if (!inlineData?.data) {
-          throw new Error("Audio Gemini kosong");
+      };
+      galiAudioPlayer.onerror = () => {
+        if (button) {
+          button.disabled = false;
+          button.innerHTML = original;
         }
-
-        const rateMatch = inlineData.mimeType?.match(/rate=(\d+)/);
-        const sampleRate = rateMatch ? Number(rateMatch[1]) : 24000;
-        wavUrl = pcmBase64ToWavUrl(inlineData.data, sampleRate);
-        galiAudioCache.set(cacheKey, wavUrl);
+      };
+      await galiAudioPlayer.play();
+    } catch (error) {
+      console.error("Gali audio error:", error);
+      if (button) {
+        button.disabled = false;
+        button.innerHTML = original;
+        button.title = "Audio tidak tersedia. Coba lagi.";
       }
-
-      const audio = new Audio(wavUrl);
-      audio.playbackRate = rate;
-      currentGaliAudio = audio;
-      await audio.play();
-    } catch (err) {
-      console.warn("Gemini TTS fallback:", err);
-      playBrowserFallbackAudio(text, rate);
     }
   }
 
-  async function playGaliAudio(text, rate = 1, voiceKey = "gali") {
-    if (currentGaliAudio) {
-      currentGaliAudio.pause();
-      currentGaliAudio = null;
-    }
-
-    const elevenKey = (
-      (typeof ELEVENLABS_API_KEY !== "undefined" ? ELEVENLABS_API_KEY : "") ||
-      localStorage.getItem("gaulingo_elevenlabs_key") ||
-      ""
-    ).trim();
-
-    if (!elevenKey || elevenKey.startsWith("TEMPEL_")) {
-      await playGeminiTTSAudio(text, rate);
-      return;
-    }
-
-    const selectedVoice = GALI_VOICES[voiceKey];
-    const voiceId =
-      selectedVoice && !selectedVoice.startsWith("TEMPEL_")
-        ? selectedVoice
-        : GALI_VOICES.gali;
-    const cacheKey = `${voiceId}:${text}`;
-
-    try {
-      let audioUrl = galiAudioCache.get(cacheKey);
-
-      if (!audioUrl) {
-        const res = await fetch(
-          `https://api.elevenlabs.io/v1/text-to-speech/${voiceId}`,
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              "xi-api-key": elevenKey,
-              Accept: "audio/mpeg",
-            },
-            body: JSON.stringify({
-              text: text,
-              model_id: "eleven_multilingual_v2",
-              voice_settings: {
-                stability: 0.5,
-                similarity_boost: 0.75,
-              },
-            }),
-          },
-        );
-
-        if (!res.ok) {
-          throw new Error(`ElevenLabs HTTP ${res.status}`);
-        }
-
-        const blob = await res.blob();
-        audioUrl = URL.createObjectURL(blob);
-        galiAudioCache.set(cacheKey, audioUrl);
-      }
-
-      const audio = new Audio(audioUrl);
-      audio.playbackRate = rate;
-      currentGaliAudio = audio;
-      await audio.play();
-    } catch (err) {
-      console.warn("ElevenLabs fallback:", err);
-      await playGeminiTTSAudio(text, rate);
-    }
-  }
-
-  function parseGaliJSON(rawText, fallbackUserMsg, isEn) {
-    try {
-      const cleaned = rawText
-        .replace(/```json/gi, "")
-        .replace(/```/g, "")
-        .trim();
-      const firstBrace = cleaned.indexOf("{");
-      const lastBrace = cleaned.lastIndexOf("}");
-      const jsonStr =
-        firstBrace !== -1 && lastBrace !== -1
-          ? cleaned.slice(firstBrace, lastBrace + 1)
-          : cleaned;
-      const parsed = JSON.parse(jsonStr);
-      if (parsed && (parsed.phrase || parsed.intro)) {
-        return {
-          intro:
-            parsed.intro ||
-            (isEn ? "Here is what you can say:" : "Ini saran dari Gali:"),
-          phrase: parsed.phrase || fallbackUserMsg,
-          meaning: parsed.meaning || "",
-          tip:
-            parsed.tip ||
-            (isEn
-              ? "Tip: Click the Play button to hear how it sounds!"
-              : "Tips: Klik tombol Play untuk dengar pengucapannya!"),
-        };
-      }
-    } catch (_) {}
+  function jawabanFallback(question) {
+    const q = question.toLowerCase();
+    const found = galiFallbackList.find((item) =>
+      item.keys.some((k) => q.includes(k)),
+    );
+    if (found) return found;
 
     return {
-      intro: isEn ? "Here is Gali's answer:" : "Ini jawaban Gali:",
-      phrase: rawText.slice(0, 140),
-      meaning: "",
-      tip: isEn
-        ? "Tip: Mention a region like Sunda, Bali, or Jawa if you want the local version!"
-        : "Tips: Sebutkan nama daerah seperti Sunda, Bali, atau Jawa kalau mau versi lokalnya!",
+      intro: "Here is a polite everyday phrase you can use:",
+      phrase: "Permisi, mau tanya...",
+      meaning: '"Excuse me, I\'d like to ask..."',
+      tip: 'Tip: starting with "Permisi" always makes locals happy to help.',
+      chips: ["Say it slower", "Sunda version", "Save phrase"],
     };
   }
 
-  async function tanyaGaliAI(userMessage, history = []) {
-    const q = userMessage.toLowerCase().trim();
-    const uiLang = localStorage.getItem("gaulingo_lang") || "en";
-    const isEn =
-      /\b(how|what|say|translate|thank|sorry|excuse|hello|hi|price|where|please|meaning|mean|teach|bargain|polite|spicy|does|do|is|are|can)\b/.test(
-        q,
-      ) &&
-      !/\b(apa|gimana|bagaimana|berapa|terima|maaf|permisi|halo|hai|bahasa|artinya|arti|tolong|ajarin|ngomong|bilang)\b/.test(
-        q,
-      )
-        ? true
-        : /\b(apa|gimana|bagaimana|berapa|terima|maaf|permisi|halo|hai|bahasa|artinya|arti|tolong|ajarin|ngomong|bilang)\b/.test(
-              q,
-            )
-          ? false
-          : uiLang === "en";
+  async function tanyaGeminiGali(userMessage, historyArray) {
+    const lang = localStorage.getItem("gaulingo_lang") || "en";
 
-    const geminiKey = (
-      (typeof GEMINI_API_KEY !== "undefined" ? GEMINI_API_KEY : "") ||
-      localStorage.getItem("gaulingo_gemini_key") ||
-      ""
-    ).trim();
+    historyArray.push({
+      role: "user",
+      parts: [{ text: userMessage }],
+    });
 
-    const recentHistory = history.slice(-6);
-    const models = ["gemini-2.5-flash", "gemini-2.0-flash"];
-    let lastError = "API key belum diisi.";
+    try {
+      const response = await fetch("/api/gali", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          lang,
+          history: historyArray.slice(-10),
+        }),
+      });
 
-    for (const model of models) {
-      try {
-        const contents = [
-          ...recentHistory.map((m) => ({
-            role: m.role === "assistant" ? "model" : "user",
-            parts: [{ text: m.content }],
-          })),
-          { role: "user", parts: [{ text: userMessage }] },
-        ];
+      const data = await response.json().catch(() => ({}));
 
-        const res = await fetch(getGeminiEndpoint(model), {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "x-goog-api-key": geminiKey,
-          },
-          body: JSON.stringify({
-            systemInstruction: {
-              parts: [{ text: GALI_SYSTEM_PROMPT }],
-            },
-            contents,
-            generationConfig: {
-              responseMimeType: "application/json",
-              temperature: 0.7,
-            },
-          }),
-        });
-
-        if (res.ok) {
-          const data = await res.json();
-          const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-          if (raw) return parseGaliJSON(raw, userMessage, isEn);
-        } else {
-          const errData = await res.json().catch(() => ({}));
-          lastError = errData?.error?.message || `HTTP ${res.status}`;
-        }
-      } catch (err) {
-        lastError = err.message || "Network / CORS error";
+      if (!response.ok) {
+        throw new Error(data?.error || `HTTP ${response.status}`);
       }
-    }
 
-    return {
-      intro: isEn
-        ? "Failed to connect to Gemini AI:"
-        : "Gagal terhubung ke Gemini AI:",
-      phrase: "API Error",
-      meaning: `"${lastError}"`,
-      tip: isEn
-        ? "Check your Google AI Studio API key status."
-        : "Cek kembali status API key Google AI Studio kamu.",
-    };
+      const parsed = data?.reply;
+
+      if (!parsed || typeof parsed !== "object") {
+        throw new Error("Invalid response from Gali API");
+      }
+
+      const reply = {
+        intro: parsed.intro || "Try saying this:",
+        phrase: parsed.phrase || "Permisi, mau tanya...",
+        meaning: parsed.meaning || '"Excuse me, I would like to ask..."',
+        tip: parsed.tip || "Say it with a warm smile!",
+        chips: Array.isArray(parsed.chips) ? parsed.chips.slice(0, 3) : [],
+        audioRequired: parsed.audioRequired === true,
+      };
+
+      historyArray.push({
+        role: "model",
+        parts: [{ text: JSON.stringify(reply) }],
+      });
+
+      return reply;
+    } catch (err) {
+      console.error("Gemini Gali Error:", err);
+
+      return {
+        intro: "Oops, Gali had a connection hiccup:",
+        phrase: "Coba sebentar lagi, ya!",
+        meaning: '"Please try again in a moment!"',
+        tip: `Detail: ${err.message}`,
+        chips: [],
+        audioRequired: false,
+      };
+    }
   }
 
   function buatBubbleGaliHTML(reply) {
-    const intro = reply.intro || "";
-    const phrase = reply.phrase || "";
-    const meaning = reply.meaning || "";
-    const tip = reply.tip || "";
+    const chipsHTML = (reply.chips || [])
+      .map(
+        (chip) => `
+        <button
+          type="button"
+          data-gali-chip="${chip}"
+          data-phrase="${reply.phrase.replace(/"/g, "&quot;")}"
+          class="px-3.5 py-1.5 rounded-full border border-nila/30 text-nila text-xs font-semibold hover:bg-nila hover:text-white transition-colors cursor-pointer bg-white"
+        >
+          ${chip}
+        </button>`,
+      )
+      .join("");
 
     return `
-      <div style="display:flex;align-items:flex-end;gap:10px;">
-        <div class="gali-msg-avatar">${galiAvatarSVG}</div>
-        <div style="flex:1;display:flex;flex-direction:column;gap:8px;min-width:0;">
-          <div style="border:1px solid rgba(36,59,122,0.14);border-radius:18px 18px 18px 4px;padding:14px;background:#ffffff;display:flex;flex-direction:column;gap:10px;">
-            <p style="font-size:13px;color:rgba(36,59,122,0.85);margin:0;">${intro}</p>
-            <div style="background-color:#f8f1e5;padding:12px 14px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;">
+      <div class="flex items-end gap-2.5">
+        <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
+        <div class="flex-1 flex flex-col gap-2">
+          <div class="border border-nila/15 rounded-2xl rounded-bl-xs p-3.5 bg-white shadow-2xs flex flex-col gap-2.5">
+            <p class="text-xs text-nila/85">${reply.intro}</p>
+            <div style="background-color: var(--color-krem, #f8f1e5)" class="p-3 rounded-xl flex items-center justify-between gap-3">
               <div>
-                <p style="font-weight:700;color:#243b7a;font-size:14px;margin:0;">${phrase}</p>
-                ${
-                  meaning
-                    ? `<p style="font-size:12px;color:rgba(36,59,122,0.65);margin:2px 0 0 0;">${meaning}</p>`
-                    : ""
-                }
+                <p class="font-bold text-nila text-sm">${reply.phrase}</p>
+                <p class="text-xs text-nila/65 mt-0.5">${reply.meaning}</p>
               </div>
-              <button
-                type="button"
-                data-gali-speak="${phrase.replace(/"/g, "&quot;")}"
-                style="background-color:#243b7a;color:#ffffff;width:36px;height:36px;min-width:36px;border-radius:999px;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;"
-                aria-label="Play audio"
-              >
-                <i class="ph-fill ph-play" style="font-size:12px;"></i>
-              </button>
+              ${
+                reply.audioRequired
+                  ? `
+                <button
+                  type="button"
+                  data-gali-speak="${reply.phrase.replace(/"/g, "&quot;")}"
+                  style="background-color: var(--color-nila, #243b7a); color: #ffffff"
+                  class="w-9 h-9 rounded-full shrink-0 flex items-center justify-center hover:opacity-90 cursor-pointer"
+                  aria-label="Dengarkan pengucapan"
+                  title="Dengarkan pengucapan"
+                >
+                  <i class="ph-fill ph-play text-xs"></i>
+                </button>`
+                  : ""
+              }
             </div>
-            ${
-              tip
-                ? `<p style="font-size:11.5px;color:rgba(36,59,122,0.7);line-height:1.45;margin:0;">${tip}</p>`
-                : ""
-            }
+            <p class="text-[11px] text-nila/70 leading-relaxed">${reply.tip}</p>
           </div>
+          <div class="flex flex-wrap gap-1.5">${chipsHTML}</div>
         </div>
       </div>
     `;
@@ -2007,9 +1670,10 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
 
   function buatBubbleUserHTML(text) {
     return `
-      <div style="display:flex;justify-content:flex-end;">
+      <div class="flex justify-end">
         <div
-          style="background-color:#243b7a;color:#ffffff;padding:10px 16px;border-radius:18px 18px 4px 18px;font-size:13px;font-weight:500;max-width:82%;line-height:1.45;"
+          style="background-color: var(--color-nila, #243b7a); color: #ffffff"
+          class="px-4 py-2.5 rounded-2xl rounded-br-xs text-xs font-medium max-w-[82%] leading-relaxed"
         >
           ${text}
         </div>
@@ -2019,9 +1683,9 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
 
   function buatTypingHTML() {
     return `
-      <div class="gali-typing-row" style="display:flex;align-items:center;gap:10px;">
-        <div class="gali-msg-avatar">${galiAvatarSVG}</div>
-        <div style="border:1px solid rgba(36,59,122,0.14);border-radius:18px;padding:12px 16px;background:#ffffff;display:flex;align-items:center;gap:6px;">
+      <div class="gali-typing-row flex items-center gap-2.5">
+        <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
+        <div class="border border-nila/15 rounded-2xl px-4 py-3 bg-white flex items-center gap-1.5">
           <span class="gali-dot"></span>
           <span class="gali-dot"></span>
           <span class="gali-dot"></span>
@@ -2030,28 +1694,103 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
     `;
   }
 
-  function initChatbotGali() {
-    document.querySelectorAll(".gali-avatar-slot").forEach((slot) => {
-      slot.innerHTML = galiAvatarSVG;
-    });
+  function ensureGaliChatUI() {
+    if (!document.getElementById("gali-floating-trigger")) {
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        `
+          <button
+            id="gali-floating-trigger"
+            type="button"
+            aria-controls="gali-drawer"
+            aria-expanded="false"
+            aria-label="Open chat with Gali"
+            class="group fixed right-7 bottom-15 z-50 flex cursor-pointer flex-row-reverse items-center gap-2 border-0 bg-transparent p-0 text-left transition-opacity duration-200 max-md:right-4 max-md:bottom-4"
+            data-open-gali
+          >
+            <span class="gali-avatar-slot h-15 w-15 shrink-0 overflow-hidden rounded-full border-4 border-nila bg-pasir shadow-xl transition-transform group-hover:scale-105"></span>
+            <span class="rounded-full bg-white px-4 py-2 text-sm font-bold text-nila shadow-xl transition-colors group-hover:bg-nila group-hover:text-white">
+              Ask Gali
+            </span>
+          </button>
+        `,
+      );
+    }
 
-    document.querySelectorAll("button, a, div").forEach((el) => {
-      if (
-        el.id !== "gali-floating-trigger" &&
-        !el.closest("#gali-floating-trigger") &&
-        !el.closest("#ai-buddy-section") &&
-        !el.closest("#gali-drawer") &&
-        !el.closest("header") &&
-        !el.closest("footer")
-      ) {
-        const stylePos = getComputedStyle(el).position;
-        if (
-          stylePos === "fixed" &&
-          el.textContent.trim().toLowerCase().includes("ask gali")
-        ) {
-          el.style.display = "none";
-        }
-      }
+    if (!document.getElementById("gali-drawer-backdrop")) {
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        '<div id="gali-drawer-backdrop" class="fixed inset-0 z-50 hidden bg-nila/35"></div>',
+      );
+    }
+
+    if (!document.getElementById("gali-drawer")) {
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        `
+          <aside
+            id="gali-drawer"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Chat with Gali"
+            aria-hidden="true"
+            class="fixed right-6 bottom-6 z-60 hidden h-160 w-100 max-h-[86vh] flex-col overflow-hidden rounded-3xl border border-nila/10 bg-white shadow-2xl max-md:inset-0 max-md:h-full max-md:max-h-full max-md:w-full max-md:rounded-none"
+          >
+            <div class="flex shrink-0 items-center justify-between border-b border-nila/10 bg-white px-5 py-4">
+              <div class="flex items-center gap-3">
+                <div class="gali-avatar-slot h-10 w-10 shrink-0"></div>
+                <div>
+                  <p class="text-sm font-bold leading-tight text-nila">Gali</p>
+                  <p class="mt-0.5 flex items-center gap-1.5 text-xs text-nila/65">
+                    <span class="inline-block h-2 w-2 rounded-full bg-hijau"></span>
+                    Online · replies in EN &amp; ID
+                  </p>
+                </div>
+              </div>
+              <button
+                type="button"
+                id="gali-drawer-close"
+                class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-krem text-sm font-bold text-nila hover:opacity-80"
+                aria-label="Close chat"
+              >
+                ✕
+              </button>
+            </div>
+            <div id="gali-drawer-body" class="flex flex-1 flex-col gap-3.5 overflow-y-auto bg-white p-5"></div>
+            <form id="gali-drawer-form" class="flex shrink-0 items-center gap-2 border-t border-nila/10 bg-white p-3.5">
+              <input
+                id="gali-drawer-input"
+                type="text"
+                placeholder="Ask Gali anything..."
+                class="w-full rounded-full bg-krem px-4 py-2.5 text-sm text-nila outline-none placeholder:text-nila/45"
+              />
+              <button
+                type="button"
+                data-gali-mic="drawer"
+                class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-krem text-nila hover:opacity-80"
+                aria-label="Voice input"
+              >
+                <i class="ph ph-microphone text-base"></i>
+              </button>
+              <button
+                type="submit"
+                class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-nila text-white hover:opacity-90"
+                aria-label="Send message"
+              >
+                <i class="ph ph-arrow-right text-base"></i>
+              </button>
+            </form>
+          </aside>
+        `,
+      );
+    }
+  }
+
+  function initChatbotGali() {
+    ensureGaliChatUI();
+
+    document.querySelectorAll(".gali-avatar-slot").forEach((slot) => {
+      slot.innerHTML = galiAvatarHTML;
     });
 
     const inlineContainer = document.getElementById("inline-gali-messages");
@@ -2065,121 +1804,57 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
     const drawerForm = document.getElementById("gali-drawer-form");
     const drawerInput = document.getElementById("gali-drawer-input");
     const drawerClose = document.getElementById("gali-drawer-close");
-    inlineContainer?.setAttribute("data-lenis-prevent", "");
-    drawerBody?.setAttribute("data-lenis-prevent", "");
 
-    const lang = localStorage.getItem("gaulingo_lang") || "en";
-    const isID = lang === "id";
-
-    document.querySelectorAll(".gali-status-text").forEach((el) => {
-      el.textContent = isID
-        ? "AI Online · membalas dalam ID & EN"
-        : "AI Online · replies in EN & ID";
-    });
-    if (inlineInput) {
-      inlineInput.placeholder = isID
-        ? "Tanya apa aja ke Gali..."
-        : "Ask Gali anything...";
-    }
-    if (drawerInput) {
-      drawerInput.placeholder = isID
-        ? "Tanya apa aja ke Gali..."
-        : "Ask Gali anything...";
-    }
-
+    let inlineHistory = [];
+    let drawerHistory = [];
     let drawerHasMessages = false;
-    const inlineHistory = [];
-    const drawerHistory = [];
 
     const renderInlineDefault = () => {
       if (!inlineContainer) return;
-      inlineHistory.length = 0;
-
-      const sampleReply = isID
-        ? {
-            intro: "Gampang! Bilang aja gini ke penjualnya:",
-            phrase: "Nggak pedas, ya.",
-            meaning: '"Jangan pedas, ya."',
-            tip: 'Tips: tambahan kata "ya" di akhir bikin kalimatnya terdengar lebih ramah.',
-          }
-        : {
-            intro: "Easy! Say this to the seller:",
-            phrase: "Nggak pedas, ya.",
-            meaning: '"Not spicy, please."',
-            tip: 'Tip: adding "ya" at the end makes it sound softer and friendlier.',
-          };
-
+      inlineHistory = [];
+      const defaultReply = galiFallbackList[0];
       inlineContainer.innerHTML = `
-        <div style="display:flex;align-items:flex-end;gap:10px;">
-          <div class="gali-msg-avatar">${galiAvatarSVG}</div>
-          <div style="border:1px solid rgba(36,59,122,0.14);border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:13px;color:rgba(36,59,122,0.85);max-width:82%;line-height:1.45;">
-            ${
-              isID
-                ? "Halo! Aku Gali. Tanya aja cara ngomong apa pun dalam bahasa Indonesia & daerah."
-                : "Halo! I'm Gali. Ask me how to say anything in Indonesian & local languages."
-            }
+        <div class="flex items-end gap-2.5">
+          <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
+          <div class="border border-nila/15 rounded-2xl rounded-bl-xs p-3.5 text-xs text-nila/85 max-w-[82%]">
+            Halo! I'm Gali. Ask me how to say anything in Indonesian.
           </div>
         </div>
-        ${buatBubbleUserHTML(
-          isID
-            ? 'Gimana cara bilang makanan yang "nggak pedas"?'
-            : "How do I ask for food that's not spicy?",
-        )}
-        ${buatBubbleGaliHTML(sampleReply)}
+        ${buatBubbleUserHTML("How do I ask for food that's not spicy?")}
+        ${buatBubbleGaliHTML(defaultReply)}
       `;
     };
 
     const renderDrawerEmpty = () => {
       if (!drawerBody) return;
+      drawerHistory = [];
       drawerHasMessages = false;
-      drawerHistory.length = 0;
-
-      const presets = isID
-        ? [
-            "Gimana cara menawar harga dengan sopan?",
-            "Bu atau Mbak, mana yang harus dipakai?",
-            'Gimana cara bilang "nggak usah pakai kantong plastik"?',
-            'Apa arti kata "kembalian"?',
-          ]
-        : [
-            "How do I bargain politely?",
-            "Bu or Mbak, which one do I use?",
-            'How do I say "no plastic bag"?',
-            'What does "kembalian" mean?',
-          ];
-
       drawerBody.innerHTML = `
-        <div style="margin:auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;padding:16px 0;width:100%;">
-          <div style="width:64px;height:64px;">${galiAvatarSVG}</div>
-          <h4 style="font-weight:700;color:#243b7a;font-size:18px;margin:0;">
-            ${isID ? "Hai! Aku Gali." : "Hi! I'm Gali."}
-          </h4>
-          <p style="font-size:12.5px;color:rgba(36,59,122,0.75);max-width:260px;line-height:1.45;margin:0;">
-            ${
-              isID
-                ? "Tanya cara mengucapkan apa pun. Beberapa contoh pertanyaan buat mulai:"
-                : "Ask me how to say anything. A few good ones to start with on this page:"
-            }
+        <div class="my-auto flex flex-col items-center text-center gap-3 py-4">
+          <div class="w-16 h-16">${galiAvatarHTML}</div>
+          <h4 class="font-bold text-nila text-lg">Hi! I'm Gali.</h4>
+          <p class="text-xs text-nila/75 max-w-65 leading-relaxed">
+            Ask me how to say anything. A few good ones to start with on this page:
           </p>
-          <div style="width:100%;display:flex;flex-direction:column;gap:8px;margin-top:8px;">
-            <p style="font-size:10px;font-weight:700;letter-spacing:0.06em;color:rgba(36,59,122,0.55);text-transform:uppercase;text-align:left;margin:0;">
-              ${isID ? "COBA TANYAKAN" : "TRY ASKING"}
+          <div class="w-full flex flex-col gap-2 mt-2">
+            <p class="text-[10px] font-bold tracking-wider text-nila/55 uppercase text-left">
+              TRY ASKING
             </p>
-            ${presets
-              .map(
-                (q) => `
-              <button type="button" data-drawer-preset="${q.replace(/"/g, "&quot;")}" style="width:100%;text-align:left;padding:10px 16px;border-radius:999px;border:1px solid rgba(36,59,122,0.35);font-size:12.5px;font-weight:600;color:#243b7a;background:#fff;cursor:pointer;">
-                ${q}
-              </button>`,
-              )
-              .join("")}
+            <button type="button" data-drawer-preset="How do I bargain politely?" class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              How do I bargain politely?
+            </button>
+            <button type="button" data-drawer-preset="Bu or Mbak, which one do I use?" class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              Bu or Mbak, which one do I use?
+            </button>
+            <button type="button" data-drawer-preset='How do I say "no plastic bag"?' class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              How do I say "no plastic bag"?
+            </button>
+            <button type="button" data-drawer-preset='What does "kembalian" mean?' class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              What does "kembalian" mean?
+            </button>
           </div>
-          <p style="font-size:11px;color:rgba(36,59,122,0.55);margin-top:8px;">
-            ${
-              isID
-                ? "Gali didukung AI dan bisa saja salah. Pastikan info penting dengan warga lokal."
-                : "Gali is AI-powered and can make mistakes. Check important info with a local."
-            }
+          <p class="text-[10px] text-nila/55 mt-2">
+            Gali can make mistakes. Check important info with a local.
           </p>
         </div>
       `;
@@ -2190,22 +1865,17 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
 
     const kirimPesanKe = async (container, text, isDrawer = false) => {
       if (!container || !text.trim()) return;
-      const historyRef = isDrawer ? drawerHistory : inlineHistory;
 
       if (isDrawer && !drawerHasMessages) {
         drawerHasMessages = true;
         container.innerHTML = `
-          <div style="margin:0 auto;padding:4px 12px;border-radius:999px;border:1px solid rgba(36,59,122,0.2);font-size:10px;font-weight:700;letter-spacing:0.05em;color:#243b7a;text-transform:uppercase;">
-            🏪 AI BUDDY · GAULINGO
+          <div class="mx-auto px-3 py-1 rounded-full border border-nila/20 text-[10px] font-bold tracking-wider text-nila uppercase">
+            🏪 READING ALONG · STALL
           </div>
-          <div style="display:flex;align-items:flex-end;gap:10px;">
-            <div class="gali-msg-avatar">${galiAvatarSVG}</div>
-            <div style="border:1px solid rgba(36,59,122,0.14);border-radius:18px 18px 18px 4px;padding:12px 16px;font-size:13px;color:rgba(36,59,122,0.85);max-width:82%;line-height:1.45;">
-              ${
-                isID
-                  ? "Hai! Mau tanya cara ngomong apa hari ini?"
-                  : "Hi! What would you like to learn how to say today?"
-              }
+          <div class="flex items-end gap-2.5">
+            <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
+            <div class="border border-nila/15 rounded-2xl rounded-bl-xs p-3.5 text-xs text-nila/85 max-w-[82%]">
+              Hi! You're on the Stall page. Want help with any of these phrases?
             </div>
           </div>
         `;
@@ -2215,13 +1885,8 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
       container.insertAdjacentHTML("beforeend", buatTypingHTML());
       container.scrollTop = container.scrollHeight;
 
-      const reply = await tanyaGaliAI(text, historyRef);
-
-      historyRef.push({ role: "user", content: text });
-      historyRef.push({
-        role: "assistant",
-        content: JSON.stringify(reply),
-      });
+      const historyRef = isDrawer ? drawerHistory : inlineHistory;
+      const reply = await tanyaGeminiGali(text, historyRef);
 
       container.querySelector(".gali-typing-row")?.remove();
       container.insertAdjacentHTML("beforeend", buatBubbleGaliHTML(reply));
@@ -2233,6 +1898,9 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
       backdrop.style.display = "block";
       drawer.style.display = "flex";
       drawer.setAttribute("aria-hidden", "false");
+      document
+        .querySelectorAll("[data-open-gali]")
+        .forEach((trigger) => trigger.setAttribute("aria-expanded", "true"));
       if (initialQuestion) {
         kirimPesanKe(drawerBody, initialQuestion, true);
       } else {
@@ -2245,10 +1913,13 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
       backdrop.style.display = "none";
       drawer.style.display = "none";
       drawer.setAttribute("aria-hidden", "true");
+      document
+        .querySelectorAll("[data-open-gali]")
+        .forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
     };
 
     const sendInline = () => {
-      if (!inlineInput) return;
+      if (!inlineInput || isSendingInline) return;
       const val = inlineInput.value.trim();
       if (!val) {
         inlineInput.focus();
@@ -2259,25 +1930,12 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
     };
 
     const sendDrawer = () => {
-      if (!drawerInput) return;
+      if (!drawerInput || isSendingDrawer) return;
       const val = drawerInput.value.trim();
-      if (!val) {
-        drawerInput.focus();
-        return;
-      }
+      if (!val) return;
       drawerInput.value = "";
       kirimPesanKe(drawerBody, val, true);
     };
-
-    inlineForm?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      sendInline();
-    });
-
-    drawerForm?.addEventListener("submit", (e) => {
-      e.preventDefault();
-      sendDrawer();
-    });
 
     inlineReset?.addEventListener("click", renderInlineDefault);
     drawerClose?.addEventListener("click", closeDrawer);
@@ -2459,8 +2117,8 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
                   ""
                 ).trim();
 
-                const res = await fetch(
-                  getGeminiEndpoint("gemini-2.5-flash"),
+                const res = await fetchWithTimeout(
+                  getGeminiEndpoint("gemini-3.8-flash"),
                   {
                     method: "POST",
                     headers: {
@@ -2485,6 +2143,7 @@ Respond ONLY in pure JSON (no markdown \`\`\`) with this exact structure:
                       ],
                     }),
                   },
+                  8000,
                 );
 
                 if (!res.ok) throw new Error(`HTTP ${res.status}`);

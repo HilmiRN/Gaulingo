@@ -1,7 +1,5 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
-
-/* 1. CONFIG DESAIN TOKENS (@theme) */
 @theme {
   /* color */
   --color-nila: #2f4c8a;
@@ -74,8 +72,6 @@
 .btn2 {
   @apply flex gap-2.5 px-6 py-3.75 border-2 items-center bg-white text-nila transition-all duration-300 hover:bg-krem-tua font-semibold text-lg border-nila/35 rounded-full focus:border focus:border-biru-aksen;
 }
-
-/* parallax hero: mengecil pelan saat di-scroll, teks bergeser naik lebih cepat (--hero-p diisi JS) */
 .hero-parallax {
   transform: scale(calc(1 - var(--hero-p, 0) * 0.14));
   transform-origin: 50% 0;
@@ -85,8 +81,6 @@
   transform: translateY(calc(var(--hero-p, 0) * -18%));
   opacity: calc(1 - var(--hero-p, 0) * 0.6);
 }
-
-/* header: bahasa | logo | menu (pola agrumeafarm.it) */
 :root {
   --ease-premium: cubic-bezier(0.645, 0.045, 0.355, 1);
 }
