@@ -3562,15 +3562,8 @@ document.addEventListener("DOMContentLoaded", () => {
       chips: ["Say it slower", "Sunda version", "Save phrase"],
     };
   }
+
   async function tanyaGeminiGali(userMessage, historyArray) {
-    const apiKey = (
-      localStorage.getItem("gaulingo_gemini_key") || GEMINI_API_KEY
-    ).trim();
-
-    if (!apiKey || apiKey === "") {
-      return jawabanFallback(userMessage);
-    }
-
     const lang = localStorage.getItem("gaulingo_lang") || "en";
 
     historyArray.push({
@@ -3581,7 +3574,9 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const response = await fetch("/api/gali", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           lang,
           history: historyArray.slice(-10),
@@ -3589,20 +3584,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
         throw new Error(data?.error || `HTTP ${response.status}`);
       }
 
       const parsed = data?.reply;
+
       if (!parsed || typeof parsed !== "object") {
         throw new Error("Invalid response from Gali API");
       }
 
-      const normalizedReply = {
+      const reply = {
         intro: parsed.intro || "Try saying this:",
         phrase: parsed.phrase || "Permisi, mau tanya...",
-        meaning: parsed.meaning || '\"Excuse me, I\'d like to ask...\"',
-        tip: parsed.tip || "Tip: say it with a warm smile!",
+        meaning: parsed.meaning || '"Excuse me, I would like to ask..."',
+        tip: parsed.tip || "Say it with a warm smile!",
         chips:
           Array.isArray(parsed.chips) && parsed.chips.length
             ? parsed.chips.slice(0, 3)
@@ -3611,16 +3608,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       historyArray.push({
         role: "model",
-        parts: [{ text: JSON.stringify(normalizedReply) }],
+        parts: [{ text: JSON.stringify(reply) }],
       });
 
-      return normalizedReply;
+      return reply;
     } catch (err) {
       console.error("Gemini Gali Error:", err);
+
       return {
-        intro: "Oops, Gali had a quick connection hiccup:",
+        intro: "Oops, Gali had a connection hiccup:",
         phrase: "Coba sebentar lagi, ya!",
-        meaning: '\"Please try again in a moment!\"',
+        meaning: '"Please try again in a moment!"',
         tip: `Detail: ${err.message}`,
         chips: ["Say it slower", "Save phrase"],
       };
