@@ -39,6 +39,55 @@ module.exports = async function handler(req, res) {
   const body = req.body || {};
   const lang = body.lang === "id" ? "id" : "en";
 
+  if (body.mode === "transcribe") {
+    const { audioBase64, mimeType = "audio/webm" } = body;
+    if (typeof audioBase64 !== "string" || !audioBase64.trim()) {
+      return sendJson(res, 400, { error: "Data audio tidak valid." });
+    }
+
+    try {
+      const upstream = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  {
+                    text: "Transcribe this audio accurately into text (Indonesian or English as spoken). Return ONLY the spoken words without quotes or extra explanation.",
+                  },
+                  {
+                    inlineData: {
+                      mimeType: mimeType.split(";")[0],
+                      data: audioBase64,
+                    },
+                  },
+                ],
+              },
+            ],
+          }),
+          signal: AbortSignal.timeout(20000),
+        },
+      );
+
+      const data = await upstream.json().catch(() => ({}));
+      if (!upstream.ok) {
+        throw new Error(data?.error?.message || `Gemini HTTP ${upstream.status}`);
+      }
+
+      const transcript =
+        data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || "";
+      return sendJson(res, 200, { transcript });
+    } catch (error) {
+      console.error("Transcribe error:", error.message);
+      return sendJson(res, 502, {
+        error: "Gagal mengubah suara menjadi teks.",
+      });
+    }
+  }
+
   // Batasi riwayat agar request lebih ringan.
   const history = Array.isArray(body.history) ? body.history.slice(-4) : [];
 
