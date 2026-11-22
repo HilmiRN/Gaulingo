@@ -47,12 +47,17 @@ async function tryElevenLabs(text, rate, voiceId, keys) {
 
       lastStatus = upstream.status;
       const detail = await upstream.text().catch(() => "");
-      console.error(`ElevenLabs account ${index + 1} failed:`, lastStatus, detail.slice(0, 300));
-
-      // Try the other account for quota, authentication, rate-limit, and server errors.
+      console.error(
+        `ElevenLabs account ${index + 1} failed:`,
+        lastStatus,
+        detail.slice(0, 300),
+      );
       if (![401, 402, 403, 429].includes(lastStatus) && lastStatus < 500) break;
     } catch (error) {
-      console.error(`ElevenLabs account ${index + 1} request failed:`, error.message);
+      console.error(
+        `ElevenLabs account ${index + 1} request failed:`,
+        error.message,
+      );
       lastStatus = 502;
     }
   }
@@ -70,7 +75,19 @@ async function tryGeminiTts(text) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: `Read this text aloud clearly and naturally, with accurate Indonesian or multilingual pronunciation. Speak only the transcript, without adding or translating anything.\n\n${text}` }] }],
+        systemInstruction: {
+          parts: [
+            {
+              text: "You are a text-to-speech engine. Speak ONLY the exact text provided by the user. Never read instructions, labels, explanations, or metadata. Do not add, translate, or modify any words.",
+            },
+          ],
+        },
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: text.trim() }],
+          },
+        ],
         generationConfig: {
           responseModalities: ["AUDIO"],
           speechConfig: {
@@ -85,18 +102,18 @@ async function tryGeminiTts(text) {
   );
 
   const result = await upstream.json().catch(() => ({}));
+
   if (!upstream.ok) {
-    console.error("Gemini TTS failed:", upstream.status, result?.error?.message);
-    throw new Error(result?.error?.message || `Gemini TTS HTTP ${upstream.status}`);
+    throw new Error(result?.error?.message || "Gemini TTS failed");
   }
 
   const audioPart = result?.candidates?.[0]?.content?.parts?.find(
-    (part) => part?.inlineData?.data && part?.inlineData?.mimeType?.startsWith("audio/"),
+    (part) =>
+      part?.inlineData?.data &&
+      part?.inlineData?.mimeType?.startsWith("audio/"),
   );
-  if (!audioPart) {
-    console.error("Gemini TTS returned no audio:", JSON.stringify(result).slice(0, 500));
-    throw new Error("Gemini TTS did not return audio data");
-  }
+
+  if (!audioPart) throw new Error("Gemini TTS returned no audio");
 
   return {
     audio: Buffer.from(audioPart.inlineData.data, "base64"),
@@ -112,31 +129,49 @@ module.exports = async function handler(req, res) {
 
   const { text, rate = 1 } = req.body || {};
   if (typeof text !== "string" || !text.trim() || text.length > 500) {
-    return sendJson(res, 400, { error: "Teks audio tidak valid (maksimal 500 karakter)." });
+    return sendJson(res, 400, {
+      error: "Teks audio tidak valid (maksimal 500 karakter).",
+    });
   }
 
   const cleanText = text.trim();
   const voiceId = process.env.ELEVENLABS_VOICE_ID;
-  const keys = [process.env.ELEVENLABS_API_KEY_1, process.env.ELEVENLABS_API_KEY_2].filter(Boolean);
+  const keys = [
+    process.env.ELEVENLABS_API_KEY_1,
+    process.env.ELEVENLABS_API_KEY_2,
+  ].filter(Boolean);
 
   // Priority 1 and 2: the two independent ElevenLabs accounts.
   if (voiceId && keys.length) {
     const elevenResult = await tryElevenLabs(cleanText, rate, voiceId, keys);
     if (elevenResult.audio) {
-      return sendAudio(res, elevenResult.audio, "audio/mpeg", elevenResult.provider);
+      return sendAudio(
+        res,
+        elevenResult.audio,
+        "audio/mpeg",
+        elevenResult.provider,
+      );
     }
   } else {
-    console.warn("ElevenLabs credentials or voice ID missing; proceeding to Gemini TTS fallback.");
+    console.warn(
+      "ElevenLabs credentials or voice ID missing; proceeding to Gemini TTS fallback.",
+    );
   }
 
   // Priority 3: Gemini TTS. The browser receives a WAV file and can play it normally.
   try {
     const geminiResult = await tryGeminiTts(cleanText);
-    return sendAudio(res, geminiResult.audio, geminiResult.mimeType, "gemini-tts");
+    return sendAudio(
+      res,
+      geminiResult.audio,
+      geminiResult.mimeType,
+      "gemini-tts",
+    );
   } catch (error) {
     console.error("All Gali audio providers failed:", error.message);
     return sendJson(res, 502, {
-      error: "ElevenLabs dan Gemini Audio sedang tidak tersedia. Jawaban teks tetap bisa digunakan.",
+      error:
+        "ElevenLabs dan Gemini Audio sedang tidak tersedia. Jawaban teks tetap bisa digunakan.",
     });
   }
 };
