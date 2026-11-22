@@ -183,9 +183,11 @@
         ></div>
       </section>
       <div
-        class="w-full relative px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
+        class="w-full relative z-1 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
       >
-        <section class="text-nila flex gap-14 justify-between">
+        <section
+          class="text-nila flex gap-14 justify-between mx-16 mt-20 max-lg:mx-12 max-sm:mx-6"
+        >
           <hgroup>
             <p class="text-xs font-bold leading-4 tracking-wide uppercase">
               The Story
@@ -211,7 +213,7 @@
           </div>
         </section>
         <section
-          class="w-full flex justify-between items-start overflow-hidden mt-25"
+          class="w-full flex justify-between items-start overflow-hidden mt-25 mx-16 max-lg:mx-12 max-sm:mx-6"
         >
           <div
             class="flex px-10 py-2 flex-col justify-start items-start gap-2 overflow-hidden grow"
@@ -265,7 +267,9 @@
             </p>
           </div>
         </section>
-        <section class="flex flex-col gap-8 mt-25">
+        <section
+          class="flex flex-col gap-8 mt-25 mx-16 max-lg:mx-12 max-sm:mx-6"
+        >
           <hgroup
             class="flex flex-col justify-start items-start gap-3 overflow-hidden"
           >
@@ -418,167 +422,141 @@
             </div>
           </d>
         </section>
-        <section
-          class="flex gap-10 mt-25 w-full text-nila"
-        >
-          <div
-            class="flex grow flex-col justify-start items-start gap-4 overflow-hidden"
-          >
-            <div
-              class="text-xs font-bold leading-4 tracking-wide"
-            >
-              HOW WE CHECKED IT
-            </div>
-            <div
-              class="self-stretch justify-start text-blue-900 text-3xl font-bold font-['Figtree'] leading-8"
-            >
-              Read aloud by a native speaker first.
-            </div>
+        <section class="flex gap-10 grow text-nila mt-25 mx-16 max-lg:mx-12 max-sm:mx-6 overflow-x-clip">
+          <div class="flex flex-col grow">
+            <hgroup class="flex flex-col gap-4 mb-7.5">
+              <p class="text-xs font-bold leading-4 tracking-wide">
+                HOW WE CHECKED IT
+              </p>
+              <h2 class="text-3xl font-bold leading-8">
+                Vetted for real-life conversations.
+              </h2>
+            </hgroup>
             <div class="w-2.5 h-2 relative"></div>
-            <div
-              class="self-stretch flex flex-col justify-start items-start overflow-hidden"
-            >
-              <div
-                class="self-stretch py-5 border-t border-blue-900/20 inline-flex justify-start items-center gap-4 overflow-hidden"
+            <div class="py-5 border-t border-nila/20 flex gap-4">
+              <p
+                class="p-1 bg-nila items-center justify-center flex rounded-full aspect-square text-white font-medium leading-6"
               >
-                <div
-                  class="size-8 bg-blue-900 rounded-[999px] flex justify-center items-center overflow-hidden"
-                >
-                  <div
-                    class="justify-start text-white text-base font-medium font-['Figtree'] leading-6"
-                  >
-                    1
-                  </div>
-                </div>
-                <div
-                  class="flex-1 justify-start text-blue-900 text-lg font-medium font-['Figtree'] leading-7"
-                >
-                  Taken from a real situation, not a dictionary.
-                </div>
-              </div>
-              <div
-                class="self-stretch py-5 border-t border-blue-900/20 inline-flex justify-start items-center gap-4 overflow-hidden"
+                1
+              </p>
+              <p class="text-lg font-medium leading-7">
+                Taken from real-life situations, not a dictionary.
+              </p>
+            </div>
+            <div class="py-5 border-t border-nila/20 flex gap-4">
+              <p
+                class="p-1 bg-nila items-center justify-center flex rounded-full aspect-square text-white font-medium leading-6"
               >
-                <div
-                  class="size-8 bg-blue-900 rounded-[999px] flex justify-center items-center overflow-hidden"
-                >
-                  <div
-                    class="justify-start text-white text-base font-medium font-['Figtree'] leading-6"
-                  >
-                    2
-                  </div>
-                </div>
-                <div
-                  class="flex-1 justify-start text-blue-900 text-lg font-medium font-['Figtree'] leading-7"
-                >
-                  Recorded and corrected by a native speaker.
-                </div>
-              </div>
-              <div
-                class="self-stretch py-5 border-t border-b border-blue-900/20 inline-flex justify-start items-center gap-4 overflow-hidden"
+                2
+              </p>
+              <p class="text-lg font-medium leading-7">
+                Read aloud and refined by a native speaker.
+              </p>
+            </div>
+            <div class="py-5 border-t border-nila/20 flex gap-4">
+              <p
+                class="p-1 bg-nila items-center justify-center flex rounded-full aspect-square text-white font-medium leading-6"
               >
-                <div
-                  class="size-8 bg-blue-900 rounded-[999px] flex justify-center items-center overflow-hidden"
-                >
-                  <div
-                    class="justify-start text-white text-base font-medium font-['Figtree'] leading-6"
-                  >
-                    3
-                  </div>
-                </div>
-                <div
-                  class="flex-1 justify-start text-blue-900 text-lg font-medium font-['Figtree'] leading-7"
-                >
-                  Culture tip checked by a teacher.
-                </div>
-              </div>
+                3
+              </p>
+              <p class="text-lg font-medium leading-7">
+                Cultural tips verified by a teacher.
+              </p>
             </div>
           </div>
           <div
-            class="w-96 p-9 bg-orange-200 rounded-[32px] inline-flex flex-col justify-start items-start gap-4 overflow-hidden"
+            class="max-w-1/4 grow p-9 bg-pasir rounded-4xl flex flex-col gap-4 overflow-hidden"
           >
-            <div
-              class="justify-start text-slate-600 text-xs font-bold font-['Figtree'] leading-4 tracking-wide"
-            >
+            <h3 class="text-xs font-bold leading-4 tracking-wide">
               BUILT WITH
+            </h3>
+            <div class="flex gap-2 flex-wrap">
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                HTML
+              </p>
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                Tailwind CSS
+              </p>
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                JavaScript
+              </p>
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                GitHub
+              </p>
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                Vercel
+              </p>
+              <p
+                class="text-nila hover:text-pasir hover:bg-nila transition-all duration-300 font-medium leading-6 px-4 py-2 rounded-full border border-nila/80"
+              >
+                Figma
+              </p>
             </div>
-            <div
-              class="self-stretch inline-flex justify-start items-start gap-2 flex-wrap content-start overflow-hidden"
+            <p class="font-medium leading-6">
+              Deployed straight from GitHub via Vercel.
+            </p>
+            <a
+              href="https://github.com/HilmiRN/Gaulingo/"
+              class="text-pasir font-bold leading-6 px-5 py-3.5 bg-nila rounded-full flex gap-2.5"
             >
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  React
-                </div>
-              </div>
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  Vite
-                </div>
-              </div>
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  Tailwind CSS
-                </div>
-              </div>
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  Web Speech API
-                </div>
-              </div>
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  Figma
-                </div>
-              </div>
-              <div
-                class="size- px-4 py-2 rounded-[999px] outline outline-[1.50px] outline-offset-[-1.50px] outline-blue-900/30 flex justify-start items-start overflow-hidden"
-              >
-                <div
-                  class="justify-start text-blue-900 text-base font-medium font-['Figtree'] leading-6"
-                >
-                  Vercel
-                </div>
-              </div>
-            </div>
-            <div
-              class="w-80 justify-start text-slate-600 text-base font-medium font-['Figtree'] leading-6"
+              See the repository
+            </a>
+          </div>
+        </section>
+        <section
+          class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
+        >
+          <p
+            class="text-base font-bold"
+            data-cta-reveal="left"
+            data-i18n="cta_tagline"
+          >
+            NO SIGN-UP · NO APP · JUST OPEN IT
+          </p>
+          <h2
+            class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
+            data-cta-reveal="right"
+          >
+            <span data-i18n="cta_title_1">Ready to</span> <br /><span
+              class="text-krem"
+              data-i18n="cta_title_2"
+              >ngobrol?</span
             >
-              Open source. Deploys straight from GitHub.
-            </div>
-            <div
-              class="size- px-5 py-3.5 bg-blue-900 rounded-[999px] inline-flex justify-start items-center gap-2.5 overflow-hidden"
+          </h2>
+          <p
+            class="font-medium text-xl"
+            data-cta-reveal="left"
+            data-i18n="cta_subtitle"
+          >
+            Start with one phrase today. Tomorrow you will use it.
+          </p>
+          <div
+            class="mt-7 flex flex-wrap justify-center gap-5 max-sm:w-full max-sm:flex-col"
+            data-cta-reveal="right"
+          >
+            <button
+              class="flex items-center justify-center gap-2 text-sm font-bold px-6 py-4 bg-matahari text-nila rounded-full border-2 border-matahari hover:text-matahari hover:bg-transparent transition-colors duration-300 max-sm:w-full"
             >
-              <div
-                class="justify-start text-orange-200 text-base font-bold font-['Figtree'] leading-6"
-              >
-                See the repository
-              </div>
-              <div class="size-5 relative overflow-hidden">
-                <div
-                  class="size-2 left-[5.83px] top-[5.83px] absolute outline outline-2 outline-offset-[-1px] outline-orange-200"
-                ></div>
-              </div>
-            </div>
+              <span data-i18n="cta_btn_explore">START EXPLORING</span>
+              <i class="ph-bold ph-arrow-right text-lg"></i>
+            </button>
+            <button
+              data-open-gali
+              class="flex items-center justify-center gap-2 text-sm font-bold border-2 border-matahari px-6 py-4 rounded-full hover:bg-matahari hover:text-nila transition-all duration-300 max-sm:w-full"
+            >
+              <i class="ph-bold ph-chat-circle-dots"></i>
+              <span data-i18n="cta_btn_chat">CHAT WITH GALI</span>
+            </button>
           </div>
         </section>
       </div>
