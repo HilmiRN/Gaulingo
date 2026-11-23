@@ -1501,9 +1501,6 @@ document.addEventListener("DOMContentLoaded", () => {
       galiAudioPlayer = null;
     }
     if (galiAudioUrl) URL.revokeObjectURL(galiAudioUrl);
-    try {
-      window.speechSynthesis?.cancel();
-    } catch (_) {}
 
     const original = button?.innerHTML;
     const resetButton = () => {
@@ -1534,24 +1531,8 @@ document.addEventListener("DOMContentLoaded", () => {
       galiAudioPlayer.onerror = resetButton;
       await galiAudioPlayer.play();
     } catch (error) {
-      console.warn("ElevenLabs gagal, pakai suara browser:", error);
-      if ("speechSynthesis" in window) {
-        const utter = new SpeechSynthesisUtterance(text);
-        utter.lang = "id-ID";
-        utter.rate = rate;
-        const safetyTimer = setTimeout(resetButton, 4000);
-        utter.onend = () => {
-          clearTimeout(safetyTimer);
-          resetButton();
-        };
-        utter.onerror = () => {
-          clearTimeout(safetyTimer);
-          resetButton();
-        };
-        window.speechSynthesis.speak(utter);
-      } else {
-        resetButton();
-      }
+      console.error("Gali audio error:", error);
+      resetButton();
     }
   }
 
@@ -1922,16 +1903,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const kirimPesanKe = async (container, text, isDrawer = false) => {
       if (!container || !text.trim()) return;
 
-      if (isDrawer && !drawerHasMessages) {
+            if (isDrawer && !drawerHasMessages) {
         drawerHasMessages = true;
+        const isId = (localStorage.getItem("gaulingo_lang") || "en") === "id";
         container.innerHTML = `
-          <div class="mx-auto px-3 py-1 rounded-full border border-nila/20 text-[10px] font-bold tracking-wider text-nila uppercase">
-            🏪 READING ALONG · STALL
-          </div>
           <div class="flex items-end gap-2.5">
             <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
             <div class="border border-nila/15 rounded-2xl rounded-bl-xs p-3.5 text-xs text-nila/85 max-w-[82%]">
-              Hi! You're on the Stall page. Want help with any of these phrases?
+              ${
+                isId
+                  ? "Halo! Mau dibantu terjemahin atau belajar frasa apa hari ini?"
+                  : "Hi! What phrase would you like to learn or translate today?"
+              }
             </div>
           </div>
         `;
