@@ -1573,10 +1573,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function tanyaGeminiGali(userMessage, historyArray) {
     const lang = localStorage.getItem("gaulingo_lang") || "en";
+    const promptToSend =
+      lang === "id"
+        ? `[Wajib jawab bagian intro, meaning, dan tip dalam Bahasa Indonesia] ${userMessage}`
+        : userMessage;
 
     historyArray.push({
       role: "user",
-      parts: [{ text: userMessage }],
+      parts: [{ text: promptToSend }],
     });
 
     try {
@@ -1688,7 +1692,9 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
   }
 
-  function ensureGaliChatUI() {
+    function ensureGaliChatUI() {
+    const isId = (localStorage.getItem("gaulingo_lang") || "en") === "id";
+
     if (!document.getElementById("gali-floating-trigger")) {
       document.body.insertAdjacentHTML(
         "beforeend",
@@ -1698,13 +1704,13 @@ document.addEventListener("DOMContentLoaded", () => {
             type="button"
             aria-controls="gali-drawer"
             aria-expanded="false"
-            aria-label="Open chat with Gali"
+            aria-label="${isId ? "Buka chat dengan Gali" : "Open chat with Gali"}"
             class="group fixed right-7 bottom-15 z-50 flex cursor-pointer flex-row-reverse items-center gap-2 border-0 bg-transparent p-0 text-left transition-opacity duration-200 max-md:right-4 max-md:bottom-4"
             data-open-gali
           >
             <span class="gali-avatar-slot h-15 w-15 shrink-0 overflow-hidden rounded-full border-4 border-nila bg-pasir shadow-xl transition-transform group-hover:scale-105"></span>
             <span class="rounded-full bg-white px-4 py-2 text-sm font-bold text-nila shadow-xl transition-colors group-hover:bg-nila group-hover:text-white">
-              Ask Gali
+              ${isId ? "Tanya Gali" : "Ask Gali"}
             </span>
           </button>
         `,
@@ -1726,7 +1732,7 @@ document.addEventListener("DOMContentLoaded", () => {
             id="gali-drawer"
             role="dialog"
             aria-modal="true"
-            aria-label="Chat with Gali"
+            aria-label="${isId ? "Chat dengan Gali" : "Chat with Gali"}"
             aria-hidden="true"
             class="fixed right-6 bottom-6 z-60 hidden h-160 w-100 max-h-[86vh] flex-col overflow-hidden rounded-3xl border border-nila/10 bg-white shadow-2xl max-md:inset-0 max-md:h-full max-md:max-h-full max-md:w-full max-md:rounded-none"
           >
@@ -1737,7 +1743,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <p class="text-sm font-bold leading-tight text-nila">Gali</p>
                   <p class="mt-0.5 flex items-center gap-1.5 text-xs text-nila/65">
                     <span class="inline-block h-2 w-2 rounded-full bg-hijau"></span>
-                    Online · replies in EN &amp; ID
+                    ${isId ? "Online · membalas dalam ID & EN" : "Online · replies in EN & ID"}
                   </p>
                 </div>
               </div>
@@ -1745,7 +1751,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 type="button"
                 id="gali-drawer-close"
                 class="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-krem text-sm font-bold text-nila hover:opacity-80"
-                aria-label="Close chat"
+                aria-label="${isId ? "Tutup chat" : "Close chat"}"
               >
                 ✕
               </button>
@@ -1755,7 +1761,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <input
                 id="gali-drawer-input"
                 type="text"
-                placeholder="Ask Gali anything..."
+                placeholder="${isId ? "Tanya apa aja ke Gali..." : "Ask Gali anything..."}"
                 class="w-full rounded-full bg-krem px-4 py-2.5 text-sm text-nila outline-none placeholder:text-nila/45"
               />
               <button
@@ -1806,15 +1812,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const renderInlineDefault = () => {
       if (!inlineContainer) return;
       inlineHistory = [];
-      const defaultReply = galiFallbackList[0];
+      const isId = (localStorage.getItem("gaulingo_lang") || "en") === "id";
+
+      if (inlineInput) {
+        inlineInput.placeholder = isId
+          ? "Tanya apa aja ke Gali..."
+          : "Ask Gali anything...";
+      }
+
+      const defaultReply = isId
+        ? {
+            intro: "Gampang! Bilang aja gini ke penjualnya:",
+            phrase: "Nggak pedas, ya.",
+            meaning: '"Tidak pedas, tolong."',
+            tip: 'Tips: nambahin kata "ya" di akhir bikin kalimatnya terdengar lebih ramah.',
+          }
+        : galiFallbackList[0];
+
       inlineContainer.innerHTML = `
         <div class="flex items-end gap-2.5">
           <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
           <div class="border border-nila/15 rounded-2xl rounded-bl-xs p-3.5 text-xs text-nila/85 max-w-[82%]">
-            Halo! I'm Gali. Ask me how to say anything in Indonesian.
+            ${
+              isId
+                ? "Halo! Aku Gali. Tanya aku gimana cara ngomong apa pun dalam bahasa Indonesia atau daerah."
+                : "Halo! I'm Gali. Ask me how to say anything in Indonesian."
+            }
           </div>
         </div>
-        ${buatBubbleUserHTML("How do I ask for food that's not spicy?")}
+        ${buatBubbleUserHTML(
+          isId
+            ? "Gimana cara pesan makanan yang nggak pedas?"
+            : "How do I ask for food that's not spicy?",
+        )}
         ${buatBubbleGaliHTML(defaultReply)}
       `;
     };
@@ -1823,7 +1853,39 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!drawerBody) return;
       drawerHistory = [];
       drawerHasMessages = false;
-      drawerBody.innerHTML = `
+      const isId = (localStorage.getItem("gaulingo_lang") || "en") === "id";
+
+      drawerBody.innerHTML = isId
+        ? `
+        <div class="my-auto flex flex-col items-center text-center gap-3 py-4">
+          <div class="w-16 h-16">${galiAvatarHTML}</div>
+          <h4 class="font-bold text-nila text-lg">Halo! Aku Gali.</h4>
+          <p class="text-xs text-nila/75 max-w-65 leading-relaxed">
+            Tanya aku cara ngomong apa aja. Beberapa contoh yang bisa kamu coba:
+          </p>
+          <div class="w-full flex flex-col gap-2 mt-2">
+            <p class="text-[10px] font-bold tracking-wider text-nila/55 uppercase text-left">
+              COBA TANYAKAN
+            </p>
+            <button type="button" data-drawer-preset="Gimana cara menawar harga dengan sopan?" class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              Gimana cara menawar harga dengan sopan?
+            </button>
+            <button type="button" data-drawer-preset="Panggilan Bu atau Mbak, kapan pakainya?" class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              Panggilan Bu atau Mbak, kapan pakainya?
+            </button>
+            <button type="button" data-drawer-preset='Gimana cara bilang "nggak usah pakai kantong plastik"?' class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              Gimana cara bilang "nggak usah pakai kantong plastik"?
+            </button>
+            <button type="button" data-drawer-preset='Apa arti kata "kembalian"?' class="w-full text-left px-4 py-2.5 rounded-full border border-nila/40 text-xs font-semibold text-nila hover:bg-nila hover:text-white transition-colors cursor-pointer">
+              Apa arti kata "kembalian"?
+            </button>
+          </div>
+          <p class="text-[10px] text-nila/55 mt-2">
+            Gali bisa saja salah. Pastikan informasi penting dengan warga lokal.
+          </p>
+        </div>
+      `
+        : `
         <div class="my-auto flex flex-col items-center text-center gap-3 py-4">
           <div class="w-16 h-16">${galiAvatarHTML}</div>
           <h4 class="font-bold text-nila text-lg">Hi! I'm Gali.</h4>
@@ -1990,7 +2052,7 @@ backdrop?.addEventListener("click", closeDrawer);
 
       const presetBtn = e.target.closest("[data-gali-prompt]");
       if (presetBtn) {
-        kirimPesanKe(inlineContainer, presetBtn.dataset.galiPrompt, false);
+        kirimPesanKe(inlineContainer, presetBtn.textContent.trim(), false);
         return;
       }
 
