@@ -1552,16 +1552,12 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  async function tanyaGeminiGali(userMessage, historyArray) {
+    async function tanyaGeminiGali(userMessage, historyArray) {
     const lang = localStorage.getItem("gaulingo_lang") || "en";
-    const promptToSend =
-      lang === "id"
-        ? `[Wajib jawab bagian intro, meaning, dan tip dalam Bahasa Indonesia] ${userMessage}`
-        : userMessage;
 
     historyArray.push({
       role: "user",
-      parts: [{ text: promptToSend }],
+      parts: [{ text: userMessage }],
     });
 
     try {
