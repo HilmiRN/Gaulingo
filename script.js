@@ -2152,13 +2152,8 @@ backdrop?.addEventListener("click", closeDrawer);
           }
         };
 
-        const SpeechRec =
-          window.SpeechRecognition || window.webkitSpeechRecognition;
-
-        if (!SpeechRec || window._galiUseMediaRecorder) {
-          startMediaRecorder();
-          return;
-        }
+        startMediaRecorder();
+        return;
 
         const rec = new SpeechRec();
         const startedAt = Date.now();
