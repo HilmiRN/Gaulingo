@@ -1494,15 +1494,25 @@ document.addEventListener("DOMContentLoaded", () => {
   let galiAudioUrl = null;
   let galiAudioPlayer = null;
 
-  async function playGaliAudio(text, rate = 1, button = null) {
+    async function playGaliAudio(text, rate = 1, button = null) {
     if (!text) return;
     if (galiAudioPlayer) {
       galiAudioPlayer.pause();
       galiAudioPlayer = null;
     }
     if (galiAudioUrl) URL.revokeObjectURL(galiAudioUrl);
+    try {
+      window.speechSynthesis?.cancel();
+    } catch (_) {}
 
     const original = button?.innerHTML;
+    const resetButton = () => {
+      if (button) {
+        button.disabled = false;
+        button.innerHTML = original;
+      }
+    };
+
     if (button) {
       button.disabled = true;
       button.innerHTML = '<i class="ph ph-spinner animate-spin text-sm"></i>';
@@ -1520,25 +1530,27 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       galiAudioUrl = URL.createObjectURL(await response.blob());
       galiAudioPlayer = new Audio(galiAudioUrl);
-      galiAudioPlayer.onended = () => {
-        if (button) {
-          button.disabled = false;
-          button.innerHTML = original;
-        }
-      };
-      galiAudioPlayer.onerror = () => {
-        if (button) {
-          button.disabled = false;
-          button.innerHTML = original;
-        }
-      };
+      galiAudioPlayer.onended = resetButton;
+      galiAudioPlayer.onerror = resetButton;
       await galiAudioPlayer.play();
     } catch (error) {
-      console.error("Gali audio error:", error);
-      if (button) {
-        button.disabled = false;
-        button.innerHTML = original;
-        button.title = "Audio tidak tersedia. Coba lagi.";
+      console.warn("ElevenLabs gagal, pakai suara browser:", error);
+      if ("speechSynthesis" in window) {
+        const utter = new SpeechSynthesisUtterance(text);
+        utter.lang = "id-ID";
+        utter.rate = rate;
+        const safetyTimer = setTimeout(resetButton, 4000);
+        utter.onend = () => {
+          clearTimeout(safetyTimer);
+          resetButton();
+        };
+        utter.onerror = () => {
+          clearTimeout(safetyTimer);
+          resetButton();
+        };
+        window.speechSynthesis.speak(utter);
+      } else {
+        resetButton();
       }
     }
   }
@@ -2155,73 +2167,6 @@ backdrop?.addEventListener("click", closeDrawer);
         startMediaRecorder();
         return;
 
-        const rec = new SpeechRec();
-        const startedAt = Date.now();
-        window._galiActiveRec = rec;
-        rec.lang = currentUiLang === "id" ? "id-ID" : "en-US";
-        rec.interimResults = true;
-        rec.maxAlternatives = 1;
-
-        let hadError = false;
-        micBtn.style.backgroundColor = "#b54927";
-        micBtn.style.color = "#ffffff";
-        if (targetInput) {
-          targetInput.value = "";
-          targetInput.placeholder =
-            currentUiLang === "id"
-              ? "Lagi dengerin... ngomong aja sekarang"
-              : "Listening... speak now";
-        }
-
-        rec.onresult = (ev) => {
-          let transcript = "";
-          for (let i = 0; i < ev.results.length; i++) {
-            transcript += ev.results[i][0].transcript;
-          }
-          if (targetInput && transcript) {
-            targetInput.value = transcript;
-          }
-        };
-
-        rec.onerror = (ev) => {
-          hadError = true;
-          window._galiActiveRec = null;
-          micBtn.style.backgroundColor = "#f8f1e5";
-          micBtn.style.color = "#243b7a";
-
-          if (
-            ev.error === "network" ||
-            ev.error === "aborted" ||
-            ev.error === "service-not-allowed" ||
-            Date.now() - startedAt < 1200
-          ) {
-            window._galiUseMediaRecorder = true;
-            startMediaRecorder();
-            return;
-          }
-
-          if (targetInput) {
-            targetInput.placeholder =
-              "Suara belum kedengeran — klik mic lalu langsung ngomong ya";
-          }
-        };
-
-        rec.onend = () => {
-          window._galiActiveRec = null;
-          micBtn.style.backgroundColor = "#f8f1e5";
-          micBtn.style.color = "#243b7a";
-          if (targetInput && !targetInput.value && !hadError) {
-            targetInput.placeholder = oldPlaceholder;
-          }
-        };
-
-        try {
-          rec.start();
-        } catch (_) {
-          window._galiActiveRec = null;
-          window._galiUseMediaRecorder = true;
-          startMediaRecorder();
-        }
       }
     });
 
