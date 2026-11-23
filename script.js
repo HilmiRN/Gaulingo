@@ -1470,14 +1470,15 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     document.head.appendChild(style);
   }
-  const galiFallbackList = [
+    const galiFallbackList = [
     {
       keys: ["no spicy", "not spicy", "pedas", "pedes"],
       intro: "Easy! Say this to the seller:",
       phrase: "Nggak pedas, ya.",
       meaning: '"Not spicy, please."',
       tip: 'Tip: adding "ya" at the end makes it sound softer and friendlier.',
-      chips: ["Say it slower", "Sunda version", "Save phrase"],
+      chips: [],
+      audioRequired: true,
     },
     {
       keys: ["bargain", "tawar", "kurang", "cheaper", "murah"],
@@ -1485,7 +1486,8 @@ document.addEventListener("DOMContentLoaded", () => {
       phrase: "Boleh kurang sedikit?",
       meaning: '"Could it be a little less?"',
       tip: "Tip: sedikit (a little) turns it into a request, not a demand.",
-      chips: ["Say it slower", "Sunda version", "Save phrase"],
+      chips: [],
+      audioRequired: true,
     },
   ];
 
@@ -1595,7 +1597,7 @@ document.addEventListener("DOMContentLoaded", () => {
         meaning: parsed.meaning || '"Excuse me, I would like to ask..."',
         tip: parsed.tip || "Say it with a warm smile!",
         chips: Array.isArray(parsed.chips) ? parsed.chips.slice(0, 3) : [],
-        audioRequired: parsed.audioRequired === true,
+        audioRequired: parsed.audioRequired !== false,
       };
 
       historyArray.push({
@@ -1644,21 +1646,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p class="font-bold text-nila text-sm">${reply.phrase}</p>
                 <p class="text-xs text-nila/65 mt-0.5">${reply.meaning}</p>
               </div>
-              ${
-                reply.audioRequired
-                  ? `
-                <button
-                  type="button"
-                  data-gali-speak="${reply.phrase.replace(/"/g, "&quot;")}"
-                  style="background-color: var(--color-nila, #243b7a); color: #ffffff"
-                  class="w-9 h-9 rounded-full shrink-0 flex items-center justify-center hover:opacity-90 cursor-pointer"
-                  aria-label="Dengarkan pengucapan"
-                  title="Dengarkan pengucapan"
-                >
-                  <i class="ph-fill ph-play text-xs"></i>
-                </button>`
-                  : ""
-              }
+              <button
+                type="button"
+                data-gali-speak="${(reply.phrase || "").replace(/"/g, "&quot;")}"
+                style="background-color: var(--color-nila, #243b7a); color: #ffffff"
+                class="w-9 h-9 rounded-full shrink-0 flex items-center justify-center hover:opacity-90 cursor-pointer"
+                aria-label="Dengarkan pengucapan"
+                title="Dengarkan pengucapan"
+              >
+                <i class="ph-fill ph-play text-xs"></i>
+              </button>
             </div>
             <p class="text-[11px] text-nila/70 leading-relaxed">${reply.tip}</p>
           </div>
@@ -1918,28 +1915,54 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((trigger) => trigger.setAttribute("aria-expanded", "false"));
     };
 
-    const sendInline = () => {
-      if (!inlineInput || isSendingInline) return;
-      const val = inlineInput.value.trim();
-      if (!val) {
-        inlineInput.focus();
-        return;
-      }
-      inlineInput.value = "";
-      kirimPesanKe(inlineContainer, val, false);
-    };
+   let isSendingInline = false;
+let isSendingDrawer = false;
 
-    const sendDrawer = () => {
-      if (!drawerInput || isSendingDrawer) return;
-      const val = drawerInput.value.trim();
-      if (!val) return;
-      drawerInput.value = "";
-      kirimPesanKe(drawerBody, val, true);
-    };
+const sendInline = async () => {
+  if (!inlineInput || isSendingInline) return;
+  const val = inlineInput.value.trim();
+  if (!val) {
+    inlineInput.focus();
+    return;
+  }
+  inlineInput.value = "";
+  isSendingInline = true;
+  try {
+    await kirimPesanKe(inlineContainer, val, false);
+  } finally {
+    isSendingInline = false;
+  }
+};
 
-    inlineReset?.addEventListener("click", renderInlineDefault);
-    drawerClose?.addEventListener("click", closeDrawer);
-    backdrop?.addEventListener("click", closeDrawer);
+const sendDrawer = async () => {
+  if (!drawerInput || isSendingDrawer) return;
+  const val = drawerInput.value.trim();
+  if (!val) {
+    drawerInput.focus();
+    return;
+  }
+  drawerInput.value = "";
+  isSendingDrawer = true;
+  try {
+    await kirimPesanKe(drawerBody, val, true);
+  } finally {
+    isSendingDrawer = false;
+  }
+};
+
+inlineForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendInline();
+});
+
+drawerForm?.addEventListener("submit", (e) => {
+  e.preventDefault();
+  sendDrawer();
+});
+
+inlineReset?.addEventListener("click", renderInlineDefault);
+drawerClose?.addEventListener("click", closeDrawer);
+backdrop?.addEventListener("click", closeDrawer);
 
     document.addEventListener("click", (e) => {
       const openBtn = e.target.closest("[data-open-gali]");
@@ -1980,21 +2003,18 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const speakBtn = e.target.closest("[data-gali-speak]");
+           const speakBtn = e.target.closest("[data-gali-speak]");
       if (speakBtn) {
-        playGaliAudio(
-          speakBtn.dataset.galiSpeak,
-          1,
-          speakBtn.dataset.galiVoice || "gali",
-        );
+        playGaliAudio(speakBtn.dataset.galiSpeak, 1, speakBtn);
         return;
       }
 
       const stallLi = e.target.closest("li");
-      if (stallLi && e.target.closest("button .ph-play")) {
+      const stallPlayBtn = e.target.closest("button");
+      if (stallLi && stallPlayBtn?.querySelector(".ph-play")) {
         const phraseText = stallLi.querySelector("p")?.textContent.trim();
         if (phraseText) {
-          playGaliAudio(phraseText, 1, "gali");
+          playGaliAudio(phraseText, 1, stallPlayBtn);
           return;
         }
       }
@@ -2024,7 +2044,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ? clickedFormBtn
           : null);
 
-      if (micBtn) {
+       if (micBtn) {
         e.preventDefault();
         const isDrawer =
           micBtn.dataset.galiMic === "drawer" ||
@@ -2047,15 +2067,15 @@ document.addEventListener("DOMContentLoaded", () => {
           return;
         }
 
-        if (window.location.protocol === "file:") {
-          if (targetInput) {
-            targetInput.placeholder =
-              "Buka lewat Live Server dulu, bukan file langsung";
+        const startMediaRecorder = async () => {
+          if (!navigator.mediaDevices?.getUserMedia) {
+            if (targetInput) {
+              targetInput.placeholder =
+                "Browser ini tidak mendukung akses mikrofon";
+            }
+            return;
           }
-          return;
-        }
 
-        const startGeminiVoiceRecorder = async () => {
           try {
             const stream = await navigator.mediaDevices.getUserMedia({
               audio: true,
@@ -2085,8 +2105,7 @@ document.addEventListener("DOMContentLoaded", () => {
               micBtn.style.color = "#243b7a";
 
               const rawMime = recorder.mimeType || "audio/webm";
-              const cleanMime = rawMime.split(";")[0];
-              const audioBlob = new Blob(chunks, { type: cleanMime });
+              const audioBlob = new Blob(chunks, { type: rawMime });
 
               if (audioBlob.size < 500) {
                 if (targetInput) targetInput.placeholder = oldPlaceholder;
@@ -2101,7 +2120,7 @@ document.addEventListener("DOMContentLoaded", () => {
               }
 
               try {
-                const base64Audio = await new Promise((resolve, reject) => {
+                const audioBase64 = await new Promise((resolve, reject) => {
                   const reader = new FileReader();
                   reader.onloadend = () =>
                     resolve(String(reader.result).split(",")[1]);
@@ -2109,53 +2128,23 @@ document.addEventListener("DOMContentLoaded", () => {
                   reader.readAsDataURL(audioBlob);
                 });
 
-                const geminiKey = (
-                  (typeof GEMINI_API_KEY !== "undefined"
-                    ? GEMINI_API_KEY
-                    : "") ||
-                  localStorage.getItem("gaulingo_gemini_key") ||
-                  ""
-                ).trim();
+                const res = await fetch("/api/gali", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    mode: "transcribe",
+                    audioBase64,
+                    mimeType: rawMime,
+                  }),
+                });
 
-                const res = await fetchWithTimeout(
-                  getGeminiEndpoint("gemini-3.8-flash"),
-                  {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                      "x-goog-api-key": geminiKey,
-                    },
-                    body: JSON.stringify({
-                      contents: [
-                        {
-                          parts: [
-                            {
-                              text: "Transcribe this audio accurately into text (Indonesian or English as spoken). Return ONLY the spoken words without quotes or extra explanation.",
-                            },
-                            {
-                              inlineData: {
-                                mimeType: cleanMime,
-                                data: base64Audio,
-                              },
-                            },
-                          ],
-                        },
-                      ],
-                    }),
-                  },
-                  8000,
-                );
-
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                const transcript =
-                  data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim() ||
-                  "";
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
 
                 if (targetInput) {
                   targetInput.placeholder = oldPlaceholder;
-                  if (transcript) {
-                    targetInput.value = transcript;
+                  if (data.transcript) {
+                    targetInput.value = data.transcript;
                     targetInput.focus();
                   }
                 }
@@ -2181,99 +2170,78 @@ document.addEventListener("DOMContentLoaded", () => {
         const SpeechRec =
           window.SpeechRecognition || window.webkitSpeechRecognition;
 
-        if (!SpeechRec || window._galiForceAudioFallback) {
-          startGeminiVoiceRecorder();
+        if (!SpeechRec || window._galiUseMediaRecorder) {
+          startMediaRecorder();
           return;
         }
 
-        (async () => {
-          try {
-            const stream = await navigator.mediaDevices.getUserMedia({
-              audio: true,
-            });
-            stream.getTracks().forEach((track) => track.stop());
-          } catch (permErr) {
-            if (targetInput) {
-              targetInput.placeholder =
-                permErr.name === "NotFoundError"
-                  ? "Mikrofon nggak kedeteksi di perangkat ini"
-                  : "Izin mic ditolak — aktifin browser di System Settings Mac";
-            }
+        const rec = new SpeechRec();
+        const startedAt = Date.now();
+        window._galiActiveRec = rec;
+        rec.lang = currentUiLang === "id" ? "id-ID" : "en-US";
+        rec.interimResults = true;
+        rec.maxAlternatives = 1;
+
+        let hadError = false;
+        micBtn.style.backgroundColor = "#b54927";
+        micBtn.style.color = "#ffffff";
+        if (targetInput) {
+          targetInput.value = "";
+          targetInput.placeholder =
+            currentUiLang === "id"
+              ? "Lagi dengerin... ngomong aja sekarang"
+              : "Listening... speak now";
+        }
+
+        rec.onresult = (ev) => {
+          let transcript = "";
+          for (let i = 0; i < ev.results.length; i++) {
+            transcript += ev.results[i][0].transcript;
+          }
+          if (targetInput && transcript) {
+            targetInput.value = transcript;
+          }
+        };
+
+        rec.onerror = (ev) => {
+          hadError = true;
+          window._galiActiveRec = null;
+          micBtn.style.backgroundColor = "#f8f1e5";
+          micBtn.style.color = "#243b7a";
+
+          if (
+            ev.error === "network" ||
+            ev.error === "aborted" ||
+            ev.error === "service-not-allowed" ||
+            Date.now() - startedAt < 1200
+          ) {
+            window._galiUseMediaRecorder = true;
+            startMediaRecorder();
             return;
           }
 
-          const rec = new SpeechRec();
-          window._galiActiveRec = rec;
-          rec.lang = currentUiLang === "id" ? "id-ID" : "en-US";
-          rec.interimResults = true;
-          rec.maxAlternatives = 1;
-
-          let hadError = false;
-          micBtn.style.backgroundColor = "#b54927";
-          micBtn.style.color = "#ffffff";
           if (targetInput) {
-            targetInput.value = "";
             targetInput.placeholder =
-              currentUiLang === "id"
-                ? "Lagi dengerin... ngomong aja sekarang"
-                : "Listening... speak now";
+              "Suara belum kedengeran — klik mic lalu langsung ngomong ya";
           }
+        };
 
-          rec.onresult = (ev) => {
-            let transcript = "";
-            for (let i = 0; i < ev.results.length; i++) {
-              transcript += ev.results[i][0].transcript;
-            }
-            if (targetInput && transcript) {
-              targetInput.value = transcript;
-            }
-          };
-
-          rec.onerror = (ev) => {
-            hadError = true;
-            window._galiActiveRec = null;
-            micBtn.style.backgroundColor = "#f8f1e5";
-            micBtn.style.color = "#243b7a";
-
-            if (ev.error === "network") {
-              window._galiForceAudioFallback = true;
-              startGeminiVoiceRecorder();
-              return;
-            }
-
-            if (!targetInput) return;
-            if (
-              ev.error === "not-allowed" ||
-              ev.error === "service-not-allowed"
-            ) {
-              targetInput.placeholder =
-                "Izin mic diblokir — cek ikon gembok di address bar";
-            } else if (ev.error === "audio-capture") {
-              targetInput.placeholder =
-                "Mic gagal diakses — cek Sound > Input di Mac";
-            } else {
-              targetInput.placeholder =
-                "Suara belum kedengeran — klik mic lalu langsung ngomong ya";
-            }
-          };
-
-          rec.onend = () => {
-            window._galiActiveRec = null;
-            micBtn.style.backgroundColor = "#f8f1e5";
-            micBtn.style.color = "#243b7a";
-            if (targetInput && !targetInput.value && !hadError) {
-              targetInput.placeholder = oldPlaceholder;
-            }
-          };
-
-          try {
-            rec.start();
-          } catch (_) {
-            window._galiActiveRec = null;
-            window._galiForceAudioFallback = true;
-            startGeminiVoiceRecorder();
+        rec.onend = () => {
+          window._galiActiveRec = null;
+          micBtn.style.backgroundColor = "#f8f1e5";
+          micBtn.style.color = "#243b7a";
+          if (targetInput && !targetInput.value && !hadError) {
+            targetInput.placeholder = oldPlaceholder;
           }
-        })();
+        };
+
+        try {
+          rec.start();
+        } catch (_) {
+          window._galiActiveRec = null;
+          window._galiUseMediaRecorder = true;
+          startMediaRecorder();
+        }
       }
     });
 
