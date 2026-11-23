@@ -1785,6 +1785,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const drawerForm = document.getElementById("gali-drawer-form");
     const drawerInput = document.getElementById("gali-drawer-input");
     const drawerClose = document.getElementById("gali-drawer-close");
+    [inlineContainer, drawerBody].forEach((box) => {
+      if (!box) return;
+      box.setAttribute("data-lenis-prevent", "");
+      box.setAttribute("data-lenis-prevent-wheel", "");
+      box.setAttribute("data-lenis-prevent-touch", "");
+      box.style.overscrollBehavior = "contain";
+    });
 
     let inlineHistory = [];
     let drawerHistory = [];
