@@ -1621,20 +1621,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function buatBubbleGaliHTML(reply) {
-    const chipsHTML = (reply.chips || [])
-      .map(
-        (chip) => `
-        <button
-          type="button"
-          data-gali-chip="${chip}"
-          data-phrase="${reply.phrase.replace(/"/g, "&quot;")}"
-          class="px-3.5 py-1.5 rounded-full border border-nila/30 text-nila text-xs font-semibold hover:bg-nila hover:text-white transition-colors cursor-pointer bg-white"
-        >
-          ${chip}
-        </button>`,
-      )
-      .join("");
-
     return `
       <div class="flex items-end gap-2.5">
         <div class="w-7 h-7 shrink-0">${galiAvatarHTML}</div>
@@ -1659,7 +1645,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
             <p class="text-[11px] text-nila/70 leading-relaxed">${reply.tip}</p>
           </div>
-          <div class="flex flex-wrap gap-1.5">${chipsHTML}</div>
         </div>
       </div>
     `;
