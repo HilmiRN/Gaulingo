@@ -13,6 +13,31 @@ function sendAudio(res, audio, mimeType, provider) {
   return res.status(200).send(audio);
 }
 
+function pcmToWav(pcmBuffer, sampleRate = 24000) {
+  const numChannels = 1;
+  const bitsPerSample = 16;
+  const byteRate = sampleRate * numChannels * (bitsPerSample / 8);
+  const blockAlign = numChannels * (bitsPerSample / 8);
+  const dataSize = pcmBuffer.length;
+
+  const header = Buffer.alloc(44);
+  header.write("RIFF", 0);
+  header.writeUInt32LE(36 + dataSize, 4);
+  header.write("WAVE", 8);
+  header.write("fmt ", 12);
+  header.writeUInt32LE(16, 16);
+  header.writeUInt16LE(1, 20);
+  header.writeUInt16LE(numChannels, 22);
+  header.writeUInt32LE(sampleRate, 24);
+  header.writeUInt32LE(byteRate, 28);
+  header.writeUInt16LE(blockAlign, 32);
+  header.writeUInt16LE(bitsPerSample, 34);
+  header.write("data", 36);
+  header.writeUInt32LE(dataSize, 40);
+
+  return Buffer.concat([header, pcmBuffer]);
+}
+
 async function tryElevenLabs(text, rate, voiceId, keys) {
   let lastError = "ElevenLabs gagal tanpa detail";
 
@@ -47,36 +72,25 @@ async function tryElevenLabs(text, rate, voiceId, keys) {
 
       const detail = await upstream.text().catch(() => "");
       lastError = `ElevenLabs (${upstream.status}): ${detail.slice(0, 200)}`;
-      console.error(`ElevenLabs account ${index + 1} failed:`, lastError);
-
       if (![401, 402, 403, 429].includes(upstream.status) && upstream.status < 500) {
         break;
       }
     } catch (error) {
       lastError = `ElevenLabs request error: ${error.message}`;
-      console.error(`ElevenLabs account ${index + 1} request failed:`, error.message);
     }
   }
 
   return { audio: null, lastError };
 }
 
-async function tryGeminiTts(text) {
-  const apiKey = (process.env.GEMINI_API_KEY || "").trim();
-  if (!apiKey) throw new Error("GEMINI_API_KEY belum diatur di Vercel");
-
+async function requestGeminiAudio(apiKey, promptText) {
   const upstream = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TTS_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        contents: [
-          {
-            role: "user",
-            parts: [{ text: `Bacakan teks ini persis apa adanya tanpa tambahan kata: ${text.trim()}` }],
-          },
-        ],
+        contents: [{ role: "user", parts: [{ text: promptText }] }],
         generationConfig: {
           responseModalities: ["AUDIO"],
           speechConfig: {
@@ -91,7 +105,6 @@ async function tryGeminiTts(text) {
   );
 
   const result = await upstream.json().catch(() => ({}));
-
   if (!upstream.ok) {
     throw new Error(result?.error?.message || `Gemini TTS HTTP ${upstream.status}`);
   }
@@ -102,12 +115,32 @@ async function tryGeminiTts(text) {
       part?.inlineData?.mimeType?.startsWith("audio/"),
   );
 
-  if (!audioPart) throw new Error("Gemini TTS tidak mengembalikan audio");
+  if (!audioPart) return null;
 
+  const rawBuffer = Buffer.from(audioPart.inlineData.data, "base64");
+  const mime = audioPart.inlineData.mimeType || "";
+  const rateMatch = mime.match(/rate=(\d+)/i);
+  const sampleRate = rateMatch ? Number(rateMatch[1]) : 24000;
+
+  const isAlreadyWav = rawBuffer.slice(0, 4).toString("ascii") === "RIFF";
   return {
-    audio: Buffer.from(audioPart.inlineData.data, "base64"),
-    mimeType: audioPart.inlineData.mimeType || "audio/wav",
+    audio: isAlreadyWav ? rawBuffer : pcmToWav(rawBuffer, sampleRate),
+    mimeType: "audio/wav",
   };
+}
+
+async function tryGeminiTts(text) {
+  const apiKey = (process.env.GEMINI_API_KEY || "").trim();
+  if (!apiKey) throw new Error("GEMINI_API_KEY belum diatur di Vercel");
+
+  const clean = text.trim();
+  const firstTry = await requestGeminiAudio(apiKey, clean);
+  if (firstTry) return firstTry;
+
+  const secondTry = await requestGeminiAudio(apiKey, `Say aloud: "${clean}"`);
+  if (secondTry) return secondTry;
+
+  throw new Error("Gemini TTS tidak mengembalikan audio");
 }
 
 module.exports = async function handler(req, res) {
@@ -133,7 +166,7 @@ module.exports = async function handler(req, res) {
     .map((k) => (k || "").trim())
     .filter(Boolean);
 
-  let elevenError = "ELEVENLABS_VOICE_ID atau ELEVENLABS_API_KEY belum diisi di Vercel";
+  let elevenError = "ElevenLabs belum dikonfigurasi";
 
   if (voiceId && keys.length) {
     const elevenResult = await tryElevenLabs(cleanText, rate, voiceId, keys);
@@ -157,7 +190,6 @@ module.exports = async function handler(req, res) {
       "gemini-tts",
     );
   } catch (error) {
-    console.error("All Gali audio providers failed:", elevenError, "|", error.message);
     return sendJson(res, 502, {
       error: `${elevenError} | Fallback: ${error.message}`,
     });
