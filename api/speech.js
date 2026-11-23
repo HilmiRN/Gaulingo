@@ -1,5 +1,5 @@
 const ELEVENLABS_URL = "https://api.elevenlabs.io/v1/text-to-speech";
-const GEMINI_TTS_MODEL = "gemini-3.8-flash-lite-tts";
+const GEMINI_TTS_MODEL = "gemini-2.5-flash-preview-tts";
 
 function sendJson(res, status, body) {
   return res.status(status).json(body);
@@ -14,7 +14,7 @@ function sendAudio(res, audio, mimeType, provider) {
 }
 
 async function tryElevenLabs(text, rate, voiceId, keys) {
-  let lastStatus = 0;
+  let lastError = "ElevenLabs gagal tanpa detail";
 
   for (let index = 0; index < keys.length; index++) {
     try {
@@ -45,29 +45,25 @@ async function tryElevenLabs(text, rate, voiceId, keys) {
         if (audio.length) return { audio, provider: `elevenlabs-${index + 1}` };
       }
 
-      lastStatus = upstream.status;
       const detail = await upstream.text().catch(() => "");
-      console.error(
-        `ElevenLabs account ${index + 1} failed:`,
-        lastStatus,
-        detail.slice(0, 300),
-      );
-      if (![401, 402, 403, 429].includes(lastStatus) && lastStatus < 500) break;
+      lastError = `ElevenLabs (${upstream.status}): ${detail.slice(0, 200)}`;
+      console.error(`ElevenLabs account ${index + 1} failed:`, lastError);
+
+      if (![401, 402, 403, 429].includes(upstream.status) && upstream.status < 500) {
+        break;
+      }
     } catch (error) {
-      console.error(
-        `ElevenLabs account ${index + 1} request failed:`,
-        error.message,
-      );
-      lastStatus = 502;
+      lastError = `ElevenLabs request error: ${error.message}`;
+      console.error(`ElevenLabs account ${index + 1} request failed:`, error.message);
     }
   }
 
-  return { audio: null, lastStatus };
+  return { audio: null, lastError };
 }
 
 async function tryGeminiTts(text) {
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey) throw new Error("GEMINI_API_KEY is not configured");
+  const apiKey = (process.env.GEMINI_API_KEY || "").trim();
+  if (!apiKey) throw new Error("GEMINI_API_KEY belum diatur di Vercel");
 
   const upstream = await fetch(
     `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TTS_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
@@ -75,17 +71,10 @@ async function tryGeminiTts(text) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        systemInstruction: {
-          parts: [
-            {
-              text: "You are a text-to-speech engine. Speak ONLY the exact text provided by the user. Never read instructions, labels, explanations, or metadata. Do not add, translate, or modify any words.",
-            },
-          ],
-        },
         contents: [
           {
             role: "user",
-            parts: [{ text: text.trim() }],
+            parts: [{ text: `Bacakan teks ini persis apa adanya tanpa tambahan kata: ${text.trim()}` }],
           },
         ],
         generationConfig: {
@@ -104,7 +93,7 @@ async function tryGeminiTts(text) {
   const result = await upstream.json().catch(() => ({}));
 
   if (!upstream.ok) {
-    throw new Error(result?.error?.message || "Gemini TTS failed");
+    throw new Error(result?.error?.message || `Gemini TTS HTTP ${upstream.status}`);
   }
 
   const audioPart = result?.candidates?.[0]?.content?.parts?.find(
@@ -113,7 +102,7 @@ async function tryGeminiTts(text) {
       part?.inlineData?.mimeType?.startsWith("audio/"),
   );
 
-  if (!audioPart) throw new Error("Gemini TTS returned no audio");
+  if (!audioPart) throw new Error("Gemini TTS tidak mengembalikan audio");
 
   return {
     audio: Buffer.from(audioPart.inlineData.data, "base64"),
@@ -135,13 +124,17 @@ module.exports = async function handler(req, res) {
   }
 
   const cleanText = text.trim();
-  const voiceId = process.env.ELEVENLABS_VOICE_ID;
+  const voiceId = (process.env.ELEVENLABS_VOICE_ID || "").trim();
   const keys = [
     process.env.ELEVENLABS_API_KEY_1,
     process.env.ELEVENLABS_API_KEY_2,
-  ].filter(Boolean);
+    process.env.ELEVENLABS_API_KEY,
+  ]
+    .map((k) => (k || "").trim())
+    .filter(Boolean);
 
-  // Priority 1 and 2: the two independent ElevenLabs accounts.
+  let elevenError = "ELEVENLABS_VOICE_ID atau ELEVENLABS_API_KEY belum diisi di Vercel";
+
   if (voiceId && keys.length) {
     const elevenResult = await tryElevenLabs(cleanText, rate, voiceId, keys);
     if (elevenResult.audio) {
@@ -152,13 +145,9 @@ module.exports = async function handler(req, res) {
         elevenResult.provider,
       );
     }
-  } else {
-    console.warn(
-      "ElevenLabs credentials or voice ID missing; proceeding to Gemini TTS fallback.",
-    );
+    elevenError = elevenResult.lastError;
   }
 
-  // Priority 3: Gemini TTS. The browser receives a WAV file and can play it normally.
   try {
     const geminiResult = await tryGeminiTts(cleanText);
     return sendAudio(
@@ -168,10 +157,9 @@ module.exports = async function handler(req, res) {
       "gemini-tts",
     );
   } catch (error) {
-    console.error("All Gali audio providers failed:", error.message);
+    console.error("All Gali audio providers failed:", elevenError, "|", error.message);
     return sendJson(res, 502, {
-      error:
-        "ElevenLabs dan Gemini Audio sedang tidak tersedia. Jawaban teks tetap bisa digunakan.",
+      error: `${elevenError} | Fallback: ${error.message}`,
     });
   }
 };
