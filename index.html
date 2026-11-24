@@ -190,13 +190,13 @@
             style="margin-top: clamp(14px, 2.6vh, 30px)"
           >
             <a
-              href="#situations-section"
+              href=""
               class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full"
             >
+            
               <span data-i18n="hero_explorer_button">Start exploring</span>
               <i class="ph-bold ph-arrow-right text-2xl"></i>
             </a>
-
             <a
               href="#"
               class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full"
@@ -510,9 +510,7 @@
         id="main-content"
         class="relative -mt-10 z-10 bg-krem rounded-t-5xl w-full px-0"
       >
-        <!-- situation -->
-                <!-- situation -->
-        <section id="situations-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+                <section id="situations-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
           <hgroup class="flex justify-between items-end">
             <div class="flex flex-col max-md:gap-2">
               <p
@@ -539,14 +537,16 @@
               </p>
             </div>
             <a
-              href="#"
-              class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit max-md:hidden"
+              href="/pages/stall.html"
+              class="flex px-5 py-3 items-center gap-2 rounded-full border-[1.5px] border-nila/50 text-nila font-semibold w-fit max-md:hidden hover:bg-nila hover:text-white transition-colors"
             >
               <span data-i18n="sit_see_all">See all 6 situations</span>
               <i class="ph-bold ph-arrow-right"></i>
             </a>
           </hgroup>
+
           <div class="my-10 w-full min-w-1/2 gap-10 flex max-xl:flex-col">
+            <!-- KARTU BESAR: STALL -->
             <div
               class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white max-w-2/5 w-full max-xl:max-w-none max-sm:p-7"
             >
@@ -568,9 +568,7 @@
               </svg>
 
               <div class="relative">
-                <div
-                  class="flex items-center justify-between gap-4 max-sm:gap-0"
-                >
+                <div class="flex items-center justify-between gap-4 max-sm:gap-0">
                   <p
                     class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5 max-sm:text-xs"
                     data-i18n="stall_badge"
@@ -599,65 +597,45 @@
                   Buying snacks, asking prices, and saying thanks at a small
                   food stall.
                 </p>
+
                 <ul class="mt-4.75 space-y-3">
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
+                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
                     <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Berapa harganya?
-                      </p>
-                      <p
-                        class="text-[13px] leading-4.5 text-nila/80"
-                        data-i18n="phrase_how_much"
-                      >
-                        How much is this?
-                      </p>
+                      <p class="text-lg font-semibold leading-6 text-nila">Berapa harganya?</p>
+                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_how_much">How much is this?</p>
                     </div>
                     <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
+                      type="button"
+                      onclick="playGaliAudio('Berapa harganya?', this)"
+                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
                   </li>
 
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
+                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
                     <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Boleh kurang?
-                      </p>
-                      <p
-                        class="text-[13px] leading-4.5 text-nila/80"
-                        data-i18n="phrase_cheaper"
-                      >
-                        Can it be cheaper?
-                      </p>
+                      <p class="text-lg font-semibold leading-6 text-nila">Boleh kurang?</p>
+                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_cheaper">Can it be cheaper?</p>
                     </div>
                     <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
+                      type="button"
+                      onclick="playGaliAudio('Boleh kurang?', this)"
+                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
                   </li>
 
-                  <li
-                    class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5"
-                  >
+                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
                     <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">
-                        Terima kasih, Bu!
-                      </p>
-                      <p
-                        class="text-[13px] leading-4.5 text-nila/80"
-                        data-i18n="phrase_thanks"
-                      >
-                        Thank you, ma'am!
-                      </p>
+                      <p class="text-lg font-semibold leading-6 text-nila">Terima kasih, Bu!</p>
+                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_thanks">Thank you, ma'am!</p>
                     </div>
                     <button
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110"
+                      type="button"
+                      onclick="playGaliAudio('Terima kasih, Bu!', this)"
+                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
@@ -665,7 +643,7 @@
                 </ul>
 
                 <a
-                  href="#"
+                  href="/pages/stall.html"
                   class="mt-4 inline-flex h-11 items-center gap-2.5 rounded-full border border-white/60 px-5 text-sm font-semibold transition hover:bg-white hover:text-nila focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
                 >
                   <span data-i18n="btn_open_stall">Open Stall</span>
@@ -673,17 +651,16 @@
                 </a>
               </div>
             </div>
-            <div
-              class="w-full grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none"
-            >
+
+            <!-- GRID 4 KARTU KANAN -->
+            <div class="w-full grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none">
               <!-- SCHOOL -->
-              <div
-                class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full grow"
+              <a
+                href="/pages/school.html"
+                class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full grow hover:-translate-y-1 transition-transform"
               >
                 <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
+                  <i class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
                   <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
                 </div>
                 <div>
@@ -693,22 +670,19 @@
                   >
                     SCHOOL
                   </h3>
-                  <p
-                    class="text-nila/80 text-sm font-semibold"
-                    data-i18n="card_school_desc"
-                  >
+                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_school_desc">
                     In class &amp; with teachers · 5 phrases
                   </p>
                 </div>
-              </div>
-              <!-- MINIBUS / ANGKOT -->
-              <div
-                class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full"
+              </a>
+
+              <!-- MINIBUS -->
+              <a
+                href="/pages/minibus.html"
+                class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
               >
                 <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
+                  <i class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
                   <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
                 </div>
                 <div>
@@ -718,21 +692,19 @@
                   >
                     MINIBUS
                   </h3>
-                  <p
-                    class="text-nila/80 text-sm font-semibold"
-                    data-i18n="card_minibus_desc"
-                  >
+                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_minibus_desc">
                     Getting around town · 6 phrases
                   </p>
                 </div>
-              </div>
-              <div
-                class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full"
+              </a>
+
+              <!-- SMALL TALK -->
+              <a
+                href="/pages/small-talk.html"
+                class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
               >
                 <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"
-                  ></i>
+                  <i class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
                   <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
                 </div>
                 <div>
@@ -742,22 +714,19 @@
                   >
                     SMALL TALK
                   </h3>
-                  <p
-                    class="text-nila/80 text-sm font-semibold"
-                    data-i18n="card_smalltalk_desc"
-                  >
+                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_smalltalk_desc">
                     Meeting new people · 10 phrases
                   </p>
                 </div>
-              </div>
+              </a>
+
               <!-- EMERGENCY -->
-              <div
-                class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full"
+              <a
+                href="/pages/emergency.html"
+                class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
               >
                 <div class="flex justify-between items-center">
-                  <i
-                    class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"
-                  ></i>
+                  <i class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"></i>
                   <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
                 </div>
                 <div>
@@ -767,17 +736,15 @@
                   >
                     EMERGENCY
                   </h3>
-                  <p
-                    class="text-white/85 text-sm font-semibold"
-                    data-i18n="card_emergency_desc"
-                  >
+                  <p class="text-white/85 text-sm font-semibold" data-i18n="card_emergency_desc">
                     When you need help · 6 phrases
                   </p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </section>
+
         <!-- how it works section -->
         <section id="how-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
           <hgroup class="flex flex-col max-md:gap-2">

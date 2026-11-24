@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@source "../script.js";
+@source "../index.html";
 @import "lenis/dist/lenis.css";
 @theme {
   /* color */
@@ -6,6 +8,7 @@
   --color-biru-aksen: #5b80be;
   --color-biru-muda: #c9daf2;
   --color-biru-pucat: #d6e4f7;
+  --color-mint: #dcece6;
   --color-pasir: #f2d2ae;
   --color-matahari: #fbe3b5;
   --color-bukit: #d98b5f;

@@ -3592,13 +3592,25 @@ document.addEventListener("DOMContentLoaded", () => {
   let galiAudioUrl = null;
   let galiAudioPlayer = null;
 
-    async function playGaliAudio(text, rate = 1, button = null) {
+      async function playGaliAudio(text, rateOrButton = 1, maybeButton = null) {
     if (!text) return;
+
+    let rate = 1;
+    let button = maybeButton;
+    if (typeof rateOrButton === "object" && rateOrButton !== null) {
+      button = rateOrButton;
+    } else if (typeof rateOrButton === "number") {
+      rate = rateOrButton;
+    }
+
     if (galiAudioPlayer) {
       galiAudioPlayer.pause();
       galiAudioPlayer = null;
     }
-    if (galiAudioUrl) URL.revokeObjectURL(galiAudioUrl);
+    if (galiAudioUrl) {
+      URL.revokeObjectURL(galiAudioUrl);
+      galiAudioUrl = null;
+    }
 
     const original = button?.innerHTML;
     const resetButton = () => {
@@ -3633,6 +3645,8 @@ document.addEventListener("DOMContentLoaded", () => {
       resetButton();
     }
   }
+
+  window.playGaliAudio = playGaliAudio;
 
   function jawabanFallback(question) {
     const q = question.toLowerCase();
@@ -4418,370 +4432,893 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 })();
 (() => {
-  const folderTabSituations = [
-    {
-      id: "STALL",
-      title: "STALL",
-      tag: "MOST POPULAR",
-      meta: "6 phrases · ID & Sunda",
-      desc: "Buying snacks, asking prices, and saying thanks at a small local shop.",
-      cardTheme: "bg-terakota text-white",
-      rowTheme: "bg-white text-nila",
-      btnTheme: "bg-nila text-white",
-      tabWrapClass: "justify-start",
-      bodyCorner: "rounded-tl-none rounded-tr-3xl rounded-b-3xl",
-      linkText: "Open Stall",
-      phrases: [
-        { id: "Berapa harganya?", en: "How much is this?" },
-        { id: "Boleh kurang?", en: "Can it be cheaper?" },
-        { id: "Terima kasih, Bu!", en: "Thank you, ma'am!" }
-      ]
+  const sitFilterDict = {
+    en: {
+      filter_all: "All",
+      filter_everyday: "Everyday",
+      filter_travel: "Travel",
+      filter_urgent: "Urgent",
+      sit_count_6: "6 situations",
+      sort_most_used: "Most used",
+      sort_alphabetical: "Alphabetical (A-Z)",
+      sort_newest: "Newest"
     },
-    {
-      id: "SCHOOL",
-      title: "SCHOOL",
-      tag: "FOR STUDENTS",
-      meta: "6 phrases · ID & Sunda",
-      desc: "In class and in the hallway. Teachers, classmates, and the words that keep it polite.",
-      cardTheme: "bg-biru-muda text-nila",
-      rowTheme: "bg-nila text-white",
-      btnTheme: "bg-white text-nila",
-      tabWrapClass: "justify-start pl-16 sm:pl-36 md:pl-44",
-      bodyCorner: "rounded-3xl",
-      linkText: "Open School",
-      phrases: [
-        { id: "Permisi, Pak.", en: "Excuse me, sir." },
-        { id: "Boleh pinjam pulpen?", en: "May I borrow a pen?" },
-        { id: "Saya belum mengerti.", en: "I do not understand yet." }
-      ]
-    },
-    {
-      id: "MINIBUS",
-      title: "MINIBUS",
-      tag: "DAILY USE",
-      meta: "6 phrases · ID & Sunda",
-      desc: "Crossing town by angkot and ojek, and getting off at the right corner.",
-      cardTheme: "bg-pasir text-nila",
-      rowTheme: "bg-nila text-white",
-      btnTheme: "bg-white text-nila",
-      tabWrapClass: "justify-start pl-28 sm:pl-64 md:pl-84",
-      bodyCorner: "rounded-3xl",
-      linkText: "Open Minibus",
-      phrases: [
-        { id: "Kiri, Bang!", en: "Stop here, please!" },
-        { id: "Ongkosnya berapa?", en: "How much is the fare?" },
-        { id: "Masih jauh?", en: "Is it still far?" }
-      ]
-    },
-    {
-      id: "SMALL TALK",
-      title: "SMALL TALK",
-      tag: "START HERE",
-      meta: "6 phrases · ID & Sunda",
-      desc: "The first two minutes with someone new, and how to keep it going.",
-      cardTheme: "bg-matahari text-nila",
-      rowTheme: "bg-nila text-white",
-      btnTheme: "bg-white text-nila",
-      tabWrapClass: "justify-end pr-24 sm:pr-56 md:pr-80",
-      bodyCorner: "rounded-3xl",
-      linkText: "Open Small talk",
-      phrases: [
-        { id: "Kenalin, aku Sam.", en: "Nice to meet you, I'm Sam." },
-        { id: "Asalnya dari mana?", en: "Where are you from?" },
-        { id: "Sampai ketemu lagi!", en: "See you again!" }
-      ]
-    },
-    {
-      id: "FOOD",
-      title: "FOOD",
-      tag: "MOST ASKED",
-      meta: "6 phrases · ID & Sunda",
-      desc: "Ordering a meal, asking what is in it, and saying it was good.",
-      cardTheme: "bg-mint text-nila",
-      rowTheme: "bg-nila text-white",
-      btnTheme: "bg-white text-nila",
-      tabWrapClass: "justify-end pr-16 sm:pr-36 md:pr-48",
-      bodyCorner: "rounded-3xl",
-      linkText: "Open Food",
-      phrases: [
-        { id: "Nggak pedas, ya.", en: "Not spicy, please." },
-        { id: "Ada yang tanpa daging?", en: "Is there anything without meat?" },
-        { id: "Enak banget!", en: "This is really good!" }
-      ]
-    },
-    {
-      id: "EMERGENCY",
-      title: "EMERGENCY",
-      tag: "KEEP HANDY",
-      meta: "6 phrases · ID & Sunda",
-      desc: "When you need help fast and there is no time to look a word up.",
-      cardTheme: "bg-nila text-white",
-      rowTheme: "bg-white text-nila",
-      btnTheme: "bg-nila text-white",
-      tabWrapClass: "justify-end",
-      bodyCorner: "rounded-tl-3xl rounded-tr-none rounded-b-3xl",
-      linkText: "Open Emergency",
-      phrases: [
-        { id: "Tolong!", en: "Help!" },
-        { id: "Rumah sakit di mana?", en: "Where is the hospital?" },
-        { id: "Saya tersesat.", en: "I am lost." }
-      ]
+    id: {
+      filter_all: "Semua",
+      filter_everyday: "Sehari-hari",
+      filter_travel: "Perjalanan",
+      filter_urgent: "Darurat",
+      sit_count_6: "6 situasi",
+      sort_most_used: "Paling sering",
+      sort_alphabetical: "Abjad (A-Z)",
+      sort_newest: "Terbaru"
     }
-  ];
+  };
 
-  const audioCache = new Map();
-  let activeAudio = null;
-  let activeBtn = null;
-
-  function resetPlayBtn(btn) {
-    if (!btn) return;
-    btn.disabled = false;
-    btn.textContent = "▶";
+  function getActiveLang() {
+    const activeBtn = document.querySelector('.site-lang__item[aria-pressed="true"]');
+    return activeBtn && activeBtn.textContent.trim().toUpperCase() === "ID" ? "id" : "en";
   }
 
-  async function playPhrase(text, btnElement) {
-    if (activeAudio && activeBtn === btnElement) {
-      activeAudio.pause();
-      activeAudio = null;
-      resetPlayBtn(activeBtn);
-      activeBtn = null;
-      return;
-    }
+  function applySitFilterLang(lang = getActiveLang()) {
+    const pack = sitFilterDict[lang] || sitFilterDict.en;
 
-    if (activeAudio) {
-      activeAudio.pause();
-      activeAudio = null;
-      resetPlayBtn(activeBtn);
-    }
-
-    activeBtn = btnElement;
-    btnElement.disabled = true;
-    btnElement.innerHTML = `<span class="text-xs font-bold animate-pulse">...</span>`;
-
-    try {
-      let audioUrl = audioCache.get(text);
-
-      if (!audioUrl) {
-        const res = await fetch("/api/speech", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text, rate: 1 })
-        });
-
-        if (!res.ok) {
-          const errData = await res.json().catch(() => ({}));
-          throw new Error(errData.error || "Gagal memutar audio dari server.");
-        }
-
-        const blob = await res.blob();
-        audioUrl = URL.createObjectURL(blob);
-        audioCache.set(text, audioUrl);
-      }
-
-      const audio = new Audio(audioUrl);
-      activeAudio = audio;
-
-      audio.onplay = () => {
-        btnElement.disabled = false;
-        btnElement.textContent = "❚❚";
-      };
-
-      audio.onended = () => {
-        resetPlayBtn(btnElement);
-        if (activeBtn === btnElement) {
-          activeAudio = null;
-          activeBtn = null;
-        }
-      };
-
-      audio.onerror = () => {
-        resetPlayBtn(btnElement);
-        activeAudio = null;
-        activeBtn = null;
-      };
-
-      await audio.play();
-    } catch (err) {
-      console.error("Audio error:", err);
-      resetPlayBtn(btnElement);
-      activeAudio = null;
-      activeBtn = null;
-      alert(err.message);
-    }
-  }
-
-  function renderSingleFolderHTML(selectedId) {
-    const item =
-      folderTabSituations.find((s) => s.id === selectedId) || folderTabSituations[0];
-
-    return `
-      <!-- Bar Navigasi Tab Atas & Tombol Back -->
-      <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-2">
-        <div class="flex flex-wrap items-center gap-2.5">
-          ${folderTabSituations
-            .map((tab) => {
-              const isActive = tab.id === item.id;
-              return `
-                <button
-                  type="button"
-                  data-switch-tab="${tab.id}"
-                  class="gali-switch-tab-btn px-4 py-2 rounded-full text-xs font-unbounded font-bold uppercase transition cursor-pointer ${
-                    isActive
-                      ? `${tab.cardTheme} shadow-sm scale-105`
-                      : "bg-white/70 text-nila/80 hover:bg-white hover:text-nila"
-                  }"
-                >
-                  ${tab.title}
-                </button>
-              `;
-            })
-            .join("")}
-        </div>
-
-        <button
-          type="button"
-          id="gali-back-overview-btn"
-          class="inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-bukit text-nila font-bold text-xs md:text-sm hover:bg-bukit/15 transition cursor-pointer"
-        >
-          ← Back
-        </button>
-      </div>
-
-      <!-- 1 Kartu Folder Aktif -->
-      <div class="w-full mt-4">
-        <div class="flex ${item.tabWrapClass}">
-          <div class="${item.cardTheme} px-8 pt-3.5 pb-2.5 rounded-t-2xl font-unbounded font-black text-lg md:text-2xl tracking-wide uppercase leading-none">
-            ${item.title}
-          </div>
-        </div>
-
-        <div class="${item.cardTheme} p-7 md:p-9 ${item.bodyCorner} shadow-sm">
-          <div class="flex justify-between items-center mb-3 text-xs">
-            <span class="px-3 py-1 rounded-full font-bold uppercase tracking-wider bg-black/10">
-              ${item.tag}
-            </span>
-            <span class="opacity-85 font-medium">${item.meta}</span>
-          </div>
-
-          <p class="text-sm md:text-base mb-6 opacity-95">${item.desc}</p>
-
-          <div class="flex flex-col gap-3.5 mb-7">
-            ${item.phrases
-              .map(
-                (phrase) => `
-              <div class="${item.rowTheme} flex items-center justify-between px-5 py-4 rounded-2xl shadow-xs">
-                <div>
-                  <div class="font-bold text-base md:text-lg leading-tight">${phrase.id}</div>
-                  <div class="text-xs opacity-75 mt-1">${phrase.en}</div>
-                </div>
-                <button
-                  type="button"
-                  data-phrase="${phrase.id.replace(/"/g, "&quot;")}"
-                  class="gali-tab-play-btn ${item.btnTheme} w-10 h-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 active:scale-95 transition cursor-pointer text-xs"
-                  aria-label="Play audio ${phrase.id}"
-                >
-                  ▶
-                </button>
-              </div>
-            `
-              )
-              .join("")}
-          </div>
-
-          <button
-            type="button"
-            class="px-5 py-2.5 rounded-full border border-current text-xs font-semibold hover:bg-black/10 transition cursor-pointer"
-          >
-            ${item.linkText}
-          </button>
-        </div>
-      </div>
-    `;
-  }
-
-  function initSituationSwitcher() {
-    const allElements = Array.from(document.querySelectorAll("h1, h2, h3, div, p, span"));
-    const titleEl = allElements.find(
-      (el) => el.children.length <= 2 && /find your\s+situation/i.test(el.textContent)
-    );
-    if (!titleEl) return;
-
-    const section =
-      titleEl.closest("section") ||
-      titleEl.closest("main > div") ||
-      titleEl.parentElement.parentElement;
-    if (!section) return;
-
-    const cardsContainer = Array.from(section.children).find(
-      (child) => child.textContent.includes("SCHOOL") && child.textContent.includes("MINIBUS")
-    );
-    if (!cardsContainer) return;
-
-    const tabsWrapper = document.createElement("div");
-    tabsWrapper.className = "hidden mt-10";
-    cardsContainer.insertAdjacentElement("afterend", tabsWrapper);
-
-    const openSingleTab = (targetId = "STALL") => {
-      tabsWrapper.innerHTML = renderSingleFolderHTML(targetId);
-      cardsContainer.classList.add("hidden");
-      tabsWrapper.classList.remove("hidden");
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
-    const closeTabs = () => {
-      tabsWrapper.classList.add("hidden");
-      cardsContainer.classList.remove("hidden");
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
-
-    tabsWrapper.addEventListener("click", (e) => {
-      if (e.target.closest("#gali-back-overview-btn")) {
-        closeTabs();
-        return;
-      }
-
-      const switchBtn = e.target.closest(".gali-switch-tab-btn");
-      if (switchBtn) {
-        const nextId = switchBtn.getAttribute("data-switch-tab");
-        if (nextId) openSingleTab(nextId);
-        return;
-      }
-
-      const playBtn = e.target.closest(".gali-tab-play-btn");
-      if (playBtn) {
-        e.stopPropagation();
-        const text = playBtn.getAttribute("data-phrase");
-        if (text) playPhrase(text, playBtn);
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (pack[key]) {
+        el.textContent = pack[key];
       }
     });
 
-    section.addEventListener(
-      "click",
-      (e) => {
-        if (!tabsWrapper.classList.contains("hidden")) return;
+    // Pastikan label sort aktif ikut ter-update sesuai opsi yang sedang dipilih
+    const activeSortOpt = document.querySelector(".sort-option.bg-nila\\/10");
+    const sortLabel = document.getElementById("sort-current-label");
+    if (activeSortOpt && sortLabel) {
+      const sortKey = activeSortOpt.getAttribute("data-i18n");
+      if (sortKey && pack[sortKey]) {
+        sortLabel.setAttribute("data-i18n", sortKey);
+        sortLabel.textContent = pack[sortKey];
+      }
+    }
 
-        const btn = e.target.closest("button");
-        if (btn && !/open|see all/i.test(btn.textContent)) return;
-
-        const target = e.target.closest("a, button, article, div");
-        if (!target || !section.contains(target)) return;
-
-        const text = target.textContent.toUpperCase();
-        const matched = folderTabSituations.find((item) => text.includes(item.id));
-
-        if (matched || text.includes("SEE ALL")) {
-          e.preventDefault();
-          e.stopPropagation();
-          openSingleTab(matched ? matched.id : "STALL");
-        }
-      },
-      true
-    );
+    // Update teks jumlah situasi dinamis (misal saat filter kategori diklik)
+    const countEl = document.getElementById("situation-count");
+    if (countEl) {
+      const numMatch = countEl.textContent.match(/\d+/);
+      const total = numMatch ? numMatch[0] : "6";
+      countEl.textContent = lang === "id" ? `${total} situasi` : `${total} situations`;
+    }
   }
 
+  // Jalankan saat tombol EN / ID diklik
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".site-lang__item")) {
+      setTimeout(() => applySitFilterLang(), 0);
+    }
+
+    // Jika user ganti opsi sort, pastikan atribut data-i18n label ikut diperbarui
+    const sortOpt = e.target.closest(".sort-option");
+    if (sortOpt) {
+      const sortLabel = document.getElementById("sort-current-label");
+      const key = sortOpt.getAttribute("data-i18n");
+      if (sortLabel && key) {
+        sortLabel.setAttribute("data-i18n", key);
+      }
+      setTimeout(() => applySitFilterLang(), 0);
+    }
+
+    // Jika user klik tombol filter kategori, sesuaikan bahasa teks jumlahnya
+    if (e.target.closest(".filter-btn")) {
+      setTimeout(() => applySitFilterLang(), 0);
+    }
+  });
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initSituationSwitcher);
+    document.addEventListener("DOMContentLoaded", () => applySitFilterLang());
   } else {
-    initSituationSwitcher();
+    applySitFilterLang();
+  }
+})();
+  (() => {
+  const stallPhrasesData = {
+    Indonesia: [
+      {
+        phrase: "Berapa harganya?",
+        phonetic: "beh-RAH-pah har-GAH-nyah",
+        en: "“How much is this?”",
+        id: "“Sabaraha hargana?” (Sunda)",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Boleh kurang?",
+        phonetic: "BO-leh KOO-rang",
+        en: "“Can it be cheaper?”",
+        id: "“Tiasa kirang?” (Sunda)",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Saya mau yang ini.",
+        phonetic: "SAH-yah mau yang EE-nee",
+        en: "“I would like this one.”",
+        id: "“Abdi hoyong nu ieu.” (Sunda)",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Nggak pedas, ya.",
+        phonetic: "ngGAK puh-DAHS yah",
+        en: "“Not spicy, please.”",
+        id: "“Teu lada, nya.” (Sunda)",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Totalnya berapa?",
+        phonetic: "toh-TAL-nyah beh-RAH-pah",
+        en: "“What is the total?”",
+        id: "“Jumlahna sabaraha?” (Sunda)",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Terima kasih, Bu!",
+        phonetic: "teh-REE-mah KAH-see boo",
+        en: "“Thank you, ma’am!”",
+        id: "“Hatur nuhun, Bu!” (Sunda)",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Sunda: [
+      {
+        phrase: "Sabaraha hargana?",
+        phonetic: "sah-bah-RAH-hah har-GAH-nah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Tiasa kirang?",
+        phonetic: "tee-AH-sah KEE-rang",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Abdi hoyong nu ieu.",
+        phonetic: "AB-dee HO-yong noo EE-euh",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Teu lada, nya.",
+        phonetic: "teuh LAH-dah nyah",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Jumlahna sabaraha?",
+        phonetic: "joom-LAH-nah sah-bah-RAH-hah",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Hatur nuhun, Bu!",
+        phonetic: "HAH-toor NOO-hoon boo",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Jawa: [
+      {
+        phrase: "Pinten regine?",
+        phonetic: "PIN-ten reh-GEE-neh",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Saged kirang?",
+        phonetic: "SAH-ged KEE-rang",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Kula badhe ingkang niki.",
+        phonetic: "KOO-law BAH-deh ING-kang NEE-kee",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Mboten pedhes, nggih.",
+        phonetic: "MBOH-ten PUH-des nggih",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Sedaya pinten?",
+        phonetic: "seh-DAW-yaw PIN-ten",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Matur nuwun, Bu!",
+        phonetic: "MAH-toor NOO-woon boo",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Minang: [
+      {
+        phrase: "Bara haragonyo?",
+        phonetic: "BAH-rah hah-rah-GO-nyo",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Buliah kurang?",
+        phonetic: "BOO-lee-ah KOO-rang",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Ambo nio nan iko.",
+        phonetic: "AM-bo NEE-o nan EE-ko",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Indak padeh, yo.",
+        phonetic: "IN-dak PAH-deh yo",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Bara kasadonyo?",
+        phonetic: "BAH-rah kah-sah-DO-nyo",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Tarimo kasih, Bu!",
+        phonetic: "tah-REE-mo KAH-sih boo",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Bali: [
+      {
+        phrase: "Kuda ajine?",
+        phonetic: "KOO-dah ah-JEE-neh",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Dados kirangin?",
+        phonetic: "DAH-dos kee-RAH-ngin",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Tiang kayun sane niki.",
+        phonetic: "TEE-ang KAH-yoon SAH-neh NEE-kee",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Ten lalah, nggih.",
+        phonetic: "ten LAH-lah nggih",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Kuda sami?",
+        phonetic: "KOO-dah SAH-mee",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Suksma, Bu!",
+        phonetic: "SOOK-smah boo",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Betawi: [
+      {
+        phrase: "Berapaan harganya?",
+        phonetic: "beh-RAH-pah-an har-GAH-nyah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Boleh kurang kagak?",
+        phonetic: "BO-leh KOO-rang KAH-gak",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Aye mau nyang ini.",
+        phonetic: "AH-yeh mau nyang EE-nee",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Kagak pedes, ye.",
+        phonetic: "KAH-gak PUH-des yeh",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Semuanya berapaan?",
+        phonetic: "seh-MOO-ah-nyah beh-RAH-pah-an",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Makasih ye, Mpok!",
+        phonetic: "mah-KAH-sih yeh mpok",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Batak: [
+      {
+        phrase: "Sadia argana?",
+        phonetic: "sah-DEE-ah ar-GAH-nah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Boi do morot?",
+        phonetic: "BO-ee do MO-rot",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Na on do na huallang.",
+        phonetic: "nah ON do nah hoo-AL-lang",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Unang pola pedas, da.",
+        phonetic: "OO-nang PO-lah PUH-das dah",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Sadia sude?",
+        phonetic: "sah-DEE-ah SOO-deh",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Mauliate, Inang!",
+        phonetic: "mau-lee-AH-teh EE-nang",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Bugis: [
+      {
+        phrase: "Siaga ellinna?",
+        phonetic: "see-AH-gah el-LIN-nah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Weddingngi rikurang?",
+        phonetic: "wed-DING-ngee ree-KOO-rang",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Iyae uelo.",
+        phonetic: "ee-YAH-eh oo-EH-lo",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Aja mapeddi, di.",
+        phonetic: "AH-jah mah-PED-dee dee",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Siaga maneng?",
+        phonetic: "see-AH-gah MAH-neng",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Tarima kasi, Indo!",
+        phonetic: "tah-REE-mah KAH-see IN-do",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Banjar: [
+      {
+        phrase: "Barapa harganya?",
+        phonetic: "bah-RAH-pah har-GAH-nyah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Kawa kurang lah?",
+        phonetic: "KAH-wah KOO-rang lah",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Ulun handak nang ini.",
+        phonetic: "OO-loon HAN-dak nang EE-nee",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Kada padas, lah.",
+        phonetic: "KAH-dah PAH-das lah",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Barapa samunyaan?",
+        phonetic: "bah-RAH-pah sah-moo-NYAH-an",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Tarima kasih, Acil!",
+        phonetic: "tah-REE-mah KAH-sih AH-chil",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Papua: [
+      {
+        phrase: "Berapa de pu harga?",
+        phonetic: "beh-RAH-pah deh poo HAR-gah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Bisa kurang ka?",
+        phonetic: "BEE-sah KOO-rang kah",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Sa mau yang ini.",
+        phonetic: "sah MAU yang EE-nee",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Tra usah pedis, e.",
+        phonetic: "trah OO-sah PUH-dis eh",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Semua berapa?",
+        phonetic: "seh-MOO-ah beh-RAH-pah",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Terima kasih, Mama!",
+        phonetic: "teh-REE-mah KAH-sih MAH-mah",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ],
+    Makassar: [
+      {
+        phrase: "Siapa ballinna?",
+        phonetic: "see-AH-pah bal-LIN-nah",
+        en: "“How much is this?”",
+        id: "“Berapa harganya?”",
+        tagEn: "Asking price",
+        tagId: "Menanyakan harga"
+      },
+      {
+        phrase: "Kullei nikurangi?",
+        phonetic: "kool-LEH-ee nee-koo-RAH-ngee",
+        en: "“Can it be cheaper?”",
+        id: "“Boleh kurang?”",
+        tagEn: "Bargaining",
+        tagId: "Menawar"
+      },
+      {
+        phrase: "Kueroki anne.",
+        phonetic: "koo-eh-RO-kee AN-neh",
+        en: "“I would like this one.”",
+        id: "“Saya mau yang ini.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Teaki pedisi, di.",
+        phonetic: "teh-AH-kee peh-DEE-see dee",
+        en: "“Not spicy, please.”",
+        id: "“Nggak pedas, ya.”",
+        tagEn: "Ordering",
+        tagId: "Memesan"
+      },
+      {
+        phrase: "Siapa ngaseng?",
+        phonetic: "see-AH-pah NGAH-seng",
+        en: "“What is the total?”",
+        id: "“Totalnya berapa?”",
+        tagEn: "Paying",
+        tagId: "Membayar"
+      },
+      {
+        phrase: "Tarima kasi, Daeng!",
+        phonetic: "tah-REE-mah KAH-see DAH-eng",
+        en: "“Thank you, ma’am!”",
+        id: "“Terima kasih, Bu!”",
+        tagEn: "Politeness",
+        tagId: "Kesopanan"
+      }
+    ]
+  };
+
+  const regionSubtitles = {
+    en: {
+      Minang: "West Sumatra",
+      Bali: "Bali",
+      Sunda: "West Java",
+      Bugis: "South Sulawesi",
+      Jawa: "Central & East Java",
+      Batak: "North Sumatra",
+      Betawi: "Jakarta",
+      Banjar: "South Kalimantan",
+      Papua: "Papua",
+      Makassar: "South Sulawesi"
+    },
+    id: {
+      Minang: "Sumatra Barat",
+      Bali: "Bali",
+      Sunda: "Jawa Barat",
+      Bugis: "Sulawesi Selatan",
+      Jawa: "Jawa Tengah & Timur",
+      Batak: "Sumatra Utara",
+      Betawi: "Jakarta",
+      Banjar: "Kalimantan Selatan",
+      Papua: "Papua",
+      Makassar: "Sulawesi Selatan"
+    }
+  };
+
+  const uiDict = {
+    en: {
+      filter_all: "All",
+      filter_everyday: "Everyday",
+      filter_travel: "Travel",
+      filter_urgent: "Urgent",
+      sit_count_6: "6 situations",
+      sort_most_used: "Most used",
+      sort_alphabetical: "Alphabetical (A-Z)",
+      sort_newest: "Newest",
+      stall_crumb: "Stall",
+      stall_hero_title: "Stall",
+      stall_hero_desc:
+        "The small shop on every corner. Snacks, drinks, a quick chat, and the price you ask for yourself.",
+      stall_pill_phrases: "6 phrases",
+      stall_pill_langs: "Indonesian + 10 local languages",
+      stall_pill_time: "About 4 minutes",
+      stall_list_heading: "Phrases for the stall",
+      stall_local_lang: "Local Language",
+      stall_tips_label: "CULTURE TIPS",
+      stall_tip1_title: "Use your right hand",
+      stall_tip1_desc:
+        "Give and take money or goods with your right hand. The left hand is considered impolite.",
+      stall_tip2_title: "Bargain, but gently",
+      stall_tip2_desc:
+        "Asking for a lower price is normal at a traditional market. At a minimarket the price is fixed.",
+      stall_stuck_title: "Stuck on one of these?",
+      stall_stuck_desc:
+        "Ask Gali how to say it your way, or whether it sounds polite.",
+      stall_stuck_btn: "Ask Gali",
+      stall_also_label: "ALSO USEFUL HERE",
+      stall_also1_title: "FOOD",
+      stall_also1_desc: "Ordering a meal",
+      stall_also2_title: "Minibus",
+      stall_also2_desc: "Getting there",
+      stall_also3_title: "SMALL TALK",
+      stall_also3_desc: "Small talk after",
+      stall_prev_label: "Previous",
+      stall_prev_title: "EMERGENCY",
+      stall_next_label: "Next",
+      stall_next_title: "School"
+    },
+    id: {
+      filter_all: "Semua",
+      filter_everyday: "Sehari-hari",
+      filter_travel: "Perjalanan",
+      filter_urgent: "Darurat",
+      sit_count_6: "6 situasi",
+      sort_most_used: "Paling sering",
+      sort_alphabetical: "Abjad (A-Z)",
+      sort_newest: "Terbaru",
+      stall_crumb: "Warung",
+      stall_hero_title: "Warung",
+      stall_hero_desc:
+        "Toko kecil di setiap sudut jalan. Camilan, minuman, obrolan singkat, dan menawar harga sendiri.",
+      stall_pill_phrases: "6 frasa",
+      stall_pill_langs: "Bahasa Indonesia + 10 bahasa daerah",
+      stall_pill_time: "Sekitar 4 menit",
+      stall_list_heading: "Frasa di warung",
+      stall_local_lang: "Bahasa Daerah",
+      stall_tips_label: "TIPS BUDAYA",
+      stall_tip1_title: "Gunakan tangan kanan",
+      stall_tip1_desc:
+        "Berikan dan terima uang atau barang dengan tangan kanan. Tangan kiri dianggap kurang sopan.",
+      stall_tip2_title: "Menawar dengan ramah",
+      stall_tip2_desc:
+        "Menawar harga adalah hal wajar di pasar tradisional. Di minimarket, harganya sudah pas.",
+      stall_stuck_title: "Bingung sama salah satunya?",
+      stall_stuck_desc:
+        "Tanya Gali cara mengucapkannya dengan gayamu, atau apakah sudah terdengar sopan.",
+      stall_stuck_btn: "Tanya Gali",
+      stall_also_label: "BERGUNA JUGA DI SINI",
+      stall_also1_title: "MAKANAN",
+      stall_also1_desc: "Memesan makanan",
+      stall_also2_title: "Angkot",
+      stall_also2_desc: "Perjalanan ke sana",
+      stall_also3_title: "OBROLAN RINGAN",
+      stall_also3_desc: "Ngobrol setelahnya",
+      stall_prev_label: "Sebelumnya",
+      stall_prev_title: "DARURAT",
+      stall_next_label: "Selanjutnya",
+      stall_next_title: "Sekolah"
+    }
+  };
+
+  let activeDialect = "Indonesia";
+
+  function getActiveUiLang() {
+    const activeBtn = document.querySelector('.site-lang__item[aria-pressed="true"]');
+    return activeBtn && activeBtn.textContent.trim().toUpperCase() === "ID" ? "id" : "en";
+  }
+
+  function renderStallPhrases() {
+    const listItems = document.querySelectorAll("ol > li");
+    if (!listItems.length) return;
+
+    const uiLang = getActiveUiLang();
+    const phrases = stallPhrasesData[activeDialect] || stallPhrasesData.Indonesia;
+
+    listItems.forEach((li, idx) => {
+      const item = phrases[idx];
+      if (!item) return;
+
+      const heading = li.querySelector("h3");
+      const metaPs = li.querySelectorAll("div > div > p");
+      const playBtn = li.querySelector("button");
+
+      if (heading) heading.textContent = item.phrase;
+      if (metaPs[0]) metaPs[0].textContent = uiLang === "id" ? item.id : item.en;
+      if (metaPs[1]) metaPs[1].textContent = item.phonetic;
+      if (metaPs[2]) metaPs[2].textContent = uiLang === "id" ? item.tagId : item.tagEn;
+
+      if (playBtn) {
+        playBtn.onclick = () => {
+          if (window.playGaliAudio) window.playGaliAudio(item.phrase, playBtn);
+        };
+      }
+    });
+  }
+
+  function syncDropdownRegionSubtitles(uiLang) {
+    const daerahList = document.getElementById("daerah-list");
+    if (!daerahList) return;
+    const subMap = regionSubtitles[uiLang] || regionSubtitles.en;
+
+    daerahList.querySelectorAll("button, div[role='option'], a").forEach((row) => {
+      const spans = row.querySelectorAll("span, p");
+      if (spans.length >= 2) {
+        const regionName = spans[0].textContent.trim();
+        if (subMap[regionName]) {
+          spans[1].textContent = subMap[regionName];
+        }
+      }
+    });
+  }
+
+  function applyAllTranslations() {
+    const uiLang = getActiveUiLang();
+    const pack = uiDict[uiLang] || uiDict.en;
+
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (pack[key]) {
+        el.textContent = pack[key];
+      }
+    });
+
+    const activeSortOpt = document.querySelector(".sort-option.bg-nila\\/10");
+    const sortLabel = document.getElementById("sort-current-label");
+    if (activeSortOpt && sortLabel) {
+      const sortKey = activeSortOpt.getAttribute("data-i18n");
+      if (sortKey && pack[sortKey]) {
+        sortLabel.setAttribute("data-i18n", sortKey);
+        sortLabel.textContent = pack[sortKey];
+      }
+    }
+
+    const countEl = document.getElementById("situation-count");
+    if (countEl) {
+      const numMatch = countEl.textContent.match(/\d+/);
+      const total = numMatch ? numMatch[0] : "6";
+      countEl.textContent = uiLang === "id" ? `${total} situasi` : `${total} situations`;
+    }
+
+    renderStallPhrases();
+    syncDropdownRegionSubtitles(uiLang);
+  }
+
+  // Pantau pergantian tombol Indonesia vs Bahasa Daerah di stall.html
+  function watchDialectSwitcher() {
+    const btnIndo = document.getElementById("btn-indonesia");
+    const daerahLabel = document.getElementById("daerah-label");
+    const daerahList = document.getElementById("daerah-list");
+
+    if (btnIndo) {
+      btnIndo.addEventListener("click", () => {
+        activeDialect = "Indonesia";
+        renderStallPhrases();
+      });
+    }
+
+    if (daerahList) {
+      daerahList.addEventListener("click", () => {
+        setTimeout(() => {
+          const picked = daerahLabel ? daerahLabel.textContent.trim() : "Sunda";
+          if (stallPhrasesData[picked]) {
+            activeDialect = picked;
+            renderStallPhrases();
+          }
+        }, 0);
+      });
+    }
+  }
+
+  document.addEventListener("click", (e) => {
+    if (e.target.closest(".site-lang__item")) {
+      setTimeout(applyAllTranslations, 0);
+    }
+
+    const sortOpt = e.target.closest(".sort-option");
+    if (sortOpt) {
+      const sortLabel = document.getElementById("sort-current-label");
+      const key = sortOpt.getAttribute("data-i18n");
+      if (sortLabel && key) sortLabel.setAttribute("data-i18n", key);
+      setTimeout(applyAllTranslations, 0);
+    }
+
+    if (e.target.closest(".filter-btn")) {
+      setTimeout(applyAllTranslations, 0);
+    }
+  });
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      watchDialectSwitcher();
+      applyAllTranslations();
+    });
+  } else {
+    watchDialectSwitcher();
+    applyAllTranslations();
   }
 })();
