@@ -4417,3 +4417,371 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!switcher.contains(e.target) && isOpen) toggleDropdown(false);
   });
 })();
+(() => {
+  const folderTabSituations = [
+    {
+      id: "STALL",
+      title: "STALL",
+      tag: "MOST POPULAR",
+      meta: "6 phrases · ID & Sunda",
+      desc: "Buying snacks, asking prices, and saying thanks at a small local shop.",
+      cardTheme: "bg-terakota text-white",
+      rowTheme: "bg-white text-nila",
+      btnTheme: "bg-nila text-white",
+      tabWrapClass: "justify-start",
+      bodyCorner: "rounded-tl-none rounded-tr-3xl rounded-b-3xl",
+      linkText: "Open Stall",
+      phrases: [
+        { id: "Berapa harganya?", en: "How much is this?" },
+        { id: "Boleh kurang?", en: "Can it be cheaper?" },
+        { id: "Terima kasih, Bu!", en: "Thank you, ma'am!" }
+      ]
+    },
+    {
+      id: "SCHOOL",
+      title: "SCHOOL",
+      tag: "FOR STUDENTS",
+      meta: "6 phrases · ID & Sunda",
+      desc: "In class and in the hallway. Teachers, classmates, and the words that keep it polite.",
+      cardTheme: "bg-biru-muda text-nila",
+      rowTheme: "bg-nila text-white",
+      btnTheme: "bg-white text-nila",
+      tabWrapClass: "justify-start pl-16 sm:pl-36 md:pl-44",
+      bodyCorner: "rounded-3xl",
+      linkText: "Open School",
+      phrases: [
+        { id: "Permisi, Pak.", en: "Excuse me, sir." },
+        { id: "Boleh pinjam pulpen?", en: "May I borrow a pen?" },
+        { id: "Saya belum mengerti.", en: "I do not understand yet." }
+      ]
+    },
+    {
+      id: "MINIBUS",
+      title: "MINIBUS",
+      tag: "DAILY USE",
+      meta: "6 phrases · ID & Sunda",
+      desc: "Crossing town by angkot and ojek, and getting off at the right corner.",
+      cardTheme: "bg-pasir text-nila",
+      rowTheme: "bg-nila text-white",
+      btnTheme: "bg-white text-nila",
+      tabWrapClass: "justify-start pl-28 sm:pl-64 md:pl-84",
+      bodyCorner: "rounded-3xl",
+      linkText: "Open Minibus",
+      phrases: [
+        { id: "Kiri, Bang!", en: "Stop here, please!" },
+        { id: "Ongkosnya berapa?", en: "How much is the fare?" },
+        { id: "Masih jauh?", en: "Is it still far?" }
+      ]
+    },
+    {
+      id: "SMALL TALK",
+      title: "SMALL TALK",
+      tag: "START HERE",
+      meta: "6 phrases · ID & Sunda",
+      desc: "The first two minutes with someone new, and how to keep it going.",
+      cardTheme: "bg-matahari text-nila",
+      rowTheme: "bg-nila text-white",
+      btnTheme: "bg-white text-nila",
+      tabWrapClass: "justify-end pr-24 sm:pr-56 md:pr-80",
+      bodyCorner: "rounded-3xl",
+      linkText: "Open Small talk",
+      phrases: [
+        { id: "Kenalin, aku Sam.", en: "Nice to meet you, I'm Sam." },
+        { id: "Asalnya dari mana?", en: "Where are you from?" },
+        { id: "Sampai ketemu lagi!", en: "See you again!" }
+      ]
+    },
+    {
+      id: "FOOD",
+      title: "FOOD",
+      tag: "MOST ASKED",
+      meta: "6 phrases · ID & Sunda",
+      desc: "Ordering a meal, asking what is in it, and saying it was good.",
+      cardTheme: "bg-mint text-nila",
+      rowTheme: "bg-nila text-white",
+      btnTheme: "bg-white text-nila",
+      tabWrapClass: "justify-end pr-16 sm:pr-36 md:pr-48",
+      bodyCorner: "rounded-3xl",
+      linkText: "Open Food",
+      phrases: [
+        { id: "Nggak pedas, ya.", en: "Not spicy, please." },
+        { id: "Ada yang tanpa daging?", en: "Is there anything without meat?" },
+        { id: "Enak banget!", en: "This is really good!" }
+      ]
+    },
+    {
+      id: "EMERGENCY",
+      title: "EMERGENCY",
+      tag: "KEEP HANDY",
+      meta: "6 phrases · ID & Sunda",
+      desc: "When you need help fast and there is no time to look a word up.",
+      cardTheme: "bg-nila text-white",
+      rowTheme: "bg-white text-nila",
+      btnTheme: "bg-nila text-white",
+      tabWrapClass: "justify-end",
+      bodyCorner: "rounded-tl-3xl rounded-tr-none rounded-b-3xl",
+      linkText: "Open Emergency",
+      phrases: [
+        { id: "Tolong!", en: "Help!" },
+        { id: "Rumah sakit di mana?", en: "Where is the hospital?" },
+        { id: "Saya tersesat.", en: "I am lost." }
+      ]
+    }
+  ];
+
+  const audioCache = new Map();
+  let activeAudio = null;
+  let activeBtn = null;
+
+  function resetPlayBtn(btn) {
+    if (!btn) return;
+    btn.disabled = false;
+    btn.textContent = "▶";
+  }
+
+  async function playPhrase(text, btnElement) {
+    if (activeAudio && activeBtn === btnElement) {
+      activeAudio.pause();
+      activeAudio = null;
+      resetPlayBtn(activeBtn);
+      activeBtn = null;
+      return;
+    }
+
+    if (activeAudio) {
+      activeAudio.pause();
+      activeAudio = null;
+      resetPlayBtn(activeBtn);
+    }
+
+    activeBtn = btnElement;
+    btnElement.disabled = true;
+    btnElement.innerHTML = `<span class="text-xs font-bold animate-pulse">...</span>`;
+
+    try {
+      let audioUrl = audioCache.get(text);
+
+      if (!audioUrl) {
+        const res = await fetch("/api/speech", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ text, rate: 1 })
+        });
+
+        if (!res.ok) {
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.error || "Gagal memutar audio dari server.");
+        }
+
+        const blob = await res.blob();
+        audioUrl = URL.createObjectURL(blob);
+        audioCache.set(text, audioUrl);
+      }
+
+      const audio = new Audio(audioUrl);
+      activeAudio = audio;
+
+      audio.onplay = () => {
+        btnElement.disabled = false;
+        btnElement.textContent = "❚❚";
+      };
+
+      audio.onended = () => {
+        resetPlayBtn(btnElement);
+        if (activeBtn === btnElement) {
+          activeAudio = null;
+          activeBtn = null;
+        }
+      };
+
+      audio.onerror = () => {
+        resetPlayBtn(btnElement);
+        activeAudio = null;
+        activeBtn = null;
+      };
+
+      await audio.play();
+    } catch (err) {
+      console.error("Audio error:", err);
+      resetPlayBtn(btnElement);
+      activeAudio = null;
+      activeBtn = null;
+      alert(err.message);
+    }
+  }
+
+  function renderSingleFolderHTML(selectedId) {
+    const item =
+      folderTabSituations.find((s) => s.id === selectedId) || folderTabSituations[0];
+
+    return `
+      <!-- Bar Navigasi Tab Atas & Tombol Back -->
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-10 pb-2">
+        <div class="flex flex-wrap items-center gap-2.5">
+          ${folderTabSituations
+            .map((tab) => {
+              const isActive = tab.id === item.id;
+              return `
+                <button
+                  type="button"
+                  data-switch-tab="${tab.id}"
+                  class="gali-switch-tab-btn px-4 py-2 rounded-full text-xs font-unbounded font-bold uppercase transition cursor-pointer ${
+                    isActive
+                      ? `${tab.cardTheme} shadow-sm scale-105`
+                      : "bg-white/70 text-nila/80 hover:bg-white hover:text-nila"
+                  }"
+                >
+                  ${tab.title}
+                </button>
+              `;
+            })
+            .join("")}
+        </div>
+
+        <button
+          type="button"
+          id="gali-back-overview-btn"
+          class="inline-flex items-center gap-2 px-5 py-2 rounded-full border-2 border-bukit text-nila font-bold text-xs md:text-sm hover:bg-bukit/15 transition cursor-pointer"
+        >
+          ← Back
+        </button>
+      </div>
+
+      <!-- 1 Kartu Folder Aktif -->
+      <div class="w-full mt-4">
+        <div class="flex ${item.tabWrapClass}">
+          <div class="${item.cardTheme} px-8 pt-3.5 pb-2.5 rounded-t-2xl font-unbounded font-black text-lg md:text-2xl tracking-wide uppercase leading-none">
+            ${item.title}
+          </div>
+        </div>
+
+        <div class="${item.cardTheme} p-7 md:p-9 ${item.bodyCorner} shadow-sm">
+          <div class="flex justify-between items-center mb-3 text-xs">
+            <span class="px-3 py-1 rounded-full font-bold uppercase tracking-wider bg-black/10">
+              ${item.tag}
+            </span>
+            <span class="opacity-85 font-medium">${item.meta}</span>
+          </div>
+
+          <p class="text-sm md:text-base mb-6 opacity-95">${item.desc}</p>
+
+          <div class="flex flex-col gap-3.5 mb-7">
+            ${item.phrases
+              .map(
+                (phrase) => `
+              <div class="${item.rowTheme} flex items-center justify-between px-5 py-4 rounded-2xl shadow-xs">
+                <div>
+                  <div class="font-bold text-base md:text-lg leading-tight">${phrase.id}</div>
+                  <div class="text-xs opacity-75 mt-1">${phrase.en}</div>
+                </div>
+                <button
+                  type="button"
+                  data-phrase="${phrase.id.replace(/"/g, "&quot;")}"
+                  class="gali-tab-play-btn ${item.btnTheme} w-10 h-10 rounded-full flex items-center justify-center shrink-0 hover:scale-105 active:scale-95 transition cursor-pointer text-xs"
+                  aria-label="Play audio ${phrase.id}"
+                >
+                  ▶
+                </button>
+              </div>
+            `
+              )
+              .join("")}
+          </div>
+
+          <button
+            type="button"
+            class="px-5 py-2.5 rounded-full border border-current text-xs font-semibold hover:bg-black/10 transition cursor-pointer"
+          >
+            ${item.linkText}
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function initSituationSwitcher() {
+    const allElements = Array.from(document.querySelectorAll("h1, h2, h3, div, p, span"));
+    const titleEl = allElements.find(
+      (el) => el.children.length <= 2 && /find your\s+situation/i.test(el.textContent)
+    );
+    if (!titleEl) return;
+
+    const section =
+      titleEl.closest("section") ||
+      titleEl.closest("main > div") ||
+      titleEl.parentElement.parentElement;
+    if (!section) return;
+
+    const cardsContainer = Array.from(section.children).find(
+      (child) => child.textContent.includes("SCHOOL") && child.textContent.includes("MINIBUS")
+    );
+    if (!cardsContainer) return;
+
+    const tabsWrapper = document.createElement("div");
+    tabsWrapper.className = "hidden mt-10";
+    cardsContainer.insertAdjacentElement("afterend", tabsWrapper);
+
+    const openSingleTab = (targetId = "STALL") => {
+      tabsWrapper.innerHTML = renderSingleFolderHTML(targetId);
+      cardsContainer.classList.add("hidden");
+      tabsWrapper.classList.remove("hidden");
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    const closeTabs = () => {
+      tabsWrapper.classList.add("hidden");
+      cardsContainer.classList.remove("hidden");
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
+    tabsWrapper.addEventListener("click", (e) => {
+      if (e.target.closest("#gali-back-overview-btn")) {
+        closeTabs();
+        return;
+      }
+
+      const switchBtn = e.target.closest(".gali-switch-tab-btn");
+      if (switchBtn) {
+        const nextId = switchBtn.getAttribute("data-switch-tab");
+        if (nextId) openSingleTab(nextId);
+        return;
+      }
+
+      const playBtn = e.target.closest(".gali-tab-play-btn");
+      if (playBtn) {
+        e.stopPropagation();
+        const text = playBtn.getAttribute("data-phrase");
+        if (text) playPhrase(text, playBtn);
+      }
+    });
+
+    section.addEventListener(
+      "click",
+      (e) => {
+        if (!tabsWrapper.classList.contains("hidden")) return;
+
+        const btn = e.target.closest("button");
+        if (btn && !/open|see all/i.test(btn.textContent)) return;
+
+        const target = e.target.closest("a, button, article, div");
+        if (!target || !section.contains(target)) return;
+
+        const text = target.textContent.toUpperCase();
+        const matched = folderTabSituations.find((item) => text.includes(item.id));
+
+        if (matched || text.includes("SEE ALL")) {
+          e.preventDefault();
+          e.stopPropagation();
+          openSingleTab(matched ? matched.id : "STALL");
+        }
+      },
+      true
+    );
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSituationSwitcher);
+  } else {
+    initSituationSwitcher();
+  }
+})();
