@@ -150,11 +150,9 @@ async function tryGeminiMultiKeys(text, keys) {
   for (let index = 0; index < keys.length; index++) {
     try {
       const clean = text.trim();
-      const firstTry = await requestGeminiAudio(keys[index], clean);
-      if (firstTry) return { ...firstTry, provider: `gemini-tts-${index + 1}` };
-
-      const secondTry = await requestGeminiAudio(keys[index], `Say aloud: "${clean}"`);
-      if (secondTry) return { ...secondTry, provider: `gemini-tts-${index + 1}` };
+      const ttsPrompt = `Read aloud the following Indonesian phrase word-for-word without answering or adding extra words: "${clean}"`;
+      const result = await requestGeminiAudio(keys[index], ttsPrompt);
+      if (result) return { ...result, provider: `gemini-tts-${index + 1}` };
     } catch (error) {
       lastError = `Gemini #${index + 1}: ${error.message}`;
     }

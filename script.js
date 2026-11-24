@@ -4166,17 +4166,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const stallLi = e.target.closest("li");
-      const stallPlayBtn = e.target.closest("button");
-      if (stallLi && stallPlayBtn?.querySelector(".ph-play")) {
-      const phraseText = (
-        stallLi.querySelector("h3") || stallLi.querySelector("p"))?.textContent.trim();
-          if (phraseText) {
-          playGaliAudio(phraseText, 1, stallPlayBtn);
-          return;
-        }
-      }
-
       const clickedFormBtn = e.target.closest(
         "#inline-gali-form button, #gali-drawer-form button",
       );
@@ -5211,12 +5200,47 @@ document.addEventListener("DOMContentLoaded", () => {
       if (metaPs[0]) metaPs[0].textContent = uiLang === "id" ? item.id : item.en;
       if (metaPs[1]) metaPs[1].textContent = item.phonetic;
       if (metaPs[2]) metaPs[2].textContent = uiLang === "id" ? item.tagId : item.tagEn;
-
       if (playBtn) {
-        playBtn.onclick = () => {
-          if (window.playGaliAudio) window.playGaliAudio(item.phrase, playBtn);
+        playBtn.onclick = (e) => {
+          e.stopPropagation();
+          if (window.playGaliAudio) {
+            window.playGaliAudio(item.phrase, 1, playBtn);
+          }
         };
       }
+
+        function renderStallPhrases() {
+    const listItems = document.querySelectorAll("main ol > li");
+    if (!listItems.length) return;
+
+    const uiLang = getUiLang();
+    const phrases = stallPhrasesData[activeDialect] || stallPhrasesData.Indonesia;
+
+    listItems.forEach((li, idx) => {
+      const item = phrases[idx];
+      if (!item) return;
+
+      const heading = li.querySelector("h3");
+      const metaPs = li.querySelectorAll("div > div > p");
+      const playBtn = li.querySelector("button"); // <-- tambahkan baris ini
+
+      if (heading) heading.textContent = item.phrase;
+      if (metaPs[0]) metaPs[0].textContent = uiLang === "id" ? item.id : item.en;
+      if (metaPs[1]) metaPs[1].textContent = item.phonetic;
+      if (metaPs[2]) metaPs[2].textContent = uiLang === "id" ? item.tagId : item.tagEn;
+
+      // <-- TARUH DI SINI
+      if (playBtn) {
+        playBtn.onclick = (e) => {
+          e.stopPropagation();
+          if (window.playGaliAudio) {
+            window.playGaliAudio(item.phrase, 1, playBtn);
+          }
+        };
+      }
+    });
+  }
+
     });
   }
 
