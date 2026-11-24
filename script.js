@@ -4155,8 +4155,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const stallLi = e.target.closest("li");
       const stallPlayBtn = e.target.closest("button");
       if (stallLi && stallPlayBtn?.querySelector(".ph-play")) {
-        const phraseText = stallLi.querySelector("p")?.textContent.trim();
-        if (phraseText) {
+      const phraseText = (
+        stallLi.querySelector("h3") || stallLi.querySelector("p"))?.textContent.trim();
+          if (phraseText) {
           playGaliAudio(phraseText, 1, stallPlayBtn);
           return;
         }
@@ -4352,7 +4353,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btnDaerah = document.getElementById("btn-daerah");
   const label = document.getElementById("daerah-label");
   const list = document.getElementById("daerah-list");
-
+  if (!switcher || !list) return;
   let isOpen = false,
     isDaerah = false,
     currentLang = "Sunda";
