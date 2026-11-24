@@ -157,12 +157,12 @@
     >
       <section
         id="home"
-        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform min-h-120 w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(50vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-terakota @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
+        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform min-h-120 w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-auto max-md:min-h-105 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-terakota @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
         <div
-          class="w-full flex flex-col gap-5 relative text-white px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6"
+          class="w-full flex flex-col gap-5 relative text-white px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6 max-sm:py-10 max-sm:gap-4"
         >
-          <div class="flex items-center gap-5 text-xs">
+          <div class="flex items-center flex-wrap gap-5 max-sm:gap-3 text-xs">
             <a
               href="/"
               class="rounded-sm underline-offset-4 hover:underline"
@@ -195,19 +195,19 @@
           </p>
           <div class="flex flex-wrap gap-2">
             <p
-              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl"
+              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
               data-i18n="stall_pill_phrases"
             >
               6 phrases
             </p>
             <p
-              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl"
+              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
               data-i18n="stall_pill_langs"
             >
               Indonesian + 10 local languages
             </p>
             <p
-              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl"
+              class="text-terakota font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
               data-i18n="stall_pill_time"
             >
               About 4 minutes
@@ -218,15 +218,19 @@
           class="absolute left-10 bottom-0 translate-y-1/2 max-w-200 max-sm:max-w-none -z-1 aspect-square w-full rounded-full bg-white/20 max-sm:w-[200%]"
         ></div>
         <i
-          class="ph-bold ph-storefront text-[200px] max-md:bottom-30 max-md:right-10 max-md:top-auto absolute right-20 top-1/3 -rotate-30 -z-1 text-white/20"
+          class="ph-bold ph-storefront text-[200px] max-md:text-[140px] max-md:bottom-6 max-md:right-6 max-md:top-auto absolute right-20 top-1/3 -rotate-30 -z-1 text-white/20"
         ></i>
       </section>
-      <div class="w-full min-h-screen relative z-1 m-0 bg-krem -mt-20">
-        <section class="max-sm:mx-6 max-lg:mx-12 mx-16 my-25 flex max-lg:flex-col gap-15">
-          <div class="grow">
+      <div
+        class="w-full min-h-screen relative z-1 m-0 bg-krem -mt-20 max-md:-mt-10"
+      >
+        <section
+          class="mx-16 my-25 flex gap-15 max-w-full overflow-x-clip max-lg:mx-12 max-lg:my-18 max-lg:flex-col max-lg:gap-12 max-sm:mx-6 max-sm:my-14 max-sm:gap-10"
+        >
+          <div class="grow min-w-0">
             <hgroup class="flex flex-wrap justify-between items-center gap-4">
               <div
-                class="text-nila text-3xl font-bold leading-8"
+                class="text-nila text-3xl font-bold leading-8 max-md:text-2xl"
                 data-i18n="stall_list_heading"
               >
                 Phrases for the stall
@@ -240,7 +244,7 @@
                     type="button"
                     id="btn-indonesia"
                     onclick="selectIndonesia()"
-                    class="px-4 py-1.5 rounded-full font-medium leading-6 transition-colors cursor-pointer bg-nila text-white"
+                    class="px-4 py-1.5 rounded-full font-medium leading-6 transition-colors cursor-pointer bg-nila text-white max-sm:text-sm max-sm:px-3.5"
                   >
                     Indonesia
                   </button>
@@ -249,7 +253,7 @@
                     id="btn-daerah"
                     onclick="toggleDropdown()"
                     aria-expanded="false"
-                    class="px-4 py-1.5 rounded-full font-medium leading-6 flex items-center gap-1.5 transition-colors cursor-pointer text-nila hover:bg-nila/10"
+                    class="px-4 py-1.5 rounded-full font-medium leading-6 flex items-center gap-1.5 transition-colors cursor-pointer text-nila hover:bg-nila/10 max-sm:text-sm max-sm:px-3.5"
                   >
                     <span id="daerah-label">Sunda</span>
                     <i
@@ -258,11 +262,9 @@
                     ></i>
                   </button>
                 </div>
-
-                <!-- Overlay Menu -->
                 <div
                   id="daerah-menu"
-                  class="absolute right-0 mt-2.5 w-100 z-50 grid grid-rows-[0fr] opacity-0 invisible pointer-events-none duration-300 ease-out overflow-hidden rounded-2xl backdrop-blur-xl bg-white/80 border border-nila/20 p-3"
+                  class="absolute right-0 mt-2.5 w-100 max-sm:w-72 z-50 grid grid-rows-[0fr] opacity-0 invisible pointer-events-none duration-300 ease-out overflow-hidden rounded-2xl backdrop-blur-xl bg-white/80 border border-nila/20 p-3"
                 >
                   <p
                     class="px-3 pt-1 pb-2.5 text-xs font-bold tracking-wider uppercase text-nila"
@@ -277,31 +279,39 @@
                 </div>
               </div>
             </hgroup>
-            <ol class="list-none divide-y divide-nila/20 mt-7">
+            <ol class="list-none divide-y divide-nila/20 mt-7 max-sm:mt-5">
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   01
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">Berapa harganya?</h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Berapa harganya?
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p1_meaning"
                     >
                       “How much is this?”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       beh-RAH-pah har-GAH-nyah
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p1_tag"
                     >
                       Asking price
@@ -310,36 +320,50 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Berapa harganya?', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Berapa harganya?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   02
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">Boleh Kurang?</h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Boleh Kurang?
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p2_meaning"
                     >
                       “Can it be cheaper?”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       BO-leh KOO-rang
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p2_tag"
                     >
                       Bargaining
@@ -348,38 +372,50 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Boleh kurang?', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Boleh kurang?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   03
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
                     Saya mau yang ini.
                   </h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p3_meaning"
                     >
                       “I would like this one.”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       SAH-yah mau yang EE-nee
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p3_tag"
                     >
                       Ordering
@@ -388,36 +424,50 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Saya mau yang ini.', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Saya mau yang ini.', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   04
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">Nggak pedas, ya.</h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Nggak pedas, ya.
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p4_meaning"
                     >
                       “Not spicy, please.”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       ngGAK puh-DAHS yah
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p4_tag"
                     >
                       Ordering
@@ -426,36 +476,50 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Nggak pedas, ya.', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Nggak pedas, ya.', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   05
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">Totalnya berapa?</h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Totalnya berapa?
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p5_meaning"
                     >
                       “What is the total?”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       toh-TAL-nyah beh-RAH-pah
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p5_tag"
                     >
                       Paying
@@ -464,38 +528,50 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Totalnya berapa?', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Totalnya berapa?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
               <li
-                class="pr-1 py-5 border-b border-nila/20 flex gap-6 text-nila"
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
               >
                 <p
-                  class="justify-center text-xs font-bold leading-9 tracking-wide"
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
                 >
                   06
                 </p>
-                <div class="flex-1 flex flex-col gap-2.5">
-                  <h3 class="text-3xl font-bold leading-9">
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
                     Terima kasih, Bu!
                   </h3>
-                  <div class="flex flex-wrap items-center gap-3.5">
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
                     <p
-                      class="text-lg font-medium leading-7"
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
                       data-i18n="stall_p6_meaning"
                     >
                       “Thank you, ma’am!”
                     </p>
                     <p
-                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md"
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
                     >
                       teh-REE-mah KAH-see boo
                     </p>
                     <p
-                      class="text-sm font-medium uppercase leading-5 tracking-wide"
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
                       data-i18n="stall_p6_tag"
                     >
                       Politeness
@@ -504,16 +580,26 @@
                 </div>
                 <button
                   type="button"
-                  onclick="if (window.playGaliAudio) playGaliAudio('Terima kasih, Bu!', this)"
-                  class="size-12 shrink-0 bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Terima kasih, Bu!', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
                 >
-                  <i class="ph-fill ph-play text-white text-2xl"></i>
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
                 </button>
               </li>
             </ol>
           </div>
-          <div class="flex flex-col gap-5 max-w-100 w-1/4 max-lg:w-full max-lg:max-w-none">
-            <div class="p-8 bg-pasir rounded-3xl flex flex-col text-nila">
+          <div
+            class="flex flex-col gap-5 max-w-100 w-1/4 shrink-0 max-lg:w-full max-lg:max-w-none max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1"
+          >
+            <div
+              class="p-8 bg-pasir rounded-3xl flex flex-col text-nila max-lg:p-7 max-lg:h-full max-sm:p-6"
+            >
               <div class="pb-2 flex gap-2 items-center">
                 <i class="ph-bold ph-lightbulb"></i>
                 <h3
@@ -525,29 +611,29 @@
               </div>
               <div class="pt-1 pb-4 flex flex-col gap-1.5">
                 <p
-                  class="text-lg font-bold leading-6"
+                  class="text-lg font-bold leading-6 max-md:text-base"
                   data-i18n="stall_tip1_title"
                 >
                   Use your right hand
                 </p>
                 <p
-                  class="font-medium leading-6"
+                  class="font-medium leading-6 max-md:text-sm"
                   data-i18n="stall_tip1_desc"
                 >
                   Give and take money or goods with your right hand. The left
                   hand is considered impolite.
                 </p>
               </div>
-              <div class="h-px w-full bg-nila/20"></div>
-              <div class="pt-4 flex flex-col gap-1.5">
+              <div class="h-px w-full bg-nila/20 max-lg:hidden"></div>
+              <div class="pt-4 flex flex-col gap-1.5 max-lg:pt-2">
                 <p
-                  class="text-lg font-bold leading-6"
+                  class="text-lg font-bold leading-6 max-md:text-base"
                   data-i18n="stall_tip2_title"
                 >
                   Bargain, but gently
                 </p>
                 <p
-                  class="font-medium leading-6"
+                  class="font-medium leading-6 max-md:text-sm"
                   data-i18n="stall_tip2_desc"
                 >
                   Asking for a lower price is normal at a traditional market. At
@@ -555,30 +641,34 @@
                 </p>
               </div>
             </div>
-            <div class="p-8 bg-nila rounded-3xl flex flex-col gap-2.5">
-              <h3
-                class="text-white text-2xl font-bold leading-7"
-                data-i18n="stall_stuck_title"
-              >
-                Stuck on one of these?
-              </h3>
-              <p
-                class="text-white/80 font-medium leading-6 mb-3"
-                data-i18n="stall_stuck_desc"
-              >
-                Ask Gali how to say it your way, or whether it sounds polite.
-              </p>
+            <div
+              class="p-8 bg-nila rounded-3xl flex flex-col gap-2.5 max-lg:order-first max-lg:col-span-2 max-lg:px-8 max-lg:py-6 max-lg:flex-row max-lg:items-center max-lg:justify-between max-lg:gap-6 max-sm:col-span-1 max-sm:p-6 max-sm:flex-col max-sm:items-start max-sm:gap-4"
+            >
+              <div class="flex flex-col gap-2.5 max-lg:gap-1.5">
+                <h3
+                  class="text-white text-2xl font-bold leading-7 max-sm:text-xl"
+                  data-i18n="stall_stuck_title"
+                >
+                  Stuck on one of these?
+                </h3>
+                <p
+                  class="text-white/80 font-medium leading-6 mb-3 max-lg:mb-0 max-md:text-sm"
+                  data-i18n="stall_stuck_desc"
+                >
+                  Ask Gali how to say it your way, or whether it sounds polite.
+                </p>
+              </div>
               <a
                 href="/chatGali.html"
                 data-open-gali
-                class="text-nila font-bold leading-6 flex gap-2 justify-center items-center py-3 w-fit px-4 bg-pasir rounded-full text-center"
+                class="shrink-0 text-nila font-bold leading-6 flex gap-2 justify-center items-center py-3 w-fit px-4 bg-pasir rounded-full text-center hover:opacity-90 transition max-sm:py-2.5 max-sm:px-5 max-sm:text-sm"
               >
                 <span data-i18n="stall_stuck_btn">Ask Gali</span>
                 <i class="ph-bold ph-arrow-right"></i>
               </a>
             </div>
             <div
-              class="p-7 pb-3 rounded-3xl border border-nila/20 text-nila flex flex-col"
+              class="p-7 pb-3 rounded-3xl border border-nila/20 text-nila flex flex-col max-lg:h-full max-lg:pb-4 max-sm:p-6 max-sm:pb-4"
             >
               <h3
                 class="text-xs font-bold leading-4 tracking-wide pb-2 uppercase"
@@ -588,73 +678,86 @@
               </h3>
               <a
                 href="/situations.html"
-                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group"
               >
                 <div class="flex flex-col gap-1">
                   <h4
-                    class="text-xl font-black font-unbounded leading-5"
+                    class="text-xl font-black font-unbounded leading-5 max-md:text-lg"
                     data-i18n="stall_also1_title"
                   >
                     FOOD
                   </h4>
                   <p
-                    class="text-sm font-medium leading-5"
+                    class="text-sm font-medium leading-5 max-md:text-xs"
                     data-i18n="stall_also1_desc"
                   >
                     Ordering a meal
                   </p>
                 </div>
-                <i class="ph-bold ph-arrow-up-right"></i>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
               </a>
               <a
                 href="/situations.html"
-                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group"
               >
                 <div class="flex flex-col gap-1">
                   <h4
-                    class="text-xl font-black font-unbounded leading-5"
+                    class="text-xl font-black font-unbounded leading-5 max-md:text-lg"
                     data-i18n="stall_also2_title"
                   >
                     Minibus
                   </h4>
                   <p
-                    class="text-sm font-medium leading-5"
+                    class="text-sm font-medium leading-5 max-md:text-xs"
                     data-i18n="stall_also2_desc"
                   >
                     Getting there
                   </p>
                 </div>
-                <i class="ph-bold ph-arrow-up-right"></i>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
               </a>
               <a
                 href="/situations.html"
-                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group max-lg:border-b"
               >
                 <div class="flex flex-col gap-1">
                   <h4
-                    class="text-xl font-black font-unbounded leading-5"
+                    class="text-xl font-black font-unbounded leading-5 max-md:text-lg"
                     data-i18n="stall_also3_title"
                   >
                     SMALL TALK
                   </h4>
                   <p
-                    class="text-sm font-medium leading-5"
+                    class="text-sm font-medium leading-5 max-md:text-xs"
                     data-i18n="stall_also3_desc"
                   >
                     Small talk after
                   </p>
                 </div>
-                <i class="ph-bold ph-arrow-up-right"></i>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
               </a>
             </div>
           </div>
         </section>
-        <section class="my-25 max-sm:mx-6 max-lg:mx-12 mx-16">
-          <div class="flex max-md:flex-col gap-10">
+        <section
+          class="my-25 mx-16 max-lg:my-18 max-lg:mx-12 max-sm:my-14 max-sm:mx-6"
+        >
+          <div
+            class="grid grid-cols-2 gap-10 max-lg:gap-6 max-sm:grid-cols-1 max-sm:gap-4"
+          >
             <a
               href="/situations.html"
-              class="grow py-8 px-15 max-sm:px-6 bg-krem-tua rounded-3xl flex items-center gap-5"
-              ><i class="ph-bold ph-arrow-left text-4xl text-nila"></i>
+              class="py-8 px-15 bg-krem-tua rounded-3xl flex items-center gap-5 hover:opacity-90 transition max-lg:py-7 max-lg:px-8 max-lg:gap-4 max-sm:py-6 max-sm:px-6"
+            >
+              <i
+                class="ph-bold ph-arrow-left text-4xl text-nila shrink-0 max-lg:text-3xl max-sm:text-2xl"
+              ></i>
               <div class="flex flex-col gap-1">
                 <p
                   class="text-nila text-xs font-medium uppercase leading-5 tracking-wide"
@@ -663,7 +766,7 @@
                   Previous
                 </p>
                 <p
-                  class="text-nila text-4xl max-sm:text-2xl font-black uppercase font-unbounded leading-8"
+                  class="text-nila text-4xl font-black uppercase font-unbounded leading-8 max-lg:text-2xl max-lg:leading-7"
                   data-i18n="stall_prev_title"
                 >
                   EMERGENCY
@@ -672,8 +775,11 @@
             </a>
             <a
               href="/situations.html"
-              class="grow py-8 px-15 max-sm:px-6 bg-krem-tua rounded-3xl flex flex-row-reverse text-right items-center gap-5"
-              ><i class="ph-bold ph-arrow-right text-4xl text-nila"></i>
+              class="py-8 px-15 bg-krem-tua rounded-3xl flex flex-row-reverse text-right items-center gap-5 hover:opacity-90 transition max-lg:py-7 max-lg:px-8 max-lg:gap-4 max-sm:py-6 max-sm:px-6"
+            >
+              <i
+                class="ph-bold ph-arrow-right text-4xl text-nila shrink-0 max-lg:text-3xl max-sm:text-2xl"
+              ></i>
               <div class="flex flex-col gap-1">
                 <p
                   class="text-nila text-xs font-medium uppercase leading-5 tracking-wide"
@@ -682,7 +788,7 @@
                   Next
                 </p>
                 <p
-                  class="text-nila text-4xl max-sm:text-2xl font-black uppercase font-unbounded leading-8"
+                  class="text-nila text-4xl font-black uppercase font-unbounded leading-8 max-lg:text-2xl max-lg:leading-7"
                   data-i18n="stall_next_title"
                 >
                   School
