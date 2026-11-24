@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Culture || Gaulingo</title>
+    <title>About || Gaulingo</title>
     <link rel="stylesheet" href="../src/output.css" />
     <link rel="icon" type="image/svg+xml" href="../src/assets/icon.svg" />
     <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
@@ -100,7 +100,6 @@
               </a>
             </div>
           </li>
-
           <li class="site-menu__item is-active" style="--i: 3">
             <div class="site-menu__row">
               <a href="./about.html" class="site-menu__link roll-host">
@@ -114,7 +113,7 @@
           </li>
           <li class="site-menu__item" style="--i: 4">
             <div class="site-menu__row">
-              <a href="./chat-with-gali.html" class="site-menu__link roll-host">
+              <a href="./chatGali.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">05</p>
                   <h3 data-roll>Chat Gali</h3>
@@ -126,25 +125,28 @@
         </ul>
         <ul class="site-menu__secondary">
           <li>
-            <a href="#" class="roll-host"
-              ><i class="ph-fill ph-chat-circle-dots"></i>
-              <p data-roll>Chat with Gali</p></a
+            <a
+              href="https://github.com/HilmiRN/Gaulingo/"
+              target="_blank"
+              class="roll-host"
             >
+              <i class="ph-fill ph-github-logo"></i>
+              <p data-roll>GitHub</p>
+            </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" class="roll-host"
-              ><p data-roll>Instagram</p></a
+            <a
+              href="https://tally.so/r/e5aBok"
+              target="_blank"
+              class="roll-host"
             >
+              <p data-roll>Suggest a Phrase</p>
+            </a>
           </li>
           <li>
-            <a href="https://www.tiktok.com/" class="roll-host"
-              ><p data-roll>TikTok</p></a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/" class="roll-host"
-              ><p data-roll>YouTube</p></a
-            >
+            <a href="https://tally.so/r/EqxPaB" class="roll-host">
+              <p data-roll>Feedback</p>
+            </a>
           </li>
         </ul>
       </nav>
@@ -154,7 +156,7 @@
     >
       <section
         id="home"
-        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(50vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-nila text-white @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
+        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform min-h-120 w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(50vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-nila text-white @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
         <div
           class="w-full relative px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6"
@@ -255,7 +257,7 @@
             <h3
               class="justify-start text-nila text-6xl font-black font-unbounded leading-15"
             >
-              10
+              12
             </h3>
             <p class="justify-start text-nila text-xl font-bold leading-7">
               languages
@@ -323,12 +325,6 @@
               >
                 UI/UX &amp; Research
               </p>
-              <img
-                src="../src/assets/hilmi.webp"
-                alt="Fakhril"
-                data-base-rotate="4"
-                class="crew-photo pointer-events-none absolute top-0 left-0 opacity-0 transition-opacity duration-300 w-40 h-52 md:w-48 md:h-60 object-cover rounded-xl shadow-2xl z-50 will-change-transform"
-              />
             </div>
             <div
               class="crew-row group relative py-8 md:py-10 border-t border-nila/30 flex justify-between items-center gap-6 cursor-pointer"
@@ -368,12 +364,6 @@
               >
                 Frontend &amp; Creative
               </p>
-              <img
-                src="../src/assets/hilmi.webp"
-                alt="Hilmi"
-                data-base-rotate="4"
-                class="crew-photo pointer-events-none absolute top-0 left-0 opacity-0 transition-opacity duration-300 w-40 h-52 md:w-48 md:h-60 object-cover rounded-xl shadow-2xl z-50 will-change-transform"
-              />
             </div>
             <div
               class="crew-row group relative py-8 md:py-10 border-t border-nila/30 flex justify-between items-center gap-6 cursor-pointer"
@@ -413,16 +403,12 @@
               >
                 Backend &amp; Data
               </p>
-              <img
-                src="../src/assets/hilmi.webp"
-                alt="Alfath"
-                data-base-rotate="4"
-                class="crew-photo pointer-events-none absolute top-0 left-0 opacity-0 transition-opacity duration-300 w-40 h-52 md:w-48 md:h-60 object-cover rounded-xl shadow-2xl z-50 will-change-transform"
-              />
             </div>
           </d>
         </section>
-        <section class="flex gap-10 grow text-nila mt-25 mx-16 max-lg:mx-12 max-sm:mx-6 overflow-x-clip">
+        <section
+          class="flex gap-10 grow text-nila mt-25 mx-16 max-lg:mx-12 max-sm:mx-6 overflow-x-clip"
+        >
           <div class="flex flex-col grow">
             <hgroup class="flex flex-col gap-4 mb-7.5">
               <p class="text-xs font-bold leading-4 tracking-wide">
@@ -507,9 +493,10 @@
             </p>
             <a
               href="https://github.com/HilmiRN/Gaulingo/"
-              class="text-pasir font-bold leading-6 px-5 py-3.5 bg-nila rounded-full flex gap-2.5"
+              class="text-pasir font-bold leading-6 px-5 py-3.5 bg-nila rounded-full flex gap-2 justify-center items-center"
             >
               See the repository
+              <i class="ph-bold ph-arrow-up-right text-xl"></i>
             </a>
           </div>
         </section>

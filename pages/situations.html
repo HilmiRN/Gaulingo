@@ -43,7 +43,6 @@
             <p
               class="site-menu-toggle__label site-menu-toggle__label--menu"
               data-roll
-              data-i18n="nav_menu"
             >
               Menu
             </p>
@@ -73,7 +72,7 @@
               >
                 <div class="site-menu__rise">
                   <p class="site-menu__num">01</p>
-                  <h3 data-roll data-i18n="nav_home">Home</h3>
+                  <h3 data-roll>Home</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -84,7 +83,7 @@
               <a href="./situations.html" class="site-menu__link roll-host">
                 <span class="site-menu__rise">
                   <span class="site-menu__num">02</span>
-                  <span data-roll data-i18n="nav_situations">Situations</span>
+                  <span data-roll>Situations</span>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </span>
               </a>
@@ -95,7 +94,7 @@
               <a href="./culture.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">03</p>
-                  <h3 data-roll data-i18n="nav_culture">Culture</h3>
+                  <h3 data-roll>Culture</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -103,10 +102,10 @@
           </li>
           <li class="site-menu__item" style="--i: 3">
             <div class="site-menu__row">
-              <a href="./practice.html" class="site-menu__link roll-host">
+              <a href="./about.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">04</p>
-                  <h3 data-roll data-i18n="nav_practice">Practice</h3>
+                  <h3 data-roll>About</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -114,10 +113,10 @@
           </li>
           <li class="site-menu__item" style="--i: 4">
             <div class="site-menu__row">
-              <a href="./about.html" class="site-menu__link roll-host">
+              <a href="./chatGali.html" class="site-menu__link roll-host">
                 <div class="site-menu__rise">
                   <p class="site-menu__num">05</p>
-                  <h3 data-roll data-i18n="nav_about">About</h3>
+                  <h3 data-roll>Chat Gali</h3>
                   <span class="site-menu__marker" aria-hidden="true"></span>
                 </div>
               </a>
@@ -126,25 +125,28 @@
         </ul>
         <ul class="site-menu__secondary">
           <li>
-            <a href="#" class="roll-host"
-              ><i class="ph-fill ph-chat-circle-dots"></i>
-              <p data-roll data-i18n="nav_chat">Chat with Gali</p></a
+            <a
+              href="https://github.com/HilmiRN/Gaulingo/"
+              target="_blank"
+              class="roll-host"
             >
+              <i class="ph-fill ph-github-logo"></i>
+              <p data-roll>GitHub</p>
+            </a>
           </li>
           <li>
-            <a href="https://www.instagram.com/" class="roll-host"
-              ><p data-roll>Instagram</p></a
+            <a
+              href="https://tally.so/r/e5aBok"
+              target="_blank"
+              class="roll-host"
             >
+              <p data-roll>Suggest a Phrase</p>
+            </a>
           </li>
           <li>
-            <a href="https://www.tiktok.com/" class="roll-host"
-              ><p data-roll>TikTok</p></a
-            >
-          </li>
-          <li>
-            <a href="https://www.youtube.com/" class="roll-host"
-              ><p data-roll>YouTube</p></a
-            >
+            <a href="https://tally.so/r/EqxPaB" class="roll-host">
+              <p data-roll>Feedback</p>
+            </a>
           </li>
         </ul>
       </nav>
@@ -154,14 +156,14 @@
     >
       <section
         id="home"
-        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform w-[calc(100vw-80px)] h-[calc(75vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(75vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
+        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform min-h-120 w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(50vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
       >
-        <div class="w-full relative px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6">
+        <div
+          class="w-full relative px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6"
+        >
           <div class="mb-5 flex items-center gap-5 text-xs">
             <a
-             
               href="../index.html"
-             
               class="rounded-sm underline-offset-4 hover:underline"
               data-i18n="sit_page_home"
               >Home</a
@@ -226,7 +228,8 @@
         ></div>
       </section>
       <div
-        class="w-full min-h-screen relative max-sm:px-6 max-sm:py-14 max-lg:px-12 px-16 py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20">
+        class="w-full min-h-screen relative max-sm:px-6 max-sm:py-14 max-lg:px-12 px-16 py-20 z-1 m-0 bg-krem rounded-t-[clamp(24px,3.5vw,48px)] -mt-20"
+      >
         <section class="w-full max-w-7xl mx-auto py-6">
           <div
             class="flex flex-row max-sm:flex-col items-center justify-between gap-4 mb-8"
@@ -570,7 +573,10 @@
                 >
                   FOOD
                 </h2>
-                <p class="text-nila/80 text-sm mb-6 leading-relaxed" data-i18n="rd_food_desc">
+                <p
+                  class="text-nila/80 text-sm mb-6 leading-relaxed"
+                  data-i18n="rd_food_desc"
+                >
                   Ordering food and asking what is in it.
                 </p>
                 <div class="space-y-2.5 mb-8">
@@ -588,7 +594,10 @@
                   </div>
                 </div>
               </div>
-              <p class="text-xs text-nila/70 font-medium" data-i18n="stall_info">
+              <p
+                class="text-xs text-nila/70 font-medium"
+                data-i18n="stall_info"
+              >
                 8 phrases · Indonesian & Sundanese
               </p>
             </a>
@@ -769,7 +778,9 @@
                 >
                   Based in
                 </p>
-                <p class="text-2xl max-md:text-xl font-bold">Bogor, Indonesia</p>
+                <p class="text-2xl max-md:text-xl font-bold">
+                  Bogor, Indonesia
+                </p>
               </div>
               <div>
                 <p
@@ -792,7 +803,9 @@
               Navigation
             </h3>
             <nav aria-label="Footer navigation">
-              <ul class="flex flex-col gap-3 font-semibold text-xl max-md:text-lg">
+              <ul
+                class="flex flex-col gap-3 font-semibold text-xl max-md:text-lg"
+              >
                 <li>
                   <a
                     href="../index.html"

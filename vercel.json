@@ -1,0 +1,22 @@
+{
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/pages/:path*.html",
+      "destination": "/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/pages/:path*",
+      "destination": "/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/about", "destination": "/pages/about.html" },
+    { "source": "/chatGali", "destination": "/pages/chatGali.html" },
+    { "source": "/culture", "destination": "/pages/culture.html" },
+    { "source": "/situations", "destination": "/pages/situations.html" },
+    { "source": "/situations/stall", "destination": "/pages/situations/stall.html" }
+  ]
+}
