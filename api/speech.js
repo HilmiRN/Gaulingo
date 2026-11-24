@@ -13,6 +13,21 @@ function sendAudio(res, audio, mimeType, provider) {
   return res.status(200).send(audio);
 }
 
+function collectKeys(prefix, listVarName) {
+  const fromList = (process.env[listVarName] || "")
+    .split(",")
+    .map((k) => k.trim())
+    .filter(Boolean);
+
+  const fromEnv = Object.keys(process.env)
+    .filter((name) => name === prefix || name.startsWith(`${prefix}_`))
+    .sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))
+    .map((name) => (process.env[name] || "").trim())
+    .filter(Boolean);
+
+  return [...new Set([...fromList, ...fromEnv])];
+}
+
 function pcmToWav(pcmBuffer, sampleRate = 24000) {
   const numChannels = 1;
   const bitsPerSample = 16;
@@ -39,7 +54,7 @@ function pcmToWav(pcmBuffer, sampleRate = 24000) {
 }
 
 async function tryElevenLabs(text, rate, voiceId, keys) {
-  let lastError = "ElevenLabs gagal tanpa detail";
+  let lastError = "ElevenLabs gagal";
 
   for (let index = 0; index < keys.length; index++) {
     try {
@@ -61,7 +76,7 @@ async function tryElevenLabs(text, rate, voiceId, keys) {
               speed: Math.min(1.2, Math.max(0.7, Number(rate) || 1)),
             },
           }),
-          signal: AbortSignal.timeout(25000),
+          signal: AbortSignal.timeout(20000),
         },
       );
 
@@ -71,12 +86,12 @@ async function tryElevenLabs(text, rate, voiceId, keys) {
       }
 
       const detail = await upstream.text().catch(() => "");
-      lastError = `ElevenLabs (${upstream.status}): ${detail.slice(0, 200)}`;
+      lastError = `ElevenLabs #${index + 1} (${upstream.status}): ${detail.slice(0, 150)}`;
       if (![401, 402, 403, 429].includes(upstream.status) && upstream.status < 500) {
         break;
       }
     } catch (error) {
-      lastError = `ElevenLabs request error: ${error.message}`;
+      lastError = `ElevenLabs #${index + 1} error: ${error.message}`;
     }
   }
 
@@ -100,7 +115,7 @@ async function requestGeminiAudio(apiKey, promptText) {
           },
         },
       }),
-      signal: AbortSignal.timeout(40000),
+      signal: AbortSignal.timeout(30000),
     },
   );
 
@@ -129,18 +144,38 @@ async function requestGeminiAudio(apiKey, promptText) {
   };
 }
 
-async function tryGeminiTts(text) {
-  const apiKey = (process.env.GEMINI_API_KEY || "").trim();
-  if (!apiKey) throw new Error("GEMINI_API_KEY belum diatur di Vercel");
+async function tryGeminiMultiKeys(text, keys) {
+  let lastError = "GEMINI_API_KEY belum diisi";
 
-  const clean = text.trim();
-  const firstTry = await requestGeminiAudio(apiKey, clean);
-  if (firstTry) return firstTry;
+  for (let index = 0; index < keys.length; index++) {
+    try {
+      const clean = text.trim();
+      const firstTry = await requestGeminiAudio(keys[index], clean);
+      if (firstTry) return { ...firstTry, provider: `gemini-tts-${index + 1}` };
 
-  const secondTry = await requestGeminiAudio(apiKey, `Say aloud: "${clean}"`);
-  if (secondTry) return secondTry;
+      const secondTry = await requestGeminiAudio(keys[index], `Say aloud: "${clean}"`);
+      if (secondTry) return { ...secondTry, provider: `gemini-tts-${index + 1}` };
+    } catch (error) {
+      lastError = `Gemini #${index + 1}: ${error.message}`;
+    }
+  }
 
-  throw new Error("Gemini TTS tidak mengembalikan audio");
+  throw new Error(lastError);
+}
+
+async function tryFreeGoogleTts(text) {
+  const snippet = text.slice(0, 200);
+  const url = `https://translate.googleapis.com/translate_tts?client=gtx&ie=UTF-8&tl=id&dt=t&q=${encodeURIComponent(snippet)}`;
+  const upstream = await fetch(url, {
+    headers: { "User-Agent": "Mozilla/5.0" },
+    signal: AbortSignal.timeout(10000),
+  });
+
+  if (!upstream.ok) throw new Error(`Google TTS HTTP ${upstream.status}`);
+  const audio = Buffer.from(await upstream.arrayBuffer());
+  if (!audio.length) throw new Error("Google TTS kosong");
+
+  return { audio, mimeType: "audio/mpeg", provider: "google-free-tts" };
 }
 
 module.exports = async function handler(req, res) {
@@ -152,46 +187,45 @@ module.exports = async function handler(req, res) {
   const { text, rate = 1 } = req.body || {};
   if (typeof text !== "string" || !text.trim() || text.length > 500) {
     return sendJson(res, 400, {
-      error: "Teks audio tidak valid (maksimal 500 karakter).",
+      error: "Teks audio nggak valid (maksimal 500 karakter).",
     });
   }
 
   const cleanText = text.trim();
   const voiceId = (process.env.ELEVENLABS_VOICE_ID || "").trim();
-  const keys = [
-    process.env.ELEVENLABS_API_KEY_1,
-    process.env.ELEVENLABS_API_KEY_2,
-    process.env.ELEVENLABS_API_KEY,
-  ]
-    .map((k) => (k || "").trim())
-    .filter(Boolean);
+  const elevenKeys = collectKeys("ELEVENLABS_API_KEY", "ELEVENLABS_API_KEYS");
+  const geminiKeys = collectKeys("GEMINI_API_KEY", "GEMINI_API_KEYS");
 
-  let elevenError = "ElevenLabs belum dikonfigurasi";
+  let errors = [];
 
-  if (voiceId && keys.length) {
-    const elevenResult = await tryElevenLabs(cleanText, rate, voiceId, keys);
+  // Urutan 1: Semua akun ElevenLabs (berapapun jumlahnya)
+  if (voiceId && elevenKeys.length) {
+    const elevenResult = await tryElevenLabs(cleanText, rate, voiceId, elevenKeys);
     if (elevenResult.audio) {
-      return sendAudio(
-        res,
-        elevenResult.audio,
-        "audio/mpeg",
-        elevenResult.provider,
-      );
+      return sendAudio(res, elevenResult.audio, "audio/mpeg", elevenResult.provider);
     }
-    elevenError = elevenResult.lastError;
+    errors.push(elevenResult.lastError);
   }
 
-  try {
-    const geminiResult = await tryGeminiTts(cleanText);
-    return sendAudio(
-      res,
-      geminiResult.audio,
-      geminiResult.mimeType,
-      "gemini-tts",
-    );
-  } catch (error) {
-    return sendJson(res, 502, {
-      error: `${elevenError} | Fallback: ${error.message}`,
-    });
+  // Urutan 2: Semua akun Gemini TTS (berapapun jumlahnya)
+  if (geminiKeys.length) {
+    try {
+      const geminiResult = await tryGeminiMultiKeys(cleanText, geminiKeys);
+      return sendAudio(res, geminiResult.audio, geminiResult.mimeType, geminiResult.provider);
+    } catch (error) {
+      errors.push(error.message);
+    }
   }
+
+  // Urutan 3: Cadangan Google TTS gratis tanpa API key
+  try {
+    const freeResult = await tryFreeGoogleTts(cleanText);
+    return sendAudio(res, freeResult.audio, freeResult.mimeType, freeResult.provider);
+  } catch (error) {
+    errors.push(error.message);
+  }
+
+  return sendJson(res, 502, {
+    error: errors.join(" | ") || "Semua server audio lagi penuh.",
+  });
 };
