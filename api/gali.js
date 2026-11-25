@@ -153,7 +153,7 @@ RESPONSE RULES FOR VALID REQUESTS:
 `;
 
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 25000);
+  const timeout = setTimeout(() => controller.abort(), 28000);
   const startTime = Date.now();
 
   try {
@@ -180,11 +180,16 @@ RESPONSE RULES FOR VALID REQUESTS:
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`,
         {
           method: "POST",
-          signal: controller.signal,
+          signal: AbortSignal.timeout(8000),
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(cfg),
         },
-      );
+      ).catch((err) => {
+        lastMessage = `${model}: ${err.name === "TimeoutError" ? "tidak ada respons dalam 8 detik" : err.message}`;
+        console.error("Gemini fetch failed:", lastMessage, err.cause?.code || "");
+        return null;
+      });
+      if (!upstream) continue;
       const data = await upstream.json().catch(() => ({}));
       if (upstream.ok) {
         result = data;
