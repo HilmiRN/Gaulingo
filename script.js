@@ -3851,11 +3851,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 id="gali-drawer-input"
                 type="text"
                 placeholder="${isId ? "Tanya apa aja ke Gali..." : "Ask Gali anything..."}"
+                style="background-color: var(--color-krem, #f8f1e5); border-radius: 9999px;"
                 class="w-full rounded-full bg-krem px-4 py-2.5 text-sm text-nila outline-none placeholder:text-nila/45"
               />
               <button
                 type="button"
                 data-gali-mic="drawer"
+                style="background-color: var(--color-krem, #f8f1e5); border-radius: 9999px;"
                 class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-krem text-nila hover:opacity-80"
                 aria-label="Voice input"
               >
@@ -3863,6 +3865,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </button>
               <button
                 type="submit"
+                style="background-color: var(--color-nila, #243b7a); color: #ffffff; border-radius: 9999px;"
                 class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-nila text-white hover:opacity-90"
                 aria-label="Send message"
               >
@@ -5101,8 +5104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sort_newest: "Newest",
       stall_crumb: "Stall",
       stall_hero_title: "Stall",
-      stall_hero_desc:
-        "The small shop on every corner. Snacks, drinks, a quick chat, and the price you ask for yourself.",
+      stall_hero_desc: "The small shop on every corner. Snacks, drinks, a quick chat, and the price you ask for yourself.",
       stall_pill_phrases: "6 phrases",
       stall_pill_langs: "Indonesian + 10 local languages",
       stall_pill_time: "About 4 minutes",
@@ -5110,14 +5112,11 @@ document.addEventListener("DOMContentLoaded", () => {
       stall_local_lang: "Local Language",
       stall_tips_label: "CULTURE TIPS",
       stall_tip1_title: "Use your right hand",
-      stall_tip1_desc:
-        "Give and take money or goods with your right hand. The left hand is considered impolite.",
+      stall_tip1_desc:  "Give and take money or goods with your right hand. The left hand is considered impolite.",
       stall_tip2_title: "Bargain, but gently",
-      stall_tip2_desc:
-        "Asking for a lower price is normal at a traditional market. At a minimarket the price is fixed.",
+      stall_tip2_desc: "Asking for a lower price is normal at a traditional market. At a minimarket the price is fixed.",
       stall_stuck_title: "Stuck on one of these?",
-      stall_stuck_desc:
-        "Ask Gali how to say it your way, or whether it sounds polite.",
+      stall_stuck_desc: "Ask Gali how to say it your way, or whether it sounds polite.",
       stall_stuck_btn: "Ask Gali",
       stall_also_label: "ALSO USEFUL HERE",
       stall_also1_title: "FOOD",
@@ -5129,7 +5128,29 @@ document.addEventListener("DOMContentLoaded", () => {
       stall_prev_label: "Previous",
       stall_prev_title: "EMERGENCY",
       stall_next_label: "Next",
-      stall_next_title: "School"
+      stall_next_title: "School",
+      stall_hero_title: "Stall",
+      sit_badge_popular: "Most popular",
+      stall_hero_title: "Stall",
+      sit_badge_popular: "Most popular",
+      stall_next_title: "School",
+      school_crumb: "School",
+      school_hero_title: "School",
+      school_hero_desc: "In class and in the hallway. Teachers, classmates, and the words that keep it polite.",
+      school_list_heading: "Phrases for school",
+      school_tip1_title: "Use Pak and Bu",
+      school_tip1_desc: "Address any teacher as Pak for a man or Bu for a woman. A first name on its own sounds rude.",
+      school_tip2_title: "Say permisi to leave",
+      school_tip2_desc: "Say permisi before stepping out of a classroom, even in the middle of a lesson.",
+      school_also1_title: "Small Talk",
+      school_also1_desc: "Meeting classmates",
+      school_also2_title: "STALL",
+      school_also2_desc: "Buying snacks",
+      school_also3_title: "Food",
+      school_also3_desc: "Lunch after class",
+      school_prev_title: "Stall",
+      school_next_title: "Minibus",
+
     },
     id: {
       filter_all: "Semua",
@@ -5142,8 +5163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sort_newest: "Terbaru",
       stall_crumb: "Warung",
       stall_hero_title: "Warung",
-      stall_hero_desc:
-        "Toko kecil di setiap sudut jalan. Camilan, minuman, obrolan singkat, dan menawar harga sendiri.",
+      stall_hero_desc: "Toko kecil di setiap sudut jalan. Camilan, minuman, obrolan singkat, dan menawar harga sendiri.",
       stall_pill_phrases: "6 frasa",
       stall_pill_langs: "Bahasa Indonesia + 10 bahasa daerah",
       stall_pill_time: "Sekitar 4 menit",
@@ -5151,14 +5171,11 @@ document.addEventListener("DOMContentLoaded", () => {
       stall_local_lang: "Bahasa Daerah",
       stall_tips_label: "TIPS BUDAYA",
       stall_tip1_title: "Gunakan tangan kanan",
-      stall_tip1_desc:
-        "Berikan dan terima uang atau barang dengan tangan kanan. Tangan kiri dianggap kurang sopan.",
+      stall_tip1_desc: "Berikan dan terima uang atau barang dengan tangan kanan. Tangan kiri dianggap kurang sopan.",
       stall_tip2_title: "Menawar dengan ramah",
-      stall_tip2_desc:
-        "Menawar harga adalah hal wajar di pasar tradisional. Di minimarket, harganya sudah pas.",
+      stall_tip2_desc: "Menawar harga adalah hal wajar di pasar tradisional. Di minimarket, harganya sudah pas.",
       stall_stuck_title: "Bingung sama salah satunya?",
-      stall_stuck_desc:
-        "Tanya Gali cara mengucapkannya dengan gayamu, atau apakah sudah terdengar sopan.",
+      stall_stuck_desc: "Tanya Gali cara mengucapkannya dengan gayamu, atau apakah sudah terdengar sopan.",
       stall_stuck_btn: "Tanya Gali",
       stall_also_label: "BERGUNA JUGA DI SINI",
       stall_also1_title: "MAKANAN",
@@ -5170,7 +5187,28 @@ document.addEventListener("DOMContentLoaded", () => {
       stall_prev_label: "Sebelumnya",
       stall_prev_title: "DARURAT",
       stall_next_label: "Selanjutnya",
-      stall_next_title: "Sekolah"
+      stall_next_title: "Sekolah",
+      stall_hero_title: "Warung",
+      sit_badge_popular: "Paling populer",
+      stall_hero_title: "Warung",
+        sit_badge_popular: "Paling populer",
+      stall_next_title: "Sekolah",
+      school_crumb: "Sekolah",
+      school_hero_title: "Sekolah",
+      school_hero_desc: "Di kelas dan di lorong sekolah. Guru, teman sekelas, dan kata-kata sopan yang dipakai.",
+      school_list_heading: "Frasa di sekolah",
+      school_tip1_title: "Panggil Pak dan Bu",
+      school_tip1_desc: "Sapa guru laki-laki dengan Pak dan guru perempuan dengan Bu. Memanggil nama langsung dianggap tidak sopan.",
+      school_tip2_title: "Ucapkan permisi saat keluar",
+      school_tip2_desc: "Ucapkan permisi sebelum melangkah keluar kelas, meskipun di tengah pelajaran.",
+      school_also1_title: "Obrolan Ringan",
+      school_also1_desc: "Kenalan dengan teman sekelas",
+      school_also2_title: "WARUNG",
+      school_also2_desc: "Beli jajanan",
+      school_also3_title: "Makanan",
+      school_also3_desc: "Makan siang sepulang sekolah",
+      school_prev_title: "Warung",
+      school_next_title: "Angkot",
     }
   };
 
