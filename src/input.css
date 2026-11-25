@@ -1,6 +1,7 @@
 @import "tailwindcss";
-@source "../script.js";
 @source "../index.html";
+@source "../script.js";
+@source "../situations/*.html";
 @theme {
   /* color */
   --color-nila: #2f4c8a;

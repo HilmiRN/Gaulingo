@@ -3851,11 +3851,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 id="gali-drawer-input"
                 type="text"
                 placeholder="${isId ? "Tanya apa aja ke Gali..." : "Ask Gali anything..."}"
+                style="background-color: var(--color-krem, #f8f1e5); border-radius: 9999px;"
                 class="w-full rounded-full bg-krem px-4 py-2.5 text-sm text-nila outline-none placeholder:text-nila/45"
               />
               <button
                 type="button"
                 data-gali-mic="drawer"
+                style="background-color: var(--color-krem, #f8f1e5); border-radius: 9999px;"
                 class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-krem text-nila hover:opacity-80"
                 aria-label="Voice input"
               >
@@ -3863,6 +3865,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </button>
               <button
                 type="submit"
+                style="background-color: var(--color-nila, #243b7a); color: #ffffff; border-radius: 9999px;"
                 class="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-full bg-nila text-white hover:opacity-90"
                 aria-label="Send message"
               >

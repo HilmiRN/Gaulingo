@@ -172,7 +172,8 @@ RESPONSE RULES FOR VALID REQUESTS:
           contents,
           generationConfig: {
             temperature: 0.5,
-            maxOutputTokens: 600,
+            maxOutputTokens: 1500,
+            thinkingConfig: { thinkingBudget: 0 },
             responseMimeType: "application/json",
             responseSchema,
           },
@@ -190,7 +191,10 @@ RESPONSE RULES FOR VALID REQUESTS:
       });
     }
 
-    const rawText = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+    const rawText = (result?.candidates?.[0]?.content?.parts || [])
+      .filter((part) => typeof part?.text === "string" && !part.thought)
+      .map((part) => part.text)
+      .join("");
 
     if (!rawText) {
       return sendJson(res, 502, {
@@ -198,7 +202,13 @@ RESPONSE RULES FOR VALID REQUESTS:
       });
     }
 
-    const reply = JSON.parse(rawText);
+    let reply;
+    try {
+      reply = JSON.parse(rawText);
+    } catch (parseError) {
+      console.error("Gali JSON parse error:", result?.candidates?.[0]?.finishReason, rawText);
+      return sendJson(res, 502, { error: "Jawaban Gali terpotong. Coba lagi." });
+    }
 
     console.log("Gali response time:", Date.now() - startTime, "ms");
 
