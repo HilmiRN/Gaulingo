@@ -5344,5 +5344,37 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     watchDialectSwitcher();
     applyAllTranslations();
+  }function renderStallPhrases() {
+    if (!window.location.pathname.includes("stall.html")) return;
+
+    const listItems = document.querySelectorAll("main ol > li");
+    if (!listItems.length) return;
+
+    const uiLang = getActiveUiLang();
+    const phrases = stallPhrasesData[activeDialect] || stallPhrasesData.Indonesia;
+
+    listItems.forEach((li, idx) => {
+      const item = phrases[idx];
+      if (!item) return;
+
+      const heading = li.querySelector("h3");
+      const metaPs = li.querySelectorAll("div > div > p");
+      const playBtn = li.querySelector("button");
+
+      if (heading) heading.textContent = item.phrase;
+      if (metaPs[0]) metaPs[0].textContent = uiLang === "id" ? item.id : item.en;
+      if (metaPs[1]) metaPs[1].textContent = item.phonetic;
+      if (metaPs[2]) metaPs[2].textContent = uiLang === "id" ? item.tagId : item.tagEn;
+
+      if (playBtn) {
+        playBtn.onclick = (e) => {
+          e.stopPropagation();
+          if (window.playGaliAudio) {
+            window.playGaliAudio(item.phrase, 1, playBtn);
+          }
+        };
+      }
+    });
   }
 })();
+

@@ -158,7 +158,6 @@
     <main
       class="w-full bg-[#fff8f8] flex flex-col items-center pt-5 max-md:pt-2 pb-0 px-0 overflow-x-clip"
     >
-      <!-- hero -->
       <section
         id="home"
         class="transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform sticky top-5 max-md:top-2 w-[calc(100vw-80px)] h-[calc(100vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-[calc(100vh-20px)] overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-pasir @container-size isolate flex flex-col justify-between shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
@@ -191,17 +190,16 @@
           >
             <a
               href=""
-              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-nila px-6 py-3 font-bold text-white max-md:w-full max-md:py-2.5"
             >
-            
               <span data-i18n="hero_explorer_button">Start exploring</span>
-              <i class="ph-bold ph-arrow-right text-2xl"></i>
+              <i class="ph-bold ph-arrow-right text-2xl max-md:text-xl"></i>
             </a>
             <a
               href="#"
-              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full"
+              class="flex items-center justify-center gap-2.5 rounded-full bg-white py-3 px-6 font-bold text-nila max-md:w-full max-md:py-2.5"
             >
-              <i class="ph-bold ph-chat-circle-dots text-2xl"></i>
+              <i class="ph-bold ph-chat-circle-dots text-2xl max-md:text-xl"></i>
               <span data-i18n="hero_chat_button">Chat with Gali</span>
             </a>
           </div>
@@ -505,22 +503,24 @@
           </svg>
         </div>
       </section>
-      <!-- main -->
       <div
         id="main-content"
         class="relative -mt-10 z-10 bg-krem rounded-t-5xl w-full px-0"
       >
-                <section id="situations-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="flex justify-between items-end">
+        <section
+          id="situations-section"
+          class="mt-50 mx-25 max-lg:mt-32 max-lg:mx-12 max-md:mt-24 max-md:mx-10 max-sm:mt-20 max-sm:mx-5"
+        >
+          <hgroup class="flex justify-between items-end max-lg:flex-wrap max-lg:gap-6">
             <div class="flex flex-col max-md:gap-2">
               <p
-                class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
+                class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
                 data-i18n="sit_label"
               >
                 SITUATIONS
               </p>
               <h2
-                class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+                class="text-nila text-[52px] max-lg:text-[44px] max-md:text-4xl max-sm:text-3xl font-semibold tracking-[-0.52px] leading-tight"
               >
                 <span data-i18n="sit_title_1">Find your</span>
                 <span
@@ -530,7 +530,7 @@
                 >
               </h2>
               <p
-                class="text-lg text-nila/80 font-medium"
+                class="text-lg text-nila/80 font-medium max-md:text-base max-sm:text-sm"
                 data-i18n="sit_subtitle"
               >
                 Pick where you are. Gali brings the phrases you need there.
@@ -545,10 +545,11 @@
             </a>
           </hgroup>
 
-          <div class="my-10 w-full min-w-1/2 gap-10 flex max-xl:flex-col">
-            <!-- KARTU BESAR: STALL -->
+          <div
+            class="my-10 w-full min-w-1/2 gap-10 flex max-xl:flex-col max-lg:gap-8 max-md:my-8 max-md:gap-6"
+          >
             <div
-              class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white max-w-2/5 w-full max-xl:max-w-none max-sm:p-7"
+              class="h-full relative overflow-hidden rounded-4xl bg-terakota p-10 text-white max-w-2/5 w-full max-xl:max-w-none max-md:p-8 max-sm:p-6"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -557,7 +558,7 @@
                 viewBox="0 0 292 271"
                 fill="none"
                 stroke="currentColor"
-                class="absolute bottom-0 right-0 text-white/14 z-0"
+                class="absolute bottom-0 right-0 text-white/14 z-0 max-sm:w-52 max-sm:h-auto"
               >
                 <path
                   d="M40.3747 164.325C33.7579 161.986 27.6777 158.186 22.6204 153.129C13.7125 144.221 8.70801 132.139 8.70801 119.542V87.8749L40.3747 8.70825H262.041L293.708 87.8749V119.542C293.708 132.139 288.704 144.221 279.796 153.129C274.738 158.186 268.658 161.986 262.041 164.325M8.70801 87.8749H293.708M262.041 164.325C257.003 166.106 251.654 167.042 246.208 167.042C233.61 167.042 221.528 162.037 212.62 153.129C203.712 144.221 198.708 132.139 198.708 119.542C198.708 132.139 193.704 144.221 184.796 153.129C175.888 162.037 163.806 167.042 151.208 167.042C138.61 167.042 126.528 162.037 117.62 153.129C108.712 144.221 103.708 132.139 103.708 119.542C103.708 132.139 98.7036 144.221 89.7956 153.129C80.8876 162.037 68.8058 167.042 56.208 167.042C50.7622 167.042 45.4129 166.106 40.3747 164.325M262.041 164.325V262.042H40.3747V164.325M262.041 164.325V151.208M40.3747 164.325V151.208"
@@ -568,7 +569,7 @@
               </svg>
 
               <div class="relative">
-                <div class="flex items-center justify-between gap-4 max-sm:gap-0">
+                <div class="flex items-center justify-between gap-4 max-sm:flex-wrap max-sm:gap-2">
                   <p
                     class="rounded-full bg-white/20 px-3 py-1.25 text-[13px] font-bold leading-4.5 max-sm:text-xs"
                     data-i18n="stall_badge"
@@ -584,14 +585,14 @@
                 </div>
 
                 <h2
-                  class="uppercase font-unbounded font-black mt-6 text-[52px] tracking-[-1.68px]"
+                  class="uppercase font-unbounded font-black mt-6 text-[52px] tracking-[-1.68px] max-md:text-4xl max-sm:text-3xl max-sm:mt-4"
                   data-i18n="stall_title"
                 >
                   STALL
                 </h2>
 
                 <p
-                  class="mt-3 max-w-120 text-[17px] leading-6.5"
+                  class="mt-3 max-w-120 text-[17px] leading-6.5 max-sm:text-base"
                   data-i18n="stall_desc"
                 >
                   Buying snacks, asking prices, and saying thanks at a small
@@ -599,43 +600,70 @@
                 </p>
 
                 <ul class="mt-4.75 space-y-3">
-                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">Berapa harganya?</p>
-                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_how_much">How much is this?</p>
+                  <li
+                    class="flex min-h-17 py-2.5 items-center justify-between gap-3 rounded-[20px] bg-white pl-4.5 pr-3.5 max-sm:pl-4 max-sm:pr-3"
+                  >
+                    <div class="min-w-0">
+                      <p class="text-lg font-semibold leading-6 text-nila max-sm:text-base">
+                        Berapa harganya?
+                      </p>
+                      <p
+                        class="text-[13px] leading-4.5 text-nila/80 max-sm:text-xs"
+                        data-i18n="phrase_how_much"
+                      >
+                        How much is this?
+                      </p>
                     </div>
                     <button
                       type="button"
                       onclick="playGaliAudio('Berapa harganya?', this)"
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
+                      class="grid size-11 max-sm:size-10 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
                   </li>
 
-                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">Boleh kurang?</p>
-                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_cheaper">Can it be cheaper?</p>
+                  <li
+                    class="flex min-h-17 py-2.5 items-center justify-between gap-3 rounded-[20px] bg-white pl-4.5 pr-3.5 max-sm:pl-4 max-sm:pr-3"
+                  >
+                    <div class="min-w-0">
+                      <p class="text-lg font-semibold leading-6 text-nila max-sm:text-base">
+                        Boleh kurang?
+                      </p>
+                      <p
+                        class="text-[13px] leading-4.5 text-nila/80 max-sm:text-xs"
+                        data-i18n="phrase_cheaper"
+                      >
+                        Can it be cheaper?
+                      </p>
                     </div>
                     <button
                       type="button"
                       onclick="playGaliAudio('Boleh kurang?', this)"
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
+                      class="grid size-11 max-sm:size-10 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
                   </li>
 
-                  <li class="flex h-17 items-center justify-between rounded-[20px] bg-white pl-4.5 pr-3.5">
-                    <div>
-                      <p class="text-lg font-semibold leading-6 text-nila">Terima kasih, Bu!</p>
-                      <p class="text-[13px] leading-4.5 text-nila/80" data-i18n="phrase_thanks">Thank you, ma'am!</p>
+                  <li
+                    class="flex min-h-17 py-2.5 items-center justify-between gap-3 rounded-[20px] bg-white pl-4.5 pr-3.5 max-sm:pl-4 max-sm:pr-3"
+                  >
+                    <div class="min-w-0">
+                      <p class="text-lg font-semibold leading-6 text-nila max-sm:text-base">
+                        Terima kasih, Bu!
+                      </p>
+                      <p
+                        class="text-[13px] leading-4.5 text-nila/80 max-sm:text-xs"
+                        data-i18n="phrase_thanks"
+                      >
+                        Thank you, ma'am!
+                      </p>
                     </div>
                     <button
                       type="button"
                       onclick="playGaliAudio('Terima kasih, Bu!', this)"
-                      class="grid size-11 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
+                      class="grid size-11 max-sm:size-10 shrink-0 place-items-center rounded-full bg-nila text-white transition hover:scale-110 cursor-pointer"
                     >
                       <i class="ph-fill ph-play"></i>
                     </button>
@@ -652,91 +680,88 @@
               </div>
             </div>
 
-            <!-- GRID 4 KARTU KANAN -->
-            <div class="w-full grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-md:flex max-md:overflow-x-scroll scrollbar-none">
-              <!-- SCHOOL -->
+            <div
+              class="w-full grid grid-cols-2 grid-rows-2 gap-10 max-xl:grid-rows-2 max-lg:gap-6 max-md:flex max-md:overflow-x-scroll max-md:gap-4 max-md:pb-2 scrollbar-none"
+            >
               <a
                 href="/pages/school.html"
-                class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full grow hover:-translate-y-1 transition-transform"
+                class="flex flex-col justify-between p-7 bg-biru-muda rounded-4xl min-w-75 min-h-50 w-full grow hover:-translate-y-1 transition-transform max-md:min-w-70 max-md:shrink-0 max-sm:p-6"
               >
                 <div class="flex justify-between items-center">
-                  <i class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+                  <i class="ph-bold ph-graduation-cap p-4 text-3xl rounded-2xl bg-white/60 text-nila max-sm:p-3.5 max-sm:text-2xl"></i>
+                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila max-sm:text-2xl"></i>
                 </div>
                 <div>
                   <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl max-sm:text-xl"
                     data-i18n="card_school_title"
                   >
                     SCHOOL
                   </h3>
-                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_school_desc">
+                  <p class="text-nila/80 text-sm font-semibold max-sm:text-xs" data-i18n="card_school_desc">
                     In class &amp; with teachers · 5 phrases
                   </p>
                 </div>
               </a>
 
-              <!-- MINIBUS -->
               <a
                 href="/pages/minibus.html"
-                class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
+                class="flex flex-col justify-between p-7 bg-pasir rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform max-md:min-w-70 max-md:shrink-0 max-sm:p-6"
               >
                 <div class="flex justify-between items-center">
-                  <i class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+                  <i class="ph-bold ph-van p-4 text-3xl rounded-2xl bg-white/60 text-nila max-sm:p-3.5 max-sm:text-2xl"></i>
+                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila max-sm:text-2xl"></i>
                 </div>
                 <div>
                   <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl max-sm:text-xl"
                     data-i18n="card_minibus_title"
                   >
                     MINIBUS
                   </h3>
-                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_minibus_desc">
+                  <p class="text-nila/80 text-sm font-semibold max-sm:text-xs" data-i18n="card_minibus_desc">
                     Getting around town · 6 phrases
                   </p>
                 </div>
               </a>
 
-              <!-- SMALL TALK -->
               <a
                 href="/pages/small-talk.html"
-                class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
+                class="flex flex-col justify-between p-7 bg-matahari rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform max-md:min-w-70 max-md:shrink-0 max-sm:p-6"
               >
                 <div class="flex justify-between items-center">
-                  <i class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila"></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila"></i>
+                  <i class="ph-bold ph-chat-circle-dots p-4 text-3xl rounded-2xl bg-white/60 text-nila max-sm:p-3.5 max-sm:text-2xl"></i>
+                  <i class="ph-bold ph-arrow-up-right text-3xl text-nila max-sm:text-2xl"></i>
                 </div>
                 <div>
                   <h3
-                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl"
+                    class="uppercase font-unbounded text-3xl text-nila font-black tracking-tighter max-md:text-2xl max-sm:text-xl"
                     data-i18n="card_smalltalk_title"
                   >
                     SMALL TALK
                   </h3>
-                  <p class="text-nila/80 text-sm font-semibold" data-i18n="card_smalltalk_desc">
+                  <p class="text-nila/80 text-sm font-semibold max-sm:text-xs" data-i18n="card_smalltalk_desc">
                     Meeting new people · 10 phrases
                   </p>
                 </div>
               </a>
 
-              <!-- EMERGENCY -->
               <a
                 href="/pages/emergency.html"
-                class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform"
+                class="flex flex-col justify-between p-7 bg-nila rounded-4xl min-w-75 min-h-50 w-full hover:-translate-y-1 transition-transform max-md:min-w-70 max-md:shrink-0 max-sm:p-6"
               >
                 <div class="flex justify-between items-center">
-                  <i class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white"></i>
-                  <i class="ph-bold ph-arrow-up-right text-3xl text-white"></i>
+                  <i class="ph-bold ph-warning p-4 text-3xl rounded-2xl bg-white/25 text-white max-sm:p-3.5 max-sm:text-2xl"></i>
+                  <i class="ph-bold ph-arrow-up-right text-3xl text-white max-sm:text-2xl"></i>
                 </div>
                 <div>
                   <h3
-                    class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter max-md:text-2xl"
+                    class="uppercase font-unbounded text-3xl text-white font-black tracking-tighter max-md:text-2xl max-sm:text-xl"
                     data-i18n="card_emergency_title"
                   >
                     EMERGENCY
                   </h3>
-                  <p class="text-white/85 text-sm font-semibold" data-i18n="card_emergency_desc">
+                  <p class="text-white/85 text-sm font-semibold max-sm:text-xs" data-i18n="card_emergency_desc">
                     When you need help · 6 phrases
                   </p>
                 </div>
@@ -745,17 +770,19 @@
           </div>
         </section>
 
-        <!-- how it works section -->
-        <section id="how-section" class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
+        <section
+          id="how-section"
+          class="mt-50 mx-25 max-lg:mt-32 max-lg:mx-12 max-md:mt-24 max-md:mx-10 max-sm:mt-20 max-sm:mx-5"
+        >
           <hgroup class="flex flex-col max-md:gap-2">
             <p
-              class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm"
+              class="px-3.5 py-1.75 bg-matahari rounded-full w-fit font-semibold tracking-wide text-nila uppercase text-sm max-sm:text-xs"
               data-i18n="how_label"
             >
               HOW IT WORKS
             </p>
             <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+              class="text-nila text-[52px] max-lg:text-[44px] max-md:text-4xl max-sm:text-3xl font-semibold tracking-[-0.52px] leading-tight"
             >
               <span data-i18n="how_title_1">Three steps to your first </span>
               <span
@@ -764,15 +791,19 @@
                 >CONVERSATION</span
               >
             </h2>
-            <p class="text-lg text-nila/80 font-medium" data-i18n="how_desc">
+            <p
+              class="text-lg text-nila/80 font-medium max-md:text-base max-sm:text-sm"
+              data-i18n="how_desc"
+            >
               Start from the left. Each step takes just seconds.
             </p>
           </hgroup>
 
-          <div class="flex gap-10 mt-12 max-md:flex-col items-stretch">
-            <!-- Tombol Step Kiri (1, 2, 3) -->
+          <div
+            class="flex gap-10 mt-12 max-lg:gap-6 max-md:mt-8 max-md:flex-col items-stretch"
+          >
             <div
-              class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:flex-row"
+              class="flex flex-col gap-3 w-1/3 max-xl:w-1/2 max-md:w-full max-md:grid max-md:grid-cols-3 max-md:gap-2"
             >
               <button
                 type="button"
@@ -781,17 +812,17 @@
                   background-color: var(--color-nila, #243b7a);
                   color: #ffffff;
                 "
-                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center max-sm:px-3 max-sm:rounded-2xl w-full cursor-pointer transition-all duration-300"
               >
                 <p
-                  class="step-num font-unbounded font-black text-2xl"
+                  class="step-num font-unbounded font-black text-2xl max-sm:text-xl"
                   style="color: #ffffff"
                 >
                   1
                 </p>
                 <div>
                   <h3
-                    class="font-bold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-md:text-base max-sm:text-sm leading-snug"
                     data-i18n="how_step1_title"
                   >
                     Pick your place
@@ -813,17 +844,17 @@
                   background-color: #ffffff;
                   color: var(--color-nila, #243b7a);
                 "
-                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center max-sm:px-3 max-sm:rounded-2xl w-full cursor-pointer transition-all duration-300"
               >
                 <p
-                  class="step-num font-unbounded font-black text-2xl text-terakota"
+                  class="step-num font-unbounded font-black text-2xl max-sm:text-xl text-terakota"
                   style="color: var(--color-terakota, #b54927)"
                 >
                   2
                 </p>
                 <div>
                   <h3
-                    class="font-bold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-md:text-base max-sm:text-sm leading-snug"
                     data-i18n="how_step2_title"
                   >
                     Listen &amp; repeat
@@ -845,17 +876,17 @@
                   background-color: #ffffff;
                   color: var(--color-nila, #243b7a);
                 "
-                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center w-full cursor-pointer transition-all duration-300"
+                class="how-step-btn flex gap-4 items-center text-left px-6 py-5 rounded-3xl max-md:flex-col max-md:items-start max-md:gap-1 max-md:py-3 max-md:px-4 max-md:justify-center max-sm:px-3 max-sm:rounded-2xl w-full cursor-pointer transition-all duration-300"
               >
                 <p
-                  class="step-num font-unbounded font-black text-2xl text-hijau"
+                  class="step-num font-unbounded font-black text-2xl max-sm:text-xl text-hijau"
                   style="color: var(--color-hijau, #1f6f54)"
                 >
                   3
                 </p>
                 <div>
                   <h3
-                    class="font-bold text-xl max-sm:text-base"
+                    class="font-bold text-xl max-md:text-base max-sm:text-sm leading-snug"
                     data-i18n="how_step3_title"
                   >
                     Quiz with Gali
@@ -871,10 +902,9 @@
               </button>
             </div>
 
-            <!-- Panel 1: Pick your place -->
             <div
               data-step-panel="1"
-              class="how-step-panel p-10 flex flex-col justify-center gap-6 bg-white w-full rounded-4xl max-md:p-6"
+              class="how-step-panel p-10 flex flex-col justify-center gap-6 bg-white w-full rounded-4xl max-lg:p-8 max-md:p-6 max-sm:p-5 max-sm:gap-4"
             >
               <p
                 class="text-xs font-bold tracking-wider text-nila uppercase"
@@ -883,7 +913,7 @@
                 STEP 1 · PICK YOUR PLACE
               </p>
               <h3
-                class="text-3xl font-bold text-nila"
+                class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-xl"
                 data-i18n="how_panel_title"
               >
                 Where are you today?
@@ -892,10 +922,10 @@
                 class="grid grid-cols-3 gap-3 max-xl:grid-cols-2 [@media(max-width:430px)]:grid-cols-1"
               >
                 <div
-                  class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-terakota text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
                   <h4
-                    class="text-2xl font-bold capitalize"
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
                     data-i18n="cat_shop"
                   >
                     Local Shop
@@ -903,10 +933,10 @@
                   <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
                 </div>
                 <div
-                  class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-biru-muda text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
                   <h4
-                    class="text-2xl font-bold capitalize"
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
                     data-i18n="cat_school"
                   >
                     School
@@ -914,10 +944,10 @@
                   <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
                 </div>
                 <div
-                  class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-pasir text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
                   <h4
-                    class="text-2xl font-bold capitalize"
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
                     data-i18n="cat_transit"
                   >
                     Public Transit
@@ -925,10 +955,10 @@
                   <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
                 </div>
                 <div
-                  class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-matahari text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
                   <h4
-                    class="text-2xl font-bold capitalize"
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
                     data-i18n="cat_intro"
                   >
                     Introduction
@@ -936,10 +966,10 @@
                   <p class="text-xs" data-i18n="phrases_8">8 phrases</p>
                 </div>
                 <div
-                  class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-nila text-white p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
                   <h4
-                    class="text-2xl font-bold capitalize"
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
                     data-i18n="cat_emergency"
                   >
                     Emergency
@@ -947,9 +977,12 @@
                   <p class="text-xs" data-i18n="phrases_6">6 phrases</p>
                 </div>
                 <div
-                  class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between"
+                  class="bg-krem text-nila p-5 gap-1.5 rounded-3xl flex flex-col justify-between max-sm:p-4"
                 >
-                  <h4 class="text-2xl font-bold capitalize" data-i18n="cat_all">
+                  <h4
+                    class="text-2xl font-bold capitalize max-sm:text-lg"
+                    data-i18n="cat_all"
+                  >
                     All Situations
                   </h4>
                   <p class="text-xs" data-i18n="total_8">8 in total</p>
@@ -957,11 +990,10 @@
               </div>
             </div>
 
-            <!-- Panel 2: Listen & repeat -->
             <div
               data-step-panel="2"
               style="display: none"
-              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-md:p-6"
+              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-lg:p-8 max-md:p-6 max-sm:p-5 max-sm:gap-4"
             >
               <p
                 class="text-xs font-bold tracking-wider text-terakota uppercase"
@@ -970,16 +1002,17 @@
                 STEP 2 · LISTEN &amp; REPEAT
               </p>
               <h3
-                class="font-unbounded font-black text-4xl max-sm:text-3xl text-nila tracking-tight"
+                class="font-unbounded font-black text-4xl max-md:text-3xl max-sm:text-2xl text-nila tracking-tight"
               >
                 Berapa harganya?
               </h3>
-              <p class="font-semibold text-nila text-lg">"How much is this?"</p>
+              <p class="font-semibold text-nila text-lg max-sm:text-base">
+                "How much is this?"
+              </p>
 
-              <!-- Audio Bar + Waveform -->
               <div
                 style="border: 1px solid var(--color-terakota, #b54927)"
-                class="w-full rounded-full p-1.5 flex items-center gap-4 bg-white my-1"
+                class="w-full rounded-full p-1.5 flex items-center gap-4 max-sm:gap-3 bg-white my-1"
               >
                 <button
                   id="how-audio-play"
@@ -988,7 +1021,7 @@
                     background-color: var(--color-terakota, #b54927);
                     color: #ffffff;
                   "
-                  class="shrink-0 w-11 h-11 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0"
+                  class="shrink-0 w-11 h-11 max-sm:w-10 max-sm:h-10 rounded-full flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer border-0"
                   aria-label="Play"
                 >
                   <i id="how-audio-icon" class="ph-fill ph-play text-lg"></i>
@@ -996,81 +1029,80 @@
 
                 <div
                   id="how-waveform"
-                  class="flex items-center gap-1.5 overflow-hidden pr-4"
+                  class="flex-1 min-w-0 flex items-center gap-1.5 overflow-hidden pr-4"
                   aria-hidden="true"
                 >
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 14px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 24px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 18px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 30px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 20px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 28px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 14px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 24px"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 16px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 26px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 18px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 28px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 14px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 22px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 16px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 24px; opacity: 0.3"
                   ></span>
                   <span
-                    class="wave-bar rounded-full bg-terakota"
+                    class="wave-bar rounded-full bg-terakota shrink-0"
                     style="width: 4px; height: 12px; opacity: 0.3"
                   ></span>
                 </div>
               </div>
 
-              <!-- Speed Toggle (1x / 0.5x slow) -->
               <div class="flex items-center gap-2.5 mt-1">
                 <button
                   type="button"
@@ -1099,11 +1131,10 @@
               </div>
             </div>
 
-            <!-- Panel 3: Quiz with Gali -->
             <div
               data-step-panel="3"
               style="display: none"
-              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-md:p-6"
+              class="how-step-panel p-10 hidden flex-col justify-center gap-5 bg-white w-full rounded-4xl max-lg:p-8 max-md:p-6 max-sm:p-5 max-sm:gap-4"
             >
               <p
                 class="text-xs font-bold tracking-wider text-hijau uppercase"
@@ -1111,7 +1142,7 @@
               >
                 STEP 3 · QUIZ WITH GALI
               </p>
-              <h3 class="text-2xl sm:text-3xl font-bold text-nila">
+              <h3 class="text-3xl max-md:text-2xl max-sm:text-xl font-bold text-nila">
                 Which one asks for the price?
               </h3>
 
@@ -1124,12 +1155,12 @@
                     border: 1px solid rgba(36, 59, 122, 0.5);
                     color: var(--color-nila, #243b7a);
                   "
-                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
+                  class="how-quiz-opt w-full flex items-center justify-between gap-3 px-6 py-4 max-sm:px-4 max-sm:py-3 max-sm:text-sm rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
                   <span>Berapa harganya?</span>
                   <i
                     style="display: none"
-                    class="quiz-check ph-fill ph-check-circle text-2xl"
+                    class="quiz-check ph-fill ph-check-circle text-2xl shrink-0"
                   ></i>
                 </button>
 
@@ -1141,12 +1172,12 @@
                     border: 1px solid rgba(36, 59, 122, 0.5);
                     color: var(--color-nila, #243b7a);
                   "
-                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
+                  class="how-quiz-opt w-full flex items-center justify-between gap-3 px-6 py-4 max-sm:px-4 max-sm:py-3 max-sm:text-sm rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
                   <span>Di mana toiletnya?</span>
                   <i
                     style="display: none"
-                    class="quiz-check ph-fill ph-x-circle text-2xl"
+                    class="quiz-check ph-fill ph-x-circle text-2xl shrink-0"
                   ></i>
                 </button>
 
@@ -1158,57 +1189,55 @@
                     border: 1px solid rgba(36, 59, 122, 0.5);
                     color: var(--color-nila, #243b7a);
                   "
-                  class="how-quiz-opt w-full flex items-center justify-between px-6 py-4 rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
+                  class="how-quiz-opt w-full flex items-center justify-between gap-3 px-6 py-4 max-sm:px-4 max-sm:py-3 max-sm:text-sm rounded-full text-left font-semibold transition-all cursor-pointer bg-white"
                 >
                   <span>Boleh kurang, Bu?</span>
                   <i
                     style="display: none"
-                    class="quiz-check ph-fill ph-x-circle text-2xl"
+                    class="quiz-check ph-fill ph-x-circle text-2xl shrink-0"
                   ></i>
                 </button>
               </div>
 
-              <!-- Feedback Badges (Benar) -->
               <div
                 id="quiz-feedback-correct"
                 style="display: none"
                 class="items-center gap-2 pt-1 flex-wrap"
               >
                 <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm"
+                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   Nice one!
                 </span>
                 <span
-                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm"
+                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   +10 points
                 </span>
                 <span
-                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm"
+                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   Streak kept
                 </span>
               </div>
 
-              <!-- Feedback Badges (Salah) -->
               <div
                 id="quiz-feedback-wrong"
                 style="display: none"
                 class="items-center gap-2 pt-1 flex-wrap"
               >
                 <span
-                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm"
+                  class="px-4 py-2 rounded-full bg-matahari text-nila font-bold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   Oops!
                 </span>
                 <span
-                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm"
+                  class="px-4 py-2 rounded-full bg-pasir text-nila font-semibold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   +0 points
                 </span>
                 <span
-                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm"
+                  class="px-4 py-2 rounded-full bg-biru-muda text-nila font-semibold text-sm max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
                 >
                   Streak lost
                 </span>
@@ -1217,15 +1246,13 @@
           </div>
         </section>
 
-        <!-- Kotak Search & Filter Daerah -->
         <section
-          class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5 mb-4 flex flex-col gap-5"
+          class="mt-50 mx-25 max-lg:mt-32 max-lg:mx-12 max-md:mt-24 max-md:mx-10 max-sm:mt-20 max-sm:mx-5 mb-4 flex flex-col gap-5"
         >
-          <!-- Search Bar -->
           <div
-            class="flex items-center gap-3 w-full max-w-2xl px-5 py-3 rounded-full bg-white border border-nila/20 shadow-sm"
+            class="flex items-center gap-3 w-full max-w-2xl px-5 py-3 max-sm:px-4 max-sm:py-2.5 rounded-full bg-white border border-nila/20 shadow-sm"
           >
-            <i class="ph-bold ph-magnifying-glass text-nila text-lg"></i>
+            <i class="ph-bold ph-magnifying-glass text-nila text-lg shrink-0"></i>
             <input
               type="text"
               id="input-cari-frasa"
@@ -1234,7 +1261,6 @@
             />
           </div>
 
-          <!-- Tags Daerah -->
           <div class="flex flex-wrap items-center gap-2">
             <span
               class="text-xs font-bold text-nila/50 tracking-wider mr-2 uppercase"
@@ -1243,86 +1269,85 @@
             <button
               type="button"
               data-daerah="Minang"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover: shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover: shadow-sm cursor-pointer transition-colors"
             >
               Minang
             </button>
             <button
               type="button"
               data-daerah="Bali"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Bali
             </button>
             <button
               type="button"
               data-daerah="Sunda"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Sunda
             </button>
             <button
               type="button"
               data-daerah="Bugis"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Bugis
             </button>
             <button
               type="button"
               data-daerah="Jawa"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Jawa
             </button>
             <button
               type="button"
               data-daerah="Batak"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Batak
             </button>
             <button
               type="button"
               data-daerah="Betawi"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Betawi
             </button>
             <button
               type="button"
               data-daerah="Banjar"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Banjar
             </button>
             <button
               type="button"
               data-daerah="Papua"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Papua
             </button>
             <button
               type="button"
               data-daerah="Makassar"
-              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
+              class="btn-daerah bg-white text-nila border border-nila/20 px-4 py-1.5 max-sm:px-3 max-sm:py-1 max-sm:text-xs rounded-full text-sm font-semibold hover:bg-nila/5 shadow-sm cursor-pointer transition-colors"
             >
               Makassar
             </button>
           </div>
         </section>
 
-        <!-- phrase of the day -->
         <section
-          class="mt-10 mx-25 max-md:mx-10 max-sm:mx-5 px-10 py-14 min-h-90 max-md:min-h-110 bg-nila rounded-4xl flex flex-col justify-center"
+          class="mt-10 mx-25 max-lg:mx-12 max-md:mx-10 max-sm:mx-5 px-10 py-14 min-h-90 max-md:min-h-0 max-md:px-7 max-md:py-10 max-sm:px-6 max-sm:py-8 bg-nila rounded-4xl flex flex-col justify-center"
         >
           <hgroup
             class="flex max-md:flex-col justify-between max-md:items-start max-md:gap-3 items-center mb-5"
           >
             <p
               id="potd-label"
-              class="text-matahari uppercase font-bold tracking-wider"
+              class="text-matahari uppercase font-bold tracking-wider max-sm:text-xs"
               data-i18n="potd_label"
             >
               PHRASE OF THE DAY
@@ -1332,18 +1357,18 @@
             <div class="flex flex-col gap-5 w-full max-w-4xl">
               <h3
                 id="potd-phrase"
-                class="font-unbounded font-black text-6xl max-md:text-5xl max-sm:text-4xl text-krem"
+                class="font-unbounded font-black text-6xl max-lg:text-5xl max-md:text-4xl max-sm:text-2xl leading-tight text-krem break-words"
               >
                 Terima kasih banyak!
               </h3>
-              <div class="flex gap-4 items-center flex-wrap text-white">
+              <div class="flex gap-4 max-sm:gap-3 items-center flex-wrap text-white">
                 <p
                   id="potd-pronunciation"
-                  class="px-4 py-2 border border-white rounded-full"
+                  class="px-4 py-2 max-sm:px-3.5 max-sm:py-1.5 max-sm:text-sm border border-white rounded-full"
                 >
                   teh-REE-mah KAH-see BAH-nyak
                 </p>
-                <p id="potd-meaning" class="py-2 flex items-center">
+                <p id="potd-meaning" class="py-2 max-sm:py-1 max-sm:text-sm flex items-center">
                   "Terima kasih banyak!"
                 </p>
               </div>
@@ -1351,13 +1376,11 @@
           </div>
         </section>
 
-        <!-- ai buddy section -->
         <section
           id="ai-buddy-section"
           style="background-color: var(--color-pasir, #efd3af)"
-          class="mt-32 mx-25 max-md:mx-10 max-sm:mx-5 p-12 max-md:p-7 rounded-4xl flex items-center justify-between gap-12 max-lg:flex-col"
+          class="mt-32 mx-25 max-lg:mt-24 max-lg:mx-12 max-lg:p-9 max-lg:flex-col max-lg:gap-8 max-md:mt-20 max-md:mx-10 max-md:p-7 max-sm:mx-5 max-sm:p-5 p-12 rounded-4xl flex items-center justify-between gap-12"
         >
-          <!-- Kolom Kiri -->
           <div class="flex flex-col gap-5 w-1/2 max-lg:w-full">
             <p
               style="
@@ -1371,7 +1394,7 @@
             </p>
 
             <h2
-              class="text-nila text-5xl max-sm:text-4xl font-bold leading-tight tracking-tight"
+              class="text-nila text-5xl max-md:text-4xl max-sm:text-3xl font-bold leading-tight tracking-tight"
             >
               <span data-i18n="ai_title_1">Stuck? Just ask </span><br />
               <span
@@ -1383,7 +1406,7 @@
             </h2>
 
             <p
-              class="text-nila/85 text-base leading-relaxed max-w-md"
+              class="text-nila/85 text-base max-sm:text-sm leading-relaxed max-w-md"
               data-i18n="ai_desc"
             >
               Ask how to say something, what a word means, or whether it sounds
@@ -1395,11 +1418,11 @@
               <p class="text-sm font-bold text-nila" data-i18n="ai_try">
                 Try asking
               </p>
-              <div class="flex flex-wrap gap-2.5 max-w-md">
+              <div class="flex flex-wrap gap-2.5 max-sm:gap-2 max-w-md">
                 <button
                   type="button"
                   data-gali-prompt='How do I say "no spicy"?'
-                  class="gali-preset-btn bg-white text-nila font-semibold text-sm px-4 py-2.5 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
+                  class="gali-preset-btn bg-white text-nila font-semibold text-sm max-sm:text-xs px-4 py-2.5 max-sm:px-3.5 max-sm:py-2 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
                   data-i18n="ai_q1"
                 >
                   How do I say "no spicy"?
@@ -1407,7 +1430,7 @@
                 <button
                   type="button"
                   data-gali-prompt='Is "Bang" polite?'
-                  class="gali-preset-btn bg-white text-nila font-semibold text-sm px-4 py-2.5 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
+                  class="gali-preset-btn bg-white text-nila font-semibold text-sm max-sm:text-xs px-4 py-2.5 max-sm:px-3.5 max-sm:py-2 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
                   data-i18n="ai_q2"
                 >
                   Is "Bang" polite?
@@ -1415,7 +1438,7 @@
                 <button
                   type="button"
                   data-gali-prompt="Teach me to bargain"
-                  class="gali-preset-btn bg-white text-nila font-semibold text-sm px-4 py-2.5 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
+                  class="gali-preset-btn bg-white text-nila font-semibold text-sm max-sm:text-xs px-4 py-2.5 max-sm:px-3.5 max-sm:py-2 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
                   data-i18n="ai_q3"
                 >
                   Teach me to bargain
@@ -1423,7 +1446,7 @@
                 <button
                   type="button"
                   data-gali-prompt='What does "gas" mean?'
-                  class="gali-preset-btn bg-white text-nila font-semibold text-sm px-4 py-2.5 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
+                  class="gali-preset-btn bg-white text-nila font-semibold text-sm max-sm:text-xs px-4 py-2.5 max-sm:px-3.5 max-sm:py-2 rounded-full shadow-xs hover:bg-nila hover:text-white transition-colors cursor-pointer"
                   data-i18n="ai_q4"
                 >
                   What does "gas" mean?
@@ -1450,13 +1473,11 @@
             </div>
           </div>
 
-          <!-- Kolom Kanan: Preview Chat Card Interaktif -->
           <div
-            class="w-1/2 max-lg:w-full bg-white rounded-3xl shadow-lg border border-nila/10 flex flex-col overflow-hidden"
+            class="w-1/2 max-lg:w-full bg-white rounded-3xl max-sm:rounded-2xl shadow-lg border border-nila/10 flex flex-col overflow-hidden"
           >
-            <!-- Header Card -->
             <div
-              class="px-5 py-4 border-b border-nila/10 flex items-center justify-between"
+              class="px-5 py-4 max-sm:px-4 max-sm:py-3 border-b border-nila/10 flex items-center justify-between"
             >
               <div class="flex items-center gap-3">
                 <div class="gali-avatar-slot w-10 h-10 shrink-0"></div>
@@ -1478,18 +1499,18 @@
                 id="inline-gali-reset"
                 title="Reset chat"
                 style="background-color: var(--color-krem, #f8f1e5)"
-                class="w-8 h-8 rounded-full text-nila flex items-center justify-center hover:opacity-80 cursor-pointer text-sm font-bold"
+                class="w-8 h-8 rounded-full text-nila flex items-center justify-center hover:opacity-80 cursor-pointer text-sm font-bold shrink-0"
               >
                 ✕
               </button>
             </div>
             <div
               id="inline-gali-messages"
-              class="p-5 flex flex-col gap-3.5 max-h-95 overflow-y-auto bg-white"
+              class="p-5 max-sm:p-4 flex flex-col gap-3.5 max-h-95 max-sm:max-h-80 overflow-y-auto bg-white"
             ></div>
             <form
               id="inline-gali-form"
-              class="p-3.5 border-t border-nila/10 flex items-center gap-2 bg-white"
+              class="p-3.5 max-sm:p-3 border-t border-nila/10 flex items-center gap-2 bg-white"
             >
               <input
                 id="inline-gali-input"
@@ -1522,27 +1543,28 @@
           </div>
         </section>
 
-        <!-- why gaulingo -->
-        <section class="mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="flex flex-col xl:w-1/2">
+        <section
+          class="mt-50 mx-25 max-lg:mt-32 max-lg:mx-12 max-md:mt-24 max-md:mx-10 max-sm:mt-20 max-sm:mx-5"
+        >
+          <hgroup class="flex flex-col xl:w-1/2 gap-2">
             <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
+              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
               data-i18n="why_label"
             >
               WHY GAULINGO
             </p>
             <h2
-              class="text-nila text-[52px] max-sm:text-5xl [@media(max-width:375px)]:text-3xl font-semibold tracking-[-0.52px]"
+              class="text-nila text-[52px] max-lg:text-[44px] max-md:text-4xl max-sm:text-3xl font-semibold tracking-[-0.52px] leading-tight"
             >
               <span data-i18n="why_title_1">Not your usual</span>
               <span
-                class="text-biru-aksen font-unbounded font-black [@media(max-width:430px)]:text-3xl"
+                class="text-biru-aksen font-unbounded font-black"
                 data-i18n="why_title_2"
                 >PHRASEBOOK</span
               >
             </h2>
             <p
-              class="text-lg text-nila/80 font-medium max-md:text-base"
+              class="text-lg text-nila/80 font-medium max-md:text-base max-sm:text-sm"
               data-i18n="why_desc"
             >
               Most phrasebooks teach sentences nobody says. Gaulingo teaches
@@ -1554,18 +1576,18 @@
                 document.getElementById('modal-budaya').showModal();
                 return false;
               "
-              class="flex items-center gap-4 text-pasir font-bold hover:opacity-80 cursor-pointer"
+              class="flex items-center gap-4 text-pasir font-bold hover:opacity-80 cursor-pointer max-sm:text-sm"
             >
               <span data-i18n="potd_more_tips">More culture tips</span>
               <i class="ph-bold ph-arrow-right"></i>
             </a>
           </hgroup>
-          <div class="flex gap-6 mt-5 max-md:flex-col">
+          <div class="flex gap-6 mt-5 max-lg:flex-col">
             <div
-              class="bg-krem-tua rounded-3xl p-8 sm:p-10 flex flex-col gap-6 grow"
+              class="bg-krem-tua rounded-3xl p-10 max-sm:p-6 flex flex-col gap-6 w-1/2 max-lg:w-full"
             >
               <h3
-                class="text-xl sm:text-3xl font-bold text-nila/80"
+                class="text-3xl max-sm:text-xl font-bold text-nila/80"
                 data-i18n="why_usual_title"
               >
                 Usual phrasebook
@@ -1573,10 +1595,10 @@
 
               <ul class="flex flex-col gap-4">
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold text-nila"
                 >
                   <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
+                    class="p-1 rounded-full bg-matahari flex items-center justify-center shrink-0"
                   >
                     <i class="ph-bold ph-x"></i>
                   </span>
@@ -1586,10 +1608,10 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold text-nila"
                 >
                   <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
+                    class="p-1 rounded-full bg-matahari flex items-center justify-center shrink-0"
                   >
                     <i class="ph-bold ph-x"></i>
                   </span>
@@ -1597,10 +1619,10 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold text-nila"
                 >
                   <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
+                    class="p-1 rounded-full bg-matahari flex items-center justify-center shrink-0"
                   >
                     <i class="ph-bold ph-x"></i>
                   </span>
@@ -1608,10 +1630,10 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold text-nila"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold text-nila"
                 >
                   <span
-                    class="p-1 rounded-full bg-matahari flex items-center justify-center"
+                    class="p-1 rounded-full bg-matahari flex items-center justify-center shrink-0"
                   >
                     <i class="ph-bold ph-x"></i>
                   </span>
@@ -1620,17 +1642,17 @@
               </ul>
             </div>
             <div
-              class="bg-nila rounded-3xl p-8 sm:p-10 flex flex-col grow gap-6 text-white"
+              class="bg-nila rounded-3xl p-10 max-sm:p-6 flex flex-col gap-6 w-1/2 max-lg:w-full text-white"
             >
               <h3
-                class="text-xl sm:text-3xl font-black font-unbounded tracking-wider"
+                class="text-3xl max-sm:text-xl font-black font-unbounded tracking-wider"
               >
                 GAULINGO
               </h3>
 
               <ul class="flex flex-col gap-4">
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold"
                 >
                   <span
                     class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
@@ -1652,7 +1674,7 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold"
                 >
                   <span
                     class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
@@ -1674,7 +1696,7 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold"
                 >
                   <span
                     class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
@@ -1696,7 +1718,7 @@
                 </li>
 
                 <li
-                  class="flex items-center gap-3 text-sm sm:text-base font-semibold"
+                  class="flex items-center gap-3 text-base max-sm:text-sm font-semibold"
                 >
                   <span
                     class="w-5 h-5 rounded-full bg-matahari text-nila flex items-center justify-center shrink-0"
@@ -1721,17 +1743,18 @@
           </div>
         </section>
 
-        <!-- FAQ -->
-        <section class="reveal mt-50 mx-25 max-md:mx-10 max-sm:mx-5">
-          <hgroup class="relative w-full mb-10 flex flex-col">
+        <section
+          class="reveal mt-50 mx-25 max-lg:mt-32 max-lg:mx-12 max-md:mt-24 max-md:mx-10 max-sm:mt-20 max-sm:mx-5"
+        >
+          <hgroup class="relative w-full mb-10 max-sm:mb-7 flex flex-col">
             <p
-              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm"
+              class="px-3.5 py-1.75 bg-biru-aksen/25 rounded-full w-fit font-semibold tracking-wide text-nila text-sm max-sm:text-xs"
               data-i18n="faq_label"
             >
               FAQ
             </p>
             <h2
-              class="relative w-fit font-unbounded font-black text-nila text-[52px] max-sm:text-5xl [@media(max-width:400px)]:text-3xl tracking-[-0.52px]"
+              class="relative w-fit font-unbounded font-black text-nila text-[52px] max-lg:text-[44px] max-md:text-4xl max-sm:text-3xl tracking-[-0.52px] leading-tight"
             >
               <span data-i18n="faq_title_1">STILL GOT</span>
               <span class="text-terakota" data-i18n="faq_title_2"
@@ -1756,16 +1779,16 @@
             ></i>
           </hgroup>
           <div class="divide-y divide-nila/20 border-y border-nila/30">
-            <div class="faq-item py-6 is-open">
+            <div class="faq-item py-6 max-sm:py-4 is-open">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="true"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">01</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">01</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q1"
                   >
                     What is Gaulingo?
@@ -1778,7 +1801,7 @@
                   >−</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -1803,16 +1826,16 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item py-6">
+            <div class="faq-item py-6 max-sm:py-4">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="false"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">02</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">02</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q2"
                   >
                     Do I need an account?
@@ -1825,7 +1848,7 @@
                   >+</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 hidden">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4 hidden">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -1848,16 +1871,16 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item py-6">
+            <div class="faq-item py-6 max-sm:py-4">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="false"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">03</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">03</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q3"
                   >
                     Which languages are included?
@@ -1870,7 +1893,7 @@
                   >+</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 hidden">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4 hidden">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -1893,16 +1916,16 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item py-6">
+            <div class="faq-item py-6 max-sm:py-4">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="false"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">04</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">04</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q4"
                   >
                     Does it work on my phone?
@@ -1915,7 +1938,7 @@
                   >+</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 hidden">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4 hidden">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -1938,16 +1961,16 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item py-6">
+            <div class="faq-item py-6 max-sm:py-4">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="false"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">05</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">05</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q5"
                   >
                     Who checks the translations?
@@ -1960,7 +1983,7 @@
                   >+</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 hidden">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4 hidden">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -1983,16 +2006,16 @@
                 </div>
               </div>
             </div>
-            <div class="faq-item py-6">
+            <div class="faq-item py-6 max-sm:py-4">
               <button
                 type="button"
                 class="group flex w-full items-center justify-between gap-4 py-2 text-left"
                 aria-expanded="false"
               >
-                <div class="flex items-center gap-6">
-                  <p class="font-bold text-nila/80">06</p>
+                <div class="flex items-center gap-6 max-sm:gap-3.5">
+                  <p class="font-bold text-nila/80 max-sm:text-sm">06</p>
                   <h3
-                    class="text-3xl font-bold text-nila max-md:text-2xl max-sm:text-lg"
+                    class="text-3xl font-bold text-nila max-lg:text-2xl max-md:text-xl max-sm:text-base"
                     data-i18n="faq_q6"
                   >
                     Is Gaulingo free?
@@ -2005,7 +2028,7 @@
                   >+</span
                 >
               </button>
-              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 hidden">
+              <div data-faq-panel class="mt-3 rounded-2xl bg-pasir p-5 max-sm:p-4 hidden">
                 <img
                   src="/src/assets/Illustration.png"
                   alt="Gali Avatar"
@@ -2029,7 +2052,7 @@
             </div>
           </div>
           <div
-            class="mt-10 bg-nila text-white rounded-2xl p-6 flex flex-row max-sm:flex-col items-center justify-between gap-4 shadow-md"
+            class="mt-10 bg-nila text-white rounded-2xl p-6 max-sm:p-5 flex flex-row max-sm:flex-col max-sm:items-start items-center justify-between gap-4 shadow-md"
           >
             <div class="flex items-center gap-4">
               <img
@@ -2050,26 +2073,25 @@
             <button
               type="button"
               data-open-gali
-              class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 hover:bg-amber-200 transition shrink-0 cursor-pointer"
+              class="bg-matahari text-nila px-5 py-2.5 rounded-full font-bold text-sm flex items-center justify-center gap-2 hover:bg-amber-200 transition shrink-0 cursor-pointer max-sm:w-full"
             >
               <i class="ph-fill ph-chat-circle-dots"></i>
               <span data-i18n="faq_footer_btn">Ask Gali</span>
             </button>
           </div>
         </section>
-        <!-- cta -->
         <section
-          class="full-bleed-section text-center p-10 relative w-full bg-nila h-screen mt-50 flex flex-col items-center justify-center text-matahari gap-4"
+          class="full-bleed-section text-center p-10 max-sm:px-6 relative w-full bg-nila h-screen max-md:h-auto max-md:py-24 mt-50 max-lg:mt-32 max-md:mt-24 max-sm:mt-20 flex flex-col items-center justify-center text-matahari gap-4"
         >
           <p
-            class="text-base font-bold"
+            class="text-base max-sm:text-xs font-bold tracking-wide"
             data-cta-reveal="left"
             data-i18n="cta_tagline"
           >
             NO SIGN-UP · NO APP · JUST OPEN IT
           </p>
           <h2
-            class="text-matahari font-black font-unbounded text-[100px] max-md:text-6xl [@media(max-width:375px)]:text-5xl tracking-[-3px] leading-26 max-md:leading-16 max-sm:leading-15"
+            class="text-matahari font-black font-unbounded text-[100px] max-lg:text-7xl max-md:text-6xl max-sm:text-4xl tracking-[-3px] max-sm:tracking-tight leading-26 max-lg:leading-20 max-md:leading-16 max-sm:leading-tight"
             data-cta-reveal="right"
           >
             <span data-i18n="cta_title_1">Ready to</span> <br /><span
@@ -2079,14 +2101,14 @@
             >
           </h2>
           <p
-            class="font-medium text-xl"
+            class="font-medium text-xl max-md:text-lg max-sm:text-base max-w-md"
             data-cta-reveal="left"
             data-i18n="cta_subtitle"
           >
             Start with one phrase today. Tomorrow you will use it.
           </p>
           <div
-            class="mt-7 flex flex-wrap justify-center gap-5 max-sm:w-full max-sm:flex-col"
+            class="mt-7 flex flex-wrap justify-center gap-5 max-sm:w-full max-sm:flex-col max-sm:gap-3"
             data-cta-reveal="right"
           >
             <button
@@ -2106,19 +2128,18 @@
         </section>
       </div>
     </main>
-    <!-- footer -->
     <footer
       id="site-footer"
-      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-6 py-12 md:px-12 lg:px-16 lg:py-16"
+      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-16 py-16 max-lg:px-12 max-lg:py-12 max-md:px-6"
     >
       <div
-        class="max-w-7xl mx-auto flex flex-col justify-between min-h-[70vh] lg:min-h-0 gap-12"
+        class="max-w-7xl mx-auto flex flex-col justify-between min-h-0 max-lg:min-h-[70vh] gap-12"
       >
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 items-start"
+          class="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 gap-12 max-lg:gap-10 items-start"
         >
           <div
-            class="flex flex-col justify-between h-full gap-12 lg:gap-24"
+            class="flex flex-col justify-between h-full gap-24 max-lg:gap-12"
             data-footer-reveal="fade-up"
           >
             <div class="flex flex-col gap-3 font-semibold text-base">
@@ -2186,7 +2207,7 @@
                 <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
                 <a
                   href="mailto:halo@gaulingo.id"
-                  class="text-xl md:text-2xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
+                  class="text-2xl max-md:text-xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
                   >halo@gaulingo.id</a
                 >
               </div>
@@ -2197,7 +2218,9 @@
                 >
                   Based in
                 </p>
-                <p class="text-xl md:text-2xl font-bold">Bogor, Indonesia</p>
+                <p class="text-2xl max-md:text-xl font-bold">
+                  Bogor, Indonesia
+                </p>
               </div>
               <div>
                 <p
@@ -2207,7 +2230,7 @@
                   Languages
                 </p>
                 <p
-                  class="text-xl md:text-2xl font-bold"
+                  class="text-2xl max-md:text-xl font-bold"
                   data-i18n="footer_languages_val"
                 >
                   Indonesian &amp; Sundanese
@@ -2220,7 +2243,9 @@
               Navigation
             </h3>
             <nav aria-label="Footer navigation">
-              <ul class="flex flex-col gap-3 font-semibold text-lg md:text-xl">
+              <ul
+                class="flex flex-col gap-3 font-semibold text-xl max-md:text-lg"
+              >
                 <li>
                   <a
                     href="/index.html"
@@ -2274,11 +2299,11 @@
             </nav>
           </div>
           <div
-            class="flex flex-col justify-between items-start lg:items-end h-full gap-8"
+            class="flex flex-col justify-between items-end max-lg:items-start h-full gap-8"
             data-footer-reveal="fade-up"
           >
             <div
-              class="flex items-center gap-2 self-start lg:self-end text-xs font-medium text-nila/70"
+              class="flex items-center gap-2 self-end max-lg:self-start text-xs font-medium text-nila/70"
             >
               <span>Copyright © — 2026 Gaulingo</span>
               <div
@@ -2288,28 +2313,28 @@
               </div>
             </div>
             <div
-              class="flex items-center gap-6 lg:gap-8 my-auto self-start lg:self-end"
+              class="flex items-center gap-8 max-lg:gap-6 my-auto self-end max-lg:self-start"
             >
               <button
                 id="scroll-to-top"
                 type="button"
                 aria-label="Back to top"
-                class="w-14 h-14 md:w-16 md:h-16 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
+                class="w-16 h-16 max-md:w-14 max-md:h-14 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
               >
-                <i class="ph-bold ph-arrow-up text-xl md:text-2xl"></i>
+                <i class="ph-bold ph-arrow-up text-2xl max-md:text-xl"></i>
               </button>
 
               <h2
-                class="font-unbounded font-black text-nila text-8xl md:text-9xl lg:text-[11rem] leading-none select-none tracking-tighter relative"
+                class="font-unbounded font-black text-nila text-[11rem] max-lg:text-9xl max-md:text-8xl leading-none select-none tracking-tighter relative"
               >
                 G<sup
-                  class="text-xl md:text-2xl font-normal absolute top-4 -right-5 md:-right-6"
+                  class="text-2xl max-md:text-xl font-normal absolute top-4 -right-6 max-md:-right-5"
                   >®</sup
                 >
               </h2>
             </div>
             <p
-              class="text-left lg:text-right text-nila/70 text-xs md:text-sm font-medium leading-relaxed max-w-xs self-start lg:self-end"
+              class="text-right max-lg:text-left text-nila/70 text-sm max-md:text-xs font-medium leading-relaxed max-w-xs self-end max-lg:self-start"
               data-i18n="footer_tagline"
             >
               Say it like a local.<br />
@@ -2333,10 +2358,10 @@
       <img
         src="/src/assets/Illustration.png"
         alt=""
-        class="h-15 w-15 shrink-0 rounded-full border-4 border-nila object-cover shadow-xl transition-transform group-hover:scale-105"
+        class="h-15 w-15 max-sm:h-12 max-sm:w-12 shrink-0 rounded-full border-4 border-nila object-cover shadow-xl transition-transform group-hover:scale-105"
       />
       <p
-        class="rounded-full bg-white px-4 py-2 text-sm font-bold text-nila shadow-xl transition-colors group-hover:bg-nila group-hover:text-white"
+        class="rounded-full bg-white px-4 py-2 max-sm:px-3.5 max-sm:py-1.5 max-sm:text-xs text-sm font-bold text-nila shadow-xl transition-colors group-hover:bg-nila group-hover:text-white"
       >
         Ask Gali
       </p>
@@ -2346,11 +2371,11 @@
       class="fixed inset-0 m-0 w-full h-full max-w-none max-h-none bg-transparent p-0 border-none backdrop:bg-black/60 backdrop:backdrop-blur-sm"
     >
       <div
-        class="kotak-animasi w-[90%] max-w-md p-8 rounded-3xl bg-nila text-white shadow-2xl border border-matahari/50"
+        class="kotak-animasi w-[90%] max-w-md p-8 max-sm:p-6 rounded-3xl bg-nila text-white shadow-2xl border border-matahari/50"
       >
         <div class="flex flex-col gap-4">
           <h3
-            class="text-2xl font-black font-unbounded text-matahari mb-2 flex items-center gap-3"
+            class="text-2xl max-sm:text-xl font-black font-unbounded text-matahari mb-2 flex items-center gap-3"
           >
             <i class="ph-bold ph-lightbulb"></i>
             <span data-i18n="modal_culture_title">Tips Budaya</span>
@@ -2358,7 +2383,7 @@
           <ul class="text-sm font-medium flex flex-col gap-4">
             <li class="flex gap-3 items-start">
               <i
-                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg shrink-0"
               ></i>
               <span data-i18n="modal_culture_tip1"
                 >Selalu gunakan tangan kanan untuk memberi atau menerima
@@ -2367,7 +2392,7 @@
             </li>
             <li class="flex gap-3 items-start">
               <i
-                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg shrink-0"
               ></i>
               <span data-i18n="modal_culture_tip2"
                 >Lepas alas kaki (sepatu/sandal) sebelum masuk ke dalam rumah
@@ -2376,7 +2401,7 @@
             </li>
             <li class="flex gap-3 items-start">
               <i
-                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg"
+                class="ph-bold ph-check-circle text-matahari mt-0.5 text-lg shrink-0"
               ></i>
               <span data-i18n="modal_culture_tip3"
                 >Jangan menyentuh kepala seseorang, terutama anak-anak, karena
@@ -2396,7 +2421,6 @@
         </div>
       </div>
     </dialog>
-    <!-- js -->
     <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
     <script src="/script.js"></script>
     <div
@@ -2455,7 +2479,7 @@
         </button>
         <button
           type="submit"
-          class="w-10 h-10 shrink-0 rounded-full flex items-center bg-nila text-white justify-center hover:opacity-90 cursor-pointer"
+          class="w-10 h-10 shrink-0 ronuded-full flex items-center bg-nila text-white justify-center hover:opacity-90 cursor-pointer"
           aria-label="Send message"
         >
           <i class="ph ph-arrow-right text-base"></i>
@@ -2463,4 +2487,4 @@
       </form>
     </aside>
   </body>
-</html>
+</html> 
