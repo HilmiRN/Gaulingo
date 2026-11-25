@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @source "../script.js";
 @source "../index.html";
-@import "lenis/dist/lenis.css";
 @theme {
   /* color */
   --color-nila: #2f4c8a;

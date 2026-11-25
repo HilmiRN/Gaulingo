@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="en" class="scrollbar-none">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency || Gaulingo</title>
+    <link rel="stylesheet" href="/src/output.css" />
+    <link rel="icon" type="image/svg+xml" href="/src/assets/icon.svg" />
+    <script src="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Unbounded:wght@200..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-figtree relative scrollbar-none overflow-x-hidden -z-2">
+    <header id="site-header" class="site-header flex justify-between">
+      <span class="site-header__glass" aria-hidden="true"></span>
+      <div class="site-header__side">
+        <div class="site-lang" role="group" aria-label="Language">
+          <button type="button" class="site-lang__item" aria-pressed="true">
+            EN
+          </button>
+          <button type="button" class="site-lang__item" aria-pressed="false">
+            ID
+          </button>
+        </div>
+      </div>
+      <a href="/" class="site-header__brand">
+        <img src="/src/assets/logo.svg" alt="Gaulingo Logo" />
+      </a>
+      <div class="site-header__side site-header__side--end">
+        <button
+          id="menu-toggle"
+          type="button"
+          class="site-menu-toggle roll-host"
+          aria-controls="site-menu"
+          aria-expanded="false"
+          aria-label="Open menu"
+        >
+          <div class="site-menu-toggle__pill" aria-hidden="true">
+            <p
+              class="site-menu-toggle__label site-menu-toggle__label--menu"
+              data-roll
+            >
+              Menu
+            </p>
+            <p
+              class="site-menu-toggle__label site-menu-toggle__label--close"
+              data-roll
+            >
+              Close
+            </p>
+          </div>
+          <div class="site-menu-toggle__disc" aria-hidden="true">
+            <div class="site-menu-toggle__diamond"></div>
+            <i class="ph-bold ph-x site-menu-toggle__close-icon"></i>
+          </div>
+        </button>
+      </div>
+    </header>
+    <div id="site-menu" class="site-menu">
+      <nav class="site-menu__inner" aria-label="Main navigation">
+        <ul class="site-menu__list" style="--last: 4">
+          <li class="site-menu__item" style="--i: 0">
+            <div class="site-menu__row">
+              <a href="/" class="site-menu__link roll-host" aria-current="page">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">01</p>
+                  <h3 data-roll>Home</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item is-active" style="--i: 1">
+            <div class="site-menu__row">
+              <a href="/situations.html" class="site-menu__link roll-host">
+                <span class="site-menu__rise">
+                  <span class="site-menu__num">02</span>
+                  <span data-roll>Situations</span>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </span>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 2">
+            <div class="site-menu__row">
+              <a href="/culture.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">03</p>
+                  <h3 data-roll>Culture</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 3">
+            <div class="site-menu__row">
+              <a href="/about.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">04</p>
+                  <h3 data-roll>About</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="site-menu__item" style="--i: 4">
+            <div class="site-menu__row">
+              <a href="/chatGali.html" class="site-menu__link roll-host">
+                <div class="site-menu__rise">
+                  <p class="site-menu__num">05</p>
+                  <h3 data-roll>Chat Gali</h3>
+                  <span class="site-menu__marker" aria-hidden="true"></span>
+                </div>
+              </a>
+            </div>
+          </li>
+        </ul>
+        <ul class="site-menu__secondary">
+          <li>
+            <a
+              href="https://github.com/HilmiRN/Gaulingo/"
+              target="_blank"
+              class="roll-host"
+            >
+              <i class="ph-fill ph-github-logo"></i>
+              <p data-roll>GitHub</p>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://tally.so/r/e5aBok"
+              target="_blank"
+              class="roll-host"
+            >
+              <p data-roll>Suggest a Phrase</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://tally.so/r/EqxPaB" class="roll-host">
+              <p data-roll>Feedback</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main
+      class="w-screen bg-[#fff8f8] flex flex-col items-center pt-5 max-md:pt-2 pb-0"
+    >
+      <section
+        id="home"
+        class="sticky top-5 transform-[scale(calc(1-var(--hero-p,0)*0.2))] origin-bottom will-change-transform min-h-120 w-[calc(100vw-80px)] h-[calc(50vh-40px)] max-md:w-[calc(100vw-40px)] max-md:h-auto max-md:min-h-105 overflow-hidden rounded-[clamp(24px,3.5vw,48px)] bg-nila @container-size isolate shadow-[0_0_0_1px_rgba(45,83,158,0.06),0_28px_50px_rgba(45,83,158,0.08)]"
+      >
+        <div
+          class="w-full flex flex-col gap-5 relative text-white px-16 py-20 max-lg:px-12 max-lg:py-14 max-sm:px-6 max-sm:py-10 max-sm:gap-4"
+        >
+          <div class="flex items-center flex-wrap gap-5 max-sm:gap-3 text-xs">
+            <a
+              href="/"
+              class="rounded-sm underline-offset-4 hover:underline"
+              data-i18n="sit_page_home"
+              >Home</a
+            >
+            <i class="ph-bold ph-caret-right"></i>
+            <a
+              href="/situations.html"
+              class="font-medium"
+              data-i18n="sit_page_situations"
+              >Situations</a
+            >
+            <i class="ph-bold ph-caret-right"></i>
+            <a href="#" class="font-medium">Emergency</a>
+          </div>
+          <h1
+            class="font-unbounded max-sm:text-3xl leading-[1.02] font-black tracking-tight uppercase max-md:text-4xl text-6xl"
+          >
+            Emergency
+          </h1>
+
+          <p class="max-w-xl text-base max-sm:text-sm leading-relaxed">
+            When you need help fast and there is no time to look a word up.
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <p
+              class="text-nila font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
+              data-i18n="stall_pill_phrases"
+            >
+              6 phrases
+            </p>
+            <p
+              class="text-nila font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
+              data-i18n="stall_pill_langs"
+            >
+              Indonesian + 10 local languages
+            </p>
+            <p
+              class="text-nila font-medium leading-6 px-3.5 py-2 bg-white rounded-xl max-sm:text-xs max-sm:px-3 max-sm:py-1.5"
+              data-i18n="stall_pill_time"
+            >
+              About 4 minutes
+            </p>
+          </div>
+        </div>
+        <div
+          class="absolute left-10 bottom-0 translate-y-1/2 max-w-200 max-sm:max-w-none -z-1 aspect-square w-full rounded-full bg-white/20 max-sm:w-[200%]"
+        ></div>
+        <i
+          class="ph-bold ph-warning text-[200px] max-md:text-[140px] max-md:bottom-6 max-md:right-6 max-md:top-auto absolute right-20 top-1/3 -rotate-30 -z-1 text-white/20"
+        ></i>
+      </section>
+      <div
+        class="w-full min-h-screen relative z-1 m-0 bg-krem -mt-20 max-md:-mt-10"
+      >
+        <section
+          class="mx-16 my-25 flex gap-15 max-w-full overflow-x-clip max-lg:mx-12 max-lg:my-18 max-lg:flex-col max-lg:gap-12 max-sm:mx-6 max-sm:my-14 max-sm:gap-10"
+        >
+          <div class="grow min-w-0">
+            <hgroup class="flex flex-wrap justify-between items-center gap-4">
+              <div
+                class="text-nila text-3xl font-bold leading-8 max-md:text-2xl"
+              >
+                Phrases for emergencies
+              </div>
+
+              <div class="relative" id="lang-switcher">
+                <div
+                  class="p-1 rounded-full border border-nila/20 flex items-center gap-1"
+                >
+                  <button
+                    type="button"
+                    id="btn-indonesia"
+                    onclick="selectIndonesia()"
+                    class="px-4 py-1.5 rounded-full font-medium leading-6 transition-colors cursor-pointer bg-nila text-white max-sm:text-sm max-sm:px-3.5"
+                  >
+                    Indonesia
+                  </button>
+                  <button
+                    type="button"
+                    id="btn-daerah"
+                    onclick="toggleDropdown()"
+                    aria-expanded="false"
+                    class="px-4 py-1.5 rounded-full font-medium leading-6 flex items-center gap-1.5 transition-colors cursor-pointer text-nila hover:bg-nila/10 max-sm:text-sm max-sm:px-3.5"
+                  >
+                    <span id="daerah-label">Sunda</span>
+                    <i
+                      id="daerah-chevron"
+                      class="ph-bold ph-caret-down text-xs inline-block transition-transform duration-300"
+                    ></i>
+                  </button>
+                </div>
+                <div
+                  id="daerah-menu"
+                  class="absolute right-0 mt-2.5 w-100 max-sm:w-72 z-50 grid grid-rows-[0fr] opacity-0 invisible pointer-events-none duration-300 ease-out overflow-hidden rounded-2xl backdrop-blur-xl bg-white/80 border border-nila/20 p-3"
+                >
+                  <p
+                    class="px-3 pt-1 pb-2.5 text-xs font-bold tracking-wider uppercase text-nila"
+                    data-i18n="stall_local_lang"
+                  >
+                    Local Language
+                  </p>
+                  <div
+                    id="daerah-list"
+                    class="flex flex-col gap-0.5 max-h-120 overflow-y-auto"
+                  ></div>
+                </div>
+              </div>
+            </hgroup>
+            <ol class="list-none divide-y divide-nila/20 mt-7 max-sm:mt-5">
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  01
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Tolong!
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “Help!”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      TO-long
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Urgent
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Permisi Pak?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  02
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Saya butuh bantuan.
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “I need help.”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      SAH-yah BOO-tooh ban-TOO-an
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Urgent
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Boleh kurang?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  03
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Rumah sakit di mana?
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “Where is the hospital?”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      ROO-mah SAH-kit dee MAH-nah
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Asking
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Saya mau yang ini.', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  04
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Panggil polisi, tolong.
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “Call the police, please.”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      PANG-gil po-LEE-see TO-long
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Urgent
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Nggak pedas, ya.', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  05
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Saya tersesat.
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “I am lost.”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      SAH-yah ter-seh-SAT
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Asking
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Totalnya berapa?', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+              <li
+                class="py-5 pr-1 border-b border-nila/20 flex items-center gap-6 text-nila max-md:py-4 max-md:gap-3.5 max-sm:items-start"
+              >
+                <p
+                  class="text-xs font-bold tracking-wide shrink-0 max-sm:pt-1.5"
+                >
+                  06
+                </p>
+                <div
+                  class="flex-1 min-w-0 flex flex-col gap-2.5 max-md:gap-1.5"
+                >
+                  <h3
+                    class="text-3xl font-bold leading-9 max-md:text-2xl max-sm:text-xl max-sm:leading-snug"
+                  >
+                    Hubungi nomor ini.
+                  </h3>
+                  <div
+                    class="flex flex-wrap items-center gap-3.5 max-md:gap-x-3 max-md:gap-y-1.5"
+                  >
+                    <p
+                      class="text-lg font-medium leading-7 max-md:text-base max-md:leading-6 max-sm:w-full"
+                    >
+                      “Call this number.”
+                    </p>
+                    <p
+                      class="font-medium leading-6 tracking-tight bg-nila/20 py-1 px-4 rounded-md max-md:text-sm max-md:leading-5 max-md:py-0.5 max-md:px-3 max-sm:text-xs"
+                    >
+                      hoo-BOO-ngee NO-mor EE-nee
+                    </p>
+                    <p
+                      class="text-sm font-medium uppercase leading-5 tracking-wide opacity-80 max-md:text-xs"
+                    >
+                      Asking
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Putar audio"
+                  onclick="
+                    if (window.playGaliAudio)
+                      playGaliAudio('Terima kasih, Bu!', this);
+                  "
+                  class="size-12 shrink-0 self-center bg-nila rounded-full flex items-center justify-center cursor-pointer hover:scale-105 transition-transform max-md:size-10"
+                >
+                  <i
+                    class="ph-fill ph-play text-white text-2xl max-md:text-xl"
+                  ></i>
+                </button>
+              </li>
+            </ol>
+          </div>
+          <div
+            class="flex flex-col gap-5 max-w-100 w-1/4 shrink-0 max-lg:w-full max-lg:max-w-none max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1"
+          >
+            <div
+              class="p-8 bg-pasir rounded-3xl flex flex-col text-nila max-lg:p-7 max-lg:h-full max-sm:p-6"
+            >
+              <div class="pb-2 flex gap-2 items-center">
+                <i class="ph-bold ph-lightbulb"></i>
+                <h3
+                  class="text-xs font-bold leading-4 tracking-wide uppercase"
+                  data-i18n="stall_tips_label"
+                >
+                  CULTURE TIPS
+                </h3>
+              </div>
+              <div class="pt-1 pb-4 flex flex-col gap-1.5">
+                <p class="text-lg font-bold leading-6 max-md:text-base">
+                  112 works nationwide
+                </p>
+                <p class="font-medium leading-6 max-md:text-sm">
+                  112 reaches emergency services anywhere in Indonesia, free,
+                  from any phone.
+                </p>
+              </div>
+              <div class="h-px w-full bg-nila/20 max-lg:hidden"></div>
+              <div class="pt-4 flex flex-col gap-1.5 max-lg:pt-2">
+                <p class="text-lg font-bold leading-6 max-md:text-base">
+                  Say tolong first
+                </p>
+                <p class="font-medium leading-6 max-md:text-sm">
+                  Tolong is the word people react to. Say it before you try to
+                  explain anything else.
+                </p>
+              </div>
+            </div>
+            <div
+              class="p-8 bg-nila rounded-3xl flex flex-col gap-2.5 max-lg:order-first max-lg:col-span-2 max-lg:px-8 max-lg:py-6 max-lg:flex-row max-lg:items-center max-lg:justify-between max-lg:gap-6 max-sm:col-span-1 max-sm:p-6 max-sm:flex-col max-sm:items-start max-sm:gap-4"
+            >
+              <div class="flex flex-col gap-2.5 max-lg:gap-1.5">
+                <h3
+                  class="text-white text-2xl font-bold leading-7 max-sm:text-xl"
+                  data-i18n="stall_stuck_title"
+                >
+                  Stuck on one of these?
+                </h3>
+                <p
+                  class="text-white/80 font-medium leading-6 mb-3 max-lg:mb-0 max-md:text-sm"
+                  data-i18n="stall_stuck_desc"
+                >
+                  Ask Gali how to say it your way, or whether it sounds polite.
+                </p>
+              </div>
+              <a
+                href="/chatGali.html"
+                data-open-gali
+                class="shrink-0 text-nila font-bold leading-6 flex gap-2 justify-center items-center py-3 w-fit px-4 bg-pasir rounded-full text-center hover:opacity-90 transition max-sm:py-2.5 max-sm:px-5 max-sm:text-sm"
+              >
+                <span data-i18n="stall_stuck_btn">Ask Gali</span>
+                <i class="ph-bold ph-arrow-right"></i>
+              </a>
+            </div>
+            <div
+              class="p-7 pb-3 rounded-3xl border border-nila/20 text-nila flex flex-col max-lg:h-full max-lg:pb-4 max-sm:p-6 max-sm:pb-4"
+            >
+              <h3
+                class="text-xs font-bold leading-4 tracking-wide pb-2 uppercase"
+                data-i18n="stall_also_label"
+              >
+                ALSO USEFUL HERE
+              </h3>
+              <a
+                href="/situations/minibus.html"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group"
+              >
+                <div class="flex flex-col gap-1">
+                  <h4
+                    class="text-xl font-black font-unbounded uppercase leading-5 max-md:text-lg"
+                  >
+                    Minibus
+                  </h4>
+                  <p class="text-sm font-medium leading-5 max-md:text-xs">
+                    If you are lost
+                  </p>
+                </div>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
+              </a>
+              <a
+                href="/situations/school.html"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group"
+              >
+                <div class="flex flex-col gap-1">
+                  <h4
+                    class="text-xl font-black font-unbounded uppercase leading-5 max-md:text-lg"
+                  >
+                    school
+                  </h4>
+                  <p class="text-sm font-medium leading-5 max-md:text-xs">
+                    Asking staff
+                  </p>
+                </div>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
+              </a>
+              <a
+                href="/situations/small-talk.html"
+                class="py-4 border-t border-nila/20 flex items-center gap-3 justify-between group max-lg:border-b"
+              >
+                <div class="flex flex-col gap-1">
+                  <h4
+                    class="text-xl font-black font-unbounded uppercase leading-5 max-md:text-lg"
+                  >
+                    Small talk
+                  </h4>
+                  <p class="text-sm font-medium leading-5 max-md:text-xs">
+                    Asking a stranger
+                  </p>
+                </div>
+                <i
+                  class="ph-bold ph-arrow-up-right group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                ></i>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section
+          class="my-25 mx-16 max-lg:my-18 max-lg:mx-12 max-sm:my-14 max-sm:mx-6"
+        >
+          <div
+            class="grid grid-cols-2 gap-10 max-lg:gap-6 max-sm:grid-cols-1 max-sm:gap-4"
+          >
+            <a
+              href="/situations/food.html"
+              class="py-8 px-15 bg-krem-tua rounded-3xl flex items-center gap-5 hover:opacity-90 transition max-lg:py-7 max-lg:px-8 max-lg:gap-4 max-sm:py-6 max-sm:px-6"
+            >
+              <i
+                class="ph-bold ph-arrow-left text-4xl text-nila shrink-0 max-lg:text-3xl max-sm:text-2xl"
+              ></i>
+              <div class="flex flex-col gap-1">
+                <p
+                  class="text-nila text-xs font-medium uppercase leading-5 tracking-wide"
+                  data-i18n="stall_prev_label"
+                >
+                  Previous
+                </p>
+                <p
+                  class="text-nila text-4xl font-black uppercase font-unbounded leading-8 max-lg:text-2xl max-lg:leading-7"
+                >
+                  Food
+                </p>
+              </div>
+            </a>
+            <a
+              href="/situations/stall.html"
+              class="py-8 px-15 bg-krem-tua rounded-3xl flex flex-row-reverse text-right items-center gap-5 hover:opacity-90 transition max-lg:py-7 max-lg:px-8 max-lg:gap-4 max-sm:py-6 max-sm:px-6"
+            >
+              <i
+                class="ph-bold ph-arrow-right text-4xl text-nila shrink-0 max-lg:text-3xl max-sm:text-2xl"
+              ></i>
+              <div class="flex flex-col gap-1">
+                <p
+                  class="text-nila text-xs font-medium uppercase leading-5 tracking-wide"
+                  data-i18n="stall_next_label"
+                >
+                  Next
+                </p>
+                <p
+                  class="text-nila text-4xl font-black uppercase font-unbounded leading-8 max-lg:text-2xl max-lg:leading-7"
+                >
+                  Emergency
+                </p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      id="site-footer"
+      class="site-footer bg-matahari text-nila relative w-full overflow-hidden px-16 py-16 max-lg:px-12 max-lg:py-12 max-md:px-6"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col justify-between min-h-0 max-lg:min-h-[70vh] gap-12"
+      >
+        <div
+          class="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 gap-12 max-lg:gap-10 items-start"
+        >
+          <div
+            class="flex flex-col justify-between h-full gap-24 max-lg:gap-12"
+            data-footer-reveal="fade-up"
+          >
+            <div class="flex flex-col gap-3 font-semibold text-base">
+              <a
+                href="#"
+                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                data-i18n="footer_terms"
+                >Terms and Conditions</a
+              >
+              <a
+                href="#"
+                class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                data-i18n="footer_privacy"
+                >Privacy Policy</a
+              >
+            </div>
+            <div class="flex flex-col gap-3">
+              <h3
+                class="text-nila/70 font-medium text-sm"
+                data-i18n="footer_socials"
+              >
+                Socials
+              </h3>
+              <div class="flex items-center gap-4 text-nila">
+                <a
+                  href="https://www.instagram.com/"
+                  aria-label="Instagram"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-instagram-logo text-2xl"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/"
+                  aria-label="TikTok"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-tiktok-logo text-2xl"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/"
+                  aria-label="YouTube"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-youtube-logo text-2xl"></i>
+                </a>
+                <a
+                  href="mailto:halo@gaulingo.id"
+                  aria-label="Email"
+                  class="hover:-translate-y-1 hover:text-biru-aksen transition-all duration-300"
+                >
+                  <i class="ph-bold ph-envelope text-2xl"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+            <h3
+              class="text-nila/70 font-medium text-sm"
+              data-i18n="footer_contacts"
+            >
+              Contacts
+            </h3>
+            <div class="flex flex-col gap-5">
+              <div>
+                <p class="text-xs text-nila/60 font-medium mb-1">Email</p>
+                <a
+                  href="mailto:halo@gaulingo.id"
+                  class="text-2xl max-md:text-xl font-bold underline underline-offset-4 decoration-nila/40 hover:decoration-nila hover:text-biru-aksen transition-all break-all"
+                  >halo@gaulingo.id</a
+                >
+              </div>
+              <div>
+                <p
+                  class="text-xs text-nila/60 font-medium mb-1"
+                  data-i18n="footer_based"
+                >
+                  Based in
+                </p>
+                <p class="text-2xl max-md:text-xl font-bold">
+                  Bogor, Indonesia
+                </p>
+              </div>
+              <div>
+                <p
+                  class="text-xs text-nila/60 font-medium mb-1"
+                  data-i18n="footer_languages"
+                >
+                  Languages
+                </p>
+                <p
+                  class="text-2xl max-md:text-xl font-bold"
+                  data-i18n="footer_languages_val"
+                >
+                  Indonesian &amp; Sundanese
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6" data-footer-reveal="fade-up">
+            <h3 class="text-nila/70 font-medium text-sm" data-i18n="footer_nav">
+              Navigation
+            </h3>
+            <nav aria-label="Footer navigation">
+              <ul
+                class="flex flex-col gap-3 font-semibold text-xl max-md:text-lg"
+              >
+                <li>
+                  <a
+                    href="/"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_home"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/situations.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_sit"
+                    >Situations</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/practice.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_practice"
+                    >Practice</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/culture.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_culture"
+                    >Culture</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="/about.html"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_about"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#home"
+                    class="underline decoration-nila/40 underline-offset-4 hover:decoration-nila hover:text-biru-aksen transition-all"
+                    data-i18n="footer_nav_chat"
+                    >Chat with Gali</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div
+            class="flex flex-col justify-between items-end max-lg:items-start h-full gap-8"
+            data-footer-reveal="fade-up"
+          >
+            <div
+              class="flex items-center gap-2 self-end max-lg:self-start text-xs font-medium text-nila/70"
+            >
+              <span>Copyright © — 2026 Gaulingo</span>
+              <div
+                class="w-6 h-6 rounded-full bg-nila text-matahari flex items-center justify-center font-bold font-unbounded text-[10px]"
+              >
+                G
+              </div>
+            </div>
+            <div
+              class="flex items-center gap-8 max-lg:gap-6 my-auto self-end max-lg:self-start"
+            >
+              <button
+                id="scroll-to-top"
+                type="button"
+                aria-label="Back to top"
+                class="w-16 h-16 max-md:w-14 max-md:h-14 rounded-full border border-nila/40 flex items-center justify-center text-nila hover:bg-nila hover:text-matahari hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer shrink-0"
+              >
+                <i class="ph-bold ph-arrow-up text-2xl max-md:text-xl"></i>
+              </button>
+
+              <h2
+                class="font-unbounded font-black text-nila text-[11rem] max-lg:text-9xl max-md:text-8xl leading-none select-none tracking-tighter relative"
+              >
+                G<sup
+                  class="text-2xl max-md:text-xl font-normal absolute top-4 -right-6 max-md:-right-5"
+                  >®</sup
+                >
+              </h2>
+            </div>
+            <p
+              class="text-right max-lg:text-left text-nila/70 text-sm max-md:text-xs font-medium leading-relaxed max-w-xs self-end max-lg:self-start"
+              data-i18n="footer_tagline"
+            >
+              Say it like a local.<br />
+              Everyday Indonesian phrases<br />
+              for real places.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
