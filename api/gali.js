@@ -1,4 +1,4 @@
-const GEMINI_MODEL = "gemini-3.5-flash-lite";
+const GEMINI_MODEL = "gemini-2.5-flash";
 
 const responseSchema = {
   type: "OBJECT",
@@ -157,38 +157,46 @@ RESPONSE RULES FOR VALID REQUESTS:
   const startTime = Date.now();
 
   try {
-    const upstream = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${encodeURIComponent(apiKey)}`,
-      {
-        method: "POST",
-        signal: controller.signal,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          systemInstruction: {
-            parts: [{ text: systemPrompt }],
-          },
-          contents,
-          generationConfig: {
-            temperature: 0.5,
-            maxOutputTokens: 1500,
-            thinkingConfig: { thinkingBudget: 0 },
-            responseMimeType: "application/json",
-            responseSchema,
-          },
-        }),
+    const models = [GEMINI_MODEL, "gemini-2.0-flash", "gemini-flash-latest"];
+    const payload = {
+      systemInstruction: { parts: [{ text: systemPrompt }] },
+      contents,
+      generationConfig: {
+        temperature: 0.5,
+        maxOutputTokens: 1500,
+        responseMimeType: "application/json",
+        responseSchema,
       },
-    );
+    };
 
-    const result = await upstream.json().catch(() => ({}));
+    let result = null;
+    let lastMessage = "";
+    for (const model of models) {
+      const cfg = JSON.parse(JSON.stringify(payload));
+      if (model.includes("2.5")) {
+        cfg.generationConfig.thinkingConfig = { thinkingBudget: 0 };
+      }
+      const upstream = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${encodeURIComponent(apiKey)}`,
+        {
+          method: "POST",
+          signal: controller.signal,
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(cfg),
+        },
+      );
+      const data = await upstream.json().catch(() => ({}));
+      if (upstream.ok) {
+        result = data;
+        break;
+      }
+      lastMessage = `${model} (${upstream.status}): ${data?.error?.message || "unknown"}`;
+      console.error("Gemini error:", lastMessage);
+      if (![404, 429, 500, 503].includes(upstream.status)) break;
+    }
 
-    if (!upstream.ok) {
-      console.error("Gemini error:", upstream.status, result?.error?.message);
-
-      return sendJson(res, 502, {
-        error: "Gemini gagal memproses pesan.",
-      });
+    if (!result) {
+      return sendJson(res, 502, { error: `Gemini error - ${lastMessage}` });
     }
 
     const rawText = (result?.candidates?.[0]?.content?.parts || [])
