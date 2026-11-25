@@ -172,7 +172,7 @@ RESPONSE RULES FOR VALID REQUESTS:
           contents,
           generationConfig: {
             temperature: 0.5,
-            maxOutputTokens: 300,
+            maxOutputTokens: 600,
             responseMimeType: "application/json",
             responseSchema,
           },
